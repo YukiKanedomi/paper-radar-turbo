@@ -1,0 +1,16 @@
+{
+  "app": "paper-radar-turbo",
+  "perTopic": 2,
+  "topics": [
+    {
+      "key": "turbo",
+      "label": "流体・ターボ機械",
+      "keywords": [
+        "centrifugal compressor aerodynamics", "axial compressor", "turbine aerodynamics",
+        "impeller CFD", "blade flutter aeroelasticity", "surge rotating stall",
+        "tip clearance flow loss", "supercritical CO2 turbomachinery", "turbomachinery loss mechanisms"
+      ]
+    }
+  ],
+  "note": "妻が使うアプリ。検索ワードはチャットで調整。アプリUIでは変更しない。配信2件/トピック。"
+}
