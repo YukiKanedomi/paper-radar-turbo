@@ -733,6 +733,7 @@
 }
 .detail-page .lvl input {
   flex: 1;
+  min-width: 0;
   accent-color: var(--accent);
 }
 .detail-page .lvl .now {
@@ -744,6 +745,7 @@
 .detail-page .lvl .ends {
   font-size: 11px;
   color: var(--mut);
+  white-space: nowrap;
 }
 .detail-page .lead {
   font-size: 19px;
@@ -930,6 +932,48 @@
   font-size: 12px;
   color: var(--mut);
   margin-top: 3px;
+}
+
+/* スマホ向けの詰め（説明レベル枠・リード・数値カード） */
+@media (max-width: 560px) {
+  .detail-page .lvl {
+    padding: 8px 12px;
+    gap: 8px;
+    margin: 14px 0 4px;
+  }
+  .detail-page .lvl .lab {
+    font-size: 11px;
+  }
+  .detail-page .lvl .ends {
+    font-size: 10px;
+  }
+  .detail-page .lvl .now {
+    font-size: 12px;
+    min-width: 38px;
+  }
+  .detail-page .lead {
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 16px 0;
+  }
+  .detail-page .lead .dc {
+    font-size: 44px;
+    margin: 5px 10px 0 0;
+  }
+  .detail-page .nums {
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .detail-page .num {
+    padding: 11px 7px;
+    border-radius: 10px;
+  }
+  .detail-page .num .v {
+    font-size: 15px;
+  }
+  .detail-page .num .l {
+    font-size: 10.5px;
+  }
 }
 .detail-page .term {
   border-bottom: 1.5px dotted var(--accent);
