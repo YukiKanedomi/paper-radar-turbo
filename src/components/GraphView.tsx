@@ -495,9 +495,17 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
               return (
                 <g key={`cu${i}`} opacity={active ? 1 : 0.1} style={{ transition: "opacity .3s ease" }}>
                   <path d={d} fill="none" stroke="#9aa0a6" strokeWidth={1.5} markerEnd="url(#arrow)" />
-                  {/* 選択中：関係の向きに沿って光が流れる */}
+                  {/* 選択中：関係の向きに沿って一筋の光が流れる（コメット） */}
                   {active && hasFocus && (
-                    <path className="edge-flow" d={d} fill="none" stroke="#1a5e54" strokeWidth={1.6} />
+                    <path
+                      className="edge-flow"
+                      d={d}
+                      fill="none"
+                      stroke="#1a5e54"
+                      strokeWidth={2.2}
+                      pathLength={1}
+                      style={{ animationDelay: `${-((i * 0.37) % 2.2).toFixed(2)}s` }}
+                    />
                   )}
                   {e.label && showEdgeLabel && (
                     <text className="edge-label" x={((a.x ?? 0) + (b.x ?? 0)) / 2} y={((a.y ?? 0) + (b.y ?? 0)) / 2 - 3} textAnchor="middle">
