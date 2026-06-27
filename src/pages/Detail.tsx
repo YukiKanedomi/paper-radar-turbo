@@ -11,6 +11,7 @@ import {
   displayTitle,
   originalTitle,
   citationText,
+  resolveLeveled,
 } from "@/lib/paper";
 import { useFavorites, useRead } from "@/lib/prefs";
 
@@ -76,11 +77,9 @@ function DetailView({
   const lv = p.levels[levelKey];
   const src = sourceUrl(p);
 
-  // 説明レベルで豆知識・深掘りも変える（累積：そのレベル以上で表示、無指定＝常時）
-  const rank: Record<Level, number> = { easy: 1, std: 2, expert: 3 };
-  const showAt = (lvl?: Level) => !lvl || rank[lvl] <= rank[levelKey];
-  const trivia = p.trivia.filter((t) => showAt(t.level));
-  const deepDive = (p.deepDive ?? []).filter((d) => showAt(d.level));
+  // 豆知識・深掘りは「数」でなく「文章」を説明レベルで変える（resolveLeveled）
+  const trivia = p.trivia;
+  const deepDive = p.deepDive ?? [];
 
   const { markRead } = useRead();
   const { isFav, toggleFav } = useFavorites();
@@ -269,7 +268,7 @@ function DetailView({
         {deepDive.map((d, idx) => (
           <details className="acc" key={`dd-${idx}`}>
             <summary>{d.title}</summary>
-            <div className="body">{d.body}</div>
+            <div className="body">{resolveLeveled(d.body, levelKey)}</div>
           </details>
         ))}
 
@@ -279,7 +278,7 @@ function DetailView({
             {trivia.map((t, idx) => (
               <div className="triv" key={`triv-${idx}`}>
                 <div className="t">{t.label}</div>
-                {t.text}
+                {resolveLeveled(t.text, levelKey)}
               </div>
             ))}
           </>

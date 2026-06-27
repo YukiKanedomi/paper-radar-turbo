@@ -26,7 +26,7 @@ export default function Glossary() {
 function GlossaryView({ data }: { data: PapersData }) {
   const entries = useMemo(() => buildGlossary(data), [data]);
   const graph = useMemo(() => buildGraph(entries, data), [entries, data]);
-  const [tab, setTab] = useState<"list" | "graph">("list");
+  const [tab, setTab] = useState<"list" | "graph">("graph");
   const [q, setQ] = useState("");
   const ql = q.trim().toLowerCase();
   const list = entries.filter(
@@ -51,16 +51,16 @@ function GlossaryView({ data }: { data: PapersData }) {
 
         <div className="gtabs">
           <button
-            className={`gtab${tab === "list" ? " on" : ""}`}
-            onClick={() => setTab("list")}
-          >
-            一覧
-          </button>
-          <button
             className={`gtab${tab === "graph" ? " on" : ""}`}
             onClick={() => setTab("graph")}
           >
             関係マップ
+          </button>
+          <button
+            className={`gtab${tab === "list" ? " on" : ""}`}
+            onClick={() => setTab("list")}
+          >
+            一覧
           </button>
         </div>
 

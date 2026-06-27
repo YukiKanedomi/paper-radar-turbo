@@ -1,4 +1,9 @@
-import type { Paper } from "@/types";
+import type { Leveled, Level, Paper } from "@/types";
+
+// 文字列ならそのまま、レベル別オブジェクトなら現在のレベルの文章を返す
+export function resolveLeveled(v: Leveled, level: Level): string {
+  return typeof v === "string" ? v : v[level];
+}
 
 // ハッシュルーティング用に id（doi:.../arxiv:... を含む）を安全化
 export function paperHref(id: string): string {

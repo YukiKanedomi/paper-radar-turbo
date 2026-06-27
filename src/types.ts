@@ -35,10 +35,12 @@ export interface Term {
   def: string;
 }
 
+// 文字列＝全レベル共通／オブジェクト＝説明レベルごとに文章を変える
+export type Leveled = string | Record<Level, string>;
+
 export interface Trivia {
   label: string;
-  text: string;
-  level?: Level; // 任意。付けると「そのレベル以上」で表示（累積）。無指定＝常時表示
+  text: Leveled;
 }
 
 export interface Related {
@@ -47,11 +49,10 @@ export interface Related {
   url: string;
 }
 
-// 深掘りアコーディオン（任意・出典がある時だけ）。
+// 深掘りアコーディオン（任意・出典がある時だけ）。body は説明レベルで文章を変えられる。
 export interface DeepDive {
   title: string;
-  body: string;
-  level?: Level; // 任意。付けると「そのレベル以上」で表示（累積）。無指定＝常時表示
+  body: Leveled;
 }
 
 export interface Paper {
