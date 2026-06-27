@@ -48,7 +48,42 @@ export const CATEGORIES: GraphCategory[] = [
     key: "method",
     label: "数値解析・手法",
     color: "#7a6a9b",
-    terms: ["CFD", "LES", "サロゲートモデル", "CNN", "次元削減", "転移学習", "不確かさ"],
+    terms: [
+      "CFD",
+      "LES",
+      "サロゲートモデル",
+      "CNN",
+      "次元削減",
+      "転移学習",
+      "不確かさ",
+      "URANS（k-ω SST）",
+      "遺伝的アルゴリズム",
+    ],
+  },
+  {
+    key: "theory",
+    label: "設計理論・流れ面",
+    color: "#8a6d3b",
+    terms: [
+      "S1流れ面（第一種）",
+      "S2流れ面（第二種）",
+      "相対流れ面",
+      "子午面",
+      "スルーフロー理論",
+      "主方程式",
+    ],
+  },
+  {
+    key: "control",
+    label: "流れ制御・剥離",
+    color: "#b9763a",
+    terms: [
+      "境界層剥離",
+      "再付着",
+      "シンセティックジェット（合成噴流）",
+      "能動流れ制御（AFC）",
+      "迎え角（AoA）",
+    ],
   },
 ];
 
@@ -75,6 +110,16 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "遠心圧縮機", to: "回転失速", label: "発生" },
   { from: "せん断層", to: "回転失速", label: "渦誘起" },
   { from: "多段軸流圧縮機", to: "サロゲートモデル", label: "対象" },
+  { from: "S1流れ面（第一種）", to: "S2流れ面（第二種）", label: "二流れ面" },
+  { from: "相対流れ面", to: "S1流れ面（第一種）" },
+  { from: "相対流れ面", to: "S2流れ面（第二種）" },
+  { from: "S2流れ面（第二種）", to: "スルーフロー理論", label: "基礎" },
+  { from: "迎え角（AoA）", to: "境界層剥離", label: "増で誘発" },
+  { from: "境界層剥離", to: "再付着", label: "制御で回復" },
+  { from: "シンセティックジェット（合成噴流）", to: "境界層剥離", label: "抑制" },
+  { from: "能動流れ制御（AFC）", to: "シンセティックジェット（合成噴流）", label: "手段" },
+  { from: "能動流れ制御（AFC）", to: "遺伝的アルゴリズム", label: "最適化" },
+  { from: "境界層剥離", to: "境界層", label: "から発達" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
