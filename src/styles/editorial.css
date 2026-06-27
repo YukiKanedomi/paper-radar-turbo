@@ -1164,10 +1164,96 @@
 .detail-page .wrap {
   animation: pr-fade 0.4s ease both;
 }
+/* ---------- delight：動き・手応え（reduce-motion で無効化） ---------- */
+/* 関係マップ：発光が伝わる瞬間のパルス（一度だけ） */
+.graph-svg .node-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nodePulse 0.7s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes nodePulse {
+  from { transform: scale(0.6); opacity: 0.5; }
+  to { transform: scale(2.5); opacity: 0; }
+}
+
+/* 詳細：説明レベル切替のクロスフェード（inline なので opacity のみ） */
+.detail-page .lvl-fx {
+  animation: lvlFade 0.28s ease both;
+}
+@keyframes lvlFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 一貫した押下スプリング（触っていたい手応え） */
+.home-page .card,
+.home-page .pl,
+.home-page .f,
+.home-page .glossfeat,
+.detail-page .fav-btn,
+.detail-page .acc summary,
+.detail-page .orig,
+.glossary-page .gtab,
+.glossary-page .gentry,
+.glossary-page .gref,
+.graph-ctrls button,
+.graph-panel .gref {
+  transition: transform 0.13s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+}
+.home-page .card:active,
+.home-page .pl:active,
+.home-page .f:active,
+.home-page .glossfeat:active,
+.detail-page .fav-btn:active,
+.detail-page .acc summary:active,
+.detail-page .orig:active,
+.glossary-page .gtab:active,
+.glossary-page .gentry:active,
+.glossary-page .gref:active,
+.graph-ctrls button:active,
+.graph-panel .gref:active {
+  transform: scale(0.97);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-page .wrap,
   .detail-page .wrap {
     animation: none;
+  }
+  .graph-svg .node-pulse {
+    display: none;
+  }
+  .detail-page .lvl-fx {
+    animation: none;
+  }
+  .home-page .card,
+  .home-page .pl,
+  .home-page .f,
+  .home-page .glossfeat,
+  .detail-page .fav-btn,
+  .detail-page .acc summary,
+  .detail-page .orig,
+  .glossary-page .gtab,
+  .glossary-page .gentry,
+  .glossary-page .gref,
+  .graph-ctrls button,
+  .graph-panel .gref {
+    transition: none;
+  }
+  .home-page .card:active,
+  .home-page .pl:active,
+  .home-page .f:active,
+  .home-page .glossfeat:active,
+  .detail-page .fav-btn:active,
+  .detail-page .acc summary:active,
+  .detail-page .orig:active,
+  .glossary-page .gtab:active,
+  .glossary-page .gentry:active,
+  .glossary-page .gref:active,
+  .graph-ctrls button:active,
+  .graph-panel .gref:active {
+    transform: none;
   }
 }
 

@@ -222,14 +222,14 @@ function DetailView({
         {/* リード（tldr）＋ドロップキャップ */}
         <p className="lead">
           <span className="dc">{dropcap}</span>
-          {renderTerms(lv.tldr, "tldr")}
+          <span key={levelKey} className="lvl-fx">{renderTerms(lv.tldr, "tldr")}</span>
         </p>
 
         <div className="sec">何が問題だったか</div>
-        <p>{renderTerms(lv.problem, "problem")}</p>
+        <p><span key={levelKey} className="lvl-fx">{renderTerms(lv.problem, "problem")}</span></p>
 
         <div className="sec">手法</div>
-        <p>{renderTerms(lv.method, "method")}</p>
+        <p><span key={levelKey} className="lvl-fx">{renderTerms(lv.method, "method")}</span></p>
 
         {/* 式（KaTeX で描画。出典の equations がある時だけ。空なら出さない） */}
         {p.equations.length > 0 && (
@@ -271,13 +271,13 @@ function DetailView({
                 </div>
               ))}
             </div>
-            <p>{renderTerms(lv.result, "result")}</p>
+            <p><span key={levelKey} className="lvl-fx">{renderTerms(lv.result, "result")}</span></p>
           </>
         )}
         {p.numbers.length === 0 && (
           <>
             <div className="sec">主要な結果</div>
-            <p>{renderTerms(lv.result, "result")}</p>
+            <p><span key={levelKey} className="lvl-fx">{renderTerms(lv.result, "result")}</span></p>
           </>
         )}
 
@@ -290,7 +290,9 @@ function DetailView({
                 <div className="wk" key={`wk-${idx}`}>
                   <div className="wk-h">{s.heading}</div>
                   <p className="wk-b">
-                    {renderTerms(resolveLeveled(s.body, levelKey), `wk-${idx}`)}
+                    <span key={levelKey} className="lvl-fx">
+                      {renderTerms(resolveLeveled(s.body, levelKey), `wk-${idx}`)}
+                    </span>
                   </p>
                 </div>
               ))}
@@ -302,7 +304,7 @@ function DetailView({
         {deepDive.map((d, idx) => (
           <details className="acc" key={`dd-${idx}`}>
             <summary>{d.title}</summary>
-            <div className="body">{resolveLeveled(d.body, levelKey)}</div>
+            <div className="body"><span key={levelKey} className="lvl-fx">{resolveLeveled(d.body, levelKey)}</span></div>
           </details>
         ))}
 
@@ -312,14 +314,14 @@ function DetailView({
             {trivia.map((t, idx) => (
               <div className="triv" key={`triv-${idx}`}>
                 <div className="t">{t.label}</div>
-                {resolveLeveled(t.text, levelKey)}
+                <span key={levelKey} className="lvl-fx">{resolveLeveled(t.text, levelKey)}</span>
               </div>
             ))}
           </>
         )}
 
         <div className="sec">限界</div>
-        <p>{renderTerms(lv.limit, "limit")}</p>
+        <p><span key={levelKey} className="lvl-fx">{renderTerms(lv.limit, "limit")}</span></p>
 
         {p.related.length > 0 && (
           <>

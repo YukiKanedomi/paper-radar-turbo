@@ -29,18 +29,34 @@ const endXY = (e: string | GraphNode, map: Map<string, GraphNode>) =>
 const K_MIN = 0.35;
 const K_MAX = 3.4;
 const clampK = (k: number) => Math.min(K_MAX, Math.max(K_MIN, k));
+const easeInOutCubic = (p: number) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+const prefersReduced = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+interface View {
+  k: number;
+  tx: number;
+  ty: number;
+}
 
 export default function GraphView({ nodes, curated, co, categories }: Props) {
   const [showCo, setShowCo] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
-  const [view, setView] = useState({ k: 1, tx: 0, ty: 0 });
+  const [view, setView] = useState<View>({ k: 1, tx: 0, ty: 0 });
   const [expanded, setExpanded] = useState(false);
+  // スプレッディング・アクティベーション：時間差で広がる発光集合
+  const [activeIds, setActiveIds] = useState<Set<string>>(new Set());
   const [, setTick] = useState(0);
   const simRef = useRef<Simulation<GraphNode, GraphEdge> | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
   const viewRef = useRef(view);
   viewRef.current = view;
+  const rafRef = useRef<number | null>(null);
+  const waveTimers = useRef<number[]>([]);
+  const lastTap = useRef<{ t: number; x: number; y: number } | null>(null);
+  const suppressClick = useRef(false);
   // アクティブな指（pointerId→クライアント座標）
   const pointers = useRef<Map<number, { x: number; y: number }>>(new Map());
   const movedRef = useRef(false);
@@ -77,6 +93,21 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
     return m;
   }, [simNodes]);
 
+  // 隣接（手キュレーション＋共起の両方）
+  const adj = useMemo(() => {
+    const m = new Map<string, Set<string>>();
+    const link = (a: string, b: string) => {
+      if (!m.has(a)) m.set(a, new Set());
+      m.get(a)!.add(b);
+    };
+    for (const e of [...curated, ...co]) {
+      const s = endId(e.source), t = endId(e.target);
+      link(s, t);
+      link(t, s);
+    }
+    return m;
+  }, [curated, co]);
+
   // ライブで揺れて落ち着く力学シミュレーション
   useEffect(() => {
     const sim = forceSimulation(simNodes)
@@ -110,16 +141,67 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
     };
   }, [expanded]);
 
-  const neighbors = useMemo(() => {
-    const focus = selected ?? hovered;
-    if (!focus) return null;
-    const s = new Set<string>([focus]);
-    for (const e of [...curated, ...co]) {
-      if (endId(e.source) === focus) s.add(endId(e.target));
-      if (endId(e.target) === focus) s.add(endId(e.source));
+  // アンマウント時に進行中のアニメ・タイマを掃除
+  useEffect(
+    () => () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      waveTimers.current.forEach((id) => clearTimeout(id));
+    },
+    [],
+  );
+
+  // 選択時：選んだ語から関係を伝って時間差で発光が広がる
+  useEffect(() => {
+    waveTimers.current.forEach((id) => clearTimeout(id));
+    waveTimers.current = [];
+    if (!selected) {
+      setActiveIds(new Set());
+      return;
     }
+    // BFS で hop ごとの層を作る
+    const layers: string[][] = [[selected]];
+    const seen = new Set<string>([selected]);
+    let frontier = [selected];
+    for (let depth = 0; frontier.length && depth < 6; depth++) {
+      const next: string[] = [];
+      for (const id of frontier)
+        for (const nb of adj.get(id) ?? [])
+          if (!seen.has(nb)) {
+            seen.add(nb);
+            next.push(nb);
+          }
+      if (next.length) layers.push(next);
+      frontier = next;
+    }
+    if (prefersReduced()) {
+      setActiveIds(new Set(seen));
+      return;
+    }
+    setActiveIds(new Set([selected]));
+    layers.slice(1).forEach((layer, i) => {
+      const id = window.setTimeout(() => {
+        setActiveIds((prev) => {
+          const s = new Set(prev);
+          layer.forEach((x) => s.add(x));
+          return s;
+        });
+      }, (i + 1) * 115);
+      waveTimers.current.push(id);
+    });
+  }, [selected, adj]);
+
+  const hoverNeighbors = useMemo(() => {
+    if (!hovered) return null;
+    const s = new Set<string>([hovered]);
+    for (const nb of adj.get(hovered) ?? []) s.add(nb);
     return s;
-  }, [selected, hovered, curated, co]);
+  }, [hovered, adj]);
+
+  // 現在の強調集合（選択＝波／ホバー＝1ホップ）
+  const focusSet = selected ? activeIds : hoverNeighbors;
+  const hasFocus = focusSet !== null && focusSet.size > 0;
+  const inFocus = (id: string) => !hasFocus || focusSet!.has(id);
+  const dim = (id: string) => hasFocus && !focusSet!.has(id);
 
   // 固定 viewBox（成長に合わせて大きさを決め、揺れてもジッタしない）
   const half = 280 + Math.sqrt(nodes.length) * 16;
@@ -159,29 +241,53 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
     const u = pt.matrixTransform(ctm.inverse());
     return { x: u.x, y: u.y };
   }
-  // ある点（ユーザー座標）を中心に倍率 f でズーム
-  function zoomAround(ux: number, uy: number, f: number) {
-    setView((v) => {
-      const k2 = clampK(v.k * f);
-      const ratio = k2 / v.k;
-      return { k: k2, tx: ux - ratio * (ux - v.tx), ty: uy - ratio * (uy - v.ty) };
-    });
+  // view を滑らかに補間（reduce-motion は即時）
+  function animateView(to: View, dur = 420) {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    const from = { ...viewRef.current };
+    if (prefersReduced() || dur <= 0) {
+      setView(to);
+      return;
+    }
+    const t0 = performance.now();
+    const step = (now: number) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = easeInOutCubic(p);
+      setView({
+        k: from.k + (to.k - from.k) * e,
+        tx: from.tx + (to.tx - from.tx) * e,
+        ty: from.ty + (to.ty - from.ty) * e,
+      });
+      rafRef.current = p < 1 ? requestAnimationFrame(step) : null;
+    };
+    rafRef.current = requestAnimationFrame(step);
+  }
+  // ある点（ユーザー座標）を中心に倍率 f でズーム（target を返す）
+  function zoomTarget(ux: number, uy: number, f: number, v: View): View {
+    const k2 = clampK(v.k * f);
+    const ratio = k2 / v.k;
+    return { k: k2, tx: ux - ratio * (ux - v.tx), ty: uy - ratio * (uy - v.ty) };
   }
 
   function onWheel(e: React.WheelEvent) {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
     const u = userPt(e.clientX, e.clientY);
-    zoomAround(u.x, u.y, e.deltaY < 0 ? 1.12 : 1 / 1.12);
+    setView((v) => zoomTarget(u.x, u.y, e.deltaY < 0 ? 1.12 : 1 / 1.12, v));
   }
   function zoomButton(f: number) {
     const svg = svgRef.current;
     if (!svg) return;
     const r = svg.getBoundingClientRect();
     const u = userPt(r.left + r.width / 2, r.top + r.height / 2);
-    zoomAround(u.x, u.y, f);
+    animateView(zoomTarget(u.x, u.y, f, viewRef.current), 320);
+  }
+  function resetView() {
+    animateView({ k: 1, tx: 0, ty: 0 }, 480);
   }
 
   function beginPinch() {
     drag.current = null;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
     const pts = [...pointers.current.values()];
     if (pts.length < 2) return;
     const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
@@ -198,6 +304,7 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
       beginPinch();
       return;
     }
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
     const u = userPt(e.clientX, e.clientY);
     drag.current = { type: "pan", sux: u.x, suy: u.y, tx: view.tx, ty: view.ty };
   }
@@ -254,14 +361,26 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
       d.node.fy = null;
       simRef.current?.alphaTarget(0);
     }
+    // 背景の素早い2連タップ＝その点へ寄ってズーム
+    if (d?.type === "pan" && !movedRef.current && pointers.current.size === 0) {
+      const now = performance.now();
+      const prev = lastTap.current;
+      if (prev && now - prev.t < 320 && Math.hypot(e.clientX - prev.x, e.clientY - prev.y) < 30) {
+        const u = userPt(e.clientX, e.clientY);
+        animateView(zoomTarget(u.x, u.y, 1.9, viewRef.current), 360);
+        lastTap.current = null;
+        suppressClick.current = true;
+      } else {
+        lastTap.current = { t: now, x: e.clientX, y: e.clientY };
+      }
+    }
     if (pointers.current.size === 0) drag.current = null;
   }
 
   const sel = selected ? nodeMap.get(selected) : null;
-  const dim = (id: string) => neighbors !== null && !neighbors.has(id);
   const showNodeLabel = (n: GraphNode) =>
-    n.degree >= 4 || view.k >= 1.2 || (neighbors?.has(n.id) ?? false);
-  const showEdgeLabel = view.k >= 1.05 || neighbors !== null;
+    n.degree >= 4 || view.k >= 1.2 || (hasFocus && focusSet!.has(n.id));
+  const showEdgeLabel = view.k >= 1.05 || hasFocus;
   const showClusterLabel = view.k < 1.7;
 
   return (
@@ -290,6 +409,10 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerUp}
           onClick={() => {
+            if (suppressClick.current) {
+              suppressClick.current = false;
+              return;
+            }
             if (movedRef.current) {
               movedRef.current = false;
               return;
@@ -326,6 +449,7 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
               co.map((e, i) => {
                 const a = endXY(e.source, nodeMap), b = endXY(e.target, nodeMap);
                 if (!a || !b) return null;
+                const lit = inFocus(a.id) && inFocus(b.id);
                 return (
                   <path
                     key={`co${i}`}
@@ -334,7 +458,8 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
                     stroke="#cdc8bc"
                     strokeWidth={0.5 + Math.min(e.weight ?? 1, 4) * 0.3}
                     strokeDasharray="3 3"
-                    opacity={neighbors ? 0.1 : 0.4}
+                    opacity={!hasFocus ? 0.4 : lit ? 0.5 : 0.06}
+                    style={{ transition: "opacity .3s ease" }}
                   />
                 );
               })}
@@ -343,9 +468,9 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
             {curated.map((e, i) => {
               const a = endXY(e.source, nodeMap), b = endXY(e.target, nodeMap);
               if (!a || !b) return null;
-              const active = !neighbors || (neighbors.has(a.id) && neighbors.has(b.id));
+              const active = inFocus(a.id) && inFocus(b.id);
               return (
-                <g key={`cu${i}`} opacity={active ? 1 : 0.1}>
+                <g key={`cu${i}`} opacity={active ? 1 : 0.1} style={{ transition: "opacity .3s ease" }}>
                   <path d={edgePath(a, b, nodeR(b))} fill="none" stroke="#9aa0a6" strokeWidth={1.5} markerEnd="url(#arrow)" />
                   {e.label && showEdgeLabel && (
                     <text className="edge-label" x={((a.x ?? 0) + (b.x ?? 0)) / 2} y={((a.y ?? 0) + (b.y ?? 0)) / 2 - 3} textAnchor="middle">
@@ -360,12 +485,13 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
             {simNodes.map((n) => {
               const r = nodeR(n);
               const isSel = selected === n.id;
+              const pulsing = selected != null && activeIds.has(n.id);
               return (
                 <g
                   key={n.id}
                   transform={`translate(${n.x ?? 0} ${n.y ?? 0})`}
                   opacity={dim(n.id) ? 0.16 : 1}
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", transition: "opacity .25s ease" }}
                   onPointerDown={(e) => onPointerDownNode(e, n)}
                   onPointerEnter={() => setHovered(n.id)}
                   onPointerLeave={() => setHovered((h) => (h === n.id ? null : h))}
@@ -376,6 +502,8 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
                 >
                   {/* タップしやすい不可視の当たり判定 */}
                   <circle r={Math.max(r * 1.8, 28)} fill="transparent" />
+                  {/* 発光が伝わってきた瞬間のパルス（一度だけ再生） */}
+                  {pulsing && <circle className="node-pulse" r={r} fill="none" stroke={n.color} strokeWidth={2.2} />}
                   <circle r={r * 1.7} fill={n.color} opacity={0.16} />
                   {isSel && <circle r={r + 6} fill="none" stroke={n.color} strokeWidth={2} opacity={0.55} />}
                   <circle r={r} fill={n.color} stroke="#fff" strokeWidth={1.6} />
@@ -400,7 +528,7 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
           <button onClick={() => zoomButton(1 / 1.25)} aria-label="縮小">
             <Minus size={16} />
           </button>
-          <button onClick={() => setView({ k: 1, tx: 0, ty: 0 })} aria-label="全体表示">
+          <button onClick={resetView} aria-label="全体表示">
             <Scan size={16} />
           </button>
         </div>
