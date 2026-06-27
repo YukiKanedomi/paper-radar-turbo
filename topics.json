@@ -6,11 +6,14 @@
       "key": "turbo",
       "label": "流体・ターボ機械",
       "keywords": [
-        "centrifugal compressor aerodynamics", "axial compressor", "turbine aerodynamics",
-        "impeller CFD", "blade flutter aeroelasticity", "surge rotating stall",
-        "tip clearance flow loss", "supercritical CO2 turbomachinery", "turbomachinery loss mechanisms"
+        "centrifugal compressor aerodynamics", "axial compressor aerodynamics", "turbine aerodynamics",
+        "surge rotating stall", "rotating stall inception spike", "secondary flow endwall turbomachinery",
+        "tip leakage vortex loss", "tip clearance flow loss", "turbomachinery loss mechanisms",
+        "shock boundary layer interaction compressor", "wake mixing unsteady turbomachinery",
+        "boundary layer transition turbine blade", "corner separation compressor", "blade flutter aeroelasticity",
+        "supercritical CO2 turbomachinery"
       ]
     }
   ],
-  "note": "妻が使うアプリ。検索ワードはチャットで調整。アプリUIでは変更しない。配信2件/トピック。"
+  "note": "妻が使うアプリ。主役は流体・流れ現象（失速/サージ/二次流れ/チップ漏れ/損失/衝撃波等）。ML・数値手法は脇役。検索ワードはチャットで調整、アプリUIでは変更しない。配信2件/トピック・必ず1件OA全文。"
 }

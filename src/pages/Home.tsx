@@ -76,7 +76,17 @@ function HomeView({ data }: { data: PapersData }) {
             </p>
           ) : (
             topicKeys
-              .map((k) => ({ k, items: todays.filter((p) => p.topic === k) }))
+              .map((k) => ({
+                k,
+                // 定番（classic）を先、最新（latest）を後（モック準拠）
+                items: todays
+                  .filter((p) => p.topic === k)
+                  .sort(
+                    (a, b) =>
+                      (a.stream === "classic" ? 0 : 1) -
+                      (b.stream === "classic" ? 0 : 1),
+                  ),
+              }))
               .filter((g) => g.items.length > 0)
               .map((g) => (
                 <div key={g.k}>
