@@ -1,10 +1,14 @@
-import { useMemo, useState } from "react";
+import { lazy, Suspense, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import "@/styles/editorial.css";
 import { usePapers } from "@/lib/data";
 import { buildGlossary } from "@/lib/glossary";
+import { buildGraph } from "@/lib/graph-build";
 import { paperHref } from "@/lib/paper";
 import type { PapersData } from "@/types";
+
+// 関係グラフ（d3-force）は重いのでタブを開いた時だけ読み込む
+const GraphView = lazy(() => import("@/components/GraphView"));
 
 export default function Glossary() {
   const state = usePapers();
@@ -21,6 +25,8 @@ export default function Glossary() {
 
 function GlossaryView({ data }: { data: PapersData }) {
   const entries = useMemo(() => buildGlossary(data), [data]);
+  const graph = useMemo(() => buildGraph(entries, data), [entries, data]);
+  const [tab, setTab] = useState<"list" | "graph">("list");
   const [q, setQ] = useState("");
   const ql = q.trim().toLowerCase();
   const list = entries.filter(
@@ -43,14 +49,39 @@ function GlossaryView({ data }: { data: PapersData }) {
           これまでに収集した全論文の用語を横断でまとめています。複数の論文に登場する語は上に。
         </div>
 
-        <input
-          className="search"
-          placeholder="用語・定義で検索"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-        />
+        <div className="gtabs">
+          <button
+            className={`gtab${tab === "list" ? " on" : ""}`}
+            onClick={() => setTab("list")}
+          >
+            一覧
+          </button>
+          <button
+            className={`gtab${tab === "graph" ? " on" : ""}`}
+            onClick={() => setTab("graph")}
+          >
+            関係マップ
+          </button>
+        </div>
 
-        {list.length === 0 ? (
+        {tab === "graph" ? (
+          <Suspense fallback={<div className="empty">関係マップを読み込み中…</div>}>
+            <GraphView
+              nodes={graph.nodes}
+              curated={graph.curated}
+              co={graph.co}
+              categories={graph.categories}
+            />
+          </Suspense>
+        ) : (
+          <>
+            <input
+              className="search"
+              placeholder="用語・定義で検索"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+            />
+            {list.length === 0 ? (
           <div className="empty">該当なし</div>
         ) : (
           <div className="glist">
@@ -72,7 +103,9 @@ function GlossaryView({ data }: { data: PapersData }) {
                 </div>
               </div>
             ))}
-          </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

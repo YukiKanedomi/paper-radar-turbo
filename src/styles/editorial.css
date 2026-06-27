@@ -347,6 +347,114 @@
   border-color: var(--accent);
   color: var(--accent);
 }
+.glossary-page .gtabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.glossary-page .gtab {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mut);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+}
+.glossary-page .gtab.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* 関係グラフ */
+.graph {
+  position: relative;
+}
+.graph-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 12px;
+  color: var(--mut);
+  margin-bottom: 8px;
+}
+.graph-legend .lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.graph-legend .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.graph-legend .toggle {
+  cursor: pointer;
+  gap: 5px;
+}
+.graph-svg {
+  width: 100%;
+  height: 60vh;
+  min-height: 380px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  touch-action: none;
+  display: block;
+}
+.graph-svg text {
+  font-family: "Yu Gothic UI", sans-serif;
+}
+.graph-hint {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11.5px;
+  color: var(--mut);
+  text-align: center;
+  margin-top: 8px;
+}
+.graph-panel {
+  position: sticky;
+  bottom: 12px;
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(29, 33, 39, 0.08);
+  padding: 14px 16px;
+}
+.graph-panel .gp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.graph-panel .gp-term {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent-d);
+}
+.graph-panel .gp-head button {
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--mut);
+  cursor: pointer;
+}
+.graph-panel .gp-def {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 6px 0 9px;
+}
+.graph-panel .gp-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
 
 /* ====================== DETAIL ====================== */
 .detail-page {
