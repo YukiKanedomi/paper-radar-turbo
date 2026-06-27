@@ -4,7 +4,13 @@ import { Star } from "lucide-react";
 import "@/styles/editorial.css";
 import { usePapers } from "@/lib/data";
 import type { Paper, PapersData } from "@/types";
-import { paperHref, streamLabel, shortMeta } from "@/lib/paper";
+import {
+  paperHref,
+  streamLabel,
+  shortMeta,
+  displayTitle,
+  originalTitle,
+} from "@/lib/paper";
 import { useFavorites, useRead } from "@/lib/prefs";
 
 export default function Home() {
@@ -27,12 +33,12 @@ function HomeView({ data }: { data: PapersData }) {
   const topicKeys = Object.keys(meta.topics);
   const multiTopic = topicKeys.length > 1;
 
-  // 「今日の配信」＝最新 dateAdded の号
-  const latestDate = useMemo(
-    () => papers.reduce((m, p) => (p.dateAdded > m ? p.dateAdded : m), ""),
-    [papers],
-  );
-  const todays = papers.filter((p) => p.dateAdded === latestDate);
+  // 「今日の配信」＝最新の配信号（meta.currentIssue）。無ければ最新 issue にフォールバック
+  const latestIssue = useMemo(() => {
+    if (meta.currentIssue) return meta.currentIssue;
+    return papers.reduce((m, p) => (p.issue && p.issue > m ? p.issue : m), "");
+  }, [meta.currentIssue, papers]);
+  const todays = papers.filter((p) => p.issue && p.issue === latestIssue);
 
   const { isRead } = useRead();
   const { isFav } = useFavorites();
@@ -44,7 +50,7 @@ function HomeView({ data }: { data: PapersData }) {
   const ql = q.trim().toLowerCase();
   const archive = papers.filter((p) => {
     const okTopic = flt === "all" || p.topic === flt;
-    const hay = `${p.title} ${p.authors} ${p.venue}`.toLowerCase();
+    const hay = `${p.titleJa ?? ""} ${p.title} ${p.authors} ${p.venue}`.toLowerCase();
     const okQ = !ql || hay.includes(ql);
     const okFav = !favOnly || isFav(p.id);
     return okTopic && okQ && okFav;
@@ -61,7 +67,7 @@ function HomeView({ data }: { data: PapersData }) {
         <div className="sec">今日の配信</div>
         <div className="today">
           <div className="date">
-            {latestDate} 号 — 各トピック {todays.length} 件
+            {latestIssue} 号 — 各トピック {todays.length} 件
           </div>
           <h2>本日のピックアップ</h2>
           {todays.length === 0 ? (
@@ -135,7 +141,8 @@ function HomeView({ data }: { data: PapersData }) {
                   )}
                   {isRead(p.id) && <span className="read-tag">既読</span>}
                 </div>
-                <div className="ct">{p.title}</div>
+                <div className="ct">{displayTitle(p)}</div>
+                {originalTitle(p) && <div className="ct-orig">{originalTitle(p)}</div>}
                 <div className="cm">
                   {[shortMeta(p), streamLabel(p.stream)].filter(Boolean).join(" · ")}
                 </div>
@@ -152,7 +159,8 @@ function DeliveryRow({ p, read, fav }: { p: Paper; read: boolean; fav: boolean }
   const chipClass = p.stream === "classic" ? "c-def" : "c-new";
   return (
     <Link className={`pl${read ? " read" : ""}`} to={paperHref(p.id)}>
-      <div className="pt">{p.title}</div>
+      <div className="pt">{displayTitle(p)}</div>
+      {originalTitle(p) && <div className="pt-orig">{originalTitle(p)}</div>}
       <div className="pm">
         <span className={`chip2 ${chipClass}`}>{streamLabel(p.stream)}</span>
         <span className="chip2 c-oa">{p.oa ? "OA" : "抄録"}</span>

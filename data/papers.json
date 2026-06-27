@@ -2,19 +2,33 @@
   "meta": {
     "app": "paper-radar-turbo",
     "title": "論文レーダー（流体・ターボ機械）",
-    "topics": { "turbo": "流体・ターボ機械" },
-    "levelLabels": { "easy": "やさしい", "std": "標準", "expert": "専門" },
+    "topics": {
+      "turbo": "流体・ターボ機械"
+    },
+    "levelLabels": {
+      "easy": "やさしい",
+      "std": "標準",
+      "expert": "専門"
+    },
     "lastUpdated": "2026-06-27",
+    "currentIssue": "2026-06-27",
     "note": "種データ。実在の定番論文のみ。要約は出典に忠実な高水準記述。具体値は本実装の/collectで検証。seed:true は要検証・拡張の印。"
   },
   "papers": [
     {
       "id": "doi:10.1115/1.3446164",
-      "topic": "turbo", "stream": "classic", "source": "openalex", "oa": false,
+      "topic": "turbo",
+      "stream": "classic",
+      "source": "openalex",
+      "oa": false,
       "title": "Surge and Rotating Stall in Axial Flow Compressors",
+      "titleJa": "軸流圧縮機におけるサージと回転失速",
       "authors": "E. M. Greitzer",
-      "year": 1976, "venue": "ASME Journal of Engineering for Power",
-      "doi": "", "url": "", "pdfUrl": "",
+      "year": 1976,
+      "venue": "ASME Journal of Engineering for Power",
+      "doi": "",
+      "url": "",
+      "pdfUrl": "",
       "citationNote": "定番（圧縮機不安定の古典）",
       "levels": {
         "easy": {
@@ -42,26 +56,177 @@
       "equations": [],
       "figures": [],
       "numbers": [
-        { "v": "B パラメータ", "l": "サージ/失速を支配" }
+        {
+          "v": "B パラメータ",
+          "l": "サージ/失速を支配"
+        }
       ],
       "terms": [
-        { "term": "サージ", "def": "圧縮機全体で流量が大きく脈動する不安定。最悪は逆流を伴い危険。" },
-        { "term": "回転失速", "def": "翼列の一部で失速した領域が周方向に回りながら持続する現象。" },
-        { "term": "B パラメータ", "def": "圧縮系の慣性と容積（プレナム）効果の比を表す無次元数。挙動の分かれ目。" }
+        {
+          "term": "サージ",
+          "def": "圧縮機全体で流量が大きく脈動する不安定。最悪は逆流を伴い危険。"
+        },
+        {
+          "term": "回転失速",
+          "def": "翼列の一部で失速した領域が周方向に回りながら持続する現象。"
+        },
+        {
+          "term": "B パラメータ",
+          "def": "圧縮系の慣性と容積（プレナム）効果の比を表す無次元数。挙動の分かれ目。"
+        }
       ],
       "trivia": [
-        { "label": "影響", "text": "B パラメータの考え方は、その後の圧縮機サージ予測やサージ能動制御の研究に広く使われている。" }
+        {
+          "label": "影響",
+          "text": "B パラメータの考え方は、その後の圧縮機サージ予測やサージ能動制御の研究に広く使われている。"
+        }
       ],
       "related": [],
-      "dateAdded": "2026-06-27", "status": "unread", "seed": true
+      "dateAdded": "2026-06-27",
+      "issue": "2026-06-27",
+      "status": "unread",
+      "seed": true
+    },
+    {
+      "id": "arxiv:2503.14369",
+      "topic": "turbo",
+      "stream": "latest",
+      "source": "arxiv",
+      "oa": true,
+      "title": "C(NN)FD -- Deep Learning Modelling of Multi-Stage Axial Compressors Aerodynamics",
+      "titleJa": "C(NN)FD：多段軸流圧縮機の空力の深層学習モデリング",
+      "authors": "Giuseppe Bruni, Sepehr Maleki, Senthil K. Krishnababu",
+      "year": 2025,
+      "venue": "arXiv (preprint)",
+      "doi": "10.48550/arXiv.2503.14369",
+      "url": "https://arxiv.org/abs/2503.14369",
+      "pdfUrl": "https://arxiv.org/pdf/2503.14369",
+      "citationNote": "最新（プレプリント・2025）",
+      "levels": {
+        "easy": {
+          "tldr": "多段の軸流圧縮機（ガスタービンで空気を段階的に押し縮める部分）の流れと性能を、時間のかかる数値計算（CFD）の代わりに深層学習（サロゲートモデル）で素早く予測する枠組み。物理の知識を組み込み、何が効いているかを段階的に説明でき、予測の不確かさも見積もれる。",
+          "problem": "圧縮機の流れは三次元で乱れていて複雑。ふつうの数値計算（CFD）は重く、設計の試行錯誤に時間がかかる。機械学習で速くしたいが、これまでは産業で使えるほどの信頼性・拡張性がなかった。",
+          "method": "物理に基づいて流れ場のデータを整った形に並べ替え（次元削減）、畳み込みニューラルネット（CNN／流れ場を画像のように扱う）で学習。物理の式を使った損失でそれらしさを担保し、予測を繰り返して精度と不確かさを高める。製造ばらつき・形状・運転条件の違うデータで訓練した。",
+          "result": "流れ場と全体性能を、CFD に匹敵する精度で予測できた。0D/1D/2D/3D の各レベルで何が効いているかを説明でき、別の圧縮機設計にも転移学習で対応した。",
+          "limit": "プレプリント（査読前）。あくまで学習データの範囲での再現で、訓練から大きく外れる設計や条件への外挿は今後の課題。"
+        },
+        "std": {
+          "tldr": "多段軸流圧縮機の流れ場と空力性能を予測する汎用的な深層学習フレームワーク C(NN)FD。物理ベースの次元削減で大規模領域の回帰を構造化問題に再定式化し、物理損失・反復アーキテクチャ・不確かさ推定を組み合わせ、CFD 級の精度と説明性を両立させる。",
+          "problem": "多段軸流圧縮機の三次元乱流場は高次元・高計算コストで、科学機械学習をターボ機械の産業応用に乗せるには信頼性と拡張性が不足していた。",
+          "method": "物理に基づく次元削減で流れ場回帰を非構造から構造化へ再定式化し、CNN（畳み込みニューラルネット）で学習。物理方程式に基づく多次元損失関数を定義し、反復ネットワークで精度向上と不確かさ推定を行う。製造・組立ばらつき、異なる形状・設計・運転条件を含むデータで訓練した。",
+          "result": "流れ場と全体性能をベンチマーク（CFD）に匹敵する精度で汎化的に予測。0D/1D/2D/3D レベルで空力の駆動要因を同定でき（説明可能）、異なる圧縮機設計へ転移学習で展開した。",
+          "limit": "プレプリント段階。予測は学習データ分布の再現であり、分布外の設計・条件への外挿や厳密な物理保証は引き続き課題。"
+        },
+        "expert": {
+          "tldr": "多段軸流圧縮機空力の流れ場・性能を予測する汎化的深層学習枠組み C(NN)FD。物理ベース次元削減により大規模 CFD 領域の回帰を非構造から構造化問題へ再定式化し、多次元物理損失・反復アーキテクチャ・不確かさ推定を統合。0D/1D/2D/3D の物理的説明性を保ちつつ、ベンチマーク CFD に匹敵する精度と転移学習による汎化を実証した。",
+          "problem": "幾何・運転変数から三次元流れ場への回帰は高次元かつ大規模 CFD 領域ゆえ高コストで、科学機械学習をターボ機械の産業応用に資する堅牢性・拡張性で実現する枠組みが欠けていた。",
+          "method": "物理ベースの次元削減で流れ場を構造化表現へ写像し、畳み込みネットワーク（CNN）で回帰。支配方程式に基づく多次元物理損失関数を定義し、反復ネットワークで予測精度の向上と各レベルの不確かさ推定を同時に達成。製造・組立ばらつきや複数の形状・設計・運転条件を含むデータセットで訓練し、転移学習で別設計へ展開した。",
+          "result": "流れ場と全体性能をベンチマーク CFD に匹敵する精度で予測。0D/1D/2D/3D の各次元で空力駆動因子を同定する物理的説明性を提供し、不確かさの定量化と異設計への転移学習による汎化能力を示した。",
+          "limit": "プレプリント。性能は学習分布内の再現であり、分布外への外挿、損失の物理整合の厳密性、産業全面適用に向けた検証は今後の課題。"
+        }
+      },
+      "equations": [],
+      "figures": [
+        {
+          "type": "concept",
+          "src": "<svg viewBox=\"0 0 600 180\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"600\" height=\"180\" fill=\"#fff\"/>\n<rect x=\"18\" y=\"58\" width=\"120\" height=\"64\" rx=\"10\" fill=\"none\" stroke=\"#1a5e54\" stroke-width=\"2\"/><text x=\"78\" y=\"86\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#1d2127\" text-anchor=\"middle\">幾何・</text><text x=\"78\" y=\"104\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#1d2127\" text-anchor=\"middle\">運転条件</text>\n<path d=\"M144 90 h44\" stroke=\"#1d2127\" stroke-width=\"1.5\" marker-end=\"url(#ar)\"/>\n<rect x=\"194\" y=\"30\" width=\"212\" height=\"120\" rx=\"12\" fill=\"#1a5e54\" opacity=\".07\"/><rect x=\"194\" y=\"30\" width=\"212\" height=\"120\" rx=\"12\" fill=\"none\" stroke=\"#1a5e54\" stroke-width=\"2\"/>\n<text x=\"300\" y=\"56\" font-family=\"sans-serif\" font-size=\"12.5\" fill=\"#114a42\" text-anchor=\"middle\" font-weight=\"700\">物理ベース次元削減</text>\n<rect x=\"240\" y=\"68\" width=\"120\" height=\"34\" rx=\"8\" fill=\"#fff\" stroke=\"#1a5e54\" stroke-width=\"1.5\"/><text x=\"300\" y=\"90\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#1a5e54\" text-anchor=\"middle\" font-weight=\"700\">CNN</text>\n<text x=\"300\" y=\"128\" font-family=\"sans-serif\" font-size=\"12.5\" fill=\"#114a42\" text-anchor=\"middle\">物理損失 ℒ で学習</text>\n<path d=\"M406 90 h44\" stroke=\"#1d2127\" stroke-width=\"1.5\" marker-end=\"url(#ar)\"/>\n<rect x=\"456\" y=\"50\" width=\"128\" height=\"80\" rx=\"10\" fill=\"none\" stroke=\"#1a5e54\" stroke-width=\"2\"/><text x=\"520\" y=\"78\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#1d2127\" text-anchor=\"middle\">流れ場・性能</text><text x=\"520\" y=\"98\" font-family=\"sans-serif\" font-size=\"11.5\" fill=\"#6c7078\" text-anchor=\"middle\">0D/1D/2D/3D</text>\n<defs><marker id=\"ar\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"#1d2127\"/></marker></defs></svg>",
+          "caption": "概念図：幾何・運転条件 →（物理ベース次元削減＋CNN＋物理損失）→ 流れ場・全体性能を 0D/1D/2D/3D で予測（模式・実データではない）"
+        }
+      ],
+      "numbers": [
+        {
+          "v": "CFD級の精度",
+          "l": "全体性能を近似"
+        },
+        {
+          "v": "0D/1D/2D/3D",
+          "l": "説明可能な予測"
+        },
+        {
+          "v": "不確かさも推定",
+          "l": "予測の信頼度"
+        }
+      ],
+      "terms": [
+        {
+          "term": "CFD",
+          "def": "コンピュータで流れ（空気や水）の動きを数値計算する手法。Computational Fluid Dynamics。重いが精密。"
+        },
+        {
+          "term": "サロゲートモデル",
+          "def": "重い計算（CFDなど）の代わりに結果を素早く近似する『身代わり』モデル。"
+        },
+        {
+          "term": "次元削減",
+          "def": "たくさんの変数を、本質を保ったまま少なく扱いやすい形にまとめること。"
+        },
+        {
+          "term": "CNN",
+          "def": "畳み込みニューラルネット。画像のような格子状データの特徴を捉えるのが得意な深層学習。流れ場を画像のように扱う。"
+        },
+        {
+          "term": "転移学習",
+          "def": "あるデータで学んだモデルを、別の（似た）課題に少ない追加学習で活かす方法。"
+        },
+        {
+          "term": "多段軸流圧縮機",
+          "def": "翼の列を軸方向に何段も重ね、空気を段階的に圧縮する装置。ガスタービンの心臓部の一つ。"
+        },
+        {
+          "term": "不確かさ",
+          "def": "予測がどれだけ当てになるか（信頼度）の幅。大きいほど結果を慎重に見る必要がある。"
+        }
+      ],
+      "trivia": [
+        {
+          "label": "名前の由来",
+          "text": "C(NN)FD は CFD の中に NN（ニューラルネット）を埋め込んだ綴り。CFD を深層学習で置き換えるという本研究の発想がそのまま名前になっている。"
+        },
+        {
+          "label": "なぜ重要か",
+          "text": "多段軸流圧縮機はガスタービン（発電・航空エンジン）の中核。設計やばらつき評価の試行錯誤を高速化できれば、開発効率が大きく上がる。"
+        },
+        {
+          "label": "ばらつきにも対応",
+          "text": "製造・組立のばらつきを含むデータで訓練し、設計変更やオフデザイン条件、別設計への転移学習まで評価している。"
+        }
+      ],
+      "related": [
+        {
+          "tag": "同じ枠組みの前作",
+          "title": "C(NN)FD — a deep learning framework for turbomachinery CFD analysis (2023)",
+          "url": "https://arxiv.org/abs/2306.05889"
+        },
+        {
+          "tag": "対になる定番",
+          "title": "軸流圧縮機におけるサージと回転失速（Greitzer, 1976）",
+          "url": ""
+        }
+      ],
+      "deepDive": [
+        {
+          "title": "さらに深掘り：3つの新規貢献",
+          "body": "(1) 物理ベースの次元削減で、非構造な流れ場回帰を構造化問題に再定式化し、大規模領域を扱えるようにした。(2) 支配方程式に基づく多次元物理損失で、0D/1D/2D/3D の各レベルに物理的に説明可能な予測を与える。(3) 反復アーキテクチャで精度を高めつつ予測の不確かさを推定する。さらに転移学習で別の圧縮機設計へ展開する。"
+        }
+      ],
+      "dateAdded": "2026-06-27",
+      "issue": "2026-06-27",
+      "status": "unread"
     },
     {
       "id": "doi:10.1115/1.2929299",
-      "topic": "turbo", "stream": "classic", "source": "openalex", "oa": false,
+      "topic": "turbo",
+      "stream": "classic",
+      "source": "openalex",
+      "oa": false,
       "title": "Loss Mechanisms in Turbomachines",
+      "titleJa": "ターボ機械における損失メカニズム",
       "authors": "J. D. Denton",
-      "year": 1993, "venue": "ASME Journal of Turbomachinery",
-      "doi": "", "url": "", "pdfUrl": "",
+      "year": 1993,
+      "venue": "ASME Journal of Turbomachinery",
+      "doi": "",
+      "url": "",
+      "pdfUrl": "",
       "citationNote": "定番（損失機構の総説・必読）",
       "levels": {
         "easy": {
@@ -89,18 +254,35 @@
       "equations": [],
       "figures": [],
       "numbers": [
-        { "v": "エントロピー生成", "l": "損失の統一指標" }
+        {
+          "v": "エントロピー生成",
+          "l": "損失の統一指標"
+        }
       ],
       "terms": [
-        { "term": "翼端漏れ流れ", "def": "動翼先端と壁のすき間を抜ける流れ。損失と非定常性の主要因。" },
-        { "term": "端壁（二次流れ）損失", "def": "流路の壁ぎわで生じる渦・横流れによる損失。" },
-        { "term": "エントロピー生成", "def": "流れの不可逆な乱れの増加。損失を一貫して測る指標。" }
+        {
+          "term": "翼端漏れ流れ",
+          "def": "動翼先端と壁のすき間を抜ける流れ。損失と非定常性の主要因。"
+        },
+        {
+          "term": "端壁（二次流れ）損失",
+          "def": "流路の壁ぎわで生じる渦・横流れによる損失。"
+        },
+        {
+          "term": "エントロピー生成",
+          "def": "流れの不可逆な乱れの増加。損失を一貫して測る指標。"
+        }
       ],
       "trivia": [
-        { "label": "位置づけ", "text": "ターボ機械設計で広く参照される総説で、損失を語る際の共通の枠組みを提供したとされる。" }
+        {
+          "label": "位置づけ",
+          "text": "ターボ機械設計で広く参照される総説で、損失を語る際の共通の枠組みを提供したとされる。"
+        }
       ],
       "related": [],
-      "dateAdded": "2026-06-27", "status": "unread", "seed": true
+      "dateAdded": "2026-06-27",
+      "status": "unread",
+      "seed": true
     }
   ]
 }

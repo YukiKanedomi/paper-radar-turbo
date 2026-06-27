@@ -4,3 +4,5 @@ dist/
 *.local
 public/data/
 *.tsbuildinfo
+
+scripts/.collect-candidates.json

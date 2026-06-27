@@ -56,6 +56,7 @@ export interface Paper {
   source: "arxiv" | "openalex" | "semanticscholar";
   oa: boolean;
   title: string;
+  titleJa?: string; // 英語論文の忠実な和訳タイトル（無ければ title をそのまま表示）
   authors: string;
   year: number;
   venue: string;
@@ -63,6 +64,8 @@ export interface Paper {
   url: string;
   pdfUrl: string;
   citationNote: string;
+  citationCount?: number; // OpenAlex cited_by_count（概数・信頼できる時のみ表示。不明なら省略）
+  issue?: string; // 配信号（YYYY-MM-DD）。dateAdded とは別。currentIssue と一致するものが「今日の配信」
   levels: Record<Level, LevelText>;
   equations: Equation[];
   figures: Figure[];
@@ -82,6 +85,7 @@ export interface Meta {
   topics: Record<string, string>;
   levelLabels: Record<Level, string>;
   lastUpdated: string;
+  currentIssue?: string; // 最新の配信号（YYYY-MM-DD）。ホーム「今日の配信」の対象
   note?: string;
 }
 

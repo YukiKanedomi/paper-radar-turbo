@@ -30,9 +30,13 @@
   "stream": "classic" | "latest",
   "source": "arxiv" | "openalex" | "semanticscholar",
   "oa": true,                       // オープンアクセスか（false=抄録ベース）
-  "title": "…", "authors": "…", "year": 1983, "venue": "…",
+  "title": "…",                     // 原題（英語論文はそのまま保持）
+  "titleJa": "…",                   // 英語論文の忠実な和訳タイトル（任意。和訳主・原題副で表示）
+  "authors": "…", "year": 1983, "venue": "…",
   "doi": "", "url": "", "pdfUrl": "",
   "citationNote": "定番（高被引用）",   // 概数 or 定性。不明なら空
+  "citationCount": 900,             // OpenAlex cited_by_count（任意・概数。信頼できる時のみ。不明なら省略）
+  "issue": "2026-06-27",            // 配信号（任意）。currentIssue と一致＝「今日の配信」。dateAdded とは別概念
   "levels": {                        // 説明レベル3段階（slider用）
     "easy":   { "tldr": "…", "problem": "…", "method": "…", "result": "…", "limit": "…" },
     "std":    { "tldr": "…", "problem": "…", "method": "…", "result": "…", "limit": "…" },
@@ -48,11 +52,12 @@
   "seed": true        // 種データの印（本実装の/collectで検証・拡張・置換）
 }
 ```
-`meta` にトピック定義・凡例を持つ。**画面ラベルは meta から引く**。
+`meta` にトピック定義・凡例＋ `currentIssue`（最新配信号）を持つ。**画面ラベルは meta から引く**。
+- **配信号（issue）と追加日（dateAdded）は別**：`dateAdded` はシステムに入れた日、`issue` は編集判断で「今日の配信」に載せた号。ストック（過去に取得したが今日の号には載せない論文）は `issue` を付けない。「今日の配信」は `issue == meta.currentIssue` で判定。
 
 ## 4. 画面
 **ホーム（読む画面・設定なし）**
-- 今日の配信（最新 `dateAdded` の号、各トピック2件、定番/最新/OAバッジ）
+- 今日の配信（最新 `issue`＝`meta.currentIssue` の号、各トピック2件、定番/最新/OA(抄録)バッジ）
 - アーカイブ（検索＋トピックfilter＋カード。QOL方式の蓄積一覧）
 - **設定パネルは置かない**（キーワード/配信数の調整はアプリでは行わない。下記運用参照）
 
@@ -76,8 +81,11 @@
 
 ## 7. 収集・運用（/collect）
 - 各トピック **latest（arXiv/OpenAlex 日付順）＋ classic（OpenAlex/Semantic Scholar 被引用上位）を各1件＝計2件/トピック**。
-- 取得→ **levels 3段階を出典に忠実に生成**（OAは全文、有料は抄録ベースと明記）。`terms`/`trivia`/`equations`/`figures` を埋める（§0厳守）。
-- 重複は `id`/DOI で判定し新規のみ `papers.json` に追記、`dateAdded` 付与 → `git push` で公開更新。
+- **配信に必ず1件は OA（全文）を含める**：2件のうち最低1件は OA 全文（抄録だけだと薄いため深掘り用）。定番が有料なら最新（arXiv等）を OA にする／逆も可。両方 OA でもよい。
+- **英語論文は `titleJa`（忠実な和訳タイトル）を付ける**。意味を変えない。和訳主・原題副で表示される。
+- **被引用は OpenAlex `cited_by_count` を `citationCount` に**（概数として扱い、信頼できる時のみ。不明なら省略）。
+- 取得→ **levels 3段階を出典に忠実に生成**（OAは全文、有料は抄録ベースと明記）。`terms`/`trivia`/`equations`/`figures` を埋める（§0厳守。OA論文は実図＝出典明記、または正しい概念図を1枚入れて深掘り）。
+- 重複は `id`/DOI で判定し新規のみ `papers.json` に追記、`dateAdded`＋`issue` 付与・`meta.currentIssue` 更新 → `git push` で公開更新。今日の号に載せないストックは `issue` を付けない。
 - **検索ワードの調整＝`topics.json` を更新**（アプリUIではなく**チャットで**。私が幅広くなるよう提案・調整、またはユーザー指示で増減）。配信数は2件/トピック固定。
 
 ## 8. マイルストーン（新プロジェクトでの順序）

@@ -4,7 +4,14 @@ import { Star } from "lucide-react";
 import "@/styles/editorial.css";
 import { usePapers } from "@/lib/data";
 import type { Level, Paper, Term } from "@/types";
-import { streamLabel, oaLabel, sourceUrl } from "@/lib/paper";
+import {
+  streamLabel,
+  oaLabel,
+  sourceUrl,
+  displayTitle,
+  originalTitle,
+  citationText,
+} from "@/lib/paper";
 import { useFavorites, useRead } from "@/lib/prefs";
 
 // KaTeX は重い。式を持つ論文を開いた時だけ読み込む（種データは式ゼロ＝休眠）。
@@ -172,11 +179,13 @@ function DetailView({
         <div className="kick">
           {streamLabel(p.stream)}論文 — {topicLabel}
         </div>
-        <h1>{p.title}</h1>
+        <h1>{displayTitle(p)}</h1>
+        {originalTitle(p) && <div className="h1-orig">{originalTitle(p)}</div>}
         <div className="meta">
           <b>{p.authors}</b>
           {p.venue ? ` · ${p.venue}` : ""}
           {p.year ? ` · ${p.year}` : ""}
+          {citationText(p) ? ` · ${citationText(p)}` : ""}
           {p.doi ? ` · DOI:${p.doi}` : ""}
         </div>
         <div className="badges">
