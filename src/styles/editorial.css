@@ -221,6 +221,133 @@
   grid-column: 1 / -1;
 }
 
+.home-page .homenav {
+  margin-top: 12px;
+}
+.home-page .homenav a {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+/* ====================== GLOSSARY ====================== */
+.glossary-page {
+  animation: pr-fade 0.4s ease both;
+}
+.glossary-page .wrap {
+  padding: 30px 24px 90px;
+}
+.glossary-page .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 13px;
+  margin-bottom: 22px;
+  color: var(--mut);
+}
+.glossary-page .top a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+.glossary-page .kick {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.glossary-page h1 {
+  font-size: 33px;
+  line-height: 1.3;
+  margin: 10px 0 8px;
+}
+.glossary-page .tag {
+  font-size: 15px;
+  color: var(--mut);
+  margin-bottom: 18px;
+}
+.glossary-page .search {
+  width: 100%;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 15px;
+  padding: 11px 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 16px;
+}
+.glossary-page .empty {
+  font-family: "Yu Gothic UI", sans-serif;
+  color: var(--mut);
+  text-align: center;
+  padding: 40px;
+}
+.glossary-page .glist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.glossary-page .gentry {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px 17px;
+}
+.glossary-page .gterm {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent-d);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.glossary-page .gcross {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.glossary-page .gdef {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 6px 0 9px;
+}
+.glossary-page .grefs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.glossary-page .gref {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11.5px;
+  color: var(--mut);
+  text-decoration: none;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.glossary-page .gref:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ====================== DETAIL ====================== */
 .detail-page {
   line-height: 1.86;

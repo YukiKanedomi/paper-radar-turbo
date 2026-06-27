@@ -62,6 +62,9 @@ function HomeView({ data }: { data: PapersData }) {
         <div className="brand">Paper Radar</div>
         <h1>論文レーダー</h1>
         <div className="tag">気になる論文を、やさしく・きれいに届ける</div>
+        <div className="homenav">
+          <Link to="/glossary">用語集を見る →</Link>
+        </div>
 
         {/* 今日の配信 */}
         <div className="sec">今日の配信</div>
