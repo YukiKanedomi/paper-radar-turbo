@@ -43,7 +43,7 @@
     "expert": { "tldr": "…", "problem": "…", "method": "…", "result": "…", "limit": "…" }
   },
   "equations": [ { "tex": "…", "caption": "…（原文 式N）" } ],
-  "figures":  [ { "type":"original|concept", "src":"", "caption":"…（conceptは『模式・実データではない』と明記）" } ],
+  "figures":  [ { "type":"original|concept", "src":"", "caption":"…（conceptは『模式・実データではない』と明記）", "credit":"出典・ライセンス（originalは必須）", "creditUrl":"" } ],
   "numbers":  [ { "v": "↑ 負荷容量", "l": "剛体比で向上" } ],
   "terms":    [ { "term": "コンプライアンス", "def": "やさしい定義" } ],
   "trivia":   [ { "label": "由来", "text": "…" } ],
@@ -84,7 +84,8 @@
 - **配信に必ず1件は OA（全文）を含める**：2件のうち最低1件は OA 全文（抄録だけだと薄いため深掘り用）。定番が有料なら最新（arXiv等）を OA にする／逆も可。両方 OA でもよい。
 - **英語論文は `titleJa`（忠実な和訳タイトル）を付ける**。意味を変えない。和訳主・原題副で表示される。
 - **被引用は OpenAlex `cited_by_count` を `citationCount` に**（概数として扱い、信頼できる時のみ。不明なら省略）。
-- 取得→ **levels 3段階を出典に忠実に生成**（OAは全文、有料は抄録ベースと明記）。`terms`/`trivia`/`equations`/`figures` を埋める（§0厳守。OA論文は実図＝出典明記、または正しい概念図を1枚入れて深掘り）。
+- 取得→ **levels 3段階を出典に忠実に生成**（OAは全文、有料は抄録ベースと明記）。`terms`/`trivia`/`equations`/`figures` を埋める（§0厳守）。
+- **実図のライセンス規則（重要）**：論文の実図(`type:"original"`)を載せてよいのは **CC-BY/CC0/パブリックドメイン**（gold OA・政府技報等）の時だけ。`credit`（出典・ライセンス）と `creditUrl` を必ず付ける。**出版社"free-to-read"(bronze) や arXiv標準ライセンスの図は再配布不可＝転載しない**。その場合は**正しい概念図（`type:"concept"`・『模式』明記）**のみとし、原図は原文リンクで参照。**外部の無関係なストック写真は使わない**（誤解防止）。
 - 重複は `id`/DOI で判定し新規のみ `papers.json` に追記、`dateAdded`＋`issue` 付与・`meta.currentIssue` 更新 → `git push` で公開更新。今日の号に載せないストックは `issue` を付けない。
 - **検索ワードの調整＝`topics.json` を更新**（アプリUIではなく**チャットで**。私が幅広くなるよう提案・調整、またはユーザー指示で増減）。配信数は2件/トピック固定。
 

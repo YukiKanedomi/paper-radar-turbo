@@ -232,9 +232,10 @@ function DetailView({
           </Suspense>
         )}
 
-        {/* 図（出典の figures がある時だけ。conceptは『模式』とキャプション明記前提） */}
+        {/* 図（出典の figures がある時だけ。conceptは『模式』とキャプション明記前提）。
+            実図(original)は CC/PD ライセンスのみ・credit 必須（§0/§7） */}
         {p.figures.map((fig, idx) => (
-          <Figure key={`fig-${idx}`} src={fig.src} caption={fig.caption} />
+          <Figure key={`fig-${idx}`} fig={fig} />
         ))}
 
         {p.numbers.length > 0 && (
@@ -329,16 +330,30 @@ function DetailView({
   );
 }
 
-function Figure({ src, caption }: { src: string; caption: string }) {
-  const isSvg = src.trim().startsWith("<svg");
+function Figure({ fig }: { fig: import("@/types").Figure }) {
+  const src = fig.src.trim();
+  const isSvg = src.startsWith("<svg");
+  // ローカル public 配下は BASE_URL 起点、http(s) はそのまま
+  const imgSrc = /^https?:\/\//.test(src) ? src : `${import.meta.env.BASE_URL}${src}`;
   return (
     <div className="fig">
       {isSvg ? (
         <div dangerouslySetInnerHTML={{ __html: src }} />
       ) : (
-        <img src={src} alt={caption} />
+        <img src={imgSrc} alt={fig.caption} loading="lazy" />
       )}
-      <div className="cap">{caption}</div>
+      <div className="cap">{fig.caption}</div>
+      {fig.credit && (
+        <div className="credit">
+          {fig.creditUrl ? (
+            <a href={fig.creditUrl} target="_blank" rel="noreferrer">
+              {fig.credit}
+            </a>
+          ) : (
+            fig.credit
+          )}
+        </div>
+      )}
     </div>
   );
 }

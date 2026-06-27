@@ -410,6 +410,17 @@
   margin-top: 9px;
   text-align: center;
 }
+.detail-page .fig .credit {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11px;
+  color: var(--mut);
+  margin-top: 4px;
+  text-align: center;
+}
+.detail-page .fig .credit a {
+  color: var(--accent);
+  text-decoration: none;
+}
 .detail-page .nums {
   display: flex;
   gap: 13px;

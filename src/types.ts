@@ -18,8 +18,11 @@ export interface Equation {
 
 export interface Figure {
   type: "original" | "concept";
-  src: string;
+  src: string; // インラインSVG文字列 / http(s)URL / BASE_URL相対パス（public配下）
   caption: string;
+  // 実図（original）は再利用可能ライセンス（CC-BY/CC0/PD）の時のみ。出典・ライセンスを必ず明記。
+  credit?: string; // 例: "出典: 著者ら, J. Foo 2020（CC BY 4.0）"
+  creditUrl?: string;
 }
 
 export interface NumberCard {
