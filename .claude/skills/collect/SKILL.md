@@ -1,0 +1,37 @@
+---
+name: collect
+description: 論文レーダー(turbo)の配信を1号ぶん収集・作り込みして公開する。arXiv＋OpenAlexで候補取得→流体主役で選定(定番＋最新OA)→出典に忠実に要約/用語/図を作成→§0忠実性チェック→data/papers.jsonに追記→build/render-check→push。「論文を収集」「新しい配信を追加」「/collect」で使う。
+---
+
+# /collect — 論文レーダー(turbo) 配信の収集・作り込み
+
+このプロジェクトの定点運用。**1回で1配信号**（perTopic=2・**必ず1件はOA全文**）を、CLAUDE.md（特に §0「嘘をつかない」・§7）に従って収集・作り込み・公開する。
+
+## 大原則（CLAUDE.md §0 を厳守）
+- 要約・図・数値は**出典に忠実**。捏造しない。原文に無いことを足さない。
+- 全文が取れない論文は**「抄録ベース」と明記**。被引用は**概数**、不明/出典間で乖離するなら**出さない**。
+- 図は**実図（CC-BY/CC0/PDのみ・出典明記）か、正しい概念図（『模式・実データではない』明記）**だけ。bronze/arXiv標準ライセンスの図は転載しない。無関係なストック写真も使わない。
+- **収集の主役は流体・流れ現象**（失速/サージ/二次流れ/チップ漏れ/損失/衝撃波）。ML・数値手法は脇役（主役にしない）。
+
+## 手順
+1. **候補取得**：`node scripts/collect.mjs --topic turbo`
+   - arXiv（最新・全文OA）＋ OpenAlex（被引用上位・OA判定・cited_by_count）。`scripts/.collect-candidates.json` に出力。
+   - 必要なら CC-BY 実図用に、OpenAlex を `filter=best_oa_location.license:cc-by` で別途検索（実図を載せたい号のとき）。
+2. **選定**（流体主役）：定番(classic)＋最新(latest)の2件。**最低1件はOA全文**。実図を出したい号は **CC-BY/CC0/PD** を優先。ML/手法論文は主役にしない。
+3. **チェックポイント**：候補と推し1本を**ユーザーに提示して確認**（§0 要約前の確認）。AskUserQuestion で。
+4. **全文取得**：OAは本文を取得（arXiv HTML/PDF、CC-BYは出版社PDF）。取得可否は Unpaywall / Semantic Scholar の openAccessPdf で確認。gated(403/404)なら無理に取らず**抄録ベース**に切替。
+   - 実図：`PyMuPDF`(fitz)/`pdftotext` でPDFから図を抽出・`PIL`で最適化し `public/img/` に保存。**著者自身のCC/PD図のみ**（キャプションに第三者転載の記載がない図）。`figures[].credit/creditUrl` を必ず付与。
+5. **作り込み**（出典に忠実に）：
+   - `titleJa`（和訳主・原題副）、`levels`3段階（OA=全文/有料=抄録ベース明記）、`terms`、`trivia`/`deepDive`（任意で `level` タグ＝レベルで増減）、`numbers`、`equations`（**KaTeX・実在の式のみ。式番号を詐称しない**。無ければ空）、`figures`（概念図は『模式』明記／実図はcredit付き）、`citationCount`（信頼できる単一値のみ、乖離時は省略）、`related`、`doi/url/pdfUrl`、`dateAdded`、`issue=今日`。
+6. **§0 忠実性チェック**：各論文の要約ドラフトを、サブエージェント `faithfulness-check`（下記）に渡し、出典で裏取りできない記述・数値・固有名を検出→**修正**。複数候補があれば並列で吟味も可。
+7. **追記・号の更新**：`data/papers.json` に重複(`id`/DOI)を避けて追記。`meta.currentIssue=今日`、今日の号に載せる論文に `issue`、前号をストックに回すものは `issue` を削除。
+8. **用語マップ更新（任意）**：新語が増えたら `src/lib/glossary-graph.ts` の分類・関係に追記（自動共起は自動）。
+9. **公開**：`npm run build` → render-check（モバイル/PC両幅を目視・式や図の表示確認）→ commit → `git push`（GitHub Actions が自動デプロイ）。ライブURL `https://yukikanedomi.github.io/paper-radar-turbo/` を確認。
+
+## サブエージェント活用
+- **候補吟味の並列化**：1論文1エージェントで「流体主役か／ライセンス（実図可否）／OA全文か／関連性」を構造化判定。
+- **`faithfulness-check`**：要約と出典の突き合わせ（§0の機械的担保）。
+
+## 配置・参照
+- 検索ワードの調整は `topics.json`（アプリUIではなくチャットで）。流体現象側に寄せる。
+- データモデル・画面・運用の詳細は repo の `CLAUDE.md` を参照。
