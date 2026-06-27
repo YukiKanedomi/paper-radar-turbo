@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "sync-data": "node scripts/sync-data.mjs",
+    "validate": "node scripts/validate-papers.mjs",
     "predev": "node scripts/sync-data.mjs",
     "dev": "vite",
-    "prebuild": "node scripts/sync-data.mjs",
+    "prebuild": "node scripts/validate-papers.mjs && node scripts/sync-data.mjs",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

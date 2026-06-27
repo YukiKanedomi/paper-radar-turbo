@@ -13,7 +13,7 @@
 3. OAは全文取得して出典に忠実に作り込み：titleJa（和訳主・原題副）、levels3段階、terms、trivia/deepDive は {easy,std,expert} のレベル別文章、numbers、equations は実在の式のみ(KaTeX, 式番号詐称しない)、figures は規則順守、citationCount は信頼できる単一値のみ。OA全文が取れた号は読み応えを上積み：quotes（原文の逐語引用＋忠実和訳＋出典箇所。逐語を保証できない崩れたOCRでは引用しない）、sections（章立てウォークスルー＝節ごと忠実要約・body は {easy,std,expert} のレベル別）、実図に figures[].note（図解説）。実図は CC-BY/CC0/PD のみ credit 付き。
 4. 各論文の要約を faithfulness-check サブエージェント（Agent tool, subagent_type="faithfulness-check"。このエージェントは model: opus 固定＝§0の最終チェックだけ Opus）で検証。needs_fix なら1回だけ修正→再検証。それでも needs_fix か high severity が残る論文は公開しない（保留）。
 5. 検証を通った論文だけ data/papers.json に追記し、issue=今日・meta.currentIssue 更新。前号の該当論文は issue を外す。新語が増えたら src/lib/glossary-graph.ts に分類1〜2件＋意味エッジ数本（任意・未分類でも自動共起で繋がる）。
-6. npm run build が成功することを必須条件に（失敗したら公開しない）。
+6. 配信品質ルーブリック検証：node scripts/validate-papers.mjs を実行し ERROR ゼロを確認（ERROR が出たら不足を埋めるか該当論文を保留＝公開しない。WARN は深さの助言で、逐語不可のスキャン等の正当な例外は許容）。続けて npm run build が成功することを必須条件に（prebuild で検証も自動実行。失敗したら公開しない）。
 7. 通った内容だけ git add/commit して main へ push（GitHub Actions が自動デプロイ）。コミットメッセージ末尾に『Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>』。
 8. OA全文1件を満たせない／2件とも保留の日は、無理に公開せずスキップ（前号のまま）。歪な配信より『出さない』を選ぶ。
 9. 最後に、公開した論文・保留/スキップ理由を簡潔に報告。
