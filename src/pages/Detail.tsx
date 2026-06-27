@@ -80,6 +80,9 @@ function DetailView({
   // 豆知識・深掘りは「数」でなく「文章」を説明レベルで変える（resolveLeveled）
   const trivia = p.trivia;
   const deepDive = p.deepDive ?? [];
+  // OA全文の号の上積み（出典に忠実な時だけデータが入る）
+  const quotes = p.quotes ?? [];
+  const sections = p.sections ?? [];
 
   const { markRead } = useRead();
   const { isFav, toggleFav } = useFavorites();
@@ -243,6 +246,20 @@ function DetailView({
           <Figure key={`fig-${idx}`} fig={fig} />
         ))}
 
+        {/* 原文より（直接引用・OA全文の号だけ）。§0：原文をそのまま引く＝捏造ゼロ */}
+        {quotes.length > 0 && (
+          <>
+            <div className="sec">原文より</div>
+            {quotes.map((q, idx) => (
+              <blockquote className="pq" key={`q-${idx}`}>
+                <p className="pq-orig">“{q.text}”</p>
+                {q.textJa && <p className="pq-ja">{q.textJa}</p>}
+                {q.where && <cite className="pq-src">— {q.where}</cite>}
+              </blockquote>
+            ))}
+          </>
+        )}
+
         {p.numbers.length > 0 && (
           <>
             <div className="sec">主要な結果</div>
@@ -261,6 +278,23 @@ function DetailView({
           <>
             <div className="sec">主要な結果</div>
             <p>{renderTerms(lv.result, "result")}</p>
+          </>
+        )}
+
+        {/* 章立てウォークスルー（OA全文の号だけ・節ごとに忠実要約・説明レベル追従） */}
+        {sections.length > 0 && (
+          <>
+            <div className="sec">章立てで読む</div>
+            <div className="walk">
+              {sections.map((s, idx) => (
+                <div className="wk" key={`wk-${idx}`}>
+                  <div className="wk-h">{s.heading}</div>
+                  <p className="wk-b">
+                    {renderTerms(resolveLeveled(s.body, levelKey), `wk-${idx}`)}
+                  </p>
+                </div>
+              ))}
+            </div>
           </>
         )}
 
@@ -348,6 +382,7 @@ function Figure({ fig }: { fig: import("@/types").Figure }) {
         <img src={imgSrc} alt={fig.caption} loading="lazy" />
       )}
       <div className="cap">{fig.caption}</div>
+      {fig.note && <div className="fig-note">{fig.note}</div>}
       {fig.credit && (
         <div className="credit">
           {fig.creditUrl ? (

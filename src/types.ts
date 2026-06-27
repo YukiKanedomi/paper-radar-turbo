@@ -20,6 +20,7 @@ export interface Figure {
   type: "original" | "concept";
   src: string; // インラインSVG文字列 / http(s)URL / BASE_URL相対パス（public配下）
   caption: string;
+  note?: string; // 図解説（任意）：この図が「何を示すか」の出典に忠実な補足。OAで実図を複数載せる号で活用。
   // 実図（original）は再利用可能ライセンス（CC-BY/CC0/PD）の時のみ。出典・ライセンスを必ず明記。
   credit?: string; // 例: "出典: 著者ら, J. Foo 2020（CC BY 4.0）"
   creditUrl?: string;
@@ -55,6 +56,21 @@ export interface DeepDive {
   body: Leveled;
 }
 
+// 原文の直接引用（OA全文の号で活用・§0：原文をそのまま引く＝捏造ゼロ）。
+// text は原文（英語論文ならそのまま）、textJa は忠実な和訳、where は出典箇所（例「本文 §3」「Abstract」）。
+export interface Quote {
+  text: string;
+  textJa?: string;
+  where?: string;
+}
+
+// 章立てウォークスルー（OA全文の号で活用）。論文の節構成を出典に忠実に1段落ずつ要約。
+// body は説明レベルで文章を変えられる（Leveled）。
+export interface SectionSummary {
+  heading: string;
+  body: Leveled;
+}
+
 export interface Paper {
   id: string;
   topic: string;
@@ -80,6 +96,8 @@ export interface Paper {
   trivia: Trivia[];
   related: Related[];
   deepDive?: DeepDive[];
+  quotes?: Quote[]; // 原文の直接引用（OA全文の号）。§0：原文をそのまま引く
+  sections?: SectionSummary[]; // 章立てウォークスルー（OA全文の号）。節ごとに忠実要約
   dateAdded: string;
   status: string;
   seed?: boolean;

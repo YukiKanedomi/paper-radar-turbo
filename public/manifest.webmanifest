@@ -1,0 +1,16 @@
+{
+  "name": "論文レーダー（流体・ターボ機械）",
+  "short_name": "論文レーダー",
+  "description": "気になる論文を、やさしく・きれいに届ける",
+  "lang": "ja",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf9f5",
+  "theme_color": "#1a5e54",
+  "icons": [
+    { "src": "pwa-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "pwa-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

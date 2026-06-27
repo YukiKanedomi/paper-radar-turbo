@@ -62,9 +62,6 @@ function HomeView({ data }: { data: PapersData }) {
         <div className="brand">Paper Radar</div>
         <h1>論文レーダー</h1>
         <div className="tag">気になる論文を、やさしく・きれいに届ける</div>
-        <div className="homenav">
-          <Link to="/glossary">用語集を見る →</Link>
-        </div>
 
         {/* 今日の配信 */}
         <div className="sec">今日の配信</div>
@@ -101,6 +98,34 @@ function HomeView({ data }: { data: PapersData }) {
               ))
           )}
         </div>
+
+        {/* 用語集への導線（目立つフィーチャーカード） */}
+        <Link to="/glossary" className="glossfeat">
+          <svg className="gf-motif" viewBox="0 0 64 64" aria-hidden="true">
+            <g stroke="var(--accent)" strokeWidth="1.4" fill="none" opacity="0.55">
+              <line x1="14" y1="20" x2="32" y2="32" />
+              <line x1="50" y1="16" x2="32" y2="32" />
+              <line x1="18" y1="48" x2="32" y2="32" />
+              <line x1="48" y1="46" x2="32" y2="32" />
+              <line x1="14" y1="20" x2="18" y2="48" />
+            </g>
+            <g fill="var(--accent)">
+              <circle cx="32" cy="32" r="6" />
+              <circle cx="14" cy="20" r="3.4" />
+              <circle cx="50" cy="16" r="3.4" />
+              <circle cx="18" cy="48" r="3.4" />
+              <circle cx="48" cy="46" r="3.4" />
+            </g>
+          </svg>
+          <div className="gf-body">
+            <div className="gf-k">用語の関係マップ</div>
+            <div className="gf-t">専門用語を、図でつなぐ</div>
+            <div className="gf-d">
+              失速・サージ・二次流れ・損失… 配信に出てきた語を、関係マップと用語集で深掘り。
+            </div>
+            <span className="gf-cta">関係マップを開く →</span>
+          </div>
+        </Link>
 
         {/* アーカイブ */}
         <div className="sec">アーカイブ</div>
@@ -157,6 +182,10 @@ function HomeView({ data }: { data: PapersData }) {
                 <div className="ct">{displayTitle(p)}</div>
                 {originalTitle(p) && <div className="ct-orig">{originalTitle(p)}</div>}
                 <div className="cm">
+                  <span className={`oa-mark${p.oa ? "" : " abs"}`}>
+                    {p.oa ? "OA全文" : "抄録ベース"}
+                  </span>
+                  {" · "}
                   {[shortMeta(p), streamLabel(p.stream)].filter(Boolean).join(" · ")}
                 </div>
               </Link>

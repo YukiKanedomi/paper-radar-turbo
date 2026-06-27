@@ -221,18 +221,75 @@
   grid-column: 1 / -1;
 }
 
-.home-page .homenav {
-  margin-top: 12px;
+/* アーカイブカードの OA / 抄録 表示 */
+.home-page .card .cm .oa-mark {
+  font-weight: 800;
+  color: var(--accent);
 }
-.home-page .homenav a {
+.home-page .card .cm .oa-mark.abs {
+  color: var(--mut);
+}
+
+/* 用語集フィーチャーカード（トップで目立たせる導線） */
+.home-page .glossfeat {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(180deg, #f3f7f5, #ecf3ef);
+  border: 1px solid #d6e4de;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 6px 0 28px;
+  box-shadow: 0 4px 14px rgba(26, 94, 84, 0.06);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.home-page .glossfeat:hover {
+  box-shadow: 0 8px 22px rgba(26, 94, 84, 0.12);
+  transform: translateY(-1px);
+}
+.home-page .glossfeat .gf-motif {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+}
+.home-page .glossfeat .gf-k {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.home-page .glossfeat .gf-t {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 2px 0 5px;
+}
+.home-page .glossfeat .gf-d {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--mut);
+}
+.home-page .glossfeat .gf-cta {
+  display: inline-block;
+  margin-top: 9px;
   font-family: "Yu Gothic UI", sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--accent);
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 14px;
+}
+@media (max-width: 560px) {
+  .home-page .glossfeat {
+    gap: 14px;
+    padding: 16px;
+  }
+  .home-page .glossfeat .gf-motif {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* ====================== GLOSSARY ====================== */
@@ -723,6 +780,77 @@
 .detail-page .fig .credit a {
   color: var(--accent);
   text-decoration: none;
+}
+/* 図解説（OAで実図を複数載せる号の補足・出典に忠実） */
+.detail-page .fig .fig-note {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 9px auto 0;
+  max-width: 38em;
+}
+
+/* 原文の直接引用（プルクォート・OA全文の号） */
+.detail-page .pq {
+  margin: 18px 0;
+  padding: 6px 0 6px 20px;
+  border-left: 3px solid var(--accent);
+}
+.detail-page .pq .pq-orig {
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.78;
+  color: var(--ink);
+  margin: 0;
+}
+.detail-page .pq .pq-ja {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--mut);
+  margin: 7px 0 0;
+}
+.detail-page .pq .pq-src {
+  display: block;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-style: normal;
+  font-size: 11.5px;
+  color: var(--accent);
+  margin-top: 7px;
+}
+
+/* 章立てウォークスルー（OA全文の号・節ごとの忠実要約） */
+.detail-page .walk {
+  border-left: 2px solid var(--line);
+  margin: 8px 0 4px;
+  padding-left: 18px;
+}
+.detail-page .walk .wk {
+  position: relative;
+  margin: 0 0 16px;
+}
+.detail-page .walk .wk::before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.detail-page .walk .wk-h {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--accent-d);
+  margin-bottom: 4px;
+}
+.detail-page .walk .wk-b {
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0;
 }
 .detail-page .nums {
   display: flex;

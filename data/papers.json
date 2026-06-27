@@ -558,6 +558,22 @@
           "type": "concept",
           "src": "<svg viewBox=\"0 0 600 250\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"600\" height=\"250\" fill=\"#fff\"/>\n<text x=\"300\" y=\"24\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#114a42\" text-anchor=\"middle\" font-weight=\"700\">三次元流れを2種類の相対流れ面に分解（模式）</text>\n<!-- left: front view, S1 blade-to-blade -->\n<text x=\"150\" y=\"48\" font-family=\"sans-serif\" font-size=\"11.5\" fill=\"#6c7078\" text-anchor=\"middle\">正面（翼間）</text>\n<circle cx=\"150\" cy=\"140\" r=\"78\" fill=\"none\" stroke=\"#6c7078\" stroke-width=\"1.5\"/>\n<circle cx=\"150\" cy=\"140\" r=\"30\" fill=\"#6c7078\" opacity=\".12\"/>\n<g stroke=\"#1d2127\" stroke-width=\"5\" stroke-linecap=\"round\">\n<line x1=\"150\" y1=\"62\" x2=\"150\" y2=\"110\"/><line x1=\"217\" y1=\"101\" x2=\"176\" y2=\"125\"/><line x1=\"217\" y1=\"179\" x2=\"176\" y2=\"155\"/><line x1=\"150\" y1=\"218\" x2=\"150\" y2=\"170\"/><line x1=\"83\" y1=\"179\" x2=\"124\" y2=\"155\"/><line x1=\"83\" y1=\"101\" x2=\"124\" y2=\"125\"/></g>\n<path d=\"M150 78 A62 62 0 0 1 204 110\" fill=\"none\" stroke=\"#1a5e54\" stroke-width=\"3\"/>\n<text x=\"150\" y=\"240\" font-family=\"sans-serif\" font-size=\"11.5\" fill=\"#1a5e54\" text-anchor=\"middle\" font-weight=\"700\">S1：第一種（翼間・円弧）</text>\n<!-- divider -->\n<line x1=\"300\" y1=\"60\" x2=\"300\" y2=\"214\" stroke=\"#e3e0d8\" stroke-width=\"1.5\"/>\n<!-- right: meridional view, S2 hub-to-casing radial -->\n<text x=\"450\" y=\"48\" font-family=\"sans-serif\" font-size=\"11.5\" fill=\"#6c7078\" text-anchor=\"middle\">子午面（ハブ〜ケーシング）</text>\n<line x1=\"360\" y1=\"80\" x2=\"540\" y2=\"80\" stroke=\"#6c7078\" stroke-width=\"2\"/><text x=\"540\" y=\"72\" font-family=\"sans-serif\" font-size=\"10.5\" fill=\"#6c7078\" text-anchor=\"end\">ケーシング</text>\n<line x1=\"360\" y1=\"170\" x2=\"540\" y2=\"170\" stroke=\"#6c7078\" stroke-width=\"2\"/><text x=\"540\" y=\"186\" font-family=\"sans-serif\" font-size=\"10.5\" fill=\"#6c7078\" text-anchor=\"end\">ハブ</text>\n<path d=\"M430 80 q18 45 0 90\" fill=\"none\" stroke=\"#1d2127\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n<line x1=\"470\" y1=\"80\" x2=\"470\" y2=\"170\" stroke=\"#1a5e54\" stroke-width=\"3\" stroke-dasharray=\"2 0\"/>\n<circle cx=\"470\" cy=\"80\" r=\"3\" fill=\"#1a5e54\"/><circle cx=\"470\" cy=\"170\" r=\"3\" fill=\"#1a5e54\"/>\n<text x=\"450\" y=\"200\" font-family=\"sans-serif\" font-size=\"11.5\" fill=\"#1a5e54\" text-anchor=\"middle\" font-weight=\"700\">S2：第二種（子午面・半径線）</text>\n<text x=\"450\" y=\"216\" font-family=\"sans-serif\" font-size=\"10.5\" fill=\"#6c7078\" text-anchor=\"middle\">各面で2次元的に解き反復</text>\n</svg>",
           "caption": "概念図：ターボ機械の三次元流れを、S1（第一種・翼間／交線は円弧）と S2（第二種・子午面／交線は半径線）の2種類の相対流れ面に分け、各面で二次元的に解いて反復する（模式・実データではない）"
+        },
+        {
+          "type": "original",
+          "src": "img/wu-tn2604-fig1-s1.png",
+          "caption": "原図：相対流れ面 S₁（第一種）— 翼から翼へ向かう面（NACA TN 2604, Figure 1）",
+          "note": "翼列を貫く S₁ 面を立体的に描いた原図。S₁ は軸に直交する面との交線が円弧になる『第一種』の相対流れ面で、翼から翼へ向かう流れを扱う。",
+          "credit": "出典: Chung-Hua Wu, NACA Technical Note 2604 (1952), Figure 1（米国政府技術報告・パブリックドメイン）",
+          "creditUrl": "https://ntrs.nasa.gov/citations/19930083325"
+        },
+        {
+          "type": "original",
+          "src": "img/wu-tn2604-fig2-s2.png",
+          "caption": "原図：相対流れ面 S₂（第二種）— ハブからケーシングへ向かう子午面方向の面（NACA TN 2604, Figure 2）",
+          "note": "ハブ〜ケーシング間を貫く S₂ 面の原図。S₂ は軸に直交する面との交線が半径線になる『第二種』の相対流れ面（子午面方向の平均的な流れ面で、おおまかに通過流れに対応）。S₁ と S₂ を行き来して三次元流れに近づける。",
+          "credit": "出典: Chung-Hua Wu, NACA Technical Note 2604 (1952), Figure 2（米国政府技術報告・パブリックドメイン）",
+          "creditUrl": "https://ntrs.nasa.gov/citations/19930083325"
         }
       ],
       "numbers": [
@@ -655,6 +671,13 @@
             "expert": "S1（翼間）面と S2（子午面）面の解を相互に受け渡して反復し、三次元の直接・逆問題を二次元主方程式（楕円／双曲）の逐次解として近似・収束させる。各面の流れ関数定義と連続・運動方程式の結合が鍵。"
           }
         }
+      ],
+      "sections": [
+        { "heading": "要旨（Summary）", "body": "任意のハブ・ケーシング形状と有限枚数の翼をもつ、亜音速・超音速ターボ機械の定常・非粘性三次元流れの一般理論を提示する。三次元の順問題・逆問題を、相対流れ面（z 面との交線が円弧または半径線になる面）上の流れの適切な組み合わせとして解く。各面上で連続の式を接線方向または半径方向の運動方程式と流れ関数で結合したものを『主方程式』とし、その性質は局所音速と流体の速度成分の組み合わせの大小で決まる。入口が無回転でも回転していても、設計点でもオフデザインでも適用できる。" },
+        { "heading": "背景（Introduction）", "body": "三次元流れの問題は多くの先行研究で扱われてきた。Lorenz は『無限枚の翼』という考え方を最初に導入し、Bauersfeld は逆（設計）問題で満たすべき翼面の可積分条件を加えた。理論は Stodola・von Mises・Dreyfus らの仕事でさらに整えられ、軸流・半径流・混合流の圧縮機やタービンの研究の基礎となった。圧縮性流れでは、周方向に展開した級数で無限枚から有限枚の翼へ拡張する方法などが用いられてきた。" },
+        { "heading": "2種類の相対流れ面 S₁・S₂", "body": "流れを2種類の相対流れ面に分ける。S₁（第一種）は翼から翼へ向かう面で、軸に直交する面との交線は円弧になる。S₂（第二種）はハブからケーシングへ向かう子午面方向の面で、交線は半径線になる。流体の相対速度・流れ面の座標・流れ面の法線の間の関係を与え、各面上で流れを記述できるようにする。" },
+        { "heading": "主方程式（Principal equation）", "body": "各流れ面上で、連続の式を運動方程式（接線方向または半径方向）と、その面上に定義した流れ関数で結合し、これを主方程式とする。方程式の型は局所音速と速度成分の組み合わせによって楕円型または双曲型に変わる。論文は、楕円型・双曲型のいずれの場合についても、手計算と当時の高速デジタル計算機の双方で解く一般的な方法を述べている。" },
+        { "heading": "通過流れ近似と完全解の手順", "body": "通過流れ（スルーフロー）理論に含まれる近似を明示し、流体物性の周方向変化を級数で表す扱いを与える。そのうえで三次元の完全解に至る手順を、直接問題（直壁の軸流機、テーパや曲壁をもつ軸流機、曲壁の半径流・混合流機）と逆問題（平均流れ面上の条件・境界条件・翼形状の決定）に分けて示す。" }
       ],
       "dateAdded": "2026-06-27",
       "status": "unread",
@@ -818,6 +841,19 @@
             "expert": "24翼型断面に分割→各断面の2次元 URANS 基準場から xs/C・f₀・揚抗変動振幅を抽出→3つの代表断面（z/R=0.25/0.30/0.35）でメッシュ生成・CFD ソルバと連成した多目的 GA（揚力 Cl と効率の最大化、≈400 CFD/ケース・約15世代）で F⁺, Cμ, 噴射角, x/C, h/C を最適化→翼弦全長で再付着→エネルギー評価で解析した各翼型断面の正味23〜36 kW の出力増を確認。"
           }
         }
+      ],
+      "quotes": [
+        { "text": "As a result, several airfoils may operate under stall conditions, resulting in boundary layer separation, drag increase, loss of lift, deterioration of the airfoils aerodynamic performance and, ultimately, a reduction of wind turbine power output.", "textJa": "その結果、いくつかの翼型は失速状態で動作し、境界層剥離・抗力増加・揚力損失・翼型の空力性能の悪化、ひいては風車の出力低下を招く。", "where": "1. Introduction（角括弧の文献番号は省略して引用）" },
+        { "text": "Among the different AFC techniques, synthetic jet actuators have the advantage of generating pulsating flow which combines suction and blowing phases, and they have associated large momentum coefficients.", "textJa": "さまざまな能動流れ制御（AFC）手法の中でも、シンセティックジェットアクチュエータは吸い込みと吹き出しの位相を組み合わせた脈動流を生み出せ、大きな運動量係数をもつという利点がある。", "where": "1. Introduction" },
+        { "text": "When comparing the net power gain, before and after AFC implementation, generated by each of the airfoils evaluated, net power gains between 23 and 36KW are obtained in all airfoils analyzed, clarifying that the proposed technology is capable of improving the performance of the wind turbines, very likely at any operating condition.", "textJa": "評価した各翼型について AFC 適用前後の正味出力増を比較すると、解析したすべての翼型で23〜36 kW の正味出力増が得られ、提案技術が——おそらくどの運転条件でも——風車の性能を改善できることが明らかになった。", "where": "Abstract" }
+      ],
+      "sections": [
+        { "heading": "1. 序論（Introduction）", "body": "大型水平軸風車（HAWT）は乱流・突風・ヨー方向のずれ・ウィンドシア・タワー陰・上流後流などにさらされ、翼に当たる局所流入角が周期的・突発的に変化する。その結果いくつかの翼型が失速し、境界層剥離・抗力増加・揚力損失を招いて出力が下がる。受動制御（ガーニーフラップや渦発生器）は設計点でしか最適に効きにくいため、動力を投入してオフデザインでも効く能動流れ制御（AFC）、とくにシンセティックジェットに着目する。" },
+        { "heading": "2. 数値手法（Numerical method）", "body": "非定常レイノルズ平均ナビエ–ストークス（URANS）を採用し、高レイノルズ数に強い k-ω SST 乱流モデルを用いる。オープンソースの有限体積 CFD パッケージ OpenFOAM で計算し、全変数に2次精度の離散化、圧力と速度の連成には PISO スキームを用いる。計算領域・境界条件・無次元量・メッシュ独立性と数値検証を示す。" },
+        { "heading": "3. 基準計算と結果（Baseline）", "body": "AFC を加えない基準状態として、ブレードに沿って切り出した複数の翼型（FFA-W3 系）について2次元計算を行い、各翼型の境界層剥離点・それに対応する渦放出周波数・ピークtoピーク振幅と、空力特性を同定する。" },
+        { "heading": "4. AFC パラメータ最適化（Optimization）", "body": "境界層が剥離している各翼型に対し、シンセティックジェットの実装に関わる5つのパラメータを、それぞれ遺伝的アルゴリズムによる最適化で求める。最適化はメッシュ生成器と CFD ソルバを連成して行う。" },
+        { "heading": "5. AFC の結果とエネルギー評価（AFC results）", "body": "最適化した噴流を適用し、剥離していた境界層を翼面に再付着させる。各翼型でエネルギー評価を行い、適用前後の正味出力を比較する。解析したすべての翼型で23〜36 kW の正味出力増が得られた。" },
+        { "heading": "6. 結論（Conclusion）", "body": "DTU-10MW を10 m/s で運転する場合を例に、出力を最大化する手順を示した。同じ手順は任意の HAWT・任意の風速にも適用できる。要点は各翼型で境界層剥離を遅らせる／完全に再付着させること。極めて高いレイノルズ数（O(10⁷)）でも再付着が可能であること、全翼型で再付着すれば下流の渦構造が大きく減り風車をより密に配置できる可能性も指摘した。今後は残りの翼型や複数の風速への拡張が必要、としている。" }
       ],
       "dateAdded": "2026-06-27",
       "status": "unread",
