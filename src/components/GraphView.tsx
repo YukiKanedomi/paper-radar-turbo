@@ -70,6 +70,9 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
     | { startDist: number; startK: number; startTx: number; startTy: number; mx: number; my: number }
     | null
   >(null);
+  // ドラッグの慣性用：直近のグラフ座標と速度
+  const lastDragPt = useRef<{ x: number; y: number } | null>(null);
+  const flingVel = useRef<{ vx: number; vy: number }>({ vx: 0, vy: 0 });
 
   const catCenter = useMemo(() => {
     const m = new Map<string, { x: number; y: number }>();
@@ -320,6 +323,8 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
     simRef.current?.alphaTarget(0.25).restart();
     n.fx = n.x;
     n.fy = n.y;
+    lastDragPt.current = null;
+    flingVel.current = { vx: 0, vy: 0 };
     drag.current = { type: "node", node: n };
   }
   function onPointerMove(e: React.PointerEvent) {
@@ -348,8 +353,14 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
       setView((v) => ({ ...v, tx: d.tx + (u.x - d.sux), ty: d.ty + (u.y - d.suy) }));
     } else {
       const v = viewRef.current;
-      d.node.fx = (u.x - v.tx) / v.k;
-      d.node.fy = (u.y - v.ty) / v.k;
+      const gx = (u.x - v.tx) / v.k;
+      const gy = (u.y - v.ty) / v.k;
+      if (lastDragPt.current) {
+        flingVel.current = { vx: gx - lastDragPt.current.x, vy: gy - lastDragPt.current.y };
+      }
+      lastDragPt.current = { x: gx, y: gy };
+      d.node.fx = gx;
+      d.node.fy = gy;
     }
   }
   function onPointerUp(e: React.PointerEvent) {
@@ -359,7 +370,18 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
     if (d?.type === "node") {
       d.node.fx = null;
       d.node.fy = null;
-      simRef.current?.alphaTarget(0);
+      // 慣性：離した瞬間の速度を与え、自然に流れて落ち着く
+      if (!prefersReduced() && (Math.abs(flingVel.current.vx) > 0.4 || Math.abs(flingVel.current.vy) > 0.4)) {
+        const clampV = (x: number) => Math.max(-26, Math.min(26, x * 5));
+        d.node.vx = clampV(flingVel.current.vx);
+        d.node.vy = clampV(flingVel.current.vy);
+        simRef.current?.alphaTarget(0.12).restart();
+        window.setTimeout(() => simRef.current?.alphaTarget(0), 520);
+      } else {
+        simRef.current?.alphaTarget(0);
+      }
+      lastDragPt.current = null;
+      flingVel.current = { vx: 0, vy: 0 };
     }
     // 背景の素早い2連タップ＝その点へ寄ってズーム
     if (d?.type === "pan" && !movedRef.current && pointers.current.size === 0) {
@@ -469,9 +491,14 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
               const a = endXY(e.source, nodeMap), b = endXY(e.target, nodeMap);
               if (!a || !b) return null;
               const active = inFocus(a.id) && inFocus(b.id);
+              const d = edgePath(a, b, nodeR(b));
               return (
                 <g key={`cu${i}`} opacity={active ? 1 : 0.1} style={{ transition: "opacity .3s ease" }}>
-                  <path d={edgePath(a, b, nodeR(b))} fill="none" stroke="#9aa0a6" strokeWidth={1.5} markerEnd="url(#arrow)" />
+                  <path d={d} fill="none" stroke="#9aa0a6" strokeWidth={1.5} markerEnd="url(#arrow)" />
+                  {/* 選択中：関係の向きに沿って光が流れる */}
+                  {active && hasFocus && (
+                    <path className="edge-flow" d={d} fill="none" stroke="#1a5e54" strokeWidth={1.6} />
+                  )}
                   {e.label && showEdgeLabel && (
                     <text className="edge-label" x={((a.x ?? 0) + (b.x ?? 0)) / 2} y={((a.y ?? 0) + (b.y ?? 0)) / 2 - 3} textAnchor="middle">
                       {e.label}
@@ -482,7 +509,7 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
             })}
 
             {/* ノード */}
-            {simNodes.map((n) => {
+            {simNodes.map((n, i) => {
               const r = nodeR(n);
               const isSel = selected === n.id;
               const pulsing = selected != null && activeIds.has(n.id);
@@ -500,13 +527,16 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
                     if (!movedRef.current) setSelected(n.id);
                   }}
                 >
-                  {/* タップしやすい不可視の当たり判定 */}
+                  {/* タップしやすい不可視の当たり判定（静止） */}
                   <circle r={Math.max(r * 1.8, 28)} fill="transparent" />
-                  {/* 発光が伝わってきた瞬間のパルス（一度だけ再生） */}
-                  {pulsing && <circle className="node-pulse" r={r} fill="none" stroke={n.color} strokeWidth={2.2} />}
-                  <circle r={r * 1.7} fill={n.color} opacity={0.16} />
-                  {isSel && <circle r={r + 6} fill="none" stroke={n.color} strokeWidth={2} opacity={0.55} />}
-                  <circle r={r} fill={n.color} stroke="#fff" strokeWidth={1.6} />
+                  {/* 待機の微呼吸：中身だけを desync で呼吸させる */}
+                  <g className="node-breathe" style={{ animationDelay: `${-((i * 0.53) % 4).toFixed(2)}s` }}>
+                    {/* 発光が伝わってきた瞬間のパルス（一度だけ再生） */}
+                    {pulsing && <circle className="node-pulse" r={r} fill="none" stroke={n.color} strokeWidth={2.2} />}
+                    <circle r={r * 1.7} fill={n.color} opacity={0.16} />
+                    {isSel && <circle r={r + 6} fill="none" stroke={n.color} strokeWidth={2} opacity={0.55} />}
+                    <circle r={r} fill={n.color} stroke="#fff" strokeWidth={1.6} />
+                  </g>
                   {showNodeLabel(n) && (
                     <text className="node-label" y={r + 12} textAnchor="middle">
                       {n.id}

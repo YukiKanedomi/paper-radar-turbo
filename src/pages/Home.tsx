@@ -16,8 +16,7 @@ import { useFavorites, useRead } from "@/lib/prefs";
 export default function Home() {
   const state = usePapers();
 
-  if (state.status === "loading")
-    return <div className="state-msg">読み込み中…</div>;
+  if (state.status === "loading") return <HomeSkeleton />;
   if (state.status === "error")
     return (
       <div className="state-msg">
@@ -26,6 +25,25 @@ export default function Home() {
     );
 
   return <HomeView data={state.data} />;
+}
+
+function HomeSkeleton() {
+  return (
+    <div className="home-page" aria-hidden>
+      <div className="wrap">
+        <div className="skel skel-brand" />
+        <div className="skel skel-title" />
+        <div className="skel skel-tag" />
+        <div className="skel skel-feat" />
+        {[0, 1].map((i) => (
+          <div className="skel-row" key={i}>
+            <div className="skel skel-line w70" />
+            <div className="skel skel-line w40" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function HomeView({ data }: { data: PapersData }) {
