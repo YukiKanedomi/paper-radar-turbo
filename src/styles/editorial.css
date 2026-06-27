@@ -293,8 +293,17 @@
 }
 
 /* ====================== GLOSSARY ====================== */
+/* 透明度のみのフェード（transform を使わない＝全画面の position:fixed を壊さない） */
 .glossary-page {
-  animation: pr-fade 0.4s ease both;
+  animation: gloss-fade 0.4s ease both;
+}
+@keyframes gloss-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .glossary-page .wrap {
   padding: 30px 24px 90px;
@@ -519,17 +528,25 @@
   gap: 6px;
 }
 .graph-ctrls button {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
   font-size: 16px;
   color: var(--ink);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 6px rgba(29, 33, 39, 0.08);
+  -webkit-tap-highlight-color: transparent;
+}
+/* 全画面トグル（先頭ボタン）は少し目立たせる */
+.graph-ctrls button:first-child {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 .graph-ctrls button:hover {
   border-color: var(--accent);

@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import {
   forceSimulation,
   forceLink,
@@ -265,7 +264,7 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
   const showEdgeLabel = view.k >= 1.05 || neighbors !== null;
   const showClusterLabel = view.k < 1.7;
 
-  const tree = (
+  return (
     <div className={`graph${expanded ? " expanded" : ""}`}>
       <div className="graph-legend">
         {categories.map((c) => (
@@ -429,9 +428,4 @@ export default function GraphView({ nodes, curated, co, categories }: Props) {
       )}
     </div>
   );
-
-  // 全画面時は body 直下へポータル（祖先の transform に縛られず実ビューポートいっぱいに）
-  return expanded && typeof document !== "undefined"
-    ? createPortal(tree, document.body)
-    : tree;
 }
