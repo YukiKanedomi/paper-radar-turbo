@@ -441,6 +441,18 @@
   stroke-linejoin: round;
   pointer-events: none;
 }
+.graph-svg .cluster-label {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+  paint-order: stroke;
+  stroke: #faf9f5;
+  stroke-width: 3.4px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
 .graph-ctrls {
   position: absolute;
   right: 12px;
