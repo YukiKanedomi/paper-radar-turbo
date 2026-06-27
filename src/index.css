@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 確定モック（viz-panels/paper-radar/home.html・detail.html）のトークンを忠実移植 */
+:root {
+  --bg: #faf9f5;
+  --ink: #1d2127;
+  --mut: #6c7078;
+  --accent: #1a5e54;
+  --accent-d: #114a42;
+  --line: #e7e4db;
+  --soft: #f2f0e9;
+  --soft2: #eef1ef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* リンクの既定下線を消す（カード/リスト用） */
+a {
+  color: inherit;
+}
