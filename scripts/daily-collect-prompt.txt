@@ -11,7 +11,7 @@
 1. node scripts/collect.mjs --topic turbo で候補取得。
 2. 流体主役で選定：定番(classic)＋最新(latest)＝2件、必ず1件はOA全文。実図を出すなら CC-BY/CC0/PD を優先（PyMuPDF/pdftotext/PIL で図を抽出し public/img へ保存、credit付き）。重複(id/DOI)は除外。
 3. OAは全文取得して出典に忠実に作り込み：titleJa（和訳主・原題副）、levels3段階、terms、trivia/deepDive は {easy,std,expert} のレベル別文章、numbers、equations は実在の式のみ(KaTeX, 式番号詐称しない)、figures は規則順守、citationCount は信頼できる単一値のみ。
-4. 各論文の要約を faithfulness-check サブエージェント（Agent tool, subagent_type="faithfulness-check"）で検証。needs_fix なら1回だけ修正→再検証。それでも needs_fix か high severity が残る論文は公開しない（保留）。
+4. 各論文の要約を faithfulness-check サブエージェント（Agent tool, subagent_type="faithfulness-check"。このエージェントは model: opus 固定＝§0の最終チェックだけ Opus）で検証。needs_fix なら1回だけ修正→再検証。それでも needs_fix か high severity が残る論文は公開しない（保留）。
 5. 検証を通った論文だけ data/papers.json に追記し、issue=今日・meta.currentIssue 更新。前号の該当論文は issue を外す。新語が増えたら src/lib/glossary-graph.ts に分類1〜2件＋意味エッジ数本（任意・未分類でも自動共起で繋がる）。
 6. npm run build が成功することを必須条件に（失敗したら公開しない）。
 7. 通った内容だけ git add/commit して main へ push（GitHub Actions が自動デプロイ）。コミットメッセージ末尾に『Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>』。

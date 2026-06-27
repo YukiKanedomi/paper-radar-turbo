@@ -18,9 +18,10 @@ LOG="scripts/logs/daily-$STAMP.log"
 
   PROMPT="$(cat scripts/daily-collect-prompt.txt)"
 
-  # 無人実行：Opus・全ツール自動承認。内容の正しさは §0 忠実性ゲートで担保。
+  # 無人実行：本体は Sonnet（軽い・利用枠に優しい）。全ツール自動承認。
+  # §0 の忠実性チェックだけ Opus（faithfulness-check エージェント側で model: opus 固定）。
   claude -p "$PROMPT" \
-    --model opus \
+    --model sonnet \
     --dangerously-skip-permissions
 
   echo "=== done: $(date +%Y-%m-%d\ %H:%M:%S) ==="
