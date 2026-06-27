@@ -38,6 +38,7 @@ export interface Term {
 export interface Trivia {
   label: string;
   text: string;
+  level?: Level; // 任意。付けると「そのレベル以上」で表示（累積）。無指定＝常時表示
 }
 
 export interface Related {
@@ -46,10 +47,11 @@ export interface Related {
   url: string;
 }
 
-// 深掘りアコーディオン（任意・出典がある時だけ）。種データには無いので未表示。
+// 深掘りアコーディオン（任意・出典がある時だけ）。
 export interface DeepDive {
   title: string;
   body: string;
+  level?: Level; // 任意。付けると「そのレベル以上」で表示（累積）。無指定＝常時表示
 }
 
 export interface Paper {

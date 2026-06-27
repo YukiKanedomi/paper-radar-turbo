@@ -76,6 +76,12 @@ function DetailView({
   const lv = p.levels[levelKey];
   const src = sourceUrl(p);
 
+  // 説明レベルで豆知識・深掘りも変える（累積：そのレベル以上で表示、無指定＝常時）
+  const rank: Record<Level, number> = { easy: 1, std: 2, expert: 3 };
+  const showAt = (lvl?: Level) => !lvl || rank[lvl] <= rank[levelKey];
+  const trivia = p.trivia.filter((t) => showAt(t.level));
+  const deepDive = (p.deepDive ?? []).filter((d) => showAt(d.level));
+
   const { markRead } = useRead();
   const { isFav, toggleFav } = useFavorites();
   // 詳細を開いたら既読に
@@ -259,18 +265,18 @@ function DetailView({
           </>
         )}
 
-        {/* 深掘りアコーディオン（出典がある時だけ） */}
-        {p.deepDive?.map((d, idx) => (
+        {/* 深掘りアコーディオン（出典がある時だけ・説明レベルで増減） */}
+        {deepDive.map((d, idx) => (
           <details className="acc" key={`dd-${idx}`}>
             <summary>{d.title}</summary>
             <div className="body">{d.body}</div>
           </details>
         ))}
 
-        {p.trivia.length > 0 && (
+        {trivia.length > 0 && (
           <>
             <div className="sec">豆知識</div>
-            {p.trivia.map((t, idx) => (
+            {trivia.map((t, idx) => (
               <div className="triv" key={`triv-${idx}`}>
                 <div className="t">{t.label}</div>
                 {t.text}
