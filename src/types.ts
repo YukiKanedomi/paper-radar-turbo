@@ -130,6 +130,19 @@ export interface LogAside {
   title: string;
   note: string; // 見送り・保留・スキップのやさしい理由
 }
+// 検索の記録（展開式で表示・既定は閉じる）。§0：実際に検索した語・サイト・件数のみ。捏造しない。
+export interface SearchSource {
+  name: string; // 例 "arXiv" / "OpenAlex"
+  scope?: string; // 例 "physics.flu-dyn カテゴリ" / "被引用数の多い順"
+  terms: string[]; // 検索語
+  hits?: number; // ヒット件数（分かる時のみ。不明なら省略）
+  note?: string; // 結果のやさしい補足
+}
+export interface SearchLog {
+  sources: SearchSource[];
+  note?: string; // 全体の補足（件数未記録の断り等）
+}
+
 export interface IssueLog {
   date: string; // YYYY-MM-DD（配信を試みた日）
   status: "published" | "skipped";
@@ -137,7 +150,8 @@ export interface IssueLog {
   intro: string; // 検索・選定のやさしい説明
   picked?: LogPick[]; // 選んだ論文（公開時）
   aside?: LogAside[]; // 見送り・保留・スキップの内訳
-  afterword?: string; // 編集後記＝親しみのある一個人の感想（一人称・主観）。流体には素人なくらいの目線で正直に
+  afterword?: string; // 編集後記＝親しみのある一個人の感想（一人称・主観）。専門家ではないが配信から得た気づきを共有
+  searchLog?: SearchLog; // 検索の記録（展開式・どんな語でどのサイト・何件）
 }
 export interface IssuesLogData {
   entries: IssueLog[]; // 新しい号が配列の前（降順）でも後でも可。表示側で日付降順に整える

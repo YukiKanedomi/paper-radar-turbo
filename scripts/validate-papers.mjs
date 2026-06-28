@@ -204,6 +204,17 @@ if (existsSync(logFile)) {
       }
       if (en.status === "published" && arr(en.picked).length === 0)
         warn(tag, "published なのに picked が空");
+      if (en.searchLog) {
+        const ss = arr(en.searchLog.sources);
+        if (ss.length === 0) warn(tag, "searchLog.sources が空");
+        for (const s of ss) {
+          if (!nonEmpty(s.name)) err(tag, "searchLog の各 source は name 必須");
+          if (arr(s.terms).length === 0)
+            warn(tag, `searchLog（${s.name}）に検索語(terms)がありません`);
+          if (s.hits !== undefined && (typeof s.hits !== "number" || s.hits < 0))
+            err(tag, `searchLog（${s.name}）の hits は0以上の数: ${s.hits}`);
+        }
+      }
     }
   }
 }

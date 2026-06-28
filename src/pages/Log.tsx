@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "@/styles/editorial.css";
 import { useIssuesLog } from "@/lib/data";
 import { paperHref } from "@/lib/paper";
-import type { IssueLog } from "@/types";
+import type { IssueLog, SearchLog } from "@/types";
 
 // 配信ノート：号ごとの「検索・選定のやさしい記録」＋編集後記（人間味のある一個人の感想）。
 export default function Log() {
@@ -102,6 +102,39 @@ function NoteCard({ e }: { e: IssueLog }) {
       )}
 
       {e.afterword && <p className="note-afterword">{e.afterword}</p>}
+
+      {e.searchLog && <SearchRecord log={e.searchLog} />}
     </article>
+  );
+}
+
+// 検索の記録（展開式・既定は閉じる）。どんな語で・どのサイトで・何件ヒットしたか。
+function SearchRecord({ log }: { log: SearchLog }) {
+  return (
+    <details className="note-search">
+      <summary>検索の記録を見る</summary>
+      <div className="ns-body">
+        {log.sources.map((s, i) => (
+          <div className="ns-src" key={i}>
+            <div className="ns-head">
+              <span className="ns-name">{s.name}</span>
+              {s.scope && <span className="ns-scope">{s.scope}</span>}
+              {typeof s.hits === "number" && (
+                <span className="ns-hits">{s.hits} 件ヒット</span>
+              )}
+            </div>
+            <div className="ns-terms">
+              {s.terms.map((t, j) => (
+                <code className="ns-term" key={j}>
+                  {t}
+                </code>
+              ))}
+            </div>
+            {s.note && <div className="ns-note">{s.note}</div>}
+          </div>
+        ))}
+        {log.note && <div className="ns-foot">{log.note}</div>}
+      </div>
+    </details>
   );
 }

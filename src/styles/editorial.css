@@ -1525,11 +1525,96 @@
   color: var(--ink);
   font-style: italic;
 }
-.log-page .note-wish {
-  margin-top: 14px;
+/* 検索の記録（展開式・既定は閉じる） */
+.log-page .note-search {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.log-page .note-search > summary {
+  cursor: pointer;
+  list-style: none;
   font-family: "Yu Gothic UI", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.log-page .note-search > summary::-webkit-details-marker {
+  display: none;
+}
+.log-page .note-search > summary::before {
+  content: "▸";
+  font-size: 11px;
+  transition: transform 0.18s ease;
+}
+.log-page .note-search[open] > summary::before {
+  transform: rotate(90deg);
+}
+.log-page .ns-body {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.log-page .ns-src {
+  padding: 12px 14px;
+  background: var(--soft);
+  border-radius: 12px;
+}
+.log-page .ns-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: "Yu Gothic UI", sans-serif;
+}
+.log-page .ns-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.log-page .ns-scope {
+  font-size: 11.5px;
+  color: var(--mut);
+}
+.log-page .ns-hits {
+  margin-left: auto;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 9px;
+}
+.log-page .ns-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 9px 0 2px;
+}
+.log-page .ns-term {
+  font-family: "SFMono-Regular", "Consolas", monospace;
+  font-size: 11.5px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px 7px;
+}
+.log-page .ns-note {
   font-size: 13px;
   line-height: 1.8;
+  color: var(--mut);
+  margin-top: 7px;
+}
+.log-page .ns-foot {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.75;
   color: var(--mut);
 }
 
