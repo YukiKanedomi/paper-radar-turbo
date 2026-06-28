@@ -118,11 +118,12 @@ async function fetchArxiv(keywords, max = 14) {
   return (focused.length >= 3 ? focused : out).slice(0, max);
 }
 
-// ---- OpenAlex（被引用上位・OA判定）。分野を絞ってキーワード毎に取得→統合 ----
-function mapOpenAlex(w) {
+// ---- OpenAlex。分野を絞ってキーワード毎に取得→統合。OA/非OA(抄録)を両方残す ----
+// stream は「役割（最新/定番）」で決める＝ソースやOA性とは独立（最新でも抄録、定番でもOAがあり得る）。
+function mapOpenAlex(w, stream) {
   return {
     source: "openalex",
-    stream: "classic",
+    stream,
     oa: !!w.open_access?.is_oa,
     oaUrl: w.open_access?.oa_url ?? "",
     id: w.doi ? `doi:${w.doi.replace(/^https?:\/\/doi\.org\//, "")}` : `openalex:${w.id.split("/").pop()}`,
@@ -132,35 +133,58 @@ function mapOpenAlex(w) {
     venue: w.primary_location?.source?.display_name ?? "",
     doi: (w.doi ?? "").replace(/^https?:\/\/doi\.org\//, ""),
     citationCount: w.cited_by_count ?? 0,
+    pdfUrl: w.open_access?.oa_url ?? "",
+    abstract: "", // 本文/抄録は別途エージェントが取得（ここではメタのみ）
   };
 }
 
-async function openAlexForKeyword(phrase, perPage = 6) {
+async function openAlexSearch(phrase, { sort, fromDate, stream, perPage = 6 }) {
   // title/abstract に語が含まれるものに限定（分野ノイズを排除）＋論文種別＝article。
   // 狭いクエリにすることで 504（broad query）も避けられる。
-  const q = encodeURIComponent(phrase);
-  const url = `https://api.openalex.org/works?filter=title_and_abstract.search:${q},type:article&sort=cited_by_count:desc&per-page=${perPage}&mailto=kanedomi918@gmail.com`;
+  let filter = `title_and_abstract.search:${encodeURIComponent(phrase)},type:article`;
+  if (fromDate) filter += `,from_publication_date:${fromDate}`;
+  const url = `https://api.openalex.org/works?filter=${filter}&sort=${sort}&per-page=${perPage}&mailto=kanedomi918@gmail.com`;
   const res = await fetchRetry(url);
   if (!res.ok) throw new Error(`OpenAlex HTTP ${res.status}`);
   const json = await res.json();
-  return (json.results ?? []).map(mapOpenAlex);
+  return (json.results ?? []).map((w) => mapOpenAlex(w, stream));
 }
 
-async function fetchOpenAlex(keywords, take = 14) {
-  // on-topic なキーワード上位8件を個別検索して統合。oa フラグは残し、選定側で OA を優先（C）。
+// 定番候補：被引用の多い順（OA/非OA 混在）
+async function fetchOpenAlexClassic(keywords, take = 14) {
   const picks = keywords.slice(0, 8);
   const lists = [];
   for (const k of picks) {
     try {
-      lists.push(await openAlexForKeyword(k));
+      lists.push(await openAlexSearch(k, { sort: "cited_by_count:desc", stream: "classic" }));
     } catch (e) {
-      console.error(`OpenAlex失敗(${k}):`, e.message);
+      console.error(`OpenAlex(定番)失敗(${k}):`, e.message);
     }
-    await sleep(200); // ポライトに
+    await sleep(200);
   }
-  // 分野ガードで他分野の高被引用ノイズ（医学・生物等）を除去してから被引用順に。
   const merged = dedupeById(lists.flat()).filter(onTopic);
   merged.sort((a, b) => (b.citationCount ?? 0) - (a.citationCount ?? 0));
+  return merged.slice(0, take);
+}
+
+// 最新候補：発行日の新しい順（OA/非OA 混在＝有料ジャーナルの新着も拾う）。直近数年に限定。
+async function fetchOpenAlexRecent(keywords, take = 10) {
+  const yearFloor = new Date().getFullYear() - 3;
+  const fromDate = `${yearFloor}-01-01`;
+  const picks = keywords.slice(0, 6);
+  const lists = [];
+  for (const k of picks) {
+    try {
+      lists.push(
+        await openAlexSearch(k, { sort: "publication_date:desc", fromDate, stream: "latest", perPage: 4 }),
+      );
+    } catch (e) {
+      console.error(`OpenAlex(最新)失敗(${k}):`, e.message);
+    }
+    await sleep(200);
+  }
+  const merged = dedupeById(lists.flat()).filter(onTopic);
+  merged.sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   return merged.slice(0, take);
 }
 
@@ -175,28 +199,45 @@ function dedupeById(list) {
   return out;
 }
 
+const balance = (list) => {
+  const oa = list.filter((p) => p.oa).length;
+  return `OA ${oa} / 抄録 ${list.length - oa}`;
+};
+
 const out = { generatedFor: topicFilter ?? "all", topics: [] };
 for (const t of topicsCfg.topics) {
   if (topicFilter && t.key !== topicFilter) continue;
   console.log(`\n=== topic: ${t.key} (${t.label}) ===`);
-  const [arxiv, openalex] = await Promise.all([
+  // 3系統を取得：arXiv(最新OA)・OpenAlex新着(最新・OA/抄録)・OpenAlex被引用(定番・OA/抄録)
+  const [arxiv, oaRecent, oaClassic] = await Promise.all([
     fetchArxiv(t.keywords).catch((e) => (console.error("arXiv失敗:", e.message), [])),
-    fetchOpenAlex(t.keywords).catch((e) => (console.error("OpenAlex失敗:", e.message), [])),
+    fetchOpenAlexRecent(t.keywords).catch((e) => (console.error("OpenAlex新着失敗:", e.message), [])),
+    fetchOpenAlexClassic(t.keywords).catch((e) => (console.error("OpenAlex被引用失敗:", e.message), [])),
   ]);
-  console.log(`arXiv 最新OA候補: ${arxiv.length} 件`);
-  arxiv.slice(0, 8).forEach((p, i) =>
-    console.log(`  [A${i}] ${p.published?.slice(0, 10)}  ${p.title}`),
+
+  // 枠は「役割」で束ねる：最新 = arXiv + OpenAlex新着（OA/抄録 混在）、定番 = OpenAlex被引用（OA/抄録 混在）
+  const latest = dedupeById([...arxiv, ...oaRecent]);
+  const classic = oaClassic;
+
+  console.log(`最新枠 latest: ${latest.length} 件（${balance(latest)}）  [arXiv + OpenAlex新着]`);
+  latest.slice(0, 8).forEach((p, i) =>
+    console.log(`  [L${i}] oa=${p.oa} ${p.year ?? p.published?.slice(0, 4) ?? "?"} ${p.source}  ${p.title}`),
   );
-  const oaCnt = openalex.filter((p) => p.oa).length;
-  console.log(`OpenAlex 被引用上位候補: ${openalex.length} 件（うち OA全文 ${oaCnt} 件）`);
-  openalex.slice(0, 8).forEach((p, i) =>
-    console.log(`  [O${i}] cite=${p.citationCount} oa=${p.oa} ${p.year}  ${p.title}`),
+  console.log(`定番枠 classic: ${classic.length} 件（${balance(classic)}）  [OpenAlex 被引用上位]`);
+  classic.slice(0, 8).forEach((p, i) =>
+    console.log(`  [C${i}] cite=${p.citationCount} oa=${p.oa} ${p.year}  ${p.title}`),
   );
-  if (arxiv.length === 0)
-    console.log("  ⚠ 最新(arXiv)が0件。キーワードを見直すか、別ソースを検討。");
-  if (oaCnt === 0)
-    console.log("  ⚠ 定番(OpenAlex)にOA全文が無い。classicもOA優先(C)が満たせない可能性。");
-  out.topics.push({ key: t.key, label: t.label, arxiv, openalex });
+
+  // バランスの注意喚起（最新/定番それぞれ OA も抄録も拾えているか）
+  const oaTotal = latest.filter((p) => p.oa).length + classic.filter((p) => p.oa).length;
+  if (latest.length === 0) console.log("  ⚠ 最新枠が0件。キーワード/期間を見直す。");
+  if (classic.length === 0) console.log("  ⚠ 定番枠が0件。キーワードを見直す。");
+  if (oaTotal === 0) console.log("  ⚠ 全体でOAが0件。最低1件OAの条件を満たせない可能性。");
+  console.log(
+    "  ※ 枠(最新/定番)とOA性は独立。最新で抄録・定番でOAも歓迎。最低1件OAを満たしつつ、OA/抄録をバランスよく。",
+  );
+
+  out.topics.push({ key: t.key, label: t.label, latest, classic });
 }
 
 writeFileSync(outPath, JSON.stringify(out, null, 2), "utf8");
