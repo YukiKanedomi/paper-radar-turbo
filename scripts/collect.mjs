@@ -2,6 +2,12 @@
 // topics.json のキーワードで arXiv（最新・OA全文）と OpenAlex（被引用上位・OA判定・cited_by_count）を引き、
 // 候補を staging に出力する。要約（levels等）は §0 厳守で別途 Claude が忠実に作成する。
 //
+// 堅牢化（2026-06-28）：
+//   A. arXiv は語OR＋段階的緩和（完全フレーズで少なければ語ORへ、なお少なければカテゴリ縛りを外す）。
+//   B. OpenAlex はキーワード毎に title_and_abstract.search で分野を絞って統合（被引用ノイズ排除・504回避）。
+//   E. API 失敗/504/429 はリトライ。片方が空でも候補が枯れにくいよう広げる。
+// 選定（C：classicもOA優先）とフォールバック（D：保留時に次点）は SKILL.md 側のルール。
+//
 // 使い方:  node scripts/collect.mjs [--topic turbo] [--out <path>]
 //   既定出力: scripts/.collect-candidates.json（gitignore 済み）
 import { readFileSync, writeFileSync } from "node:fs";
@@ -20,23 +26,52 @@ const outPath = resolve(root, getArg("--out", "scripts/.collect-candidates.json"
 const topicsCfg = JSON.parse(readFileSync(resolve(root, "topics.json"), "utf8"));
 
 const UA = "paper-radar-turbo/0.1 (mailto:kanedomi918@gmail.com)";
+const ARXIV_MIN = 6; // これ未満なら緩和して取り直す
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// ---- arXiv（最新・全文OA）----
-async function fetchArxiv(keywords, max = 12) {
-  // 代表キーワードを OR で（タイトル/抄録）。流体カテゴリに限定。
-  const terms = keywords.slice(0, 6).map((k) => `all:%22${encodeURIComponent(k)}%22`);
-  const q = `%28${terms.join("+OR+")}%29+AND+cat:physics.flu-dyn`;
-  const url = `http://export.arxiv.org/api/query?search_query=${q}&sortBy=submittedDate&sortOrder=descending&start=0&max_results=${max}`;
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`arXiv HTTP ${res.status}`);
-  const xml = await res.text();
+// 失敗/504/429 をリトライ（指数バックオフ・軽め）
+async function fetchRetry(url, { tries = 3, baseDelay = 800 } = {}) {
+  let last;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url, { headers: { "User-Agent": UA } });
+      if (res.ok) return res;
+      // 504/429/5xx は待って再試行、それ以外は即返す（呼び出し側で判定）
+      if (![429, 500, 502, 503, 504].includes(res.status)) return res;
+      last = new Error(`HTTP ${res.status}`);
+    } catch (e) {
+      last = e;
+    }
+    await sleep(baseDelay * (i + 1));
+  }
+  throw last ?? new Error("fetch failed");
+}
+
+// 分野ガード：タイトルが流体・ターボ機械の語を含むものだけを on-topic とみなす。
+// OpenAlex の被引用ソートは桁違いの他分野（医学・生物等）を上位に上げてしまうため、
+// API の調子に依らずクライアント側でノイズを除去する。
+const CORE = /compress|turbine|turbomachin|turbo[\s-]?machin|\bstall\b|\bsurge\b|\bblade|\brotor|stator|cascade|aerodynam|aerofoil|airfoil|\bvane\b|endwall|tip[\s-]?leakage|tip[\s-]?clearance|secondary[\s-]?flow|boundary[\s-]?layer|shock|\bwake\b|flutter|aeroelast|impeller|diffuser|nozzle|\baxial\b|centrifugal|\bfan\b|propuls/i;
+const onTopic = (p) => CORE.test(`${p.title ?? ""} ${p.venue ?? ""}`);
+
+// キーワード群から arXiv 用の有意な単語集合を作る（ストップワード除去）
+const STOP = new Set(["of", "the", "in", "and", "for", "a", "to", "on", "with", "by"]);
+function salientWords(keywords) {
+  const set = new Set();
+  for (const k of keywords)
+    for (const w of k.toLowerCase().split(/\s+/))
+      if (w.length >= 3 && !STOP.has(w)) set.add(w);
+  return [...set];
+}
+
+// ---- arXiv（最新・全文OA）。段階的に緩めて取りこぼしを防ぐ ----
+function parseArxiv(xml) {
   const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map((m) => m[1]);
   return entries.map((e) => {
     const pick = (re) => (e.match(re)?.[1] ?? "").trim().replace(/\s+/g, " ");
     const idUrl = pick(/<id>([\s\S]*?)<\/id>/);
     const arxivId = idUrl.replace(/^https?:\/\/arxiv\.org\/abs\//, "").replace(/v\d+$/, "");
     const authors = [...e.matchAll(/<name>([\s\S]*?)<\/name>/g)].map((a) => a[1].trim());
-    const pdf = (e.match(/<link[^>]*title="pdf"[^>]*href="([^"]+)"/)?.[1] ?? `https://arxiv.org/pdf/${arxivId}`);
+    const pdf = e.match(/<link[^>]*title="pdf"[^>]*href="([^"]+)"/)?.[1] ?? `https://arxiv.org/pdf/${arxivId}`;
     return {
       source: "arxiv",
       stream: "latest",
@@ -54,44 +89,113 @@ async function fetchArxiv(keywords, max = 12) {
   });
 }
 
-// ---- OpenAlex（被引用上位・OA判定・cited_by_count）----
-async function fetchOpenAlex(query, max = 10) {
-  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&sort=cited_by_count:desc&per-page=${max}&mailto=kanedomi918@gmail.com`;
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`OpenAlex HTTP ${res.status}`);
-  const json = await res.json();
-  return (json.results ?? []).map((w) => ({
+async function arxivQuery(searchExpr, max = 14) {
+  const url = `http://export.arxiv.org/api/query?search_query=${searchExpr}&sortBy=submittedDate&sortOrder=descending&start=0&max_results=${max}`;
+  const res = await fetchRetry(url);
+  if (!res.ok) throw new Error(`arXiv HTTP ${res.status}`);
+  return parseArxiv(await res.text());
+}
+
+async function fetchArxiv(keywords, max = 14) {
+  const phrases = keywords.slice(0, 6).map((k) => `all:%22${encodeURIComponent(k)}%22`);
+  const words = salientWords(keywords).map((w) => `all:${encodeURIComponent(w)}`);
+  const FLU = "+AND+cat:physics.flu-dyn";
+
+  // 段階1：完全フレーズOR＋flu-dyn（精度重視）
+  let out = await arxivQuery(`%28${phrases.join("+OR+")}%29${FLU}`, max).catch(() => []);
+  // 段階2：語OR＋flu-dyn（少なければ緩める）
+  if (out.length < ARXIV_MIN) {
+    const more = await arxivQuery(`%28${words.join("+OR+")}%29${FLU}`, max).catch(() => []);
+    out = dedupeById([...out, ...more]);
+  }
+  // 段階3：語OR・カテゴリ縛りなし（flu-dyn 未クロスリストの turbo 論文も拾う）
+  if (out.length < ARXIV_MIN) {
+    const more = await arxivQuery(`%28${words.join("+OR+")}%29`, max).catch(() => []);
+    out = dedupeById([...out, ...more]);
+  }
+  // 分野ガード（on-topic 優先）。ただし枯渇させない：on-topic が少なければ元の順を保つ。
+  const focused = out.filter(onTopic);
+  return (focused.length >= 3 ? focused : out).slice(0, max);
+}
+
+// ---- OpenAlex（被引用上位・OA判定）。分野を絞ってキーワード毎に取得→統合 ----
+function mapOpenAlex(w) {
+  return {
     source: "openalex",
     stream: "classic",
     oa: !!w.open_access?.is_oa,
     oaUrl: w.open_access?.oa_url ?? "",
     id: w.doi ? `doi:${w.doi.replace(/^https?:\/\/doi\.org\//, "")}` : `openalex:${w.id.split("/").pop()}`,
-    title: w.title ??w.display_name ?? "",
+    title: w.title ?? w.display_name ?? "",
     authors: (w.authorships ?? []).slice(0, 5).map((a) => a.author?.display_name).filter(Boolean).join(", "),
     year: w.publication_year,
     venue: w.primary_location?.source?.display_name ?? "",
     doi: (w.doi ?? "").replace(/^https?:\/\/doi\.org\//, ""),
     citationCount: w.cited_by_count ?? 0,
-  }));
+  };
+}
+
+async function openAlexForKeyword(phrase, perPage = 6) {
+  // title/abstract に語が含まれるものに限定（分野ノイズを排除）＋論文種別＝article。
+  // 狭いクエリにすることで 504（broad query）も避けられる。
+  const q = encodeURIComponent(phrase);
+  const url = `https://api.openalex.org/works?filter=title_and_abstract.search:${q},type:article&sort=cited_by_count:desc&per-page=${perPage}&mailto=kanedomi918@gmail.com`;
+  const res = await fetchRetry(url);
+  if (!res.ok) throw new Error(`OpenAlex HTTP ${res.status}`);
+  const json = await res.json();
+  return (json.results ?? []).map(mapOpenAlex);
+}
+
+async function fetchOpenAlex(keywords, take = 14) {
+  // on-topic なキーワード上位8件を個別検索して統合。oa フラグは残し、選定側で OA を優先（C）。
+  const picks = keywords.slice(0, 8);
+  const lists = [];
+  for (const k of picks) {
+    try {
+      lists.push(await openAlexForKeyword(k));
+    } catch (e) {
+      console.error(`OpenAlex失敗(${k}):`, e.message);
+    }
+    await sleep(200); // ポライトに
+  }
+  // 分野ガードで他分野の高被引用ノイズ（医学・生物等）を除去してから被引用順に。
+  const merged = dedupeById(lists.flat()).filter(onTopic);
+  merged.sort((a, b) => (b.citationCount ?? 0) - (a.citationCount ?? 0));
+  return merged.slice(0, take);
+}
+
+function dedupeById(list) {
+  const seen = new Set();
+  const out = [];
+  for (const p of list) {
+    if (!p || !p.id || seen.has(p.id)) continue;
+    seen.add(p.id);
+    out.push(p);
+  }
+  return out;
 }
 
 const out = { generatedFor: topicFilter ?? "all", topics: [] };
 for (const t of topicsCfg.topics) {
   if (topicFilter && t.key !== topicFilter) continue;
-  const oaQuery = t.keywords.slice(0, 3).join(" ");
   console.log(`\n=== topic: ${t.key} (${t.label}) ===`);
   const [arxiv, openalex] = await Promise.all([
     fetchArxiv(t.keywords).catch((e) => (console.error("arXiv失敗:", e.message), [])),
-    fetchOpenAlex(oaQuery).catch((e) => (console.error("OpenAlex失敗:", e.message), [])),
+    fetchOpenAlex(t.keywords).catch((e) => (console.error("OpenAlex失敗:", e.message), [])),
   ]);
   console.log(`arXiv 最新OA候補: ${arxiv.length} 件`);
   arxiv.slice(0, 8).forEach((p, i) =>
     console.log(`  [A${i}] ${p.published?.slice(0, 10)}  ${p.title}`),
   );
-  console.log(`OpenAlex 被引用上位候補: ${openalex.length} 件`);
+  const oaCnt = openalex.filter((p) => p.oa).length;
+  console.log(`OpenAlex 被引用上位候補: ${openalex.length} 件（うち OA全文 ${oaCnt} 件）`);
   openalex.slice(0, 8).forEach((p, i) =>
     console.log(`  [O${i}] cite=${p.citationCount} oa=${p.oa} ${p.year}  ${p.title}`),
   );
+  if (arxiv.length === 0)
+    console.log("  ⚠ 最新(arXiv)が0件。キーワードを見直すか、別ソースを検討。");
+  if (oaCnt === 0)
+    console.log("  ⚠ 定番(OpenAlex)にOA全文が無い。classicもOA優先(C)が満たせない可能性。");
   out.topics.push({ key: t.key, label: t.label, arxiv, openalex });
 }
 
