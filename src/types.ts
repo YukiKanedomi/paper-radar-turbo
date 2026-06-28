@@ -117,3 +117,29 @@ export interface PapersData {
   meta: Meta;
   papers: Paper[];
 }
+
+// ---- 配信ノート（issues-log.json）----
+// 号ごとの「検索・選定のやさしい記録」＋編集後記（人間味のある一個人の感想）。
+// §0：事実は正確に・感想は主観として書く（事実の捏造はしない）。なりすましはしない（"編集担当より"の一人称）。
+export interface LogPick {
+  id?: string; // papers.json の論文 id（あれば詳細ページへリンク）
+  title: string;
+  why: string; // なぜ選んだか（やさしく）
+}
+export interface LogAside {
+  title: string;
+  note: string; // 見送り・保留・スキップのやさしい理由
+}
+export interface IssueLog {
+  date: string; // YYYY-MM-DD（配信を試みた日）
+  status: "published" | "skipped";
+  headline: string; // やさしい見出し
+  intro: string; // 検索・選定のやさしい説明
+  picked?: LogPick[]; // 選んだ論文（公開時）
+  aside?: LogAside[]; // 見送り・保留・スキップの内訳
+  afterword?: string; // 編集後記＝人間味のある個人的な感想（一人称・主観）
+  wish?: string; // 次への一言（フィードバック導線）
+}
+export interface IssuesLogData {
+  entries: IssueLog[]; // 新しい号が配列の前（降順）でも後でも可。表示側で日付降順に整える
+}

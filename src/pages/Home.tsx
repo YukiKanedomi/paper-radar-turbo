@@ -145,6 +145,15 @@ function HomeView({ data }: { data: PapersData }) {
           </div>
         </Link>
 
+        {/* 配信ノートへの控えめな導線 */}
+        <Link to="/log" className="lognote-link">
+          <span className="ln-k">配信ノート</span>
+          <span className="ln-t">
+            どんな言葉で探し、なぜ選んだか。お休みした日の理由も、正直に。
+          </span>
+          <span className="ln-cta">読む →</span>
+        </Link>
+
         {/* アーカイブ */}
         <div className="sec">アーカイブ</div>
         <input

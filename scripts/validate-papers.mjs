@@ -10,7 +10,7 @@
 // prebuild で実行され、自動配信(daily-collect)では build を必須条件にしているため
 // ここで ERROR が出ると公開されない＝§0回帰の機械的な番人になる。
 
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -169,6 +169,42 @@ if (meta && meta.currentIssue) {
     const la = g.filter((p) => p.stream === "latest").length;
     if (!(cl === 1 && la === 1))
       warn(`currentIssue/${k}`, `定番＋最新の構成が崩れています（classic=${cl}, latest=${la}）`);
+  }
+}
+
+// ---- 配信ノート（issues-log.json・任意） ----------------------------------
+const logFile = resolve(root, "data/issues-log.json");
+if (existsSync(logFile)) {
+  let log;
+  try {
+    log = JSON.parse(readFileSync(logFile, "utf8"));
+  } catch (e) {
+    err("issues-log.json", `JSON として読めません: ${e.message}`);
+    log = null;
+  }
+  if (log) {
+    const entries = arr(log.entries);
+    const seenDates = new Set();
+    const knownIds = new Set(papers.map((p) => p.id));
+    for (let i = 0; i < entries.length; i++) {
+      const en = entries[i];
+      const tag = `issues-log[${en?.date ?? i}]`;
+      if (!isYmd(en.date)) err(tag, `date の形式(YYYY-MM-DD)が不正: ${en.date}`);
+      else if (seenDates.has(en.date)) err(tag, `date が重複: ${en.date}`);
+      else seenDates.add(en.date);
+      if (!["published", "skipped"].includes(en.status))
+        err(tag, `status が不正: "${en.status}"（published|skipped）`);
+      if (!nonEmpty(en.headline)) err(tag, "headline が空");
+      if (!nonEmpty(en.intro)) err(tag, "intro が空");
+      for (const p of arr(en.picked)) {
+        if (!nonEmpty(p.title) || !nonEmpty(p.why))
+          err(tag, "picked の各項目は title と why が必須");
+        if (p.id && !knownIds.has(p.id))
+          warn(tag, `picked.id が papers.json に無い（リンク切れ）: ${p.id}`);
+      }
+      if (en.status === "published" && arr(en.picked).length === 0)
+        warn(tag, "published なのに picked が空");
+    }
   }
 }
 
