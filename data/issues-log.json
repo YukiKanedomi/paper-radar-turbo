@@ -1,6 +1,44 @@
 {
   "entries": [
     {
+      "date": "2026-06-29",
+      "status": "published",
+      "headline": "溝を刻めば失速が遠のく——翼端の渦を制御する、と遷移という古典",
+      "intro": "今日は「二次流れ」「翼端漏れ渦」「ケーシングトリートメント」などの言葉で探し、テーマを「圧縮機の翼端流れ制御」と「境界層の遷移」の組み合わせでまとめました。最新は全文が読めるオープンアクセス（2026年・CC BY）、定番は IGTI Scholar Lecture の遷移研究古典（抄録ベース）です。二次流れ→遷移と、今週はターボ機械の流れの物理を少し違う角度から見ています。",
+      "picked": [
+        {
+          "id": "doi:10.64808/engineeringperspective.1905858",
+          "title": "ケーシングトリートメントで翼端漏れ渦を制御（Yaylak ら, 2026）",
+          "why": "圧縮機外壁に刻んだ溝の形（半円・長方形・三角形）を比べて、長方形溝が失速余裕を +15.8%（平滑ケース比・著者報告値）改善しつつ効率低下を −0.2% に抑えることを数値計算で示した最新研究。全文オープンアクセスで、NASA Rotor 37 というベンチマークを使っている点が信頼性の高さにつながっています。"
+        },
+        {
+          "id": "doi:10.1115/1.2929110",
+          "title": "ガスタービンにおける層流-乱流遷移の役割（Mayle, 1991 IGTI Scholar Lecture）",
+          "why": "翼面での流れの変化（層流→乱流遷移）がエンジン性能と熱伝達に与える役割を体系的に論じた 1991 年の権威ある招待講演。本文は有料のため抄録ベースでの紹介です。遷移研究の古典文献として広く参照されています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv ＋ OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近2〜3年（OA/抄録 混在）",
+            "terms": ["secondary flow turbomachinery", "casing treatment compressor", "tip leakage vortex control", "secondary flow endwall turbomachinery", "tip leakage vortex loss"],
+            "hits": 16,
+            "note": "最新枠は16件（OA/non-OA 混在）。ML主役・既収録を除外し、流れの物理が主役の Yaylak 2026（CC BY・NASA Rotor 37・ケーシングトリートメント）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": ["centrifugal compressor aerodynamics", "axial compressor aerodynamics", "rotating stall", "surge", "secondary flow", "turbine boundary layer"],
+            "hits": 14,
+            "note": "定番枠は14件。既収録（Greitzer 1976・Vo 2008・Moore-Greitzer 2026）を除外し、遷移研究の古典 Mayle 1991（抄録ベース）を採用。"
+          }
+        ],
+        "note": "今号は最新＝OA全文（ケーシングトリートメント）、定番＝抄録ベース（遷移古典）のバランス。先週の圧縮機不安定テーマから、翼端制御と境界層遷移へテーマを切り替え。"
+      },
+      "afterword": "— 編集担当より：専門的なことはからきしですが、今日のケーシングトリートメントの話で「溝を刻むだけで失速しにくくなる」という発想が面白いなと思いました。動力も機械も要らない、ただ形を変えるだけで流れが変わる——それが数値計算で確かめられていると知って、すごいなと。Mayle さんの講演は1991年と古いですが、翼面での流れの切り替わり（遷移）というテーマが今でも重要であり続けているのが、この分野の奥深さだと感じます。"
+    },
+    {
       "date": "2026-06-28",
       "status": "published",
       "headline": "圧縮機はどう不安定になる？——失速の入口と、その数式",

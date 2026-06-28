@@ -10,8 +10,8 @@
       "std": "標準",
       "expert": "専門"
     },
-    "lastUpdated": "2026-06-28",
-    "currentIssue": "2026-06-28",
+    "lastUpdated": "2026-06-29",
+    "currentIssue": "2026-06-29",
     "note": "種データ。実在の定番論文のみ。要約は出典に忠実な高水準記述。具体値は本実装の/collectで検証。seed:true は要検証・拡張の印。"
   },
   "papers": [
@@ -1067,7 +1067,6 @@
       "url": "https://www.nature.com/articles/s41598-026-50460-y",
       "pdfUrl": "https://www.nature.com/articles/s41598-026-50460-y.pdf",
       "citationNote": "最新（2026・オープンアクセス CC-BY）",
-      "issue": "2026-06-28",
       "levels": {
         "easy": {
           "tldr": "圧縮機が「失速」や「サージ」という不安定な状態に陥るのを予測する定番の数式モデル（Moore–Greitzer モデル）を、実際に測った性能カーブを使って作り直し、ずっと正確にした研究です。",
@@ -1218,7 +1217,6 @@
       "pdfUrl": "",
       "citationNote": "定番（高被引用・スパイク失速発生機構の基準）",
       "citationCount": 497,
-      "issue": "2026-06-28",
       "levels": {
         "easy": {
           "tldr": "圧縮機の「回転失速」が、ごく短い範囲から突然始まる『スパイク型』のとき、何がきっかけになるのか——その必要な条件を2つ示した、よく引用される研究です（抄録ベース）。",
@@ -1304,6 +1302,238 @@
         }
       ],
       "dateAdded": "2026-06-28",
+      "status": "unread"
+    },
+    {
+      "id": "doi:10.64808/engineeringperspective.1905858",
+      "topic": "turbo",
+      "stream": "latest",
+      "source": "openalex",
+      "oa": true,
+      "title": "Reducing Effect of Secondary Flows on Axial Compressor Rotor Using Casing Treatment",
+      "titleJa": "ケーシングトリートメントによる軸流圧縮機ロータの二次流れ低減効果",
+      "authors": "Büşra Yaylak, Ahmet Pinarbasi, Kamil Arslan",
+      "year": 2026,
+      "venue": "Engineering Perspective, 6(3): 493-502",
+      "doi": "10.64808/engineeringperspective.1905858",
+      "url": "https://doi.org/10.64808/engineeringperspective.1905858",
+      "pdfUrl": "https://dergipark.org.tr/en/download/article-file/5796606",
+      "citationNote": "最新（2026・CC BY）",
+      "issue": "2026-06-29",
+      "levels": {
+        "easy": {
+          "tldr": "航空エンジン等の圧縮機の外壁に溝（ケーシングトリートメント）を刻むことで、翼先端から漏れる渦（翼端漏れ渦・TLV）を弱め、失速するまでの余裕を広げる方法を数値計算で調べた。代表的なベンチマーク（NASA ロータ 37）で3種類の溝形状を比較し、長方形の溝が最も失速余裕を改善しつつ効率の低下を最小に抑えることを示した。",
+          "problem": "軸流圧縮機の翼先端と外壁のすき間を抜ける翼端漏れ渦（TLV）が衝撃波と干渉して失速を引き起こしやすくする。動力を使わないパッシブな方法で失速を遅らせ、運転域を広げたい。",
+          "method": "NASA Rotor 37（遷音速軸流圧縮機ロータ）を対象に、ANSYS CFX（SST k-ω 乱流モデル）で数値計算。外壁に刻む溝の形（半円・長方形・三角形）と位置・寸法を変えて比較。先行研究（Reid & Moore）の実測データで精度を確認した（圧力比誤差 2%以内、効率誤差 1.5%以内）。",
+          "result": "長方形溝が最も効果的（失速余裕 +15.8%、効率低下 −0.2%）。次いで半円溝（+12.5%/−0.8%）、三角形溝（+9.2%/−0.4%）。各数値は平滑ケースとの相対比較で著者が報告。溝が翼端付近の流れを変えて翼端閉塞と衝撃波との干渉を緩和することを流れ場の可視化で確認した。",
+          "limit": "数値解析（CFD）を主体とした研究で、実験による直接検証は NASA ベンチマークとの比較のみ。他の圧縮機形状や実機スケールへの展開は今後の課題。"
+        },
+        "std": {
+          "tldr": "NASA Rotor 37（遷音速軸流圧縮機ロータ）に対し、翼端漏れ渦（TLV）・衝撃波-TLV 干渉を対象とするパッシブ・ケーシングトリートメント（溝型）の失速余裕拡大効果と効率ペナルティを CFD で定量評価した。",
+          "problem": "翼端クリアランスで生じる TLV と衝撃波の干渉が失速限界を支配し、圧縮機の作動域を制限する。動力不要なパッシブ制御で失速余裕を拡大し、効率ペナルティを最小にしたい。",
+          "method": "ANSYS CFX（SST k-ω）で NASA Rotor 37 を解析。半円・長方形・三角形の3溝形状を複数の寸法・軸方向位置（翼弦前縁から20〜60%）で比較。Reid & Moore の実験データで検証済み（圧力比誤差 <2%、効率誤差 <1.5%）。",
+          "result": "長方形溝が最良（失速余裕 +15.8%、効率変化 −0.2%）、半円溝（+12.5%/−0.8%）、三角形溝（+9.2%/−0.4%）の順。改善値は平滑ケース基準の相対量（著者定義）。溝が翼端付近の流れパターンを変えて翼端閉塞と衝撃波-TLV 干渉を緩和する。",
+          "limit": "単一形状・CFD 主体の解析。非設計点での広範な検証、他形状・実機スケールへの適用は今後の課題。"
+        },
+        "expert": {
+          "tldr": "NASA Rotor 37 を対象に、3種のパッシブ溝型ケーシングトリートメント（半円・長方形・三角形）の失速余裕改善と効率ペナルティを ANSYS CFX（SST k-ω）で定量評価した。",
+          "problem": "翼端クリアランス TLV と衝撃波の干渉が翼端閉塞を増大させ、近失速域の動翼空力を劣化させる。効率ペナルティを抑えながら失速余裕を拡大するパッシブ手法の最適化が課題。",
+          "method": "ANSYS CFX（SST k-ω）で NASA Rotor 37 を解析。溝形状3種（半円 R1.8〜3.0 mm、長方形 3.5×3〜3.5 mm、三角形 底辺3.5/深さ2.5〜3.5 mm）×複数寸法・軸方向位置（翼弦前縁から20〜60%）を比較。SM は平滑ケース基準の相対改善量として定義（原文 式(8)）。Reid & Moore の実測データで精度確認（圧力比 <2%・効率 <1.5%）。",
+          "result": "長方形溝が SM +15.8%、効率 −0.2% で最良（半円: +12.5%/−0.8%、三角形: +9.2%/−0.4%）。いずれも平滑ケース基準の相対改善（著者注記）。流れ場の数値可視化から、溝が TLV と衝撃波の干渉パターンを変えて翼端閉塞を軽減し失速を遅延させることを確認。平滑ケーシングは効率最大。",
+          "limit": "NASA Rotor 37 単一形状の CFD 解析。SM は平滑ケース基準の相対値。他圧縮機・実機スケール・実験的検証は今後。"
+        }
+      },
+      "equations": [
+        {
+          "tex": "\\mathrm{SM} = \\frac{P_{r,\\mathrm{peak}}/\\dot{m}_{\\mathrm{peak}} - P_{r,\\mathrm{stall}}/\\dot{m}_{\\mathrm{stall}}}{P_{r,\\mathrm{stall}}/\\dot{m}_{\\mathrm{stall}}} \\times 100\\%",
+          "caption": "失速余裕 SM の定義（Pr=圧力比、ṁ=質量流量、peak=ピーク効率点、stall=失速点。原文 式(8)。PDF 抽出の都合で式形は近似——正確な式は原文を参照）。本研究での +15.8% 等は平滑ケース基準の相対改善量として報告（著者注記）"
+        }
+      ],
+      "figures": [
+        {
+          "type": "concept",
+          "src": "<svg viewBox=\"0 0 500 200\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"500\" height=\"200\" fill=\"#faf9f5\"/><rect x=\"40\" y=\"20\" width=\"420\" height=\"28\" fill=\"#e0ddd6\" stroke=\"#666\" stroke-width=\"1.5\"/><rect x=\"148\" y=\"20\" width=\"14\" height=\"18\" fill=\"#1a5e54\" rx=\"1\"/><rect x=\"176\" y=\"20\" width=\"14\" height=\"18\" fill=\"#1a5e54\" rx=\"1\"/><rect x=\"204\" y=\"20\" width=\"14\" height=\"18\" fill=\"#1a5e54\" rx=\"1\"/><rect x=\"40\" y=\"152\" width=\"420\" height=\"28\" fill=\"#e0ddd6\" stroke=\"#666\" stroke-width=\"1.5\"/><path d=\"M160 48 L188 152\" stroke=\"#333\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M290 48 L318 152\" stroke=\"#333\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M162 48 C142 38 150 27 165 26\" stroke=\"#c0392b\" stroke-width=\"1.5\" fill=\"none\" stroke-dasharray=\"4,2\"/><text x=\"250\" y=\"14\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#1a5e54\" text-anchor=\"middle\" font-weight=\"bold\">ケーシングトリートメント（溝）</text><text x=\"110\" y=\"100\" font-family=\"sans-serif\" font-size=\"10\" fill=\"#c0392b\" text-anchor=\"middle\">TLV（翼端漏れ渦）</text><text x=\"265\" y=\"100\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#333\" text-anchor=\"middle\">動翼</text><text x=\"250\" y=\"190\" font-family=\"sans-serif\" font-size=\"9\" fill=\"#888\" text-anchor=\"middle\">概念図（模式・実データではない）</text></svg>",
+          "caption": "概念図：軸流圧縮機の外壁に刻まれた溝（ケーシングトリートメント）と翼端漏れ渦（TLV）の関係。溝が TLV の構造を変えて失速余裕を改善する（模式・実データではない）"
+        }
+      ],
+      "numbers": [
+        { "v": "+15.8%", "l": "長方形溝の失速余裕改善（平滑ケース比・相対値）" },
+        { "v": "−0.2%", "l": "長方形溝の効率変化" },
+        { "v": "NASA Rotor 37", "l": "遷音速軸流圧縮機の標準ベンチマーク" }
+      ],
+      "terms": [
+        { "term": "ケーシングトリートメント", "def": "圧縮機外壁に溝や穴を設けたパッシブ流れ制御。動力不要で翼端漏れ渦を弱め失速余裕を広げる。" },
+        { "term": "翼端漏れ渦（TLV）", "def": "動翼先端と外壁のすき間を抜ける流れが巻き起こす渦。損失と失速の主要因。" },
+        { "term": "失速余裕", "def": "圧縮機が失速するまでの流量的な余裕の幅。広いほど安定した運転域が広い。" },
+        { "term": "NASA Rotor 37", "def": "米国 NASA が開発した遷音速軸流圧縮機ロータの標準ベンチマーク。CFD 検証の共通基準として世界中で使われる。" },
+        { "term": "SST k-ω", "def": "乱流モデルの一種。翼端クリアランス付近の逆圧力勾配下の流れに有効とされる。" },
+        { "term": "二次流れ", "def": "主流方向に対して横方向に生じる流れ（渦・横流れ）の総称。損失の主要因の一つ。" }
+      ],
+      "trivia": [
+        {
+          "label": "なぜ NASA Rotor 37 か",
+          "text": {
+            "easy": "NASA が公開している詳細な実測データがあり、CFD 精度を確かめるための世界標準ベンチマークとして使われる。本論文もこのデータで計算の精度を確認している（圧力比誤差2%以内・効率誤差1.5%以内）。",
+            "std": "NASA Rotor 37 は Reid & Moore (1978) の実験データが公開されており、遷音速圧縮機 CFD 検証の世界的なベンチマーク。本論文はこのデータで SST k-ω モデルの精度を確認している（圧力比<2%・効率<1.5%）。",
+            "expert": "NASA Rotor 37（Reid & Moore, 1978）は公開実測データを持つ遷音速 1 段圧縮機ロータで、ターボ機械 CFD の代表的な検証基準。本論文はこの実測データとの比較で計算精度を確認した（圧力比誤差<2%・効率誤差<1.5%）。"
+          }
+        },
+        {
+          "label": "パッシブ制御の利点",
+          "text": {
+            "easy": "溝型ケーシングトリートメントは電力や噴流を使わないパッシブな仕組み。動力不要で失速余裕を広げられるため、実機適用の信頼性が高い。",
+            "std": "パッシブ制御（溝型ケーシングトリートメント）は実装が簡単で動力不要。アクティブ制御（噴流・センサ・アクチュエータ）と比べ信頼性が高い一方、設計点での効率とのトレードオフが課題。",
+            "expert": "溝型ケーシングトリートメントはパッシブ手法の代表例。本研究は半円・長方形・三角形の3溝形状を系統的に数値比較し、長方形溝が失速余裕と効率ペナルティのバランスで最も優れることを示した。"
+          }
+        }
+      ],
+      "related": [
+        {
+          "tag": "ロータ37 実験データ（NASA）",
+          "title": "Design and Overall Performance of Four Highly Loaded, High-Speed Inlet Stages (Reid & Moore, 1978)",
+          "url": "https://ntrs.nasa.gov/citations/19780025165"
+        },
+        {
+          "tag": "原文（CC BY・オープンアクセス）",
+          "title": "Reducing Effect of Secondary Flows on Axial Compressor Rotor Using Casing Treatment (Engineering Perspective, 2026)",
+          "url": "https://doi.org/10.64808/engineeringperspective.1905858"
+        }
+      ],
+      "deepDive": [
+        {
+          "title": "さらに深掘り：溝がなぜ失速を遅らせるか",
+          "body": {
+            "easy": "翼端の外壁に溝を作ると、漏れた流れが溝に取り込まれ、渦のまとまりが変わる。渦が弱まることで翼の入口を詰まらせる力が小さくなり、失速しにくくなる。",
+            "std": "溝は TLV の流れパターンを変えて翼端閉塞を減少させる。近失速域では TLV と衝撃波の干渉が変化し、失速の起点となる流れの乱れが遅延する（CFD の流れ場可視化で確認）。",
+            "expert": "溝型ケーシングトリートメントは TLV と衝撃波の干渉パターンを変えることで翼端閉塞を軽減する。本論文の流れ場解析は、近失速での衝撃波-TLV 干渉が長方形溝で最も抑えられることを数値的に示している。SM の定義は平滑ケース基準の相対量（著者注記・原文 式(8)）。"
+          }
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Among the casing treatments analyzed, rectangular grooves provided the most significant stall margin improvement (+15.8%), followed by semi-circular (+12.5%) and triangular grooves (+9.2%).",
+          "textJa": "解析したケーシングトリートメントの中では、長方形溝が最も顕著な失速余裕改善（+15.8%）をもたらし、半円形（+12.5%）、三角形溝（+9.2%）がこれに続いた。",
+          "where": "Conclusion"
+        },
+        {
+          "text": "The efficiency drop for rectangular grooves was only 0.2%.",
+          "textJa": "長方形溝の効率低下はわずか0.2%にとどまった。",
+          "where": "Conclusion"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "1. はじめに（Introduction）",
+          "body": {
+            "easy": "圧縮機の翼端から外壁のすき間を抜ける流れ（翼端漏れ渦・TLV）は失速の主要原因。動力不要なパッシブなケーシングトリートメント（外壁に溝を刻む）でこの問題を和らげる研究。",
+            "std": "翼端クリアランス TLV は衝撃波と干渉して翼端閉塞を増大させ、失速を誘発する。本研究は NASA Rotor 37 を対象に3溝形状の系統的比較を CFD で実施する。",
+            "expert": "TLV と衝撃波の干渉が近失速を支配する。軸方向溝型ケーシングトリートメントは旋回スロット型に比べ効率ペナルティが小さいとされ実機への関心が高い。本研究は SST k-ω CFD で半円・長方形・三角形溝を系統的に比較し流れ場での機構を明らかにする。"
+          }
+        },
+        {
+          "heading": "2. 形状・計算設定（Geometry & Computational Setup）",
+          "body": {
+            "easy": "対象は NASA Rotor 37（世界標準ベンチマーク圧縮機）。外壁の溝は3種類の形と複数の位置・寸法の組み合わせ。計算の信頼性を NASA の実験データで確認（誤差 2%以内）。",
+            "std": "NASA Rotor 37 に対し ANSYS CFX（SST k-ω）を使用。溝3種（半円 R1.8〜3.0 mm、長方形 3.5×3〜3.5 mm、三角形 底辺3.5/深さ2.5〜3.5 mm）を翼弦前縁から20〜60%の軸方向位置で配置。Reid & Moore の実験データで精度確認（圧力比 <2%・効率 <1.5%）。",
+            "expert": "NASA Rotor 37 単一動翼流路を ANSYS CFX（SST k-ω）でモデル化。溝寸法は半円 R1.8〜3.0 mm、長方形 3.5×3〜3.5 mm、三角形 底辺3.5/深さ2.5〜3.5 mm で、軸方向位置は前縁から翼弦の20〜60%。SM は平滑ケース基準の相対定義（原文 式(8)・近似）で評価。"
+          }
+        },
+        {
+          "heading": "3. 結果・考察（Results & Discussion）",
+          "body": {
+            "easy": "長方形溝が最も改善（失速余裕 +15.8%・平滑ケース比）し効率低下も最小（−0.2%）。溝があると翼端付近の流れが変わって詰まりが減り、失速しにくくなることを流れ場の図で確認した。",
+            "std": "長方形溝が SM +15.8%/効率 −0.2% で最良（半円 +12.5%/−0.8%、三角形 +9.2%/−0.4%）。すべて平滑ケース基準の相対値。流れ場の可視化から溝が TLV と衝撃波の干渉を変化させ翼端閉塞を緩和することを確認。平滑ケーシングは効率最大。",
+            "expert": "長方形溝が SM +15.8%/効率 −0.2% で最優秀（SM は平滑ケース基準の相対量）。流れ場の数値可視化で、近失速での TLV と衝撃波の干渉パターンが溝によって変化し翼端閉塞が軽減されることを確認。スムーズケーシングが効率最大（TLV 干渉が少ない設計点では有利）。"
+          }
+        },
+        {
+          "heading": "4. 結論（Conclusion）",
+          "body": {
+            "easy": "長方形の溝が最もよく失速を遅らせ（+15.8%・平滑ケース比）、効率低下も最小（−0.2%）。溝型ケーシングトリートメントが動力なしで圧縮機を安定させる有効な方法であることが確かめられた。",
+            "std": "長方形溝が SM +15.8%/効率 −0.2% で最優秀（平滑ケース基準の相対改善）。パッシブ溝型ケーシングトリートメントが TLV と衝撃波干渉を緩和して失速余裕を改善することを CFD で示した。",
+            "expert": "溝型ケーシングトリートメントは TLV と衝撃波干渉の緩和・翼端閉塞軽減により失速余裕を改善する。長方形溝が SM +15.8%/効率 −0.2% で最良のトレードオフ（SM は平滑ケース基準の相対量）。"
+          }
+        }
+      ],
+      "dateAdded": "2026-06-29",
+      "status": "unread"
+    },
+    {
+      "id": "doi:10.1115/1.2929110",
+      "topic": "turbo",
+      "stream": "classic",
+      "source": "openalex",
+      "oa": false,
+      "title": "The 1991 IGTI Scholar Lecture: The Role of Laminar-Turbulent Transition in Gas Turbine Engines",
+      "titleJa": "1991年 IGTI Scholar Lecture：ガスタービンエンジンにおける層流-乱流遷移の役割",
+      "authors": "R. E. Mayle",
+      "year": 1991,
+      "venue": "Journal of Turbomachinery, Vol.113, pp.509-536",
+      "doi": "10.1115/1.2929110",
+      "url": "https://doi.org/10.1115/1.2929110",
+      "pdfUrl": "",
+      "citationNote": "定番（1991 IGTI Scholar Lecture・遷移研究の古典）",
+      "issue": "2026-06-29",
+      "levels": {
+        "easy": {
+          "tldr": "飛行機のエンジン（ガスタービン）の中を流れる空気は、ある場所で『おだやかな流れ（層流）』から『乱れた流れ（乱流）』に変わる。この変化（遷移）が空力性能と熱の伝わり方にどう影響するかを体系的に論じた、IGTI Scholar Lecture（年次特別招待講演）。（抄録ベース）",
+          "problem": "ガスタービンエンジンの翼面では流れが層流から乱流へ変化する。この遷移がエンジン性能に影響するが、体系的な整理が求められていた。（抄録ベース）",
+          "method": "現代および将来のガスタービンエンジンにおける層流-乱流遷移現象の役割を、空力と熱伝達の観点から批判的に調査した。（抄録より）",
+          "result": "遷移現象がガスタービンの空力性能と熱伝達に果たす役割を示した。（抄録より）",
+          "limit": "非OA のため本文未取得。詳細な手法・数値・図は抄録の範囲を超えるため記載しない。"
+        },
+        "std": {
+          "tldr": "ガスタービンエンジンにおける層流-乱流遷移の役割を空力と熱伝達の観点から批判的に論じた1991年 IGTI Scholar Lecture。遷移研究の基礎文献として広く参照される。（抄録ベース）",
+          "problem": "ガスタービンエンジンの空力・熱設計では翼面での遷移現象の理解が不可欠で、整合的な枠組みが求められていた。（抄録ベース）",
+          "method": "現代および将来のガスタービンエンジンにおける層流-乱流遷移現象とその役割を、空力と熱伝達の観点から批判的に研究した。（抄録より）",
+          "result": "遷移現象がガスタービンの空力と熱伝達に果たす役割を整理し、設計への指針を与えた。（抄録ベース）",
+          "limit": "非OA・本文未取得。具体的な手法・数値・式は原文にあたる必要がある。"
+        },
+        "expert": {
+          "tldr": "ガスタービンエンジンにおける層流-乱流遷移現象とその空力・熱伝達への役割を批判的に論じた1991年 IGTI Scholar Lecture（J. Turbomach. 113: 509–536）。（抄録ベース）",
+          "problem": "ガスタービンエンジンの翼・流路壁面での遷移機構の理解と設計への応用が課題であった。（抄録ベース）",
+          "method": "現代および将来のガスタービンエンジンを対象に、層流-乱流遷移現象の役割を空力と熱伝達の両面から批判的に調査した。（抄録より）非OA のため詳細な手法・数値は原文を参照。",
+          "result": "遷移現象がガスタービンの空力性能と熱伝達に果たす役割を整理・提示した。（抄録ベース）具体の結果は本文参照。",
+          "limit": "非OA・本文未取得。数値・式・図の具体的詳細はすべて原文にあたる必要がある。"
+        }
+      },
+      "equations": [],
+      "figures": [
+        {
+          "type": "concept",
+          "src": "<svg viewBox=\"0 0 500 180\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"500\" height=\"180\" fill=\"#faf9f5\"/><line x1=\"30\" y1=\"110\" x2=\"470\" y2=\"110\" stroke=\"#333\" stroke-width=\"2.5\"/><path d=\"M30 110 C80 105 120 95 155 85\" stroke=\"#2980b9\" stroke-width=\"1.5\" fill=\"none\"/><path d=\"M155 85 C185 75 220 60 250 68\" stroke=\"#8e44ad\" stroke-width=\"1.5\" fill=\"none\" stroke-dasharray=\"5,3\"/><path d=\"M250 68 C290 45 340 38 400 28 L470 30\" stroke=\"#e74c3c\" stroke-width=\"1.5\" fill=\"none\"/><defs><marker id=\"ah\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 z\" fill=\"#555\"/></marker></defs><line x1=\"30\" y1=\"62\" x2=\"100\" y2=\"62\" stroke=\"#555\" stroke-width=\"1.2\" marker-end=\"url(#ah)\"/><text x=\"60\" y=\"56\" font-family=\"sans-serif\" font-size=\"10\" fill=\"#555\" text-anchor=\"middle\">主流 →</text><text x=\"90\" y=\"130\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#2980b9\" text-anchor=\"middle\">層流</text><text x=\"200\" y=\"130\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#8e44ad\" text-anchor=\"middle\">遷移</text><text x=\"360\" y=\"130\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#e74c3c\" text-anchor=\"middle\">乱流</text><text x=\"470\" y=\"125\" font-family=\"sans-serif\" font-size=\"10\" fill=\"#666\">翼面</text><text x=\"250\" y=\"170\" font-family=\"sans-serif\" font-size=\"9\" fill=\"#888\" text-anchor=\"middle\">概念図（模式・実データではない）</text></svg>",
+          "caption": "概念図：ガスタービン翼面上の境界層——前縁から後縁に向かい、層流境界層（青）が遷移を経て乱流（赤）に変わる様子（模式・実データではない）"
+        }
+      ],
+      "numbers": [
+        { "v": "28ページ", "l": "原文のページ数（Vol.113, pp.509-536）" }
+      ],
+      "terms": [
+        { "term": "層流", "def": "流体が整然と並んで流れる状態。壁面でのエネルギー損失が小さい。" },
+        { "term": "乱流", "def": "流体が渦を巻いて乱れた状態。摩擦・熱伝達が増大する。" },
+        { "term": "層流-乱流遷移", "def": "流れが層流から乱流へ切り替わる過程。遷移位置が翼の空力性能と熱伝達に大きく影響する。" },
+        { "term": "IGTI Scholar Lecture", "def": "ASME の IGTI（国際ガスタービン・航空機エンジン学会）が選ぶ権威ある年次招待講演。各年を代表する研究者が担当する。" },
+        { "term": "熱伝達", "def": "高温のガスから翼壁へ熱が移る現象。乱流では増大し、タービン翼の冷却設計に直結する。" },
+        { "term": "境界層", "def": "壁ぎわで流速が落ちる薄い層。層流か乱流かで摩擦抵抗と熱伝達が大きく変わる。（遷移と密接に関連する補足語）" }
+      ],
+      "trivia": [
+        {
+          "label": "IGTI Scholar Lecture とは",
+          "text": {
+            "easy": "IGTI Scholar Lecture は、その年を代表する研究者が選ばれる特別な招待講演。Mayle が 1991 年にこの名誉を受けたことは、遷移研究での貢献の大きさを示している。",
+            "std": "IGTI Scholar Lecture は ASME のターボ機械分野で毎年 1 名が選ばれる権威ある招待講演。Mayle 1991 の遷移論文はこのシリーズを代表する基礎文献の一つ。",
+            "expert": "IGTI Scholar Lecture はターボ機械分野の第一線研究者が招かれ、主要課題を批判的・体系的に論じる年次講演。Mayle 1991 はその 1991 年度担当（J. Turbomach. 113: 509–536）。"
+          }
+        }
+      ],
+      "related": [
+        {
+          "tag": "原文（ASME・非OA）",
+          "title": "The Role of Laminar-Turbulent Transition in Gas Turbine Engines（J. Turbomach. 113: 509–536, 1991）",
+          "url": "https://doi.org/10.1115/1.2929110"
+        }
+      ],
+      "dateAdded": "2026-06-29",
       "status": "unread"
     }
   ]
