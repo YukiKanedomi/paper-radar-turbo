@@ -137,8 +137,7 @@ export interface IssueLog {
   intro: string; // 検索・選定のやさしい説明
   picked?: LogPick[]; // 選んだ論文（公開時）
   aside?: LogAside[]; // 見送り・保留・スキップの内訳
-  afterword?: string; // 編集後記＝人間味のある個人的な感想（一人称・主観）
-  wish?: string; // 次への一言（フィードバック導線）
+  afterword?: string; // 編集後記＝親しみのある一個人の感想（一人称・主観）。流体には素人なくらいの目線で正直に
 }
 export interface IssuesLogData {
   entries: IssueLog[]; // 新しい号が配列の前（降順）でも後でも可。表示側で日付降順に整える

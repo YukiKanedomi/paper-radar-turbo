@@ -102,8 +102,6 @@ function NoteCard({ e }: { e: IssueLog }) {
       )}
 
       {e.afterword && <p className="note-afterword">{e.afterword}</p>}
-
-      {e.wish && <p className="note-wish">{e.wish}</p>}
     </article>
   );
 }
