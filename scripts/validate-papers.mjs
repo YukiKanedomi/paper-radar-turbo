@@ -130,25 +130,30 @@ for (let i = 0; i < papers.length; i++) {
     W(`dateAdded の日付形式(YYYY-MM-DD)が不正: ${p.dateAdded}`);
 
   // --- 深さルーブリック（WARN・ブロックしない）---
+  // OA全文と抄録ベースで基準を分ける。抄録ベース(非OA)は「抄録で誠実に書ける範囲」の軽い基準のみ。
+  // related/deepDive/numbers/多めの用語は本文の裏取りが要る＝抄録だと盛りに繋がるので“咎めない”（ハイブリッド設計を尊重）。
   const isCurrent = meta && p.issue && p.issue === meta.currentIssue;
   const scope = isCurrent ? "今号" : "アーカイブ";
-  if (arr(p.terms).length < 6) W(`[${scope}] 用語が少なめ（${arr(p.terms).length}/目標6+）`);
   if (arr(p.figures).length === 0) W(`[${scope}] 図がありません（概念図でも可）`);
-  if (arr(p.related).length < 1) W(`[${scope}] related（関連論文）がありません`);
-  if (arr(p.deepDive).length < 1) W(`[${scope}] deepDive（深掘り）がありません`);
   if (arr(p.trivia).length < 1) W(`[${scope}] trivia（豆知識）がありません`);
-  if (arr(p.numbers).length < 1) W(`[${scope}] numbers（数値カード）がありません`);
 
   if (p.oa === true) {
-    // OA全文の号は読み応えを上積み。ただし逐語不可（崩れたOCR等）は引用しない正当な例外があるため WARN に留める。
+    // OA全文＝読み応えを上積みできる。用語多め・related・deepDive・引用・章立てを目標に。
+    if (arr(p.terms).length < 6) W(`[${scope}] 用語が少なめ（${arr(p.terms).length}/目標6+）`);
+    if (arr(p.related).length < 1) W(`[${scope}] related（関連論文）がありません`);
+    if (arr(p.deepDive).length < 1) W(`[${scope}] deepDive（深掘り）がありません`);
+    if (arr(p.numbers).length < 1) W(`[${scope}] numbers（数値カード）がありません`);
+    // 逐語不可（崩れたOCR等）は引用しない正当な例外があるため WARN に留める。
     if (arr(p.quotes).length < 2)
       W(`[${scope}] OA全文だが quotes（原文引用）が ${arr(p.quotes).length}/目標2+（逐語不可の出典なら引用しないのが正）`);
     if (arr(p.sections).length < 1)
       W(`[${scope}] OA全文だが sections（章立てウォークスルー）がありません`);
   } else {
-    // 抄録ベースでも概念図1枚はほしい（理解の助け）
+    // 抄録ベース(非OA)＝意図的に控えめでよい。最低限：用語数語・概念図1枚。抄録外を足さないことが最優先。
+    if (arr(p.terms).length < 3)
+      W(`[${scope}] 抄録ベース：用語が少なめ（${arr(p.terms).length}/目安3+。抄録内で無理なく）`);
     if (arr(p.figures).length === 0)
-      W(`[${scope}] 抄録ベース。せめて概念図1枚で理解を助けたい`);
+      W(`[${scope}] 抄録ベース：せめて概念図1枚で理解を助けたい`);
   }
 }
 
