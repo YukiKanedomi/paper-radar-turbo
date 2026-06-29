@@ -1,6 +1,57 @@
 {
   "entries": [
     {
+      "date": "2026-06-30",
+      "status": "published",
+      "headline": "渦が崩れると何が起きるか——翼端の連鎖反応と、海運圧縮機10年の歩み",
+      "intro": "今日は「翼端漏れ渦」「渦崩壊」「失速近傍」「遠心圧縮機サージ余裕」などの言葉で探しました。最新枠はオープンアクセスの構造化レビュー（CC BY・MDPI Energies 2026）、定番枠は翼端漏れ渦崩壊のメカニズムを解明した1999年のASME古典（抄録ベース）です。前回号（ケーシングトリートメント）のテーマを受け継ぎながら、「渦が崩れると具体的に何が起きるのか」という問いと、「そもそも船舶向け圧縮機の現状はどこまで来ているのか」という鳥瞰を組み合わせた号です。",
+      "picked": [
+        {
+          "id": "doi:10.3390/en19040991",
+          "title": "舶用遠心圧縮機の現状と開発動向（Afanaseva ら, 2026・CC BY）",
+          "why": "2015〜2025年の査読論文178件から、舶用遠心圧縮機の空力・機械・デジタル三分野を横断整理したレビュー。「自己再循環ケーシング処理で作動域+25%・効率ペナルティ<0.4pp」など、失速余裕拡大の文献集計値が充実しています。著者が明示した統一解釈——「最も効果的な手法は設計点のペナルティが小さく、サージ近傍の安定域を広げるもの」——が今号のキーメッセージです（文献集計値）。全文オープンアクセス（CC BY）。"
+        },
+        {
+          "id": "doi:10.1115/1.2841339",
+          "title": "圧縮機ロータにおける翼端漏れ渦崩壊の役割（Furukawa ら, 1999）",
+          "why": "低速軸流圧縮機で翼端漏れ渦が「よどみ点→バブル状逆流域→渦の大膨張→前縁上流まで及ぶ大ブロッケージ→吸い込み面3次元境界層剥離→全圧上昇急落」という連鎖で失速近傍の性能急低下を引き起こすことを、CFDと可視化で解明した古典。被引用256件（OpenAlex）。本文は有料のため抄録ベースで紹介。最新号（遠心圧縮機のサージ余裕拡大）の裏側にある「なぜ失速が怖いのか」という物理的な根拠を補完します。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv ＋ OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近2〜3年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor marine",
+              "tip leakage vortex control",
+              "surge margin expansion",
+              "casing treatment compressor",
+              "secondary flow endwall turbomachinery",
+              "shock boundary layer interaction compressor"
+            ],
+            "hits": 17,
+            "note": "最新枠は17件。重複（L0・L1・L9・L15）・ML主役（L2・L16）・非ターボ機械流体（L6）を除外。全文OAのAfanaseva 2026（CC BY・舶用遠心圧縮機レビュー）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "tip leakage vortex loss",
+              "rotating stall surge",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "定番枠は14件。既収録（Greitzer 1976・Vo 2008・Denton 1993・Wu 1952）を除外。翼端漏れ渦崩壊の古典・Furukawa 1999（ASME J. Turbomach.・被引用256件・抄録ベース）を採用。前号の風車OA論文との重複を避けながら、翼端流れという共通テーマで連続性を確保。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（舶用遠心圧縮機レビュー）、定番枠=抄録ベース（翼端漏れ渦崩壊の古典）の組み合わせ。「失速近傍で何が起きるか」という物理的メカニズム（定番）と「どう防ぐか・サージ余裕を広げるか」という工学的対策（最新）がペアになる号。"
+      },
+      "afterword": "— 編集担当より：専門的なことはからきしですが、今日の Furukawa 1999 の話が印象的でした。翼先端の小さなすき間から漏れた流れが作る渦が、失速に近づくにつれて「崩れ」始め、よどみ点が生まれてバブルのような逆流域が膨らんで、それが前縁の上流まで流れをふさいで、翼面の境界層がはがれて……という連鎖がすごいなと。1つの小さな渦が崩れただけなのに、影響が上流にまで波及してシステム全体を引き倒す、その「連鎖の怖さ」が伝わってきました。今日の最新（Afanaseva 2026）が「どうやって失速を遠ざけるか」を語るとしたら、こちらは「失速がどんな顔をしているか」を見せてくれる、そんな対になった2本です。"
+    },
+    {
       "date": "2026-06-29",
       "status": "published",
       "headline": "溝を刻めば失速が遠のく——翼端の渦を制御する、と遷移という古典",
@@ -22,14 +73,27 @@
           {
             "name": "arXiv ＋ OpenAlex（最新枠）",
             "scope": "プレプリント＋発行日の新しい順・直近2〜3年（OA/抄録 混在）",
-            "terms": ["secondary flow turbomachinery", "casing treatment compressor", "tip leakage vortex control", "secondary flow endwall turbomachinery", "tip leakage vortex loss"],
+            "terms": [
+              "secondary flow turbomachinery",
+              "casing treatment compressor",
+              "tip leakage vortex control",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
             "hits": 16,
             "note": "最新枠は16件（OA/non-OA 混在）。ML主役・既収録を除外し、流れの物理が主役の Yaylak 2026（CC BY・NASA Rotor 37・ケーシングトリートメント）を採用。"
           },
           {
             "name": "OpenAlex（定番枠）",
             "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
-            "terms": ["centrifugal compressor aerodynamics", "axial compressor aerodynamics", "rotating stall", "surge", "secondary flow", "turbine boundary layer"],
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "rotating stall",
+              "surge",
+              "secondary flow",
+              "turbine boundary layer"
+            ],
             "hits": 14,
             "note": "定番枠は14件。既収録（Greitzer 1976・Vo 2008・Moore-Greitzer 2026）を除外し、遷移研究の古典 Mayle 1991（抄録ベース）を採用。"
           }
@@ -60,14 +124,27 @@
           {
             "name": "arXiv ＋ OpenAlex（最新枠）",
             "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
-            "terms": ["compressor", "turbine", "rotating stall", "surge", "secondary flow", "tip leakage"],
+            "terms": [
+              "compressor",
+              "turbine",
+              "rotating stall",
+              "surge",
+              "secondary flow",
+              "tip leakage"
+            ],
             "hits": 16,
             "note": "最新枠は16件（OA 10 / 抄録 6）。流体主役で、全文OAの Moore–Greitzer 拡張（Scientific Reports・CC-BY）を採用しました。"
           },
           {
             "name": "OpenAlex（定番枠）",
             "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
-            "terms": ["centrifugal compressor aerodynamics", "axial compressor aerodynamics", "rotating stall", "surge", "secondary flow"],
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "rotating stall",
+              "surge",
+              "secondary flow"
+            ],
             "hits": 14,
             "note": "定番枠は14件（OA 2 / 抄録 12）。スパイク失速の発生条件という定番（抄録ベース）を採用。著者に Greitzer が入り、最新論文の B パラメータと繋がります。"
           }
@@ -98,13 +175,24 @@
           {
             "name": "arXiv",
             "scope": "プレプリント／physics.flu-dyn（流体）カテゴリ",
-            "terms": ["compressor", "turbine", "rotating stall", "surge", "secondary flow", "tip leakage"],
+            "terms": [
+              "compressor",
+              "turbine",
+              "rotating stall",
+              "surge",
+              "secondary flow",
+              "tip leakage"
+            ],
             "note": "最新枠：風車の能動流れ制御（2024, 全文OA）。"
           },
           {
             "name": "OpenAlex",
             "scope": "被引用数の多い順",
-            "terms": ["centrifugal compressor aerodynamics", "axial compressor aerodynamics", "turbine aerodynamics"],
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
             "note": "定番枠：ターボ機械の三次元流れ一般理論（Wu, 1952, 全文OA）。"
           }
         ],
