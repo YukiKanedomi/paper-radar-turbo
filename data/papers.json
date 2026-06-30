@@ -10,8 +10,8 @@
       "std": "標準",
       "expert": "専門"
     },
-    "lastUpdated": "2026-06-30",
-    "currentIssue": "2026-06-30",
+    "lastUpdated": "2026-07-01",
+    "currentIssue": "2026-07-01",
     "note": "種データ。実在の定番論文のみ。要約は出典に忠実な高水準記述。具体値は本実装の/collectで検証。seed:true は要検証・拡張の印。"
   },
   "papers": [
@@ -1597,7 +1597,6 @@
       "url": "https://doi.org/10.3390/en19040991",
       "pdfUrl": "https://www.mdpi.com/1996-1073/19/4/991/pdf",
       "citationNote": "最新（MDPI Energies 2026・CC BY）",
-      "issue": "2026-06-30",
       "levels": {
         "easy": {
           "tldr": "船舶のエンジン過給やLNG船での液化ガス圧縮に使われる遠心圧縮機について、2015〜2025年の10年間の研究成果（178件の論文）をまとめた総説（レビュー）。圧力比・効率・サージ余裕といった流れの指標や、ケーシング処理などの安定域拡大技術を整理した（CC BY・MDPI Energies 2026）。",
@@ -1787,7 +1786,6 @@
       "pdfUrl": "",
       "citationNote": "定番（翼端漏れ渦崩壊の古典・高被引用）",
       "citationCount": 256,
-      "issue": "2026-06-30",
       "levels": {
         "easy": {
           "tldr": "圧縮機の翼先端のすき間から漏れ出した流れが作る渦が、失速に近い状態で「崩れる」（渦崩壊）と、前縁の上流まで巨大なふさぎ効果が生まれ、翼面の境界層がはがれて圧力上昇が急落する——という連鎖を数値計算と可視化で示した古典（抄録ベース）。",
@@ -1897,6 +1895,342 @@
       ],
       "dateAdded": "2026-06-30",
       "status": "unread"
+    },
+    {
+      "id": "doi:10.1063/5.0324319",
+      "topic": "turbo",
+      "stream": "latest",
+      "source": "openalex",
+      "oa": false,
+      "title": "Dynamic mode decomposition of the surge modes in a two-stage high-speed fan",
+      "titleJa": "2段高速ファンにおけるサージモードの動的モード分解（DMD）解析",
+      "authors": "Shixuan Wang, Min Zhang, Jiahui Qiu, Zhonggang Fan, Juan Du",
+      "year": 2026,
+      "venue": "Physics of Fluids",
+      "doi": "10.1063/5.0324319",
+      "url": "https://doi.org/10.1063/5.0324319",
+      "pdfUrl": "",
+      "citationNote": "最新（査読誌 Physics of Fluids・2026・抄録ベース）",
+      "issue": "2026-07-01",
+      "levels": {
+        "easy": {
+          "tldr": "圧縮機やファンが壊れる手前で起きる「サージ」という大きな逆流現象が、2段重ねの高速ファンのどこから、どう始まるのかを、数値シミュレーションと信号解析（DMD）で調べた研究（抄録ベース）。",
+          "problem": "サージや回転失速をDMD（動的モード分解）という手法で解析する研究はこれまでもあったが、多くは1段のファン・1つの回転速度・軽いサージ止まりが対象で、2段のファンが複数の回転速度でどう不安定になっていくかは十分調べられていなかった。",
+          "method": "2段の遷音速ファンについて、複数の回転速度で非定常の数値流体計算（全周モデルのURANS）を行い、サージが深刻化していく過程の流れ場をDMDという手法で主要な変動パターン（モード）に分解した。",
+          "result": "設計回転速度（基準を1.0としたとき）では2段目のロータが先に不安定になり、回転数を落とした0.8倍の速度では逆に1段目のロータが先に不安定になることが分かった。軸方向の乱れ・周方向の乱れ・翼の先端からの漏れ流れの自励振動という3種類の流れの乱れが互いに絡み合い、回転失速が流量を阻害（ブロッケージ）し、最終的に深刻な逆流（深いサージ）に至る一連の流れが示された。",
+          "limit": "抄録ベースの紹介。DMDと別の解析手法（FFT）を比較した誤差評価など定量的な検証も行われているが、詳しい数値・計算条件は原文（有料）に基づく。"
+        },
+        "std": {
+          "tldr": "2段遷音速ファンの全周URANS計算にDMDを適用し、深いサージに至る不安定化過程を解析。回転速度によって不安定化が始まる段（第1段／第2段）が入れ替わることを示した研究（抄録ベース）。",
+          "problem": "既存のDMDベースの圧縮機流れ解析は単一ロータ構成・単一回転速度を対象とし、失速や軽いサージにとどまるものが多く、多段間の連成効果・回転速度依存の不安定化機構・深いサージ過程は十分に調べられていなかった。",
+          "method": "2段遷音速ファンについて複数の回転速度で全周非定常RANS（URANS）計算を実施し、深いサージへ至る過程の流れ場にDMDを適用して支配的なモードを抽出。DMDとFFTの周波数比較で解析の妥当性も検証した。",
+          "result": "DMDとFFTの比較では、最大の相対周波数誤差は低周波数モード（0.015翼通過周波数）で11.7%、それ以外のモードでは7%以内に収まりDMD解析の信頼性が確認された。成長率解析では、設計回転速度（1.0n）では第2段ロータが先に不安定化し、0.8nでは第1段ロータが先に不安定化することが分かった。支配的なモードは軸方向じょう乱・周方向じょう乱・翼端漏れ流れの自励振動という3種類で、これらが自己持続的なフィードバックループを形成して不安定化を駆動する。回転失速が流量を低下させてブロッケージを招き、最終的に深刻な逆流を伴う深いサージへとつながる過程が示された。",
+          "limit": "抄録ベースの要約。計算格子・乱流モデル・各回転速度の詳細条件、図表の定量値は原文（有料）に依拠し、ここでは推測で補わない。"
+        },
+        "expert": {
+          "tldr": "2段遷音速ファンの複数回転速度における全周URANS計算にDMDを適用し、近失速から深いサージに至る全過程の支配モードを抽出。従来のDMD研究を多段連成・回転速度依存の不安定機構へと拡張し、不安定開始位置を明らかにした研究（抄録ベース）。",
+          "problem": "従来のDMDベース圧縮機流れ解析は単一ロータ構成・単一回転速度、かつ失速や軽いサージ領域に限定されることが多く、多段の連成効果、回転速度に依存する不安定機構の違い、深いサージ条件は十分に探索されていなかった。",
+          "method": "2段遷音速ファンについて複数の回転速度で全周非定常RANS（URANS）シミュレーションを実施し、深いサージ過程における流れ場にDMDを適用して支配的モードを抽出。DMDとFFTの周波数比較で解析の信頼性を検証した。",
+          "result": "DMD–FFT比較：最大相対周波数誤差は低周波数モード（0.015翼通過周波数）で11.7%、他モードは7%以内。成長率解析：設計回転速度（1.0n）では第2段ロータが先に不安定化、0.8nでは第1段ロータが先に不安定化（回転速度依存の不安定開始位置の入れ替わり）。支配的モードは軸方向じょう乱・周方向じょう乱・自励的な翼端漏れ流れ振動の3種類で、これらが自己持続フィードバックループを形成。回転失速による流量低下（ブロッケージ）が、近失速から深いサージ（深刻な逆流）へ至る過程として一貫して捉えられた。",
+          "limit": "抄録ベース。計算条件（格子・乱流モデル・境界条件）や各モードの定量的な成長率・周波数の詳細、図表の数値は原文（有料）に依拠し、ここでは推測で補わない。"
+        }
+      },
+      "equations": [],
+      "figures": [
+        {
+          "type": "concept",
+          "src": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 230'><rect width='600' height='230' fill='#faf9f5'/><text x='300' y='20' font-family='sans-serif' font-size='12' fill='#114a42' text-anchor='middle' font-weight='700'>2段ファンが深いサージへ至るフィードバックループ（模式）</text><circle cx='150' cy='100' r='52' fill='none' stroke='#1a5e54' stroke-width='1.6'/><text x='150' y='96' font-family='sans-serif' font-size='10' fill='#114a42' text-anchor='middle'>軸方向</text><text x='150' y='110' font-family='sans-serif' font-size='10' fill='#114a42' text-anchor='middle'>じょう乱</text><circle cx='300' cy='55' r='52' fill='none' stroke='#1a5e54' stroke-width='1.6'/><text x='300' y='51' font-family='sans-serif' font-size='10' fill='#114a42' text-anchor='middle'>周方向</text><text x='300' y='65' font-family='sans-serif' font-size='10' fill='#114a42' text-anchor='middle'>じょう乱</text><circle cx='450' cy='100' r='52' fill='none' stroke='#1a5e54' stroke-width='1.6'/><text x='450' y='93' font-family='sans-serif' font-size='9.5' fill='#114a42' text-anchor='middle'>翼端漏れ流れの</text><text x='450' y='107' font-family='sans-serif' font-size='9.5' fill='#114a42' text-anchor='middle'>自励振動</text><path d='M195,85 C230,65 265,60 280,58' stroke='#6c7078' stroke-width='1.3' fill='none' marker-end='url(#a2)'/><path d='M345,65 C390,75 415,85 425,92' stroke='#6c7078' stroke-width='1.3' fill='none' marker-end='url(#a2)'/><path d='M422,135 C350,165 230,165 178,138' stroke='#6c7078' stroke-width='1.3' fill='none' marker-end='url(#a2)'/><text x='300' y='180' font-family='sans-serif' font-size='9.5' fill='#6c7078' text-anchor='middle'>自己持続フィードバックループ</text><path d='M70,210 L530,210' stroke='#a14a3a' stroke-width='1.6'/><text x='300' y='205' font-family='sans-serif' font-size='9.5' fill='#a14a3a' text-anchor='middle'>回転失速 → ブロッケージ → 深いサージ（逆流）</text><defs><marker id='a2' markerWidth='7' markerHeight='7' refX='5' refY='2.5' orient='auto'><path d='M0,0 L5,2.5 L0,5 z' fill='#6c7078'/></marker></defs></svg>",
+          "caption": "概念図：3種類の流れの乱れ（軸方向・周方向・翼端漏れ流れの自励振動）が絡み合うフィードバックループが、回転失速からブロッケージ、深いサージへとつながる過程の模式図（模式・実データではない）。設計回転速度では第2段、0.8倍速度では第1段から不安定化が始まるという論文の知見を図式化したもので、寸法・形状・強度は実データではない。"
+        }
+      ],
+      "numbers": [
+        {
+          "v": "誤差 最大11.7%",
+          "l": "DMDとFFTの周波数比較（低周波数モード、0.015翼通過周波数）"
+        },
+        {
+          "v": "誤差 7%以内",
+          "l": "それ以外のモードでのDMD–FFT周波数誤差"
+        },
+        {
+          "v": "1.0n→第2段／0.8n→第1段",
+          "l": "回転速度により不安定化が先に始まるロータ段が入れ替わる"
+        }
+      ],
+      "terms": [
+        {
+          "term": "サージ (surge)",
+          "def": "圧縮機・ファン全体の流量が大きく脈動・逆流する激しい不安定現象。機械にダメージを与えることもある。"
+        },
+        {
+          "term": "回転失速 (rotating stall)",
+          "def": "翼列の一部で流れが剥離した塊が、周方向に回転しながら伝播する不安定現象。サージの前段階になることが多い。"
+        },
+        {
+          "term": "動的モード分解 (DMD)",
+          "def": "時間変化する流れ場のデータから、特定の周波数と成長率を持つ支配的な変動パターン（モード）を抽出する解析手法。"
+        },
+        {
+          "term": "翼端漏れ流れ (tip leakage flow)",
+          "def": "回転翼の先端とケーシングのすき間を圧力差で漏れる流れ。失速・サージの引き金になりやすい。"
+        },
+        {
+          "term": "全周非定常RANS (full-annulus URANS)",
+          "def": "圧縮機・ファンの全周（360度）を対象に、時間変化する流れをレイノルズ平均ナビエ・ストークス方程式で解く計算手法。"
+        },
+        {
+          "term": "ブレード通過周波数 (blade passing frequency)",
+          "def": "回転する翼が1枚通過するたびに生じる周期的な流れの変動の周波数。"
+        },
+        {
+          "term": "ブロッケージ (blockage)",
+          "def": "失速などにより流路の一部が実質的に塞がれ、流れが通りにくくなる状態。"
+        },
+        {
+          "term": "深いサージ (deep surge)",
+          "def": "サージのうち、流量がゼロを大きく下回るほどの激しい逆流を伴う深刻な状態。"
+        }
+      ],
+      "trivia": [
+        {
+          "label": "DMDってどんな道具？",
+          "text": "DMD（動的モード分解）は、複雑に揺れ動く流れのデータの中から「この周波数・この成長の速さで効いている主要なパターン」を取り出す解析手法。FFT（周波数分解だけ）と違い、各モードが時間とともに成長・減衰する速さも同時に見積もれるのが特徴。"
+        },
+        {
+          "label": "なぜ回転速度で結果が逆転するのか",
+          "text": "設計速度では2段目から、回転数を落とすと1段目から不安定化が始まるという結果は、各段の負荷配分が回転速度によって変わることを示唆している——抄録の範囲ではその先のメカニズムまでは踏み込んでいない。"
+        }
+      ],
+      "related": [
+        {
+          "tag": "源流のサージ理論",
+          "title": "Surge and Rotating Stall in Axial Flow Compressors—Part I: Theoretical Compression System Model（Greitzer, 1976）",
+          "url": "https://doi.org/10.1115/1.3446138"
+        },
+        {
+          "tag": "Moore–Greitzer枠組みの拡張",
+          "title": "Extension of the Moore–Greitzer framework for accurate mathematical modelling of flow instabilities（Katebi & Taghavi Zenouz, 2026）",
+          "url": "https://www.nature.com/articles/s41598-026-50460-y"
+        },
+        {
+          "tag": "遠心圧縮機の失速・サージ機構",
+          "title": "Generation Mechanisms of Rotating Stall and Surge in Centrifugal Compressors",
+          "url": "https://doi.org/10.1007/s10494-017-9877-z"
+        }
+      ],
+      "dateAdded": "2026-07-01",
+      "status": "unread"
+    },
+    {
+      "id": "doi:10.1002/we.458",
+      "topic": "turbo",
+      "stream": "classic",
+      "source": "openalex",
+      "oa": true,
+      "title": "Review of computational fluid dynamics for wind turbine wake aerodynamics",
+      "titleJa": "風車ウェイク（後流）空力学のための数値流体力学（CFD）レビュー",
+      "authors": "Benjamin Sanderse, S. P. van der Pijl, Barry Koren",
+      "year": 2011,
+      "venue": "Wind Energy",
+      "doi": "10.1002/we.458",
+      "url": "https://doi.org/10.1002/we.458",
+      "pdfUrl": "https://ir.cwi.nl/pub/18843/18843D.pdf",
+      "citationNote": "定番（高被引用・CFDレビュー・OA全文）",
+      "citationCount": 591,
+      "issue": "2026-07-01",
+      "levels": {
+        "easy": {
+          "tldr": "風車を並べた風力発電所では、後ろの風車が前の風車の「後流（ウェイク）」に入って発電量が落ちてしまう。この後流をコンピュータでどう計算するか、当時の主要な手法をまとめたレビュー論文（OA全文・CWIリポジトリ公開版）。",
+          "problem": "風車を並べて建てると、後ろの風車は前の風車が乱した風（後流）の中に入り、発電量が最大40%も落ちることがある。この後流をどう精度よく計算するかが大きな課題だった。",
+          "method": "風車の翼そのものは詳しく計算せず力の場として置き換える「アクチュエータディスク／ライン／サーフェス」という近似手法と、翼形状をそのまま計算メッシュに落とし込む「直接モデル化」、両方の計算手法を整理。乱流の扱い方として、平均的な流れだけを解くRANSと、大きな渦を直接解くLESの2つの計算手法も比較した。",
+          "result": "後流は風車のすぐ後ろの「ニアウェイク」（翼端から渦が出てくる領域）と、それより下流の「ファーウェイク」（乱流の混ざり合いで風速が回復していく領域）に分けて考えられる。標準的なRANS乱流モデル（k-εモデル）は後流を拡散させすぎる傾向があり、改良が重ねられてきた。LESはRANSより実験に近い結果を出せるが、計算時間がRANSの約100倍かかるため、風力発電所全体への適用はまだ難しいとされた。",
+          "limit": "2011年発表のレビュー論文で、紹介されている性能の優劣は当時の計算機・モデルの状況に基づく。著者自身も乱流の取り扱いが今後も大きな課題であり続けると述べている。"
+        },
+        "std": {
+          "tldr": "風車後流のCFD計算手法（アクチュエータ近似 vs 直接モデル化、RANS vs LES）を体系的に整理したレビュー（Wind Energy誌、被引用591件、OA全文）。",
+          "problem": "風力発電所では下流タービンが上流の後流に入ることで発電量低下（満ウェイク条件で最大40%、平均で陸上8%・洋上12%）と荷重増大が生じる。これを予測するCFD手法の整理と各手法の限界の把握が求められていた。",
+          "method": "ロータのモデル化（アクチュエータディスク／ライン／サーフェスと直接モデル化）と、後流のモデル化（RANSのパラボリック／楕円型／線形化モデル、およびLES）を章立てて整理。検証・妥当性確認（風洞実験・実機観測との比較）の状況も概観した。",
+          "result": "標準k-εモデルなどブシネスク仮説に基づく渦粘性モデルは後流を過度に拡散させる傾向があり、近年は補正項や非線形モデルなど改良が進む。LESはRANSより実験との一致が良い一方、計算コストはRANSの約100倍（同一格子の場合）で、風力発電所全体規模の適用には依然として高コスト。Horns Rev風力発電所のケースでは、工学モデル（WAsP等）がRANS/LESと同程度の精度をはるかに低コストで達成しており興味深い結果として報告されている。",
+          "limit": "2011年時点のレビューであり、その後の手法の進展は反映されていない。著者らは乱流モデリングの不確かさの定量化を今後の重要課題として挙げている。"
+        },
+        "expert": {
+          "tldr": "風車後流のCFD（アクチュエータ近似 vs 直接モデル化、RANS vs LES）を網羅的に整理した定番レビュー。後流における渦粘性モデルの拡散過大の問題と、LES適用のコスト制約を明確化（Wind Energy 2011、被引用591件、OA全文）。",
+          "problem": "風力発電所における後流起因の出力損失（満ウェイク条件で最大40%、陸上平均8%・洋上平均12%）と荷重増大を高精度に予測するCFD手法の体系的整理と、各手法の妥当性・限界の把握。",
+          "method": "§2で非圧縮ナビエ・ストークス方程式とRANS／LESの定式化を整理。§3でロータモデル化（アクチュエータディスク/ライン/サーフェスと直接モデル化）、§4で後流モデル化（パラボリック・楕円型・線形化RANSモデルおよびLES）を章立てで概観。§5で風洞実験（MEXICOプロジェクト等）・実機サイト（Horns Rev等）との検証・妥当性確認の状況をまとめた。",
+          "result": "ブシネスク仮説に基づく標準k-εモデルは、後流の急激なせん断層やせん断率変化のある領域で不適切となり、後流を過拡散させる（速度欠損・乱流強度ピークの過小評価）。El Kasmi-Masson補正やrealizabilityモデルなど複数の改良が報告されている。LESはRANSより実験との一致が良いが、計算時間はRANS比で約2桁（同一格子の場合は約60倍の報告も）増大し、テイラー微小スケールに基づく必要格子サイズの見積もりから風力発電所規模の解析は依然として非現実的。Horns Rev比較では、計算コストの低い工学モデル（WAsP, WindFarmer）がRANS/LESと同程度（誤差15%程度）の精度を示した点が特筆される。",
+          "limit": "2011年時点のレビューであり、その後の不確かさ定量化や数値LESの進展は反映されていない。著者ら自身が、乱流モデリングの精度向上と不確かさの定量化を今後の主要課題として明記している。"
+        }
+      },
+      "quotes": [
+        {
+          "text": "During the last decades, wind turbines have been installed in large wind farms. The grouping of turbines in farms introduces two major issues: reduced power production, because of wake velocity deficits, and increased dynamic loads on the blades, because of higher turbulence levels.",
+          "textJa": "ここ数十年で、風車は大規模な風力発電所にまとめて設置されるようになった。風車を群として配置することは、後流による風速欠損のための発電量低下と、乱流強度の上昇による翼の動的荷重増大という、2つの大きな課題を生む。",
+          "where": "Section 1, Introduction"
+        },
+        {
+          "text": "It is remarkable that the engineering models are at least as accurate as the RANS and LES models, while having much lower computational costs.",
+          "textJa": "工学モデル（簡易モデル）が、RANSやLESモデルと少なくとも同程度の精度を、はるかに低い計算コストで達成しているのは注目に値する。",
+          "where": "Section 5, Verification and Validation（Horns Rev実機サイトの比較）"
+        },
+        {
+          "text": "A growing number of researchers are using CFD to study wind turbine wake aerodynamics. CFD has become a mature tool for predicting a wide range of flows; however, one important ongoing challenge is the accurate representation of turbulence.",
+          "textJa": "風車後流の空力学をCFDで研究する研究者は増え続けている。CFDは幅広い流れを予測する成熟したツールとなったが、乱流を正確に表現することは依然として重要な課題であり続けている。",
+          "where": "Section 6, Conclusions"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "1. はじめに（Introduction）",
+          "body": {
+            "easy": "風車を並べて建てる風力発電所では、後ろの風車が前の風車の「後流」に入ってしまい、発電量が落ちる問題がある。後流は風車のすぐ後ろの「ニアウェイク」と、もっと下流の「ファーウェイク」に分けて考えられることを説明している。",
+            "std": "風力発電所における後流起因の出力損失（満ウェイク条件で最大40%、平均で陸上8%・洋上12%）と荷重増大という課題を提示。ニアウェイク（翼端・翼根渦が支配的、1〜2ロータ直径まで）とファーウェイク（乱流混合が支配的）の区分、後流乱流の3つの源（大気乱流・機械的乱流・後流乱流）を整理した。",
+            "expert": "ニアウェイクでは翼端・翼根渦による急峻な速度勾配・乱流強度ピークが生じ、高い先端速度比では渦が連続的な渦度シート（せん断層）を形成する。ファーウェイクでは速度欠損が漸近的にガウス分布・軸対称・自己相似になる。ウェイクメアンダリング（後流全体の大規模な揺動）は大気の大規模乱流構造に駆動されると考えられ、疲労・極値荷重を増大させうる。"
+          }
+        },
+        {
+          "heading": "2. 支配方程式と乱流モデリング（RANS / LES）",
+          "body": {
+            "easy": "風の流れを計算するための基本方程式（ナビエ・ストークス方程式）と、乱流を扱うための2つの代表的な計算手法、RANS（平均的な流れだけを解く）とLES（大きな渦を直接解く）を紹介している。",
+            "std": "非圧縮ナビエ・ストークス方程式を基礎に、RANS（レイノルズ平均、式3）とLES（空間フィルタリング、式8）を導入。RANSではレイノルズ応力をブシネスク仮説（式4）で渦粘性として近似するk-εモデル等が広く使われるが、せん断率の急変する流れや異方性の強い流れでは妥当性が限定的とされる。",
+            "expert": "RANSのブシネスク仮説（式4）はDNSとの相関が乏しく、後流のせん断層のような急激な平均ひずみ変化、異方性流れ、3次元流れで不適切となる。レイノルズ応力モデル（RSM）はブシネスク仮説に依存しないが6本の追加PDEを要しコストが高い。LESの計算コストはRe^2に比例しRANSより格段に高く、壁近傍ではRANS-LESハイブリッド（DES）も用いられる。"
+          }
+        },
+        {
+          "heading": "3. ロータのモデル化（アクチュエータ近似 vs 直接モデル化）",
+          "body": {
+            "easy": "風車の翼をどう計算に取り込むかについて、翼を「力の場」として簡略化するアクチュエータディスク／ライン／サーフェスという方法と、翼形状をそのまま細かい計算格子で表現する直接モデル化という2つのアプローチを比較している。",
+            "std": "アクチュエータディスク（推力係数CTで一様または半径分布の力を付与）、アクチュエータライン（時間依存の線力で先端渦を再現）、アクチュエータサーフェス（翼面の圧力分布まで反映）の3手法を整理。直接モデル化は境界層の剥離・遷移まで物理的に再現できるが、オーバーセット格子などメッシュ生成コストが高く、ファーウェイクとの差は小さいと報告されている。",
+            "expert": "アクチュエータディスク（式11：f=½ρV_ref²C_T）は半径方向に非一様な分布も可能で、翼素理論（cl, cd）を用いる場合はBEMと異なりチップロス補正が流れ場に自動的に反映される（ただし2D翼型データを用いる場合は、正しい流れ角・流速を得るための補正が別途必要とされる）。直接モデル化（オーバーセット格子）はk-ω SST等を用いNREL Phase VI等での検証が行われ、層流剥離・動的失速も捉えられるが、計算コストの高さからファーム規模のレイアウト最適化には不向きとされる。"
+          }
+        },
+        {
+          "heading": "4. 後流のモデル化とLESの位置づけ",
+          "body": {
+            "easy": "後流の風速がどう回復していくかを計算する方法として、計算が速いが精度の粗いモデルから、精度は高いが計算に時間がかかるLESまでを比較。標準的なモデルは後流を実際より早く拡散させすぎてしまう傾向があることが説明されている。",
+            "std": "RANSのパラボリック（境界層近似）・楕円型・線形化モデルを整理。標準k-εモデルは後流を過拡散させる（速度欠損・乱流強度ピークの過小評価）ため、El Kasmi-Masson補正やrealizabilityモデルなどの改良が報告されている。LESはRANSより実験との一致が良いが計算コストは2桁ほど高い。",
+            "expert": "パラボリックモデル（UPMWAKE系）はストリームワイズ拡散を無視するためニアウェイクの速度欠損予測でむしろ楕円型モデルより優れる場合がある一方、ファーウェイクでは乱流強度を過大評価しピーク形状を再現できない。realizabilityモデル・RSMはk-εより改善するが、ウェイク拡がりと乱流強度の同時再現は依然不十分。LESの必要格子サイズはテイラー微小スケール（Re^{1/2}に比例）から見積もるとセル寸法~1cm³オーダーが要求されるが、実際の計算は1〜10mオーダーに留まり、十分な解像度に達していない可能性が指摘されている。"
+          }
+        },
+        {
+          "heading": "5–6. 検証・妥当性確認と結論",
+          "body": {
+            "easy": "風洞実験や実際の風力発電所のデータと計算結果を比べる「検証」についてまとめ、最後に全体の結論を述べている。意外なことに、簡易な工学モデルがRANSやLESと同じくらいの精度を、はるかに低い計算コストで出せることが分かった。",
+            "std": "MEXICOプロジェクト（風洞、PIV計測）やHorns Rev等の実機サイトでの比較を概観。Horns Revの比較では工学モデル（WAsP, WindFarmer）がRANS/LESと同程度の精度（誤差15%程度）を低コストで達成。結論では、乱流の正確な表現が依然として最大の課題であり、不確かさの定量化が今後重要になると述べている。",
+            "expert": "検証（verification）と妥当性確認（validation）を区別し、前者はアクチュエータディスクの解析解・ベンチマークとの比較、後者は風洞実験（MEXICO等）・実機サイト（Horns Rev, Nysted等、IEA Annex XVIII）との比較で行われると整理。Bolund実験（地形のみ、風車なし）では線形化モデルが地形の急峻さに対し不向きで、RANSが最良、LESはモデル間のばらつきが大きく大気流への適用は未成熟と評価された。結論部では、乱流モデリングの不確かさ定量化と、メソスケール大気モデルとの結合が今後の方向性として挙げられている。"
+          }
+        }
+      ],
+      "equations": [
+        {
+          "tex": "\\nabla \\cdot \\mathbf{u} = 0, \\qquad \\frac{\\partial \\mathbf{u}}{\\partial t} + (\\mathbf{u}\\cdot\\nabla)\\mathbf{u} = -\\frac{1}{\\rho}\\nabla p + \\nu \\nabla^2 \\mathbf{u}",
+          "caption": "非圧縮ナビエ・ストークス方程式（原文 式1）"
+        },
+        {
+          "tex": "\\frac{\\partial \\bar{\\mathbf{u}}}{\\partial t} + (\\bar{\\mathbf{u}}\\cdot\\nabla)\\bar{\\mathbf{u}} = -\\frac{1}{\\rho}\\nabla \\bar{p} + \\nu \\nabla^2 \\bar{\\mathbf{u}} - \\nabla\\cdot\\overline{\\mathbf{u}'\\mathbf{u}'}",
+          "caption": "レイノルズ平均ナビエ・ストークス方程式（RANS、原文 式3）"
+        },
+        {
+          "tex": "-\\overline{\\mathbf{u}'\\mathbf{u}'} = \\nu_T\\left(\\nabla\\mathbf{u} + (\\nabla\\mathbf{u})^T\\right)",
+          "caption": "ブシネスク仮説による渦粘性近似（原文 式4）"
+        },
+        {
+          "tex": "f = \\tfrac{1}{2}\\rho V_{\\text{ref}}^2 C_T",
+          "caption": "一様負荷アクチュエータディスクの推力（原文 式11）"
+        }
+      ],
+      "figures": [
+        {
+          "type": "concept",
+          "src": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 620 220'><rect width='620' height='220' fill='#faf9f5'/><text x='310' y='20' font-family='sans-serif' font-size='12' fill='#114a42' text-anchor='middle' font-weight='700'>風車後流のニアウェイク／ファーウェイク構造（模式）</text><line x1='40' y1='160' x2='580' y2='160' stroke='#b7b2a6' stroke-width='1' stroke-dasharray='3,2'/><rect x='90' y='70' width='10' height='90' fill='#1a5e54'/><text x='95' y='62' font-family='sans-serif' font-size='9.5' fill='#114a42' text-anchor='middle'>ロータ面</text><path d='M100,75 C140,60 160,90 130,100 C170,95 180,130 140,135' stroke='#6c7078' stroke-width='1.3' fill='none'/><path d='M100,145 C140,160 160,130 130,120 C170,125 180,90 140,85' stroke='#6c7078' stroke-width='1.3' fill='none'/><text x='150' y='50' font-family='sans-serif' font-size='9' fill='#6c7078' text-anchor='middle'>翼端渦</text><rect x='105' y='168' width='100' height='10' fill='none' stroke='#a14a3a' stroke-width='1'/><text x='155' y='196' font-family='sans-serif' font-size='9' fill='#a14a3a' text-anchor='middle'>ニアウェイク (~1–2D)</text><rect x='205' y='168' width='340' height='10' fill='none' stroke='#1a5e54' stroke-width='1'/><text x='375' y='196' font-family='sans-serif' font-size='9' fill='#1a5e54' text-anchor='middle'>ファーウェイク（乱流混合で速度欠損が回復）</text><path d='M120,110 C160,108 180,104 210,98' stroke='#1d2127' stroke-width='1' fill='none' opacity='.5'/><path d='M210,98 Q260,80 320,100 Q380,118 440,108 Q500,98 545,103' stroke='#1d2127' stroke-width='1.3' fill='none' opacity='.55'/><text x='540' y='95' font-family='sans-serif' font-size='9' fill='#1d2127' text-anchor='end' opacity='.7'>速度欠損が徐々に回復</text><path d='M60,108 L85,108' stroke='#114a42' stroke-width='1.6' marker-end='url(#a3)'/><text x='62' y='100' font-family='sans-serif' font-size='8.5' fill='#114a42'>風向</text><defs><marker id='a3' markerWidth='7' markerHeight='7' refX='5' refY='2.5' orient='auto'><path d='M0,0 L5,2.5 L0,5 z' fill='#114a42'/></marker></defs><text x='310' y='213' font-family='sans-serif' font-size='9.5' fill='#6c7078' text-anchor='middle'>（模式・実データではない）</text></svg>",
+          "caption": "概念図：風車後流のニアウェイク（翼端・翼根渦が支配的な領域、約1〜2ロータ直径まで）とファーウェイク（乱流混合により速度欠損が回復していく領域）の模式図（模式・実データではない）。渦の形状・速度回復の度合いはイメージで、実データではない。"
+        }
+      ],
+      "numbers": [
+        {
+          "v": "出力損失 最大40%",
+          "l": "下流タービンの満ウェイク条件での出力損失"
+        },
+        {
+          "v": "平均損失 陸上8% / 洋上12%",
+          "l": "風向平均での風力発電所の出力損失"
+        },
+        {
+          "v": "計算コスト 約2桁増",
+          "l": "LESはRANSに比べ計算時間が大幅に増大（同一格子で約60倍との報告も）"
+        },
+        {
+          "v": "格子点数 10^7〜10^8",
+          "l": "単一ウェイク計算でも要する典型的なLESの格子点数"
+        }
+      ],
+      "terms": [
+        {
+          "term": "後流（ウェイク）",
+          "def": "風車が風からエネルギーを取り出した後、風速が落ち乱流が強まった下流側の流れの領域。"
+        },
+        {
+          "term": "ニアウェイク／ファーウェイク",
+          "def": "風車のすぐ後ろ（翼端渦が支配的、約1〜2ロータ直径まで）と、それより下流（乱流混合が支配的）の2つの領域区分。"
+        },
+        {
+          "term": "アクチュエータディスク",
+          "def": "翼そのものを計算せず、翼が流れに及ぼす力を仮想的な円盤上の力場として置き換える近似モデル。"
+        },
+        {
+          "term": "RANS（レイノルズ平均ナビエ・ストークス）",
+          "def": "乱流を時間平均した流れとして解く計算手法。計算は速いが乱流の変動構造は直接表現しない。"
+        },
+        {
+          "term": "LES（ラージエディシミュレーション）",
+          "def": "大きな渦は直接計算し、小さな渦だけをモデルで近似する手法。RANSより精度が高いが計算コストも高い。"
+        },
+        {
+          "term": "ブシネスク仮説",
+          "def": "乱流による応力を、平均流の速度勾配に比例する「渦粘性」で近似する仮定。多くのRANSモデルの基礎だが万能ではない。"
+        },
+        {
+          "term": "渦粘性",
+          "def": "乱流による運動量の混合を、あたかも粘性が増したかのように表現した仮想的な物理量。"
+        },
+        {
+          "term": "ウェイクメアンダリング",
+          "def": "後流全体がゆっくりと大きく揺れ動く現象。下流タービンの疲労荷重を増大させうる。"
+        }
+      ],
+      "trivia": [
+        {
+          "label": "なるほど",
+          "text": "後流の研究では「どれだけ速度が落ちるか」だけでなく「どれだけ乱流が強まるか」も同じくらい重要。論文は、後流乱流の一因が翼端渦の崩壊にあることと、標準的な乱流モデル（k-ε等）が乱流強度のピークをうまく再現できない背景にブシネスク仮説の限界があることを、それぞれ説明している。"
+        },
+        {
+          "label": "簡易モデルの健闘",
+          "text": "Horns Rev風力発電所の比較では、計算コストの低い工学モデル（WAsP等）がRANSやLESと同程度の精度を出したと報告されている。高精度な手法が常に実用上有利とは限らないことを示す一例。"
+        }
+      ],
+      "related": [
+        {
+          "tag": "本文中で言及される先行レビュー（ref.10）",
+          "title": "State of the art in wind turbine aerodynamics and aeroelasticity（Hansen, Sørensen, Voutsinas, Sørensen & Madsen, 2006）",
+          "url": "https://doi.org/10.1016/j.paerosci.2006.10.002"
+        },
+        {
+          "tag": "先行レビュー（本文中で言及）",
+          "title": "Wind turbine wake aerodynamics（Vermeer, Sørensen & Crespo, 2003）",
+          "url": "https://doi.org/10.1016/s0376-0421(03)00078-2"
+        }
+      ],
+      "dateAdded": "2026-07-01",
+      "status": "unread",
+      "deepDive": [
+        {
+          "title": "さらに深掘り：なぜ標準k-εモデルは後流を「拡散させすぎる」のか",
+          "body": {
+            "easy": "後流の計算によく使われる標準的な乱流モデル（k-εモデル）は、渦の混ざり方を単純な「粘性」として近似している。だが後流の縁のように流れが急に変化する場所では、この近似がうまく当てはまらず、実際より風速の落ち込みが早く回復し、乱流の強さのピークもなだらかになりすぎてしまう傾向がある。",
+            "std": "k-εモデルなど多くのRANSモデルはブシネスク仮説（式4）に基づき、乱流応力を平均流の速度勾配に比例する「渦粘性」として表す。論文はこの仮説が後流のせん断層のような急激なひずみ変化、異方性流れ、3次元流れで妥当性を失うと説明する。結果として速度欠損と乱流強度のピークが過小評価される「過拡散」が生じ、El Kasmi-Masson補正やrealizabilityモデルなど複数の改良が提案されてきた。",
+            "expert": "標準k-εモデル（式4のブシネスク仮説）はDNSとの相関が乏しく、後流のせん断層で生じる急激な平均ひずみ変化・異方性・3次元性のもとで破綻する。El Kasmi-Masson（散逸方程式への追加項）、realizabilityモデル（Reynolds応力の実現可能性条件を強制）、RSM（ブシネスク仮説に依存しない6本の追加PDE）などが改良として提示されるが、論文はrealizabilityモデルでも速度欠損とウェイク拡がりの同時再現は不十分と評価しており、乱流モデリングが2011年時点でも未解決の中心課題であり続けていたことを示している。"
+          }
+        }
+      ]
     }
   ]
 }
