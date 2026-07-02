@@ -85,6 +85,12 @@ export const CATEGORIES: GraphCategory[] = [
       "迎え角（AoA）",
     ],
   },
+  {
+    key: "secondary",
+    label: "二次流れ・エンドウォール",
+    color: "#5f7a8a",
+    terms: ["二次流れ", "馬蹄形渦（horseshoe vortex）", "エンドウォール", "エンドウォールフェンス", "コンタリング（endwall contouring）"],
+  },
 ];
 
 export const CURATED_EDGES: CuratedEdge[] = [
@@ -120,6 +126,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "能動流れ制御（AFC）", to: "シンセティックジェット（合成噴流）", label: "手段" },
   { from: "能動流れ制御（AFC）", to: "遺伝的アルゴリズム", label: "最適化" },
   { from: "境界層剥離", to: "境界層", label: "から発達" },
+  { from: "二次流れ", to: "馬蹄形渦（horseshoe vortex）", label: "起源" },
+  { from: "馬蹄形渦（horseshoe vortex）", to: "エンドウォール", label: "境界層から発達" },
+  { from: "二次流れ", to: "端壁（二次流れ）損失", label: "損失化" },
+  { from: "エンドウォールフェンス", to: "二次流れ", label: "抑制" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
