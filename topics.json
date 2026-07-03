@@ -11,7 +11,9 @@
         "tip leakage vortex loss", "tip clearance flow loss", "turbomachinery loss mechanisms",
         "shock boundary layer interaction compressor", "wake mixing unsteady turbomachinery",
         "boundary layer transition turbine blade", "corner separation compressor", "blade flutter aeroelasticity",
-        "supercritical CO2 turbomachinery"
+        "supercritical CO2 turbomachinery",
+        "wind turbine wake aerodynamics", "film cooling turbine heat transfer", "inlet distortion fan aerodynamics",
+        "diffuser stall pressure recovery", "cavitation pump impeller", "rotor stator interaction unsteady"
       ]
     }
   ],

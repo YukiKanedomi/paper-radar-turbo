@@ -50,7 +50,7 @@ async function fetchRetry(url, { tries = 3, baseDelay = 800 } = {}) {
 // 分野ガード：タイトルが流体・ターボ機械の語を含むものだけを on-topic とみなす。
 // OpenAlex の被引用ソートは桁違いの他分野（医学・生物等）を上位に上げてしまうため、
 // API の調子に依らずクライアント側でノイズを除去する。
-const CORE = /compress|turbine|turbomachin|turbo[\s-]?machin|\bstall\b|\bsurge\b|\bblade|\brotor|stator|cascade|aerodynam|aerofoil|airfoil|\bvane\b|endwall|tip[\s-]?leakage|tip[\s-]?clearance|secondary[\s-]?flow|boundary[\s-]?layer|shock|\bwake\b|flutter|aeroelast|impeller|diffuser|nozzle|\baxial\b|centrifugal|\bfan\b|propuls/i;
+const CORE = /compress|turbine|turbomachin|turbo[\s-]?machin|\bstall\b|\bsurge\b|\bblade|\brotor|stator|cascade|aerodynam|aerofoil|airfoil|\bvane\b|endwall|tip[\s-]?leakage|tip[\s-]?clearance|secondary[\s-]?flow|boundary[\s-]?layer|shock|\bwake\b|flutter|aeroelast|impeller|diffuser|nozzle|\baxial\b|centrifugal|\bfan\b|propuls|cavitat|\bpump\b|inducer|film[\s-]?cooling/i;
 const onTopic = (p) => CORE.test(`${p.title ?? ""} ${p.venue ?? ""}`);
 
 // キーワード群から arXiv 用の有意な単語集合を作る（ストップワード除去）
@@ -61,6 +61,15 @@ function salientWords(keywords) {
     for (const w of k.toLowerCase().split(/\s+/))
       if (w.length >= 3 && !STOP.has(w)) set.add(w);
   return [...set];
+}
+
+// 日替わりローテーション：毎日別の部分集合を検索し、数日でキーワード全体を一巡させる。
+// （先頭固定 slice だと後半の語が一度も検索されず、配信が代わり映えしなくなるため）
+// 日付起点の決定的な選び方＝同じ日に再実行しても同じ語（配信ノートの記録と一致する）。
+function rotateDaily(keywords, n, offset = 0) {
+  const day = Math.floor(Date.now() / 86400000);
+  const start = (day * n + offset) % keywords.length;
+  return Array.from({ length: Math.min(n, keywords.length) }, (_, i) => keywords[(start + i) % keywords.length]);
 }
 
 // ---- arXiv（最新・全文OA）。段階的に緩めて取りこぼしを防ぐ ----
@@ -97,7 +106,7 @@ async function arxivQuery(searchExpr, max = 14) {
 }
 
 async function fetchArxiv(keywords, max = 14) {
-  const phrases = keywords.slice(0, 6).map((k) => `all:%22${encodeURIComponent(k)}%22`);
+  const phrases = keywords.map((k) => `all:%22${encodeURIComponent(k)}%22`);
   const words = salientWords(keywords).map((w) => `all:${encodeURIComponent(w)}`);
   const FLU = "+AND+cat:physics.flu-dyn";
 
@@ -152,7 +161,7 @@ async function openAlexSearch(phrase, { sort, fromDate, stream, perPage = 6 }) {
 
 // 定番候補：被引用の多い順（OA/非OA 混在）
 async function fetchOpenAlexClassic(keywords, take = 14) {
-  const picks = keywords.slice(0, 8);
+  const picks = keywords;
   const lists = [];
   for (const k of picks) {
     try {
@@ -171,7 +180,7 @@ async function fetchOpenAlexClassic(keywords, take = 14) {
 async function fetchOpenAlexRecent(keywords, take = 10) {
   const yearFloor = new Date().getFullYear() - 3;
   const fromDate = `${yearFloor}-01-01`;
-  const picks = keywords.slice(0, 6);
+  const picks = keywords;
   const lists = [];
   for (const k of picks) {
     try {
@@ -208,11 +217,16 @@ const out = { generatedFor: topicFilter ?? "all", topics: [] };
 for (const t of topicsCfg.topics) {
   if (topicFilter && t.key !== topicFilter) continue;
   console.log(`\n=== topic: ${t.key} (${t.label}) ===`);
+  // 検索語は日替わりローテーション（最新枠6語・定番枠8語。定番はオフセットをずらし同日でも別領域を探す）
+  const kwLatest = rotateDaily(t.keywords, 6);
+  const kwClassic = rotateDaily(t.keywords, 8, Math.floor(t.keywords.length / 2));
+  console.log(`本日の検索語（最新枠）: ${kwLatest.join(" / ")}`);
+  console.log(`本日の検索語（定番枠）: ${kwClassic.join(" / ")}`);
   // 3系統を取得：arXiv(最新OA)・OpenAlex新着(最新・OA/抄録)・OpenAlex被引用(定番・OA/抄録)
   const [arxiv, oaRecent, oaClassic] = await Promise.all([
-    fetchArxiv(t.keywords).catch((e) => (console.error("arXiv失敗:", e.message), [])),
-    fetchOpenAlexRecent(t.keywords).catch((e) => (console.error("OpenAlex新着失敗:", e.message), [])),
-    fetchOpenAlexClassic(t.keywords).catch((e) => (console.error("OpenAlex被引用失敗:", e.message), [])),
+    fetchArxiv(kwLatest).catch((e) => (console.error("arXiv失敗:", e.message), [])),
+    fetchOpenAlexRecent(kwLatest).catch((e) => (console.error("OpenAlex新着失敗:", e.message), [])),
+    fetchOpenAlexClassic(kwClassic).catch((e) => (console.error("OpenAlex被引用失敗:", e.message), [])),
   ]);
 
   // 枠は「役割」で束ねる：最新 = arXiv + OpenAlex新着（OA/抄録 混在）、定番 = OpenAlex被引用（OA/抄録 混在）
@@ -237,7 +251,8 @@ for (const t of topicsCfg.topics) {
     "  ※ 枠(最新/定番)とOA性は独立。最新で抄録・定番でOAも歓迎。最低1件OAを満たしつつ、OA/抄録をバランスよく。",
   );
 
-  out.topics.push({ key: t.key, label: t.label, latest, classic });
+  // searchTerms＝実際に使った検索語（配信ノート searchLog にはこれを記録する＝§0）
+  out.topics.push({ key: t.key, label: t.label, searchTerms: { latest: kwLatest, classic: kwClassic }, latest, classic });
 }
 
 writeFileSync(outPath, JSON.stringify(out, null, 2), "utf8");
