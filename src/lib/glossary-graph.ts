@@ -34,6 +34,8 @@ export const CATEGORIES: GraphCategory[] = [
       "渦崩壊 (vortex breakdown)",
       "逆流（backflow）",
       "ブロッケージ (blockage)",
+      "先端すき間渦の前縁越え",
+      "渦運動学（vortex kinematics）",
     ],
   },
   {
@@ -53,6 +55,8 @@ export const CATEGORIES: GraphCategory[] = [
       "翼端漏れ流れ (tip leakage flow)",
       "先端すき間流れ（tip clearance flow）",
       "軸方向渦度 (streamwise vorticity)",
+      "表面粗さ (surface roughness)",
+      "衝撃波境界層干渉 (SBLI)",
     ],
   },
   {
@@ -94,6 +98,7 @@ export const CATEGORIES: GraphCategory[] = [
       "区分的3次多項式",
       "ブシネスク仮説",
       "渦粘性",
+      "Q基準 (Q-criterion)",
     ],
   },
   {
@@ -129,6 +134,7 @@ export const CATEGORIES: GraphCategory[] = [
       "運動量係数 Cμ",
       "無次元周波数 F⁺",
       "渦放出周波数",
+      "ハブコーナー剥離",
     ],
   },
   {
@@ -244,6 +250,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "動的モード分解 (DMD)", to: "サージ", label: "モード抽出" },
   // --- 二次流れの類縁 ---
   { from: "エンドウォール輪郭", to: "コンタリング（endwall contouring）", label: "同概念" },
+  // --- 表面粗さと失速近傍の流れ物理（Godse et al. 2024） ---
+  { from: "表面粗さ (surface roughness)", to: "エントロピー生成", label: "増大" },
+  { from: "衝撃波境界層干渉 (SBLI)", to: "境界層剥離", label: "誘発" },
+  { from: "ハブコーナー剥離", to: "ブロッケージ (blockage)", label: "寄与" },
+  // --- 翼列内流れ構造とスパイク開始（Hoying et al. 1999） ---
+  { from: "先端すき間渦の前縁越え", to: "スパイク型回転失速", label: "引き金" },
+  { from: "先端すき間流れ（tip clearance flow）", to: "先端すき間渦の前縁越え", label: "起源" },
+  { from: "渦運動学（vortex kinematics）", to: "先端すき間渦の前縁越え", label: "説明手段" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
