@@ -224,6 +224,70 @@ if (existsSync(logFile)) {
   }
 }
 
+// ---- 用語マップ（src/lib/glossary-graph.ts）の整合性 ------------------------
+// 自動配信が用語マップを更新する際の番人：
+//   ERROR: 分類のタイポ（papers.json に無い term）／複数カテゴリへの重複分類／
+//          意味エッジの端点不在／表記ゆれ（括弧違い等の同概念が別ノードに分裂）
+//   WARN : 今号の論文で分類済み用語が少ない（分類のサボり検知）
+// 第1引数でテスト用ファイルを検証している時は正本前提の本検査をスキップする。
+const ggFile = resolve(root, "src/lib/glossary-graph.ts");
+if (!fileArg && existsSync(ggFile)) {
+  try {
+    const { transformSync } = await import("esbuild");
+    const js = transformSync(readFileSync(ggFile, "utf8"), { loader: "ts", format: "esm" }).code;
+    const mod = await import("data:text/javascript;base64," + Buffer.from(js).toString("base64"));
+    const CATEGORIES = arr(mod.CATEGORIES);
+    const CURATED_EDGES = arr(mod.CURATED_EDGES);
+
+    const paperTerms = new Set();
+    for (const p of papers) for (const t of arr(p.terms)) if (nonEmpty(t.term)) paperTerms.add(t.term.trim());
+
+    // 分類：タイポ（実在しない term）と重複分類
+    const classified = new Set();
+    for (const c of CATEGORIES) {
+      for (const t of arr(c.terms)) {
+        if (classified.has(t))
+          err("glossary-graph", `term が複数カテゴリに重複分類されています: 「${t}」`);
+        classified.add(t);
+        if (!paperTerms.has(t))
+          err("glossary-graph", `分類された term が papers.json に存在しません（タイポ/リネーム漏れ）: 「${t}」（カテゴリ: ${c.label}）`);
+      }
+    }
+
+    // 意味エッジ：端点の実在（不在エッジは buildGraph で黙って落ちる＝気づけないため機械検出）
+    for (const e of CURATED_EDGES) {
+      for (const end of [e.from, e.to]) {
+        if (!paperTerms.has(end))
+          err("glossary-graph", `意味エッジの端点が papers.json に存在しません: 「${end}」（${e.from} → ${e.to}）`);
+      }
+    }
+
+    // 表記ゆれ：末尾の括弧書き（英語併記等）を除いた基本形が同じ別表記＝同概念のノード分裂
+    const baseOf = (t) => t.replace(/\s*[（(][^（()）]*[)）]\s*$/, "").trim();
+    const byBase = new Map();
+    for (const t of paperTerms) {
+      const b = baseOf(t);
+      if (!byBase.has(b)) byBase.set(b, []);
+      byBase.get(b).push(t);
+    }
+    for (const [b, ts] of byBase) {
+      if (ts.length > 1)
+        err("glossary-graph", `表記ゆれの疑い（同概念が別ノードに分裂）: ${ts.map((t) => `「${t}」`).join(" と ")}。同一表記に統一するか、別概念なら区別が付く名前に`);
+    }
+
+    // 今号の分類サボり検知：主要語の分類（1論文2〜4語目安）が守られているか
+    if (meta && meta.currentIssue) {
+      for (const p of papers.filter((x) => x.issue === meta.currentIssue)) {
+        const n = arr(p.terms).filter((t) => nonEmpty(t.term) && classified.has(t.term.trim())).length;
+        if (n < 2)
+          warn(p.id, `[今号] glossary-graph に分類済みの用語が ${n} 語（目安2+。固有名詞以外の主要語を CATEGORIES に分類する）`);
+      }
+    }
+  } catch (e) {
+    err("glossary-graph", `読み込み/変換に失敗: ${e.message}`);
+  }
+}
+
 // ---- レポート --------------------------------------------------------------
 const line = (x) => `  • [${x.where}] ${x.msg}`;
 console.log(`\npapers-radar 配信品質チェック — ${papers.length}本 / currentIssue=${meta?.currentIssue ?? "(なし)"}`);
