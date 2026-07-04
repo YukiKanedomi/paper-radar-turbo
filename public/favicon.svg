@@ -1,13 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="論文レーダー">
-  <rect width="512" height="512" fill="#f3ecdf"/>
-  <g fill="#ffffff" stroke="#1a5e54" stroke-width="3" stroke-opacity="0.55">
-    <rect x="158" y="150" width="176" height="226" rx="20"/>
-    <rect x="186" y="134" width="176" height="226" rx="20"/>
-    <rect x="214" y="118" width="176" height="226" rx="20"/>
-  </g>
-  <g stroke="#1a5e54" stroke-width="11" stroke-linecap="round">
-    <line x1="244" y1="172" x2="360" y2="172"/>
-    <line x1="244" y1="210" x2="360" y2="210"/>
-    <line x1="244" y1="248" x2="322" y2="248"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="論文レーダー">
+  <rect width="512" height="512" fill="#f3eee1"/>
+  <defs><path id="v2" d="M337.7 276L340.5 277.7L343.2 279.4L345.8 281.3L348.3 283.3L350.7 285.3L353 287.5L355.3 289.8L357.5 292.2L359.7 294.7L361.9 297.3L364 300.1L366.1 303L368.2 306.2L370.2 309.5L372.2 313.1L374.2 317L376 321.1L377.8 325.6L379.5 330.4L381 335.5L382.2 340.9L383.3 346.7L384 352.9L384.5 359.4L384.5 366.2L384.1 373.4L383.3 380.9L399.9 394.9L399.9 394.9L421.5 391.7L424.6 382.3L427 373L428.9 363.8L430.2 354.8L430.9 345.9L431 337.2L430.6 328.8L429.7 320.6L428.2 312.7L426.3 305L423.9 297.8L421.1 290.8L417.9 284.3L414.4 278.1L410.4 272.3L406.2 267L401.7 262.1L397 257.6L392.1 253.6L387 250L381.9 246.8L376.6 244.1L371.3 241.8L366 239.8L360.8 238.2L355.5 236.9L350.3 236Z" fill="#1a5e54" stroke="#1a5e54" stroke-width="8" stroke-linejoin="round"/></defs>
+  <use href="#v2"/>
+  <use href="#v2" transform="rotate(72 256 256)"/>
+  <use href="#v2" transform="rotate(144 256 256)"/>
+  <use href="#v2" transform="rotate(216 256 256)"/>
+  <use href="#v2" transform="rotate(288 256 256)"/>
+  <circle cx="256" cy="256" r="52" fill="none" stroke="#1a5e54" stroke-width="15"/>
+  <circle cx="256" cy="256" r="12" fill="#1a5e54"/>
 </svg>
