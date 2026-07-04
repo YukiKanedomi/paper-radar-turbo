@@ -72,6 +72,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ターボチャージャー",
       "平面翼列・環状翼列",
       "よどみ点 (stagnation point)",
+      "二面角 (dihedral angle)",
     ],
   },
   {
@@ -81,6 +82,7 @@ export const CATEGORIES: GraphCategory[] = [
     terms: [
       "CFD",
       "LES",
+      "WALEモデル",
       "サロゲートモデル",
       "CNN",
       "次元削減",
@@ -135,6 +137,9 @@ export const CATEGORIES: GraphCategory[] = [
       "無次元周波数 F⁺",
       "渦放出周波数",
       "ハブコーナー剥離",
+      "コーナー剥離",
+      "逆圧力勾配 (adverse pressure gradient)",
+      "限界流線 (limiting streamline)",
     ],
   },
   {
@@ -258,6 +263,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "先端すき間渦の前縁越え", to: "スパイク型回転失速", label: "引き金" },
   { from: "先端すき間流れ（tip clearance flow）", to: "先端すき間渦の前縁越え", label: "起源" },
   { from: "渦運動学（vortex kinematics）", to: "先端すき間渦の前縁越え", label: "説明手段" },
+  // --- コーナー剥離と二面角（Zhu et al. 2026 / Gbadebo et al. 2005） ---
+  { from: "LES", to: "WALEモデル", label: "サブグリッドモデル" },
+  { from: "二面角 (dihedral angle)", to: "コーナー剥離", label: "強弱を左右" },
+  { from: "逆圧力勾配 (adverse pressure gradient)", to: "境界層剥離", label: "誘発" },
+  { from: "コーナー剥離", to: "3次元境界層剥離", label: "具体例" },
+  { from: "限界流線 (limiting streamline)", to: "3次元境界層剥離", label: "可視化手段" },
+  { from: "コーナー剥離", to: "二次流れ", label: "対渦を伴う" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
