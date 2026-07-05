@@ -453,6 +453,81 @@
         "note": "重複除外後、コーナー剥離という同じ流体現象を扱う最新1件・定番1件を選定。定番枠の第一候補（Pullan et al., 2014）はPDFアクセス不可のため次点に切り替えました。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、圧縮機の翼どうしの角度（二面角）を、実機ではなくシンプルな模型に置き換えて調べる、という研究のやり方でした。複雑な機械をそのまま調べようとすると色々な要因が絡んで訳が分からなくなるけれど、知りたい一つの角度だけを取り出した模型を作れば、その効果がはっきり見える——遠回りに見えて、実はいちばん近道なんだなと感じました。ちなみに、それを検証するのに使われていたのが1995年の実験データだったのも印象的でした。30年前のデータが、今も現役で使われているんですね。"
+    },
+    {
+      "date": "2026-07-06",
+      "status": "published",
+      "headline": "Bパラメータの原点と、絞り弁で見つけた失速の境目",
+      "intro": "今日の定番枠は、アーカイブに眠っていた1976年のグリーツァー論文——サージと回転失速のどちらに向かうかを決める『Bパラメータ』を最初に示した、まさに原点の一本（抄録ベース）。最新枠は、単段の圧縮機試験装置でスロットル弁を少しずつ絞り、回転数ごとに失速が始まる境目を実際に測った2026年の実験論文（全文オープンアクセス・CC BY 4.0）。理論の原点と、地道な実測がそろいました。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.3446138",
+          "title": "軸流圧縮機におけるサージと回転失速——第I部：理論的圧縮系モデル（Greitzer, 1976）",
+          "why": "圧縮機がサージに向かうか回転失速に向かうかを、Bパラメータという無次元数の大小で整理した古典中の古典（被引用845）。アーカイブには以前から入っていましたが、今日の最新枠の実験論文とテーマがつながるため、初めて配信枠に選びました（抄録ベース）。"
+        },
+        {
+          "id": "doi:10.1088/1742-6596/3256/1/012059",
+          "title": "単段軸流圧縮機における回転失速特性の研究（Li, Cai, Ma, Li & Zhao, 2026）",
+          "why": "実物の低速圧縮機試験装置でスロットル弁を段階的に絞り、900〜1800rpmの4回転数・静翼角度±5°の条件で回転失速の境目を実測した2026年の会議論文。全文オープンアクセス（CC BY 4.0）で、原論文のFigure 4（特性曲線）をそのまま掲載しています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠の候補が軒並みアーカイブ既収録だった",
+          "note": "定番枠の被引用上位には、Mayle(1991)の層流-乱流遷移レビュー、Vo・Tan・Greitzer(2008)のスパイク型失速条件、Furukawa et al.(1999)の翼端漏れ渦崩壊、Sanderse et al.(2011)の風車ウェイクCFDレビューなど有力な論文が並びましたが、いずれも過去の配信で既に取り上げ済みでした。除外した上で、まだ配信していなかったGreitzer(1976)を選びました。"
+        },
+        {
+          "title": "最新枠の第一候補はオープンアクセスなのに全文が読めなかった",
+          "note": "最新枠でまず目に留まったのは、ウォータージェットポンプの翼端漏れ渦キャビテーションを調べた2026年論文（Diamond OA・CC BY）でしたが、掲載元サイトの自動アクセス防御でPDFが開けず（ロボット確認画面）、全文の裏取りができないため見送りました。代わりに、OpenAlexでCC-BYライセンスに絞って追加検索し、IOP Conference Seriesで全文取得できた単段圧縮機の回転失速実験論文に切り替えました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 17,
+            "note": "（OA10/抄録7）。深層学習による圧縮機サロゲートモデルや、風車の能動流れ制御（過去配信と重複）、生物模倣翼など、ターボ機械の流体現象からは外れる／既収録の候補を除外。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
+            "hits": 14,
+            "note": "（OA2/抄録12）。上位はMayle(1991)・Vo/Tan/Greitzer(2008)・Furukawa et al.(1999)など既収録の定番が多く、未収録のGreitzer(1976)Part Iを選定。"
+          },
+          {
+            "name": "OpenAlex 追加検索（CC-BY限定）",
+            "scope": "最新枠の代替候補探索",
+            "terms": [
+              "rotating stall compressor",
+              "tip leakage vortex",
+              "corner separation turbomachinery"
+            ],
+            "hits": 3,
+            "note": "ScienceDirect系OA論文が軒並み自動アクセス防御で全文取得不可だったため、IOP・MDPI等の非Elsevier系で追加検索。IOP Conference Seriesの回転失速実験論文（Li et al., 2026）が全文取得できたため採用。"
+          }
+        ],
+        "note": "重複（既収録）を除外後、定番枠はGreitzer(1976)のBパラメータ理論、最新枠はその実験的な失速境界の実測というテーマの繋がりで2本を選定。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、1976年の理論（Bパラメータでサージと回転失速の分かれ目を予測する）と、2026年の実験（実際にスロットル弁を絞って境目を測る）が、50年の時間差がありながら同じ問いに向き合っているという点でした。理論が先に道筋を示し、地道な実測がそれを一つずつ確かめていく——そんな積み重ねの上に今の圧縮機設計があるんだなと感じました。"
     }
   ]
 }

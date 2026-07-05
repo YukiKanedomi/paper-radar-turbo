@@ -36,6 +36,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ブロッケージ (blockage)",
       "先端すき間渦の前縁越え",
       "渦運動学（vortex kinematics）",
+      "失速境界",
     ],
   },
   {
@@ -73,6 +74,8 @@ export const CATEGORIES: GraphCategory[] = [
       "平面翼列・環状翼列",
       "よどみ点 (stagnation point)",
       "二面角 (dihedral angle)",
+      "スロットル弁",
+      "静翼角度",
     ],
   },
   {
@@ -270,6 +273,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "コーナー剥離", to: "3次元境界層剥離", label: "具体例" },
   { from: "限界流線 (limiting streamline)", to: "3次元境界層剥離", label: "可視化手段" },
   { from: "コーナー剥離", to: "二次流れ", label: "対渦を伴う" },
+  // --- 単段圧縮機の回転失速実験（Li et al. 2026） ---
+  { from: "スロットル弁", to: "失速境界", label: "閉じて到達" },
+  { from: "失速境界", to: "回転失速", label: "移行点" },
+  { from: "静翼角度", to: "性能特性（特性曲線）", label: "影響しうる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
