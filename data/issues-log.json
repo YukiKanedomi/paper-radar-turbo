@@ -528,6 +528,70 @@
         "note": "重複（既収録）を除外後、定番枠はGreitzer(1976)のBパラメータ理論、最新枠はその実験的な失速境界の実測というテーマの繋がりで2本を選定。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、1976年の理論（Bパラメータでサージと回転失速の分かれ目を予測する）と、2026年の実験（実際にスロットル弁を絞って境目を測る）が、50年の時間差がありながら同じ問いに向き合っているという点でした。理論が先に道筋を示し、地道な実測がそれを一つずつ確かめていく——そんな積み重ねの上に今の圧縮機設計があるんだなと感じました。"
+    },
+    {
+      "date": "2026-07-07",
+      "status": "published",
+      "headline": "スパイク型失速の『歴史』と『発生機構』を、レビューと基礎研究の2本で",
+      "intro": "今日は最新枠・定番枠のどちらも「スパイク型回転失速」つながりの2本にしました。最新枠は、圧縮機の失速研究を1945年から現在までの3つの時代に整理し、対策技術『ケーシングトリートメント』の研究もまとめた2026年2月発表のレビュー論文（全文オープンアクセス・CC BY 4.0）。定番枠は、そのレビューが何度も参照している、スパイクを生む渦の構造そのものを説明した2014年の基礎研究（抄録ベース）です。",
+      "picked": [
+        {
+          "id": "doi:10.3390/aerospace13020191",
+          "title": "アエロエンジン圧縮機におけるスパイク型失速の発生とスロット型ケーシングトリートメントに関する研究レビュー（Zhang, Bo & Huang, 2026）",
+          "why": "圧縮機の失速研究史を3段階に整理し、スロット型ケーシングトリートメントの初期研究・形状最適化・安定化メカニズムを一望できるレビュー。全文オープンアクセス（CC BY 4.0）で、1999年の設計転機や、AIによる形状最適化の具体例（失速余裕+8.42%等）まで具体的に紹介されている点を評価しました。"
+        },
+        {
+          "id": "doi:10.1115/1.4028494",
+          "title": "スパイク型回転失速の起源と構造（Pullan, Young, Day, Greitzer & Spakovszky, 2014）",
+          "why": "被引用277。最新枠のレビュー論文が繰り返し参照するスパイク型失速の発生機構（前縁剥離→渦形成→隣接翼への伝播）を数値解析と実測の両面から説明した基礎研究。レビューと組み合わせることで「歴史の整理」と「機構そのものの説明」がつながる配信にしました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠の候補はほぼ既収録、Pullan論文だけが未収録だった",
+          "note": "定番枠の被引用上位には、Denton(1993)の損失機構レクチャー、Moore–Greitzer拡張論文、Secondary Flows in Axial Turbines、Three-Dimensional Separationsなど、いずれも過去の配信で既に収録済みの定番が並びました。その中でPullan et al.(2014)だけが未収録で、かつ最新枠のレビューと直接つながる内容だったため選定しました。"
+        },
+        {
+          "title": "「オープンアクセス」でも本文が読めないことが多い一日だった",
+          "note": "ASME(asmedigitalcollection.asme.org)・AIP(pubs.aip.org)・MIT DSpaceはいずれもCloudflare等の自動アクセス防御でPDFが取得できませんでした。Pullan論文もOpenAlex上はOA表示でしたが本文取得はできず、アブストラクトのみに基づく抄録ベースの要約にしています。一方でMDPIは通常のPDFリンクは防御されていたものの、出版社の直接配信URL（res.mdpi.com経由）から全文を取得でき、レビュー論文はCC BY全文をもとに作り込めました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "（OA7/抄録7）。arXivの候補は生体模倣翼・混相流数値手法など流体力学一般でターボ機械の主題から外れるものが多く除外。OpenAlex新着からスパイク失速レビュー(Zhang, Bo & Huang, 2026, MDPI CC BY)を選定。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "（OA5/抄録9）。上位はDenton(1993)・Three-Dimensional Separations・Moore–Greitzer拡張など既収録が中心で、未収録のPullan et al.(2014)を選定。"
+          }
+        ],
+        "note": "重複（既収録）を除外後、最新枠のレビューと定番枠の基礎研究がテーマで直接つながる組み合わせを選んだ。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、ケーシングトリートメント（圧縮機のケーシングにスロットを切って失速を抑える対策）が、NASAとGEの研究者が全く別の目的でハニカム構造を試していたときに偶然発見された、というエピソードでした。狙って生まれた技術だとばかり思っていたので、地道な試行錯誤の積み重ねの上に今の設計があるのだと知って新鮮でした。"
     }
   ]
 }
