@@ -592,6 +592,70 @@
         "note": "重複（既収録）を除外後、最新枠のレビューと定番枠の基礎研究がテーマで直接つながる組み合わせを選んだ。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、ケーシングトリートメント（圧縮機のケーシングにスロットを切って失速を抑える対策）が、NASAとGEの研究者が全く別の目的でハニカム構造を試していたときに偶然発見された、というエピソードでした。狙って生まれた技術だとばかり思っていたので、地道な試行錯誤の積み重ねの上に今の設計があるのだと知って新鮮でした。"
+    },
+    {
+      "date": "2026-07-08",
+      "status": "published",
+      "headline": "衝撃波と境界層のせめぎ合い、そしてタービンを冷やす10の宿題",
+      "intro": "今日は最新枠・定番枠とも、これまでの配信で扱いが薄かったテーマを選びました。最新枠はポーランド科学アカデミー流体機械研究所(IMP-PAN)による、ファン翼の背側で衝撃波が境界層とぶつかる現象（SBLI）をレイノルズ数を変えて調べた実験研究（全文オープンアクセス、ただしCC BY-NC-NDのため原図は転載せず概念図で紹介）。定番枠は、GEの研究者が2007年にまとめた『タービンの高温部を冷やす技術に残る10の課題』という総説です（抄録ベース）。候補には最新枠・定番枠の両方に既収録の論文（翼端漏れ渦、ケーシングトリートメントによる二次流れ抑制）が見つかり、重複を避けて選び直しました。",
+      "picked": [
+        {
+          "id": "doi:10.3390/ijtpp11020016",
+          "title": "様々な流入条件下におけるファン翼型上の衝撃波・境界層干渉に関する実験的研究（Hanfy, Kaczynski, Doerffer & Flaszynski, 2026）",
+          "why": "遷音速の吹き出し風洞に吸気弁を追加し、流入圧力を絞ることでレイノルズ数だけを下げる（マッハ数は変えない）という工夫で、低レイノルズ数条件でのSBLIを調べた実験。乱流強度が上がると衝撃波の手前で境界層が早めに乱流化し、衝撃波の振動も大きくなる一方、はく離泡はむしろ小さくなるという結果を、圧力測定・油膜・シュリーレン・LDA・ウェーブレット解析で多面的に示している点を評価しました。全文オープンアクセスですがライセンスがCC BY-NC-NDのため、原図はそのまま使わず概念図で紹介しています。"
+        },
+        {
+          "id": "doi:10.1115/1.2464142",
+          "title": "ガスタービンの伝熱：高温ガスパスに残る10の課題（Bunker, 2007）",
+          "why": "GE Global Research Centerの研究者が、タービン冷却技術の進歩と引き換えに増した『新しい熱の悩み』を10項目に整理した総説。フィルム冷却や内部冷却など個別には語られてきた話題を、ガスタービンという文脈でまとめて論じた点が定番として評価されている一本です（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "候補から外したもの・重複していたもの",
+          "note": "最新枠の候補には、ケーシングトリートメントで二次流れを抑える論文（doi:10.64808/engineeringperspective.1905858）が挙がりましたが、これは前号までに既収録でした。定番枠の被引用上位にあった翼端漏れ渦崩壊の研究（Furukawa et al., 1999）も既収録です。また、天体物理（恒星風のMHD理論）や超解像圧縮という機械学習主役の論文、極超音速の鈍頭体まわりの衝撃波研究（タービン機械の範囲外）、軸受のキャビテーション（本アプリの対象外＝軸受系アプリの領域）は見送りました。"
+        },
+        {
+          "title": "抄録も本文もアクセスに苦労した一日",
+          "note": "ScienceDirect・Wiley・ASME digitalcollectionはいずれも自動アクセス防御で直接の抄録取得ができず、被引用上位候補（Vermeer 2003の風車ウェイクレビュー、Leishman 2002）は抄録が取れず見送りました。Bunker(2007)はOpenAlexのabstract_inverted_indexから抄録を再構成できたため採用できています。最新枠のMDPI（IJTPP）論文も直接アクセスは防御されていましたが、別ルートで全文を取得でき、ライセンス（CC BY-NC-ND）を確認した上で概念図のみ使う形にしました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 13,
+            "note": "（OA8/抄録5）。天体物理・超解像圧縮(ML主役)・極超音速鈍頭体（範囲外）を除外し、OpenAlex新着からファン翼SBLI実験(Hanfy et al., 2026, MDPI CC BY-NC-ND)を選定。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "（OA2/抄録12）。上位のVermeer 2003・Leishman 2002は抄録取得不可のため見送り、既収録の翼端漏れ渦崩壊(Furukawa 1999)・軸受キャビテーション(範囲外)も除外。抄録が確認できたBunker(2007)のタービン伝熱レビューを選定。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（ただしCC BY-NC-NDで原図は概念図に置換）、定番枠=抄録ベースの組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、風洞の吸気を絞る弁を追加しただけで、マッハ数や平均の流れの速さはほとんど変えずにレイノルズ数だけを下げられる、という実験の工夫でした。ただその副作用で流れの乱れ具合（乱流強度）まで一緒に強まってしまうそうで、『ある条件だけをきれいに変える』というのは実験の世界でも一筋縄ではいかないのだと感じました。"
     }
   ]
 }

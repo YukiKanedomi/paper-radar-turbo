@@ -60,6 +60,7 @@ export const CATEGORIES: GraphCategory[] = [
       "軸方向渦度 (streamwise vorticity)",
       "表面粗さ (surface roughness)",
       "衝撃波境界層干渉 (SBLI)",
+      "剥離泡",
     ],
   },
   {
@@ -78,6 +79,8 @@ export const CATEGORIES: GraphCategory[] = [
       "二面角 (dihedral angle)",
       "スロットル弁",
       "静翼角度",
+      "レイノルズ数",
+      "乱流強度",
     ],
   },
   {
@@ -166,7 +169,7 @@ export const CATEGORIES: GraphCategory[] = [
     key: "transition",
     label: "遷移・伝熱",
     color: "#8f5a6d",
-    terms: ["層流", "乱流", "層流-乱流遷移", "熱伝達"],
+    terms: ["層流", "乱流", "層流-乱流遷移", "熱伝達", "フィルム冷却", "内部冷却"],
   },
   {
     key: "wake",
@@ -285,6 +288,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "スロットル弁", to: "失速境界", label: "閉じて到達" },
   { from: "失速境界", to: "回転失速", label: "移行点" },
   { from: "静翼角度", to: "性能特性（特性曲線）", label: "影響しうる" },
+  // --- ファン翼のSBLI実験（Hanfy et al. 2026） ---
+  { from: "レイノルズ数", to: "層流-乱流遷移", label: "低いほど遅延" },
+  { from: "乱流強度", to: "層流-乱流遷移", label: "促進" },
+  { from: "剥離泡", to: "衝撃波境界層干渉 (SBLI)", label: "随伴" },
+  { from: "剥離泡", to: "境界層剥離", label: "一形態" },
+  // --- タービン高温ガスパスの伝熱課題（Bunker 2007） ---
+  { from: "フィルム冷却", to: "熱伝達", label: "冷却手段" },
+  { from: "内部冷却", to: "熱伝達", label: "冷却手段" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
