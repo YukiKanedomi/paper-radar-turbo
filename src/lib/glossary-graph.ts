@@ -61,6 +61,9 @@ export const CATEGORIES: GraphCategory[] = [
       "表面粗さ (surface roughness)",
       "衝撃波境界層干渉 (SBLI)",
       "剥離泡",
+      "再循環（リサーキュレーション）",
+      "エロージョン",
+      "デポジション（堆積）",
     ],
   },
   {
@@ -69,6 +72,8 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#4a6fa5",
     terms: [
       "遠心圧縮機",
+      "遠心ポンプ",
+      "ボリュートケーシング",
       "多段軸流圧縮機",
       "放射ディフューザ",
       "入射角",
@@ -296,6 +301,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- タービン高温ガスパスの伝熱課題（Bunker 2007） ---
   { from: "フィルム冷却", to: "熱伝達", label: "冷却手段" },
   { from: "内部冷却", to: "熱伝達", label: "冷却手段" },
+  // --- 遠心ポンプのケーシング影響（Rehman et al. 2026） ---
+  { from: "遠心ポンプ", to: "ボリュートケーシング", label: "構成" },
+  { from: "ボリュートケーシング", to: "再循環（リサーキュレーション）", label: "低流量時に誘発" },
+  { from: "再循環（リサーキュレーション）", to: "エントロピー生成", label: "損失" },
+  // --- タービン機械のエロージョン・デポジション（Hamed et al. 2006） ---
+  { from: "エロージョン", to: "デポジション（堆積）", label: "対照的な劣化現象" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

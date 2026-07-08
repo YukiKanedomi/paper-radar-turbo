@@ -656,6 +656,84 @@
         "note": "今号は最新枠=OA全文（ただしCC BY-NC-NDで原図は概念図に置換）、定番枠=抄録ベースの組み合わせ。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、風洞の吸気を絞る弁を追加しただけで、マッハ数や平均の流れの速さはほとんど変えずにレイノルズ数だけを下げられる、という実験の工夫でした。ただその副作用で流れの乱れ具合（乱流強度）まで一緒に強まってしまうそうで、『ある条件だけをきれいに変える』というのは実験の世界でも一筋縄ではいかないのだと感じました。"
+    },
+    {
+      "date": "2026-07-09",
+      "status": "published",
+      "headline": "羽根車とケーシングの間で——遠心ポンプの再循環、そしてタービンをすり減らす粒子たち",
+      "intro": "最新枠・定番枠とも、収集スクリプトの候補には目立った当たりが見つからない日でした。最新枠のarXiv新着は石鹸膜の安定化や回転対流の壁モード抑制など専門外の流体物理が中心で、OpenAlex新着の候補も既収録か閉じたジャーナルばかり。定番枠の被引用上位は、Denton・Greitzer・Mayle・Voなど、これまでの号ですでに紹介した定番論文が並びました。そこで検索語を広げて追加でOpenAlexを探索したところ、AIP・MDPI・Elsevierなど大手出版社のサイトは自動アクセス防御で本文どころか抄録ページも取得できない一方、Journal of Applied Fluid Mechanics（イラン・イスファハン大学発行のダイヤモンドOA誌）は問題なく全文PDFに到達できました。今日は、遠心ポンプの『羽根車だけの計算』と『ケーシング込みの計算』を比べた最新のCFD研究（全文オープンアクセス）と、タービン機械のすり減り(エロージョン)と汚れの付着(デポジション)をまとめた2006年の定番レビュー（抄録ベース）を選びました。これまで軸流圧縮機の失速・サージが続いていたので、装置としては遠心ポンプという新顔、現象としては粒子による劣化という新しい切り口を意識しています。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.7.4081",
+          "title": "遠心ポンプ性能の経験式開発 — ケーシングが水力効率に与える影響（Rehman, Paul & Jain, 2026）",
+          "why": "羽根車だけの計算とケーシング込みの計算を比べ、低流量時にケーシングの渦形室の舌部付近で再循環が起きて効率が下がることをCFDと実験の両方で示した上で、羽根車だけの結果から実際のポンプ性能を4〜7%程度の誤差で予測できる経験式を導いた点を評価しました。全文オープンアクセス(CC BY-NC-ND)で式や数値の裏取りができましたが、ライセンスの都合で原図は使わず概念図で紹介しています。"
+        },
+        {
+          "id": "doi:10.2514/1.18462",
+          "title": "タービン機械におけるエロージョンとデポジション（Hamed, Tabakoff & Wenglarz, 2006）",
+          "why": "砂ぼこりなどの粒子を吸い込むことで起きる『表面がすり減る』エロージョンと『汚れが付着する』デポジションという、一見正反対の劣化現象を同じ枠組みで整理した被引用340件の定番レビュー。抄録のみのアクセスでしたが、これまでの号で扱っていなかった粒子による劣化という切り口を補えると判断しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "候補から外したもの・重複していたもの",
+          "note": "定番枠の被引用上位は、Denton『タービン機械の損失機構』、Greitzer『サージと回転失速』、Mayle『層流-乱流遷移』、Vo・Tan・Greitzer『スパイク型失速の基準』など、いずれも既収録の定番でした。最新枠のarXiv新着は石鹸膜の安定化、回転対流の壁モード抑制、非予混合火炎モデルなど専門外の流体物理が中心で、OpenAlex新着のダリウス風車論文(doi:10.5545/sv-jme.2026.1713)も既収録でした。"
+        },
+        {
+          "title": "大手出版社サイトのアクセス防御と、たどり着いたダイヤモンドOA誌",
+          "note": "AIP(Physics of Fluids)・MDPI・Elsevier・Nature系のサイトはいずれも自動アクセス防御(403エラー)で、本文はおろか抄録ページも直接は取得できませんでした。arXivとIOPは問題なくアクセスできたほか、追加で探索したJournal of Applied Fluid Mechanics（イラン・イスファハン大学発行、ダイヤモンドOA）は直接PDFをダウンロードでき、全文をもとにした要約が作れました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 24,
+            "note": "（OA21/抄録3）。arXiv新着はほぼ専門外（石鹸膜・回転対流・非予混合火炎・希薄気体流れ・恒星風MHD等）で、OpenAlex新着のダリウス風車論文等も既収録。ここからは採用せず、追加検索に切り替えた。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor"
+            ],
+            "hits": 14,
+            "note": "（OA3/抄録11）。上位はDenton・Greitzer・Mayle・Voなど既収録の定番のみで、新規の採用候補は見つからなかった。"
+          },
+          {
+            "name": "OpenAlex 追加検索（フルテキスト到達性を優先）",
+            "scope": "最新枠の補完・出版社のアクセス防御を避けた探索",
+            "terms": [
+              "boundary layer ingestion fan distortion",
+              "tip clearance flow",
+              "diffuser stall",
+              "cavitation pump impeller",
+              "rotor stator interaction",
+              "centrifugal pump casing"
+            ],
+            "hits": 6,
+            "note": "上位6件を確認。AIPの『境界層吸込みファンの歪み』論文はCC BY OAだが本文取得は403でブロック。MDPI・Elsevier論文も同様にブロックされたため、直接PDFが取得できたJournal of Applied Fluid Mechanicsの遠心ポンプ論文を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（遠心ポンプ、CC BY-NC-NDのため原図は概念図に置換）、定番枠=抄録ベース（エロージョン・デポジションレビュー）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、『オープンアクセス』と表示されている論文でも、実際に全文を開こうとすると出版社サイトの自動アクセス防御に阻まれて読めないことがある、という発見でした。ライセンス上は無料公開でも、機械的にアクセスしようとすると弾かれてしまう場合があるようです。逆に遠心ポンプの論文では、羽根車だけの計算とケーシング込みの計算の『比』が、流量が変わってもほとんど一定(0.74くらい)になっていたのが印象的でした。ケーシングによる損失の割合は、流量条件によらずだいたい同じ、ということなのかもしれません。"
     }
   ]
 }
