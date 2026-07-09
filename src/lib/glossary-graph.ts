@@ -38,6 +38,7 @@ export const CATEGORIES: GraphCategory[] = [
       "先端すき間渦の前縁越え",
       "渦運動学（vortex kinematics）",
       "失速境界",
+      "非同期振動 (NSV)",
     ],
   },
   {
@@ -114,6 +115,9 @@ export const CATEGORIES: GraphCategory[] = [
       "ブシネスク仮説",
       "渦粘性",
       "Q基準 (Q-criterion)",
+      "スペクトル固有直交分解 (SPOD)",
+      "固有直交分解 (POD)",
+      "遅延分離渦シミュレーション (DDES)",
     ],
   },
   {
@@ -307,6 +311,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "再循環（リサーキュレーション）", to: "エントロピー生成", label: "損失" },
   // --- タービン機械のエロージョン・デポジション（Hamed et al. 2006） ---
   { from: "エロージョン", to: "デポジション（堆積）", label: "対照的な劣化現象" },
+  // --- 翼端漏れ渦のSPODモード解析（He et al. 2021） ---
+  { from: "スペクトル固有直交分解 (SPOD)", to: "固有直交分解 (POD)", label: "エネルギー順位付けを継承" },
+  { from: "スペクトル固有直交分解 (SPOD)", to: "動的モード分解 (DMD)", label: "周波数分解を継承" },
+  { from: "遅延分離渦シミュレーション (DDES)", to: "LES", label: "遠方はLES的に解く" },
+  { from: "翼端漏れ渦", to: "非同期振動 (NSV)", label: "誘発しうる" },
+  { from: "翼端漏れ渦", to: "スペクトル固有直交分解 (SPOD)", label: "モード解析対象" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
