@@ -86,7 +86,10 @@ export const CATEGORIES: GraphCategory[] = [
       "スロットル弁",
       "静翼角度",
       "レイノルズ数",
+      "臨界レイノルズ数",
       "乱流強度",
+      "ロータ・ステータ干渉",
+      "軸方向間隙",
     ],
   },
   {
@@ -118,6 +121,7 @@ export const CATEGORIES: GraphCategory[] = [
       "スペクトル固有直交分解 (SPOD)",
       "固有直交分解 (POD)",
       "遅延分離渦シミュレーション (DDES)",
+      "薄層近似ナビエ・ストークス方程式",
     ],
   },
   {
@@ -172,6 +176,7 @@ export const CATEGORIES: GraphCategory[] = [
       "エンドウォールフェンス",
       "コンタリング（endwall contouring）",
       "エンドウォール輪郭",
+      "径方向流れ再配分",
     ],
   },
   {
@@ -317,6 +322,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "遅延分離渦シミュレーション (DDES)", to: "LES", label: "遠方はLES的に解く" },
   { from: "翼端漏れ渦", to: "非同期振動 (NSV)", label: "誘発しうる" },
   { from: "翼端漏れ渦", to: "スペクトル固有直交分解 (SPOD)", label: "モード解析対象" },
+  // --- 3段軸流圧縮機のRe依存失速機構切り替え（Zhou et al. 2024） ---
+  { from: "レイノルズ数", to: "臨界レイノルズ数", label: "しきい値" },
+  { from: "臨界レイノルズ数", to: "回転失速", label: "下回ると失速機構が変化" },
+  { from: "径方向流れ再配分", to: "翼端漏れ流れ (tip leakage flow)", label: "低Reで顕著化" },
+  // --- ロータ・ステータ干渉のCFD（Rai 1987） ---
+  { from: "ロータ・ステータ干渉", to: "軸方向間隙", label: "隙間が狭いほど強まる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

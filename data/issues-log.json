@@ -811,6 +811,81 @@
         "note": "今号は定番枠=OA全文（翼端漏れ渦のSPOD解析。学術誌サイトはブロックされたため会議発表版で全文確認）、最新枠=抄録ベース（二段ファンのサージサイクル）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、圧縮機の羽根先端からもれる渦が実は『2種類』あって、それぞれ役割が違うという話でした。前縁からできる『主渦』が隣の羽根にドンとぶつかる力の方が、すきまを抜けて剥がれる『副渦』の影響より大きいというのは、直感的には分かりにくいけれど数値で示されると納得感がありました。もうひとつ面白かったのは、同じ「オープンアクセス」の論文でも、学会発表のときに置かれたPDFの方が、後から出た雑誌サイトよりもすんなり読めることがある、という発見です。正式な論文は雑誌の方でも、実際に手に取りやすいのはむしろ会議発表の方だったりするのですね。"
+    },
+    {
+      "date": "2026-07-11",
+      "status": "published",
+      "headline": "レイノルズ数で失速の起きる場所が入れ替わる話と、動翼・静翼が近づくと圧力が暴れる話",
+      "intro": "本日ローテーションの検索語では、最新枠・定番枠とも上位候補の多くが既収録との重複、または本文取得ブロックに阻まれる日でした。定番枠の上位(Vermeer 2003の風車ウェイクレビューやHansen 2006のレビューなど)は抄録そのものが取得できず、要約の裏付けが取れないため見送り。有望に見えたOA候補(多段多相ポンプの翼端漏れ渦解析、コーナー剥離をリブレットで抑える研究)は2件とも、出版社サイト(AIP・MDPI)がプログラムからのアクセスをブロックしており本文を確認できませんでした。そこでOpenAlexで検索語を広げ直し、Journal of Applied Fluid Mechanics(ダイヤモンドOA)に掲載された、3段軸流圧縮機のレイノルズ数依存性を調べた論文(Zhou et al. 2024)にたどり着き、全文PDFを確認できました。定番枠は、収集候補に残っていた1987年の古典的な研究(Rai 1987)を選定。ロータ・ステータ干渉という、これまでの配信であまり扱っていない切り口の論文です。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.17.6.2309",
+          "title": "3段軸流圧縮機の効率と失速機構に対するレイノルズ数の影響（Zhou, Lei, Fan, Zhang, Liu & Cheng, 2024）",
+          "why": "レイノルズ数を下げると効率が落ちるだけでなく、失速の『引き金』となる場所そのものが静翼ハブ側から動翼翼端側へ切り替わるという、実験とCFDの両方で裏付けられた具体的な発見を評価しました。真空ポンプで吸気圧力を操作し回転数を変えずにレイノルズ数だけを1/20まで下げるという実験の工夫も含め、全文PDFを確認して要約しています。"
+        },
+        {
+          "id": "doi:10.2514/3.23003",
+          "title": "パッチ格子・重合格子を用いたロータ・ステータ干渉のナビエ-ストークス計算（Rai, 1987）",
+          "why": "動翼と静翼の軸方向すきまを翼弦長の15%まで狭めると、動翼前縁近くの圧力変動が出口動圧の12%にも達するという、抄録に示された具体的な数値を評価しました。これまでの配信では扱っていなかった『動翼・静翼干渉』というテーマを、CFDの黎明期にあたる1987年の研究で紹介する回です。抄録ベースの要約です。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "本文取得がブロックされた候補",
+          "note": "多段多相ポンプの翼端漏れ渦(TLV)の段間発達を調べたOA論文(International Journal of Fluid Engineering、CC BY)と、コーナー剥離をリブレットで抑える研究(Aerospace誌、CC BY)は、いずれもOpenAlex・Unpaywall上ではオープンアクセスと確認できたものの、出版社サイト(AIP Publishing・MDPI)が自動アクセスを403エラーでブロックしており、本文を確認できず見送りました。"
+        },
+        {
+          "title": "抄録が取得できず見送った候補・あえて選ばなかった候補",
+          "note": "被引用上位のVermeer(2003)『風車ウェイク空力学』とHansen(2006)『風車空力学・空力弾性のレビュー』は、いずれもOpenAlex・Semantic Scholarで抄録そのものが取得できず、抄録ベースの要約すら書けないため見送りました。また、翼端漏れ渦の非定常性を調べたarXiv論文も見つけましたが、前号(7月10日)で翼端漏れ渦のSPOD解析を紹介したばかりのため、2日連続で同じ流れ現象に偏らないよう今回は選びませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 24,
+            "note": "（OA17/抄録7）。arXiv新着は成層乱流・Hele-Shaw流れ・希薄気体流れなど流体力学一般の論文が中心でターボ機械色が薄く、OpenAlex新着側もほとんどが既収録または抄録未取得。採用論文はこの枠の候補ではなく、別途OpenAlexで直接検索して発見。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike"
+            ],
+            "hits": 14,
+            "note": "（OA2/抄録12）。上位はGreitzer(1976)・Mayle(1991)・『Criteria for Spike Initiated Rotating Stall』など既収録の定番、Vermeer(2003)・Hansen(2006)は抄録取得不可で見送り。『Navier-Stokes simulations of rotor/stator interaction』(Rai, 1987)を、まだ扱っていない切り口として採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（latest枠の補完・OA限定）",
+            "scope": "翼端漏れ・コーナー剥離・レイノルズ数などでOA限定の追加探索",
+            "terms": [
+              "tip clearance flow",
+              "corner separation compressor",
+              "secondary flow turbine"
+            ],
+            "hits": 24,
+            "note": "多段多相ポンプのTLV論文とコーナー剥離リブレット論文（いずれもCC BY）を発見したが、出版社サイトのボット検知で本文取得不可。『corner separation compressor』の派生探索でJournal of Applied Fluid Mechanics誌のZhou et al.(2024)を発見し、PDF取得に成功したため採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（3段軸流圧縮機のRe依存性、Journal of Applied Fluid Mechanics、全文PDF直接取得に成功）、定番枠=抄録ベース（ロータ・ステータ干渉、1987年）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、レイノルズ数を下げていくと、圧縮機が失速し始める『きっかけの場所』そのものが変わってしまう、という話でした。効率が落ちるとか失速しやすくなるとかは何となく想像がつくのですが、失速の引き金が静翼の付け根から動翼の先端へ、いわば場所替えするというのは意外でした。翼の高さごとにレイノルズ数の効き方が違うせいで、空気の流れが上下に再配分されてしまう、という説明を読んで、圧縮機の中も一枚岩ではなく高さごとに個性があるのだと感じました。もう一つは、オープンアクセスと分類されている論文でも、出版社サイトがプログラムからのアクセスをブロックしていて読めないことがある、という壁に今回も何度かぶつかったことです。前回は学会発表版という抜け道がありましたが、今回はそういう代わりが見つからず、素直に別の論文を探すことになりました。"
     }
   ]
 }
