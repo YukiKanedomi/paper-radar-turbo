@@ -65,6 +65,9 @@ export const CATEGORIES: GraphCategory[] = [
       "再循環（リサーキュレーション）",
       "エロージョン",
       "デポジション（堆積）",
+      "渦度 (vorticity)",
+      "乱流運動エネルギー (turbulent kinetic energy)",
+      "斜め衝撃波 (oblique shock wave)",
     ],
   },
   {
@@ -90,6 +93,7 @@ export const CATEGORIES: GraphCategory[] = [
       "乱流強度",
       "ロータ・ステータ干渉",
       "軸方向間隙",
+      "回転デトネーション燃焼器 (RDC)",
     ],
   },
   {
@@ -183,7 +187,7 @@ export const CATEGORIES: GraphCategory[] = [
     key: "transition",
     label: "遷移・伝熱",
     color: "#8f5a6d",
-    terms: ["層流", "乱流", "層流-乱流遷移", "熱伝達", "フィルム冷却", "内部冷却"],
+    terms: ["層流", "乱流", "層流-乱流遷移", "熱伝達", "フィルム冷却", "内部冷却", "吹き出し比 (blowing ratio)"],
   },
   {
     key: "wake",
@@ -328,6 +332,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "径方向流れ再配分", to: "翼端漏れ流れ (tip leakage flow)", label: "低Reで顕著化" },
   // --- ロータ・ステータ干渉のCFD（Rai 1987） ---
   { from: "ロータ・ステータ干渉", to: "軸方向間隙", label: "隙間が狭いほど強まる" },
+  // --- 先端すき間流れの粘性損失機構（You et al. 2007） ---
+  { from: "翼端漏れ渦", to: "渦度 (vorticity)", label: "強い渦度を伴う" },
+  { from: "渦度 (vorticity)", to: "乱流運動エネルギー (turbulent kinetic energy)", label: "生成に寄与" },
+  { from: "乱流運動エネルギー (turbulent kinetic energy)", to: "エントロピー生成", label: "生成源" },
+  // --- RDC-タービン結合系の前縁・エンドウォール冷却（Zhou et al. 2025） ---
+  { from: "回転デトネーション燃焼器 (RDC)", to: "斜め衝撃波 (oblique shock wave)", label: "燃焼室下流に生成" },
+  { from: "吹き出し比 (blowing ratio)", to: "フィルム冷却", label: "冷却効率を左右" },
+  { from: "フィルム冷却", to: "エンドウォール", label: "適用面" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

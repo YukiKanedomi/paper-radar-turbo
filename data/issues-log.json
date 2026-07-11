@@ -886,6 +886,83 @@
         "note": "今号は最新枠=OA全文（3段軸流圧縮機のRe依存性、Journal of Applied Fluid Mechanics、全文PDF直接取得に成功）、定番枠=抄録ベース（ロータ・ステータ干渉、1987年）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、レイノルズ数を下げていくと、圧縮機が失速し始める『きっかけの場所』そのものが変わってしまう、という話でした。効率が落ちるとか失速しやすくなるとかは何となく想像がつくのですが、失速の引き金が静翼の付け根から動翼の先端へ、いわば場所替えするというのは意外でした。翼の高さごとにレイノルズ数の効き方が違うせいで、空気の流れが上下に再配分されてしまう、という説明を読んで、圧縮機の中も一枚岩ではなく高さごとに個性があるのだと感じました。もう一つは、オープンアクセスと分類されている論文でも、出版社サイトがプログラムからのアクセスをブロックしていて読めないことがある、という壁に今回も何度かぶつかったことです。前回は学会発表版という抜け道がありましたが、今回はそういう代わりが見つからず、素直に別の論文を探すことになりました。"
+    },
+    {
+      "date": "2026-07-12",
+      "status": "published",
+      "headline": "先端すき間流れの粘性損失の正体と、爆轟エンジンのタービン翼を冷やす話",
+      "intro": "本日ローテーションの検索語では、定番枠の上位候補(DentonのLoss Mechanisms、Langstonの二次流れレビュー、Gbadeboの3次元剥離、Furukawaの翼端漏れ渦崩壊、Pullanのスパイク失速、Hamedのエロージョン/デポジション)がすべて既収録との重複でした。最新枠はarXiv新着の大半が回転成層流や希薄気体流れなど流体力学一般で、ターボ機械色の薄い日でした。そこで定番枠は候補リストをさらに下までたどり、先端すき間流れの粘性損失がどう生まれるかをLESで解析したYou・Wang・Moin・Mittal(2007, Journal of Fluid Mechanics)の研究を採用(抄録ベース)。最新枠のOA全文は、Halstead(1997)のfigshareリンクが実体ファイルの無い切れたOA登録だったり、MDPI・ScienceDirect(AST誌)・Wiley(旧Hindawi)がいずれも本文取得をブロックしたりと苦戦しましたが、検索語をターボ機械の核心語に絞ってarXivを直接探索したところ、水素燃焼の回転デトネーション燃焼器とタービンを結合したフィルム冷却シミュレーション(Zhou et al., Energy誌2025・著者受理原稿がarXivでOA公開)にたどり着き、全文を確認できました。",
+      "picked": [
+        {
+          "id": "doi:10.1017/s0022112007006842",
+          "title": "先端すき間流れの粘性損失機構のラージエディシミュレーション解析（You, Wang, Moin & Mittal, 2007）",
+          "why": "先端すき間流れが損失を生む、という結果だけでなく、翼端漏れ渦と漏れジェットが作るスパン方向の速度勾配こそが渦度・乱流エネルギーの生成源であり粘性損失の直接原因になっている、という一段深い機構を示した点を評価しました。Journal of Fluid Mechanics掲載で被引用196件の定番ですが本文は非公開のため、抄録の範囲だけで忠実に要約しています。"
+        },
+        {
+          "id": "doi:10.1016/j.energy.2025.138307",
+          "title": "水素燃焼式回転デトネーション燃焼器-タービン結合系のエンドウォール冷却と前縁フィルム冷却（Zhou, Yao, Yu, Qian, Wang & Zhang, 2025）",
+          "why": "次世代エンジンである回転デトネーション燃焼器の下流でタービン翼が斜め衝撃波と高温ガスに晒される問題に対し、エンドウォール冷却孔の形状(円形/スロット)と前縁フィルム冷却の向き(垂直/垂直傾斜)を、定常評価と実際に爆轟波が周回する非定常結合流れ場の両方で比較した点を評価しました。著者受理原稿がarXivでOA公開されており全文を確認して要約しています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "OAのはずが読めなかった候補たち",
+          "note": "定番枠の次点だったHalstead et al.(1997)『Boundary Layer Development in Axial Compressors and Turbines』はOpenAlex上でCC-BYのOAと表示されていましたが、リンク先のfigshareに実体ファイルが登録されておらず読めませんでした。最新枠で検討したMcKechnie & Barakos『Aeroelastic analysis of propeller blades near stall』(CC-BY, Aerospace Science and Technology)はScienceDirectのボット検知で、MDPI掲載の翼端すきまレビューはMDPIのアクセス制限で、Hindawi掲載のフィルム冷却レビューはWiley移管後の有料化で、それぞれ本文を確認できず見送りました。"
+        },
+        {
+          "title": "今日のarXiv新着はターボ機械色が薄い日でした",
+          "note": "本日ローテーションの最新枠検索語でヒットしたarXiv新着論文は、回転成層流の雲・相転移、Hele-Shaw流れ、渦芯に沿ったKelvin波乱流、スクリーチジェットの安定性解析など、流体力学一般の論文が中心で、ターボ機械そのものを扱う論文が見当たりませんでした。最終的に採用したarXiv論文は、今日のローテーション語ではなくターボ機械の核心語での直接探索で見つけたものです。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 24,
+            "note": "（OA17/抄録7）。arXiv新着は流体力学一般が中心でターボ機械色が薄く、OpenAlex新着側の候補（Wake Vortex Shedding論文など）は良い候補ではあったものの、より読み応えのあるOA全文候補を優先し採用は見送り。採用論文はこの枠の候補ではなく、別途arXivを直接検索して発見。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor"
+            ],
+            "hits": 14,
+            "note": "（OA4/抄録10）。上位のDenton(1993)・Langston(2001)・Gbadebo(2005)・Furukawa(1999)・Pullan(2014)・Hamed(2006)はすべて既収録。次点のHalstead(1997)はOA登録がリンク切れ、Bons(2000)・Hodson&Howell(2005)は見送り、You et al.(2007)のLES論文（抄録ベース）を採用。"
+          },
+          {
+            "name": "arXiv 直接検索（ターボ機械核心語での追加探索）",
+            "scope": "最新枠OA全文の補完",
+            "terms": [
+              "tip leakage AND vortex",
+              "secondary flow AND turbine",
+              "endwall AND turbine",
+              "compressor surge",
+              "shock boundary layer interaction AND compressor"
+            ],
+            "hits": 8,
+            "note": "本日ローテーションの検索語では良いOA全文候補が見つからなかったため、ターボ機械の核心語でarXivを直接検索。回転デトネーション燃焼器-タービン結合系のフィルム冷却論文(Zhou et al. 2025, Energy誌の著者受理原稿)を発見し、PDF全文取得に成功したため採用。"
+          }
+        ],
+        "note": "今号は定番枠=抄録ベース（先端すき間流れの粘性損失機構、Journal of Fluid Mechanics 2007）、最新枠=OA全文（回転デトネーション燃焼器-タービン結合系のフィルム冷却、Energy誌2025・arXiv著者受理原稿）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、先端すき間流れの論文で「損失そのもの」ではなく「損失を生み出す速度勾配」に焦点を当てていた点です。羽根の先端から空気が漏れて損失になる、というところまでは何となく想像がついたのですが、その漏れ渦と漏れジェットが翼の高さ方向に急な速度差を作り、その速度差自体が渦や乱れのエネルギーを生む「発生源」になっている、という一歩踏み込んだ説明を読んで、損失を減らすには「漏れを止める」だけでなく「漏れの向きを変えて速度差を穏やかにする」という発想もあるのだと知りました。もう一つ印象に残ったのは、回転デトネーション燃焼器という次世代エンジンの論文で、冷却の穴をまっすぐ開けるか少し傾けるかだけで、冷たい空気が壁にくっつく度合いが変わり、冷却効率がはっきり変わるという話です。地味な工夫に見えて、実際にどれくらい効くのかを数字で示しているところに説得力を感じました。"
     }
   ]
 }
