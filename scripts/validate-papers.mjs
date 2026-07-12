@@ -159,7 +159,8 @@ for (let i = 0; i < papers.length; i++) {
 
 // ---- 配信構成（currentIssue）：SPEC §7 ------------------------------------
 if (meta && meta.currentIssue) {
-  const todays = papers.filter((p) => p.issue === meta.currentIssue);
+  // 特別号（special）は「各トピック2件固定」の日次不変条件の対象外（ユーザー指定の別枠）
+  const todays = papers.filter((p) => p.issue === meta.currentIssue && !p.special);
   if (todays.length === 0) {
     err("currentIssue", `currentIssue=${meta.currentIssue} に該当する論文がありません`);
   }

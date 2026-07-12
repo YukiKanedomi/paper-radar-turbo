@@ -6,12 +6,14 @@ import { usePapers } from "@/lib/data";
 import type { Level, Paper, Term } from "@/types";
 import {
   streamLabel,
+  streamOrSpecialLabel,
   oaLabel,
   sourceUrl,
   displayTitle,
   originalTitle,
   citationText,
   resolveLeveled,
+  readingMinutes,
 } from "@/lib/paper";
 import { useFavorites, useRead } from "@/lib/prefs";
 
@@ -71,7 +73,15 @@ function DetailView({
   topicLabel: string;
   levelLabels: Record<Level, string>;
 }) {
-  const [num, setNum] = useState(2);
+  // 説明レベルは端末に記憶（次に開いた論文でも同じレベルで読める）
+  const [num, setNum] = useState(() => {
+    const v = Number(localStorage.getItem("pr:level"));
+    return v >= 1 && v <= 3 ? v : 2;
+  });
+  const changeLevel = (n: number) => {
+    setNum(n);
+    localStorage.setItem("pr:level", String(n));
+  };
   const [pop, setPop] = useState<PopState | null>(null);
   const levelKey = LEVEL_BY_NUM[num];
   const lv = p.levels[levelKey];
@@ -92,6 +102,15 @@ function DetailView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p.id]);
   const fav = isFav(p.id);
+
+  // スクロールすると現れる「← 論文レーダー」の追従ボタン（上まで戻らずにトップへ帰れる）
+  const [showBack, setShowBack] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowBack(window.scrollY > 480);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // 用語クリック → 固定ポップアップ（モックの #pop 相当）
   function onTerm(e: React.MouseEvent, t: Term) {
@@ -150,6 +169,11 @@ function DetailView({
 
   return (
     <div className="detail-page" onClick={() => setPop(null)}>
+      {showBack && (
+        <Link to="/" className="float-back">
+          ← 論文レーダー
+        </Link>
+      )}
       {pop && (
         <div
           className="term-pop"
@@ -185,7 +209,7 @@ function DetailView({
         </div>
 
         <div className="kick">
-          {streamLabel(p.stream)}論文 — {topicLabel}
+          {p.special ? "特別号" : `${streamLabel(p.stream)}論文`} — {topicLabel}
         </div>
         <h1>{displayTitle(p)}</h1>
         {originalTitle(p) && <div className="h1-orig">{originalTitle(p)}</div>}
@@ -195,11 +219,16 @@ function DetailView({
           {p.year ? ` · ${p.year}` : ""}
           {citationText(p) ? ` · ${citationText(p)}` : ""}
           {p.doi ? ` · DOI:${p.doi}` : ""}
+          {` · 約${readingMinutes(p)}分`}
         </div>
         <div className="badges">
-          <span className={`bd ${p.stream === "classic" ? "fill" : "line"}`}>
-            {streamLabel(p.stream)}
-          </span>
+          {p.special ? (
+            <span className="bd fill special">{streamOrSpecialLabel(p)}</span>
+          ) : (
+            <span className={`bd ${p.stream === "classic" ? "fill" : "line"}`}>
+              {streamLabel(p.stream)}
+            </span>
+          )}
           <span className="bd line">{oaLabel(p.oa)}</span>
           <span className="bd">{topicLabel}</span>
         </div>
@@ -213,7 +242,7 @@ function DetailView({
             min={1}
             max={3}
             value={num}
-            onChange={(e) => setNum(Number(e.target.value))}
+            onChange={(e) => changeLevel(Number(e.target.value))}
           />
           <span className="ends">{levelLabels.expert}</span>
           <span className="now">{levelLabels[levelKey]}</span>

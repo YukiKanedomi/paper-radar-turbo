@@ -123,6 +123,12 @@
   border: 1px solid var(--line);
   color: var(--mut);
 }
+.home-page .c-special {
+  background: var(--accent);
+  color: #fff;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 0 2px rgba(26, 94, 84, 0.18);
+}
 .home-page .search {
   width: 100%;
   font-family: "Yu Gothic UI", sans-serif;
@@ -154,6 +160,105 @@
   border-color: var(--accent);
   color: #fff;
   font-weight: 700;
+}
+.home-page .sec-count {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mut);
+  font-weight: 700;
+}
+/* 配信停止の見える化（控えめな注意） */
+.home-page .stale-note {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--mut);
+  border-left: 3px solid var(--accent);
+  background: rgba(26, 94, 84, 0.05);
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+  margin: 10px 0 4px;
+}
+/* 足あと（蓄積の統計） */
+.home-page .stats {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px 12px;
+  box-shadow: 0 3px 10px rgba(29, 33, 39, 0.035);
+}
+.home-page .st-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 560px) {
+  .home-page .st-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.home-page .st .v {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.home-page .st .l {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 10.5px;
+  color: var(--mut);
+  font-weight: 700;
+  margin-top: 1px;
+}
+.home-page .st-decades {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--soft);
+}
+.home-page .db {
+  text-align: center;
+}
+.home-page .db-bar-wrap {
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+}
+.home-page .db-bar {
+  width: 22px;
+  border-radius: 3px 3px 0 0;
+  background: var(--accent);
+  opacity: 0.75;
+}
+.home-page .db-l {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 10px;
+  color: var(--mut);
+  font-weight: 700;
+  margin-top: 3px;
+}
+.home-page .st-cap {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 10.5px;
+  color: var(--mut);
+  margin-left: auto;
+  align-self: flex-end;
+  padding-bottom: 2px;
+}
+.home-page .sort-row {
+  margin-top: -6px;
+  align-items: center;
+}
+.home-page .sort-label {
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--mut);
+  font-weight: 700;
+  padding-right: 2px;
 }
 .home-page .cards {
   display: grid;
@@ -212,6 +317,87 @@
   line-height: 1.45;
   color: var(--mut);
   margin-top: 2px;
+}
+/* 一言フック（明朝のまま・タイトルより一段軽く） */
+.home-page .pl .pt-hook {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+.home-page .card .chook {
+  font-size: 12.5px;
+  line-height: 1.7;
+  margin: 0 0 7px;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* コンパクト表示（1行リスト） */
+.home-page .cards.compact {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 4px 0;
+  box-shadow: 0 3px 10px rgba(29, 33, 39, 0.035);
+}
+.home-page .crow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--soft);
+}
+.home-page .crow:last-child {
+  border-bottom: none;
+}
+.home-page .crow-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+}
+.home-page .crow-dot.unread {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.home-page .crow-tp {
+  flex: none;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+.home-page .crow-t {
+  flex: 1;
+  min-width: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.home-page .crow.read .crow-t {
+  color: var(--mut);
+  font-weight: 500;
+}
+.home-page .crow-star {
+  flex: none;
+  margin-left: 0;
+}
+.home-page .crow-y {
+  flex: none;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 11px;
+  color: var(--mut);
 }
 .home-page .empty {
   font-family: "Yu Gothic UI", sans-serif;
@@ -708,6 +894,42 @@
 .detail-page .bd.line {
   border-color: var(--accent);
   color: var(--accent);
+}
+.detail-page .bd.special {
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 0 2px rgba(26, 94, 84, 0.18);
+}
+/* スクロール時に現れる追従「← 論文レーダー」ボタン */
+@keyframes fbIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.detail-page .float-back {
+  position: fixed;
+  left: 14px;
+  bottom: 18px;
+  z-index: 40;
+  font-family: "Yu Gothic UI", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  background: rgba(250, 249, 245, 0.94);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 10px 16px;
+  box-shadow: 0 6px 18px rgba(29, 33, 39, 0.16);
+  backdrop-filter: blur(4px);
+  animation: fbIn 0.18s ease-out;
+}
+.detail-page .float-back:active {
+  transform: translateY(1px);
 }
 .detail-page .lvl {
   position: sticky;
