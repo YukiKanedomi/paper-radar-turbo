@@ -39,6 +39,8 @@ export const CATEGORIES: GraphCategory[] = [
       "渦運動学（vortex kinematics）",
       "失速境界",
       "非同期振動 (NSV)",
+      "動的失速",
+      "キャビテーション",
     ],
   },
   {
@@ -94,6 +96,8 @@ export const CATEGORIES: GraphCategory[] = [
       "ロータ・ステータ干渉",
       "軸方向間隙",
       "回転デトネーション燃焼器 (RDC)",
+      "案内羽根",
+      "ウォータージェットポンプ",
     ],
   },
   {
@@ -126,6 +130,8 @@ export const CATEGORIES: GraphCategory[] = [
       "固有直交分解 (POD)",
       "遅延分離渦シミュレーション (DDES)",
       "薄層近似ナビエ・ストークス方程式",
+      "乱流モデル",
+      "格子収束性",
     ],
   },
   {
@@ -340,6 +346,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "回転デトネーション燃焼器 (RDC)", to: "斜め衝撃波 (oblique shock wave)", label: "燃焼室下流に生成" },
   { from: "吹き出し比 (blowing ratio)", to: "フィルム冷却", label: "冷却効率を左右" },
   { from: "フィルム冷却", to: "エンドウォール", label: "適用面" },
+  // --- VAWTの乱流モデル精度検証（Rezaeiha et al. 2019） ---
+  { from: "乱流モデル", to: "SST k-ω", label: "系統の一つ" },
+  { from: "動的失速", to: "SST k-ω", label: "遷移版が精度良く予測" },
+  { from: "格子収束性", to: "乱流モデル", label: "検証の前提条件" },
+  // --- ウォータージェットポンプのキャビテーション振動（Long et al. 2026） ---
+  { from: "キャビテーション", to: "NPSH（有効吸込みヘッド）", label: "不足で発生" },
+  { from: "キャビテーション", to: "羽根車（インペラ）", label: "翼まわりで発生・振動誘発" },
+  { from: "案内羽根", to: "ウォータージェットポンプ", label: "構成要素" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
