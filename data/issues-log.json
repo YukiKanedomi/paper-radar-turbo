@@ -1027,6 +1027,82 @@
         "note": "今号は定番枠=OA全文（垂直軸風車の乱流モデル精度検証、Energy誌2019・CC BY）、最新枠=抄録ベース（ウォータージェットポンプのキャビテーション振動、Journal of Vibration and Control誌2026）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、乱流モデルの論文で『渦を無視する単純計算（非粘性）は境界層を無視するせいで、出力の予測がバラバラな方向にズレる』という説明です。単に『精度が低い』というだけでなく、なぜそうなるかの理由が境界層という具体的な物理に結びついていて納得感がありました。もう一つは、ポンプの振動論文で『振動の周波数帯を見るだけで、羽根由来の振動なのかキャビテーション由来の振動なのか切り分けられる』という発想です。壊れる直前まで待たなくても、音や揺れの『高さ』を聞き分けることで異常の種類が分かるというのは、身近な機械の点検にも通じる考え方だと感じました。"
+    },
+    {
+      "date": "2026-07-14",
+      "status": "published",
+      "headline": "ハブの漏れ損失は翼負荷で相殺し合い、インテークの剥がれ方は来た道を覚えている",
+      "intro": "本日ローテーションの検索語では、最新枠のarXiv新着（乱流・化学反応速度論・希薄気体流れなど）は流体物理としては面白くても、ターボ機械そのものを主役にした論文ではなかったため見送りました。OpenAlex新着・被引用上位の候補は、二段ファンのサージ関連2本とMoore–Greitzerモデル拡張論文が既収録との重複、State of the art in wind turbine aerodynamics（2006・OA表示）はScienceDirectのbot検知で本文が取得できず、といった具合で、標準の候補プールからは§0を満たす2件が揃いませんでした。そこでtopics.jsonのキーワードに沿ってOpenAlexを個別にクエリし、ターボ機械専門のgold OA誌 Journal of the Global Power and Propulsion Society（JGPPS）から、ハブ漏れ流れの翼負荷分布依存性（最新・CC BY）と、横風によるジェットエンジンインテーク歪み（定番・CC BY-NC-ND）の2本を採用しました。いずれも全文PDFを取得し、忠実性チェックを経て掲載しています。",
+      "picked": [
+        {
+          "id": "doi:10.33737/jgpps/207503",
+          "title": "片持ち静翼のハブ漏れ流れに及ぼす翼負荷分布の影響（Liu et al., 2026）",
+          "why": "翼の負荷（仕事をさせる度合い）を前方寄りにして大きく高めても、実機に近い移動端壁条件では損失（エントロピー損失係数）の半径方向分布が中央負荷翼とほぼ同じになるという、直感に反する結果を実験と数値計算の両方で示している点を評価しました。漏れ流れがどこで発達・混合を始めるかという具体的なメカニズムまで踏み込んでおり、CC BY全文から実際の図（翼列幾何・結果グラフ）も転載できています。"
+        },
+        {
+          "id": "doi:10.33737/jgpps/118875",
+          "title": "横風条件下におけるジェットエンジンインテークの流れ歪みに関する調査（Harjes et al., 2020）",
+          "why": "横風の中でインテークの流れが剥がれる・くっつくという現象そのものに加え、風量を増やしながら来たか減らしながら来たかで同じ運転点でも違う結果になる「分離ヒステリシス」を、地上の風洞実験で丁寧に確かめている点が読みどころです。著者自身が「確立した理論的基盤はまだない」と正直に明記しているのも誠実で、実務（バイパス比の大きい新型エンジンのファン失速リスク）との結びつきも明快でした。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "今日もarXiv新着は一般流体物理の日でした",
+          "note": "最新枠検索語でヒットしたarXiv新着は、環状パイプ流の熱伝達、化学反応速度論のML代理モデル、希薄気体流れのDSMC法など、流体力学ではあってもターボ機械そのものを扱う論文ではなかったため見送りました。"
+        },
+        {
+          "title": "重複とアクセス制約で標準候補が尽きた日",
+          "note": "二段ファンのサージ関連2本（DMD解析・サージサイクル計算）とMoore–Greitzerモデルの拡張論文はいずれも既収録との重複でした。定番枠で唯一OA表示だったState of the art in wind turbine aerodynamics and aeroelasticity（2006）はScienceDirectのbot検知により本文取得ができず（既知の制約）、抄録ベースでの採用も見送り、JGPPSでの個別検索に切り替えました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "（OA15/抄録9）。arXiv側は一般流体物理・数値手法が中心で対象外。OpenAlex新着側はサージ関連2本が既収録と重複。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss"
+            ],
+            "hits": 14,
+            "note": "（OA2/抄録12）。唯一のOA候補はScienceDirectのbot検知で本文取得不可。他は既収録との重複、または有料本文のみ。"
+          },
+          {
+            "name": "OpenAlex 個別検索（JGPPS等gold OA誌）",
+            "scope": "標準候補で§0を満たせなかったための補完探索",
+            "terms": [
+              "hub leakage cantilevered stator",
+              "blade loading distribution compressor",
+              "jet engine intake distortion crosswind",
+              "secondary flow transonic centrifugal compressor"
+            ],
+            "hits": 8,
+            "note": "ターボ機械専門のgold OA誌 Journal of the Global Power and Propulsion Society（JGPPS、CC BY系）から、ハブ漏れ流れ論文（2026）とインテーク歪み論文（2020）の全文PDFを取得し採用。"
+          }
+        ],
+        "note": "今号は最新枠・定番枠とも同じJGPPS誌からのOA全文採用。標準の日替わり候補プールでは§0（出典に忠実・ライセンス順守）を満たす2件が揃わなかったため、topics.jsonのキーワードに基づく個別検索で補いました。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、ハブ漏れ流れの論文です。羽根の負荷を前方寄りにしてぐっと高くしても、実機に近い条件では損失が増えないという結果に最初は「本当に？」と思ったのですが、理由を読むと納得でした。漏れ流れが翼のどこで混ざり始めるかがずれるだけで、「広く薄く混ざる」のと「狭く濃く混ざる」のがちょうど帳尻を合わせていたんですね。もう一つは、横風の論文が「このヒステリシス現象には、まだ確立した理論がありません」とはっきり書いていたこと。専門的な論文でも、分からないことは分からないと正直に書くんだ、というのが新鮮でした。"
     }
   ]
 }

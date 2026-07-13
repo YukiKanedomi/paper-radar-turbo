@@ -41,6 +41,8 @@ export const CATEGORIES: GraphCategory[] = [
       "非同期振動 (NSV)",
       "動的失速",
       "キャビテーション",
+      "吸気歪み (inlet distortion)",
+      "歪み係数DC60 (distortion coefficient)",
     ],
   },
   {
@@ -70,6 +72,7 @@ export const CATEGORIES: GraphCategory[] = [
       "渦度 (vorticity)",
       "乱流運動エネルギー (turbulent kinetic energy)",
       "斜め衝撃波 (oblique shock wave)",
+      "ハブ漏れ流れ (hub leakage flow)",
     ],
   },
   {
@@ -98,6 +101,7 @@ export const CATEGORIES: GraphCategory[] = [
       "回転デトネーション燃焼器 (RDC)",
       "案内羽根",
       "ウォータージェットポンプ",
+      "片持ち静翼 (cantilevered stator)",
     ],
   },
   {
@@ -173,6 +177,7 @@ export const CATEGORIES: GraphCategory[] = [
       "コーナー剥離",
       "逆圧力勾配 (adverse pressure gradient)",
       "限界流線 (limiting streamline)",
+      "分離ヒステリシス (separation hysteresis)",
     ],
   },
   {
@@ -187,6 +192,7 @@ export const CATEGORIES: GraphCategory[] = [
       "コンタリング（endwall contouring）",
       "エンドウォール輪郭",
       "径方向流れ再配分",
+      "移動端壁 (moving endwall)",
     ],
   },
   {
@@ -354,6 +360,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "キャビテーション", to: "NPSH（有効吸込みヘッド）", label: "不足で発生" },
   { from: "キャビテーション", to: "羽根車（インペラ）", label: "翼まわりで発生・振動誘発" },
   { from: "案内羽根", to: "ウォータージェットポンプ", label: "構成要素" },
+  // --- 片持ち静翼のハブ漏れ流れと翼負荷分布（Liu et al. 2026） ---
+  { from: "片持ち静翼 (cantilevered stator)", to: "ハブ漏れ流れ (hub leakage flow)", label: "隙間から発生" },
+  { from: "ハブ漏れ流れ (hub leakage flow)", to: "翼端漏れ流れ (tip leakage flow)", label: "対称的な現象（ハブ側）" },
+  { from: "移動端壁 (moving endwall)", to: "ハブ漏れ流れ (hub leakage flow)", label: "漏れ渦の発達位置を左右" },
+  // --- 横風によるジェットエンジンインテーク歪みとヒステリシス（Harjes et al. 2020） ---
+  { from: "吸気歪み (inlet distortion)", to: "分離ヒステリシス (separation hysteresis)", label: "強い歪みで発生" },
+  { from: "分離ヒステリシス (separation hysteresis)", to: "境界層剥離", label: "剥離・再付着の履歴依存" },
+  { from: "歪み係数DC60 (distortion coefficient)", to: "吸気歪み (inlet distortion)", label: "定量指標" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
