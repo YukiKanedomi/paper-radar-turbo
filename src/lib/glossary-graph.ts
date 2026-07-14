@@ -95,6 +95,7 @@ export const CATEGORIES: GraphCategory[] = [
       "静翼角度",
       "レイノルズ数",
       "臨界レイノルズ数",
+      "摩擦レイノルズ数 (Re_τ)",
       "乱流強度",
       "ロータ・ステータ干渉",
       "軸方向間隙",
@@ -102,6 +103,8 @@ export const CATEGORIES: GraphCategory[] = [
       "案内羽根",
       "ウォータージェットポンプ",
       "片持ち静翼 (cantilevered stator)",
+      "付着渦階層 (attached-eddy hierarchy)",
+      "スーパーストラクチャー (superstructures)",
     ],
   },
   {
@@ -178,6 +181,8 @@ export const CATEGORIES: GraphCategory[] = [
       "逆圧力勾配 (adverse pressure gradient)",
       "限界流線 (limiting streamline)",
       "分離ヒステリシス (separation hysteresis)",
+      "渦発生器ジェット (vortex generator jet, VGJ)",
+      "非定常吹き出し (pulsed blowing)",
     ],
   },
   {
@@ -368,6 +373,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "吸気歪み (inlet distortion)", to: "分離ヒステリシス (separation hysteresis)", label: "強い歪みで発生" },
   { from: "分離ヒステリシス (separation hysteresis)", to: "境界層剥離", label: "剥離・再付着の履歴依存" },
   { from: "歪み係数DC60 (distortion coefficient)", to: "吸気歪み (inlet distortion)", label: "定量指標" },
+  // --- 高Re逆圧力勾配境界層の壁面付着渦とせん断層（Zarei et al. 2026） ---
+  { from: "摩擦レイノルズ数 (Re_τ)", to: "レイノルズ数", label: "壁面基準の定義" },
+  { from: "付着渦階層 (attached-eddy hierarchy)", to: "境界層", label: "近壁の階層構造" },
+  { from: "スーパーストラクチャー (superstructures)", to: "付着渦階層 (attached-eddy hierarchy)", label: "最大スケール側" },
+  { from: "逆圧力勾配 (adverse pressure gradient)", to: "せん断層", label: "外層で活動を強化" },
+  // --- パルス駆動渦発生器ジェットによるタービン剥離制御（Bons et al. 2000） ---
+  { from: "渦発生器ジェット (vortex generator jet, VGJ)", to: "境界層剥離", label: "抑制" },
+  { from: "非定常吹き出し (pulsed blowing)", to: "渦発生器ジェット (vortex generator jet, VGJ)", label: "駆動方式" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
