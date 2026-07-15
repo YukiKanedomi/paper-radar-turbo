@@ -1176,6 +1176,80 @@
         "note": "最新枠はML/数値手法系の候補が多く、定番枠は上位が既収録との重複だったため、いずれも候補プールを掘り下げて流体現象主体の論文を選定した号。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、パルス渦発生器ジェットの論文です。剥離を抑えるには空気をたくさん吹きつけた方が効きそうなのに、オンオフを繰り返すパルス吹き出しの方が10分の1の空気量で同じくらい効くと知って驚きました。しかも著者らは、効いているのは噴き出す空気の勢いそのものではなく、パルスの立ち上がり・立ち下がりの瞬間らしいと考察していて、直感とはずれる面白さがありました。もう一つの境界層の論文では、圧力勾配で流れが乱れても壁のすぐ近くの渦の並び方は変わらず、変わるのは境界層の外側だけ、という住み分けが印象的でした。"
+    },
+    {
+      "date": "2026-07-16",
+      "status": "published",
+      "headline": "2次元計算は翼端渦を見逃して出力係数を過大評価、BLIファンは流入歪みで運転点が失速側とチョーク側に引き裂かれる",
+      "intro": "本日ローテーションの検索語による最新枠arXiv新着（OA19/抄録5、計24件）は、graph neural networkによるCFDサロゲート、コーディングエージェントによる能動流れ制御則探索、コロイド抽出やポリマー溶液のパイプ流れなどターボ機械から外れた流体力学が中心で、流体現象主役の方針から見送りました。定番枠（OA2/抄録12、計14件）は上位が既収録（Mayle 1991、Furukawa 1999、Rai 1987、Bunker 2006等）と重複していたため、次点を精査。Vermeer et al. (2003)「Wind turbine wake aerodynamics」は被引用最上位でしたが、抄録・全文とも取得できず、かつOpenAlex(1352)とSemantic Scholar(955)で被引用数が4割近く乖離していたため見送り、代わりにHowell et al. (2009)の小型VAWT風洞×CFD研究（White Rose著者版で全文取得）を採用しました。最新枠は、境界層吸込み型ファンの流入歪みを扱うMagrini & Benini (2026, Physics of Fluids)を選定。CC BYのオープンアクセス論文でしたが、出版社サイト(pubs.aip.org)が403でアクセスを拒否したため、本文入手はできず抄録ベースで作成しています。",
+      "picked": [
+        {
+          "id": "doi:10.1016/j.renene.2009.07.025",
+          "title": "小型垂直軸風車の風洞実験および数値解析研究（Howell, Qin, Edwards & Durrani, 2009）",
+          "why": "風洞実験と2D/3D CFDを両方揃え、2次元計算だけでは出力係数を大きく見誤ること、その原因が翼端に生じるチップ渦であることを、渦度の可視化まで踏み込んで特定している点を評価しました。表面粗さの効果がレイノルズ数によって逆転するという実験的な発見も、地に足のついた面白さがありました。"
+        },
+        {
+          "id": "doi:10.1063/5.0329926",
+          "title": "境界層吸込み式後部胴体推進機における低圧力比ファンの空力・性能に対する流入歪みの影響（Magrini & Benini, 2026）",
+          "why": "流入が乱れると、ファンの一部区間は高負荷・低流量（失速側）に、別の区間は高流量（チョーク側）にと運転点が引き裂かれ、それが巡航効率2.5%の低下につながる、という抄録の記述が具体的で分かりやすかったため選びました。全文は入手できませんでしたが、抄録の範囲で誠実に紹介しています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "最新枠arXiv新着はターボ機械から外れた流体力学が多数",
+          "note": "本日ヒットしたarXiv新着24件のうち、graph neural networkによるCFDサロゲート、コーディングエージェントによる能動流れ制御則探索、多孔質構造からのコロイド抽出、ポリマー溶液のパイプ流れなど、流体力学ではあるもののターボ機械の流れ現象からは外れる論文が目立ちました。流体現象を主役にする方針から見送っています。"
+        },
+        {
+          "title": "定番枠トップの風車後流レビューは断念",
+          "note": "Vermeer, Sørensen & Crespo (2003)「Wind turbine wake aerodynamics」は被引用数トップの候補でしたが、OpenAlex・Semantic Scholarのいずれからも抄録本文を取得できず、かつ両ソースで被引用数が1352件・955件と4割近く乖離していたため、誠実さを優先して見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 24,
+            "note": "（OA19/抄録5）。ML/数値手法系・ターボ機械外の流体力学が中心で、境界層吸込みファンの流入歪み論文（抄録ベース）を選定。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 14,
+            "note": "（OA2/抄録12）。上位候補の多くが既収録、被引用トップは抄録取得不可・被引用乖離のため見送り、次点のHowell et al. (2009) VAWT研究（White Rose全文OA）を採用。"
+          },
+          {
+            "name": "OpenAlex / Semantic Scholar API 個別照会",
+            "scope": "採用論文の全文・抄録・被引用数の確認",
+            "terms": [
+              "doi:10.1016/j.renene.2009.07.025",
+              "doi:10.1063/5.0329926"
+            ],
+            "hits": 2,
+            "note": "Howell論文はSemantic Scholar経由でWhite Rose著者版PDF（GREEN OA）を確認・全文取得。Magrini論文はUnpaywall/OpenAlexでCC BYのハイブリッドOAと確認したが、出版社サイトへのアクセスが403でブロックされ本文は未取得（抄録ベースに切替）。"
+          }
+        ],
+        "note": "最新枠はターボ機械から外れた流体力学・ML系候補が多く、定番枠は被引用トップが抄録取得不可という珍しいケースだったため、いずれも次点を丁寧に検討した号。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、VAWTの論文で2次元計算と3次元計算の差がほぼ翼端の渦だけで説明できてしまうというくだりです。翼を輪切りにしたような単純化（2次元計算）が、現実の翼の端っこで起きているたった一つの現象を見落とすだけで、性能の見積もりが大きくずれてしまうのが意外でした。もう一つ、BLIファンの論文では、流入が乱れると運転点が「失速側」と「詰まり側」の両方に引っ張られるという表現が印象的で、乱れは一方向にだけ悪さをするわけではないのだと知りました。"
     }
   ]
 }

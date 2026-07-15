@@ -43,6 +43,8 @@ export const CATEGORIES: GraphCategory[] = [
       "キャビテーション",
       "吸気歪み (inlet distortion)",
       "歪み係数DC60 (distortion coefficient)",
+      "境界層吸込み (boundary layer ingestion, BLI)",
+      "チョーク (choking)",
     ],
   },
   {
@@ -73,6 +75,7 @@ export const CATEGORIES: GraphCategory[] = [
       "乱流運動エネルギー (turbulent kinetic energy)",
       "斜め衝撃波 (oblique shock wave)",
       "ハブ漏れ流れ (hub leakage flow)",
+      "チップ渦（over tip vortex）",
     ],
   },
   {
@@ -139,6 +142,7 @@ export const CATEGORIES: GraphCategory[] = [
       "薄層近似ナビエ・ストークス方程式",
       "乱流モデル",
       "格子収束性",
+      "k-ε RNGモデル",
     ],
   },
   {
@@ -220,6 +224,7 @@ export const CATEGORIES: GraphCategory[] = [
       "先端速度比（tip speed ratio, λ）",
       "出力係数（power coefficient, Cp）",
       "推力係数（thrust coefficient, Ct）",
+      "固体度（ソリディティ, solidity）",
     ],
   },
 ];
@@ -381,6 +386,11 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- パルス駆動渦発生器ジェットによるタービン剥離制御（Bons et al. 2000） ---
   { from: "渦発生器ジェット (vortex generator jet, VGJ)", to: "境界層剥離", label: "抑制" },
   { from: "非定常吹き出し (pulsed blowing)", to: "渦発生器ジェット (vortex generator jet, VGJ)", label: "駆動方式" },
+  // --- 小型VAWTの風洞実験×CFD比較（Howell et al. 2009） ---
+  { from: "チップ渦（over tip vortex）", to: "出力係数（power coefficient, Cp）", label: "2D計算では再現されず過大評価を招く" },
+  { from: "固体度（ソリディティ, solidity）", to: "先端速度比（tip speed ratio, λ）", label: "高いほど低TSRでピーク" },
+  // --- BLI推進系ファンの流入歪み（Magrini & Benini 2026） ---
+  { from: "境界層吸込み (boundary layer ingestion, BLI)", to: "吸気歪み (inlet distortion)", label: "誘発" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
