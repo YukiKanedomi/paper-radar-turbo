@@ -45,6 +45,7 @@ export const CATEGORIES: GraphCategory[] = [
       "歪み係数DC60 (distortion coefficient)",
       "境界層吸込み (boundary layer ingestion, BLI)",
       "チョーク (choking)",
+      "回転不安定現象 (rotating instabilities)",
     ],
   },
   {
@@ -76,6 +77,8 @@ export const CATEGORIES: GraphCategory[] = [
       "斜め衝撃波 (oblique shock wave)",
       "ハブ漏れ流れ (hub leakage flow)",
       "チップ渦（over tip vortex）",
+      "乱流境界層",
+      "レイノルズせん断応力",
     ],
   },
   {
@@ -187,6 +190,8 @@ export const CATEGORIES: GraphCategory[] = [
       "分離ヒステリシス (separation hysteresis)",
       "渦発生器ジェット (vortex generator jet, VGJ)",
       "非定常吹き出し (pulsed blowing)",
+      "受動流れ制御",
+      "壁面すべり速度",
     ],
   },
   {
@@ -391,6 +396,11 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "固体度（ソリディティ, solidity）", to: "先端速度比（tip speed ratio, λ）", label: "高いほど低TSRでピーク" },
   // --- BLI推進系ファンの流入歪み（Magrini & Benini 2026） ---
   { from: "境界層吸込み (boundary layer ingestion, BLI)", to: "吸気歪み (inlet distortion)", label: "誘発" },
+  // --- 受動回転ディスクによる乱流境界層の抵抗低減（Knoop & Ricco 2026） ---
+  { from: "乱流境界層", to: "レイノルズせん断応力", label: "内部で運動量を輸送" },
+  { from: "レイノルズせん断応力", to: "境界層", label: "壁面摩擦の主要な担い手" },
+  { from: "受動流れ制御", to: "表面粗さ (surface roughness)", label: "回転体まわりに粗さ的効果を生む" },
+  { from: "壁面すべり速度", to: "受動流れ制御", label: "回転運動がもたらす効果の一つ" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
