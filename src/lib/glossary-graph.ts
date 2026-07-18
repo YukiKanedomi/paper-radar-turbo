@@ -46,6 +46,7 @@ export const CATEGORIES: GraphCategory[] = [
       "境界層吸込み (boundary layer ingestion, BLI)",
       "チョーク (choking)",
       "回転不安定現象 (rotating instabilities)",
+      "圧縮機長さ半径比",
     ],
   },
   {
@@ -79,6 +80,7 @@ export const CATEGORIES: GraphCategory[] = [
       "チップ渦（over tip vortex）",
       "乱流境界層",
       "レイノルズせん断応力",
+      "翼端漏れジェット (tip leakage jet, TLJ)",
     ],
   },
   {
@@ -146,6 +148,7 @@ export const CATEGORIES: GraphCategory[] = [
       "乱流モデル",
       "格子収束性",
       "k-ε RNGモデル",
+      "ゾーナルLES (ZLES)",
     ],
   },
   {
@@ -193,6 +196,7 @@ export const CATEGORIES: GraphCategory[] = [
       "受動流れ制御",
       "壁面すべり速度",
       "空気噴射 (air injection)",
+      "マイクロオフセット翼端 (micro-offset tip)",
     ],
   },
   {
@@ -415,6 +419,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 軸流圧縮機の失速・サージ能動抑制（Day 1993） ---
   { from: "空気噴射 (air injection)", to: "能動流れ制御（AFC）", label: "実現手段" },
   { from: "空気噴射 (air injection)", to: "モード波型前駆現象 (modal-wave precursor)", label: "検知して減衰" },
+  // --- 翼端漏れ流れが励起する自励的非定常性とその制御（Liu et al. 2024） ---
+  { from: "翼端漏れジェット (tip leakage jet, TLJ)", to: "翼端漏れ渦", label: "せん断で巻き上げる" },
+  { from: "ゾーナルLES (ZLES)", to: "LES", label: "翼端近傍だけLES化" },
+  { from: "マイクロオフセット翼端 (micro-offset tip)", to: "翼端漏れ渦", label: "ワンダリングを抑制" },
+  // --- 軸流圧縮系の失速後過渡現象パートII（Greitzer & Moore 1986） ---
+  { from: "圧縮機長さ半径比", to: "サージ", label: "小さいほど誘発" },
+  { from: "圧縮機長さ半径比", to: "B パラメータ", label: "共にサージ/回転失速の分岐を支配" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

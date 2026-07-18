@@ -1400,6 +1400,77 @@
     "note": "最新枠は最有力OA候補の本文が取得できず代替に切り替え、定番枠は上位の大半が既収録または抄録取得不可という号。採用した2件はfaithfulness-checkで各2ラウンド（初回指摘→修正→再検証でok）を経て公開しました。"
    },
    "afterword": "— 編集担当より：今回「へえ」だったのは、2次元の乱流だとエネルギーの流れ方が普段の直感と逆になる、という話です。ふつう乱流というと、大きな渦が壊れて小さな渦になっていくイメージがあったのですが、平べったい（2次元的な）流れではむしろ小さな渦が集まって大きな渦に育っていくのだと知って驚きました。もう一つ、圧縮機の論文では、機械を流れる空気の1%にも満たないごくわずかな空気を、ちょうど良いタイミングで吹き込むだけで、失速までの余裕が4〜6%広がるという結果が印象的でした。大きな力でねじ伏せるのではなく、小さな後押しをタイミングよく入れる方が効く、というのは流体に限らずどこかで聞いたことがある話だなと思いました。"
+  },
+  {
+   "date": "2026-07-19",
+   "status": "published",
+   "headline": "翼端のすきまから漏れる渦は『ぶつからなくても』勝手に暴れる、という発見と、50年前から続くサージ理論の応用編",
+   "intro": "本日ローテーションの検索語による最新枠（arXiv＋OpenAlex新着、14件・OA7/抄録7）は、上位の多く（2次元乱流論文、受動回転ディスクの境界層論文、逆圧力勾配境界層論文、コーナー剥離LES論文）が直近の号ですでに採用済みで重複していました。新規のOpenAlex由来候補（圧縮機通路内の渦発達、後流渦放出の相関式、翼端漏れ渦のSPODモード解析）はいずれも抄録が非公開または未取得で、ScienceDirect発の2件（プロペラ翼の失速近傍空力弾性、超臨界CO2ラジアルタービン実験）はOpenAlexでゴールド/ハイブリッドOAと確認できたものの、本文ページがCloudflareのbot検知で読めませんでした。そこでtopics.jsonの他キーワード（チップ漏れ渦）でarXivを直接検索したところ、翼端漏れ渦の自励的な非定常性を詳しく調べた2024年のarXiv論文（学術誌版はPhysics of Fluids）が見つかり、全文（CC BY-NC-ND）を取得して採用しました。定番枠（OpenAlex被引用上位、14件・OA0/抄録14）は上位の大半が既収録、もしくは前号までに抄録取得不可と確認済み（Wind turbine wake aerodynamics、Gas Turbine Combustion）でしたが、次点のGreitzer & Moore(1986)『軸流圧縮系における失速後過渡現象の理論 パートII：応用』はOpenAlex経由で抄録全文が取得でき、抄録ベースで採用しました。",
+   "picked": [
+    {
+     "id": "arxiv:2405.09347",
+     "title": "翼端漏れ流れが励起する非定常性とその制御（Liu, Wang, Tan, Tucker & Möller, 2024）",
+     "why": "翼端漏れ渦は隣の翼にぶつからなくても『自励的に』暴れることが知られていましたが、その暴れがどこで生まれ、どう伝わるのかは詳しく分かっていませんでした。ゾーナルLESという計算コストを抑えた手法で、翼弦中央付近での渦崩壊を境に暴れ方が変わる様子を丁寧に追い、翼端の形をわずかに変えるだけで暴れを抑えられることまで示した、全文を深く読み込める良いOA論文でした。"
+    },
+    {
+     "id": "doi:10.1115/1.3239893",
+     "title": "軸流圧縮系における失速後過渡現象の理論 パートII：応用（Greitzer & Moore, 1986）",
+     "why": "サージになるか、安定した回転失速で落ち着くかは、これまでこのアプリでも紹介してきた『Bパラメータ』だけでなく、圧縮機の『長さと半径の比』にも左右される、という抄録の主張が具体的で誠実に読めたため、抄録ベースとして採用しました。"
+    }
+   ],
+   "aside": [
+    {
+     "title": "ScienceDirect発の新規OA候補2件は本文取得できず見送り",
+     "note": "プロペラ翼の失速近傍空力弾性解析（Aerospace Science and Technology、CC-BY）と、350kW級超臨界CO2ラジアルインフロータービンの実験（Case Studies in Thermal Engineering、CC-BY-NC-ND・DOAJ収録のゴールドOA）は、OpenAlex上ではオープンアクセスと確認できましたが、掲載ページ・DOAJミラーのいずれもbot検知で本文が読めず、抄録以上の深い作り込みができないため見送りました。"
+    },
+    {
+     "title": "『パートI』と紛らわしい別シリーズが存在すると判明",
+     "note": "採用したGreitzer & Moore(1986)『パートII』の姉妹編を探す過程で、アーカイブに既にある1976年のGreitzer単著論文『Surge and Rotating Stall in Axial Flow Compressors—Part I』が、実は別シリーズの別論文（今回のパートIIの直接の姉妹編ではない）であることに気づきました。今回の真の姉妹編は同じ1986年の『Part I—Development of Equations』（Moore & Greitzer）で、アーカイブには未収録のため、関連リンクは『未収録』と明記した外部参照として案内しています。"
+    }
+   ],
+   "searchLog": {
+    "sources": [
+     {
+      "name": "arXiv + OpenAlex新着",
+      "scope": "最新枠（本日ローテーションの検索語）",
+      "terms": [
+       "corner separation compressor",
+       "blade flutter aeroelasticity",
+       "supercritical CO2 turbomachinery",
+       "wind turbine wake aerodynamics",
+       "film cooling turbine heat transfer",
+       "inlet distortion fan aerodynamics"
+      ],
+      "hits": 14,
+      "note": "（OA7/抄録7）。上位4件は既収録との重複。新規のOpenAlex由来3件は抄録未取得、ScienceDirect発2件（プロペラ空力弾性・超臨界CO2タービン）はOA確認済みだが本文取得不可で見送り。"
+     },
+     {
+      "name": "OpenAlex 被引用上位",
+      "scope": "定番枠（本日ローテーションの検索語）",
+      "terms": [
+       "cavitation pump impeller",
+       "rotor stator interaction unsteady",
+       "centrifugal compressor aerodynamics",
+       "axial compressor aerodynamics",
+       "turbine aerodynamics",
+       "surge rotating stall",
+       "rotating stall inception spike",
+       "secondary flow endwall turbomachinery"
+      ],
+      "hits": 14,
+      "note": "（OA0/抄録14）。上位の多くが既収録。高被引用のWind turbine wake aerodynamics(2003)・Gas Turbine Combustion(1984)は前号に続き抄録取得不可を再確認し見送り、次点のGreitzer&Moore(1986)『パートII』をOpenAlexで抄録確認のうえ採用。"
+     },
+     {
+      "name": "arXiv 個別検索（ローテーション外キーワード）",
+      "scope": "最新枠のOA全文候補を補うための追加検索",
+      "terms": ["tip leakage vortex"],
+      "hits": 3,
+      "note": "『Tip-leakage-flow excited unsteadiness and associated control』(Liu et al., 2024)を発見。arXiv全文(CC BY-NC-ND)およびPDFから図・数値を確認して採用。"
+     }
+    ],
+    "note": "最新枠は本日ローテーションの上位が既収録重複・新規OpenAlex候補が抄録なし・ScienceDirect2件が本文取得不可という三重苦の号で、topics.json内の別キーワードによる個別検索でOA全文を確保。定番枠は前号までの見送り実績を踏まえ次点に切り替え。採用した2件はfaithfulness-checkで各2ラウンド（初回指摘→修正→再検証）を経て公開。パートII論文は2ラウンド目に図の対角線ラベル配置と表記の誤りが残ったため、内容面の裏取り済みの指摘のみ編集担当が直接修正した。"
+   },
+   "afterword": "— 編集担当より：今回「なるほど」だったのは、翼端漏れ渦の暴れが、渦どうしがぶつからなくても『自分から』暴れ出すという話です。原因があって結果がある、という当たり前の因果関係すら無しに乱れが生まれ、しかもそれが渦の壊れる場所を境にリズムまで変わるというのが不思議でした。もう一つ、圧縮機のサージ理論を調べていて、似た名前・似た著者の論文シリーズが実は2組（1976年のGreitzer単著シリーズと、1986年のMoore&Greitzer共著シリーズ）あることに気づき、有名な理論ほど『どの論文のことか』を確認する手間を惜しんではいけないと反省しました。"
   }
  ]
 }
