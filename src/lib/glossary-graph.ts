@@ -192,6 +192,7 @@ export const CATEGORIES: GraphCategory[] = [
       "非定常吹き出し (pulsed blowing)",
       "受動流れ制御",
       "壁面すべり速度",
+      "空気噴射 (air injection)",
     ],
   },
   {
@@ -231,6 +232,12 @@ export const CATEGORIES: GraphCategory[] = [
       "推力係数（thrust coefficient, Ct）",
       "固体度（ソリディティ, solidity）",
     ],
+  },
+  {
+    key: "turbulence",
+    label: "乱流理論・カスケード",
+    color: "#2f7f8f",
+    terms: ["エネルギーカスケード", "逆カスケード", "異方性", "超拡散"],
   },
 ];
 
@@ -401,6 +408,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "レイノルズせん断応力", to: "境界層", label: "壁面摩擦の主要な担い手" },
   { from: "受動流れ制御", to: "表面粗さ (surface roughness)", label: "回転体まわりに粗さ的効果を生む" },
   { from: "壁面すべり速度", to: "受動流れ制御", label: "回転運動がもたらす効果の一つ" },
+  // --- 異方的フーリエ空間の2次元乱流モデル（Carbone & Servidio 2026） ---
+  { from: "逆カスケード", to: "エネルギーカスケード", label: "大スケールへ運ぶ一種" },
+  { from: "異方性", to: "逆カスケード", label: "効率を左右" },
+  { from: "超拡散", to: "渦度 (vorticity)", label: "渦へのトラップ&放出で発生" },
+  // --- 軸流圧縮機の失速・サージ能動抑制（Day 1993） ---
+  { from: "空気噴射 (air injection)", to: "能動流れ制御（AFC）", label: "実現手段" },
+  { from: "空気噴射 (air injection)", to: "モード波型前駆現象 (modal-wave precursor)", label: "検知して減衰" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
