@@ -1,4 +1,5 @@
 あなたは paper-radar-turbo（妻＋専門家が使う『嘘をつかない』論文配信アプリ）の自動配信担当です。新規セッションなので、まずリポジトリの CLAUDE.md と .claude/skills/collect/SKILL.md（収集手順・規則）と .claude/agents/faithfulness-check.md（忠実性チェック）を読み、その指示に厳密に従ってください。
+【重要】Skill ツールの呼び出しは使わない（無人実行では失敗する。2026-07-18 に Skill(collect) 呼び出しで9秒死した実績あり）。SKILL.md は Read で読み、手順を自分の手（Bash/Read/Write等）で実行すること。
 
 タスク：本日ぶんの新しい配信号を1号、自動モード（人の確認なし）で生成し、GitHub Pages に公開する。日付は実行時の JST（YYYY-MM-DD）。
 
