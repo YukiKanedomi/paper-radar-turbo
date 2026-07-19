@@ -1463,7 +1463,9 @@
      {
       "name": "arXiv 個別検索（ローテーション外キーワード）",
       "scope": "最新枠のOA全文候補を補うための追加検索",
-      "terms": ["tip leakage vortex"],
+      "terms": [
+       "tip leakage vortex"
+      ],
       "hits": 3,
       "note": "『Tip-leakage-flow excited unsteadiness and associated control』(Liu et al., 2024)を発見。arXiv全文(CC BY-NC-ND)およびPDFから図・数値を確認して採用。"
      }
@@ -1471,6 +1473,70 @@
     "note": "最新枠は本日ローテーションの上位が既収録重複・新規OpenAlex候補が抄録なし・ScienceDirect2件が本文取得不可という三重苦の号で、topics.json内の別キーワードによる個別検索でOA全文を確保。定番枠は前号までの見送り実績を踏まえ次点に切り替え。採用した2件はfaithfulness-checkで各2ラウンド（初回指摘→修正→再検証）を経て公開。パートII論文は2ラウンド目に図の対角線ラベル配置と表記の誤りが残ったため、内容面の裏取り済みの指摘のみ編集担当が直接修正した。"
    },
    "afterword": "— 編集担当より：今回「なるほど」だったのは、翼端漏れ渦の暴れが、渦どうしがぶつからなくても『自分から』暴れ出すという話です。原因があって結果がある、という当たり前の因果関係すら無しに乱れが生まれ、しかもそれが渦の壊れる場所を境にリズムまで変わるというのが不思議でした。もう一つ、圧縮機のサージ理論を調べていて、似た名前・似た著者の論文シリーズが実は2組（1976年のGreitzer単著シリーズと、1986年のMoore&Greitzer共著シリーズ）あることに気づき、有名な理論ほど『どの論文のことか』を確認する手間を惜しんではいけないと反省しました。"
+  },
+  {
+   "date": "2026-07-20",
+   "status": "published",
+   "headline": "案内羽根の角度ひとつで綱引きするポンプの性能とキャビテーション、そして風車ブレードを暴れさせる2種類の空力弾性不安定",
+   "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、18件・OA13/抄録5）は、上位の多く（多段軸流圧縮機のディープラーニング系3件、DL手法ベンチマーク1件）がML主役のため見送り、また異方的フーリエ空間の乱流論文と受動回転ディスクの境界層論文は前々号（2026-07-18）ですでに採用済みでした。代わりに「cavitation pump impeller」で見つかった、可変IGV（案内羽根）で軸流ポンプのキャビテーションを抑える2026年の新しい論文（Engineering Applications of Computational Fluid Mechanics誌、ゴールドOA）を全文取得して採用しました。定番枠（OpenAlex被引用上位、14件・OA4/抄録10）は上位の大半（Denton 1993、Langston 2001、Furukawa 1999、Pullan 2014、Gbadebo 2005ほか）が既収録で、DBD（誘電体バリア放電）プラズマ流れ制御の論文はOpenAlexで抄録が取得できず見送り、「blade flutter aeroelasticity」に該当する2007年の風車空力弾性レビュー（被引用397）を抄録ベースで採用しました。",
+   "picked": [
+    {
+     "id": "doi:10.1080/19942060.2026.2701553",
+     "title": "可変案内羽根（IGV）による軸流ポンプの水力性能改善とキャビテーション抑制の数値解析（Nguyen, Yoo, Dinh & Kim, 2026）",
+     "why": "案内羽根の角度をわずかに変えるだけで、ポンプの揚程（圧力）とキャビテーションが逆方向に動く、というトレードオフを実験検証つきの数値解析で丁寧に示した論文です。最高効率点で揚程+16.2%と引き換えにキャビテーションが4倍以上に悪化する一方、逆向きに振ればキャビテーションを84%減らせる、という具体的な数字が誠実に読み取れたため採用しました。ゴールドOAですがライセンスはCC BY-NC 4.0のため、実図はそのまま載せず概念図で代替しています。"
+    },
+    {
+     "id": "doi:10.1002/we.242",
+     "title": "風車における空力弾性不安定問題（Hansen, 2007）",
+     "why": "風車のブレードが異常に振動してしまう現象には、失速で止める古いタイプの風車で起きる「失速誘起振動」と、ピッチ角を制御する現代の風車で起きる「古典的フラッタ」という、原因も支配パラメータもまったく違う2種類がある、と整理している点が明快でした。抄録の範囲は具体的な数式やケーススタディの数値までは踏み込んでいませんが、被引用397という定番の整理として誠実に紹介できると判断しました。"
+    }
+   ],
+   "aside": [
+    {
+     "title": "直近号と重複する最新枠の候補、ML主役の候補は見送り",
+     "note": "最新枠の上位候補のうち、異方的フーリエ空間の2次元乱流論文（Carbone & Servidio, 2026）と受動回転ディスクによる境界層論文（Knoop & Ricco, 2026）は2026-07-18号ですでに採用済みでした。また多段軸流圧縮機のディープラーニングサロゲートモデル3件（Bruni, Maleki & Krishnababuら）と、空力予測向けDLアーキテクチャのベンチマーク論文は、いずれも数値解析よりML手法そのものが主役のため、CLAUDE.mdの方針（ML・数値手法は脇役）に沿って見送りました。"
+    },
+    {
+     "title": "定番枠のDBDプラズマ流れ制御は抄録なしで見送り",
+     "note": "被引用366のCorke, Post & Orlov (2008)「Single dielectric barrier discharge plasma enhanced aerodynamics」は、OpenAlexに抄録が収録されておらず、抄録ベースの要約すら誠実に作れないため見送りました。"
+    }
+   ],
+   "searchLog": {
+    "sources": [
+     {
+      "name": "arXiv + OpenAlex新着",
+      "scope": "最新枠（本日ローテーションの検索語）",
+      "terms": [
+       "diffuser stall pressure recovery",
+       "cavitation pump impeller",
+       "rotor stator interaction unsteady",
+       "centrifugal compressor aerodynamics",
+       "axial compressor aerodynamics",
+       "turbine aerodynamics"
+      ],
+      "hits": 18,
+      "note": "（OA13/抄録5）。上位はML主役のディープラーニング系4件と、前々号採用済みの2件（乱流カスケード論文・受動回転ディスク論文）で占められていたため、「cavitation pump impeller」に該当するOpenAlex新着（軸流ポンプの可変IGVによるキャビテーション抑制、EACFM誌ゴールドOA）を採用。"
+     },
+     {
+      "name": "OpenAlex 被引用上位",
+      "scope": "定番枠（本日ローテーションの検索語）",
+      "terms": [
+       "tip leakage vortex loss",
+       "tip clearance flow loss",
+       "turbomachinery loss mechanisms",
+       "shock boundary layer interaction compressor",
+       "wake mixing unsteady turbomachinery",
+       "boundary layer transition turbine blade",
+       "corner separation compressor",
+       "blade flutter aeroelasticity"
+      ],
+      "hits": 14,
+      "note": "（OA4/抄録10）。上位8件中6件が既収録、DBDプラズマ流れ制御論文は抄録なしで見送り。「blade flutter aeroelasticity」に該当する風車の空力弾性不安定レビュー（Hansen, 2007・被引用397）をOpenAlexの完全な抄録で確認のうえ採用。"
+     }
+    ],
+    "note": "今号は最新枠=OA全文（可変IGVによるポンプのキャビテーション抑制、CC BY-NC 4.0のため実図は転載せず概念図）、定番枠=抄録ベース（風車の空力弾性不安定レビュー）の組み合わせ。EACFM論文は本文HTMLが取得でき、Introduction/Methodology/Results/Conclusionを読み込んだうえで要約・quotes・sectionsを作成した。"
+   },
+   "afterword": "— 編集担当より：今回「なるほど」だったのは、ポンプの案内羽根の角度を変えるだけで、性能とキャビテーションがまるでシーソーのように逆方向に動くという話です。「性能を上げる」と「壊れにくくする」が同じ一つのつまみの表と裏になっている、というのが面白く感じました。もう一つ、風車のブレードが振動でおかしくなる現象に「失速誘起振動」と「古典的フラッタ」という、名前も原因もまったく違う2種類があると知ったのも新鮮でした。同じ「ブレードが暴れる」という結果でも、中身の物理はまるきり別物なんですね。"
   }
  ]
 }

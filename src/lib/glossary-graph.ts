@@ -47,6 +47,9 @@ export const CATEGORIES: GraphCategory[] = [
       "チョーク (choking)",
       "回転不安定現象 (rotating instabilities)",
       "圧縮機長さ半径比",
+      "空力弾性不安定",
+      "失速誘起振動",
+      "古典的フラッタ",
     ],
   },
   {
@@ -113,6 +116,8 @@ export const CATEGORIES: GraphCategory[] = [
       "片持ち静翼 (cantilevered stator)",
       "付着渦階層 (attached-eddy hierarchy)",
       "スーパーストラクチャー (superstructures)",
+      "可変案内羽根（可変IGV）",
+      "ディフューザ静翼",
     ],
   },
   {
@@ -166,6 +171,7 @@ export const CATEGORIES: GraphCategory[] = [
       "順問題・逆問題",
       "性能特性（特性曲線）",
       "負荷係数 / 流量係数",
+      "最高効率点（BEP）",
     ],
   },
   {
@@ -426,6 +432,18 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 軸流圧縮系の失速後過渡現象パートII（Greitzer & Moore 1986） ---
   { from: "圧縮機長さ半径比", to: "サージ", label: "小さいほど誘発" },
   { from: "圧縮機長さ半径比", to: "B パラメータ", label: "共にサージ/回転失速の分岐を支配" },
+  // --- 可変IGVによる軸流ポンプの性能改善とキャビテーション抑制（Nguyen et al. 2026） ---
+  { from: "可変案内羽根（可変IGV）", to: "案内羽根", label: "一種（角度可変）" },
+  { from: "可変案内羽根（可変IGV）", to: "キャビテーション", label: "角度で抑制・悪化を左右" },
+  { from: "可変案内羽根（可変IGV）", to: "翼端漏れ渦", label: "角度が渦軌跡を左右" },
+  { from: "案内羽根", to: "ディフューザ静翼", label: "下流側の対の静翼列" },
+  { from: "最高効率点（BEP）", to: "性能特性（特性曲線）", label: "評価の基準点" },
+  // --- 風車の空力弾性不安定（Hansen 2007） ---
+  { from: "空力弾性不安定", to: "失速誘起振動", label: "一型（失速型風車）" },
+  { from: "空力弾性不安定", to: "古典的フラッタ", label: "一型（ピッチ制御型風車）" },
+  { from: "構造減衰", to: "失速誘起振動", label: "負の空力減衰を相殺" },
+  { from: "ねじり剛性", to: "古典的フラッタ", label: "低いほど誘発" },
+  { from: "翼端速度", to: "古典的フラッタ", label: "大きいほど誘発" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
