@@ -1537,6 +1537,70 @@
     "note": "今号は最新枠=OA全文（可変IGVによるポンプのキャビテーション抑制、CC BY-NC 4.0のため実図は転載せず概念図）、定番枠=抄録ベース（風車の空力弾性不安定レビュー）の組み合わせ。EACFM論文は本文HTMLが取得でき、Introduction/Methodology/Results/Conclusionを読み込んだうえで要約・quotes・sectionsを作成した。"
    },
    "afterword": "— 編集担当より：今回「なるほど」だったのは、ポンプの案内羽根の角度を変えるだけで、性能とキャビテーションがまるでシーソーのように逆方向に動くという話です。「性能を上げる」と「壊れにくくする」が同じ一つのつまみの表と裏になっている、というのが面白く感じました。もう一つ、風車のブレードが振動でおかしくなる現象に「失速誘起振動」と「古典的フラッタ」という、名前も原因もまったく違う2種類があると知ったのも新鮮でした。同じ「ブレードが暴れる」という結果でも、中身の物理はまるきり別物なんですね。"
+  },
+  {
+   "date": "2026-07-21",
+   "status": "published",
+   "headline": "モデルの立て方ひとつで失速とサージの境目そのものが動く、というMoore–Greitzerモデル改良研究と、損失は予測法より物理理解が大事だと説いたDentonの定番総説",
+   "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、24件・OA18/抄録6）は、arXiv側の上位がほぼ全て一般流体力学（乱流統計・水面渦・希薄流など）でターボ機械分野外だったため見送り、OpenAlex新着の軸流ポンプ可変IGV論文3件は前号（2026-07-20）採用済みと同一論文の重複ヒットのため除外しました。代わりに、6月末の収集で候補に上げていたものの未配信だったMoore–Greitzerモデル拡張論文（Scientific Reports誌、ゴールドOA・CC BY）を、今回あらためて本文を正規に取得し直して大幅に作り込み採用しました。定番枠（OpenAlex被引用上位、14件・OA3/抄録11）は上位の多くが既収録で、今回は新規候補ではなく、初期の種データとして眠っていたDenton(1993)の「Loss Mechanisms in Turbomachines」（被引用約1600の決定的総説）を掘り起こして採用しました。ただしこの種データはオープンアクセスと誤って登録されていたため、あらためて確認したところ実際はclosed accessと判明し、抄録ベースとして修正のうえ掲載しています。",
+   "picked": [
+    {
+     "id": "doi:10.1038/s41598-026-50460-y",
+     "title": "Moore–Greitzer枠組みの拡張による低速・孤立軸流圧縮機ロータ翼列の流れ不安定性モデル化（Katebi & Taghavi Zenouz, 2026）",
+     "why": "軸流圧縮機の失速・サージを予測する定番モデルを、実測した性能カーブに基づいて改良した研究です。改良モデルでは失速↔サージの境目がB=0.71と予測されるのに対し、従来の（性能カーブを1本の3次式で近似する）原モデルではB=0.78と予測される、という対比が具体的で興味深く、正規の全文（Nature Scientific Reports、CC BY）を取得して章立て・数式・引用まで作り込めたため採用しました。"
+    },
+    {
+     "id": "doi:10.1115/1.2929299",
+     "title": "ターボ機械における損失メカニズム（Denton, 1993 IGTI Scholar Lecture）",
+     "why": "タービンや圧縮機の損失を「エントロピー生成」という一つの物差しで整理した、被引用約1600の決定的総説です。抄録が繰り返し強調する「予測法の整理より物理的な起源の理解を優先すべき」という姿勢が明快で、境界層剥離のように「特に定量化が難しい」と原文が正直に認めている機構がある点も含めて、抄録ベースとして誠実に紹介できると判断しました。"
+    }
+   ],
+   "aside": [
+    {
+     "title": "最新枠のarXiv新着は分野外、OpenAlex新着は前号との重複が多数",
+     "note": "本日のarXiv新着上位（自己相似性の統計解析、量子摩擦、水面渦、レイリー・ベナール対流など）はいずれもターボ機械の流れ現象ではなく分野外のため見送りました。OpenAlex新着では軸流ポンプの可変IGVによるキャビテーション抑制論文が3件重複でヒットしましたが、いずれも前号（2026-07-20）で既に採用済みの同一論文でした。"
+    },
+    {
+     "title": "Denton論文のOA表記の誤りを発見・修正",
+     "note": "初期の種データでDenton(1993)は「オープンアクセス」と登録されていましたが、OpenAlexで確認したところ実際はclosed access（is_oa=false）でした。全文は取得せず、抄録ベースとして正しく修正したうえで掲載しています。"
+    }
+   ],
+   "searchLog": {
+    "sources": [
+     {
+      "name": "arXiv + OpenAlex新着",
+      "scope": "最新枠（本日ローテーションの検索語）",
+      "terms": [
+       "surge rotating stall",
+       "rotating stall inception spike",
+       "secondary flow endwall turbomachinery",
+       "tip leakage vortex loss",
+       "tip clearance flow loss",
+       "turbomachinery loss mechanisms"
+      ],
+      "hits": 24,
+      "note": "（OA18/抄録6）。arXiv上位は分野外、OpenAlex新着は前号採用済みの重複や圧縮機失速のML検知手法論文が中心。かわりに6月末に候補化していたMoore–Greitzerモデル拡張論文（Scientific Reports）をあらためて全文取得し採用。"
+     },
+     {
+      "name": "OpenAlex 被引用上位",
+      "scope": "定番枠（本日ローテーションの検索語）",
+      "terms": [
+       "supercritical CO2 turbomachinery",
+       "wind turbine wake aerodynamics",
+       "film cooling turbine heat transfer",
+       "inlet distortion fan aerodynamics",
+       "diffuser stall pressure recovery",
+       "cavitation pump impeller",
+       "rotor stator interaction unsteady",
+       "centrifugal compressor aerodynamics"
+      ],
+      "hits": 14,
+      "note": "（OA3/抄録11）。新規候補（Wind turbine wake aerodynamics等）ではなく、初期種データとして未配信だったDenton(1993)の損失機構総説を掘り起こして採用。OA表記の誤りを発見し抄録ベースに修正。"
+     }
+    ],
+    "note": "今号は最新枠=OA全文（Moore–Greitzerモデル拡張、正規のNature Scientific Reportsサイトから全文取得）、定番枠=抄録ベース（Denton 1993、OpenAlexでclosed access確認）の組み合わせ。"
+   },
+   "afterword": "— 編集担当より：今回「なるほど」だったのは、同じ圧縮機・同じ実験データを使っても、モデルの立て方（性能カーブを1本の式で近似するか、安定域と不安定域を分けて表すか）によって「ここが危険域です」という境目の数字（B=0.78かB=0.71か）自体が変わってしまう、という話でした。もう一つ、Dentonの損失の総説が「予測できることより、なぜ損失が起きるか理解することの方が価値がある場合もある」と述べていたのも印象的で、正確な数値を出すことと物事を理解することは、必ずしも同じ方向を向いていないのかもしれないと思わされました。"
   }
  ]
 }
