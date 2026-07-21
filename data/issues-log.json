@@ -1601,6 +1601,70 @@
     "note": "今号は最新枠=OA全文（Moore–Greitzerモデル拡張、正規のNature Scientific Reportsサイトから全文取得）、定番枠=抄録ベース（Denton 1993、OpenAlexでclosed access確認）の組み合わせ。"
    },
    "afterword": "— 編集担当より：今回「なるほど」だったのは、同じ圧縮機・同じ実験データを使っても、モデルの立て方（性能カーブを1本の式で近似するか、安定域と不安定域を分けて表すか）によって「ここが危険域です」という境目の数字（B=0.78かB=0.71か）自体が変わってしまう、という話でした。もう一つ、Dentonの損失の総説が「予測できることより、なぜ損失が起きるか理解することの方が価値がある場合もある」と述べていたのも印象的で、正確な数値を出すことと物事を理解することは、必ずしも同じ方向を向いていないのかもしれないと思わされました。"
+  },
+  {
+   "date": "2026-07-22",
+   "status": "published",
+   "headline": "タービン翼のウェイク誘起遷移、10種の診断法を比較したウクライナの実験研究と、圧縮機のサージ・回転失速を3段実機で検証したGreitzer古典実験編",
+   "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、24件・OA18/抄録6）は、arXiv上位のほとんどがレイリー・ベナール対流やプラズマ流体シミュレーションなど一般流体力学でターボ機械分野外だったため見送りました。かわりにOpenAlex新着の中から、タービン翼面のウェイク誘起層流-乱流遷移を10種類の診断手法で比較したウクライナ工学熱物理研究所の実験論文（Eurasian Physical Technical Journal誌、CC BY-NC-ND オープンアクセス）を見つけ、全文をPDFから抽出して読み込み、大幅に作り込んで採用しました。定番枠（OpenAlex被引用上位、14件・OA0/抄録14）は上位の多くが既収録、または抄録そのものが取得できない（Crossref/OpenAlex/Semantic Scholarいずれにもabstractフィールドが無い）論文だったため、抄録全文を確認できたGreitzer(1976)の実験編——アーカイブに既にあるPart I（理論モデル編）の実験検証版——を採用しました。",
+   "picked": [
+    {
+     "id": "doi:10.31489/2026n2/91-98",
+     "title": "ウェイク誘起層流-乱流遷移の診断のためのいくつかの手法（Suprun, 2026）",
+     "why": "タービン翼の局所熱伝達を正しく計算するには翼面の層流/遷移/乱流の境目を知る必要があるという実務的な問題意識のもと、静止・振動円柱でウェイクを模擬し、10種類もの診断手法（熱伝達分布、速度分布の形、境界層形状係数等）を実際に比較して『単独で始点・終点の両方を判定できる方法は無い』と結論づけている点が具体的で面白く、CC BY-NC-ND オープンアクセスで全文を取得できたため採用しました。"
+    },
+    {
+     "id": "doi:10.1115/1.3446139",
+     "title": "軸流圧縮機におけるサージと回転失速——第II部：実験結果と理論との比較（Greitzer, 1976）",
+     "why": "アーカイブに既にあるPart I（サージ・回転失速を予測するBパラメータの理論モデル）の実験検証編にあたる論文です。プレナムの質量バランスを使った新しいデータ解析法で瞬時の圧縮機質量流量を算出し、理論モデルとの比較を行ったという抄録の内容が、Part Iとの対で読める良い組み合わせと判断し、抄録ベースで誠実に紹介しました。"
+    }
+   ],
+   "aside": [
+    {
+     "title": "定番枠の多くはabstractが取得できず断念",
+     "note": "定番枠の新規候補のうちVermeer et al.(2003)の風車ウェイク空力学レビュー、Epstein et al.(1989)のターボ機械不安定能動抑制、Lefebvre(1984)のガスタービン燃焼、Hamed et al.(2006)のエロージョン/デポジションは、Crossref・OpenAlex・Semantic Scholarのいずれにもabstractフィールドが存在せず、抄録ベースで誠実に書ける材料が無いため見送りました。Mayle(1991)の層流-乱流遷移レビューはabstractを確認できましたが、既に配信済みでした。"
+    },
+    {
+     "title": "arXiv新着は一般流体力学が中心で分野外",
+     "note": "本日のarXiv新着上位はレイリー・ベナール対流の磁場効果、プラズマ流体シミュレーション、粒子ラフトの圧縮解放など、いずれもターボ機械の流れ現象ではなく分野外のため見送りました。"
+    }
+   ],
+   "searchLog": {
+    "sources": [
+     {
+      "name": "arXiv + OpenAlex新着",
+      "scope": "最新枠（本日ローテーションの検索語）",
+      "terms": [
+       "shock boundary layer interaction compressor",
+       "wake mixing unsteady turbomachinery",
+       "boundary layer transition turbine blade",
+       "corner separation compressor",
+       "blade flutter aeroelasticity",
+       "supercritical CO2 turbomachinery"
+      ],
+      "hits": 24,
+      "note": "（OA18/抄録6）。arXiv上位は一般流体力学で分野外。OpenAlex新着の中から、CC BY-NC-ND オープンアクセスのウェイク誘起遷移診断論文（Eurasian Physical Technical Journal）を発見し全文取得。"
+     },
+     {
+      "name": "OpenAlex 被引用上位",
+      "scope": "定番枠（本日ローテーションの検索語）",
+      "terms": [
+       "axial compressor aerodynamics",
+       "turbine aerodynamics",
+       "surge rotating stall",
+       "rotating stall inception spike",
+       "secondary flow endwall turbomachinery",
+       "tip leakage vortex loss",
+       "tip clearance flow loss",
+       "turbomachinery loss mechanisms"
+      ],
+      "hits": 14,
+      "note": "（OA0/抄録14）。上位の多くは既収録、または3系統（Crossref/OpenAlex/Semantic Scholar）いずれからもabstractが取得できず断念。抄録全文を確認できたGreitzer(1976)Part II（Part Iの実験検証編）を採用。"
+     }
+    ],
+    "note": "今号は最新枠=OA全文（Suprun 2026、CC BY-NC-ND、PyMuPDFでPDFから全文抽出）、定番枠=抄録ベース（Greitzer 1976 Part II、Crossrefでabstract取得・被引用数は情報源間で乖離が大きいため非掲載）の組み合わせ。"
+   },
+   "afterword": "— 編集担当より：今回『なるほど』だったのは、タービン翼のウェイク誘起遷移の論文で、『遷移の始まりを見つけるのが得意な測定方法』と『終わりを見つけるのが得意な測定方法』が別物だという話でした。10種類も方法を比べて、両方をちゃんと判定できたのはたった1つ（速度の変動を追う方法）だけだったというのが印象的で、一つの物差しで全部を測ろうとしないという姿勢そのものが勉強になりました。"
   }
  ]
 }

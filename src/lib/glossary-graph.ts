@@ -51,6 +51,7 @@ export const CATEGORIES: GraphCategory[] = [
       "空力弾性不安定",
       "失速誘起振動",
       "古典的フラッタ",
+      "プレナム質量バランス法",
     ],
   },
   {
@@ -225,7 +226,18 @@ export const CATEGORIES: GraphCategory[] = [
     key: "transition",
     label: "遷移・伝熱",
     color: "#8f5a6d",
-    terms: ["層流", "乱流", "層流-乱流遷移", "熱伝達", "フィルム冷却", "内部冷却", "吹き出し比 (blowing ratio)"],
+    terms: [
+      "層流",
+      "乱流",
+      "層流-乱流遷移",
+      "熱伝達",
+      "フィルム冷却",
+      "内部冷却",
+      "吹き出し比 (blowing ratio)",
+      "ウェイク誘起遷移 (wake-induced transition)",
+      "バイパス遷移 (bypass transition)",
+      "疑似層流境界層 (pseudolaminar boundary layer)",
+    ],
   },
   {
     key: "wake",
@@ -446,6 +458,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "構造減衰", to: "失速誘起振動", label: "負の空力減衰を相殺" },
   { from: "ねじり剛性", to: "古典的フラッタ", label: "低いほど誘発" },
   { from: "翼端速度", to: "古典的フラッタ", label: "大きいほど誘発" },
+  // --- ウェイク誘起層流-乱流遷移の診断手法（Suprun 2026） ---
+  { from: "後流（ウェイク）", to: "ウェイク誘起遷移 (wake-induced transition)", label: "引き起こす" },
+  { from: "ウェイク誘起遷移 (wake-induced transition)", to: "層流-乱流遷移", label: "一形態" },
+  { from: "バイパス遷移 (bypass transition)", to: "層流-乱流遷移", label: "一形態" },
+  { from: "ウェイク誘起遷移 (wake-induced transition)", to: "疑似層流境界層 (pseudolaminar boundary layer)", label: "先行区間" },
+  // --- 軸流圧縮機のサージ・回転失速の実験検証（Greitzer 1976 Part II） ---
+  { from: "プレナム質量バランス法", to: "サージ", label: "定量計測に使用" },
+  { from: "プレナム質量バランス法", to: "回転失速", label: "定量計測に使用" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
