@@ -32,6 +32,8 @@ export const CATEGORIES: GraphCategory[] = [
       "深いサージ (deep surge)",
       "Moore–Greitzer モデル",
       "サージ余裕 (surge margin)",
+      "入口リサーキュレーション (inlet recirculation)",
+      "プリスワール (preswirl)",
       "失速余裕",
       "渦崩壊 (vortex breakdown)",
       "逆流（backflow）",
@@ -234,6 +236,9 @@ export const CATEGORIES: GraphCategory[] = [
       "フィルム冷却",
       "内部冷却",
       "吹き出し比 (blowing ratio)",
+      "シェイプドフィルム孔 (shaped film hole)",
+      "断熱膜冷却効率 (adiabatic film effectiveness)",
+      "コンパウンド角度噴射 (compound angle injection)",
       "ウェイク誘起遷移 (wake-induced transition)",
       "バイパス遷移 (bypass transition)",
       "疑似層流境界層 (pseudolaminar boundary layer)",
@@ -312,6 +317,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "サージ余裕 (surge margin)", to: "サージ", label: "距離" },
   { from: "失速余裕", to: "回転失速", label: "距離" },
   { from: "失速余裕", to: "サージ余裕 (surge margin)", label: "類概念" },
+  // --- 吸気リサーキュレーション（Ullah et al. 2026） ---
+  { from: "入口リサーキュレーション (inlet recirculation)", to: "サージ", label: "悪化で移行" },
+  { from: "入口リサーキュレーション (inlet recirculation)", to: "プリスワール (preswirl)", label: "誘起" },
+  { from: "プリスワール (preswirl)", to: "入射角", label: "強まると低下" },
   // --- 翼端漏れ渦の連鎖（Furukawa 1999）と制御（Yaylak 2026） ---
   { from: "先端すき間流れ（tip clearance flow）", to: "翼端漏れ渦", label: "巻き上がり" },
   { from: "翼端漏れ流れ (tip leakage flow)", to: "翼端漏れ渦", label: "巻き上がり" },
@@ -332,6 +341,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "層流-乱流遷移", to: "乱流", label: "終点" },
   { from: "層流-乱流遷移", to: "境界層", label: "内で進行" },
   { from: "層流-乱流遷移", to: "熱伝達", label: "左右" },
+  // --- フィルム冷却（Bunker 2005） ---
+  { from: "シェイプドフィルム孔 (shaped film hole)", to: "フィルム冷却", label: "発展形" },
+  { from: "シェイプドフィルム孔 (shaped film hole)", to: "断熱膜冷却効率 (adiabatic film effectiveness)", label: "向上させる" },
+  { from: "吹き出し比 (blowing ratio)", to: "断熱膜冷却効率 (adiabatic film effectiveness)", label: "左右する" },
   // --- 風車・ウェイク（Sanderse 2011 / Vilotijević 2026） ---
   { from: "ニアウェイク／ファーウェイク", to: "後流（ウェイク）", label: "区分" },
   { from: "ウェイクメアンダリング", to: "後流（ウェイク）", label: "揺動" },
