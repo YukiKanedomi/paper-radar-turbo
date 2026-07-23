@@ -1746,6 +1746,79 @@
         "note": "今号は最新枠=OA全文（Ullah et al. 2026, Nature Scientific Reports, CC BY 4.0、PDFから全文抽出）、定番枠=抄録ベース（Bunker 2005, Journal of Heat Transfer, OpenAlexのabstractのみ）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、入口フィンの論文で、逆流を止める工夫が別の形の損失を生んでいたところです。フィンが渦（プリスワール）を抑え込むと、羽根への風の当たり方（入射角）が変わってしまい、低流量での効率がむしろ落ちる——という話でした。一つの問題を直そうとすると、思わぬところに皺寄せがいく感じ、家事の段取りでも似たようなことがある気がして、他人事に思えませんでした。"
+    },
+    {
+      "date": "2026-07-24",
+      "status": "published",
+      "headline": "翼負荷分布の後方シフトで軸流圧縮機の失速余裕・チップクリアランス鈍感性・回転不安定現象を同時に改善する実験・数値・理論の三位一体検証（Zhou et al. 2026, ISUAAAT17全文OA）と、回転失速・サージを能動制御で抑え込むという考え方を提案した基礎的な論文（Epstein, Ffowcs Williams & Greitzer 1989, 抄録ベース）",
+      "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、19件・OA12/抄録7）は、arXiv上位が深層学習サロゲートや数値スキームの論文中心で分野外、OpenAlex新着の候補（RANS不確かさ定量化、深層学習によるジオメトリ不確かさモデリング、浮体式風車まわり等）も既存配信との重複や分野外でした。定番枠（OpenAlex被引用上位、14件・OA1/抄録13）の新規候補（Vermeer 2003の風車ウェイクレビュー、Epstein et al. 1989の能動制御論文など）はOpenAlex/Semantic Scholar/Crossrefのいずれからもabstractが取得できないものが多く、Vermeer(2003)は断念しましたが、Epstein et al.(1989)はOpenAlexのabstract_inverted_indexからアブストラクト全文を復元できたため採用しました。最新枠は、topics.jsonのキーワード群でOpenAlexを2024年以降・CC-BYライセンス限定で横断検索したところ、Zenodo（ISUAAAT17予稿集）に翼負荷分布とチップクリアランスに関する会議論文（北京航空航天大学、CC BY 4.0）を発見。当初候補だったMDPI Fluids誌の論文はbot検知で本文取得ができなかったため、こちらに切り替えてPDFから全文・図を抽出しました。",
+      "picked": [
+        {
+          "id": "doi:10.5281/zenodo.20014200",
+          "title": "翼負荷分布が、チップクリアランス増大時の軸流圧縮機の流れ安定性に及ぼす影響（Zhou et al., 2026）",
+          "why": "羽根の圧力のかけ方（翼負荷分布）を前寄りから後ろ寄りに変えるだけで、チップクリアランスが広がっても失速余裕が保たれ（鈍感化）、しかも回転不安定現象（RI）の周波数・振幅まで抑えられるという一石三鳥の効果を、実験・RANS/URANS・理論的安定性モデルの3本柱で裏付けている点が読み応えがあり、CC BY 4.0で全文・図表を確認できたため採用しました。"
+        },
+        {
+          "id": "doi:10.2514/3.23137",
+          "title": "ターボ機械における空力的不安定現象の能動的抑制（Epstein, Ffowcs Williams & Greitzer, 1989）",
+          "why": "回転失速・サージという不安定現象を、育ちきる前の微小な段階でリアルタイム制御によって抑え込むという発想を提案し、後続の能動制御研究で広く参照されてきた基礎的な論文であること、対象圧縮機で安定運転範囲を20%広げたという具体的な成果と、必要な制御電力が機械本体よりも桁違いに小さいという指摘が抄録だけでも十分に読み応えがあったため、被引用約300件の定番として採用しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "MDPI論文はbot検知で本文取得を断念",
+          "note": "当初の最新枠OA候補だったMDPI Fluids誌の遠心圧縮機ディフューザ失速論文（gold OA・CC BY）は、abstractはOpenAlex経由で確認できたものの、本文ページ・PDFともにアクセスがbot検知で403エラーとなり、全文取得を断念しました。同種の事例を踏まえ、Zenodo（学会予稿集リポジトリ）のCC BY論文に切り替えて全文を確保しています。"
+        },
+        {
+          "title": "定番枠の多くはabstract未整備",
+          "note": "定番枠の新規候補のうち、Vermeer et al.(2003)の風車ウェイク空力学レビュー（被引用1353件）は前々号に続きOpenAlex/Semantic Scholar/Crossrefのいずれにもabstractが登録されておらず、抄録ベースで誠実に書ける材料がないため見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 19,
+            "note": "（OA12/抄録7）。arXiv上位は深層学習サロゲート・数値スキーム論文が中心で分野外。OpenAlex新着候補は既存配信との重複や分野外のため見送り。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall"
+            ],
+            "hits": 14,
+            "note": "（OA1/抄録13）。上位候補の多くが既存配信と重複（Part I/II、Tip Leakage Vortex Breakdown等）。Epstein et al.(1989)はOpenAlexからabstract全文を復元できたため採用。"
+          },
+          {
+            "name": "OpenAlex横断検索（2024年以降・CC-BYライセンス限定）",
+            "scope": "最新枠の補助検索（rotating stall compressorほか回転失速関連語）",
+            "terms": [
+              "rotating stall compressor"
+            ],
+            "hits": 14,
+            "note": "OA全文が必須の最新枠を補うため、collect.mjs出力の範囲外でOpenAlexを直接CC-BYライセンス限定・新着順で検索。MDPI Fluids誌の論文はbot検知で本文取得不可のため断念し、Zenodo（ISUAAAT17予稿集）の翼負荷分布論文を採用してPDFから全文・図を抽出しました。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（Zhou et al. 2026, ISUAAAT17予稿集, Zenodo, CC BY 4.0、PDFから全文・図を抽出）、定番枠=抄録ベース（Epstein et al. 1989, Journal of Propulsion and Power, OpenAlexのabstractのみ）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、羽根の圧力のかけ方を後ろにずらすだけで、すき間が広がっても壊れにくくなるうえ、壊れる前の揺れの周波数まで下がるという話でした。ひとつの工夫が、まったく別々に見えていた3つの問題（安定範囲・経年劣化への強さ・揺れの質）に同時に効いているのが面白く、家の中の整理整頓でも、置き場所をひとつ変えただけで散らかりにくさと探しやすさが両方良くなることがあるのを思い出しました。"
     }
   ]
 }
