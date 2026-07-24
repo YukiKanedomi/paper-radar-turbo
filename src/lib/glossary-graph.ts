@@ -123,6 +123,10 @@ export const CATEGORIES: GraphCategory[] = [
       "スーパーストラクチャー (superstructures)",
       "可変案内羽根（可変IGV）",
       "ディフューザ静翼",
+      "自由流乱れ (freestream turbulence, FST)",
+      "摩擦係数 Cf (skin-friction coefficient)",
+      "ウルトラハイリフト翼 (ultra-high-lift blade)",
+      "低圧タービン (low-pressure turbine, LPT)",
     ],
   },
   {
@@ -211,6 +215,7 @@ export const CATEGORIES: GraphCategory[] = [
       "壁面すべり速度",
       "空気噴射 (air injection)",
       "マイクロオフセット翼端 (micro-offset tip)",
+      "圧力勾配パラメータβ (Clauser parameter)",
     ],
   },
   {
@@ -246,6 +251,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ウェイク誘起遷移 (wake-induced transition)",
       "バイパス遷移 (bypass transition)",
       "疑似層流境界層 (pseudolaminar boundary layer)",
+      "負圧面境界層 (suction-side boundary layer)",
     ],
   },
   {
@@ -469,6 +475,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 軸流圧縮系の失速後過渡現象パートII（Greitzer & Moore 1986） ---
   { from: "圧縮機長さ半径比", to: "サージ", label: "小さいほど誘発" },
   { from: "圧縮機長さ半径比", to: "B パラメータ", label: "共にサージ/回転失速の分岐を支配" },
+  // --- 自由流乱れが逆圧力勾配境界層に与える影響（Jaroslawski & Scarano 2026） ---
+  { from: "自由流乱れ (freestream turbulence, FST)", to: "乱流境界層", label: "内部に浸透し発達を左右" },
+  { from: "自由流乱れ (freestream turbulence, FST)", to: "逆圧力勾配 (adverse pressure gradient)", label: "及ぼす効果を打ち消す" },
+  { from: "圧力勾配パラメータβ (Clauser parameter)", to: "逆圧力勾配 (adverse pressure gradient)", label: "強さを定量化" },
+  // --- 低圧タービンの後流誘起遷移とハイリフト翼（Hodson & Howell 2005） ---
+  { from: "後流（ウェイク）", to: "負圧面境界層 (suction-side boundary layer)", label: "干渉して遷移を誘発" },
+  { from: "ウェイク誘起遷移 (wake-induced transition)", to: "ウルトラハイリフト翼 (ultra-high-lift blade)", label: "効果を利用して実現" },
+  { from: "ウルトラハイリフト翼 (ultra-high-lift blade)", to: "低圧タービン (low-pressure turbine, LPT)", label: "損失抑制のための翼設計" },
   // --- 可変IGVによる軸流ポンプの性能改善とキャビテーション抑制（Nguyen et al. 2026） ---
   { from: "可変案内羽根（可変IGV）", to: "案内羽根", label: "一種（角度可変）" },
   { from: "可変案内羽根（可変IGV）", to: "キャビテーション", label: "角度で抑制・悪化を左右" },

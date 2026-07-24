@@ -1819,6 +1819,70 @@
         "note": "今号は最新枠=OA全文（Zhou et al. 2026, ISUAAAT17予稿集, Zenodo, CC BY 4.0、PDFから全文・図を抽出）、定番枠=抄録ベース（Epstein et al. 1989, Journal of Propulsion and Power, OpenAlexのabstractのみ）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、羽根の圧力のかけ方を後ろにずらすだけで、すき間が広がっても壊れにくくなるうえ、壊れる前の揺れの周波数まで下がるという話でした。ひとつの工夫が、まったく別々に見えていた3つの問題（安定範囲・経年劣化への強さ・揺れの質）に同時に効いているのが面白く、家の中の整理整頓でも、置き場所をひとつ変えただけで散らかりにくさと探しやすさが両方良くなることがあるのを思い出しました。"
+    },
+    {
+      "date": "2026-07-25",
+      "status": "published",
+      "headline": "翼まわりに発達する逆圧力勾配境界層に自由流の乱れが与える影響を風洞実験で系統的に確かめた研究（Jaroslawski & Scarano 2026, arXiv全文OA）と、後流に誘発される境界層遷移を逆手にとってウルトラハイリフト低圧タービン翼を実現するという設計思想をまとめた定番総説（Hodson & Howell 2005, Annual Review of Fluid Mechanics, 抄録ベース）",
+      "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、13件・OA9/抄録4）は、arXiv候補3件のうち深層学習クロージャーやアクチュエータライン法などML・数値手法中心の2件を見送り、NACA0015翼型の風洞実験で自由流乱れが逆圧力勾配境界層に与える影響を調べたJaroslawski & Scarano(2026)を採用しました。OpenAlex新着の候補（軸流ポンプIGV、翼端漏れ渦崩壊抑制など）はOpenAlex・Crossref・Semantic Scholarのいずれからもabstractが取得できず、抄録ベースで誠実に書ける材料がなかったため見送りました。定番枠（OpenAlex被引用上位、14件・OA2/抄録12）は、Unpaywallで「CC-BY・OA」と表示されたHalstead et al.(1997)の境界層遷移の古典論文を有力候補として調査しましたが、figshare側の実体は本文ファイルのないメタデータのみのレコード（ライセンス表示も\"In Copyright\"）で全文もabstractも取得できず断念。ScienceDirect掲載のGhorani et al.(2020)（PATのエントロピー生成損失）はabstractは取得できたものの本文ページはbot検知でブロックされました。最終的に、CrossrefからAbstract全文を復元できたHodson & Howell(2005)の低圧タービン後流誘起遷移レビューを採用しました。本日の最新枠・定番枠はともに境界層の層流-乱流遷移というテーマでつながっており、前々号のSuprun(2026)の後流誘起遷移診断手法とも関連します。",
+      "picked": [
+        {
+          "id": "arxiv:2607.21047",
+          "title": "翼まわりに発達する中程度の逆圧力勾配乱流境界層に対する自由流乱れの影響（Jaroslawski & Scarano, 2026）",
+          "why": "逆圧力勾配を受ける境界層は風車後流やターボ機械翼列でよく現れるが、実際の流れでは自由流自体がすでに乱れていることが多い、という現実的な視点から出発し、自由流の乱れが強いほど境界層厚さ・形状係数・摩擦係数がむしろゼロ圧力勾配に近づく（逆圧力勾配の効果を打ち消す）という直感に反する結果を、風洞実験と丁寧なスペクトル解析で示している点が読み応えがあり、arXivで全文・数式を確認できたため採用しました。"
+        },
+        {
+          "id": "doi:10.1146/annurev.fluid.37.061903.175511",
+          "title": "低圧タービンにおける翼列間干渉・遷移・ハイリフト翼型（Hodson & Howell, 2005）",
+          "why": "上流翼列の後流が下流翼の境界層に遷移を引き起こすという現象を、単なる損失要因としてではなく、積極的に利用して羽根枚数を減らす「ウルトラハイリフト」翼の実現につなげたという設計思想の転換が興味深く、Annual Review of Fluid Mechanics誌の定番総説（被引用約180件）として、抄録の範囲で誠実に紹介できると判断して採用しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "Halstead et al.(1997)はOA表示なのに本文ゼロ",
+          "note": "UnpaywallはHalstead et al.(1997)「Boundary Layer Development in Axial Compressors and Turbines: Part 1」をCC-BY・OAと表示しましたが、実体のfigshareレコード（タスマニア大学のリポジトリ）にはファイルが1つも添付されておらず、ライセンス欄も\"In Copyright\"でした。OAフラグだけを信じて全文ありと決め打ちせず、実体を確認して見送りました。"
+        },
+        {
+          "title": "ScienceDirectは今回もbot検知でブロック",
+          "note": "Ghorani et al.(2020)（ポンプ逆転運転PATのエントロピー生成損失、Renewable Energy誌）はabstractこそ取得できましたが、本文ページ(ScienceDirect)はbot検知で403エラーとなり、全文取得を断念しました。過去の配信でも繰り返し起きている既知のパターンです。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 13,
+            "note": "（OA9/抄録4）。arXiv候補3件のうち2件（深層学習クロージャー、アクチュエータライン法）はML・数値手法中心のため分野外として見送り。OpenAlex新着候補はいずれもabstract未整備のため見送り。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 14,
+            "note": "（OA2/抄録12）。上位の大半は既存配信と重複。Halstead et al.(1997)はOA表示だが本文ファイルなしのため断念、Ghorani et al.(2020)はScienceDirectがbot検知でブロック。CrossrefでAbstract全文を復元できたHodson & Howell(2005)を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（Jaroslawski & Scarano 2026, arXivプレプリント）、定番枠=抄録ベース（Hodson & Howell 2005, Annual Review of Fluid Mechanics, Crossrefのabstractのみ）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回並べてみて『なるほど』だったのは、どちらの論文も「乱れ」や「後流」を単なる邪魔者として扱っていなかったことです。自由流の乱れは境界層を悪化させそうなのに実は逆圧力勾配の悪影響を打ち消していたし、後流は損失の原因のはずが、うまく使えば羽根の枚数を減らす設計の武器になっていました。厄介に見えるものほど、向き合い方次第で味方になることがあるのかもしれない、と思わされる組み合わせでした。"
     }
   ]
 }
