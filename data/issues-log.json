@@ -1883,6 +1883,70 @@
         "note": "今号は最新枠=OA全文（Jaroslawski & Scarano 2026, arXivプレプリント）、定番枠=抄録ベース（Hodson & Howell 2005, Annual Review of Fluid Mechanics, Crossrefのabstractのみ）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回並べてみて『なるほど』だったのは、どちらの論文も「乱れ」や「後流」を単なる邪魔者として扱っていなかったことです。自由流の乱れは境界層を悪化させそうなのに実は逆圧力勾配の悪影響を打ち消していたし、後流は損失の原因のはずが、うまく使えば羽根の枚数を減らす設計の武器になっていました。厄介に見えるものほど、向き合い方次第で味方になることがあるのかもしれない、と思わされる組み合わせでした。"
+    },
+    {
+      "date": "2026-07-26",
+      "status": "published",
+      "headline": "動翼後流が静翼にぶつかって生まれる「渦放出」を循環ベースの相関式でコーナー損失・全圧上昇と定量的に結びつけた圧縮機の数値解析研究（Yu et al. 2026, Journal of Fluids Engineering, 抄録ベース）と、風車後流のCFD計算手法（RANS/LES・アクチュエータ近似）を体系的に整理した定番レビュー（Sanderse, van der Pijl & Koren 2011, Wind Energy, OA全文）",
+      "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、15件・OA7/抄録8）は、arXiv候補5件のうち1件（自由流乱れと逆圧力勾配境界層の論文）が前号と重複、3件（学習型有限体積法・圧縮性空力の情報伝達可観測性・高次フラックス再構成アクチュエータライン法）がML・数値手法中心で分野外だったため見送り、OpenAlex新着からは圧縮機の翼間漏れ渦（interstage leakage vortex）の候補がabstract未整備で断念。最終的に、動翼後流と静翼の干渉で生じる渦放出をコーナー損失・全圧上昇と定量的に結びつけたYu et al.(2026)を採用しました。定番枠（OpenAlex被引用上位、14件・OA5/抄録9）は上位14件中7件がフィルム冷却・風車後流レビュー・空力弾性不安定・VAWT乱流モデル・スパイク型回転失速・3次元剥離・タービン伝熱課題といった既配信テーマと重複。残った候補のうち風車後流のLES（アクチュエータディスク/ライン比較、Martínez-Tossas et al. 2014, Wind Energy）はWileyの本文PDFがCloudflareのbot検知でブロックされ全文取得を断念しました。最終的に、2026-07-01に一度ストックへ追加していた同テーマの高被引用OAレビュー（Sanderse, van der Pijl & Koren 2011）を、あらためて本日の定番として選び直しました。",
+      "picked": [
+        {
+          "id": "doi:10.1002/we.458",
+          "title": "風車後流の空力学のための数値流体力学(CFD)レビュー（Sanderse, van der Pijl & Koren, 2011）",
+          "why": "ニアウェイク（翼端渦が支配的）とファーウェイク（乱流混合で速度欠損がガウス分布に近づく）という後流の物理描像、RANSの標準的な渦粘性モデルが後流を「拡散させすぎる」問題、LESの計算コストの高さ、Horns Revでの検証で簡易な工学モデルがRANS/LESと同程度の精度を出したという意外な結果まで、風車後流CFDの全体像を出典に忠実に見渡せる被引用500件超の定番レビューであり、著者最終稿がCWI機関リポジトリでOA公開されているため全文検証済みだったことから、本日あらためて選びました。"
+        },
+        {
+          "id": "doi:10.1115/1.4072259",
+          "title": "亜音速圧縮機におけるウェイク渦放出と、循環に基づく時間平均性能の相関式（Yu, Jin, Yin & Gui, 2026）",
+          "why": "動翼と静翼の間隔が狭いときに生じる渦放出を、羽根の長さ方向（スパン方向）と流れ方向という2つのメカニズムに分けて捉え、それぞれの渦の強さ（循環）をコーナー損失・全圧上昇という具体的な性能指標に定量的に結びつけた相関式を導いている点が、流れ現象そのものを主役に据えた研究として読み応えがあり採用しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "Wileyの論文もCloudflareのbot検知にブロックされる",
+          "note": "風車後流のLES論文（Martínez-Tossas et al. 2014, Wind Energy, OpenAlexではbronze OA表示）の本文PDFをWileyのpdfdirectリンクから取得しようとしたところ、Cloudflareの「Just a moment...」チャレンジページが返り、全文取得を断念しました。ScienceDirectで繰り返し起きている現象と同種のものがWileyでも起きることを確認しました。"
+        },
+        {
+          "title": "被引用上位の多くが既配信と重複",
+          "note": "本日の定番枠候補14件のうち7件（Bunker 2005フィルム冷却レビュー、Vermeer et al. 2003風車後流レビュー、Hansen 2007空力弾性不安定、Rezaeiha et al. 2019 VAWT乱流モデル精度検証、Origins and Structure of Spike-Type Rotating Stall、Three-Dimensional Separations in Axial Compressors、Gas Turbine Heat Transfer Ten Remaining Hot Gas Path Challenges）が既にアーカイブに収録済みでした。「流体・ターボ機械」という単一トピックで毎日運用しているため、こうした重複は今後も一定の頻度で起こりそうです。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 15,
+            "note": "（OA7/抄録8）。arXiv候補5件のうち1件は前号と重複、3件はML・数値手法中心のため分野外として見送り。OpenAlex新着候補（翼間漏れ渦の圧縮機論文）はabstract未整備のため見送り、圧縮機のウェイク渦放出と循環相関（Yu et al. 2026）を採用。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller"
+            ],
+            "hits": 14,
+            "note": "（OA5/抄録9）。上位14件中7件が既配信と重複。風車後流のLES論文（Martínez-Tossas et al. 2014）はCloudflareのbot検知で全文取得を断念。最終的に、2026-07-01にストック追加済みで全文検証済みだった風車後流CFDレビュー（Sanderse et al. 2011、被引用591件）を本日の定番として選び直した。"
+          }
+        ],
+        "note": "今号は定番枠=OA全文（Sanderse et al. 2011、2026-07-01にストック追加済みの論文を本日の号として選び直したもの）、最新枠=抄録ベース（Yu et al. 2026, Journal of Fluids Engineering）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、圧縮機の中で動翼の後流が静翼にぶつかって生まれる渦が、ただの邪魔な変動ではなく、条件によっては翼の隅で起きる剥離を抑える働きも持つと分かったことです。渦の「強さ」を循環という数値で測り、それを圧縮機の圧力上昇や効率にまで結びつける、という発想も新鮮でした。もう1本は、2026年7月1日に一度アーカイブへ入れていた風車後流のCFDレビューを、あらためて号のトップに選び直したものです。同じトピックを毎日探していると、以前見つけていた良い論文に戻ってくることもあるのだと気づかされました。"
     }
   ]
 }

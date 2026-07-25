@@ -115,6 +115,7 @@ export const CATEGORIES: GraphCategory[] = [
       "乱流強度",
       "ロータ・ステータ干渉",
       "軸方向間隙",
+      "循環 (circulation)",
       "回転デトネーション燃焼器 (RDC)",
       "案内羽根",
       "ウォータージェットポンプ",
@@ -204,6 +205,7 @@ export const CATEGORIES: GraphCategory[] = [
       "運動量係数 Cμ",
       "無次元周波数 F⁺",
       "渦放出周波数",
+      "渦放出 (vortex shedding)",
       "ハブコーナー剥離",
       "コーナー剥離",
       "逆圧力勾配 (adverse pressure gradient)",
@@ -465,6 +467,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "逆カスケード", to: "エネルギーカスケード", label: "大スケールへ運ぶ一種" },
   { from: "異方性", to: "逆カスケード", label: "効率を左右" },
   { from: "超拡散", to: "渦度 (vorticity)", label: "渦へのトラップ&放出で発生" },
+  // --- ロータ・ステータ間隔とウェイク渦放出の性能相関（Yu et al. 2026） ---
+  { from: "渦放出 (vortex shedding)", to: "循環 (circulation)", label: "強さを循環で定量化" },
+  { from: "渦放出 (vortex shedding)", to: "コーナー剥離", label: "スパン方向渦放出が周期的に抑制" },
+  { from: "ロータ・ステータ干渉", to: "渦放出 (vortex shedding)", label: "間隔が狭いほど誘発" },
   // --- 軸流圧縮機の失速・サージ能動抑制（Day 1993） ---
   { from: "空気噴射 (air injection)", to: "能動流れ制御（AFC）", label: "実現手段" },
   { from: "空気噴射 (air injection)", to: "モード波型前駆現象 (modal-wave precursor)", label: "検知して減衰" },
