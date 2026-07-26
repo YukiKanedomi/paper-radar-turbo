@@ -1,6 +1,82 @@
 {
   "entries": [
     {
+      "date": "2026-07-27",
+      "status": "published",
+      "headline": "眼科の精密機器を守るポンプの脈動解析と、高速圧縮機9台に共通する失速前の忍び寄る波",
+      "intro": "今日は『ロータ・ステータ干渉』『遠心圧縮機／軸流圧縮機の空力』『サージ・回転失速』などの言葉で探しました。定番枠は、いつもの検索語だと被引用上位のほとんどが既に配信済みの論文で埋まっていたため、検索の深さを広げて次点の候補まで見にいき、1995年発表の『いくつかの高速圧縮機における失速前兆挙動』（抄録ベース）にたどり着きました。最新枠は、眼科医療センターの冷却ポンプという意外な応用先から圧力脈動を調べた2026年のオープンアクセス論文（Journal of Applied Fluid Mechanics）です。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.2835644",
+          "title": "いくつかの高速圧縮機における失速前兆挙動（Tryfonidis, Etchevers, Paduano, Epstein, Hendricks, 1995）",
+          "why": "回転失速の『前触れ』として知られる小さな進行波が、圧縮機の回転速度によって主役交代する——低い回転速度では昔ながらの緩やかな波が、設計通りの高い回転速度では圧縮性がもたらす別の波が、それぞれ失速の何百回転も前から現れることを、9台の実機データと2台分の理論計算で確かめた定番論文です（被引用約161件・抄録ベース）。"
+        },
+        {
+          "id": "doi:10.47176/jafm.19.9.4394",
+          "title": "眼科医療センター向け二段両吸込渦巻きポンプにおける圧力脈動の数値シミュレーション（Gong, Cao, Wang, Zheng, An, Ma, Liu, 2026）",
+          "why": "精密な光学機器を冷やす病院の冷却ポンプという珍しい切り口から、ポンプ内部の圧力の揺れを非定常CFDで調べた最新研究。流量を絞ると羽根通過周波数とは別の約25Hzの渦放出が急に強まることを見つけ、その物理的な仕組みまで踏み込んで説明しています（全文オープンアクセス）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠の掘り下げと見送ったもの",
+          "note": "定番枠は、いつもの検索語（サージ・回転失速・二次流れ・翼端漏れ等）で被引用上位を見ると、既に配信済みの論文（Greitzer 1976 Part I/II、Day 1993/2015、Vo/Tan/Greitzer 2008、Hoying et al. 1999 等）ばかりが並んでしまいました。そこで検索の深さを広げて次点まで確認し、Tryfonidis et al. 1995 を新たに見つけています。最新枠では、ML/深層学習が主役の論文（多段軸流圧縮機の性能予測サロゲートモデル系）や、翼設計の逆問題を扱う論文を、ML非主役の方針から見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近2〜3年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 14,
+            "note": "最新枠は14件（OA9/抄録5）。眼科医療センター向けポンプの圧力脈動論文（Gong et al. 2026・JAFM）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・通常深度）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
+            "hits": 14,
+            "note": "通常の上位14件（OA1/抄録13）は12件が既配信の重複、残る2件（燃焼のレビューとウインドタービン後流の定番）はテーマ不一致・前々号との主題重複で見送り。"
+          },
+          {
+            "name": "OpenAlex（定番枠・拡張検索）",
+            "scope": "同じ検索語で被引用上位を上位25件×8語まで拡張し重複除去",
+            "terms": [
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
+            "hits": 165,
+            "note": "重複除去後165件の未配信候補から、Tryfonidis et al. 1995（Prestall Behavior of Several High-Speed Compressors、被引用161件）を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（ポンプの圧力脈動）、定番枠=抄録ベース（圧縮機の失速前兆）。定番の通常検索が枯渇気味だったため検索深度を広げ、既配信との重複を避けました。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、圧縮機の失速の前触れとなる小さな波が、回転速度によって『別人』になるという話でした。ゆっくり回っているときの前触れの波と、全開で回っているときの前触れの波が、実は違うメカニズムで生まれているというのは意外でした。速度が変わると壊れ方の予兆まで変わる、というのは機械の面白いところだなと思います。もう一方のポンプの論文は、眼科の精密機器を守るために配管の中の圧力の揺れまで気にするという、応用の幅の広さに驚かされました。"
+    },
+    {
       "date": "2026-07-03",
       "status": "published",
       "headline": "回りすぎると損をする風車と、渦のスタート地点をたどる二次流れレビュー",

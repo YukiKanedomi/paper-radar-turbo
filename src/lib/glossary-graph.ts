@@ -54,6 +54,8 @@ export const CATEGORIES: GraphCategory[] = [
       "失速誘起振動",
       "古典的フラッタ",
       "プレナム質量バランス法",
+      "圧力脈動 (pressure pulsation)",
+      "トラベリングウェーブエネルギー (traveling wave energy)",
     ],
   },
   {
@@ -128,6 +130,7 @@ export const CATEGORIES: GraphCategory[] = [
       "摩擦係数 Cf (skin-friction coefficient)",
       "ウルトラハイリフト翼 (ultra-high-lift blade)",
       "低圧タービン (low-pressure turbine, LPT)",
+      "ストローハル数 (Strouhal number)",
     ],
   },
   {
@@ -164,6 +167,7 @@ export const CATEGORIES: GraphCategory[] = [
       "格子収束性",
       "k-ε RNGモデル",
       "ゾーナルLES (ZLES)",
+      "スケール適応シミュレーション (SAS)",
     ],
   },
   {
@@ -481,6 +485,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 軸流圧縮系の失速後過渡現象パートII（Greitzer & Moore 1986） ---
   { from: "圧縮機長さ半径比", to: "サージ", label: "小さいほど誘発" },
   { from: "圧縮機長さ半径比", to: "B パラメータ", label: "共にサージ/回転失速の分岐を支配" },
+  // --- 高速圧縮機のモーダル前駆波（Tryfonidis et al. 1995） ---
+  { from: "トラベリングウェーブエネルギー (traveling wave energy)", to: "モード波型前駆現象 (modal-wave precursor)", label: "実時間の安定性指標" },
+  { from: "トラベリングウェーブエネルギー (traveling wave energy)", to: "Moore–Greitzer モデル", label: "低次元理論の予測を補完" },
+  // --- 眼科医療センター向けTDCPの圧力脈動（Gong et al. 2026） ---
+  { from: "圧力脈動 (pressure pulsation)", to: "ロータ・ステータ干渉", label: "決定論的な駆動源の一つ" },
+  { from: "圧力脈動 (pressure pulsation)", to: "渦放出 (vortex shedding)", label: "低周波成分の起源になりうる" },
+  { from: "ストローハル数 (Strouhal number)", to: "渦放出 (vortex shedding)", label: "放出周波数を無次元化" },
+  { from: "スケール適応シミュレーション (SAS)", to: "RANS（レイノルズ平均ナビエ・ストークス）", label: "渦粘性を動的に低減して拡張" },
+  { from: "スケール適応シミュレーション (SAS)", to: "LES", label: "分離域でLES的挙動に近づく" },
   // --- 自由流乱れが逆圧力勾配境界層に与える影響（Jaroslawski & Scarano 2026） ---
   { from: "自由流乱れ (freestream turbulence, FST)", to: "乱流境界層", label: "内部に浸透し発達を左右" },
   { from: "自由流乱れ (freestream turbulence, FST)", to: "逆圧力勾配 (adverse pressure gradient)", label: "及ぼす効果を打ち消す" },
