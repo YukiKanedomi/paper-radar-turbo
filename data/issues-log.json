@@ -2023,6 +2023,70 @@
         "note": "今号は定番枠=OA全文（Sanderse et al. 2011、2026-07-01にストック追加済みの論文を本日の号として選び直したもの）、最新枠=抄録ベース（Yu et al. 2026, Journal of Fluids Engineering）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、圧縮機の中で動翼の後流が静翼にぶつかって生まれる渦が、ただの邪魔な変動ではなく、条件によっては翼の隅で起きる剥離を抑える働きも持つと分かったことです。渦の「強さ」を循環という数値で測り、それを圧縮機の圧力上昇や効率にまで結びつける、という発想も新鮮でした。もう1本は、2026年7月1日に一度アーカイブへ入れていた風車後流のCFDレビューを、あらためて号のトップに選び直したものです。同じトピックを毎日探していると、以前見つけていた良い論文に戻ってくることもあるのだと気づかされました。"
+    },
+    {
+      "date": "2026-07-28",
+      "status": "published",
+      "headline": "多段軸流圧縮機・タービンの翼面境界層で『後流経路』と『非後流経路』を結ぶ静穏域が剥離を抑え遷移を遅らせることを示した定番論文（Halstead et al. 1997, Journal of Turbomachinery, 抄録ベース）と、3段遠心圧縮機のディフューザ失速の引き金となる逆回転トルネード状渦を全周非定常CFDで可視化した最新研究（Zhong et al. 2026, Fluids, OA全文）",
+      "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、14件・OA6/抄録8）は、arXiv候補4件が航空弾性ROM・境界層吸込み実験・電気浸透ポンプの微小流体・量子圧縮MLといったML/機構論寄りの内容で分野外のため見送り、OpenAlex新着から多段遠心圧縮機ディフューザの不安定機構をQ基準渦同定・全周非定常CFDで解析したZhong et al.(2026, Fluids)をOA全文で採用しました。定番枠（OpenAlex被引用上位、14件・OA4/抄録10）は上位候補の多くが既配信テーマと重複（Denton損失機構レビュー、Pullanスパイク型回転失速、Gbadebo3次元剥離、Langston二次流れレビュー、Youチップクリアランス粘性損失LES）。軸流ポンプの可変IGVによるキャビテーション抑制論文（figshare、CC BY表記）も候補に挙がりましたが、確認すると本体の論文DOI（Taylor & Francis誌）で既にアーカイブへ収録済みでした（figshareは補足資料の別DOI）。最終的に、多段の圧縮機・タービン翼列で後流経路と非後流経路の境界層発達を初めて時間分解的に比較したHalstead et al.(1997, Journal of Turbomachinery)を選びました。ただしOpenAlexは同論文のfigshare転載をCC BYと表示していましたが、figshare APIで直接確認すると実際のライセンスは『In Copyright』でPDFの添付もなく、全文OAとしては扱えないと判断し、抄録ベースとして収録しています。",
+      "picked": [
+        {
+          "id": "doi:10.3390/fluids11070183",
+          "title": "多段遠心圧縮機のディフューザにおける空力不安定機構の数値シミュレーション（Zhong et al., 2026）",
+          "why": "実務でよく使われる多段（3段）の遠心圧縮機を対象に、竜巻のように逆回転する渦がディフューザの通路をふさいでいく過程をQ基準渦同定とエントロピー可視化で丁寧に追い、失速セルの周方向伝播速度まで定量化している点が、流れ現象そのものを主役に据えた研究として読み応えがあり、CC BYの実図も使えたため採用しました。"
+        },
+        {
+          "id": "doi:10.1115/1.2841000",
+          "title": "軸流圧縮機・タービンにおける境界層の発達 第1部：総合的な描像（Halstead et al., 1997）",
+          "why": "圧縮機・タービンの翼面境界層が『後流の下』と『後流の間』という2つの道筋で発達し、後流側の乱流スポットが作る『静穏域』が隣の経路の剥離を抑えるという、遷移研究の基礎となった考え方を、多段翼列で時間分解計測を通じて確かめた定番論文であるため選びました（この種の時間分解計測とコード予測との詳細比較が多段翼列について報告されるのは本論文が初めてとされます）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "figshareのCC BY表示を鵜呑みにしなかった",
+          "note": "Halstead et al.(1997)はOpenAlexでfigshare転載がCC BYと表示されていましたが、figshare APIで直接確認すると実際のライセンスは『In Copyright』、しかもPDFファイルの添付もありませんでした。OpenAlexのOAメタデータだけを信じず、figshare側の実際のライセンス表示まで確認したことで、誤ってOA全文として扱うのを防げました。"
+        },
+        {
+          "title": "figshareの別DOIが実は既配信論文だった",
+          "note": "軸流ポンプの可変IGVによるキャビテーション抑制論文（figshare DOI）を新規候補として検討していましたが、実際の論文DOI（Taylor & Francis, Engineering Applications of Computational Fluid Mechanics）で確認すると、既にアーカイブに収録済みの論文と同一でした。同じ論文が本誌DOIと補足資料DOIという複数のDOIを持つケースがあることを再確認しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "（OA6/抄録8）。arXiv候補4件（航空弾性ROM・境界層吸込み実験・電気浸透ポンプ微小流体・量子圧縮ML）はML/分野外のため見送り、OpenAlex新着から多段遠心圧縮機ディフューザの不安定機構論文（Zhong et al. 2026, Fluids, OA全文）を採用。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "（OA4/抄録10）。上位候補の多くが既配信と重複（Denton損失機構、Pullanスパイク型回転失速、Gbadebo3次元剥離、Langston二次流れレビュー、Youチップクリアランス粘性損失LES等）。軸流ポンプ可変IGV論文（figshare DOI）は既配信論文と同一と判明し除外。最終的にHalstead et al.(1997)の境界層発達論文を抄録ベースで採用（figshare転載のCC BY表示はライセンス不一致のため採用せず）。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（Zhong et al. 2026, Fluids）、定番枠=抄録ベース（Halstead et al. 1997, Journal of Turbomachinery）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、ディフューザの失速が『竜巻みたいな渦』という具体的な形で説明されていたことです。羽根の先端で流れが剥がれて逆回転の渦ができ、それが隣の通路の羽根にぶつかりながら少しずつ道をふさいでいく――という様子が図でも見えて、失速という言葉の中身がぐっと具体的になりました。もう1本の境界層の論文では、『静穏域』という、乱れたすぐ後にできる一瞬落ち着いた領域が、隣の経路の乱れを逆に抑える働きをするという話が面白かったです。乱れが乱れを抑える、というちょっと意外な関係でした。"
     }
   ]
 }

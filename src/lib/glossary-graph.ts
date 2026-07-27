@@ -41,6 +41,7 @@ export const CATEGORIES: GraphCategory[] = [
       "先端すき間渦の前縁越え",
       "渦運動学（vortex kinematics）",
       "失速境界",
+      "トルネード型渦",
       "非同期振動 (NSV)",
       "動的失速",
       "キャビテーション",
@@ -258,6 +259,9 @@ export const CATEGORIES: GraphCategory[] = [
       "バイパス遷移 (bypass transition)",
       "疑似層流境界層 (pseudolaminar boundary layer)",
       "負圧面境界層 (suction-side boundary layer)",
+      "静穏域 (calmed region)",
+      "乱流スポット (turbulent spot)",
+      "剥離流遷移 (separated-flow transition)",
     ],
   },
   {
@@ -522,6 +526,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 軸流圧縮機のサージ・回転失速の実験検証（Greitzer 1976 Part II） ---
   { from: "プレナム質量バランス法", to: "サージ", label: "定量計測に使用" },
   { from: "プレナム質量バランス法", to: "回転失速", label: "定量計測に使用" },
+  // --- 多段遠心圧縮機ディフューザのトルネード型渦（Zhong et al. 2026） ---
+  { from: "逆圧力勾配 (adverse pressure gradient)", to: "トルネード型渦", label: "強い剥離とともに誘発" },
+  { from: "トルネード型渦", to: "ブロッケージ (blockage)", label: "通路を閉塞" },
+  { from: "トルネード型渦", to: "回転失速", label: "旋回失速の引き金" },
+  // --- 多段翼列の後流誘起境界層遷移（Halstead et al. 1997） ---
+  { from: "乱流スポット (turbulent spot)", to: "静穏域 (calmed region)", label: "後方に生成" },
+  { from: "静穏域 (calmed region)", to: "層流-乱流遷移", label: "剥離抑制・遷移遅延" },
+  { from: "ウェイク誘起遷移 (wake-induced transition)", to: "乱流スポット (turbulent spot)", label: "ウェイク経路で生成" },
+  { from: "剥離流遷移 (separated-flow transition)", to: "層流-乱流遷移", label: "一形態" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
