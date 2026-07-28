@@ -2087,6 +2087,70 @@
         "note": "今号は最新枠=OA全文（Zhong et al. 2026, Fluids）、定番枠=抄録ベース（Halstead et al. 1997, Journal of Turbomachinery）の組み合わせ。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、ディフューザの失速が『竜巻みたいな渦』という具体的な形で説明されていたことです。羽根の先端で流れが剥がれて逆回転の渦ができ、それが隣の通路の羽根にぶつかりながら少しずつ道をふさいでいく――という様子が図でも見えて、失速という言葉の中身がぐっと具体的になりました。もう1本の境界層の論文では、『静穏域』という、乱れたすぐ後にできる一瞬落ち着いた領域が、隣の経路の乱れを逆に抑える働きをするという話が面白かったです。乱れが乱れを抑える、というちょっと意外な関係でした。"
+    },
+    {
+      "date": "2026-07-29",
+      "status": "published",
+      "headline": "双子の角柱がつくる後流ジェットが間隔比のわずかな変化で双安定から単安定へ急変することを確率モデルで捉えた最新研究（Barlet et al. 2026, arXiv, OA全文）と、タービンのエンドウォールで冷却効果と熱伝達が二次流れ渦のせいで大きくばらつくことを示した半世紀前の定番実験（Blair 1974, Journal of Heat Transfer, 抄録ベース）",
+      "intro": "本日ローテーションの最新枠（arXiv＋OpenAlex新着、13件・OA6/抄録7）は、arXiv候補3件のうち2件（ROMの圧縮率と予測精度のトレードオフ、遷音速バフェットのNeural ODE空力弾性モデル）が深層学習ROM主体で分野の主役がML寄りのため見送り、残る1件『2本の角柱がつくる後流ジェットの多重安定性』（Barlet et al. 2026, physics.flu-dyn）を採用しました。これはCC BY 4.0で全文入手でき、ジェットの向きが三重安定・双安定・単安定と切り替わる様子をデータ駆動の確率モデルで裏付けた研究です。定番枠（OpenAlex被引用上位、14件・OA3/抄録11）は上位候補の大半（風車後流レビュー2本、Leishmanの非定常空力課題、Corkeのプラズマアクチュエータレビュー、Martinez-Tossasのアクチュエータライン/ディスク大規模渦シミュレーション、Furukawaのチップ渦崩壊、Rai の Navier-Stokes ロータ・ステータ干渉、Bunkerの熱ガスパス課題）が既にアーカイブに収録済みでした。最終的に、大型のタービン翼列モデルでエンドウォールのフィルム冷却効果と熱伝達係数の分布を計測し、そのばらつきを二次流れ渦に帰した1974年の定番実験（M. F. Blair, Journal of Heat Transfer）を、抄録の範囲で誠実に紹介する形で採用しました。",
+      "picked": [
+        {
+          "id": "arxiv:2607.23206",
+          "title": "多重安定な乱流後流の特性評価（Barlet et al., 2026）",
+          "why": "2本の角柱の後ろにできるジェットが三重安定・双安定・単安定と切り替わる様子をPIV計測とデータ駆動のランジュバン方程式モデリングで丁寧に追い、特に間隔比がわずか0.05変わるだけで双安定がほぼ一瞬で消えるという急激な遷移を定量的に捉えている点が読み応えがあり、CC BY 4.0の実図（分岐線図）も使えたため採用しました。"
+        },
+        {
+          "id": "doi:10.1115/1.3450239",
+          "title": "大型タービンエンドウォールにおける熱伝達とフィルム冷却の実験的研究（Blair, 1974）",
+          "why": "第一段タービンの翼列を模擬した大規模モデルで、エンドウォールの冷却効果と熱伝達の分布が翼間の場所によって大きくばらつき、その原因が二次流れ渦にあると指摘した、200件以上引用される定番研究です。最近のフィルム冷却・エンドウォール関連の配信と接続しやすく、風車後流レビューが続いていた定番枠に違うテーマを持ち込めるため選びました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "ML主体のarXiv候補を2本見送り",
+          "note": "最新枠のarXiv候補のうち、ウェイク制御向けROMの圧縮率と予測精度のトレードオフを調べた論文と、遷音速バフェットをNeural ODEでモデル化した論文は、いずれも深層学習・次元削減モデルが主役で流体現象そのものの記述が薄いため、このアプリの方針（流体現象が主役）に照らして見送りました。"
+        },
+        {
+          "title": "定番枠は重複だらけ、風車後流レビューはあえて避けた",
+          "note": "定番枠の被引用上位は、Vermeer et al.の風車後流レビュー（cite 1354）を含め大半が既にアーカイブ収録済みでした。ちょうど3日前にも風車後流のCFDレビュー（Sanderse et al.）を配信したばかりだったため、テーマの重複を避ける意味でも、エンドウォール熱伝達というこれまでと違う切り口のBlair(1974)を選びました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着",
+            "scope": "最新枠（本日ローテーションの検索語）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 13,
+            "note": "（OA6/抄録7）。arXiv候補3件のうち2件（ROM圧縮率-予測精度トレードオフ、Neural ODE遷音速バフェット）はML主体のため見送り、双子角柱後流の多重安定性論文（Barlet et al. 2026, CC BY全文）を採用。"
+          },
+          {
+            "name": "OpenAlex 被引用上位",
+            "scope": "定番枠（本日ローテーションの検索語）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "（OA3/抄録11）。上位候補の大半が既配信と重複（風車後流レビュー2本、Leishman非定常空力課題、Corkeプラズマアクチュエータ、Martinez-Tossas LESアクチュエータ、Furukawaチップ渦崩壊、Raiロータ・ステータ干渉CFD、Bunker熱ガスパス課題）。最終的にBlair(1974)のエンドウォール熱伝達・フィルム冷却実験を抄録ベースで採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（Barlet et al. 2026, arXiv CC BY 4.0）、定番枠=抄録ベース（Blair 1974, Journal of Heat Transfer）の組み合わせ。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、2本の柱を並べただけの単純な実験から、こんなに複雑なふるまいが出てくることです。柱の間隔をちょっとずつ広げていくと、後ろの流れが左・右・真ん中の3方向のどれかを向く状態から、左右どちらかを向く状態を経て、最後は真ん中に落ち着く——という順番があるのはまだ分かるのですが、驚いたのは、その切り替わりの『最後の一段』が、間隔をほんの少し（0.05）広げただけでほぼ一瞬に起きるという話でした。ゆっくり変化するところと、あるところで急に変わるところがあるというのは、身近な現象にも通じる気がして面白かったです。"
     }
   ]
 }

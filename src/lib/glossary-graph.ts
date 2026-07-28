@@ -57,6 +57,9 @@ export const CATEGORIES: GraphCategory[] = [
       "プレナム質量バランス法",
       "圧力脈動 (pressure pulsation)",
       "トラベリングウェーブエネルギー (traveling wave energy)",
+      "多重安定性 (multistability)",
+      "双安定性 (bistability)",
+      "三重安定性 (tristability)",
     ],
   },
   {
@@ -169,6 +172,7 @@ export const CATEGORIES: GraphCategory[] = [
       "k-ε RNGモデル",
       "ゾーナルLES (ZLES)",
       "スケール適応シミュレーション (SAS)",
+      "ランジュバン方程式 (Langevin equation)",
     ],
   },
   {
@@ -249,6 +253,7 @@ export const CATEGORIES: GraphCategory[] = [
       "乱流",
       "層流-乱流遷移",
       "熱伝達",
+      "対流熱伝達係数",
       "フィルム冷却",
       "内部冷却",
       "吹き出し比 (blowing ratio)",
@@ -535,6 +540,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "静穏域 (calmed region)", to: "層流-乱流遷移", label: "剥離抑制・遷移遅延" },
   { from: "ウェイク誘起遷移 (wake-induced transition)", to: "乱流スポット (turbulent spot)", label: "ウェイク経路で生成" },
   { from: "剥離流遷移 (separated-flow transition)", to: "層流-乱流遷移", label: "一形態" },
+  // --- 双子角柱後流の多重安定性（Barlet et al. 2026） ---
+  { from: "双安定性 (bistability)", to: "多重安定性 (multistability)", label: "状態が2つの場合" },
+  { from: "三重安定性 (tristability)", to: "多重安定性 (multistability)", label: "状態が3つの場合" },
+  { from: "後流（ウェイク）", to: "多重安定性 (multistability)", label: "双子後流で発現" },
+  { from: "ランジュバン方程式 (Langevin equation)", to: "多重安定性 (multistability)", label: "状態遷移をモデル化" },
+  // --- 大型タービンエンドウォールの熱伝達・フィルム冷却（Blair 1974） ---
+  { from: "二次流れ", to: "対流熱伝達係数", label: "分布を不均一化" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
