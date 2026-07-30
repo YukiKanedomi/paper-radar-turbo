@@ -54,6 +54,7 @@ export const CATEGORIES: GraphCategory[] = [
       "空力弾性不安定",
       "失速誘起振動",
       "古典的フラッタ",
+      "非定常空気力学 (unsteady aerodynamics)",
       "プレナム質量バランス法",
       "圧力脈動 (pressure pulsation)",
       "トラベリングウェーブエネルギー (traveling wave energy)",
@@ -284,6 +285,11 @@ export const CATEGORIES: GraphCategory[] = [
       "出力係数（power coefficient, Cp）",
       "推力係数（thrust coefficient, Ct）",
       "固体度（ソリディティ, solidity）",
+      "誘導速度場 (induced velocity field)",
+      "渦輪 (vortex ring)",
+      "後流捕獲 (wake capture)",
+      "準定常モデル (quasi-steady model, QS)",
+      "付加質量 (added mass)",
     ],
   },
   {
@@ -547,6 +553,16 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ランジュバン方程式 (Langevin equation)", to: "多重安定性 (multistability)", label: "状態遷移をモデル化" },
   // --- 大型タービンエンドウォールの熱伝達・フィルム冷却（Blair 1974） ---
   { from: "二次流れ", to: "対流熱伝達係数", label: "分布を不均一化" },
+  // --- 風車の非定常空気力学モデリングの課題（Leishman 2002） ---
+  { from: "非定常空気力学 (unsteady aerodynamics)", to: "動的失速", label: "代表的な非線形現象" },
+  { from: "非定常空気力学 (unsteady aerodynamics)", to: "古典的フラッタ", label: "関連する不安定現象" },
+  { from: "誘導速度場 (induced velocity field)", to: "後流（ウェイク）", label: "後流の渦が誘起" },
+  // --- 反転する平板の後流捕獲（de Boer & Buchner 2026） ---
+  { from: "後流捕獲 (wake capture)", to: "後流（ウェイク）", label: "後流との再相互作用" },
+  { from: "後流捕獲 (wake capture)", to: "渦輪 (vortex ring)", label: "渦輪の位置・強さに支配される" },
+  { from: "準定常モデル (quasi-steady model, QS)", to: "付加質量 (added mass)", label: "モデルの構成要素" },
+  { from: "渦輪 (vortex ring)", to: "循環 (circulation)", label: "強さを循環で定量化" },
+  { from: "誘導速度場 (induced velocity field)", to: "渦輪 (vortex ring)", label: "渦輪が誘起する速度場の一種" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
