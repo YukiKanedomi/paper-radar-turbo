@@ -87,6 +87,7 @@ export const CATEGORIES: GraphCategory[] = [
       "剥離泡",
       "再循環（リサーキュレーション）",
       "エロージョン",
+      "キャビテーション壊食 (cavitation erosion)",
       "デポジション（堆積）",
       "渦度 (vorticity)",
       "乱流運動エネルギー (turbulent kinetic energy)",
@@ -136,6 +137,10 @@ export const CATEGORIES: GraphCategory[] = [
       "ウルトラハイリフト翼 (ultra-high-lift blade)",
       "低圧タービン (low-pressure turbine, LPT)",
       "ストローハル数 (Strouhal number)",
+      "羽根車（インペラ）",
+      "軸受（すべり軸受）",
+      "フルード数 (Froude number)",
+      "ストークス数 (Stokes number)",
     ],
   },
   {
@@ -174,6 +179,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ゾーナルLES (ZLES)",
       "スケール適応シミュレーション (SAS)",
       "ランジュバン方程式 (Langevin equation)",
+      "ボロノイ分割 (Voronoi tessellation)",
     ],
   },
   {
@@ -290,6 +296,7 @@ export const CATEGORIES: GraphCategory[] = [
       "後流捕獲 (wake capture)",
       "準定常モデル (quasi-steady model, QS)",
       "付加質量 (added mass)",
+      "選択的集積 (preferential concentration)",
     ],
   },
   {
@@ -563,6 +570,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "準定常モデル (quasi-steady model, QS)", to: "付加質量 (added mass)", label: "モデルの構成要素" },
   { from: "渦輪 (vortex ring)", to: "循環 (circulation)", label: "強さを循環で定量化" },
   { from: "誘導速度場 (induced velocity field)", to: "渦輪 (vortex ring)", label: "渦輪が誘起する速度場の一種" },
+  // --- 円柱後流の粒子選択的集積と重力（Arya & Goswami 2026） ---
+  { from: "ストークス数 (Stokes number)", to: "選択的集積 (preferential concentration)", label: "値が1程度で最も強く発現" },
+  { from: "フルード数 (Froude number)", to: "選択的集積 (preferential concentration)", label: "小さいほど重力が支配し弱める" },
+  { from: "ボロノイ分割 (Voronoi tessellation)", to: "選択的集積 (preferential concentration)", label: "空隙・クラスタを定量化" },
+  // --- 軸受のキャビテーション（Dowson & Taylor 1979） ---
+  { from: "キャビテーション", to: "キャビテーション壊食 (cavitation erosion)", label: "崩壊時の衝撃で発生" },
+  { from: "軸受（すべり軸受）", to: "キャビテーション", label: "油膜内で発生しうる" },
+  { from: "キャビテーション壊食 (cavitation erosion)", to: "羽根車（インペラ）", label: "代表的な被害部品" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # 毎日1配信の自動実行（ローカル・タスクスケジューラから起動）。
-# fresh な headless Claude Code を Opus で起動し、/collect 自動モードを実行する。
+# fresh な headless Claude Code を Sonnet で起動し、/collect 自動モードを実行する。
+# （§0 の忠実性チェックだけ Opus。下の --model と一致させること）
 # ログは scripts/logs/ に日付別で残す。
 set -u
 
