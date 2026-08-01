@@ -97,6 +97,8 @@ export const CATEGORIES: GraphCategory[] = [
       "乱流境界層",
       "レイノルズせん断応力",
       "翼端漏れジェット (tip leakage jet, TLJ)",
+      "内部ギャップせん断流れ (internal gap shear flow)",
+      "吐出し係数 (discharge coefficient)",
     ],
   },
   {
@@ -297,6 +299,10 @@ export const CATEGORIES: GraphCategory[] = [
       "準定常モデル (quasi-steady model, QS)",
       "付加質量 (added mass)",
       "選択的集積 (preferential concentration)",
+      "気泡チェーン (bubble chain)",
+      "二段分散 (two-stage dispersion)",
+      "自己相似後流 (self-similar wake)",
+      "ウェイク誘起揚力 (wake-induced lift)",
     ],
   },
   {
@@ -578,6 +584,16 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "キャビテーション", to: "キャビテーション壊食 (cavitation erosion)", label: "崩壊時の衝撃で発生" },
   { from: "軸受（すべり軸受）", to: "キャビテーション", label: "油膜内で発生しうる" },
   { from: "キャビテーション壊食 (cavitation erosion)", to: "羽根車（インペラ）", label: "代表的な被害部品" },
+  // --- 翼端すきま損失の内訳（Bindon 1989） ---
+  { from: "剥離泡", to: "混合損失", label: "圧力勾配消失後の巻き込みで発生" },
+  { from: "内部ギャップせん断流れ (internal gap shear flow)", to: "翼端漏れ流れ (tip leakage flow)", label: "すきま内のせん断損失成分" },
+  { from: "吐出し係数 (discharge coefficient)", to: "翼端漏れ流れ (tip leakage flow)", label: "低減はかえって損失を増やしうる" },
+  // --- 気泡チェーンの遠方後流重ね合わせ（Suzuki, Kusuno & Sanada 2026） ---
+  { from: "気泡チェーン (bubble chain)", to: "自己相似後流 (self-similar wake)", label: "個々の気泡が生成" },
+  { from: "自己相似後流 (self-similar wake)", to: "ニアウェイク／ファーウェイク", label: "遠方後流の記述に使う解" },
+  { from: "ウェイク誘起揚力 (wake-induced lift)", to: "二段分散 (two-stage dispersion)", label: "第1段の横移動を駆動" },
+  { from: "二段分散 (two-stage dispersion)", to: "気泡チェーン (bubble chain)", label: "分散過程" },
+  { from: "レイノルズ数", to: "抗力係数 (drag coefficient, C_D)", label: "値とともに変化" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
