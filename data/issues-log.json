@@ -2343,6 +2343,95 @@
         "note": "今号は最新枠=OA全文（気泡チェーンのDNS）、定番枠=抄録ベース（翼端すきま損失の内訳）。定番の通常検索が既配信で埋まりがちだったため次点まで確認し、最新枠はアクセスできない候補を避けて全文入手できるものに切り替えました。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、気泡がただ列になって上がるだけで、周りの水を持ち上げる流れが生まれるという話でした。1個の気泡はごくわずかしか水をかき乱さないのに、たくさん重なると無視できない大きさの流れになる、というのは積み重ねの力を感じます。もう一つの翼端すきまの論文は、1989年という古い研究なのに、損失の内訳（混合・せん断・二次流れ）をきっちり数字で分けているのが今読んでも新鮮でした。"
+    },
+    {
+      "date": "2026-08-03",
+      "status": "published",
+      "headline": "翼端すきまは広いほど良いわけではないと示した定番と、衝撃波の低周波な揺れと渦の高周波な放出が同時に起きていると実験で捉えた最新研究",
+      "intro": "今日は検索語のローテーションで『ディフューザ失速』『キャビテーション』『ロータ・ステータ干渉』『翼列衝撃波干渉』などの語を使いました。定番枠は通常検索の上位がほぼ既配信で埋まっていたため、翼端すきまや二次流れ関連の語で追加検索し、MIT・ケンブリッジ大の共同研究にたどり着きました。最新枠は、最初に選んだ候補（LESデータのモーダル解析論文）が忠実性チェックで速度成分の取り違えなど複数の指摘を受け、2回の修正でも解消しきれなかったため保留にしました。次点で選んだ抄録ベースの論文もOA全文の要件を満たすため差し替え、最終的にはフランスの研究機関ONERAの風洞実験論文（CC BY・全文入手可）を採用しています。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.4042250",
+          "title": "翼端漏れ流れがスパイク型回転失速の発生に果たす役割（Hewkin-Smith, Pullan, Grimshaw, Greitzer & Spakovszky, 2019）",
+          "why": "圧縮機の翼端すきまを漏れる流れが、失速の引き金になる前縁剥離をどう引き起こすかを、非定常シミュレーションと実験データで調べたMIT・ケンブリッジ大の共同研究です（抄録ベース）。すきまがゼロならコーナー剥離が、すきまを広げると漏れジェットの前方吹き出しが主役として入れ替わり、失速しない流量範囲を最大化する『ちょうどいいすきま』（対象の動翼で約0.5%コード）が存在するという、単純な『広いほど悪い』では捉えきれない関係を示しています。"
+        },
+        {
+          "id": "doi:10.1007/s00348-026-04269-0",
+          "title": "非定常な法線衝撃波・境界層干渉の実験的特性評価と解析（Riveiro Moreno, Couliou, Fabbiane, Bur & Marquet, 2026）",
+          "why": "フランスの研究機関ONERAの遷音速風洞で、衝撃波と境界層がぶつかる現象を壁面圧力計測と高速シュリーレン撮影で詳しく調べた最新の実験研究です（Experiments in Fluids誌、CC BY、全文入手可）。衝撃波の低周波な揺れと、剥離した流れから生まれる高周波な渦放出が、剥離した領域の中で同時に起きていることを示しただけでなく、衝撃波のような『動く境目』をシュリーレン画像で周波数分解すると見かけ上の高調波が紛れ込みうる、という解析上の注意点も、単純なモデルを使って具体的に確かめています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "保留・差し替えたもの",
+          "note": "最新枠の最初の候補だったLESデータのPOD・SPODモーダル解析論文（arXiv、Morsbach et al. 2024）は、忠実性チェックで速度成分の取り違えなど複数の指摘を受け、修正・再チェックを2回行っても指摘が残ったため保留にしました。次点で選んだ自吸ポンプの羽根車損傷に関する論文（Zhang et al. 2026、抄録ベース）は忠実性チェックを通過しましたが、配信2件のうち必ず1件はOA全文という条件を満たすため、最終的にはONERAの実験論文に差し替えています。また、キャビテーション抑制に関する候補（Nguyen et al.）は、Figshare上のDOIでは重複と気づけませんでしたが、実際の掲載誌のDOIで確認したところ2026年7月20日号で既に配信済みと判明し除外しました。機械学習が主役の候補（渦構造のML抽出、3Dターボ機械のML設計など）も、流体現象を主役にする方針から見送っています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 21,
+            "note": "最新枠21件（OA16/抄録5）。機械学習主役の候補（ターボ機械のML設計・渦構造のML抽出等）が多く、流体現象主役の方針から見送り。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 14,
+            "note": "上位14件（OA4/抄録10）の大半が既配信の重複（Vermeer 2003、Bunker 2005、Sanderse 2011、Hansen 2007、Leishman 2002、Dowson & Taylor 1979等）。"
+          },
+          {
+            "name": "OpenAlex（追加検索・翼端すきま/二次流れ/SBLI関連）",
+            "scope": "被引用数の多い順の追加検索（定番枠が既配信で埋まったため）",
+            "terms": [
+              "tip leakage vortex loss",
+              "secondary flow endwall turbomachinery",
+              "corner separation compressor",
+              "shock boundary layer interaction compressor",
+              "turbomachinery loss mechanisms",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 30,
+            "note": "Denton 1993やSpike-Type Rotating Stall起源論文など多くが既配信。未配信で全文アクセス可能な候補が乏しい中、Hewkin-Smith et al. 2019（抄録ベース）にたどり着いた。"
+          },
+          {
+            "name": "OpenAlex（CC-BYフィルタ・latest枠のOA確保のため追加検索）",
+            "scope": "gold/hybrid OA・CC-BYライセンスに絞った追加検索",
+            "terms": [
+              "rotating stall compressor",
+              "tip clearance flow compressor",
+              "endwall secondary flow",
+              "shock boundary layer interaction",
+              "corner separation compressor",
+              "diffuser stall",
+              "turbine wake unsteady"
+            ],
+            "hits": 40,
+            "note": "Springer（Experiments in Fluids）のCC BY論文は全文PDFの取得に成功（他の出版社はbot検知でブロックされがち）。このルートでONERAの衝撃波境界層干渉の実験論文を採用した。"
+          }
+        ],
+        "note": "今号は定番枠=抄録ベース（翼端漏れ流れとスパイク型回転失速）、最新枠=OA全文（衝撃波境界層干渉の実験研究）。最新枠は候補の差し替えが2回発生し、通常より検索・検証に時間をかけた号になった。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、翼端のすきまは狭ければ狭いほど良いと思い込んでいたら、実は『ちょうどいい広さ』があるという話でした。すきまをゼロに近づけると別の問題（コーナー剥離）が悪さをして、逆に足を引っ張ってしまうというのは、何にでも通じる話のような気がします。もう一つの衝撃波の実験論文では、動くものをカメラで撮って周波数分析すると、実際には無い揺れが紛れ込んでしまうことがある、という注意書きが印象的でした。測定や解析そのものにも『クセ』があるという当たり前だけど忘れがちなことを、あらためて教えてもらった気がします。"
     }
   ]
 }

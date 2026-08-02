@@ -139,6 +139,8 @@ export const CATEGORIES: GraphCategory[] = [
       "ウルトラハイリフト翼 (ultra-high-lift blade)",
       "低圧タービン (low-pressure turbine, LPT)",
       "ストローハル数 (Strouhal number)",
+      "シュリーレン法 (schlieren)",
+      "λ型衝撃波足 (lambda shock foot)",
       "羽根車（インペラ）",
       "軸受（すべり軸受）",
       "フルード数 (Froude number)",
@@ -236,6 +238,7 @@ export const CATEGORIES: GraphCategory[] = [
       "空気噴射 (air injection)",
       "マイクロオフセット翼端 (micro-offset tip)",
       "圧力勾配パラメータβ (Clauser parameter)",
+      "漏れジェットの前方吹き出し (forward spillage)",
     ],
   },
   {
@@ -594,6 +597,16 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ウェイク誘起揚力 (wake-induced lift)", to: "二段分散 (two-stage dispersion)", label: "第1段の横移動を駆動" },
   { from: "二段分散 (two-stage dispersion)", to: "気泡チェーン (bubble chain)", label: "分散過程" },
   { from: "レイノルズ数", to: "抗力係数 (drag coefficient, C_D)", label: "値とともに変化" },
+  // --- 翼端漏れジェットの前方吹き出しとスパイク発生（Hewkin-Smith et al. 2019） ---
+  { from: "翼端漏れジェット (tip leakage jet, TLJ)", to: "漏れジェットの前方吹き出し (forward spillage)", label: "運動量増大で優勢化" },
+  { from: "漏れジェットの前方吹き出し (forward spillage)", to: "前縁剥離 (leading-edge separation)", label: "高迎角の一因" },
+  { from: "コーナー剥離", to: "漏れジェットの前方吹き出し (forward spillage)", label: "すきま拡大で主役交代" },
+  { from: "漏れジェットの前方吹き出し (forward spillage)", to: "失速余裕", label: "優勢化で流量範囲を縮小" },
+  // --- 法線衝撃波境界層干渉の実験的SPOD解析（Riveiro Moreno et al. 2026） ---
+  { from: "λ型衝撃波足 (lambda shock foot)", to: "衝撃波境界層干渉 (SBLI)", label: "干渉部に形成される構造" },
+  { from: "シュリーレン法 (schlieren)", to: "スペクトル固有直交分解 (SPOD)", label: "撮影画像にモード分解を適用" },
+  { from: "斜め衝撃波 (oblique shock wave)", to: "λ型衝撃波足 (lambda shock foot)", label: "後方脚を構成" },
+  { from: "スペクトル固有直交分解 (SPOD)", to: "再付着", label: "渦放出モードが再付着線から出現" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
