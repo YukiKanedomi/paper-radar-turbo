@@ -34,6 +34,7 @@ export const CATEGORIES: GraphCategory[] = [
       "サージ余裕 (surge margin)",
       "入口リサーキュレーション (inlet recirculation)",
       "プリスワール (preswirl)",
+      "予旋回角 (pre-rotation angle)",
       "失速余裕",
       "渦崩壊 (vortex breakdown)",
       "逆流（backflow）",
@@ -368,6 +369,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "入口リサーキュレーション (inlet recirculation)", to: "サージ", label: "悪化で移行" },
   { from: "入口リサーキュレーション (inlet recirculation)", to: "プリスワール (preswirl)", label: "誘起" },
   { from: "プリスワール (preswirl)", to: "入射角", label: "強まると低下" },
+  // --- 非対称IGVによる予旋回角と失速誘発（Pan et al. 2026） ---
+  { from: "予旋回角 (pre-rotation angle)", to: "プリスワール (preswirl)", label: "類概念" },
+  { from: "予旋回角 (pre-rotation angle)", to: "入射角", label: "変化させる" },
+  { from: "予旋回角 (pre-rotation angle)", to: "スパイク型回転失速", label: "周方向の漸増域で誘発" },
   // --- 翼端漏れ渦の連鎖（Furukawa 1999）と制御（Yaylak 2026） ---
   { from: "先端すき間流れ（tip clearance flow）", to: "翼端漏れ渦", label: "巻き上がり" },
   { from: "翼端漏れ流れ (tip leakage flow)", to: "翼端漏れ渦", label: "巻き上がり" },

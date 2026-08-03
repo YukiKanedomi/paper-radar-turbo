@@ -2432,6 +2432,89 @@
         "note": "今号は定番枠=抄録ベース（翼端漏れ流れとスパイク型回転失速）、最新枠=OA全文（衝撃波境界層干渉の実験研究）。最新枠は候補の差し替えが2回発生し、通常より検索・検証に時間をかけた号になった。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、翼端のすきまは狭ければ狭いほど良いと思い込んでいたら、実は『ちょうどいい広さ』があるという話でした。すきまをゼロに近づけると別の問題（コーナー剥離）が悪さをして、逆に足を引っ張ってしまうというのは、何にでも通じる話のような気がします。もう一つの衝撃波の実験論文では、動くものをカメラで撮って周波数分析すると、実際には無い揺れが紛れ込んでしまうことがある、という注意書きが印象的でした。測定や解析そのものにも『クセ』があるという当たり前だけど忘れがちなことを、あらためて教えてもらった気がします。"
+    },
+    {
+      "date": "2026-08-04",
+      "status": "published",
+      "headline": "サージで圧力が底を打つとディフューザの喉が超音速の流れを生むと直接撮影したNASAのDPIV実験と、入口案内羽根の角度を周方向で少しずらすだけで失速余裕が縮むと示した最新研究",
+      "intro": "今日は検索語のローテーションで、最新枠は『サージ・回転失速』『失速前駆スパイク』『二次流れ・エンドウォール』『翼端漏れ渦・チップクリアランス』『損失機構』、定番枠はこれに『遠心圧縮機』『軸流圧縮機』『タービン空力』を加えた語を使いました。最新枠のarXiv新着は弾性力学や混相流理論など流体力学一般の論文が大半で、ターボ機械の主役級candidateはOpenAlexの新着に絞られましたが、上位にあった遠心圧縮機ディフューザの数値解析論文（Zhong et al. 2026, OA）は7月28日に取得済みのストックだったため今号では見送りました。定番枠の被引用上位はGreitzer・Mayle・Furukawa・Bindonなど、ほぼ全て既配信の定番論文で埋まっていたため、OpenAlexでOA限定の追加検索をかけたところ、NASA Glenn Research Centerが2000年代に行ったサージのDPIV（デジタル粒子画像流速測定）実験がNASA技報として全文入手できることが分かりました。最新枠は抄録ベースで、非対称な入口案内羽根（IGV）設定と圧縮機不安定性の関係を調べたPhysics of Fluids誌の2026年論文を採用しています。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.1343465",
+          "title": "An Investigation of Surge in a High-Speed Centrifugal Compressor Using Digital PIV（Wernet, Bright & Skoch, 2001）",
+          "why": "NASA Glenn Research Centerの高速遠心圧縮機で、サージサイクル中のディフューザ内の流れをデジタルPIVと高速応答圧力センサーの同時計測で捉えた実験研究です（NASA技報として全文公開・パブリックドメイン）。圧力が底を打つ前後でディフューザのスロートが収束・拡大ノズルのように働き、前向きに流れ込む空気が音速の1.7倍まで加速される様子や、インペラを通り抜けて空気が逆流している可能性を示す証拠まで、具体的な数値とともに示されています。"
+        },
+        {
+          "id": "doi:10.1063/5.0336909",
+          "title": "Physical mechanisms of compressor flow instability driven by transient state（Pan, Zhao, Yan & Li, 2026）",
+          "why": "入口案内羽根（IGV）の角度を周方向に不揃いにするという、可変機構が引き起こす過渡的な流れの乱れに着目した最新研究です（Physics of Fluids誌、抄録ベース）。角度を一様にそろえた設定と比べただけで失速余裕が5.3%縮むことを示し、可変機構というエンジンの調整弁が思わぬ形で不安定性に関わりうることを教えてくれます。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの",
+          "note": "最新枠のarXiv新着上位は、弾性力学・混相流理論・PIV計測技術一般など流体力学ではあるもののターボ機械の主役級現象（失速・サージ・二次流れ・チップ漏れ・損失・衝撃波）には該当しない候補が大半でした。OpenAlex新着にあった遠心圧縮機ディフューザの不安定性数値解析（Zhong et al. 2026, OA）は7月28日に取得済みのストック論文だったため、今号では新規採用を見送りました（将来の配信での掲載候補として残しています）。定番枠は被引用上位のほとんど（Greitzer, Mayle, Furukawa, Bindon等）が既配信のため、OA限定の追加検索でNASA技報にたどり着きました。機械学習で失速の兆候を検知する候補（Advanced Compressor Stall Warning等）は、流体現象を主役にする方針から見送っています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA15/抄録9）。arXiv上位はターボ機械の主役級現象と無関係な一般流体力学が大半。OpenAlex新着のOA候補（Zhong et al. 2026, 遠心圧縮機ディフューザ不安定性）は既存ストックのため新規採用せず。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss"
+            ],
+            "hits": 14,
+            "note": "上位14件（OA1/抄録13）の大半が既配信の重複（Greitzer 1976×2, Mayle 1991, Vo/Tan/Greitzer 2008, Day 2015, Furukawa 1999, Bindon 1989, Langston 2001, Epstein 1989等）。"
+          },
+          {
+            "name": "OpenAlex（OA限定・追加検索）",
+            "scope": "is_oa:true フィルタでの追加検索（定番枠が既配信で埋まったため）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "tip leakage vortex loss",
+              "secondary flow endwall turbomachinery",
+              "surge rotating stall"
+            ],
+            "hits": 30,
+            "note": "各語上位5件ずつ（計30件）を確認。このルートでNASA Glenn Research CenterのDPIVサージ実験（NASA/TM-2002-211832としてNTRS経由でPDF全文取得）にたどり着いた。"
+          },
+          {
+            "name": "Semantic Scholar（抄録取得）",
+            "scope": "DOI直接照会での抄録全文取得",
+            "terms": [
+              "doi:10.1063/5.0336909"
+            ],
+            "hits": 1,
+            "note": "OpenAlexではabstractが空（Elsevier系と同様の抄録非公開）だったため、Semantic Scholar経由で抄録全文を取得した。"
+          }
+        ],
+        "note": "今号は定番枠=OA全文（NASA技報のDPIVサージ実験）、最新枠=抄録ベース（IGV非対称設定による圧縮機不安定性）。忠実性チェックでは、定番枠の候補（当初の要約案）で625m/s・マッハ1.7の数値を「逆流の速度」と取り違えていた重大な誤りが見つかり2回の修正で正しい機構（圧力最小点前後の前向き超音速流入）に訂正、最新枠の候補では概念図の描写が抄録の核心メカニズムと矛盾していた点を2回の修正で解消した。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、圧縮機のサージで一度逆流した空気が、圧力が底を打つとまるでロケットノズルのように振る舞うディフューザの喉を通って、今度は音速の1.7倍という猛烈な勢いで前向きに戻ってくるという話でした。逆流して終わりではなく、行って戻ってくる往復運動になっているというのが意外でした。実はこの数値、下書きの段階では「逆流の速度」だと思い込んでいたのですが、チェックの過程で「圧力が底を打った後に前向きに流れ込む空気の速度」だと分かり、自分の理解が逆になっていたことに気づかされました。文章を書くときの思い込みの怖さを実感した回でもありました。"
     }
   ]
 }
