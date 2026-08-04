@@ -45,6 +45,9 @@ export const CATEGORIES: GraphCategory[] = [
       "トルネード型渦",
       "非同期振動 (NSV)",
       "動的失速",
+      "フラッタ",
+      "空力弾性",
+      "自励振動",
       "キャビテーション",
       "吸気歪み (inlet distortion)",
       "歪み係数DC60 (distortion coefficient)",
@@ -240,6 +243,7 @@ export const CATEGORIES: GraphCategory[] = [
       "マイクロオフセット翼端 (micro-offset tip)",
       "圧力勾配パラメータβ (Clauser parameter)",
       "漏れジェットの前方吹き出し (forward spillage)",
+      "スパンワイズ壁面強制",
     ],
   },
   {
@@ -313,7 +317,15 @@ export const CATEGORIES: GraphCategory[] = [
     key: "turbulence",
     label: "乱流理論・カスケード",
     color: "#2f7f8f",
-    terms: ["エネルギーカスケード", "逆カスケード", "異方性", "超拡散"],
+    terms: [
+      "エネルギーカスケード",
+      "逆カスケード",
+      "異方性",
+      "超拡散",
+      "コヒーレント構造",
+      "四象限解析",
+      "ストークスひずみ速度 (SSR)",
+    ],
   },
 ];
 
@@ -612,6 +624,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "シュリーレン法 (schlieren)", to: "スペクトル固有直交分解 (SPOD)", label: "撮影画像にモード分解を適用" },
   { from: "斜め衝撃波 (oblique shock wave)", to: "λ型衝撃波足 (lambda shock foot)", label: "後方脚を構成" },
   { from: "スペクトル固有直交分解 (SPOD)", to: "再付着", label: "渦放出モードが再付着線から出現" },
+  // --- 抗力低減乱流境界層のコヒーレント構造と回復現象（Bistriceanu et al. 2026） ---
+  { from: "スパンワイズ壁面強制", to: "レイノルズせん断応力", label: "近壁構造を乱して抑制" },
+  { from: "コヒーレント構造", to: "レイノルズせん断応力", label: "主な担い手" },
+  { from: "四象限解析", to: "コヒーレント構造", label: "噴出・掃流の型を検出" },
+  // --- 航空機フラッタの歴史的発展（Garrick & Reed 1981） ---
+  { from: "フラッタ", to: "空力弾性", label: "現象の一側面" },
+  { from: "自励振動", to: "フラッタ", label: "発生機構" },
+  { from: "フラッタ", to: "ねじり剛性", label: "低いほど発生しやすい" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
