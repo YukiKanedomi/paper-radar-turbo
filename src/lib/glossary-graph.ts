@@ -103,6 +103,8 @@ export const CATEGORIES: GraphCategory[] = [
       "翼端漏れジェット (tip leakage jet, TLJ)",
       "内部ギャップせん断流れ (internal gap shear flow)",
       "吐出し係数 (discharge coefficient)",
+      "スキーラチップ (squealer tip)",
+      "空力損失係数 (aerodynamic loss coefficient)",
     ],
   },
   {
@@ -149,6 +151,8 @@ export const CATEGORIES: GraphCategory[] = [
       "軸受（すべり軸受）",
       "フルード数 (Froude number)",
       "ストークス数 (Stokes number)",
+      "遷音速翼列 (transonic cascade)",
+      "平板翼列 (flat-plate cascade)",
     ],
   },
   {
@@ -188,6 +192,8 @@ export const CATEGORIES: GraphCategory[] = [
       "スケール適応シミュレーション (SAS)",
       "ランジュバン方程式 (Langevin equation)",
       "ボロノイ分割 (Voronoi tessellation)",
+      "感圧塗料 (PSP, pressure-sensitive paint)",
+      "遅延周期境界条件 (lagged periodic boundary condition)",
     ],
   },
   {
@@ -207,6 +213,7 @@ export const CATEGORIES: GraphCategory[] = [
       "性能特性（特性曲線）",
       "負荷係数 / 流量係数",
       "最高効率点（BEP）",
+      "非線形オイラー方程式 (nonlinear Euler equations)",
     ],
   },
   {
@@ -632,6 +639,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "フラッタ", to: "空力弾性", label: "現象の一側面" },
   { from: "自励振動", to: "フラッタ", label: "発生機構" },
   { from: "フラッタ", to: "ねじり剛性", label: "低いほど発生しやすい" },
+  // --- タービン動翼翼端の台形スロット・リブスロット冷却（Xia, Zhang & Hu 2026） ---
+  { from: "スキーラチップ (squealer tip)", to: "翼端漏れ流れ (tip leakage flow)", label: "先端形状で抑制" },
+  { from: "感圧塗料 (PSP, pressure-sensitive paint)", to: "断熱膜冷却効率 (adiabatic film effectiveness)", label: "光学的に計測する手法" },
+  { from: "空力損失係数 (aerodynamic loss coefficient)", to: "翼端漏れ流れ (tip leakage flow)", label: "翼端漏れが増大させる指標" },
+  // --- 非定常ウェイク・ロータ相互作用の計算（Giles 1988） ---
+  { from: "非線形オイラー方程式 (nonlinear Euler equations)", to: "ロータ・ステータ干渉", label: "非定常解析の基礎方程式" },
+  { from: "遅延周期境界条件 (lagged periodic boundary condition)", to: "ロータ・ステータ干渉", label: "ピッチ不一致から生じる境界条件" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

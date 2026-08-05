@@ -2590,6 +2590,78 @@
         "note": "今号は最新枠=OA全文（arXiv、CC BY 4.0）、定番枠=抄録ベース（Journal of Aircraft、序文相当のテキストのみ）。忠実性チェックでは、最新枠の要約案で先行研究(Knoop et al.)から転載された図の解析内容を本論文自身の新規解析であるかのように書いていた点を2件（手法欄・結果欄）修正し、定番枠では「強度ではなく剛性に依存」という原文の『間接的には依存』というニュアンスを落とした言い切りや、風車の桁移動の方向を確認できないまま断定していた点などを修正した。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、壁を横に揺らして摩擦を減らす実験で、揺らす間隔を欲張って伸ばすと副作用のように一部の乱流だけが息を吹き返すという話でした。良かれと思って条件を変えたら、狙っていない場所でリバウンドが起きる——というのは、チューニングごとにありそうな話だなと感じました。もう一本のフラッタの歴史論考では、400年前のオランダの風車がすでに経験でこの手の問題に対処していたというくだりが印象的で、名前がつく前から現象そのものは人類の身近にあったのだと気づかされました。"
+    },
+    {
+      "date": "2026-08-06",
+      "status": "published",
+      "headline": "同じ翼端すきまでも、冷却スロットの形で『よく冷える』と『空力損失が少ない』が入れ替わるタービン翼端実験と、ロータ・ステータ干渉を計算平面ごと時間方向に傾けて解いた1988年の定番手法論文",
+      "intro": "今日は検索語のローテーションで、最新枠は『風車ウェイク』『タービンフィルム冷却』『吸気歪み』『ディフューザ失速』『ポンプキャビテーション』『ロータ・ステータ干渉』、定番枠はこれに『遠心/軸流圧縮機空力』『タービン空力』を加えた語を使いました。最新枠はarXiv＋OpenAlex新着13件（OA5/抄録8）、定番枠はOpenAlex被引用上位14件（OA1/抄録13）がヒットしました。最新枠の候補のうちタービン翼端まわりの論文が複数あり、その中からMDPI Processes誌（Gold OA・CC BY 4.0）の台形スロット/リブスロット翼端冷却の論文を選定。PDFを取得して全文を読み込み、実図2枚（翼端形状の模式・PSP計測による冷却効果分布）も抽出しました。定番枠はOpenAlexの被引用上位を見ていきましたが、上位（Vermeer 2003の風車ウェイク総説など）は抄録が非公開で、ロータ・ステータ干渉の数値計算の古典であるGiles 1988（Journal of Propulsion and Power）はOpenAlexのabstract_inverted_indexから抄録を復元でき、書誌情報もCrossrefで裏取りできたため抄録ベースで採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.3390/pr14152422",
+          "title": "Investigation of the Aero-Thermal Performance of a Turbine Blade Tip with Trapezoidal Slots and Rib Slots in Transonic Flow（Xia, Zhang & Hu, 2026）",
+          "why": "動翼の先端（翼端）を冷やす2つのスロット形状——台形型とリブ（仕切り）型——を、遷音速の翼列風洞で実験と数値計算の両方から比べた研究です（Processes誌、CC BY 4.0で全文公開）。リブスロットは翼の中央〜後縁でよく冷える一方、台形スロットは冷却のムラが少なく、しかも翼列を通る流れの空力損失も少ないという、得意分野が入れ替わる結果が印象的でした。"
+        },
+        {
+          "id": "doi:10.2514/3.23074",
+          "title": "Calculation of unsteady wake/rotor interaction（Giles, 1988）",
+          "why": "回転する動翼列（ロータ）と、上流の翼列が残す後流（ウェイク）との非定常な干渉を計算する数値手法の定番論文です（Journal of Propulsion and Power誌、抄録ベース）。ロータとステータの枚数（ピッチ）が違うと、隣り合う翼列の境界条件に時間的な『ずれ』が生まれてしまう問題を、計算に使う平面そのものを時間方向にも傾けるという発想で扱えるようにした点が読みどころです。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの",
+          "note": "最新枠には遷音速タービン動翼カスケードへの自由流乱れの影響をWALES2ソルバで調べたLES研究（Journal of Turbomachinery、抄録は取得できたが翼端冷却の候補と主題が近く見送り）、開放型ファンのハブすきまが漏れ流れ・遷移ダクト空力に与える影響（Aerospace Science and Technology、抄録非公開）などがありました。定番枠ではVermeer et al. 2003（Wind turbine wake aerodynamics、被引用1359件）が最有力候補でしたが、OpenAlexに抄録本文が登録されておらず、タイトルのみから内容を書くのは§0のover-reach禁止に反するため見送りました。花粉の空気力学・都市アレルゲン輸送を扱うarXiv論文も候補に上がりましたが、ターボ機械の流れ現象という本アプリの主題から外れるため対象外としました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA5/抄録8）。タービン翼端の熱伝達・フィルム冷却まわりの候補が複数ヒットし、その中からMDPI Processes誌のGold OA論文（台形スロット/リブスロット翼端冷却）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 14,
+            "note": "上位14件（OA1/抄録13）。1位のVermeer et al. 2003（風車ウェイク総説、cite=1359）は抄録非公開のため見送り、ロータ・ステータ干渉の数値解析の定番であるGiles 1988（高被引用。出典間で被引用件数の値に差があるため概数として扱う）を採用。"
+          },
+          {
+            "name": "OpenAlex + Semantic Scholar + Crossref（個別DOI照会・全文/抄録の裏取り）",
+            "scope": "採用・検討した候補の抄録復元・全文取得・書誌照合",
+            "terms": [
+              "doi:10.3390/pr14152422",
+              "doi:10.2514/3.23074",
+              "doi:10.1115/1.4072387",
+              "doi:10.1016/s0376-0421(03)00078-2"
+            ],
+            "hits": 4,
+            "note": "MDPI論文はmdpi-res.com CDN経由でPDF全文を取得できた（www.mdpi.comは直リンクがbot検知で403）。Giles 1988はOpenAlexのabstract_inverted_indexから抄録を復元しCrossrefで書誌を裏取り。Vermeer 2003は両ソースとも抄録null、freestream turbulence論文（doi:10.1115/1.4072387）は抄録取得できたが主題の近さから次点扱いとした。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（MDPI、CC BY 4.0）、定番枠=抄録ベース（Journal of Propulsion and Power、OpenAlex復元抄録＋Crossref書誌）。忠実性チェック（2ラウンド）では、最新枠の要約案で『圧力側スキーラリムの40%を切り欠き』と原文の『部分スキーラが40%を占める』を逆の意味で書いていた誤りを修正したほか、図の色分布の描写・章見出しの改変・研究ギャップの範囲拡大など計十数件のオーバーリーチを修正。定番枠でも、抄録の概念図の後流の向きが論文の設定と逆だった点、『ピッチが整数比でない』という抄録にない独自解釈が複数箇所に広がっていた点などを修正した。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、同じ翼端すきまでも、冷却スロットの形を変えただけで『よく冷える』と『空力の損失が少ない』が入れ替わってしまうという話でした。片方を立てればもう片方が犠牲になる、という設計上のトレードオフは実感しやすく、エンジニアの人たちは常にこういう綱引きの中で形を選んでいるのだと想像しました。もう一本のロータ・ステータ干渉の論文では、『計算する面を時間方向にも傾ける』という発想の転換で、枚数がぴったり合わない翼列同士の計算を可能にしたという話が印象的で、直接ぶつからない問題を座標系の工夫でするりと解いてしまう発想に感心しました。"
     }
   ]
 }
