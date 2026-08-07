@@ -65,6 +65,8 @@ export const CATEGORIES: GraphCategory[] = [
       "多重安定性 (multistability)",
       "双安定性 (bistability)",
       "三重安定性 (tristability)",
+      "流体構造連成 (FSI, fluid-structure interaction)",
+      "翼端たわみ (blade-tip deflection)",
     ],
   },
   {
@@ -105,6 +107,7 @@ export const CATEGORIES: GraphCategory[] = [
       "吐出し係数 (discharge coefficient)",
       "スキーラチップ (squealer tip)",
       "空力損失係数 (aerodynamic loss coefficient)",
+      "衝撃波・渦干渉 (shock-vortex interaction)",
     ],
   },
   {
@@ -153,6 +156,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ストークス数 (Stokes number)",
       "遷音速翼列 (transonic cascade)",
       "平板翼列 (flat-plate cascade)",
+      "可変ノズルタービン (VNT, variable nozzle turbine)",
     ],
   },
   {
@@ -195,6 +199,7 @@ export const CATEGORIES: GraphCategory[] = [
       "感圧塗料 (PSP, pressure-sensitive paint)",
       "遅延周期境界条件 (lagged periodic boundary condition)",
       "パレート最適解 (Pareto front)",
+      "一方向カップリング (one-way coupling)",
     ],
   },
   {
@@ -321,6 +326,7 @@ export const CATEGORIES: GraphCategory[] = [
       "二段分散 (two-stage dispersion)",
       "自己相似後流 (self-similar wake)",
       "ウェイク誘起揚力 (wake-induced lift)",
+      "フェザリング (feathering)",
     ],
   },
   {
@@ -652,6 +658,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "遺伝的アルゴリズム", to: "パレート最適解 (Pareto front)", label: "探索" },
   { from: "損失相関式 (loss correlation)", to: "全圧損失係数", label: "予測" },
   { from: "基準直径 (reference diameter)", to: "損失相関式 (loss correlation)", label: "計算の基準" },
+  // --- 不均一な先端すきまとVNTの漏れ渦・衝撃波干渉（Luo, Xiang, Lei, Liu & Zhang 2026） ---
+  { from: "チップクリアランス (tip clearance, TC)", to: "翼端漏れ渦", label: "拡大すると渦が強まる" },
+  { from: "翼端漏れ渦", to: "衝撃波・渦干渉 (shock-vortex interaction)", label: "超音速翼列では衝撃波と干渉し損失を増大" },
+  { from: "可変ノズルタービン (VNT, variable nozzle turbine)", to: "チップクリアランス (tip clearance, TC)", label: "ノズルベーン先端すきまが性能を左右" },
+  // --- 風車翼のCFD-FEA一方向FSIモデリング（Wang, Quant & Kolios 2016） ---
+  { from: "流体構造連成 (FSI, fluid-structure interaction)", to: "空力弾性", label: "現象を引き起こす相互作用" },
+  { from: "流体構造連成 (FSI, fluid-structure interaction)", to: "翼端たわみ (blade-tip deflection)", label: "荷重がたわみを生む" },
+  { from: "一方向カップリング (one-way coupling)", to: "流体構造連成 (FSI, fluid-structure interaction)", label: "簡易的な結合方式" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

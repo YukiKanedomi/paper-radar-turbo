@@ -2749,6 +2749,76 @@
         "note": "今号は最新枠=OA全文（arXiv版全文で読み、Energy誌2025掲載版の書誌に合わせて記載）、定番枠=抄録ベース（OpenAlex復元抄録＋Crossref書誌）。忠実性チェック（各2ラウンド）では、最新枠で運動量係数Cμの最適値範囲の誤り(0.0093〜0.0099→正しくは0.0074〜0.0099)、比較対象文献の発表年の誤り、迎え角の数値誤り、剥離点が「単調に」後退するという不正確な表現、arXivライセンスに関する誤った説明など計十数件を修正。定番枠でも、抄録に無い「二次流れ損失とチップクリアランス損失の式だけを改良した」という排他的な断定や、著者の判断理由を抄録から超えて推測していたdeepDiveの記述などを修正した。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、Ainley-Mathieson法という1951年生まれの簡便な計算法の話でした。翼列全体をたった1つの『代表的な直径』だけで計算してしまうという、今の感覚だとかなり大胆な割り切りに見えるのですが、抄録の結びで著者たちは「単純なやり方であっても、設計の現場では今後も価値を持ち続けるだろう」と述べていて、精密さがすべてではない場面もあるのだと気づかされました。もう一本の風車翼の論文では、同じ1枚の翼でも根元と先端でこんなに剥離のしかたが違うのかと驚きましたが、調べている途中でこのarXiv論文がすでに査読を経て別の雑誌に載っていたと分かったのも今回の発見でした。プレプリントは「その後どうなったか」まで確認しないといけないのだと勉強になりました。"
+    },
+    {
+      "date": "2026-08-08",
+      "status": "published",
+      "headline": "CFDとFEAを一方向カップリングで結び、大型風車翼のたわみ・応力が定格風速付近でピークを迎えることを示した定番研究と、超音速可変ノズルタービンの先端すきま形状が漏れ渦と衝撃波の干渉を左右すると報告した最新研究",
+      "intro": "今日は検索語のローテーションで、最新枠は『翼端漏れ渦損失』『チップクリアランス流れ損失』『損失機構』『圧縮機の衝撃波境界層干渉』『非定常なウェイク混合』『タービン翼の境界層遷移』、定番枠はこれに『コーナー剥離』『翼フラッタ空力弾性』『超臨界CO2ターボ機械』『風車ウェイク空力』『タービンフィルム冷却』『ファン入口歪み』『ディフューザ失速・圧力回復』を加えた語を使いました。最新枠はarXiv＋OpenAlex新着24件(OA18/抄録6)がヒットしましたが、arXiv側はflu-dyn分野を広げた結果、溶岩・磁気ダイナモ・防波堤の波など流体力学一般の無関係な論文が大半を占め、オントピック判定で絞り込みました。オンライントピックなOpenAlex新着の中には、遷音速軸流圧縮機のサージ中エネルギー散逸、翼端すきまとケーシング形状、水ジェットポンプの回転失速、多段軸流圧縮機の失速セル拡大などElsevier誌の2026年最新論文が複数見つかりましたが、いずれも掲載直後で抄録がOpenAlex・Crossref・Semantic Scholarのどこにも登録されておらず、タイトルだけから書くのはover-reachになるため見送りました。代わりに抄録を確認できた超音速可変ノズルタービンの先端すきま論文(Luo, Xiang, Lei, Liu & Zhang 2026)を採用しましたが、掲載誌はCC BYのオープンアクセスであるにもかかわらず出版社サイトへのアクセスがボットブロックされ本文を取得できず、抄録の範囲だけで忠実に要約しました。定番枠はOpenAlex被引用上位14件(OA5/抄録9)がヒットし、上位はWind turbine wake aerodynamics(Vermeer et al. 2003、被引用1359件)でしたが抄録がどこからも取得できず見送り、DBDプラズマアクチュエータ(Corke et al. 2008、被引用367件)も前号に続き抄録非公開で見送りました。その次点で、CFDとFEAを一方向カップリングで結んだ風車翼のFSIモデリング研究(Wang, Quant & Kolios 2016、被引用207件、Journal of Wind Engineering and Industrial Aerodynamics)を選び、著者最終稿(CC BY-NC-ND 3.0)がCranfield大学の機関リポジトリStrathprintsで公開されているのを見つけ、全文PDFを取得して読み込みました。",
+      "picked": [
+        {
+          "id": "doi:10.1016/j.jweia.2016.09.006",
+          "title": "Fluid structure interaction modelling of horizontal-axis wind turbine blades based on CFD and FEA（Wang, Quant & Kolios, 2016）",
+          "why": "CFDで求めた空気の力をFEAへ一方向だけ受け渡す「一方向FSIカップリング」で、大型風車翼(WindPACT 1.5MW)のたわみと応力を計算した研究です。翼先端のたわみも複合材の応力も、定格風速に近い風速12m/sでピーク(たわみ1.785m、応力82.5/83.0MPa)を迎え、それより風が強くなると翼の角度を逃がす制御でむしろ下がるという、単純に「風が強いほど曲がる」わけではない挙動が印象的でした。"
+        },
+        {
+          "id": "doi:10.3390/ijtst13010004",
+          "title": "Effect of Non-Uniform Nozzle Vane Tip Clearance on the Aerodynamic Performance of a Supersonic Variable Nozzle Turbine（Luo, Xiang, Lei, Liu & Zhang, 2026）",
+          "why": "超音速の可変ノズルタービンでは、ノズル羽根の先端とケーシングの間のすきまが腐食や摩耗で不均一になりがちですが、後方に負荷が寄った翼型では、すきまが狭まる配置が漏れ渦と衝撃波の干渉を抑えて3配置の中で最も高い空力効率を示したという結果を興味深く選びました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの",
+          "note": "最新枠では、遷音速軸流圧縮機のサージ中のエネルギー散逸、波形ケーシングと翼端漏れ流れ、水ジェットポンプの回転失速、多段軸流圧縮機の失速セル拡大を扱う2026年最新のElsevier論文が複数候補に挙がりましたが、いずれも抄録がどこからも取得できず見送りました。定番枠では、Wind turbine wake aerodynamics(Vermeer et al. 2003、被引用1359件)とDBDプラズマアクチュエータ(Corke et al. 2008、被引用367件、前号に続き見送り)も抄録非公開のため使えませんでした。また、エンドウォールクリアランスがタービン性能に与える影響を扱うElsevier誌の最新論文(hybrid OA、CC BY-NC-ND)も出版社サイトへのアクセス制限で全文を確認できず見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA18/抄録6）。arXiv側はflu-dyn分野を広げた結果、溶岩・磁気ダイナモ・防波堤の波など無関係な論文が大半を占めた。オントピックなOpenAlex新着の2026年最新論文は複数見つかったが抄録が非公開で見送り、超音速可変ノズルタービンの先端すきま論文(Luo et al.)のみ抄録を確認でき採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery"
+            ],
+            "hits": 14,
+            "note": "上位14件（OA5/抄録9）。Wind turbine wake aerodynamics(1359件)・DBDプラズマ(367件)ともに抄録非公開で見送り、風車翼のCFD-FEA一方向FSIモデリング研究(Wang, Quant & Kolios 2016、被引用207件)を選定。"
+          },
+          {
+            "name": "Strathprints機関リポジトリ + Semantic Scholar（採用論文の全文取得・ライセンス確認）",
+            "scope": "選定候補2件の全文取得可否・ライセンス確認",
+            "terms": [
+              "doi:10.1016/j.jweia.2016.09.006",
+              "doi:10.3390/ijtst13010004"
+            ],
+            "hits": 2,
+            "note": "FSI論文はCranfield大学の機関リポジトリStrathprintsから著者最終稿全文PDF(CC BY-NC-ND 3.0)を取得。VNTノズル論文はMDPI本文サイトへのアクセスが複数回ボットブロック(HTTP 403)され取得できず、Semantic Scholar経由の抄録のみで作成。"
+          }
+        ],
+        "note": "今号は定番=OA全文（Wang, Quant & Kolios 2016をStrathprintsから取得）、最新=抄録ベース（Luo et al. 2026、CC BYライセンスだが本文サイトへのアクセスがブロックされ未取得）という組み合わせ。忠実性チェック（各2ラウンド）では、VNT論文で抄録に無い「先端に向かって」というすきまの変化方向の断定を検出・削除し、FSI論文では「2次元的な断面計算では3次元効果を捉えきれない」という原文と矛盾する記述（実際はCFD・FEAとも3次元モデル）や、「18.6%の差の原因をBEM法とCFDの手法差に帰属」という原文にない解釈を検出・削除するなど、計十数件を修正した。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、風車翼のたわみが「風が強いほど大きく曲がる」わけではないという話でした。定格風速(11.5m/s)に近い12m/sまではたわみも応力も増えていくのですが、それを超えると翼の角度を風から逃がす方向に大きく回転させる制御が働くため、むしろたわみも応力も小さくなっていくのだそうです。てっきり強風時が一番厳しい条件なのだと思っていたので、定格風速の少し上あたりが構造的に一番シビアという逆転が新鮮でした。もう一本のタービンのすきまの論文では、CC BYという公開ライセンスの論文なのに出版社サイトへのアクセスがブロックされて本文が読めないという壁にぶつかり、オープンアクセスと「実際に読めるかどうか」は別問題なのだと実感した回でもありました。"
     }
   ]
 }
