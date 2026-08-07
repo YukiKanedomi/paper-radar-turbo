@@ -194,6 +194,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ボロノイ分割 (Voronoi tessellation)",
       "感圧塗料 (PSP, pressure-sensitive paint)",
       "遅延周期境界条件 (lagged periodic boundary condition)",
+      "パレート最適解 (Pareto front)",
     ],
   },
   {
@@ -214,6 +215,8 @@ export const CATEGORIES: GraphCategory[] = [
       "負荷係数 / 流量係数",
       "最高効率点（BEP）",
       "非線形オイラー方程式 (nonlinear Euler equations)",
+      "基準直径 (reference diameter)",
+      "損失相関式 (loss correlation)",
     ],
   },
   {
@@ -646,6 +649,9 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 非定常ウェイク・ロータ相互作用の計算（Giles 1988） ---
   { from: "非線形オイラー方程式 (nonlinear Euler equations)", to: "ロータ・ステータ干渉", label: "非定常解析の基礎方程式" },
   { from: "遅延周期境界条件 (lagged periodic boundary condition)", to: "ロータ・ステータ干渉", label: "ピッチ不一致から生じる境界条件" },
+  { from: "遺伝的アルゴリズム", to: "パレート最適解 (Pareto front)", label: "探索" },
+  { from: "損失相関式 (loss correlation)", to: "全圧損失係数", label: "予測" },
+  { from: "基準直径 (reference diameter)", to: "損失相関式 (loss correlation)", label: "計算の基準" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -2662,6 +2662,93 @@
         "note": "今号は最新枠=OA全文（MDPI、CC BY 4.0）、定番枠=抄録ベース（Journal of Propulsion and Power、OpenAlex復元抄録＋Crossref書誌）。忠実性チェック（2ラウンド）では、最新枠の要約案で『圧力側スキーラリムの40%を切り欠き』と原文の『部分スキーラが40%を占める』を逆の意味で書いていた誤りを修正したほか、図の色分布の描写・章見出しの改変・研究ギャップの範囲拡大など計十数件のオーバーリーチを修正。定番枠でも、抄録の概念図の後流の向きが論文の設定と逆だった点、『ピッチが整数比でない』という抄録にない独自解釈が複数箇所に広がっていた点などを修正した。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、同じ翼端すきまでも、冷却スロットの形を変えただけで『よく冷える』と『空力の損失が少ない』が入れ替わってしまうという話でした。片方を立てればもう片方が犠牲になる、という設計上のトレードオフは実感しやすく、エンジニアの人たちは常にこういう綱引きの中で形を選んでいるのだと想像しました。もう一本のロータ・ステータ干渉の論文では、『計算する面を時間方向にも傾ける』という発想の転換で、枚数がぴったり合わない翼列同士の計算を可能にしたという話が印象的で、直接ぶつからない問題を座標系の工夫でするりと解いてしまう発想に感心しました。"
+    },
+    {
+      "date": "2026-08-07",
+      "status": "published",
+      "headline": "境界層剥離を合成ジェットで再付着させると単位長さあたり23〜36kWの正味出力増になる大型風車翼の最適化研究と、二次流れ損失・チップクリアランス損失の予測式を改良した1970年のタービン性能予測法の定番論文",
+      "intro": "今日は検索語のローテーションで、最新枠は『遠心圧縮機空力』『軸流圧縮機空力』『タービン空力』『サージ・回転失速』『スパイク型失速前駆現象』『端壁二次流れ』、定番枠はこれに『チップ漏れ渦損失』『チップクリアランス流れ損失』『損失機構』『衝撃波境界層干渉』『後流混合』を加えた語を使いました。最新枠はarXiv＋OpenAlex新着16件（OA9/抄録7）、定番枠はOpenAlex被引用上位14件（OA0/抄録14）がヒットしましたが、定番枠の上位はDenton 1993やGreitzer 1976など既に配信済みの定番ばかりで、新規に使えたのはCorke, Post & Orlov 2008（DBDプラズマアクチュエータ、被引用367件）だけでした。ところがこの論文はOpenAlex・Semantic Scholarのどちらにも抄録本文が登録されておらず、出版社ページもログイン画面にリダイレクトされ中身を確認できなかったため、タイトルだけから書くのは§0のover-reach禁止に反すると判断し見送りました。代わりに検索語を『二次流れ・チップクリアランス損失』方向に広げて定番枠を再探索したところ、タービン損失予測の古典であるAinley-Mathieson法(1951)を二次流れ損失・チップクリアランス損失の式で改良したDunham & Came 1970を発見。OpenAlexのabstract_inverted_indexから抄録を復元でき、書誌もCrossrefで裏取りできたため抄録ベースで採用しました。最新枠は、境界層剥離と合成ジェットによる能動流れ制御を扱ったarXiv論文（Nabhani et al.）のPDFを取得して全文を読み込みました。査読版の存在を確認したところ、Energy誌319巻(2025年)に掲載済みだったため、書誌はEnergy誌版に合わせつつ、実際に読んだarXiv版全文をもとに要約しています。",
+      "picked": [
+        {
+          "id": "doi:10.1016/j.energy.2025.134940",
+          "title": "Large-Scale Horizontal Axis Wind Turbine Aerodynamic Efficiency Optimization using Active Flow Control and Synthetic Jets（Nabhani, Tousi, Coma, Bugeda & Bergadà, arXiv 2024→Energy 2025）",
+          "why": "大型風車(DTU-10MW)の翼を根元から先端まで24断面に分けてCFDで調べると、根元に近い断面ほど境界層が早く剥がれることが分かりました。剥離が大きい3断面に『合成ジェット』という小さな空気の噴射装置で流れを再付着させる設計を遺伝的アルゴリズムで最適化したところ、ジェットを駆動する電力を差し引いてもなお単位長さあたり23〜36kWの正味出力増が得られたという結果が印象的でした。"
+        },
+        {
+          "id": "doi:10.1115/1.3445349",
+          "title": "Improvements to the Ainley-Mathieson Method of Turbine Performance Prediction（Dunham & Came, 1970）",
+          "why": "1951年に発表された、翼列ごとに『たった1つの代表的な直径』だけで流れと損失を計算するという、非常に簡便なタービン性能予測法(Ainley-Mathieson法)を、現代の様々なタービンの実測データと突き合わせて見直し、二次流れ損失とチップクリアランス損失の式を改良した論文です。抄録ベースではありますが、単純な手法にもかかわらず今も設計の現場で価値を持ち続けていると考えられる、という結語が興味深く選びました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの",
+          "note": "定番枠ではCorke, Post & Orlov 2008（DBDプラズマアクチュエータによる空力制御の定番、被引用367件）が候補に挙がりましたが、抄録本文をどのソースからも取得できず見送りました。最新枠ではDeep Learningによる多段軸流圧縮機の性能予測(C(NN)FDシリーズ、arXiv、複数件)や、Navier-Stokes方程式のPhysics-Informed Neural Networkによる解法など、ML・数値手法そのものが主役の論文が複数ヒットしましたが、本アプリの方針（流体現象を主役にし、ML・数値手法は脇役にとどめる）から外れるため対象外としました。免疫Rayleigh-Taylor不安定性の乱流エネルギーカスケードを扱うarXiv論文も候補にありましたが、ターボ機械という主題からやや離れるため今回は見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 16,
+            "note": "最新枠16件（OA9/抄録7）。多くはDeep Learning・PINN等のML主役論文だったため見送り、境界層剥離と合成ジェットによるAFCを扱うarXiv論文(Nabhani et al.)を選定しPDF全文を取得。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery"
+            ],
+            "hits": 14,
+            "note": "上位14件（OA0/抄録14）はDenton 1993・Greitzer 1976等ほぼ配信済み。新規のCorke 2008は抄録非公開のため見送り。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加探索。1キーワードあたり上限を広げ被引用順で再取得）",
+            "scope": "同じ8キーワードで被引用数上位を最大10件/語まで拡張し、既配信分を除外して新規候補を再探索",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery"
+            ],
+            "hits": 54,
+            "note": "未配信の新規候補54件が見つかり、その中からタービン損失予測の古典であるDunham & Came 1970（Ainley-Mathieson法の改良、被引用257/276件）を選定。abstract_inverted_indexから抄録を復元。"
+          },
+          {
+            "name": "OpenAlex + Semantic Scholar + Crossref（個別DOI照会・全文/抄録/書誌の裏取り）",
+            "scope": "採用・検討した候補の抄録復元・全文取得・書誌照合・査読版の有無確認",
+            "terms": [
+              "doi:10.1016/j.energy.2025.134940 (arXiv:2407.20746)",
+              "doi:10.1115/1.3445349",
+              "doi:10.1007/s00348-008-0582-5"
+            ],
+            "hits": 3,
+            "note": "arXiv:2407.20746はPDF全文を取得(PyMuPDF)。タイトル検索でEnergy誌319巻(2025)への掲載を確認し書誌を更新。Dunham & Came 1970はOpenAlexのabstract_inverted_indexから抄録を復元しCrossrefで書誌を裏取り。Corke 2008はOpenAlex/Semantic Scholar/Springerいずれからも抄録本文を取得できず見送り。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（arXiv版全文で読み、Energy誌2025掲載版の書誌に合わせて記載）、定番枠=抄録ベース（OpenAlex復元抄録＋Crossref書誌）。忠実性チェック（各2ラウンド）では、最新枠で運動量係数Cμの最適値範囲の誤り(0.0093〜0.0099→正しくは0.0074〜0.0099)、比較対象文献の発表年の誤り、迎え角の数値誤り、剥離点が「単調に」後退するという不正確な表現、arXivライセンスに関する誤った説明など計十数件を修正。定番枠でも、抄録に無い「二次流れ損失とチップクリアランス損失の式だけを改良した」という排他的な断定や、著者の判断理由を抄録から超えて推測していたdeepDiveの記述などを修正した。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、Ainley-Mathieson法という1951年生まれの簡便な計算法の話でした。翼列全体をたった1つの『代表的な直径』だけで計算してしまうという、今の感覚だとかなり大胆な割り切りに見えるのですが、抄録の結びで著者たちは「単純なやり方であっても、設計の現場では今後も価値を持ち続けるだろう」と述べていて、精密さがすべてではない場面もあるのだと気づかされました。もう一本の風車翼の論文では、同じ1枚の翼でも根元と先端でこんなに剥離のしかたが違うのかと驚きましたが、調べている途中でこのarXiv論文がすでに査読を経て別の雑誌に載っていたと分かったのも今回の発見でした。プレプリントは「その後どうなったか」まで確認しないといけないのだと勉強になりました。"
     }
   ]
 }
