@@ -67,6 +67,7 @@ export const CATEGORIES: GraphCategory[] = [
       "三重安定性 (tristability)",
       "流体構造連成 (FSI, fluid-structure interaction)",
       "翼端たわみ (blade-tip deflection)",
+      "ディフューザ回転失速 (DRS)",
     ],
   },
   {
@@ -157,6 +158,9 @@ export const CATEGORIES: GraphCategory[] = [
       "遷音速翼列 (transonic cascade)",
       "平板翼列 (flat-plate cascade)",
       "可変ノズルタービン (VNT, variable nozzle turbine)",
+      "リターンチャネル",
+      "ポンプ逆転水車 (PAT)",
+      "ドラフトチューブ",
     ],
   },
   {
@@ -666,6 +670,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "流体構造連成 (FSI, fluid-structure interaction)", to: "空力弾性", label: "現象を引き起こす相互作用" },
   { from: "流体構造連成 (FSI, fluid-structure interaction)", to: "翼端たわみ (blade-tip deflection)", label: "荷重がたわみを生む" },
   { from: "一方向カップリング (one-way coupling)", to: "流体構造連成 (FSI, fluid-structure interaction)", label: "簡易的な結合方式" },
+  // --- ディフューザ回転失速の穴あき抑制（Yanagihara et al. 2025） ---
+  { from: "ディフューザ回転失速 (DRS)", to: "回転失速", label: "一種（ディフューザ内で発生）" },
+  { from: "リターンチャネル", to: "ディフューザ回転失速 (DRS)", label: "圧力差をジェット流の駆動源として抑制に利用" },
+  { from: "前縁剥離 (leading-edge separation)", to: "ディフューザ回転失速 (DRS)", label: "剥離渦の負圧コアが誘発" },
+  { from: "受動流れ制御", to: "ディフューザ回転失速 (DRS)", label: "穴からのジェット流で抑制" },
+  // --- PATのエントロピー生成による損失機構（Ghorani et al. 2020） ---
+  { from: "ポンプ逆転水車 (PAT)", to: "エントロピー生成", label: "各部品別に定量化" },
+  { from: "ドラフトチューブ", to: "エントロピー生成", label: "体積あたりで最も生成しやすい部品" },
+  { from: "羽根車（インペラ）", to: "エントロピー生成", label: "総量の半分超が発生" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

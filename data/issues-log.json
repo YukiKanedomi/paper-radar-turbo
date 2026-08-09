@@ -2889,6 +2889,78 @@
         "note": "今号は最新=OA全文（Sundström et al. 2017をSpringerから再取得）、定番=抄録ベース（Vo et al. 2008）という組み合わせ。忠実性チェック（各2ラウンド）では、Vo論文で条件①の『先端漏れ流れと主流が平行』という言い換えが原文の『境界面が前縁面と平行』という意味から外れていた点と、断定的すぎる『示した/同定した』という表現（原文は仮説として提示）を修正し、概念図も先端漏れ流れの矢印の向き・逆流の位置（誤ってハブ側に描かれていた）・翼の配置（流れ方向と直交すべきピッチ方向になっていなかった）を描き直した。Sundström論文では原文の co-rotating vortex pair（同じ向きに回転する渦対）を『同軸回転渦対』と誤訳していた4箇所を修正し、Fig.5の圧力スペクトルの出所（総合性能ではなくプローブ点IS1）の取り違えや、図のクレジット表記（ライセンスURL・改変の明示・書誌年の統一）などを修正して、いずれも2ラウンド目で高〜中重要度の指摘が解消されたことを確認した。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、スパイク型の回転失速が始まる条件の書き方でした。てっきり『流量がこの値を下回ったら失速』のような単純なしきい値の話だと思っていたのですが、Vo et al. の研究が仮説として示すのは『先端すき間を漏れる流れと主流の境界面が、翼の前縁の面と平行にそろう』という、いわば流れの“向き”の整列条件でした。数値の大小ではなく幾何学的な配置がきっかけになるという発想は新鮮で、概念図を描き直しながら「なるほど、そういう意味だったのか」と理解が深まりました。もう一本のLES論文でも、失速とサージという似た2つの不安定が「せん断層の強さ」と「旋回の強さ」という別々の要因で決まるという役割分担の話があり、不安定にも“分業”があるのだと感じた回でした。"
+    },
+    {
+      "date": "2026-08-10",
+      "status": "published",
+      "headline": "遠心ポンプのディフューザ回転失速を穴あけジェット流で抑える最新研究(IAHR-Asia 2025・全文OA・実図あり)と、ポンプ逆転水車(PAT)内のエネルギー損失の発生場所をエントロピー生成理論で突き止めた定番研究(抄録ベース)",
+      "intro": "今日は検索語のローテーションで、最新枠は「ディフューザ失速の圧力回復」「ポンプ・インペラのキャビテーション」「非定常なロータ・ステータ干渉」「遠心/軸流圧縮機の空力」「タービン空力」、定番枠はこれに「翼端漏れ渦の損失」「チップクリアランス流れの損失」「ターボ機械の損失機構」「衝撃波境界層干渉」「非定常な後流混合」「タービン翼の境界層遷移」「コーナー剥離」「翼フラッタ空力弾性」を使いました。最新枠は15件(OA10/抄録5)、定番枠は14件(OA4/抄録10)がヒットしましたが、定番枠はDenton1993・Secondary Flows・Tip Clearance Loss等ほとんどが既配信済みで、新規候補は「PATのエントロピー生成損失」(Ghorani et al. 2020)くらいでした。最新枠は候補の多くがML/風車翼設計など手法寄りで、流体現象が主役の候補（軸流ディフューザの流入条件による性能変化、ポンプ用インデューサのキャビテーション抑制など）は抄録がSpringer/OpenAlex/Semantic Scholarのどこにも登録されておらず、over-reachを避けるため見送りました。OAで全文まで書き込める候補が本日のローテーション語では確保できなかったため、CC-BYライセンス限定・IOP Conference Series限定で追加検索したところ、遠心ポンプのディフューザ回転失速(DRS)を、羽根前縁の穴とリターンチャネルの圧力差によるジェット流で抑える研究(Yanagihara et al. 2025, IAHR-Asia 2025)を見つけ、全文PDFの取得に成功したため、これを最新枠に採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.1088/1742-6596/3150/1/012063",
+          "title": "Suppression of Diffuser Rotating Stall by Jet Flows from Return Channel in a Centrifugal Pump with an Axial Diffuser（Yanagihara, Takahashi, Ejiri & Miyabe, 2025）",
+          "why": "遠心ポンプのディフューザ羽根前縁近くに小さな穴をあけ、リターンチャネル側からの圧力差でジェット流を吹き出させるだけで、低流量域の「ディフューザ回転失速(DRS)」を抑えられることを実験とCFDで示した研究です。穴の位置は先行解析でDRS時に負圧の渦ができると分かっていた場所を狙って選ばれており、根拠のある設計変数になっている点、そして穴を増やす・大きくするほど抑制効果とヘッド・効率低下がきれいにトレードオフになっている点が読みどころでした。"
+        },
+        {
+          "id": "doi:10.1016/j.renene.2020.08.102",
+          "title": "A numerical study on mechanisms of energy dissipation in a pump as turbine (PAT) using entropy generation theory（Ghorani, Sotoude Haghighi, Maleki & Riasi, 2020）",
+          "why": "ポンプを逆回転させて水車として使う「PAT」内部で、エネルギーがどこでどれだけ失われているかを、圧力降下の計算ではなく「エントロピー生成」という熱力学の考え方で部品ごとに突き止めた定番研究です。エネルギー散逸の総量で見るとランナー、単位体積あたりの生成しやすさで見るとドラフトチューブ、と見方によって「どこが一番損しているか」の答えが変わる点が面白く選びました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの",
+          "note": "最新枠では、ジェットエンジン用軸流ディフューザの流入条件による性能変化を調べた最新論文(2026年、Journal of Thermal Science)が候補に挙がりましたが、抄録がSpringer側で非公開(elided)でどこからも取得できず、タイトルだけで内容を書くとover-reachになるため見送りました。低比速度ポンプ用インデューサのキャビテーション抑制を調べた研究(Scientific Reports、CC BY)は全文アクセスを試みましたがCookieの認証壁でブロックされ、抄録の記載も見つからなかったため見送りました。定番枠では、ターボ機械の損失メカニズムの大定番(Denton 1993)や二次流れ・チップクリアランス損失のレビュー等、上位候補の大半が既配信済みでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 15,
+            "note": "最新枠15件(OA10/抄録5)。arXiv側はML主体の圧縮機サロゲートモデルや風車翼の空力設計論文が中心で、流体現象そのものより手法寄りのため主役に据えず。OpenAlex新着で流体主役の候補（軸流ディフューザの流入条件、インデューサのキャビテーション抑制等）はあったが、全文・抄録とも取得できず、CC-BY限定の追加検索に切り替えた。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA4/抄録10)。上位のほとんど（Denton 1993, Secondary Flows in Axial Turbines, Tip Clearance Loss, Vo/Tan/Greitzer 2014, Tip Leakage Vortex Breakdown 等）は既配信済み。新規候補は「PATのエントロピー生成損失」(Ghorani et al. 2020, 被引用214件)のみで、これを採用した。"
+          },
+          {
+            "name": "OpenAlex追加検索（CC-BY限定・IOP Conference Series）",
+            "scope": "本日ローテーション語のOA候補が軒並み全文アクセス不可だったため、CC-BYライセンス・IOP Conference Series等の全文アクセスしやすい情報源に絞って追加検索",
+            "terms": [
+              "diffuser stall",
+              "rotating stall compressor",
+              "tip clearance flow turbine",
+              "cavitation pump"
+            ],
+            "hits": 1,
+            "note": "「Suppression of Diffuser Rotating Stall by Jet Flows from Return Channel...」(Yanagihara et al. 2025, IAHR-Asia 2025)がヒット。IOPscienceの記事ページ・PDFはcurl直接アクセスがボット判定でブロックされたが、WebFetchツール経由では全文PDFを正常取得でき、pdftotextでテキスト抽出、PyMuPDFで実図(Fig.1・Fig.3)をページ領域として再ラスタライズして掲載した。"
+          }
+        ],
+        "note": "被引用は、PAT論文でOpenAlex(214件)とSemantic Scholar(186件)の間に約15%の乖離があったため、具体的な数値は出さず「定番（高被引用）」という定性表記にとどめた。忠実性チェック（各論文2ラウンド）では、DRS論文でジェット流の向きの説明が原文と逆になっていた誤りと、結論文の「約20%」という数値が実測値の変化率と整合しない点への注記漏れを修正。PAT論文では「エネルギー散逸の総量ではランナーが最大」と「体積エントロピー生成率ではドラフトチューブが最大」という、算出基準の異なる2つの指標を混同していた記述を、levels・数値カード・概念図すべてで明示的に区別する形に修正した。また、PDFから直接抽出した実図2枚に、色空間変換に起因すると見られる黒い矩形の描画異常が生じていたため、埋め込み画像の抽出ではなくページ領域を直接ラスタライズする方式に切り替えて解消した（render-checkで確認）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、PATのエントロピー生成損失の論文にあった「総量で見るか、密度で見るかで答えが変わる」という話でした。てっきり「損失が一番大きい部品はどこか」には単一の答えがあると思っていたのですが、部品全体としての損失量で見るとランナーが最大、単位体積あたりの損失の生じやすさで見るとドラフトチューブが最大、というふうに、同じデータでも見方によって「最も問題な場所」が変わってくるのだと知り、数字を扱うときの視点の置き方の大事さを感じました。もう一本のディフューザ回転失速の論文は逆にとても具体的で、羽根に穴を数個あけるだけという素朴な工夫が、圧力差という自然の力を借りて流れの不安定を抑え込んでいる仕組みが面白く、simple is beautifulを地で行く研究だと思いました。"
     }
   ]
 }
