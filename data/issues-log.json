@@ -2961,6 +2961,76 @@
         "note": "被引用は、PAT論文でOpenAlex(214件)とSemantic Scholar(186件)の間に約15%の乖離があったため、具体的な数値は出さず「定番（高被引用）」という定性表記にとどめた。忠実性チェック（各論文2ラウンド）では、DRS論文でジェット流の向きの説明が原文と逆になっていた誤りと、結論文の「約20%」という数値が実測値の変化率と整合しない点への注記漏れを修正。PAT論文では「エネルギー散逸の総量ではランナーが最大」と「体積エントロピー生成率ではドラフトチューブが最大」という、算出基準の異なる2つの指標を混同していた記述を、levels・数値カード・概念図すべてで明示的に区別する形に修正した。また、PDFから直接抽出した実図2枚に、色空間変換に起因すると見られる黒い矩形の描画異常が生じていたため、埋め込み画像の抽出ではなくページ領域を直接ラスタライズする方式に切り替えて解消した（render-checkで確認）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、PATのエントロピー生成損失の論文にあった「総量で見るか、密度で見るかで答えが変わる」という話でした。てっきり「損失が一番大きい部品はどこか」には単一の答えがあると思っていたのですが、部品全体としての損失量で見るとランナーが最大、単位体積あたりの損失の生じやすさで見るとドラフトチューブが最大、というふうに、同じデータでも見方によって「最も問題な場所」が変わってくるのだと知り、数字を扱うときの視点の置き方の大事さを感じました。もう一本のディフューザ回転失速の論文は逆にとても具体的で、羽根に穴を数個あけるだけという素朴な工夫が、圧力差という自然の力を借りて流れの不安定を抑え込んでいる仕組みが面白く、simple is beautifulを地で行く研究だと思いました。"
+    },
+    {
+      "date": "2026-08-11",
+      "status": "published",
+      "headline": "圧縮機の回転失速『モード型』と『スパイク型』を1つのモデルで統一した最新研究(Grimshaw, Pullan, Greitzer & Spakovszky 2025, Journal of Turbomachinery, CC BY 4.0・著者最終稿を大学リポジトリより全文取得・実図あり)と、遠心ポンプの羽根付きディフューザで生じる回転失速の流れ構造と圧力脈動を調べた定番研究(Alubokin, Gao, Zhang, Yan, Jiang & Quaye 2022, Energy Science & Engineering, 抄録ベース)",
+      "intro": "今日はcollect.mjsの日替わりローテーションで、最新枠は「回転失速の前兆・スパイク」「二次流れ・端壁」「翼端漏れ渦の損失」「チップクリアランス流れの損失」「ターボ機械の損失機構」、定番枠はこれに「超臨界CO2ターボ機械」「風車後流の空力」「タービン翼のフィルム冷却」「ファン吸気歪み」「ディフューザ失速・圧力回復」「ポンプ・インペラのキャビテーション」「非定常ロータ・ステータ干渉」「遠心圧縮機の空力」を使いました。最新枠は候補24件のうちOpenAlex新着の圧縮機・ファンの失速/サージ関連が8件ありましたが、いずれもAerospace Science and Technology誌（Elsevier）掲載でOpenAlex・Crossref・Semantic Scholarのどこにもabstractが登録されておらず、ScienceDirect本体もボット判定で403ブロックされたため、抄録ベースとしてすら書けず見送りました。定番枠も上位の多くが既配信済み（Wind turbine wake aerodynamics、A Review of Shaped Hole Turbine Film-Cooling Technology等）で、新規のOpenAlex被引用上位候補はいずれも被引用が伸び悩んでいました。OA全文を確保するため、CC-BYライセンス限定で追加検索したところ、40年来「別々の現象」とされてきた圧縮機の失速発生パターン（モード型・スパイク型）を統一的に説明する2025年11月発表の論文（Cambridge大学・MIT共著）が見つかり、大学リポジトリApolloから著者最終稿PDFを取得できたため、これを最新枠に採用しました。定番枠は、CC-BY検索で見つかった遠心ポンプの回転失速に関する2022年の論文（被引用は数十件規模）を候補にしましたが、掲載誌（Wiley）の本文はCookie/CAPTCHA壁でアクセスできず、抄録ベースで誠実に作成しました。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.4070355",
+          "title": "A Unified Framework for Compressor Stall Inception（Grimshaw, Pullan, Greitzer & Spakovszky, 2025）",
+          "why": "圧縮機の回転失速には、正弦波状の擾乱がゆっくり育つ『モード型』と、局所的な擾乱が一気に育つ『スパイク型』という2つの発生パターンが40年前から知られていましたが、この論文はその両方を、たった1つの低次元モデル（アクチュエータディスク）で統一的に説明しています。鍵になるのは圧力上昇特性のピークより低流量側の勾配で、緩やかならモード型、急ならスパイク型になる——という筋道を、実験・CFDとの突き合わせも含めて示している点が読みどころです。ケンブリッジ大学Whittle研究所とMITガスタービン研究所という、この分野を長く牽引してきた2つの研究室の共著という点にも背景の厚みを感じました。"
+        },
+        {
+          "id": "doi:10.1002/ese3.1123",
+          "title": "Numerical simulation of complex flow structures and pressure fluctuation at rotating stall conditions within a centrifugal pump（Alubokin, Gao, Zhang, Yan, Jiang & Quaye, 2022）",
+          "why": "羽根付きディフューザを持つ遠心ポンプの回転失速を、CFD（SST k-ω初期化からDDESへ移行）で詳しく調べた研究です。失速セルの伝わる速さが、ポンプを締切運転（流量ゼロ）に近づけるほど増していくという観察や、ディフューザの5枚の流路がそれぞれ『失速に入る』『失速中』『失速から回復中』という違う状態にあるという発見が面白く選びました。本文は取得できなかったため、抄録の範囲内で誠実にまとめています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの・工夫したこと",
+          "note": "最新枠では、遷音速圧縮機のチップ不安定性をSPODで調べた研究や、軸流圧縮機のサージ時のエネルギー散逸を調べた研究など、テーマとしては良さそうな候補が複数ありましたが、すべてAerospace Science and Technology誌（Elsevier）掲載で、OpenAlex・Crossref・Semantic Scholarのいずれにもabstractが登録されておらず、ScienceDirect本体へのアクセスもボット判定でブロックされたため、抄録ベースとしてすら内容を確認できず見送りました。定番枠でも、風車後流の定番レビュー（Vermeer, Sørensen & Crespo 2003、被引用1300件超）を検討しましたが、同様にabstractがどこからも取得できず断念しました。最終的に採用した2本はいずれもCC-BYライセンスの追加検索で見つけたものです。Unified Framework論文は大学リポジトリ（Apollo）から著者最終稿PDFを直接取得でき、12ページ全文をもとに作り込みました。Pump論文はライセンス上はCC-BYですが、掲載誌（Wiley Online Library）の本文ページがCookie/CAPTCHA壁で開けなかったため、抄録の範囲内に留めた誠実な要約にしています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件(OA15/抄録9)。arXiv側(14件)はPIV同化・乱流ROM・液滴界面・火山・MHD等、ターボ機械の流体現象からは外れる分野が中心で採用せず。OpenAlex新着(10件)は圧縮機・ファンの失速/サージ関連が多かったが、いずれもAerospace Science and Technology誌でabstract非公開・ScienceDirectアクセス不可のため見送った。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA3/抄録11)。上位（Wind turbine wake aerodynamics cite=1359、A Review of Shaped Hole Turbine Film-Cooling Technology cite=895等）はほぼ既配信済みか、abstract非公開で見送り。新規候補は少なく、CC-BY追加検索に切り替えた。"
+          },
+          {
+            "name": "OpenAlex追加検索（CC-BYライセンス限定）",
+            "scope": "本日ローテーション語のOA候補が軒並みabstract非公開・アクセス不可だったため、CC-BYライセンス限定で失速・回転失速まわりのキーワードを追加検索",
+            "terms": [
+              "rotating stall inception spike",
+              "diffuser stall pressure recovery"
+            ],
+            "hits": 2,
+            "note": "「A Unified Framework for Compressor Stall Inception」(Grimshaw et al. 2025, Journal of Turbomachinery／Cambridge大学リポジトリApolloに著者最終稿)と「Numerical simulation of complex flow structures and pressure fluctuation at rotating stall conditions within a centrifugal pump」(Alubokin et al. 2022, Energy Science & Engineering)がヒット。前者はApolloのbitstream URLから直接PDF取得に成功、後者はWiley本文がCookie/CAPTCHA壁でブロックされ抄録ベースに切り替えた。"
+          }
+        ],
+        "note": "忠実性チェック（各論文最大2ラウンド）では、Unified Framework論文で①文献一般値（モード20-60%・スパイク70-90%という先行研究のまとめ）と本論文自身のシミュレーション結果を混同していた箇所、②実験・CFDで裏付けがあるのはスパイク型と複合型のみでモード型単体には対応データがない点の記述漏れ、③謝辞の所属先の誤帰属など十数件を修正しました。Pump論文（抄録ベース）では、①抄録にない『9通り』という流量条件数を留保欄で断定してしまっていた点、②失速セルの伝播速度ΩRSを『無次元値』と断定していた点（抄録に正規化の基準の記載はない）、③概念図の輪郭が5つの尖りを持ち『5枚羽根ディフューザ』と誤って対応づけて読めてしまう形状だった点、を中心に2ラウンドかけて修正しました。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、Unified Framework論文の『モード型とスパイク型は別の現象ではなく、1つの連続体の両端だった』という結論です。てっきり『2種類ある』と言われたら、それぞれ別の理由で起きる別々の現象なんだろうと思い込んでいたのですが、実は『圧力の上がり方のカーブの、ある部分の傾き』というたった1つのパラメータが緩やかか急かだけで、同じ仕組みの中でどちらの顔にもなる、という説明の仕方に触れて、『分類』というのは時に、まだ見つかっていない共通の物差しを見つける前の仮の姿にすぎないのかもしれない、と感じました。40年間別々に研究されてきたものを1つの図式でつなぐ、というスケールの大きさにも単純に驚きました。"
     }
   ]
 }

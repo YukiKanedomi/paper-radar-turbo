@@ -68,6 +68,8 @@ export const CATEGORIES: GraphCategory[] = [
       "流体構造連成 (FSI, fluid-structure interaction)",
       "翼端たわみ (blade-tip deflection)",
       "ディフューザ回転失速 (DRS)",
+      "圧力上昇特性の勾配 (characteristic slope)",
+      "剥離トポロジー (separation topology)",
     ],
   },
   {
@@ -109,6 +111,7 @@ export const CATEGORIES: GraphCategory[] = [
       "スキーラチップ (squealer tip)",
       "空力損失係数 (aerodynamic loss coefficient)",
       "衝撃波・渦干渉 (shock-vortex interaction)",
+      "損失遅れ (loss lag)",
     ],
   },
   {
@@ -679,6 +682,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ポンプ逆転水車 (PAT)", to: "エントロピー生成", label: "各部品別に定量化" },
   { from: "ドラフトチューブ", to: "エントロピー生成", label: "体積あたりで最も生成しやすい部品" },
   { from: "羽根車（インペラ）", to: "エントロピー生成", label: "総量の半分超が発生" },
+  // --- モード/スパイク統一枠組み（Grimshaw et al. 2025） ---
+  { from: "圧力上昇特性の勾配 (characteristic slope)", to: "モード波型前駆現象 (modal-wave precursor)", label: "緩やかな正勾配で成長" },
+  { from: "圧力上昇特性の勾配 (characteristic slope)", to: "スパイク型回転失速", label: "急な正勾配で急成長" },
+  { from: "剥離トポロジー (separation topology)", to: "圧力上昇特性の勾配 (characteristic slope)", label: "急激な剥離ほど勾配を急にする" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
