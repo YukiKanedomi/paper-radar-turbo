@@ -164,6 +164,7 @@ export const CATEGORIES: GraphCategory[] = [
       "リターンチャネル",
       "ポンプ逆転水車 (PAT)",
       "ドラフトチューブ",
+      "斜流ポンプ (mixed-flow pump)",
     ],
   },
   {
@@ -686,6 +687,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "圧力上昇特性の勾配 (characteristic slope)", to: "モード波型前駆現象 (modal-wave precursor)", label: "緩やかな正勾配で成長" },
   { from: "圧力上昇特性の勾配 (characteristic slope)", to: "スパイク型回転失速", label: "急な正勾配で急成長" },
   { from: "剥離トポロジー (separation topology)", to: "圧力上昇特性の勾配 (characteristic slope)", label: "急激な剥離ほど勾配を急にする" },
+  // --- 斜流ポンプの後流渦とエントロピー生成（Chen et al. 2026） ---
+  { from: "斜流ポンプ (mixed-flow pump)", to: "羽根車（インペラ）", label: "構成" },
+  { from: "斜流ポンプ (mixed-flow pump)", to: "案内羽根", label: "構成" },
+  { from: "斜流ポンプ (mixed-flow pump)", to: "遠心ポンプ", label: "遠心ポンプと軸流ポンプの中間的な流れ方" },
+  { from: "動的モード分解 (DMD)", to: "ロータ・ステータ干渉", label: "支配モードとして検出" },
+  { from: "翼端漏れ渦", to: "エントロピー生成", label: "翼端すきま近傍で散逸が集中" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

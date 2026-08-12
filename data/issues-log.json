@@ -3031,6 +3031,89 @@
         "note": "忠実性チェック（各論文最大2ラウンド）では、Unified Framework論文で①文献一般値（モード20-60%・スパイク70-90%という先行研究のまとめ）と本論文自身のシミュレーション結果を混同していた箇所、②実験・CFDで裏付けがあるのはスパイク型と複合型のみでモード型単体には対応データがない点の記述漏れ、③謝辞の所属先の誤帰属など十数件を修正しました。Pump論文（抄録ベース）では、①抄録にない『9通り』という流量条件数を留保欄で断定してしまっていた点、②失速セルの伝播速度ΩRSを『無次元値』と断定していた点（抄録に正規化の基準の記載はない）、③概念図の輪郭が5つの尖りを持ち『5枚羽根ディフューザ』と誤って対応づけて読めてしまう形状だった点、を中心に2ラウンドかけて修正しました。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、Unified Framework論文の『モード型とスパイク型は別の現象ではなく、1つの連続体の両端だった』という結論です。てっきり『2種類ある』と言われたら、それぞれ別の理由で起きる別々の現象なんだろうと思い込んでいたのですが、実は『圧力の上がり方のカーブの、ある部分の傾き』というたった1つのパラメータが緩やかか急かだけで、同じ仕組みの中でどちらの顔にもなる、という説明の仕方に触れて、『分類』というのは時に、まだ見つかっていない共通の物差しを見つける前の仮の姿にすぎないのかもしれない、と感じました。40年間別々に研究されてきたものを1つの図式でつなぐ、というスケールの大きさにも単純に驚きました。"
+    },
+    {
+      "date": "2026-08-13",
+      "status": "published",
+      "headline": "斜流ポンプの失速で後流渦がT字型→V字型→多スケール乱流帯へ姿を変え、エネルギー損失が80%超に達することをCFDで追った最新研究(Chen, Li, Ji, Li & Long 2026, Journal of Applied Fluid Mechanics, オープンアクセス・全文あり)と、軸流圧縮機の翼端漏れ流れの弦長方向分布を支配するのが静圧場だと実験とCFDで示した定番研究(Storer & Cumpsty 1991, Journal of Turbomachinery, 抄録ベース)",
+      "intro": "今日はcollect.mjsの日替わりローテーションで、最新枠は「風車後流」「タービンのフィルム冷却」「ファンの吸気歪み」「ディフューザ失速・圧力回復」「ポンプ・インペラのキャビテーション」「非定常ロータ・ステータ干渉」、定番枠はこれに「衝撃波・境界層干渉」「非定常翼列の後流混合」「境界層遷移」「コーナー剥離」「フラッタ」「超臨界CO2ターボ機械」を使いました。最新枠は候補24件のうち多くがRL・POD・数値スキームなどML/手法寄りで、流体現象そのものを主役にした候補が少なく、また唯一目についたターボ機械寄りのOA論文（境界層吸込みファンの流れ歪み）は既に配信済みでした。定番枠も上位はほぼ既配信済み（Wind turbine wake aerodynamics、Shaped Hole Film-Cooling等）か、OpenAlex・Crossref・Semantic Scholarのいずれにもabstractが登録されておらず断念しました。そこで検索語を広げ、最新枠は「斜流ポンプ・遠心圧縮機の回転失速」「翼端すきま流れ」で追加検索し、定番枠は「翼端漏れ渦」「サージ・回転失速」で追加検索したところ、今回の2本にたどり着きました。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.10.4323",
+          "title": "Evolution of Wake Vortices and Energy Characteristics of Mixed-flow Pumps Under Stall Conditions（Chen, Li, Ji, Li & Long, 2026）",
+          "why": "斜流ポンプが失速していく様子を、渦の「形」という直感的な切り口で追いかけているのが面白い研究です。設計流量では規則正しい『T字型』だった羽根車後流の渦が、失速の入り口では『V字型』に歪み、深い失速では流路をふさぐほどの乱流の帯になる——という変化を、動的モード分解（DMD）とエントロピー生成解析という2つの定量的な手法で裏付けています。翼端すきまと羽根の中間あたりでエネルギーの無駄（損失）が集中し、深い失速では80%以上も増えるという数値も報告されています。オープンアクセス誌で全文が読めたため、章立てに沿って読み応えのある形に作り込みました。"
+        },
+        {
+          "id": "doi:10.1115/1.2929095",
+          "title": "Tip Leakage Flow in Axial Compressors（Storer & Cumpsty, 1991）",
+          "why": "被引用300件超のターボ機械の定番論文です。動翼の先端から漏れる流れがどんな経路をたどるのか、実験と数値計算の両方で確かめ、漏れの弦長方向の分布を決めているのは翼端付近の圧力の分布（静圧場）であり、漏れ流れ全体の大きさは翼にかかる空力的な負荷と関係している、と2つの異なる要因に切り分けて示した点が読みどころです。本文は取得できなかったため、抄録の範囲内で誠実にまとめています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの・工夫したこと",
+          "note": "最新枠では、乱流境界層剥離を深層強化学習で制御する研究や、風力発電のブロッケージモデル比較、POD部分空間追跡といった候補もありましたが、いずれも機械学習・数値手法そのものが主役で、CLAUDE.mdの「流体現象を主役に」という方針から外れるため見送りました。境界層吸込み型ファンの流れ歪みを調べたPhysics of Fluids論文は内容的に良さそうでしたが、既に配信済みでした。定番枠では、風車後流の元祖レビュー（Vermeer, Sørensen & Crespo 2003、被引用1300件超）やプラズマアクチュエータの定番論文（Corke et al. 2008）を検討しましたが、いずれもOpenAlex・Crossref・Semantic Scholarのどこにもabstractが登録されておらず、抄録ベースとしてすら本文を確認できないため断念しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 24,
+            "note": "最新枠24件(OA16/抄録8)。arXiv側は乱流制御・数値スキーム・非線形安定性など流体力学一般の候補が多く、ターボ機械の流体現象そのものを扱うものは少なかった。OpenAlex新着のターボ機械寄り候補（境界層吸込みファン等）はabstract非公開のものが大半で、唯一abstractのあった1件は既配信重複だった。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA5/抄録9)。上位のほとんどが既配信済み（Wind turbine wake aerodynamics、Shaped Hole Film-Cooling Technology等）で、残りは新規だがabstractが取得できないものが中心だった。"
+          },
+          {
+            "name": "OpenAlex追加検索（最新枠・斜流ポンプ/回転失速）",
+            "scope": "発行日順・直近（cavitation pump impeller flow / rotating stall centrifugal compressor / tip clearance flow turbine）",
+            "terms": [
+              "cavitation pump impeller flow",
+              "rotating stall centrifugal compressor",
+              "tip clearance flow turbine"
+            ],
+            "hits": 24,
+            "note": "この追加検索で斜流ポンプの失速時後流渦を扱うJournal of Applied Fluid Mechanics誌の2026年論文（diamond OA）を発見。全文PDFを取得できたため最新枠に採用した。"
+          },
+          {
+            "name": "OpenAlex追加検索（定番枠・翼端漏れ/失速）",
+            "scope": "被引用数の多い順（secondary flow loss turbine cascade / tip leakage vortex compressor / rotating stall compressor surge / transonic compressor shock wave boundary layer）",
+            "terms": [
+              "secondary flow loss turbine cascade",
+              "tip leakage vortex compressor",
+              "rotating stall compressor surge",
+              "transonic compressor shock wave boundary layer"
+            ],
+            "hits": 32,
+            "note": "この追加検索でStorer & Cumpsty 1991の翼端漏れ流れの定番論文（被引用308件）を発見。同時にGreitzer 1976のサージ理論論文も候補に挙がったが、直近3日連続で回転失速・サージ関連が続いていたためテーマの多様性を優先しStorer論文を採用した。"
+          }
+        ],
+        "note": "忠実性チェック（各論文最大2ラウンド）では、Storer論文（抄録ベース）で①「漏れの経路と量を静圧場が決める」と2つの異なる知見（弦長方向分布は静圧場、全体量は空力負荷）を混同していた記述、②「実機並みのクリアランス」を実験条件と断定していた記述（抄録では結果の成立条件）、③非粘性の言い換えの拡大解釈、を中心に修正しました。Mixed-flow pump論文（OA全文）では、①エントロピー生成の断面(Span)別の増減を「深失速ほど一様に増加」と一般化していた記述、②概念図の注記が指す図番号の誤り、③格子密度M1〜M3のラベル対応が原文内で矛盾していた箇所の扱い、④DMD累積寄与率95.8%が「more than」付きの下限値である点の表記統一、を中心に修正しました。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、Storer & Cumpsty論文が『漏れ流れの分布』と『漏れ流れの量』をはっきり別の要因に切り分けていた点です。てっきり『漏れがどこをどう流れるか』と『どれだけ漏れるか』は同じ話だと思っていたのですが、前者は翼端付近の圧力の分布（静圧場）、後者は翼にかかる空力的な負荷、という別々の物差しで説明されると知り、ひとつの現象でも「どこを流れるか」と「どれだけ流れるか」は別の質問なんだ、と腑に落ちました。1991年の研究がいまだに定番として引かれ続けている理由も、この整理の明快さにあるのかもしれません。"
     }
   ]
 }
