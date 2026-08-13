@@ -3114,6 +3114,77 @@
         "note": "忠実性チェック（各論文最大2ラウンド）では、Storer論文（抄録ベース）で①「漏れの経路と量を静圧場が決める」と2つの異なる知見（弦長方向分布は静圧場、全体量は空力負荷）を混同していた記述、②「実機並みのクリアランス」を実験条件と断定していた記述（抄録では結果の成立条件）、③非粘性の言い換えの拡大解釈、を中心に修正しました。Mixed-flow pump論文（OA全文）では、①エントロピー生成の断面(Span)別の増減を「深失速ほど一様に増加」と一般化していた記述、②概念図の注記が指す図番号の誤り、③格子密度M1〜M3のラベル対応が原文内で矛盾していた箇所の扱い、④DMD累積寄与率95.8%が「more than」付きの下限値である点の表記統一、を中心に修正しました。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、Storer & Cumpsty論文が『漏れ流れの分布』と『漏れ流れの量』をはっきり別の要因に切り分けていた点です。てっきり『漏れがどこをどう流れるか』と『どれだけ漏れるか』は同じ話だと思っていたのですが、前者は翼端付近の圧力の分布（静圧場）、後者は翼にかかる空力的な負荷、という別々の物差しで説明されると知り、ひとつの現象でも「どこを流れるか」と「どれだけ流れるか」は別の質問なんだ、と腑に落ちました。1991年の研究がいまだに定番として引かれ続けている理由も、この整理の明快さにあるのかもしれません。"
+    },
+    {
+      "date": "2026-08-14",
+      "status": "published",
+      "headline": "静翼の周方向位置(クロッキング)を0.96°刻みでずらすと第2段効率が0.39%動くことを定常・非定常CFDで示した最新研究(Taghavi Zenouz & Abiri 2026, Journal of Applied Fluid Mechanics, オープンアクセス・全文あり)と、風車後流研究をニアウェイク／ファーウェイクの2領域に整理した被引用1000件超の定番レビュー(Vermeer, Sørensen & Crespo 2003, Progress in Aerospace Sciences, 抄録ベース)",
+      "intro": "今日はcollect.mjsの日替わりローテーションで、最新枠は「遠心圧縮機の空力」「軸流圧縮機の空力」「タービンの空力」「サージ・回転失速」「回転失速の発生(スパイク型)」「二次流れ・エンドウォール」、定番枠はこれに「吸気歪み・ファン空力」「ディフューザ失速・圧力回復」「ポンプ・インペラのキャビテーション」「非定常ロータ・ステータ干渉」を使いました。最新枠の候補16件は、多段軸流圧縮機の性能予測を深層学習で行う論文が2本、風車翼のCFD形状最適化・逆問題設計が2本、遷移的非平衡境界層のDNSが1本などML・数値手法・ターボ機械以外の流体現象が中心で、流体現象主役の方針に沿う候補が絞り込まれました。その中から低圧タービンの動翼列クロッキング（静翼の周方向位置調整）を扱うJournal of Applied Fluid Mechanics誌のオープンアクセス論文を採用しています。定番枠は上位のほとんどがGreitzer/Moore・Day・Mayleなど既配信済みで、新規候補（Vermeer et al. 2003、Howell et al. 2009、Hansen et al. 2006）はいずれもElsevier誌のため、OpenAlex・Crossref・Semantic ScholarのAPIではabstractが取得できませんでした。Hansen et al. 2006はUnpaywallでオープンアクセス（NTUA機関リポジトリ経由）と表示されていましたが、リポジトリのページを確認したところ実際にはファイルが登録されておらず本文取得を断念。Vermeer et al. 2003については、DTU（デンマーク工科大学）の研究ポータルに掲載されていた抄録本文を確認できたため、抄録ベースで採用しました。被引用数はOpenAlex(約1361件)・Scopus(TU Delft研究ポータル記載、約1280件)・Semantic Scholar(958件)で情報源ごとに差が大きく、具体的な数値としては示していません。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.10.4317",
+          "title": "Effects of Blades Rows Clocking on Aerodynamics of a Gas Turbine Low Pressure Axial Turbine（Taghavi Zenouz & Abiri, 2026）",
+          "why": "静翼どうしの周方向の位置関係（クロッキング）を0.96°刻みでずらすだけで、上流の後流が次の静翼の前縁に当たるか素通りするかが変わり、効率が0.39%・出力が0.33%動くことを、定常・非定常の三次元CFDで丁寧に確かめた研究です。後流がV字型に変形しながら「負のジェット」を生み出す運動学的な過程まで踏み込んで説明している点が読みごたえがあります。オープンアクセス誌で全文が読めたため、章立てに沿って作り込みました。"
+        },
+        {
+          "id": "doi:10.1016/s0376-0421(03)00078-2",
+          "title": "Wind turbine wake aerodynamics（Vermeer, Sørensen & Crespo, 2003）",
+          "why": "被引用1000件を大きく超える、風車後流研究の定番レビューです。後流を、羽根近傍の一様流に絞った『ニアウェイク』と、風下への減衰とウィンドファーム効果に焦点を当てた『ファーウェイク』という2つの領域に整理し直した点が、その後の風車後流研究の枠組みとして広く使われてきました。本文は取得できなかったため、抄録の範囲内で誠実にまとめています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの・工夫したこと",
+          "note": "最新枠では、多段軸流圧縮機の空力性能を深層学習で予測する2本（Bruni et al. 2023/2025）、風車翼のCFD逆設計（Moghadassian & Sharma 2017）、遺伝的アルゴリズムで能動流れ制御を最適化する風車翼研究（Nabhani et al. 2024）、高マッハ数境界層の熱化学非平衡DNS（2026年）などを検討しましたが、いずれも機械学習・最適化手法や、ターボ機械の流体現象からやや外れる対象が主役のため見送りました。翼端すきま形状を変えたRANSの不確かさ定量化論文（transonic centrifugal compressor、非OA）も、不確かさ評価手法そのものが主役であることを踏まえ見送っています。定番枠では、Hansen et al. 2006（風車の空力・エアロエラスティシティの総説、被引用742件）がUnpaywall上はグリーンOAと表示されていましたが、リンク先のNTUA機関リポジトリのページにファイルが登録されておらず、本文はおろか抄録さえ確認できなかったため断念しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 16,
+            "note": "最新枠16件(OA11/抄録5)。深層学習サロゲート・CFD逆設計・遺伝的アルゴリズム最適化など、流体現象そのものより手法や設計最適化が主役の候補が中心だった。その中からブレード列クロッキングを扱うJAFM誌のOA論文（Taghavi Zenouz & Abiri 2026）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA1/抄録13)。上位のほとんどが既配信済み（Mayle 1991、Greitzer 1976 Part I/II、Day 1993/2015、Moore & Greitzer 1986等）で、新規候補（Vermeer et al. 2003、Howell et al. 2009、Hansen et al. 2006）はいずれもElsevier誌のためOpenAlex・Crossref・Semantic ScholarのAPIではabstractを取得できなかった。"
+          },
+          {
+            "name": "Unpaywall / DTU Orbit / NTUA DSpace（定番枠・本文アクセス調査）",
+            "scope": "候補3件（Vermeer 2003・Howell 2009・Hansen 2006）の全文・抄録所在確認",
+            "terms": [
+              "Unpaywall API",
+              "DTU Orbit research portal",
+              "NTUA DSpace repository"
+            ],
+            "hits": 3,
+            "note": "Hansen et al. 2006はUnpaywallでグリーンOA(NTUA機関リポジトリ)と表示されたが、リポジトリページにファイル登録なし。Vermeer et al. 2003はDTU研究ポータル(Pure)で抄録本文を確認でき、抄録ベースでの採用が可能と判断。Howell et al. 2009はいずれの情報源でも抄録を確認できず見送った。"
+          }
+        ],
+        "note": "忠実性チェック（各論文最大2ラウンド）は、Taghavi Zenouz & Abiri論文（OA全文）・Vermeer論文（抄録ベース）のいずれもfaithfulness-checkサブエージェントでverdict:okを確認。特にVermeer論文は抄録の範囲を超える結論（レビューの具体的な知見）を書かないよう、また被引用数は情報源間の乖離が大きいため数値を出さないよう注意した。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、たった0.96°（1度にも満たない角度）静翼の位置をずらすだけで、上流の後流が前縁に当たるか素通りするかがはっきり切り替わり、効率が測定可能なほど動くという話です。後流はぼんやり広がった靄のようなものだと思っていたのですが、翼と翼のすきまに対しては意外と『細い帯』として飛んでくるので、狙って当てにいけるのだと知りました。あと、被引用数がデータベースによって1000件近くも違う場合があるというのも今回の発見でした（Vermeer論文はOpenAlex・Scopus・Semantic Scholarでそれぞれ違う数字）。数字はひとつに決まっているようで、実は「どこで数えたか」によって結構動くのですね。"
     }
   ]
 }

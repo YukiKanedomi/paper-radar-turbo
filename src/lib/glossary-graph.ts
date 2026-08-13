@@ -261,6 +261,8 @@ export const CATEGORIES: GraphCategory[] = [
       "渦発生器ジェット (vortex generator jet, VGJ)",
       "非定常吹き出し (pulsed blowing)",
       "受動流れ制御",
+      "クロッキング (blade row clocking, indexing)",
+      "負のジェット (negative jet)",
       "壁面すべり速度",
       "空気噴射 (air injection)",
       "マイクロオフセット翼端 (micro-offset tip)",
@@ -335,6 +337,8 @@ export const CATEGORIES: GraphCategory[] = [
       "自己相似後流 (self-similar wake)",
       "ウェイク誘起揚力 (wake-induced lift)",
       "フェザリング (feathering)",
+      "後流減衰 (wake decay)",
+      "水平軸風車 (HAWT, horizontal axis wind turbine)",
     ],
   },
   {
@@ -693,6 +697,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "斜流ポンプ (mixed-flow pump)", to: "遠心ポンプ", label: "遠心ポンプと軸流ポンプの中間的な流れ方" },
   { from: "動的モード分解 (DMD)", to: "ロータ・ステータ干渉", label: "支配モードとして検出" },
   { from: "翼端漏れ渦", to: "エントロピー生成", label: "翼端すきま近傍で散逸が集中" },
+  // --- 静翼クロッキングと後流-翼干渉（Taghavi Zenouz & Abiri 2026） ---
+  { from: "クロッキング (blade row clocking, indexing)", to: "受動流れ制御", label: "一種（周方向インデックスで調整）" },
+  { from: "クロッキング (blade row clocking, indexing)", to: "ロータ・ステータ干渉", label: "後流と下流翼列の衝突位置を調整" },
+  { from: "負のジェット (negative jet)", to: "後流（ウェイク）", label: "再配向の過程で生じる" },
+  { from: "負のジェット (negative jet)", to: "全圧損失係数", label: "前縁への衝突位置次第で損失を左右" },
+  // --- 風車後流のレビュー（Vermeer, Sørensen & Crespo 2003） ---
+  { from: "後流減衰 (wake decay)", to: "ニアウェイク／ファーウェイク", label: "ファーウェイクで進む現象" },
+  { from: "水平軸風車 (HAWT, horizontal axis wind turbine)", to: "後流（ウェイク）", label: "後流を生む対象" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
