@@ -45,6 +45,10 @@ export const CATEGORIES: GraphCategory[] = [
       "トルネード型渦",
       "非同期振動 (NSV)",
       "動的失速",
+      "動的失速渦 (dynamic stall vortex)",
+      "静止失速角 (static stall angle, α_ss)",
+      "準定常近似 (quasi-steady approximation)",
+      "無次元周波数 k (reduced frequency)",
       "フラッタ",
       "空力弾性",
       "自励振動",
@@ -112,6 +116,8 @@ export const CATEGORIES: GraphCategory[] = [
       "空力損失係数 (aerodynamic loss coefficient)",
       "衝撃波・渦干渉 (shock-vortex interaction)",
       "損失遅れ (loss lag)",
+      "渦度輸送方程式 (vorticity transport equation)",
+      "渦伸張項 (vortex stretching term)",
     ],
   },
   {
@@ -704,6 +710,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "負のジェット (negative jet)", to: "全圧損失係数", label: "前縁への衝突位置次第で損失を左右" },
   // --- 風車後流のレビュー（Vermeer, Sørensen & Crespo 2003） ---
   { from: "後流減衰 (wake decay)", to: "ニアウェイク／ファーウェイク", label: "ファーウェイクで進む現象" },
+  // --- 準定常近似の破綻（Malarczyk & Hultmark 2026） ---
+  { from: "準定常近似 (quasi-steady approximation)", to: "無次元周波数 k (reduced frequency)", label: "小さいkで妥当と仮定" },
+  { from: "動的失速", to: "動的失速渦 (dynamic stall vortex)", label: "境界層剥離の巻き上がりで形成" },
+  { from: "静止失速角 (static stall angle, α_ss)", to: "動的失速", label: "通過が引き金になりうる" },
+  // --- PATのチップ漏れ流れによる損失（Kan et al. 2022） ---
+  { from: "翼端漏れ渦", to: "渦度輸送方程式 (vorticity transport equation)", label: "空間的な発達を記述" },
+  { from: "渦度輸送方程式 (vorticity transport equation)", to: "渦伸張項 (vortex stretching term)", label: "発達の支配項として同定" },
   { from: "水平軸風車 (HAWT, horizontal axis wind turbine)", to: "後流（ウェイク）", label: "後流を生む対象" },
 ];
 

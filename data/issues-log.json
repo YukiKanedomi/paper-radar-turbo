@@ -3185,6 +3185,86 @@
         "note": "忠実性チェック（各論文最大2ラウンド）は、Taghavi Zenouz & Abiri論文（OA全文）・Vermeer論文（抄録ベース）のいずれもfaithfulness-checkサブエージェントでverdict:okを確認。特にVermeer論文は抄録の範囲を超える結論（レビューの具体的な知見）を書かないよう、また被引用数は情報源間の乖離が大きいため数値を出さないよう注意した。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、たった0.96°（1度にも満たない角度）静翼の位置をずらすだけで、上流の後流が前縁に当たるか素通りするかがはっきり切り替わり、効率が測定可能なほど動くという話です。後流はぼんやり広がった靄のようなものだと思っていたのですが、翼と翼のすきまに対しては意外と『細い帯』として飛んでくるので、狙って当てにいけるのだと知りました。あと、被引用数がデータベースによって1000件近くも違う場合があるというのも今回の発見でした（Vermeer論文はOpenAlex・Scopus・Semantic Scholarでそれぞれ違う数字）。数字はひとつに決まっているようで、実は「どこで数えたか」によって結構動くのですね。"
+    },
+    {
+      "date": "2026-08-15",
+      "status": "published",
+      "headline": "静止失速角をまたぐ迎え角変化を、通常の目安の50分の1という低い周波数で動かしても準定常近似が破綻することを高圧風洞実験で示した最新研究(Malarczyk & Hultmark 2026, arXiv, CC BY 4.0・全文あり)と、ポンプ逆転水車のチップ漏れ渦の空間的発達を渦度輸送方程式の『渦伸張項』で説明した定番研究(Kan et al. 2022, Energy誌, 抄録ベース)",
+      "intro": "今日はcollect.mjsの日替わりローテーションで、最新枠は「翼端漏れ渦・損失」「チップクリアランス流れ・損失」「ターボ機械の損失機構」「圧縮機の衝撃波・境界層干渉」「非定常な後流混合」「タービン翼の境界層遷移」、定番枠はこれに「回転失速の発生(スパイク型)」「エンドウォールの二次流れ」を加えた語で検索しました。最新枠の候補16件は、翼型のニューラルオペレータ代理モデルや圧縮性格子ボルツマン法ソルバー、ドラッグ低減ディンプルのベイズ最適化など、流体現象そのものよりML・数値手法・最適化が主役の候補が中心で、ターボ機械そのものを扱う候補は少数でした。その中から、風力タービン翼の非定常空気力を高圧風洞で調べたarXivのオープンアクセス論文（Malarczyk & Hultmark 2026）を採用しています。もう1本、軸流圧縮機のブレード枚数削減とチップクリアランスの関係を扱うASME Journal of Turbomachinery誌のCC BY論文（OpenAlex上でOA・CC-BYと確認）も有力候補でしたが、出版社サイト(ASME Digital Collection)がボット検知で本文取得を拒否し（WebFetch・curlともに403）、2026年8月13日投稿とごく新しく他のミラーも存在しなかったため、全文での作り込みを断念しました。定番枠14件は上位のほとんどが既配信済み（Denton 1993、Vo・Tan・Greitzer 2008、Furukawa et al. 1999、Bindon 1989、Langston 2001、Ghorani et al. 2020等）で、新規候補は2件のみ。プラズマアクチュエータのレビュー（Corke et al. 2008、被引用371件）はOpenAlex・Crossref・Semantic Scholarのいずれにも抄録が登録されておらず、ScienceDirectも直接アクセスできなかったため断念し、軸流ポンプ逆転水車のチップ漏れ流れによる損失機構を扱うKan et al. 2022（Energy誌）を採用しました。この論文もOpenAlex・Crossref・Semantic Scholarには抄録が登録されていませんでしたが、ミネソタ大学の研究者プロフィールページ（Experts@Minnesota）に転載された抄録本文を確認できたため、抄録ベースで採用しています。",
+      "picked": [
+        {
+          "id": "arxiv:2608.13424",
+          "title": "Modern aerodynamics models do not capture important unsteady forces–the failure of the quasi-steady approximation（Malarczyk & Hultmark, 2026）",
+          "why": "「迎え角の変化が十分ゆっくりなら、瞬間の迎え角だけで空気力が決まる」という準定常近似は、工学の現場でk<0.05なら妥当とされてきました。この研究は、プリンストン大学の最大240 bar加圧風洞を使い、実機の風力タービン相当のレイノルズ数を保ったまま、その目安の50分の1という極端に低い周波数（k=0.001）まで試験し、どの周波数でも準定常近似が成り立たないことを示しています。CC BY 4.0のオープンアクセスで全文・図とも入手できたため、実験装置や結果を章立てで詳しく作り込みました。"
+        },
+        {
+          "id": "doi:10.1016/j.energy.2022.124532",
+          "title": "Energy loss mechanism due to tip leakage flow of axial flow pump as turbine under various operating conditions（Kan et al., 2022）",
+          "why": "小規模水力発電に使われるポンプ逆転水車(PAT)で、羽根先端のすきまを抜けるチップ漏れ流れがエネルギー損失をどう生むかを、エントロピー生成法で調べた研究です。渦度輸送方程式を項ごとに見ると、漏れ渦が空間的に発達していく過程を支配しているのは「渦伸張項」だったという指摘が読みどころです。本文は取得できなかったため、抄録の範囲内で誠実にまとめています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの・工夫したこと",
+          "note": "最新枠では、翼型まわりの流れ場を学習するニューラルオペレータ代理モデル（DD-RNO）、圧縮性Navier–Stokes–Fourier方程式向けの格子ボルツマン法ソルバー、遷移的な翼型まわりの間欠的渦合体とドラッグの関係を調べたDNS研究、ドラッグ低減ディンプル形状のベイズ最適化、二峰性海象での波力推進の流体構造連成解析などを検討しましたが、いずれもML・数値手法・最適化そのものが主役、または一般的な航空力学寄りでターボ機械の流れ現象からやや外れるため見送りました。前述のASME論文（Kaltofen et al., ブレード枚数削減とチップクリアランスの関係）はCC-BYライセンスで理想的な候補でしたが、出版社サイトのボット検知（403）で本文にアクセスできず、投稿から日が浅くミラーも無かったため今回は見送っています。定番枠では、プラズマアクチュエータのレビュー（Corke, Post & Orlov 2008、被引用371件）が、OpenAlex・Crossref・Semantic Scholarのいずれにも抄録データが登録されておらず、ScienceDirectのリダイレクト先も本文へのアクセスを許さなかったため、抄録すら確認できずに断念しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 16,
+            "note": "最新枠16件(OA11/抄録5)。ML・数値手法・最適化が主役の候補が中心。翼端クリアランス関連のASME OA論文とarXivの非定常空気力学論文が有力候補として残り、本文アクセス可否で後者を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA2/抄録12)。上位のほとんどが既配信済み。新規候補はCorke et al. 2008（抄録取得不可のため断念）とKan et al. 2022（大学プロフィールページで抄録を確認し採用）の2件のみだった。"
+          },
+          {
+            "name": "ASME Digital Collection / Unpaywall（最新枠・本文アクセス調査）",
+            "scope": "doi:10.1115/1.4072543（Kaltofen et al., CC-BYと確認）の本文所在確認",
+            "terms": [
+              "WebFetch",
+              "curl",
+              "Unpaywall API"
+            ],
+            "hits": 0,
+            "note": "OpenAlex/UnpaywallともにCC-BYのOAと表示されたが、出版社サイトがWebFetch・curlのいずれにも403 Forbiddenを返し本文取得不可。UnpaywallのPDF直リンクも存在せず、2026年8月13日投稿とごく新しいためミラーも見つからず断念。"
+          },
+          {
+            "name": "Experts@Minnesota（定番枠・抄録所在確認）",
+            "scope": "doi:10.1016/j.energy.2022.124532（Kan et al. 2022）の抄録確認",
+            "terms": [
+              "university research-profile mirror"
+            ],
+            "hits": 1,
+            "note": "OpenAlex・Crossref・Semantic Scholarのいずれも抄録データを持たなかったが、ミネソタ大学の研究者プロフィールページに論文の抄録全文が転載されており、そこから抄録を確認できた。"
+          }
+        ],
+        "note": "忠実性チェック（各論文最大2ラウンド）は、Malarczyk & Hultmark論文（OA全文）で1ラウンド目に高深刻度4件（動的試験ケース数の誤り「8→7」、試行回数の誤り「12〜22→8〜22」、加圧のメリットの因果関係の取り違え、図の傾向記述の反転）を検出、修正のうえ2ラウンド目でverdict:okを確認。Kan et al.論文（抄録ベース）は1ラウンド目に被引用数フィールドの自己矛盾や、抄録にない因果・手法の踏み込みなど中程度の指摘を検出、修正のうえ2ラウンド目で残った軽微な言い回し（「寄与が増加」→「散逸が増加」等）を著者側で直接調整して収束させた。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、風力タービンの翼が受ける空気力の話です。「風の変化がゆっくりなら、そのときどきの角度だけで空気力が決まる」という考え方（準定常近似）は、直感的にもっともらしく思えます。ところがこの研究では、普段「十分ゆっくり」とみなされる基準よりさらに50倍も遅い動かし方をしても、揚力のピークが上がったり失速が遅れたりする「非定常」な振る舞いが消えなかったそうです。ゆっくり動かせば動かすほど定常に近づくはず、という素朴な直感が、実験だと簡単には成り立たないんだなと感じました。あと、実機並みの高いレイノルズ数を出すのに風速を上げるのではなく空気を圧縮する（圧力を上げる）という発想も新鮮でした。狭い風洞でも密度を稼げば同じ土俵に立てる、という工夫のしかたが面白かったです。"
     }
   ]
 }
