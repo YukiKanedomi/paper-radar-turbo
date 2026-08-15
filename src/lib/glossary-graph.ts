@@ -275,6 +275,8 @@ export const CATEGORIES: GraphCategory[] = [
       "圧力勾配パラメータβ (Clauser parameter)",
       "漏れジェットの前方吹き出し (forward spillage)",
       "スパンワイズ壁面強制",
+      "後縁剥離 (trailing edge separation)",
+      "ブレードグルーブ (blade groove)",
     ],
   },
   {
@@ -345,6 +347,9 @@ export const CATEGORIES: GraphCategory[] = [
       "フェザリング (feathering)",
       "後流減衰 (wake decay)",
       "水平軸風車 (HAWT, horizontal axis wind turbine)",
+      "アクチュエータライン (actuator line)",
+      "翼端渦 (tip vortex)",
+      "根元渦 (root vortex)",
     ],
   },
   {
@@ -718,6 +723,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "翼端漏れ渦", to: "渦度輸送方程式 (vorticity transport equation)", label: "空間的な発達を記述" },
   { from: "渦度輸送方程式 (vorticity transport equation)", to: "渦伸張項 (vortex stretching term)", label: "発達の支配項として同定" },
   { from: "水平軸風車 (HAWT, horizontal axis wind turbine)", to: "後流（ウェイク）", label: "後流を生む対象" },
+  // --- ブレードグルーブによるコーナー剥離・後縁剥離の同時制御（Yao et al. 2026） ---
+  { from: "ブレードグルーブ (blade groove)", to: "コーナー剥離", label: "溝ジェットで抑制" },
+  { from: "ブレードグルーブ (blade groove)", to: "後縁剥離 (trailing edge separation)", label: "配置次第で抑制/悪化" },
+  { from: "コーナー剥離", to: "後縁剥離 (trailing edge separation)", label: "抑制で逆圧力勾配増→悪化しうる" },
+  // --- 風車後流LESにおけるアクチュエータライン／ディスクモデルの比較（Martínez-Tossas et al. 2014） ---
+  { from: "アクチュエータライン (actuator line)", to: "アクチュエータディスク", label: "比較対象のロータ表現モデル" },
+  { from: "アクチュエータライン (actuator line)", to: "翼端渦 (tip vortex)", label: "翼近傍で生成できる" },
+  { from: "翼端渦 (tip vortex)", to: "根元渦 (root vortex)", label: "ともに翼近傍の後流構造" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
