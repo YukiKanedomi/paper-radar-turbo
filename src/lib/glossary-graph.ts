@@ -74,6 +74,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ディフューザ回転失速 (DRS)",
       "圧力上昇特性の勾配 (characteristic slope)",
       "剥離トポロジー (separation topology)",
+      "ケルビン・ヘルムホルツ不安定性 (Kelvin–Helmholtz instability)",
     ],
   },
   {
@@ -118,6 +119,9 @@ export const CATEGORIES: GraphCategory[] = [
       "損失遅れ (loss lag)",
       "渦度輸送方程式 (vorticity transport equation)",
       "渦伸張項 (vortex stretching term)",
+      "一次渦 (primary vortex, PV)",
+      "二次渦度 (secondary vorticity, SV)",
+      "渦合体 (vortex merging)",
     ],
   },
   {
@@ -731,6 +735,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "アクチュエータライン (actuator line)", to: "アクチュエータディスク", label: "比較対象のロータ表現モデル" },
   { from: "アクチュエータライン (actuator line)", to: "翼端渦 (tip vortex)", label: "翼近傍で生成できる" },
   { from: "翼端渦 (tip vortex)", to: "根元渦 (root vortex)", label: "ともに翼近傍の後流構造" },
+  // --- 翼型遷移流れにおける渦合体と抗力急増（Gautam & Prasad 2026） ---
+  { from: "ケルビン・ヘルムホルツ不安定性 (Kelvin–Helmholtz instability)", to: "せん断層", label: "巻き上がりを駆動" },
+  { from: "せん断層", to: "一次渦 (primary vortex, PV)", label: "巻き上がって形成" },
+  { from: "一次渦 (primary vortex, PV)", to: "二次渦度 (secondary vorticity, SV)", label: "壁面に逆符号の渦度層を誘起" },
+  { from: "二次渦度 (secondary vorticity, SV)", to: "一次渦 (primary vortex, PV)", label: "噴出してせん断層から切り離す" },
+  { from: "一次渦 (primary vortex, PV)", to: "渦合体 (vortex merging)", label: "接近した複数個が後縁近傍で合体" },
+  { from: "渦合体 (vortex merging)", to: "後縁剥離 (trailing edge separation)", label: "合体域が後縁の吸引ピークと重なる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
