@@ -218,6 +218,8 @@ export const CATEGORIES: GraphCategory[] = [
       "遅延周期境界条件 (lagged periodic boundary condition)",
       "パレート最適解 (Pareto front)",
       "一方向カップリング (one-way coupling)",
+      "レイリー後方散乱ひずみセンシング (RBS)",
+      "相互相関関数 (cross-correlation function)",
     ],
   },
   {
@@ -354,6 +356,7 @@ export const CATEGORIES: GraphCategory[] = [
       "アクチュエータライン (actuator line)",
       "翼端渦 (tip vortex)",
       "根元渦 (root vortex)",
+      "自由流乱流強度 (free-stream turbulence, FST)",
     ],
   },
   {
@@ -368,6 +371,7 @@ export const CATEGORIES: GraphCategory[] = [
       "コヒーレント構造",
       "四象限解析",
       "ストークスひずみ速度 (SSR)",
+      "渦対形成 (vortex pairing)",
     ],
   },
 ];
@@ -742,6 +746,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "二次渦度 (secondary vorticity, SV)", to: "一次渦 (primary vortex, PV)", label: "噴出してせん断層から切り離す" },
   { from: "一次渦 (primary vortex, PV)", to: "渦合体 (vortex merging)", label: "接近した複数個が後縁近傍で合体" },
   { from: "渦合体 (vortex merging)", to: "後縁剥離 (trailing edge separation)", label: "合体域が後縁の吸引ピークと重なる" },
+  // --- 模型風車の翼-後流結合の相互相関解析（de Oliveira et al. 2026） ---
+  { from: "レイリー後方散乱ひずみセンシング (RBS)", to: "相互相関関数 (cross-correlation function)", label: "後流計測と組み合わせ結合を解析" },
+  { from: "先端速度比（tip speed ratio, λ）", to: "自由流乱流強度 (free-stream turbulence, FST)", label: "運転条件を特徴づける独立因子" },
+  { from: "せん断層", to: "コヒーレント構造", label: "翼端渦などが局在" },
+  // --- 渦を伴うキャビテーションのレビュー（Arndt 2002） ---
+  { from: "渦度 (vorticity)", to: "キャビテーション", label: "渦芯の低圧で誘発" },
+  { from: "キャビテーション", to: "渦度 (vorticity)", label: "渦度生成の機構にもなりうる" },
+  { from: "渦対形成 (vortex pairing)", to: "キャビテーション", label: "噴流中での発生機構" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
