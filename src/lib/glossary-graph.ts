@@ -145,6 +145,9 @@ export const CATEGORIES: GraphCategory[] = [
       "レイノルズ数",
       "臨界レイノルズ数",
       "摩擦レイノルズ数 (Re_τ)",
+      "マッハ数 (Mach number)",
+      "圧縮性影響 (compressibility effects)",
+      "圧力係数 Cp (pressure coefficient)",
       "乱流強度",
       "ロータ・ステータ干渉",
       "軸方向間隙",
@@ -312,6 +315,9 @@ export const CATEGORIES: GraphCategory[] = [
       "対流熱伝達係数",
       "フィルム冷却",
       "内部冷却",
+      "感温液晶 (thermochromic liquid crystal, TLC)",
+      "ジェットインピンジメント冷却",
+      "リブ乱流促進材",
       "吹き出し比 (blowing ratio)",
       "シェイプドフィルム孔 (shaped film hole)",
       "断熱膜冷却効率 (adiabatic film effectiveness)",
@@ -754,6 +760,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "渦度 (vorticity)", to: "キャビテーション", label: "渦芯の低圧で誘発" },
   { from: "キャビテーション", to: "渦度 (vorticity)", label: "渦度生成の機構にもなりうる" },
   { from: "渦対形成 (vortex pairing)", to: "キャビテーション", label: "噴流中での発生機構" },
+  // --- 貨物機後部胴体まわりの圧縮性ウェイク遷移・ヒステリシス（Prasad et al. 2026） ---
+  { from: "マッハ数 (Mach number)", to: "圧縮性影響 (compressibility effects)", label: "支配パラメータ" },
+  { from: "圧縮性影響 (compressibility effects)", to: "再循環（リサーキュレーション）", label: "マッハ数増加で再循環域を拡大" },
+  { from: "圧縮性影響 (compressibility effects)", to: "分離ヒステリシス (separation hysteresis)", label: "マッハ数の履歴だけで誘発" },
+  // --- ガスタービン伝熱計測のための過渡感温液晶法（Ekkad & Han 2000） ---
+  { from: "感温液晶 (thermochromic liquid crystal, TLC)", to: "対流熱伝達係数", label: "変色時刻から算出" },
+  { from: "ジェットインピンジメント冷却", to: "内部冷却", label: "一手法" },
+  { from: "リブ乱流促進材", to: "内部冷却", label: "乱流促進で熱伝達を強化" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
