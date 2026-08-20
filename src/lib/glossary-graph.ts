@@ -286,6 +286,7 @@ export const CATEGORIES: GraphCategory[] = [
       "スパンワイズ壁面強制",
       "後縁剥離 (trailing edge separation)",
       "ブレードグルーブ (blade groove)",
+      "境界層吸込み制御 (boundary layer suction control)",
     ],
   },
   {
@@ -363,6 +364,8 @@ export const CATEGORIES: GraphCategory[] = [
       "翼端渦 (tip vortex)",
       "根元渦 (root vortex)",
       "自由流乱流強度 (free-stream turbulence, FST)",
+      "疲労荷重 (fatigue loading)",
+      "レインフロー計数法 (rainflow counting)",
     ],
   },
   {
@@ -768,6 +771,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "感温液晶 (thermochromic liquid crystal, TLC)", to: "対流熱伝達係数", label: "変色時刻から算出" },
   { from: "ジェットインピンジメント冷却", to: "内部冷却", label: "一手法" },
   { from: "リブ乱流促進材", to: "内部冷却", label: "乱流促進で熱伝達を強化" },
+  // --- 風車後流の部分重なりと羽根の疲労関連荷重（de Oliveira et al. 2026） ---
+  { from: "後流（ウェイク）", to: "疲労荷重 (fatigue loading)", label: "部分後流で荷重変動を誘起" },
+  { from: "レインフロー計数法 (rainflow counting)", to: "疲労荷重 (fatigue loading)", label: "サイクル計数で評価" },
+  // --- 境界層吸込みによる圧縮機コーナー剥離の制御（Gbadebo, Cumpsty & Hynes 2007） ---
+  { from: "境界層吸込み制御 (boundary layer suction control)", to: "ハブコーナー剥離", label: "吸込みで抑制" },
+  { from: "境界層吸込み制御 (boundary layer suction control)", to: "コーナー剥離", label: "吸込みで抑制" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
