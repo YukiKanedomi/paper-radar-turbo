@@ -75,6 +75,7 @@ export const CATEGORIES: GraphCategory[] = [
       "圧力上昇特性の勾配 (characteristic slope)",
       "剥離トポロジー (separation topology)",
       "ケルビン・ヘルムホルツ不安定性 (Kelvin–Helmholtz instability)",
+      "失速・脱失速ヒステリシス (stall/unstall hysteresis)",
     ],
   },
   {
@@ -122,6 +123,7 @@ export const CATEGORIES: GraphCategory[] = [
       "一次渦 (primary vortex, PV)",
       "二次渦度 (secondary vorticity, SV)",
       "渦合体 (vortex merging)",
+      "マッハディスク (Mach disk)",
     ],
   },
   {
@@ -178,6 +180,8 @@ export const CATEGORIES: GraphCategory[] = [
       "ポンプ逆転水車 (PAT)",
       "ドラフトチューブ",
       "斜流ポンプ (mixed-flow pump)",
+      "ノズル圧力比 (NPR, nozzle pressure ratio)",
+      "共流 (coflow)",
     ],
   },
   {
@@ -223,6 +227,8 @@ export const CATEGORIES: GraphCategory[] = [
       "一方向カップリング (one-way coupling)",
       "レイリー後方散乱ひずみセンシング (RBS)",
       "相互相関関数 (cross-correlation function)",
+      "特性曲線法 (method of characteristics, MOC)",
+      "線形安定性解析 (linearized stability analysis)",
     ],
   },
   {
@@ -777,6 +783,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 境界層吸込みによる圧縮機コーナー剥離の制御（Gbadebo, Cumpsty & Hynes 2007） ---
   { from: "境界層吸込み制御 (boundary layer suction control)", to: "ハブコーナー剥離", label: "吸込みで抑制" },
   { from: "境界層吸込み制御 (boundary layer suction control)", to: "コーナー剥離", label: "吸込みで抑制" },
+  // --- 共流を伴う低膨張噴流のマッハディスク形成（Dhungana, Satyal & Sharan 2026） ---
+  { from: "共流 (coflow)", to: "マッハディスク (Mach disk)", label: "強いほど縮小・消失させる" },
+  { from: "ノズル圧力比 (NPR, nozzle pressure ratio)", to: "マッハディスク (Mach disk)", label: "大きいほど出現" },
+  { from: "特性曲線法 (method of characteristics, MOC)", to: "マッハディスク (Mach disk)", label: "非粘性機構を検証" },
+  // --- 軸流圧縮機の失速現象レビュー（Greitzer 1980） ---
+  { from: "失速・脱失速ヒステリシス (stall/unstall hysteresis)", to: "回転失速", label: "回転失速中の性能に現れる" },
+  { from: "線形安定性解析 (linearized stability analysis)", to: "回転失速の前駆現象", label: "予測手法の一つ" },
+  { from: "吸気歪み (inlet distortion)", to: "失速余裕", label: "低下させる要因" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
