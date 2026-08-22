@@ -76,6 +76,8 @@ export const CATEGORIES: GraphCategory[] = [
       "剥離トポロジー (separation topology)",
       "ケルビン・ヘルムホルツ不安定性 (Kelvin–Helmholtz instability)",
       "失速・脱失速ヒステリシス (stall/unstall hysteresis)",
+      "軸力 (axial force)",
+      "渦ロープ (vortex rope)",
     ],
   },
   {
@@ -124,6 +126,7 @@ export const CATEGORIES: GraphCategory[] = [
       "二次渦度 (secondary vorticity, SV)",
       "渦合体 (vortex merging)",
       "マッハディスク (Mach disk)",
+      "通路渦 (passage vortex, PV)",
     ],
   },
   {
@@ -182,6 +185,8 @@ export const CATEGORIES: GraphCategory[] = [
       "斜流ポンプ (mixed-flow pump)",
       "ノズル圧力比 (NPR, nozzle pressure ratio)",
       "共流 (coflow)",
+      "多段遠心ポンプ (multi-stage centrifugal pump)",
+      "フランシス水車 (Francis turbine)",
     ],
   },
   {
@@ -229,6 +234,8 @@ export const CATEGORIES: GraphCategory[] = [
       "相互相関関数 (cross-correlation function)",
       "特性曲線法 (method of characteristics, MOC)",
       "線形安定性解析 (linearized stability analysis)",
+      "Ω基準 (Omega criterion)",
+      "ヒル図 (Hill diagram)",
     ],
   },
   {
@@ -791,6 +798,20 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "失速・脱失速ヒステリシス (stall/unstall hysteresis)", to: "回転失速", label: "回転失速中の性能に現れる" },
   { from: "線形安定性解析 (linearized stability analysis)", to: "回転失速の前駆現象", label: "予測手法の一つ" },
   { from: "吸気歪み (inlet distortion)", to: "失速余裕", label: "低下させる要因" },
+  // --- 13段遠心ポンプのエントロピー生成・渦構造・振動の多角的解析（Sun, Tong, Wang, Dong, Zhang & Zhao 2026） ---
+  { from: "多段遠心ポンプ (multi-stage centrifugal pump)", to: "遠心ポンプ", label: "多段連結した一種" },
+  { from: "多段遠心ポンプ (multi-stage centrifugal pump)", to: "エントロピー生成", label: "段ごとの損失を評価" },
+  { from: "Ω基準 (Omega criterion)", to: "Q基準 (Q-criterion)", label: "同系統の渦識別手法" },
+  { from: "Ω基準 (Omega criterion)", to: "通路渦 (passage vortex, PV)", label: "識別に使用" },
+  { from: "通路渦 (passage vortex, PV)", to: "エントロピー生成", label: "乱流損失の一因" },
+  { from: "軸力 (axial force)", to: "多段遠心ポンプ (multi-stage centrifugal pump)", label: "段数増加で非線形に増大" },
+  { from: "軸力 (axial force)", to: "ブレード通過周波数 (blade passing frequency)", label: "変動の主成分" },
+  { from: "流体構造連成 (FSI, fluid-structure interaction)", to: "一方向カップリング (one-way coupling)", label: "簡略化した実装形態" },
+  // --- 高落差フランシス水車の実験・数値研究（Trivedi, Cervantes, Gandhi & Dahlhaug 2013） ---
+  { from: "フランシス水車 (Francis turbine)", to: "ロータ・ステータ干渉", label: "案内羽根とランナーの間で発生" },
+  { from: "フランシス水車 (Francis turbine)", to: "渦ロープ (vortex rope)", label: "ドラフトチューブ内に発生" },
+  { from: "渦ロープ (vortex rope)", to: "最高効率点（BEP）", label: "BEPから外れると発生" },
+  { from: "ヒル図 (Hill diagram)", to: "性能特性（特性曲線）", label: "運転範囲全体をまとめた地図" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
