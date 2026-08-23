@@ -78,6 +78,9 @@ export const CATEGORIES: GraphCategory[] = [
       "失速・脱失速ヒステリシス (stall/unstall hysteresis)",
       "軸力 (axial force)",
       "渦ロープ (vortex rope)",
+      "負荷遮断 (load rejection)",
+      "固有振動数 (natural frequency)",
+      "短波長擾乱 (short length-scale disturbance)",
     ],
   },
   {
@@ -187,6 +190,8 @@ export const CATEGORIES: GraphCategory[] = [
       "共流 (coflow)",
       "多段遠心ポンプ (multi-stage centrifugal pump)",
       "フランシス水車 (Francis turbine)",
+      "ポンプ水車 (pump-turbine)",
+      "クリアランス流れ (interstitial/clearance flow)",
     ],
   },
   {
@@ -812,6 +817,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "フランシス水車 (Francis turbine)", to: "渦ロープ (vortex rope)", label: "ドラフトチューブ内に発生" },
   { from: "渦ロープ (vortex rope)", to: "最高効率点（BEP）", label: "BEPから外れると発生" },
   { from: "ヒル図 (Hill diagram)", to: "性能特性（特性曲線）", label: "運転範囲全体をまとめた地図" },
+  // --- ポンプ水車の隙間渦発展と振動励起特性（Zhang, Li & Chen 2026） ---
+  { from: "ポンプ水車 (pump-turbine)", to: "クリアランス流れ (interstitial/clearance flow)", label: "ランナ周囲に形成" },
+  { from: "負荷遮断 (load rejection)", to: "クリアランス流れ (interstitial/clearance flow)", label: "急加速で不安定化させる" },
+  { from: "クリアランス流れ (interstitial/clearance flow)", to: "せん断層", label: "強いせん断層を生成" },
+  { from: "Q基準 (Q-criterion)", to: "クリアランス流れ (interstitial/clearance flow)", label: "渦コアを可視化" },
+  { from: "固有振動数 (natural frequency)", to: "圧力脈動 (pressure pulsation)", label: "周波数が一致すると共振" },
+  // --- 軸流圧縮機の失速開始過程（Day 1993） ---
+  { from: "短波長擾乱 (short length-scale disturbance)", to: "回転失速の前駆現象", label: "一型（重要性を発見）" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
