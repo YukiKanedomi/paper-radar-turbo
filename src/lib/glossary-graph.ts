@@ -241,6 +241,9 @@ export const CATEGORIES: GraphCategory[] = [
       "線形安定性解析 (linearized stability analysis)",
       "Ω基準 (Omega criterion)",
       "ヒル図 (Hill diagram)",
+      "翼素運動量法",
+      "渦法",
+      "パネル法",
     ],
   },
   {
@@ -399,6 +402,10 @@ export const CATEGORIES: GraphCategory[] = [
       "四象限解析",
       "ストークスひずみ速度 (SSR)",
       "渦対形成 (vortex pairing)",
+      "ランダム掃引仮説",
+      "Kolmogorov則",
+      "対流速度",
+      "パワースペクトル密度",
     ],
   },
 ];
@@ -825,6 +832,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "固有振動数 (natural frequency)", to: "圧力脈動 (pressure pulsation)", label: "周波数が一致すると共振" },
   // --- 軸流圧縮機の失速開始過程（Day 1993） ---
   { from: "短波長擾乱 (short length-scale disturbance)", to: "回転失速の前駆現象", label: "一型（重要性を発見）" },
+  // --- 風力発電所を乱流境界層のセンサアレイとして使う（Ayala, Gayme & Meneveau 2026） ---
+  { from: "乱流境界層", to: "対流速度", label: "内部の変動を下流へ運ぶ" },
+  { from: "対流速度", to: "パワースペクトル密度", label: "移流ピーク周波数を決める" },
+  { from: "ランダム掃引仮説", to: "パワースペクトル密度", label: "周波数分布の広がりを規定" },
+  { from: "Kolmogorov則", to: "パワースペクトル密度", label: "慣性領域の形を規定" },
+  // --- 風車の空力学と空力弾性のレビュー（Hansen et al. 2006） ---
+  { from: "翼素運動量法", to: "渦法", label: "より精密なモデルへ" },
+  { from: "渦法", to: "パネル法", label: "同程度の複雑さの別アプローチ" },
+  { from: "翼素運動量法", to: "CFD", label: "複雑さの階梯の両端" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
