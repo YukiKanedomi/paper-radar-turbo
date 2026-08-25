@@ -81,6 +81,7 @@ export const CATEGORIES: GraphCategory[] = [
       "負荷遮断 (load rejection)",
       "固有振動数 (natural frequency)",
       "短波長擾乱 (short length-scale disturbance)",
+      "不安定点 (instability point)",
     ],
   },
   {
@@ -192,6 +193,8 @@ export const CATEGORIES: GraphCategory[] = [
       "フランシス水車 (Francis turbine)",
       "ポンプ水車 (pump-turbine)",
       "クリアランス流れ (interstitial/clearance flow)",
+      "翼列間の間隙 (inter-blade row gap)",
+      "スクロール (scroll)",
     ],
   },
   {
@@ -266,6 +269,7 @@ export const CATEGORIES: GraphCategory[] = [
       "非線形オイラー方程式 (nonlinear Euler equations)",
       "基準直径 (reference diameter)",
       "損失相関式 (loss correlation)",
+      "静圧効率 (static pressure efficiency)",
     ],
   },
   {
@@ -323,6 +327,7 @@ export const CATEGORIES: GraphCategory[] = [
       "エンドウォール輪郭",
       "径方向流れ再配分",
       "移動端壁 (moving endwall)",
+      "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)",
     ],
   },
   {
@@ -841,6 +846,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "翼素運動量法", to: "渦法", label: "より精密なモデルへ" },
   { from: "渦法", to: "パネル法", label: "同程度の複雑さの別アプローチ" },
   { from: "翼素運動量法", to: "CFD", label: "複雑さの階梯の両端" },
+  // --- 短波長失速開始の計算モデル（Gong, Tan, Gordon & Greitzer 1999） ---
+  { from: "短波長擾乱 (short length-scale disturbance)", to: "不安定点 (instability point)", label: "局所構成要素グループごとに持続条件を持つ" },
+  { from: "翼列間の間隙 (inter-blade row gap)", to: "短波長擾乱 (short length-scale disturbance)", label: "狭めると成長を抑制" },
+  { from: "不安定点 (instability point)", to: "回転失速の前駆現象", label: "最も不安定なグループが全体を規定" },
+  // --- 遠心圧縮機ディフューザの非軸対称エンドウォール最適化（Yuan, Li, Zhu, Hao, Xu, Zhu & Fu 2026） ---
+  { from: "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)", to: "コーナー剥離", label: "静圧分布を調整し抑制" },
+  { from: "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)", to: "二次流れ", label: "横方向圧力勾配を弱め移動を抑制" },
+  { from: "スクロール (scroll)", to: "ボリュートケーシング", label: "遠心圧縮機における同種の部品（一般知識）" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -3867,6 +3867,86 @@
         "note": "忠実性チェック（各論文最大2ラウンド、Opus使用）は、風力発電所論文(OA全文)で1ラウンド目に高深刻度1件（図の解説文が出典にない解釈を主張、しかも図の見た目とも逆の可能性）を含む計11件を検出して修正、2ラウンド目にも低深刻度6件（式の機構説明の細部、レイアウト比較の過剰一般化、節の帰属など）が残ったため、確定済みの修正として反映した。空力レビュー論文(抄録ベース)は1ラウンド目に高深刻度1件（概念図が抄録にない精度・コストの優劣を出典へ誤帰属）を含む計9件を検出して修正、2ラウンド目にも中深刻度1件（被引用数の表示ロジックの見落とし）・低深刻度3件が残ったため、citationCountを概数(700)に丸めるなどの機械的修正で仕上げた。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、たくさんの風車が並ぶ風力発電所を、まるごと「流れを測るセンサの配列」として捉え直す発想でした。1基1基の出力の揺れを見るだけでなく、発電所全体の出力を集めてスペクトル分析すると、タービンの列と列の間を風がゆっくり移動していく効果と、羽根が回転すること自体の効果という、由来のまったく違う2種類の揺れが同時に見えてくるという話が印象的でした。てっきり出力の変動は「風が強い・弱い」くらいの単純な話だと思っていたのですが、規則正しく並んだタービンの配置そのものが、乱流という捉えどころのない現象を測る道具になり得るという視点の転換に、今回いちばん「へえ」と思わされました。"
+    },
+    {
+      "date": "2026-08-26",
+      "status": "published",
+      "headline": "遠心圧縮機ディフューザのコーナー剥離を、非軸対称エンドウォールをわずか8個のパラメータだけで整形して抑え込んだ最新研究(Yuan, Li, Zhu, Hao, Xu, Zhu & Fu 2026, Journal of Applied Fluid Mechanics, OA・全文あり)と、羽根ピッチ数枚分の「短波長擾乱(スパイク)」による回転失速の開始・発達を、多段圧縮機向けに再現した計算モデルの定番研究(Gong, Tan, Gordon & Greitzer 1999, Journal of Turbomachinery, 抄録ベース)",
+      "intro": "本日の検索語は、最新枠6語（衝撃波・境界層干渉／後流混合の非定常性／境界層遷移・タービン翼／コーナー剥離・圧縮機／翼フラッタ・空力弾性／超臨界CO2ターボ機械）、定番枠8語（ターボ機械の損失機構＋最新枠と同じ6語＋風車後流空力）でした。最新枠24件(OA17/抄録7)・定番枠14件(OA6/抄録8)が取れましたが、定番枠の上位14件は1件（DBDプラズマ空力制御レビュー、抄録取得不可）を除いてすべて既配信済みでした。そこで本日ローテーションで使わなかったキーワード（遠心圧縮機空力・軸流圧縮機空力・回転失速のスパイク型前駆現象・翼端漏れ渦損失など）で定番枠を追加検索したところ、Day(1993)の短波長擾乱発見の直後に出た計算モデル論文（Gong et al. 1999、既配信のDay 1993・Hoying et al. 1999と同系譜）が見つかり、これを定番枠として採用しました。最新枠は、遠心圧縮機ディフューザのエンドウォールを非軸対称に整形してコーナー剥離を抑える最新研究（JAFM、CC BY-NC-ND・全文あり）を採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.10.4519",
+          "title": "Non-axisymmetric Profiled End Wall and Suction Surface Optimization Design of Vaned Diffuser in a Centrifugal Compressor（Yuan, Li, Zhu, Hao, Xu, Zhu & Fu, 2026）",
+          "why": "遠心圧縮機の翼付きディフューザに対し、エンドウォールと吸込面の形状をわずか8個のパラメータ（従来は20〜30個以上）だけで非軸対称にプロファイリングする手法を提案し、CFDとAIサロゲート＋遺伝的アルゴリズムによる最適化で、コーナー剥離抑制を通じた効率改善（設計点で+0.4%）を実証した研究です。忠実性チェックの1ラウンド目で、PDFの数式レイアウト崩れにより確信を持てない式の掲載や、比較実験の条件の見落としなど計17件の指摘（うち高深刻度1件）が見つかり、式の掲載を見送るなどして修正、2ラウンド目で低深刻度の指摘のみとなり確定しました。"
+        },
+        {
+          "id": "doi:10.1115/1.2836726",
+          "title": "A Computational Model for Short-Wavelength Stall Inception and Development in Multistage Compressors（Gong, Tan, Gordon & Greitzer, 1999）",
+          "why": "回転失速の前触れには、圧縮機全周に及ぶ「モード波型」と、羽根ピッチ数枚分という局所的な「短波長擾乱（スパイク）」の2種類があることが知られていますが、本論文は後者による失速開始・発達を多段圧縮機向けに再現する計算モデルを提示した定番研究です。動翼列とその隣接静翼列からなる局所的な「構成要素グループ」ごとに固有の不安定条件を持ち、最も不安定なグループが圧縮機全体の挙動を決める、という考え方が特徴的です。忠実性チェックの1ラウンド目で、抄録に無い断定表現（『初めて』『だけで』等）や間隙の方向の過剰特定など計10件の指摘が見つかり修正、2ラウンド目でverdict okとなりました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送ったもの・工夫したこと",
+          "note": "定番枠の本日ローテーション候補14件のうち13件が既配信済みで、唯一の新規候補（Corke et al. 2008のDBDプラズマ空力制御レビュー）は抄録が非公開のため見送りました。最新枠のarXiv上位候補は、音響流体・レイリー・ベナール対流・渦の変分原理などターボ機械と無関係な流体力学の基礎論文が大半でした。ターボ機械寄りの候補（遷音速圧縮機の失速近傍流れ・チップ渦の自励振動・ロータ回転ダクトの二次流れトポロジー変化など）はいずれも抄録すら取得できないか非OAで、最終的にJAFMのOA論文を採用しました。定番枠は既配信の壁にぶつかったため、日替わりローテーション外のキーワードで追加検索するという普段と違う進め方を取りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex新着（最新枠・本日ローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 24,
+            "note": "24件(OA17/抄録7)。arXiv上位はターボ機械と無関係な流体力学基礎論文が大半で、圧縮機・タービン関連のOpenAlex候補から採用論文を選んだ。"
+          },
+          {
+            "name": "OpenAlex被引用上位（定番枠・本日ローテーション）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics"
+            ],
+            "hits": 14,
+            "note": "14件(OA6/抄録8)。上位14件中13件が既配信済みで、新規候補はDBDプラズマレビュー（抄録非公開）のみだった。"
+          },
+          {
+            "name": "OpenAlex被引用上位（定番枠・ローテーション外の追加検索）",
+            "scope": "被引用数の多い順。本日使わなかったキーワードで補助的に実施",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 20,
+            "note": "既配信・分野ノイズ（医学論文等）を除いた新規候補20件から、Gong et al.(1999)の短波長失速計算モデルを採用した。"
+          }
+        ],
+        "note": "忠実性チェック（各論文最大2ラウンド、Opus使用）は、ディフューザ論文(OA全文)で1ラウンド目に高深刻度1件（PDFの数式レイアウト崩れで確信できない式の掲載）を含む計17件を検出して修正、2ラウンド目は低深刻度7件のみでverdict okに。短波長失速論文(抄録ベース)は1ラウンド目に中深刻度中心の計10件（断定表現・間隙の方向の過剰特定など）を検出して修正、2ラウンド目でverdict okとなった。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、短波長失速の計算モデル論文が示す「部品ごとに崩れやすさが違い、いちばん弱い部品が全体を決める」という考え方でした。圧縮機全体で1つの『失速しやすさ』を考えるのではなく、羽根の列とその隣の静翼という組ごとに『乱れが居座ってしまう条件』を別々に見て、いちばん不安定な組が全体の運命を決めてしまう、という発想です。言われてみれば橋やチェーンの強度も「いちばん弱い環」で決まると聞いたことがありますが、圧縮機の中の流れの乱れにも同じ理屈が働くというのは新鮮でした。もう一本のディフューザ論文も、パラメータをたった8個に絞り込んだ工夫が印象的で、「複雑な形を自由に変えられるようにする」ことと「扱いやすい数の変数で表す」ことのバランスの取り方を考えさせられました。"
     }
   ]
 }
