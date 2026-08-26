@@ -35,6 +35,8 @@ export const CATEGORIES: GraphCategory[] = [
       "入口リサーキュレーション (inlet recirculation)",
       "プリスワール (preswirl)",
       "予旋回角 (pre-rotation angle)",
+      "予旋回強度 (pre-swirl intensity)",
+      "サドルゾーン (saddle zone)",
       "失速余裕",
       "渦崩壊 (vortex breakdown)",
       "逆流（backflow）",
@@ -471,6 +473,11 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "予旋回角 (pre-rotation angle)", to: "プリスワール (preswirl)", label: "類概念" },
   { from: "予旋回角 (pre-rotation angle)", to: "入射角", label: "変化させる" },
   { from: "予旋回角 (pre-rotation angle)", to: "スパイク型回転失速", label: "周方向の漸増域で誘発" },
+  // --- 軸流ポンプの予旋回とIGV設定角（Nguyen et al. 2023） ---
+  { from: "予旋回強度 (pre-swirl intensity)", to: "プリスワール (preswirl)", label: "類概念" },
+  { from: "予旋回強度 (pre-swirl intensity)", to: "案内羽根", label: "強まるほどIGV流路損失が増加" },
+  { from: "可変案内羽根（可変IGV）", to: "予旋回強度 (pre-swirl intensity)", label: "設定角変更で影響を緩和" },
+  { from: "サドルゾーン (saddle zone)", to: "最高効率点（BEP）", label: "BEPより低流量側の不安定域" },
   // --- 翼端漏れ渦の連鎖（Furukawa 1999）と制御（Yaylak 2026） ---
   { from: "先端すき間流れ（tip clearance flow）", to: "翼端漏れ渦", label: "巻き上がり" },
   { from: "翼端漏れ流れ (tip leakage flow)", to: "翼端漏れ渦", label: "巻き上がり" },

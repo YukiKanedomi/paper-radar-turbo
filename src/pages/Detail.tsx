@@ -194,7 +194,7 @@ function DetailView({
         <div className="top">
           <Link to="/">← 論文レーダー</Link>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <span>{p.dateAdded} 配信</span>
+            <span>{p.issue ?? p.dateAdded} 配信</span>
             <button
               type="button"
               className={`fav-btn${fav ? " on" : ""}`}
