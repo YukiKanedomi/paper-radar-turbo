@@ -55,6 +55,8 @@ export const CATEGORIES: GraphCategory[] = [
       "空力弾性",
       "自励振動",
       "キャビテーション",
+      "キャビテーション数 (cavitation number)",
+      "均質キャビテーションモデル (homogeneous cavitation model)",
       "吸気歪み (inlet distortion)",
       "歪み係数DC60 (distortion coefficient)",
       "境界層吸込み (boundary layer ingestion, BLI)",
@@ -388,6 +390,8 @@ export const CATEGORIES: GraphCategory[] = [
       "フェザリング (feathering)",
       "後流減衰 (wake decay)",
       "水平軸風車 (HAWT, horizontal axis wind turbine)",
+      "サボニウス風車 (Savonius wind turbine)",
+      "デフレクタ (deflector)",
       "アクチュエータライン (actuator line)",
       "翼端渦 (tip vortex)",
       "根元渦 (root vortex)",
@@ -861,6 +865,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)", to: "コーナー剥離", label: "静圧分布を調整し抑制" },
   { from: "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)", to: "二次流れ", label: "横方向圧力勾配を弱め移動を抑制" },
   { from: "スクロール (scroll)", to: "ボリュートケーシング", label: "遠心圧縮機における同種の部品（一般知識）" },
+  // --- サボニウス風車の風洞実験（Hadžiahmetović et al. 2026） ---
+  { from: "サボニウス風車 (Savonius wind turbine)", to: "デフレクタ (deflector)", label: "非対称な流入で回転トルクを確保" },
+  { from: "サボニウス風車 (Savonius wind turbine)", to: "出力係数（power coefficient, Cp）", label: "評価指標" },
+  // --- 軸流ポンプの翼端漏れ渦キャビテーション（Zhang, Shi, Pan & Dubuisson 2015） ---
+  { from: "翼端漏れ渦", to: "キャビテーション", label: "渦中心の低圧で発生" },
+  { from: "キャビテーション数 (cavitation number)", to: "キャビテーション", label: "起きやすさを支配する無次元数" },
+  { from: "均質キャビテーションモデル (homogeneous cavitation model)", to: "キャビテーション", label: "気液を単一流体として扱う数値解析手法" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

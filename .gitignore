@@ -9,3 +9,5 @@ scripts/.collect-candidates.json
 
 scripts/logs/
 .collect-candidates.json
+
+scratch/
