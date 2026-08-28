@@ -59,6 +59,7 @@ export const CATEGORIES: GraphCategory[] = [
       "均質キャビテーションモデル (homogeneous cavitation model)",
       "吸気歪み (inlet distortion)",
       "歪み係数DC60 (distortion coefficient)",
+      "対称旋回歪み（ペアスワール歪み）",
       "境界層吸込み (boundary layer ingestion, BLI)",
       "チョーク (choking)",
       "回転不安定現象 (rotating instabilities)",
@@ -347,6 +348,7 @@ export const CATEGORIES: GraphCategory[] = [
       "フィルム冷却",
       "内部冷却",
       "感温液晶 (thermochromic liquid crystal, TLC)",
+      "過渡液晶法",
       "ジェットインピンジメント冷却",
       "リブ乱流促進材",
       "吹き出し比 (blowing ratio)",
@@ -872,6 +874,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "翼端漏れ渦", to: "キャビテーション", label: "渦中心の低圧で発生" },
   { from: "キャビテーション数 (cavitation number)", to: "キャビテーション", label: "起きやすさを支配する無次元数" },
   { from: "均質キャビテーションモデル (homogeneous cavitation model)", to: "キャビテーション", label: "気液を単一流体として扱う数値解析手法" },
+  // --- 対称旋回歪み下の軸流圧縮機安定性向上（Cheng, Li, Yin, Yu & Liu 2026） ---
+  { from: "対称旋回歪み（ペアスワール歪み）", to: "吸気歪み (inlet distortion)", label: "一種" },
+  { from: "対称旋回歪み（ペアスワール歪み）", to: "翼端漏れ渦", label: "主流との相互作用を強め拡大を助長" },
+  { from: "ケーシングトリートメント", to: "対称旋回歪み（ペアスワール歪み）", label: "下での失速余裕低下を緩和" },
+  // --- ガスタービン動翼スキーラーチップの熱伝達（Azad, Han & Boyle 2000） ---
+  { from: "過渡液晶法", to: "対流熱伝達係数", label: "変色時刻の分布から算出" },
+  { from: "過渡液晶法", to: "感温液晶 (thermochromic liquid crystal, TLC)", label: "壁面に塗布して利用" },
+  { from: "スキーラチップ (squealer tip)", to: "対流熱伝達係数", label: "フラットチップより全体に低減" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

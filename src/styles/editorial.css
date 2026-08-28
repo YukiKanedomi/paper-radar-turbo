@@ -1014,6 +1014,11 @@
   font-size: 19px;
   margin: 16px 0;
   color: #16302c;
+  overflow-x: auto;
+}
+.detail-page .eq > span:first-child {
+  display: inline-block;
+  max-width: 100%;
 }
 .detail-page .eq i {
   font-style: italic;
@@ -1158,6 +1163,10 @@
 
 /* スマホ向けの詰め（説明レベル枠・リード・数値カード） */
 @media (max-width: 560px) {
+  .detail-page .eq {
+    font-size: 15px;
+    padding: 16px 10px;
+  }
   .detail-page .lvl {
     padding: 8px 12px;
     gap: 8px;
