@@ -87,6 +87,9 @@ export const CATEGORIES: GraphCategory[] = [
       "固有振動数 (natural frequency)",
       "短波長擾乱 (short length-scale disturbance)",
       "不安定点 (instability point)",
+      "進行波フラッタ (traveling-wave flutter)",
+      "翼間位相角 (inter-blade phase angle, IBPA)",
+      "空力減衰 (aerodynamic damping)",
     ],
   },
   {
@@ -162,6 +165,7 @@ export const CATEGORIES: GraphCategory[] = [
       "マッハ数 (Mach number)",
       "圧縮性影響 (compressibility effects)",
       "圧力係数 Cp (pressure coefficient)",
+      "揚力係数 (lift coefficient, C_L)",
       "乱流強度",
       "ロータ・ステータ干渉",
       "軸方向間隙",
@@ -393,6 +397,7 @@ export const CATEGORIES: GraphCategory[] = [
       "後流減衰 (wake decay)",
       "水平軸風車 (HAWT, horizontal axis wind turbine)",
       "サボニウス風車 (Savonius wind turbine)",
+      "ダリウス型風車 (Darrieus wind turbine)",
       "デフレクタ (deflector)",
       "アクチュエータライン (actuator line)",
       "翼端渦 (tip vortex)",
@@ -882,6 +887,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "過渡液晶法", to: "対流熱伝達係数", label: "変色時刻の分布から算出" },
   { from: "過渡液晶法", to: "感温液晶 (thermochromic liquid crystal, TLC)", label: "壁面に塗布して利用" },
   { from: "スキーラチップ (squealer tip)", to: "対流熱伝達係数", label: "フラットチップより全体に低減" },
+  // --- 垂直軸風車の対称翼型180度迎え角データ（Sheldahl & Klimas 1981） ---
+  { from: "迎え角（AoA）", to: "揚力係数 (lift coefficient, C_L)", label: "変化させ、失速角を超えると急減" },
+  { from: "ダリウス型風車 (Darrieus wind turbine)", to: "先端速度比（tip speed ratio, λ）", label: "低いほど翼の迎え角変動が180°近くまで拡大" },
+  { from: "レイノルズ数", to: "揚力係数 (lift coefficient, C_L)", label: "低いほど最大揚力係数が低下" },
+  // --- 蒸気タービン最終段動翼の低流量フラッタ（Mu & Ma 2026） ---
+  { from: "翼間位相角 (inter-blade phase angle, IBPA)", to: "進行波フラッタ (traveling-wave flutter)", label: "位相差ごとに空力減衰が変化" },
+  { from: "空力減衰 (aerodynamic damping)", to: "進行波フラッタ (traveling-wave flutter)", label: "負になると振動が発散" },
+  { from: "再循環（リサーキュレーション）", to: "空力減衰 (aerodynamic damping)", label: "根元の再循環渦が非定常励振源となり低下させる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
