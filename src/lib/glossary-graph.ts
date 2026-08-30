@@ -139,6 +139,8 @@ export const CATEGORIES: GraphCategory[] = [
       "渦合体 (vortex merging)",
       "マッハディスク (Mach disk)",
       "通路渦 (passage vortex, PV)",
+      "ベナコントラクタ (vena contracta)",
+      "収縮係数 (contraction coefficient)",
     ],
   },
   {
@@ -204,6 +206,7 @@ export const CATEGORIES: GraphCategory[] = [
       "クリアランス流れ (interstitial/clearance flow)",
       "翼列間の間隙 (inter-blade row gap)",
       "スクロール (scroll)",
+      "インデューサ (inducer)",
     ],
   },
   {
@@ -256,6 +259,7 @@ export const CATEGORIES: GraphCategory[] = [
       "翼素運動量法",
       "渦法",
       "パネル法",
+      "Zwart-Gerber-Belamriキャビテーションモデル",
     ],
   },
   {
@@ -895,6 +899,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "翼間位相角 (inter-blade phase angle, IBPA)", to: "進行波フラッタ (traveling-wave flutter)", label: "位相差ごとに空力減衰が変化" },
   { from: "空力減衰 (aerodynamic damping)", to: "進行波フラッタ (traveling-wave flutter)", label: "負になると振動が発散" },
   { from: "再循環（リサーキュレーション）", to: "空力減衰 (aerodynamic damping)", label: "根元の再循環渦が非定常励振源となり低下させる" },
+  // --- 直線タービン翼列の翼端漏れ流れ（Moore & Tilton 1988） ---
+  { from: "ベナコントラクタ (vena contracta)", to: "収縮係数 (contraction coefficient)", label: "絞り込みの度合いを定量化する係数" },
+  { from: "ベナコントラクタ (vena contracta)", to: "翼端漏れ流れ (tip leakage flow)", label: "すきま入口付近で発生" },
+  { from: "収縮係数 (contraction coefficient)", to: "吐出し係数 (discharge coefficient)", label: "すきま内の最小圧力を基準に評価すべきと提言" },
+  // --- インデューサによる船内冷却ポンプのキャビテーション抑制（Zhang, Heng, Wang, Ge & Jiang 2026） ---
+  { from: "インデューサ (inducer)", to: "プリスワール (preswirl)", label: "主インペラ入口に予旋回を与える" },
+  { from: "インデューサ (inducer)", to: "キャビテーション", label: "加圧・予旋回で入口の低圧域を減らし抑制" },
+  { from: "Zwart-Gerber-Belamriキャビテーションモデル", to: "キャビテーション", label: "気泡の発生・成長を数値的に再現する手法" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
