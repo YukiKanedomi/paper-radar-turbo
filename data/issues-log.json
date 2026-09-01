@@ -4401,6 +4401,101 @@
         "note": "検索語はtopics.jsonの日替わりローテーションで自動選択されたもの。今回は最新枠・定番枠それぞれの検索だけで候補が揃い、追加検索は行わなかった。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、風車後流のレビュー論文に出てきた『簡易な工学モデルが、高精度なはずのLES計算と同じくらいの精度を、はるかに安いコストで出した』という話でした。てっきり計算が細かければ細かいほど正確に近づくものだと思っていたのですが、実際には風力発電所全体を計算しようとするとLESは格子の細かさが全然足りず、逆に簡易モデルの方が現実的な精度を出せることがあるというのは意外でした。精密さと実用性は必ずしも比例しないのだと気づかされた回でした。"
+    },
+    {
+      "date": "2026-09-02",
+      "status": "published",
+      "headline": "片持ち静翼を持つ圧縮機段で、ハブ側とケーシング側の逆流領域が失速に近づくにつれて桁違いに非対称に膨らむことを実験と数値解析で明らかにした最新研究と、遷音速タービンで静翼後縁の衝撃波が動翼に伝播・反射し揚力を40%も周期変動させることを示した定番の数値解析研究",
+      "intro": "今日はcollect.mjsの標準候補だけでは2件がなかなか揃いませんでした。日替わりの検索語で取得した最新枠24件（OA18/抄録6）はほとんどがターボ機械と無関係な分野（波動・天文・大気対流など）で、定番枠14件（OA1/抄録13）は候補の大半が既にこれまでの配信で取り上げ済みでした。そこでtopics.jsonの中でその日使われなかったキーワード（centrifugal compressor aerodynamics、cavitation pump impeller、diffuser stall pressure recovery等）を使ってOpenAlexを直接、追加で検索。ASME・MDPI・Elsevier・大学リポジトリのOA論文をいくつか見つけましたが、いずれも出版社サイトのボット対策で本文にアクセスできず、唯一Journal of Applied Fluid Mechanics（JAFM）だけが素直にPDFを配ってくれたため、そこから片持ち静翼のエンドウォール二次渦を調べた最新研究を採用しました。定番枠は被引用上位を掘り直し、静翼・動翼干渉の数値解析の先駆的研究（1990年、Journal of Propulsion and Power）を抄録ベースで採用しています。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.5.3936",
+          "title": "Investigation into the Evolution Mechanism of Secondary Vortices in the Endwall Region of Cantilevered Stator in an Axial Compressor Stage（Wang, Wu, Zhang & Zhang, 2026）",
+          "why": "片持ち静翼を持つ軸流圧縮機段で、羽根の付け根側とケーシング側それぞれの二次渦（翼端漏れ渦・コーナー剥離）が上流ロータ後流の影響でどう発達するかを実験と非定常数値解析で調べた研究。失速に近づくにつれて、ハブ側の逆流領域はほぼ変わらない一方、ケーシング側は約40倍にも急増するという非対称性を明らかにし、性能を制約する要因を特定した。JAFM掲載でPDF全文を取得できた。"
+        },
+        {
+          "id": "doi:10.2514/3.23263",
+          "title": "Stator/rotor interaction in a transonic turbine（Giles, 1990）",
+          "why": "高負荷の遷音速タービン第1段で、静翼後縁から生じる衝撃波が動翼列に伝播・反射する非定常干渉を、非粘性オイラー方程式による数値解析で調べた先駆的研究（被引用164件）。衝撃波の反射だけで動翼揚力が40%も周期変動するという結果と、静翼・動翼の枚数比が割り切れない場合にも対応する『時間傾斜計算面』という当時の工夫が読みどころ。Journal of Propulsion and Power掲載、抄録ベース。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "OA表示でも本文に届かなかった候補たち",
+          "note": "ASME Journal of Turbomachineryの横風条件下ファン空力論文（CC BY）、MDPI Processesの蒸気タービンチップシール漏れ流れ論文とポンプ水車暴走運転論文（いずれもgold CC BY）、Elsevier ScienceDirectの自己吸込みポンプ損傷インペラ論文、Duisburg-Essen大学リポジトリのsCO2遠心圧縮機論文——どれもメタデータ上はオープンアクセスなのに、実際にアクセスすると出版社側のボット対策（403・セキュリティチェック画面）に阻まれ、本文を読むことができませんでした。無理にアブストラクトだけで深掘りせず、これらは見送っています。"
+        },
+        {
+          "title": "早期公開版で本文がまだ無かった論文",
+          "note": "Scientific Reportsの『悪天候が風車の発電量に与える影響』という論文（雨で境界層遷移が早まり出力が6.3%低下、というテーマ自体は面白かった）はゴールドOA・CC BY-NC-NDでしたが、査読を通った直後の早期公開版で、抄録以降の本文がまだ組版されていませんでした。抄録は充実していましたが、今回は見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA18/抄録6）。arXiv側15件はほぼ全てターボ機械と無関係（波動・天文・大気対流・ドローン後流・多孔質凍結など）で採用可能な候補なし。OpenAlex新着9件のうち採用可能な非重複候補はゼロ（既配信のJAFM論文2件・casing treatment論文等と重複）。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1/抄録13）。上位14件中12件がこれまでの配信で既に採用済み（Denton, Greitzer, Mayle, Day, Vo/Tan/Greitzer, Hansen, Vermeer, Langston, Hamed, Epstein等）。新規候補はCorke et al. 2008（プラズマアクチュエータレビュー、抄録が出版社側で非公開のため要約不可）のみで、そのままでは2件を揃えられなかった。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・topics.jsonの未使用キーワード）",
+            "scope": "その日使われなかったキーワードで、新着(is_oa:true優先)と被引用上位の両方を個別検索",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "cavitation pump impeller",
+              "film cooling turbine heat transfer",
+              "diffuser stall pressure recovery",
+              "inlet distortion fan aerodynamics",
+              "rotor stator interaction unsteady",
+              "wind turbine wake aerodynamics"
+            ],
+            "hits": 65,
+            "note": "7キーワード×新着/被引用の2系統（各最大5件）で計65件前後を確認。ASME・MDPI・Elsevier・大学リポジトリのOA候補を複数発見したが本文アクセス不可（asideに記載）。JAFM限定の再検索（同キーワード群、venue絞り込み）でOA全文取得に成功した片持ち静翼論文を発見。"
+          },
+          {
+            "name": "JAFM (Journal of Applied Fluid Mechanics) 限定検索",
+            "scope": "OpenAlexでprimary_location.source.idをJAFMに絞った検索（同キーワード群）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "cavitation pump impeller",
+              "diffuser stall pressure recovery",
+              "rotor stator interaction unsteady",
+              "tip leakage vortex loss",
+              "corner separation compressor",
+              "wind turbine wake aerodynamics",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 17,
+            "note": "8キーワードで計17件のJAFM論文を確認（重複除く）。うち片持ち静翼のエンドウォール二次渦論文（jafm.19.5.3936）を採用。"
+          }
+        ],
+        "note": "collect.mjsの標準候補だけでは新規かつ§0を満たせる2件が揃わなかったため、topics.jsonのキーワードプールのうちその日使われなかった語でOpenAlexを追加検索した。追加検索で使った語もtopics.json内の既存キーワードのみで、新語は加えていない。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」だったのは、同じ圧縮機の同じ羽根なのに、付け根側とケーシング側でこんなに違う挙動をするのかという点でした。付け根側は失速が近づいても渦の逆流量がほとんど増えない（531→555 mm³）のに、ケーシング側は同じ条件で157→6304 mm³と約40倍にも膨れ上がる。同じ『二次渦』とひとまとめにされがちな現象でも、場所によって性能への効き方がまったく違うのだと知り、ハブ側とケーシング側を分けて考える大切さが腑に落ちました。あと今回は本文を読もうとした論文の多くがサイト側のセキュリティチェックに阻まれてしまい、オープンアクセスの『建前』と『実際に読めるか』は別問題なのだと痛感した回でもありました。"
     }
   ]
 }

@@ -90,6 +90,7 @@ export const CATEGORIES: GraphCategory[] = [
       "進行波フラッタ (traveling-wave flutter)",
       "翼間位相角 (inter-blade phase angle, IBPA)",
       "空力減衰 (aerodynamic damping)",
+      "揚力変動",
     ],
   },
   {
@@ -141,6 +142,7 @@ export const CATEGORIES: GraphCategory[] = [
       "通路渦 (passage vortex, PV)",
       "ベナコントラクタ (vena contracta)",
       "収縮係数 (contraction coefficient)",
+      "移動衝撃波 (moving shock)",
     ],
   },
   {
@@ -341,6 +343,8 @@ export const CATEGORIES: GraphCategory[] = [
       "径方向流れ再配分",
       "移動端壁 (moving endwall)",
       "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)",
+      "トレーリングエッジ渦 (trailing edge vortex, TEV)",
+      "リング渦 (ring vortex, RV)",
     ],
   },
   {
@@ -907,6 +911,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "インデューサ (inducer)", to: "プリスワール (preswirl)", label: "主インペラ入口に予旋回を与える" },
   { from: "インデューサ (inducer)", to: "キャビテーション", label: "加圧・予旋回で入口の低圧域を減らし抑制" },
   { from: "Zwart-Gerber-Belamriキャビテーションモデル", to: "キャビテーション", label: "気泡の発生・成長を数値的に再現する手法" },
+  // --- 片持ち静翼エンドウォールの二次渦発達メカニズム（Wang, Wu, Zhang & Zhang 2026） ---
+  { from: "コーナー剥離", to: "リング渦 (ring vortex, RV)", label: "閉塞型で形成" },
+  { from: "コーナー剥離", to: "トレーリングエッジ渦 (trailing edge vortex, TEV)", label: "後縁近傍で共存" },
+  // --- 遷音速タービンのステータ・ロータ干渉（Giles 1990） ---
+  { from: "移動衝撃波 (moving shock)", to: "揚力変動", label: "周期的な入射・反射が誘発" },
+  { from: "移動衝撃波 (moving shock)", to: "境界層剥離", label: "動翼前縁付近で一時的に誘発" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
