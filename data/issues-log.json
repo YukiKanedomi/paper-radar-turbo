@@ -4496,6 +4496,90 @@
         "note": "collect.mjsの標準候補だけでは新規かつ§0を満たせる2件が揃わなかったため、topics.jsonのキーワードプールのうちその日使われなかった語でOpenAlexを追加検索した。追加検索で使った語もtopics.json内の既存キーワードのみで、新語は加えていない。"
       },
       "afterword": "— 編集担当より：今回「なるほど」だったのは、同じ圧縮機の同じ羽根なのに、付け根側とケーシング側でこんなに違う挙動をするのかという点でした。付け根側は失速が近づいても渦の逆流量がほとんど増えない（531→555 mm³）のに、ケーシング側は同じ条件で157→6304 mm³と約40倍にも膨れ上がる。同じ『二次渦』とひとまとめにされがちな現象でも、場所によって性能への効き方がまったく違うのだと知り、ハブ側とケーシング側を分けて考える大切さが腑に落ちました。あと今回は本文を読もうとした論文の多くがサイト側のセキュリティチェックに阻まれてしまい、オープンアクセスの『建前』と『実際に読めるか』は別問題なのだと痛感した回でもありました。"
+    },
+    {
+      "date": "2026-09-03",
+      "status": "published",
+      "headline": "遷音速圧縮機動翼NASA rotor 37の先端すきま流れを数値解析し、超音速翼端では『絞り込み』が起きないため単純な簡易モデルの方が詳細計算に近いことを示した定番研究（Chima, 1998、NASA TM-107216・パブリックドメイン）と、Clark-Y型ハイドロフォイルの雲状キャビテーションを抑える接線マイクロジェットの位置によって、平均性能を最良にする位置と力の変動を最小化する位置が一致せず、むしろ互いに悪化させ合うという痛みを伴うトレードオフを示した最新研究（Mahdavi, Motezakkeri, Ebrahimi & Alavi, 2026、arXivプレプリント）",
+      "intro": "今日はcollect.mjsの標準候補の上位が、両枠ともすでに配信済みの論文と重複していました。定番枠の1位（Pullan et al. 2014のスパイク型回転失速論文）は2026-07-07に、最新枠OA1位（Magrini & Benini 2026のBLIファン論文）も既に配信済みで、いずれも使えませんでした。定番枠2位のプラズマアクチュエータのレビュー論文（Corke et al. 2008）はOpenAlex・Semantic Scholar・Unpaywallのいずれからも抄録が一切取得できず、§0（推測で埋めない）に反するため見送りました。そこでtopics.jsonの検索語でOpenAlexを直接、タイトル・抄録限定検索（title_and_abstract.search）にかけ直し、NASA rotor 37という有名な実験用圧縮機動翼を対象にした先端すきま流れのNASA技術報告書（Chima, 1996/1998）を発見。米国政府著作物のためパブリックドメインで、原図もそのまま使えました。最新枠は、AIP Physics of Fluids・MDPIなど複数のジャーナルサイトがCloudflare/Akamaiのボット検知で軒並みブロックされたため、確実に全文が取れるarXivのキャビテーション制御論文（Mahdavi et al. 2026）に切り替えました。両論文とも§0忠実性チェック（Opus）で2ラウンド実施し、Chima論文では『試験装置の詳細を捏造していた』『著者が『理由不明』と書いた箇所を『理由が分かった』かのように書き換えていた』という重大な指摘が出て修正、キャビテーション論文では『平均性能が良い位置ほど振動が悪化するという、論文の核心であるトレードオフの痛い側が抜け落ちていた』という指摘が出て追記しました。さらに作り込みの過程で、Chima論文のデータに数式配列（equations）を書き忘れており、詳細ページがクラッシュして白紙表示になるという実装上の不具合も見つけて修正しています。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.2841374",
+          "title": "Calculation of Tip Clearance Effects in a Transonic Compressor Rotor（Chima, 1998 / NASA TM-107216, 1996）",
+          "why": "NASA rotor 37という実在の遷音速圧縮機動翼を対象に、先端すきま流れを詳細な3次元計算と2種類の簡易モデルで比較した研究。すきまの入り口で流れが絞り込まれる『ベナコントラクタ』を仮定した半高さモデルより、絞り込みを仮定しない全高さモデルの方が詳細計算に近いという、直感に反する結果を示した。理由は、超音速翼端では流れが剥離せずなめらかに加速するため。米国政府著作物としてパブリックドメインで、原図（先端渦と衝撃波の干渉を示す粒子軌跡図）をそのまま掲載できた。"
+        },
+        {
+          "id": "arxiv:2609.00208",
+          "title": "Chordwise micro-jet placement reveals a trade-off between mean hydrodynamic performance and unsteady loading under cloud cavitation（Mahdavi, Motezakkeri, Ebrahimi & Alavi, 2026）",
+          "why": "Clark-Y型ハイドロフォイルの雲状キャビテーションを抑える接線マイクロジェットについて、翼弦方向5位置への配置を比較した数値研究。平均性能（揚抗比）を最大化する位置（x/c=0.15）は、力の変動をむしろ基準よりおよそ2倍近くまで悪化させ、逆に力の変動を最小化する位置（x/c=0.60）は平均性能がわずかに基準を下回るという、目的が競合するトレードオフを定量的に示した。著者ら自身が基準計算と実験値のズレ（抗力14.1%高い）を率直に書いている点も、§0の姿勢と重なり好感が持てた。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "重複していた本命候補たち",
+          "note": "定番枠のトップ候補（Pullan, Young, Day, Greitzer & Spakovszky 2014『Origins and Structure of Spike-Type Rotating Stall』、被引用284件）は2026-07-07に既に配信済みでした。最新枠のOAトップ候補（Magrini & Benini 2026、境界層吸込みファンの流入歪み論文）も既に配信済みで、どちらも本文を作り込む前の重複チェックで弾きました。"
+        },
+        {
+          "title": "抄録すら無かった候補",
+          "note": "定番枠2位のCorke, Post & Orlov（2008）『Single dielectric barrier discharge plasma enhanced aerodynamics』（被引用372件）は、OpenAlexは closed・Semantic Scholarは抄録を出版社が非公開・Unpaywallもオープンアクセス版なし、という状態で、抄録すら読めませんでした。抄録が無ければ推測で埋めるしかなくなるため、§0に従い見送りました。"
+        },
+        {
+          "title": "OAの建前とアクセスの現実",
+          "note": "AIP Physics of FluidsのCC-BYハイブリッドOA論文（Magrini & Benini 2026、重複と分かる前に一度全文取得を試みた別候補）や、MDPI Journal of Marine Science and Engineeringのゴールドオープンアクセス論文は、いずれもライセンス上は読めるはずなのに、実際にアクセスするとCloudflareやAkamaiのボット検知（Just a moment...画面や403）に阻まれ、本文を読むことができませんでした。無理に抄録だけで深追いはせず、最終的に全文が確実に取れたarXiv・NASA技術報告書に落ち着きました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA6/抄録7）。うちarXiv3件の一つ、雲状キャビテーションのマイクロジェット制御論文（Mahdavi et al. 2026）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA5/抄録9）。上位2件（Pullan et al. 2014、風車後流レビュー）はいずれも既配信と重複、3位のプラズマアクチュエータ論文（Corke et al. 2008）は抄録取得不可で見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・title_and_abstract.search限定）",
+            "scope": "topics.jsonの定番枠キーワードでtitle_and_abstract.search、被引用上位",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "rotating stall inception mechanism",
+              "secondary flow turbomachinery loss"
+            ],
+            "hits": 48,
+            "note": "8キーワード×6件で計48件前後を確認。NASA rotor 37の先端すきま流れ論文（Chima 1998、NASA TM-107216としてNTRSから全文取得可能）を発見し採用。"
+          }
+        ],
+        "note": "collect.mjsの標準候補の上位が既配信と重複していたため、topics.jsonのキーワードプールでOpenAlexをtitle_and_abstract.search限定で追加検索した。新語は加えていない。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、Chima先生の論文の、直感とは逆の結論でした。すきまに流れ込む水や空気がいったん絞り込まれる『ベナコントラクタ』は、蛇口や堰から水が流れ出るときにもおなじみの現象で、てっきりそれを見込んで計算した方が正確だろうと思っていたら、実は羽根の先端の速度が音速を超えている場合はそもそも絞り込みが起きず、むしろ絞り込みを考えない単純なモデルの方が詳しい計算に近かった、という話でした。身近な直感がそのまま通用しない場所があるのだと知り、面白かったです。もう一本のキャビテーション制御の論文でも、著者ら自身が『うちの基準計算は実験値より抗力が14%高いです』と正直に書いていたのが印象的で、この論文レーダーが大事にしている『嘘をつかない』姿勢と同じものを、専門論文の中にも見つけた気がしました。"
     }
   ]
 }

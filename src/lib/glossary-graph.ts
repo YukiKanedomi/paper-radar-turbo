@@ -57,6 +57,8 @@ export const CATEGORIES: GraphCategory[] = [
       "キャビテーション",
       "キャビテーション数 (cavitation number)",
       "均質キャビテーションモデル (homogeneous cavitation model)",
+      "雲状キャビテーション (cloud cavitation)",
+      "再進入流れ (re-entrant flow)",
       "吸気歪み (inlet distortion)",
       "歪み係数DC60 (distortion coefficient)",
       "対称旋回歪み（ペアスワール歪み）",
@@ -143,6 +145,8 @@ export const CATEGORIES: GraphCategory[] = [
       "ベナコントラクタ (vena contracta)",
       "収縮係数 (contraction coefficient)",
       "移動衝撃波 (moving shock)",
+      "壁面ジェット (wall jet)",
+      "プラントル・マイヤー膨張 (Prandtl-Meyer expansion)",
     ],
   },
   {
@@ -262,6 +266,7 @@ export const CATEGORIES: GraphCategory[] = [
       "渦法",
       "パネル法",
       "Zwart-Gerber-Belamriキャビテーションモデル",
+      "Schnerr-Sauerキャビテーションモデル (Schnerr-Sauer cavitation model)",
     ],
   },
   {
@@ -327,6 +332,7 @@ export const CATEGORIES: GraphCategory[] = [
       "後縁剥離 (trailing edge separation)",
       "ブレードグルーブ (blade groove)",
       "境界層吸込み制御 (boundary layer suction control)",
+      "接線マイクロジェット (tangential micro-jet)",
     ],
   },
   {
@@ -917,6 +923,18 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 遷音速タービンのステータ・ロータ干渉（Giles 1990） ---
   { from: "移動衝撃波 (moving shock)", to: "揚力変動", label: "周期的な入射・反射が誘発" },
   { from: "移動衝撃波 (moving shock)", to: "境界層剥離", label: "動翼前縁付近で一時的に誘発" },
+  // --- NASA rotor 37の先端すきま流れと衝撃波・渦干渉（Chima 1998） ---
+  { from: "先端すき間流れ（tip clearance flow）", to: "翼端渦 (tip vortex)", label: "圧力差で線形に駆動" },
+  { from: "先端すき間流れ（tip clearance flow）", to: "プラントル・マイヤー膨張 (Prandtl-Meyer expansion)", label: "超音速翼端では剥離せず加速" },
+  { from: "プラントル・マイヤー膨張 (Prandtl-Meyer expansion)", to: "ベナコントラクタ (vena contracta)", label: "超音速では代わりに発生し剥離しない" },
+  { from: "翼端渦 (tip vortex)", to: "衝撃波・渦干渉 (shock-vortex interaction)", label: "通路衝撃波と交差" },
+  { from: "衝撃波・渦干渉 (shock-vortex interaction)", to: "λ型衝撃波足 (lambda shock foot)", label: "交差点で形成" },
+  { from: "壁面ジェット (wall jet)", to: "翼端渦 (tip vortex)", label: "渦芯付近で向きを変え合流せず下流へ" },
+  // --- Clark-Y翼の雲状キャビテーションと接線マイクロジェット制御（Mahdavi et al. 2026） ---
+  { from: "雲状キャビテーション (cloud cavitation)", to: "キャビテーション", label: "一形態（周期的な塊状剥離）" },
+  { from: "再進入流れ (re-entrant flow)", to: "雲状キャビテーション (cloud cavitation)", label: "空洞を分断し塊状剥離を誘発" },
+  { from: "接線マイクロジェット (tangential micro-jet)", to: "再進入流れ (re-entrant flow)", label: "近壁運動量を再配分し抑制" },
+  { from: "Schnerr-Sauerキャビテーションモデル (Schnerr-Sauer cavitation model)", to: "均質キャビテーションモデル (homogeneous cavitation model)", label: "一種" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
