@@ -4580,6 +4580,95 @@
         "note": "collect.mjsの標準候補の上位が既配信と重複していたため、topics.jsonのキーワードプールでOpenAlexをtitle_and_abstract.search限定で追加検索した。新語は加えていない。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、Chima先生の論文の、直感とは逆の結論でした。すきまに流れ込む水や空気がいったん絞り込まれる『ベナコントラクタ』は、蛇口や堰から水が流れ出るときにもおなじみの現象で、てっきりそれを見込んで計算した方が正確だろうと思っていたら、実は羽根の先端の速度が音速を超えている場合はそもそも絞り込みが起きず、むしろ絞り込みを考えない単純なモデルの方が詳しい計算に近かった、という話でした。身近な直感がそのまま通用しない場所があるのだと知り、面白かったです。もう一本のキャビテーション制御の論文でも、著者ら自身が『うちの基準計算は実験値より抗力が14%高いです』と正直に書いていたのが印象的で、この論文レーダーが大事にしている『嘘をつかない』姿勢と同じものを、専門論文の中にも見つけた気がしました。"
+    },
+    {
+      "date": "2026-09-04",
+      "status": "published",
+      "headline": "自動車用ターボチャージャーの遠心圧縮機で、軸受シール用のブリード空気が羽根車・ディフューザ間のベーンレス空間の閉塞を減らすとともにベーン付きディフューザを不安定化させ、失速に至る経路を変えて安定流量範囲を50%縮小させることを示した定番研究（Spakovszky & Roduner, 2009, Journal of Turbomachinery、抄録ベース）と、風車の非定常翼空気力学（付着流れ）を循環力・非循環力（付加質量）ともに漏れなく係数化し、コーン角付き直線翼モデルでの項目別の省略誤差（推力・出力それぞれ数%）と、理想化した垂直軸風車での力によるトルクの完全な相殺を示した最新研究（Li, Gaunaa & Pirrung, 2026、arXivプレプリント・CC BY 4.0・原図あり）",
+      "intro": "今日はcollect.mjsの標準候補の多くが既配信と重複していました。定番枠（被引用上位）14件のうち13件が既に配信済みで、新規候補はマイニング分野のナノバブル論文1件のみ。最新枠も、既配信の再掲や、深層学習主体の圧縮機サロゲートモデル論文（ML色が強く§0の『流体が主役』方針から外れるため見送り）が中心でした。そこでtopics.jsonの未使用ローテーション枠（回転失速前駆現象・二次流れ・遷音速衝撃波・境界層遷移など）でOpenAlexを直接、タイトル・抄録限定検索（title_and_abstract.search、被引用上位）にかけ直し、定番枠にはターボチャージャー用遠心圧縮機でブリード空気が失速に至る経路を変えることを示したSpakovszky & Roduner（2009）を採用。最新枠は、arXivの新着からwind turbine関連の非定常空気力学論文（Li, Gaunaa & Pirrung, 2026）を選び、CC BY 4.0ライセンスのため全文・図をそのまま取得できました。",
+      "picked": [
+        {
+          "id": "arxiv:2608.28280",
+          "title": "Unsteady airfoil aerodynamics in attached flow: From unsteady thin airfoil theory to wind turbine application（Li, Gaunaa & Pirrung, 2026）",
+          "why": "風車の動的失速モデルの付着流れ部分（循環力・非循環力＝付加質量）を、漏れなく・二重計上なく係数化し直した研究。コーン角付き直線翼モデルで理論の各項目を1つずつ省いて誤差を定量化し（方向投影項を省くと出力係数が約4%、中央翼弦加速項を省くと推力係数が最大約4.5%変化）、さらに理想化した垂直軸風車（VAWT）のケースで、循環・非循環のすべての寄与を足し合わせるとトルクがちょうどゼロになることを解析的に示した。CC BY 4.0で全文・結果図をそのまま掲載できた。"
+        },
+        {
+          "id": "doi:10.1115/1.2988166",
+          "title": "Spike and Modal Stall Inception in an Advanced Turbocharger Centrifugal Compressor（Spakovszky & Roduner, 2009）",
+          "why": "自動車用ターボチャージャーの遠心圧縮機で、軸受シール・スラストバランスのためのブリード空気（抽気）が、羽根車・ディフューザ間のベーンレス空間の閉塞を減らすとともに、下流のベーン付きディフューザを不安定化させ、失速に至る経路そのものを変えてしまうことを実験で示した。安定流量範囲は50%縮小する一方、端壁ブロッケージを制御する工夫でサージ余裕の75%を回復できたという定量的な結末まで示している。全文は未取得のため抄録ベースで作成。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠はほぼ全滅、新規は1件だけ",
+          "note": "定番枠（被引用上位14件）のうち13件が2026-06-27〜2026-09-03の既配信と重複していました（Vermeer et al. 2003の風車後流論文、Mayle 1991のIGTI Scholar Lecture、Greitzer 1976 Part I/II、Day 2015、Furukawa 1999のチップ渦論文など）。唯一の新規候補（Nanobubbles: multiphase pump generation...、Mineral Engineering誌、被引用201件）は鉱物選別（フローテーション）分野への応用が主眼で、ターボ機械の流れ現象からは外れるため見送りました。"
+        },
+        {
+          "title": "MLが主役の候補は見送り",
+          "note": "最新枠には深層学習で多段軸流圧縮機の流れ場を予測するC(NN)FDシリーズの論文（Bruni, Maleki & Krishnababu, 2023/2025）がありましたが、いずれも既配信、かつ§0の方針（流体現象が主役・ML/数値手法は脇役）から見て今回の主役候補には据えませんでした。"
+        },
+        {
+          "title": "未使用ローテーション枠から定番候補を発掘",
+          "note": "本日の定番枠ローテーションは『吸気歪み・拡散器失速・キャビテーション・ロータステータ干渉』寄りでしたが、これらの検索語では新規候補が出なかったため、まだ今日使っていないローテーション枠（スパイク回転失速前駆現象・チップ漏れ損失・遷音速衝撃波干渉・境界層遷移など）でOpenAlexをtitle_and_abstract.search限定で直接検索し、ターボチャージャー遠心圧縮機のブリード空気論文（Spakovszky & Roduner, 2009）を見つけました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 19,
+            "note": "最新枠19件（OA15/抄録4）。うちarXiv7件の一つ、非定常薄翼理論の風車応用論文（Li, Gaunaa & Pirrung, 2026）を採用。他候補の多くは既配信との重複か、深層学習主体で§0の方針（流体が主役）から外れるため見送り。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1/抄録13）のうち13件が既配信と重複。唯一の新規候補（ナノバブル×多相ポンプ×フローテーション）は分野が外れるため見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・title_and_abstract.search限定）",
+            "scope": "topics.jsonの未使用ローテーション枠キーワードでtitle_and_abstract.search、被引用上位",
+            "terms": [
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer"
+            ],
+            "hits": 13,
+            "note": "13キーワードで各上位6件前後を確認。ターボチャージャー用遠心圧縮機のブリード空気・失速前駆現象論文（Spakovszky & Roduner, 2009、被引用115件前後）を発見し採用。"
+          }
+        ],
+        "note": "collect.mjsの標準候補（定番枠14件中13件・最新枠の主要候補）が既配信と重複していたため、topics.jsonの未使用ローテーション枠でOpenAlexをtitle_and_abstract.search限定で追加検索した。新語は加えていない。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、ターボチャージャーの論文で、軸受を守るための空気抜き（ブリード空気）が、失速に至る経路そのものを変えてしまうという話でした。単に安定な運転範囲が狭くなるだけなら分かりやすいのですが、実際には羽根車のすぐ後ろの狭い空間の詰まり具合が変わることで、その先のディフューザという別の部品が不安定になり、乱れの起き方まで変わっていく——ある場所の小さな変化が、離れた場所の不安定さにつながるという玉突きのような連鎖に驚きました。もう一本の風車の論文は数式がびっしりで難しかったのですが、『昔は無視してよかった項目が、羽根の形が多様になった今のロータ設計には効いてくる』という話は、単純化がいつまでも安全とは限らないという、身につまされる教訓に思えました。"
     }
   ]
 }

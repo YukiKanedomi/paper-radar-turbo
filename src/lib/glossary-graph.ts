@@ -213,6 +213,9 @@ export const CATEGORIES: GraphCategory[] = [
       "翼列間の間隙 (inter-blade row gap)",
       "スクロール (scroll)",
       "インデューサ (inducer)",
+      "ベーンレス空間 (vaneless space)",
+      "ベーン付きディフューザ (vaned diffuser)",
+      "抽気流れ (bleed air)",
     ],
   },
   {
@@ -419,6 +422,9 @@ export const CATEGORIES: GraphCategory[] = [
       "自由流乱流強度 (free-stream turbulence, FST)",
       "疲労荷重 (fatigue loading)",
       "レインフロー計数法 (rainflow counting)",
+      "薄翼理論 (thin airfoil theory)",
+      "シェッドウェイクメモリ (shed wake memory)",
+      "一般化揚力線法 (generalized lifting-line methods)",
     ],
   },
   {
@@ -935,6 +941,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "再進入流れ (re-entrant flow)", to: "雲状キャビテーション (cloud cavitation)", label: "空洞を分断し塊状剥離を誘発" },
   { from: "接線マイクロジェット (tangential micro-jet)", to: "再進入流れ (re-entrant flow)", label: "近壁運動量を再配分し抑制" },
   { from: "Schnerr-Sauerキャビテーションモデル (Schnerr-Sauer cavitation model)", to: "均質キャビテーションモデル (homogeneous cavitation model)", label: "一種" },
+  // --- 非定常薄翼理論の風車応用への再定式化（Li, Gaunaa & Pirrung 2026） ---
+  { from: "薄翼理論 (thin airfoil theory)", to: "循環 (circulation)", label: "循環成分を導出" },
+  { from: "薄翼理論 (thin airfoil theory)", to: "付加質量 (added mass)", label: "非循環成分（付加質量効果）を導出" },
+  { from: "一般化揚力線法 (generalized lifting-line methods)", to: "翼素運動量法", label: "枠組みに含む一手法" },
+  // --- ターボチャージャー用遠心圧縮機のブリード空気と失速前駆現象（Spakovszky & Roduner 2009） ---
+  { from: "抽気流れ (bleed air)", to: "ベーンレス空間 (vaneless space)", label: "端壁ブロッケージを減らす" },
+  { from: "ベーンレス空間 (vaneless space)", to: "ベーン付きディフューザ (vaned diffuser)", label: "上流側に隣接する環状すきま" },
+  { from: "抽気流れ (bleed air)", to: "モード波型前駆現象 (modal-wave precursor)", label: "これを担う圧縮系の減衰を低下させる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
