@@ -444,6 +444,9 @@ export const CATEGORIES: GraphCategory[] = [
       "Kolmogorov則",
       "対流速度",
       "パワースペクトル密度",
+      "散逸率 (dissipation rate, ε)",
+      "テイラー・レイノルズ数 (Taylor Reynolds number, Re_λ)",
+      "間欠性 (intermittency)",
     ],
   },
 ];
@@ -949,6 +952,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "抽気流れ (bleed air)", to: "ベーンレス空間 (vaneless space)", label: "端壁ブロッケージを減らす" },
   { from: "ベーンレス空間 (vaneless space)", to: "ベーン付きディフューザ (vaned diffuser)", label: "上流側に隣接する環状すきま" },
   { from: "抽気流れ (bleed air)", to: "モード波型前駆現象 (modal-wave precursor)", label: "これを担う圧縮系の減衰を低下させる" },
+  // --- 自由流乱流にさらされた風車後流の散逸スケーリング（Bourhis & Buxton 2026） ---
+  { from: "エネルギーカスケード", to: "散逸率 (dissipation rate, ε)", label: "行き着く先" },
+  { from: "散逸率 (dissipation rate, ε)", to: "テイラー・レイノルズ数 (Taylor Reynolds number, Re_λ)", label: "非平衡スケーリング" },
+  { from: "翼端渦 (tip vortex)", to: "間欠性 (intermittency)", label: "大規模な間欠的擾乱を駆動" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -4669,6 +4669,86 @@
         "note": "collect.mjsの標準候補（定番枠14件中13件・最新枠の主要候補）が既配信と重複していたため、topics.jsonの未使用ローテーション枠でOpenAlexをtitle_and_abstract.search限定で追加検索した。新語は加えていない。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、ターボチャージャーの論文で、軸受を守るための空気抜き（ブリード空気）が、失速に至る経路そのものを変えてしまうという話でした。単に安定な運転範囲が狭くなるだけなら分かりやすいのですが、実際には羽根車のすぐ後ろの狭い空間の詰まり具合が変わることで、その先のディフューザという別の部品が不安定になり、乱れの起き方まで変わっていく——ある場所の小さな変化が、離れた場所の不安定さにつながるという玉突きのような連鎖に驚きました。もう一本の風車の論文は数式がびっしりで難しかったのですが、『昔は無視してよかった項目が、羽根の形が多様になった今のロータ設計には効いてくる』という話は、単純化がいつまでも安全とは限らないという、身につまされる教訓に思えました。"
+    },
+    {
+      "date": "2026-09-05",
+      "status": "published",
+      "headline": "風車後流の乱流散逸が、翼端渦・翼端せん断層が生き延びている間だけ非平衡型のスケーリング（C_ε∝√Re_D/Re_λ）に従い、強い自由流乱流下では翼端渦が早く壊れてこの規則が崩れることを風洞実験で示した最新研究（Bourhis & Buxton 2026、arXivプレプリント・CC BY 4.0・原図あり）と、圧縮機ケーシングから翼端漏れ渦を狙ってブリード・インジェクションする自己再循環ケーシング処理が、同じ場所を狙っていても抜き取りすぎるとかえって性能を悪化させる一方、うまく設計すれば中速ファンで流量範囲を最大64%、トランソニックファンNASA Rotor 67では125〜225%も拡大できることをCFDで示した定番研究（Hathaway 2002、NASA/TM-2002-211569・ASME GT2002-30368・パブリックドメイン・原図2枚あり）。",
+      "intro": "本日はcollect.mjsの定番枠（被引用上位14件）のうち12件がすでに配信済みで、新規候補はほぼ枯渇していました。そこでOpenAlexを『corner separation』『rotating stall inception』『casing treatment』など複数の追加キーワードで直接検索し直し、NASAグレン研究センターのHathaway (2002)による自己再循環ケーシング処理の研究（CFDでブリード・インジェクションの配置を系統的に比較し、失速範囲を大きく拡大する設計指針を導いた定番）を発掘しました。最新枠はarXivの新着から、風車後流の乱流散逸スケーリングを扱ったBourhis & Buxton (2026)を選定。両論文ともCC BY 4.0・パブリックドメインで全文・図をそのまま取得できたため、今号は2件ともOA全文（通常は1件が最低条件）で作り込みました。§0の忠実性チェックでは2ラウンドにわたり相応の量の修正が入りました：風車後流論文では非平衡散逸スケーリング式の括弧位置の誤り（√(Re_D/Re_λ)ではなく正しくは√Re_D/Re_λ）や『数直径以内』という出典にない定量表現などを修正。ケーシング処理論文では、Table 1の数値の対応関係を読み違えていたこと、そして何よりRotor 67の失速範囲拡大率を当初『12.5%』『22.5%』と読んでいたのが、図を拡大して確認したところ実際は『125%』『225%』という一桁大きな値だったことが判明し、訂正しました。",
+      "picked": [
+        {
+          "id": "arxiv:2609.03996",
+          "title": "Dissipation scaling in wind turbine wakes exposed to free-stream turbulence（Bourhis & Buxton, 2026）",
+          "why": "風車後流の乱流エネルギー散逸が、後流の外側の縁（翼端せん断層領域）で非平衡型のスケーリングC_ε∼√Re_D/Re_λに従うことを、8種類の自由流乱流×3段階の推力係数＝24ケースの風洞実験で明らかにした。翼端渦・翼端せん断層が生み出す大規模な間欠的擾乱（『キック』）がカスケードの有限時間伝播により散逸と釣り合わなくなる、という物理的解釈を提示。強い自由流乱流下では翼端渦がロータのすぐ近くで早々に壊れてしまい、この規則自体が崩れる点も示した。arXivプレプリントでCC BY 4.0、全文・図とも取得できた。"
+        },
+        {
+          "id": "doi:10.1115/gt2002-30368",
+          "title": "Self-Recirculating Casing Treatment Concept for Enhanced Compressor Performance（Hathaway, 2002）",
+          "why": "圧縮機・ファンロータの失速を引き起こす『翼端漏れ渦が生むエンドウォールブロッケージ』をCFDで直接特定し、それを狙ったケーシングのブリード・インジェクション配置（自己再循環）を系統的に比較した設計指針論文。同じ翼端漏れジェットを狙ったブリードでも、抜き取り量を増やすほど+45%→+12%→−34%と単調に悪化するという、狙う場所が合っていても『量』を誤ると逆効果になる定量的な結果が印象的。高効率トランソニックファンNASA Rotor 67に適用した場合は+125%（歪みなし）・+225%（歪みあり）という、中速ファンを大きく上回る流量範囲拡大が得られた。NASA技術メモランダムとしてパブリックドメイン、原図2枚を掲載できた。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠のキーワードが軒並み『既配信』に",
+          "note": "本日の定番枠ローテーション（回転失速前駆現象・二次流れ・チップ漏れ・損失機構・衝撃波境界層干渉・ウェイク混合・境界層遷移）で得られた被引用上位14件のうち、12件がこれまでの配信ですでに使われていました（Denton 1993のIGTI Scholar Lecture、Vo/Tan/Greitzerのスパイク型回転失速criteria論文、Langston 2001の二次流れレビュー、Furukawa 1999のチップ渦崩壊論文など）。残る2件のうち1件は流れ制御技術一般（プラズマアクチュエータ）で本アプリの『ターボ機械の流れ現象』という主眼からやや外れると判断し、追加でOpenAlexを複数キーワードで直接検索して本日の定番候補を確保しました。"
+        },
+        {
+          "title": "忠実性チェックで見つかった、自分の読み間違い",
+          "note": "ケーシング処理論文のTable 1（ブリード・インジェクションの効果一覧表）を最初に目で読んだとき、カテゴリの区切り（どの数値がどの見出しに属するか）を1行分ずらして読んでしまっていました。また、Rotor 67の失速範囲拡大率を示す図中の注記『125 %』『225 %』を、画質の粗いテキスト抽出から『12-5』『22-5』と誤読し、慎重を期して『12.5%』『22.5%』と一桁小さい数値で書いていました。忠実性チェックの過程で表と図を改めて高解像度で見直し、どちらも訂正しています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 17,
+            "note": "最新枠17件（OA10/抄録7）。arXivから風車後流の散逸スケーリング論文（Bourhis & Buxton, 2026）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA2/抄録12）のうち12件が既配信と重複。残り2件のうち1件（プラズマアクチュエータ）は流れ制御技術一般で見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加）",
+            "scope": "被引用上位ソート、複数の関連キーワードで直接検索",
+            "terms": [
+              "corner separation axial compressor",
+              "hub corner stall compressor cascade",
+              "rotor stator interaction unsteady turbomachinery",
+              "diffuser rotating stall centrifugal compressor",
+              "labyrinth seal leakage flow",
+              "compressor surge stall propagation",
+              "model equation simulating flows multistage turbomachinery",
+              "wake induced transition low pressure turbine calming effect"
+            ],
+            "hits": 45,
+            "note": "8クエリで計約45件を確認。自己再循環ケーシング処理の設計指針論文（Hathaway, 2002, NASA/TM-2002-211569）を発見・採用。"
+          }
+        ],
+        "note": "定番枠の標準候補が既配信と広く重複していたため、追加のOpenAlex直接検索で本日の定番論文を確保した。今号の新語（散逸率・テイラー・レイノルズ数・間欠性）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ3本を追加。"
+      },
+      "afterword": "— 編集担当より：今回いちばん『なるほど』だったのは、圧縮機の空気抜きの実験で、同じ場所（翼端の漏れジェット）を狙っていても、抜き取る量を少しずつ増やしていくと、効果が+45%→+12%→−34%ときれいに転がり落ちていったところです。場所さえ合っていれば安心、というわけではなく、量にもちょうどいい範囲があるという当たり前のようで見落としがちな教訓に、CFDで実際に数字を出してみせるとこんなに説得力が出るのかと感心しました。もうひとつ、今回は自分自身の読み間違いを振り返る回にもなりました。画質の粗い図の数字を『12.5%』と読んでいたのが、実は一桁大きい『125%』だったと後から気づいたときは、数字ひとつでも思い込みで片付けずちゃんと見直すことの大事さを、身をもって学んだ気がします。"
     }
   ]
 }
