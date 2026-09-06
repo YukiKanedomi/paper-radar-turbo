@@ -4827,6 +4827,126 @@
         "note": "定番枠の標準候補が既配信と広く重複していたため、追加のOpenAlex直接検索で本日の定番論文を確保した。§0忠実性チェック(Opus, 各論文2ラウンド)で、抄録論文の用語『軸方向渦度』を既存用語表記『流れ方向渦度』に統一、最新論文の『動圧』表記を『よどみ圧』に訂正、図1(a)のキャプションからO-gridの誤記述を削除、表面張力を無視していたとする先行研究の対象を実際に名指しされた3件に限定、などの修正を行った。今号の新語（二次流れ誘起損失・境界層散逸損失・流れ方向渦度・換気キャビテーション・換気係数・パフィング・ディボット）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ6本を追加。"
       },
       "afterword": "— 編集担当より：今回いちばん『なるほど』だったのは、換気キャビテーションの論文で、空気を送り込む場所を球の表面上でほんの少しずらすだけで、抵抗が減るどころか増えてしまうケースがある、という結果でした。てっきり『空気の膜を作れば作るほど抵抗は減る』のだと思っていたのですが、注入する場所によって水の流れが空気をせき止めて吹き飛ばす『パフィング』という現象が起きると、逆に抵抗が増えてしまうのだそうです。同じ狙い（抵抗を減らす）でも、場所ひとつで結果が正反対になるというのは、素人目には意外でした。もうひとつ、タービンの壁ぎわの損失を『境界層の散逸』と『渦を巻く二次流れ』の2つに分けて考えるという発想も、当たり前のようで、こうしてはっきり分けて考えられると理解しやすいなと感じました。"
+    },
+    {
+      "date": "2026-09-07",
+      "status": "published",
+      "headline": "T106A低圧タービン翼列で後流の振幅を9倍にすると翼面の摩擦抵抗が半分になる（ただし運動量厚さはむしろ増える）と示した最新研究（Sengupta 2024、arXivプレプリント・CC BY 4.0・原図あり）と、フィルム冷却孔の新形状『コンソール』が熱伝達性能ではファン状孔止まりだが空気力学的損失では大きく優る、という非対称な結論を示した定番研究（Sargison et al. 2001/2002）。",
+      "intro": "本日の定番枠ローテーション（rotor stator interaction unsteady / centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics / surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery / tip leakage vortex loss）で得た14件は全件が既配信と重複していました。topics.jsonの全キーワードでOpenAlexの被引用上位を検索し直し、被引用上位の候補（Secondary Flows in Axial Turbines、The Measurement and Formation of Tip Clearance Loss、Origins and Structure of Spike-Type Rotating Stall、Aeroelastic instability problems for wind turbinesなど）を多数確認しましたが、いずれも既配信でした。最終的に『film cooling turbine heat transfer』の枠で見つけたSargison et al.（2002, 被引用約180件）を定番に選定。ASME本体は403で全文を取得できませんでしたが、§0チェックのfaithfulness-checkサブエージェントが著者ら自身による2001年のASME Turbo Expo会議論文（同一内容、figshare収録）を発見・取得できたため、抄録ベースの予定を全文ベースに作り直しました。最新枠は、当日の6キーワードのarXiv候補がことごとく既配信・ML主体・非ターボ機械（衝撃波理論・羽ばたき翼など）だったため、topics.jsonのキーワードでarXivを日付順に再検索し、T106A低圧タービン翼列の後流誘起遷移を扱うSengupta（2024, CC BY 4.0）を選定しました。",
+      "picked": [
+        {
+          "id": "arxiv:2411.12242",
+          "title": "Effect of Gaussian wake amplitude on wake-induced transition for a T106A low pressure turbine cascade（Sengupta, 2024）",
+          "why": "低圧タービン翼列の吸込み面境界層に対し、上流からの後流（ウェイク）の強さ（振幅）だけを9段階に系統的に振った2次元LESで、後流が強いほど剥離が抑えられ表面摩擦係数が最大50%減る一方、境界層の厚み（運動量厚さ）は逆に39.2%増えるという、一筋縄ではいかない結果を定量的に示した。faithfulness-checkで、原文の『80%』が推力ではなく補機駆動動力の割合であること、静穏域の『25.86%』が移流速度の話であって時間占有率ではないこと、剥離泡高さ『37%』が論文自身の生データと数値的に整合しないことなど複数の誤読・過大解釈が見つかり、いずれも修正のうえ原文内の不整合として明記した。"
+        },
+        {
+          "id": "doi:10.1115/1.1459735",
+          "title": "A Converging Slot-Hole Film-Cooling Geometry—Part 1: Low-Speed Flat-Plate Heat Transfer and Loss（Sargison, Guo, Oldfield, Lock & Rawlinson, 2002）",
+          "why": "タービン翼冷却孔の新形状『コンソール』を、円筒孔・ファン状孔・スリットと比較。当初はASME本体が403で全文取得できず抄録ベースで作成したが、faithfulness-checkが著者ら自身の2001年学会発表版（同一内容）をfigshare経由で発見・取得したため全文ベースに全面的に作り直した。結果、当初ドラフトの『熱伝達・損失の両面で有望』という要約は不正確で、実際は『熱的性能はファン状孔と同程度にとどまり、空気力学的損失で大きく優る』という非対称な結論であることが判明し、修正して配信した。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "抄録ベースのつもりが、全文が見つかった",
+          "note": "Sargison論文はASME Digital Collectionが403を返すため抄録ベースで作成する予定でしたが、忠実性チェック（faithfulness-check）のサブエージェントが自分でSemantic Scholar経由の全文リンクをたどり、著者ら自身が2001年のASME Turbo Expoで発表した会議版（2001-GT-0126、ジャーナル版と要旨が一致する同一内容）がfigshareに公開されていることを発見しました。おかげで数値・図表・結論を大幅に厚くできましたが、同時に当初ドラフトの『両面で有望』という要約が、実際の結論（熱的性能は同程度・優位は空気力学性能のみ）とズレていたことも判明し、作り直しました。"
+        },
+        {
+          "title": "定番枠がほぼ枯渇していた日",
+          "note": "今日試した定番候補（本日のローテーション14件＋追加検索で見つけた10件以上）は、ほぼ全てが既配信でした。約半年近くこのペースで配信を続けてきた結果、主要な高被引用の定番論文をかなり拾い尽くしていることの表れです。最終的に選んだSargison論文も、topics.jsonの標準キーワードではなく『film cooling turbine heat transfer』という個別キーワードでの直接検索で見つかりました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 22,
+            "note": "最新枠22件（OA17/抄録5）のうち、既配信重複（3件）・ML/サロゲートモデル主体（2件）・非ターボ機械寄りの一般空力（4件）・全文取得不可（2件）を除くと採用可能な候補がほぼ残らなかった。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1/抄録13）は全件が既配信と重複。"
+          },
+          {
+            "name": "arXiv 直接検索（追加・topics.jsonキーワードの短縮形、日付順）",
+            "scope": "本日のローテーション外を含むキーワードでarXivを日付順に再検索",
+            "terms": [
+              "centrifugal compressor",
+              "axial compressor",
+              "turbine cascade",
+              "rotating stall",
+              "tip leakage vortex",
+              "tip clearance flow",
+              "secondary flow endwall",
+              "compressor surge",
+              "diffuser stall",
+              "cavitation pump",
+              "cavitation impeller",
+              "blade flutter",
+              "film cooling turbine",
+              "inlet distortion",
+              "wind turbine wake",
+              "rotor stator interaction",
+              "shock boundary layer interaction",
+              "corner separation compressor",
+              "turbomachinery loss"
+            ],
+            "hits": 38,
+            "note": "19キーワードで検索し、既配信と重複しない新規候補38件を確認。既配信・ML主体・非ターボ機械寄りの候補を除いた中から、T106A低圧タービン翼列の後流誘起遷移を扱うSengupta(2024, arXiv:2411.12242, CC BY 4.0)を発見・採用。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・topics.json全21キーワード、被引用順）",
+            "scope": "topics.jsonの全キーワードで被引用上位を直接検索（cited_by_count>=100で足切り）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 33,
+            "note": "21キーワード×被引用上位10件で検索し、既配信と重複せず被引用100件以上の候補33件を確認。大半が既配信（Secondary Flows in Axial Turbines、Origins and Structure of Spike-Type Rotating Stall、Aeroelastic instability problems for wind turbinesなど）だったが、A Converging Slot-Hole Film-Cooling Geometry(Sargison et al. 2002, 被引用190件)を発見・採用。"
+          }
+        ],
+        "note": "定番・最新とも本日のキーワードローテーションだけでは候補が尽きていたため、topics.jsonの全キーワードに範囲を広げた追加検索を実施した。§0忠実性チェック(Opus、各論文2ラウンド)で、Sengupta論文は『推力の80%』の誤読・『静穏域25.86%』の誤読（移流速度を時間占有率と誤認）・『剥離泡高さ37%増』が論文自身の生データと不整合であることの見落とし・逐語引用の欠落・CETE適用範囲の過大表現など計14件の指摘を受け、全て修正または原文内の不整合として明記した。Sargison論文は当初抄録ベースで作成したが、サブエージェントが全文（2001年学会発表版）を発見したため全面的に作り直し、『両面で有望』という誇張表現・捏造されたディテール（熱電対に関する記述）・主流条件の欠落などを修正した。今号の新語（エンストロフィー・圧縮性エンストロフィー輸送方程式・傾圧性・コンソール型冷却孔・スロート面積）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ6本を追加。"
+      },
+      "afterword": "— 編集担当より：今回いちばん『なるほど』だったのは、フィルム冷却孔の論文で、熱の伝わりやすさ（熱伝達係数）が高いことが必ずしも冷却に有利とは限らない、という話でした。新しい孔『コンソール』は、実は熱の伝わりやすさでは他の孔に負けていないどころかむしろ高いくらいなのに、それは境界層をあまり乱さないからで、逆に熱が伝わりにくい孔（円筒やファン状）は境界層を乱して損をしている、という説明にはひざを打ちました。もうひとつは、忠実性チェックの過程で『抄録しか読めない』と思っていた論文の全文が実は別の場所（学会発表版）に残っていて、それを読んだら当初の要約が結論を言い過ぎていたと分かったことです。『読めないから控えめに』のつもりが、実は読めるものを読まずに雑にまとめてしまうリスクもあるのだと、身をもって思い知らされました。"
     }
   ]
 }

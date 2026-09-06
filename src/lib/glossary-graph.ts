@@ -144,6 +144,9 @@ export const CATEGORIES: GraphCategory[] = [
       "損失遅れ (loss lag)",
       "渦度輸送方程式 (vorticity transport equation)",
       "渦伸張項 (vortex stretching term)",
+      "エンストロフィー (enstrophy, Ω)",
+      "圧縮性エンストロフィー輸送方程式 (CETE, compressible enstrophy transport equation)",
+      "傾圧性 (baroclinicity)",
       "一次渦 (primary vortex, PV)",
       "二次渦度 (secondary vorticity, SV)",
       "渦合体 (vortex merging)",
@@ -381,6 +384,8 @@ export const CATEGORIES: GraphCategory[] = [
       "リブ乱流促進材",
       "吹き出し比 (blowing ratio)",
       "シェイプドフィルム孔 (shaped film hole)",
+      "コンソール型冷却孔 (console film-cooling hole)",
+      "スロート面積 (throat area)",
       "断熱膜冷却効率 (adiabatic film effectiveness)",
       "コンパウンド角度噴射 (compound angle injection)",
       "ウェイク誘起遷移 (wake-induced transition)",
@@ -969,6 +974,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "エネルギーカスケード", to: "散逸率 (dissipation rate, ε)", label: "行き着く先" },
   { from: "散逸率 (dissipation rate, ε)", to: "テイラー・レイノルズ数 (Taylor Reynolds number, Re_λ)", label: "非平衡スケーリング" },
   { from: "翼端渦 (tip vortex)", to: "間欠性 (intermittency)", label: "大規模な間欠的擾乱を駆動" },
+  // --- T106A低圧タービンの後流振幅とエンストロフィー収支（Sengupta 2024） ---
+  { from: "圧縮性エンストロフィー輸送方程式 (CETE, compressible enstrophy transport equation)", to: "エンストロフィー (enstrophy, Ω)", label: "生成・成長・再分配の収支を記述" },
+  { from: "圧縮性エンストロフィー輸送方程式 (CETE, compressible enstrophy transport equation)", to: "傾圧性 (baroclinicity)", label: "2次元流れでの主要な生成項の一つ" },
+  { from: "エンストロフィー (enstrophy, Ω)", to: "渦度 (vorticity)", label: "渦度の大きさから定義される回転運動の指標" },
+  { from: "ウェイク誘起遷移 (wake-induced transition)", to: "負のジェット (negative jet)", label: "負のジェット効果が遷移を加速" },
+  // --- コンバージングスロットホール型フィルム冷却孔（Sargison et al. 2002） ---
+  { from: "コンソール型冷却孔 (console film-cooling hole)", to: "シェイプドフィルム孔 (shaped film hole)", label: "性能比較の対象" },
+  { from: "コンソール型冷却孔 (console film-cooling hole)", to: "断熱膜冷却効率 (adiabatic film effectiveness)", label: "感温液晶法で計測" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
