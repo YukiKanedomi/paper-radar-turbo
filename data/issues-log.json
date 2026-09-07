@@ -4947,6 +4947,92 @@
         "note": "定番・最新とも本日のキーワードローテーションだけでは候補が尽きていたため、topics.jsonの全キーワードに範囲を広げた追加検索を実施した。§0忠実性チェック(Opus、各論文2ラウンド)で、Sengupta論文は『推力の80%』の誤読・『静穏域25.86%』の誤読（移流速度を時間占有率と誤認）・『剥離泡高さ37%増』が論文自身の生データと不整合であることの見落とし・逐語引用の欠落・CETE適用範囲の過大表現など計14件の指摘を受け、全て修正または原文内の不整合として明記した。Sargison論文は当初抄録ベースで作成したが、サブエージェントが全文（2001年学会発表版）を発見したため全面的に作り直し、『両面で有望』という誇張表現・捏造されたディテール（熱電対に関する記述）・主流条件の欠落などを修正した。今号の新語（エンストロフィー・圧縮性エンストロフィー輸送方程式・傾圧性・コンソール型冷却孔・スロート面積）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ6本を追加。"
       },
       "afterword": "— 編集担当より：今回いちばん『なるほど』だったのは、フィルム冷却孔の論文で、熱の伝わりやすさ（熱伝達係数）が高いことが必ずしも冷却に有利とは限らない、という話でした。新しい孔『コンソール』は、実は熱の伝わりやすさでは他の孔に負けていないどころかむしろ高いくらいなのに、それは境界層をあまり乱さないからで、逆に熱が伝わりにくい孔（円筒やファン状）は境界層を乱して損をしている、という説明にはひざを打ちました。もうひとつは、忠実性チェックの過程で『抄録しか読めない』と思っていた論文の全文が実は別の場所（学会発表版）に残っていて、それを読んだら当初の要約が結論を言い過ぎていたと分かったことです。『読めないから控えめに』のつもりが、実は読めるものを読まずに雑にまとめてしまうリスクもあるのだと、身をもって思い知らされました。"
+    },
+    {
+      "date": "2026-09-08",
+      "status": "published",
+      "headline": "自動車ターボチャージャーの遷音速遠心圧縮機で、サージの真っ最中に翼端の渦が壊れる一方、ディフューザでは失速の塊がインペラ回転速度のわずか15〜20%というゆっくりした速さで回っていたことを、スーパーコンピュータ「富岳」の大規模計算と実験で示した最新研究(Manabe, Furukawa, Yamada & Kusano 2025、Journal of Fluid Science and Technology・CC BY 4.0・原図あり)と、羽根付きディフューザを持つ遠心ポンプで、ディフューザ羽根と羽根車ブレードの圧力変動が流量を絞ったときにまったく逆方向に動くことを実験で示した定番研究(Arndt, Acosta, Brennen & Caughey 1990、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の定番枠ローテーション(tip clearance flow loss / turbomachinery loss mechanisms / shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery)で得た14件中13件が既配信と重複し、唯一の新規候補(DBDプラズマアクチュエータのレビュー)も抄録が取得できず断念しました。最新枠も、本日のarXiv候補7件(surge rotating stall等のキーワード)が脂質膜・相対論的流体・MRI超解像・水波など軒並みターボ機械と無関係な分野で、採用できる候補がありませんでした。そこでtopics.jsonの未使用キーワードでOpenAlexを追加検索し、定番・最新それぞれで新規候補を発掘しました。最新枠で見つけたOA論文候補(MDPI・ASME・AIP等でホストされる複数)は軒並み403でブロックされ全文が取得できず、最終的にJSTAGE(日本機械学会の電子ジャーナルプラットフォーム)でホストされているManabe et al. 2025だけが全文取得に成功しました。定番枠は、被引用上位の再検索で見つかったArndt et al. 1990(Caltech、被引用156件)を抄録ベースで採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.1299/jfst.2025jfst0011",
+          "title": "Experimental and numerical analyses of mild surge in a transonic centrifugal compressor with a vaneless diffuser（Manabe, Furukawa, Yamada & Kusano, 2025）",
+          "why": "自動車用ターボチャージャーの遷音速遠心圧縮機のマイルドサージを、実験とスーパーコンピュータ富岳による約9億1500万セル規模のDESで再現した研究。サージ周期を通して翼端漏れ渦がスパイラル型崩壊からトルネード型剥離渦へ置き換わる過程と、ディフューザの回転失速セルがインペラ回転速度の15-20%というゆっくりした速度で周方向に伝播・消滅する過程を、忠実性チェック(2ラウンド)で複数の数値の取り違え(15%を『15分の1』と誤読、計算周期数の取り違え、位相点A/Dの定義の誤りなど)を修正したうえで配信しました。"
+        },
+        {
+          "id": "doi:10.1115/1.2927428",
+          "title": "Experimental Investigation of Rotor-Stator Interaction in a Centrifugal Pump With Several Vaned Diffusers（Arndt, Acosta, Brennen & Caughey, 1990）",
+          "why": "遠心ポンプのロータ・ステータ干渉について、ディフューザ羽根と羽根車ブレードの両方に圧力センサーを置いて計測した実験研究。抄録に記載のない先行研究の評価や実験装置の詳細を補わないよう、忠実性チェック(2ラウンド)で複数のover-reach(新規性の断定、著者の性格づけの誇張など)を削除・修正しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "OA(オープンアクセス)でも読めるとは限らなかった日",
+          "note": "OpenAlexで『OA』と判定される論文を何本も見つけましたが、MDPI・ASME Digital Collection・AIP Publishingなど商業出版社が直接ホストするページはことごとく403(ボット対策)で全文を取得できませんでした。最終的に全文が読めたのは、日本機械学会が運営するJSTAGEというプラットフォームでホストされていた論文だけでした。『OAだから読める』と『実際に読める』はイコールではない、という当たり前の事実を再確認した回でした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA17/抄録7）。arXiv上位はすべてターボ機械と無関係な分野（脂質膜、相対論的流体、MRI超解像、水波、弾性乱流等）で採用不可。OpenAlex新着経由のOA候補（MDPI/ASME/AIP等）は本文が403で取得できず断念。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA4/抄録10）のうち13件が既配信と重複。唯一の新規候補（DBDプラズマアクチュエータのレビュー, Corke et al. 2008）は抄録が取得できず断念。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・被引用順）",
+            "scope": "topics.json未使用キーワードでOpenAlex被引用上位を追加検索",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 38,
+            "note": "5キーワードで新規候補を多数確認。ロータ・ステータ干渉の検索でArndt et al.(1990, 被引用156件)を発見・採用。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・OA限定・発行日順）",
+            "scope": "best_oa_location.license:cc-by 限定で追加検索",
+            "terms": [
+              "rotating stall centrifugal compressor",
+              "tip clearance flow",
+              "secondary flow turbine",
+              "diffuser stall",
+              "surge compressor"
+            ],
+            "hits": 25,
+            "note": "CC-BY限定で検索し、JSTAGE収録のManabe et al.(2025)を発見。PDF取得を試み、MDPI/ASME/AIP等の候補は403で断念する一方、JSTAGE(jstage.jst.go.jp)は取得に成功。"
+          }
+        ],
+        "note": "本日の定番・最新ともキーワードローテーションだけでは候補が尽きていたため、topics.jsonの未使用キーワードとOA限定フィルタで追加検索を実施した。§0忠実性チェック(Opus、各論文2ラウンド)で、Manabe論文は「15%を15分の1と誤読」「計算周期数（6周期以上を1周期と誤記）」「Sensor2の基準点の取り違え」「位相点A/Dの定義の誤り」「回転失速セルの発生位置とスクロール形状の因果関係の過大な断定」など計十数件、Arndt論文は「被引用数の単一値化（OpenAlex 156 vs Crossref 119の乖離を無視）」「著者フルネームの未確認な展開」「抄録にない先行研究評価・新規性主張の付加」「概念図の軸表記不足」など計十件超の指摘を受け、すべて修正した。今号の新語（マイルドサージ・リサージュ曲線・ベーンレスディフューザ・分離渦シミュレーション(DES)・半径方向すき間）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ8本を追加。"
+      },
+      "afterword": "— 編集担当より：今回は「OA(オープンアクセス)だから読めるはず」という思い込みが何度も裏切られた回でした。データベース上は「オープンアクセス」のはずの論文が、実際に出版社のページを開こうとすると軒並み門前払いになる。結局読めたのは、日本の学会が自分たちで運営しているサイトに載っていた論文でした。オープンであることと、実際に手が届くことは別なんだな、というのが今日いちばんの発見です。もうひとつ面白かったのは、1990年の古いポンプの実験論文で、羽根車のすぐ後ろに置いた案内羽根が、場所によって流量に対してまったく逆の反応をする（絞ると増える場所と減る場所がある）という話。35年前の地味な実験ですが、今でも十分に「へえ」と思わせる中身でした。"
     }
   ]
 }
