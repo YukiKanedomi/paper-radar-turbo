@@ -43,6 +43,7 @@ export const CATEGORIES: GraphCategory[] = [
       "渦崩壊 (vortex breakdown)",
       "逆流（backflow）",
       "ブロッケージ (blockage)",
+      "失速開始 (stall inception)",
       "先端すき間渦の前縁越え",
       "渦運動学（vortex kinematics）",
       "失速境界",
@@ -230,6 +231,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ベーン付きディフューザ (vaned diffuser)",
       "半径方向すき間 (radial gap)",
       "抽気流れ (bleed air)",
+      "ハブ-ケーシング比 (hub-to-casing ratio)",
     ],
   },
   {
@@ -245,6 +247,8 @@ export const CATEGORIES: GraphCategory[] = [
       "次元削減",
       "転移学習",
       "不確かさ",
+      "リーディングエッジ幾何偏差 (leading-edge geometric deviation)",
+      "ガウス過程 (Gaussian process, GP)",
       "URANS（k-ω SST）",
       "遺伝的アルゴリズム",
       "動的モード分解 (DMD)",
@@ -308,6 +312,7 @@ export const CATEGORIES: GraphCategory[] = [
       "基準直径 (reference diameter)",
       "損失相関式 (loss correlation)",
       "静圧効率 (static pressure efficiency)",
+      "ツヴァイフェル係数 (Zweifel coefficient, Zw)",
     ],
   },
   {
@@ -397,6 +402,7 @@ export const CATEGORIES: GraphCategory[] = [
       "バイパス遷移 (bypass transition)",
       "疑似層流境界層 (pseudolaminar boundary layer)",
       "負圧面境界層 (suction-side boundary layer)",
+      "形状因子 (shape factor, H)",
       "静穏域 (calmed region)",
       "乱流スポット (turbulent spot)",
       "剥離流遷移 (separated-flow transition)",
@@ -995,6 +1001,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- コンバージングスロットホール型フィルム冷却孔（Sargison et al. 2002） ---
   { from: "コンソール型冷却孔 (console film-cooling hole)", to: "シェイプドフィルム孔 (shaped film hole)", label: "性能比較の対象" },
   { from: "コンソール型冷却孔 (console film-cooling hole)", to: "断熱膜冷却効率 (adiabatic film effectiveness)", label: "感温液晶法で計測" },
+  // --- 軸流圧縮機の失速開始（McDougall, Cumpsty & Hynes 1990） ---
+  { from: "ブロッケージ (blockage)", to: "失速開始 (stall inception)", label: "両ケースで決定的に重要" },
+  { from: "チップクリアランス (tip clearance, TC)", to: "失速開始 (stall inception)", label: "小さいとハブ・多段機相当だとチップで開始" },
+  { from: "ハブ-ケーシング比 (hub-to-casing ratio)", to: "失速開始 (stall inception)", label: "この実験の対象条件" },
+  // --- 高負荷LPT翼の実測前縁形状偏差（Wang & Zhang 2026） ---
+  { from: "リーディングエッジ幾何偏差 (leading-edge geometric deviation)", to: "全圧損失係数", label: "負荷が高いほど増大させる" },
+  { from: "ガウス過程 (Gaussian process, GP)", to: "リーディングエッジ幾何偏差 (leading-edge geometric deviation)", label: "滑らかな誤差モデルとして比較対象に用いる" },
+  { from: "ツヴァイフェル係数 (Zweifel coefficient, Zw)", to: "リーディングエッジ幾何偏差 (leading-edge geometric deviation)", label: "高いほど偏差への感度が増す" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

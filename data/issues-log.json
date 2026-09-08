@@ -5033,6 +5033,82 @@
         "note": "本日の定番・最新ともキーワードローテーションだけでは候補が尽きていたため、topics.jsonの未使用キーワードとOA限定フィルタで追加検索を実施した。§0忠実性チェック(Opus、各論文2ラウンド)で、Manabe論文は「15%を15分の1と誤読」「計算周期数（6周期以上を1周期と誤記）」「Sensor2の基準点の取り違え」「位相点A/Dの定義の誤り」「回転失速セルの発生位置とスクロール形状の因果関係の過大な断定」など計十数件、Arndt論文は「被引用数の単一値化（OpenAlex 156 vs Crossref 119の乖離を無視）」「著者フルネームの未確認な展開」「抄録にない先行研究評価・新規性主張の付加」「概念図の軸表記不足」など計十件超の指摘を受け、すべて修正した。今号の新語（マイルドサージ・リサージュ曲線・ベーンレスディフューザ・分離渦シミュレーション(DES)・半径方向すき間）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ8本を追加。"
       },
       "afterword": "— 編集担当より：今回は「OA(オープンアクセス)だから読めるはず」という思い込みが何度も裏切られた回でした。データベース上は「オープンアクセス」のはずの論文が、実際に出版社のページを開こうとすると軒並み門前払いになる。結局読めたのは、日本の学会が自分たちで運営しているサイトに載っていた論文でした。オープンであることと、実際に手が届くことは別なんだな、というのが今日いちばんの発見です。もうひとつ面白かったのは、1990年の古いポンプの実験論文で、羽根車のすぐ後ろに置いた案内羽根が、場所によって流量に対してまったく逆の反応をする（絞ると増える場所と減る場所がある）という話。35年前の地味な実験ですが、今でも十分に「へえ」と思わせる中身でした。"
+    },
+    {
+      "date": "2026-09-09",
+      "status": "published",
+      "headline": "軸流圧縮機の失速がハブ側から始まるかチップ側から始まるかは翼端すきま次第で、どちらの場合も端壁境界層の『ブロッケージ』が鍵だったことを詳細計測で示した定番研究(McDougall, Cumpsty & Hynes 1990、Journal of Turbomachinery、抄録ベース)と、低圧タービン翼の前縁に実際に測定した1781枚分の形状誤差を写し込むと、負荷を上げたときに一部の翼だけ急に大きな損失や剥離を起こす危険があり、それは前縁の厚みだけでは説明できない『局所的ななめらかでなさ』が原因だと示した最新研究(Wang & Zhang 2026、Aerospace(MDPI)・CC BY 4.0・原図あり)。",
+      "intro": "本日の検索語は最新枠が『shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery』、定番枠が『wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics / diffuser stall pressure recovery / cavitation pump impeller / rotor stator interaction unsteady / centrifugal compressor aerodynamics / axial compressor aerodynamics』でした。最新枠13件(OA8/抄録5)からは、MDPI(Aerospace)でCC BY 4.0公開されている低圧タービン翼の実測前縁誤差の論文を全文取得して採用しました。定番枠14件(OA3/抄録11)は、採掘工学のNanobubbles論文(テーマ不一致)を除く13件がほぼ既配信と重複し、唯一の新規候補もDBDプラズマ空力制御のレビュー(Corke et al. 2008)にとどまりました。より軸流圧縮機の失速物理そのものを扱う候補を求めてtopics.json外のキーワードでOpenAlexを追加検索し、McDougall, Cumpsty & Hynes(1990)の失速開始に関する基礎文献を発見・採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.2927406",
+          "title": "Stall Inception in Axial Compressors（McDougall, Cumpsty & Hynes, 1990）",
+          "why": "軸流圧縮機の失速がどこから始まるかを詳細計測で調べた基礎文献。翼端すきまが小さいとハブ側、多段圧縮機で典型的なすきまだとチップ側から失速が始まり、どちらの場合も端壁境界層が引き起こす『ブロッケージ』が決定的に重要な量だという知見を示しました。被引用数がOpenAlex(350件)とCrossref(269件)で大きく乖離していたため、忠実性チェック(2ラウンド)の指摘を受けて具体的な数値は出さず定性表記に改めています。"
+        },
+        {
+          "id": "doi:10.3390/aerospace13090773",
+          "title": "Aerodynamic Effects of Measured Leading-Edge Geometric Deviations on Highly Loaded Low-Pressure Turbine Blades（Wang & Zhang, 2026）",
+          "why": "先行研究で実測した1781枚分の低圧タービン翼の前縁形状誤差を、実験データが公開されているT106D-EIZという翼型に移植し、負荷を上げていくと一部の翼が急激に大きな損失や剥離を起こすことをCFDで定量化した最新研究。滑らかな統計モデル(ガウス過程)では再現できない、実測データ特有の『局所的ななめらかでなさ』が追加のリスクを生むことを示しました。忠実性チェック(2ラウンド)で、平均損失の増加率と相対標準偏差の混同、Fig.13とFig.17の取り違え、先行研究の発表年の誤りなど複数の点を修正して配信しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠は総取り替え、MDPIは今日は読めた",
+          "note": "本日の定番枠ローテーション(風車後流・フィルム冷却・失速歪み等8語)で得た14件は、Nanobubbles(採掘工学・テーマ不一致)を除く13件が既配信と重複するか周辺分野で、流れ物理の核心を突く新規候補はDBDプラズマの空力制御レビュー(Corke et al. 2008)だけでした。より軸流圧縮機の失速物理そのものを扱う候補を求めて、topics.json外のキーワード(tip leakage vortex compressor / rotating stall inception / diffuser stall centrifugal compressor 等)でOpenAlexを追加検索し、McDougall, Cumpsty & Hynes(1990)の失速開始研究を発見・採用しました。最新枠は通常のローテーション内でOA全文(MDPI・Aerospace)を取得でき、前々日の配信で403(ボット対策)にブロックされ続けたMDPIも、今日はPDFの直接リンクから取得に成功しています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA8/抄録5）。うち2609.03996(Bourhis & Buxton 2026)と2件のOpenAlex候補は既配信と重複のため除外。低圧タービン翼の実測前縁誤差論文(Wang & Zhang 2026, Aerospace, OA)を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA3/抄録11）のうち13件が既配信と重複するかテーマ不一致（Nanobubbles/採掘工学）。唯一のテーマ一致の新規候補（Corke et al. 2008, DBDプラズマ）は見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・被引用順）",
+            "scope": "topics.json未使用の失速・チップリーク系キーワードでOpenAlex被引用上位を追加検索",
+            "terms": [
+              "tip leakage vortex compressor",
+              "rotating stall inception",
+              "secondary flow endwall loss turbine",
+              "diffuser stall centrifugal compressor",
+              "shock boundary layer interaction turbomachinery",
+              "corner separation compressor cascade",
+              "blade tip clearance loss turbine",
+              "compressor surge dynamics"
+            ],
+            "hits": 33,
+            "note": "8キーワードで既配信と重複しない定番候補を多数確認。McDougall, Cumpsty & Hynes(1990, 被引用350件/Crossref269件)を発見・採用。"
+          }
+        ],
+        "note": "定番枠が通常ローテーションでほぼ枯渇していたため、topics.json外のキーワードでOpenAlexを追加検索した。§0忠実性チェック(Opus、各論文2ラウンド)で、McDougall論文は「抄録に無い因果関係の創作(ハブ/チップどちらでブロッケージが増大するかの断定)」「被引用数の単一値表記(OpenAlex350 vs Crossref269の乖離)」「crucialの訳の強さ」など、Wang論文は「平均損失の増加率と相対標準偏差の数値の取り違え」「先行研究の発表年の誤り(2022→2023)」「Fig.13とFig.17の内容の取り違え」「入射角と翼取り付け角の混同」など、計十数件の指摘を受けすべて修正した。今号の新語（失速開始・ハブ-ケーシング比・リーディングエッジ幾何偏差・ガウス過程・ツヴァイフェル係数・形状因子）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ6本を追加。"
+      },
+      "afterword": "— 編集担当より：今回いちばん『なるほど』と思ったのは、Wangさんたちの低圧タービン翼の論文でした。前縁の厚みの誤差さえ同じ大きさに揃えれば、影響も同じくらいになるだろうと思っていたのですが、実際にはなめらかな数式で作った偏差と、本物の測定データの偏差とでは、厚みがまったく同じでも損失の大きさが全然違っていました(この論文では損失係数で3倍以上)。効いていたのは厚みという『量』ではなく、表面の曲がり方の『ガタガタ具合』という質のほうだった、というのが今日の発見です。数字を揃えれば十分、とは限らないんだなと思わされました。"
     }
   ]
 }
