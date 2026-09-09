@@ -448,6 +448,9 @@ export const CATEGORIES: GraphCategory[] = [
       "薄翼理論 (thin airfoil theory)",
       "シェッドウェイクメモリ (shed wake memory)",
       "一般化揚力線法 (generalized lifting-line methods)",
+      "羽根・タワー干渉 (BTI)",
+      "翼通過周波数 (BPF)",
+      "音響アナロジー (acoustic analogy)",
     ],
   },
   {
@@ -1009,6 +1012,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "リーディングエッジ幾何偏差 (leading-edge geometric deviation)", to: "全圧損失係数", label: "負荷が高いほど増大させる" },
   { from: "ガウス過程 (Gaussian process, GP)", to: "リーディングエッジ幾何偏差 (leading-edge geometric deviation)", label: "滑らかな誤差モデルとして比較対象に用いる" },
   { from: "ツヴァイフェル係数 (Zweifel coefficient, Zw)", to: "リーディングエッジ幾何偏差 (leading-edge geometric deviation)", label: "高いほど偏差への感度が増す" },
+  // --- 風車まるごと構成の騒音生成・伝播（Rismondo, Petris & Armenio 2026） ---
+  { from: "羽根・タワー干渉 (BTI)", to: "翼通過周波数 (BPF)", label: "タワー圧力にBPFの純音成分を生む" },
+  { from: "羽根・タワー干渉 (BTI)", to: "渦放出 (vortex shedding)", label: "タワー自身の渦放出も低周波音源として加わる" },
+  { from: "音響アナロジー (acoustic analogy)", to: "LES", label: "LESの流れ場から音源を評価する枠組み" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

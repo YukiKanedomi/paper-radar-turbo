@@ -5109,6 +5109,81 @@
         "note": "定番枠が通常ローテーションでほぼ枯渇していたため、topics.json外のキーワードでOpenAlexを追加検索した。§0忠実性チェック(Opus、各論文2ラウンド)で、McDougall論文は「抄録に無い因果関係の創作(ハブ/チップどちらでブロッケージが増大するかの断定)」「被引用数の単一値表記(OpenAlex350 vs Crossref269の乖離)」「crucialの訳の強さ」など、Wang論文は「平均損失の増加率と相対標準偏差の数値の取り違え」「先行研究の発表年の誤り(2022→2023)」「Fig.13とFig.17の内容の取り違え」「入射角と翼取り付け角の混同」など、計十数件の指摘を受けすべて修正した。今号の新語（失速開始・ハブ-ケーシング比・リーディングエッジ幾何偏差・ガウス過程・ツヴァイフェル係数・形状因子）はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ6本を追加。"
       },
       "afterword": "— 編集担当より：今回いちばん『なるほど』と思ったのは、Wangさんたちの低圧タービン翼の論文でした。前縁の厚みの誤差さえ同じ大きさに揃えれば、影響も同じくらいになるだろうと思っていたのですが、実際にはなめらかな数式で作った偏差と、本物の測定データの偏差とでは、厚みがまったく同じでも損失の大きさが全然違っていました(この論文では損失係数で3倍以上)。効いていたのは厚みという『量』ではなく、表面の曲がり方の『ガタガタ具合』という質のほうだった、というのが今日の発見です。数字を揃えれば十分、とは限らないんだなと思わされました。"
+    },
+    {
+      "date": "2026-09-10",
+      "status": "published",
+      "headline": "高圧比のトランソニック遠心圧縮機インペラで、衝撃波は通説の『境界層との干渉』ではなく『翼端漏れ渦との干渉』を起こしていたとLDV計測で示した定番研究(Ibaraki, Matsuo, Kuma, Sumida & Suita 2003、Journal of Turbomachinery、抄録ベース)と、風車の羽根だけでなくタワー・ナセル・地面反射まで含めた壁面解像LES＋音響アナロジーで、羽根・タワー干渉(BTI)が生む純音成分や後流の非対称な崩壊、指向性の変化を明らかにした最新研究(Rismondo, Petris & Armenio 2026、Journal of Fluid Mechanics・CC BY 4.0・原図2枚あり)。",
+      "intro": "本日の検索語は最新枠が『wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics / diffuser stall pressure recovery / cavitation pump impeller / rotor stator interaction unsteady』、定番枠が『turbine aerodynamics / surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery / tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms / shock boundary layer interaction compressor』でした。最新枠24件(OA18/抄録6)のOpenAlex新着から、風車のタワー・ナセル・地面反射まで含めた騒音生成のCC BY 4.0論文(Rismondo, Petris & Armenio 2026, J. Fluid Mech.)を全文取得して採用しました。定番枠14件(OA1/抄録13)は13件が既配信と重複し、唯一の新規候補もDBDプラズマ空力制御のレビュー(Corke et al. 2008、流体現象より制御デバイスが主役)にとどまったため、topics.json内の未使用キーワード(centrifugal compressor aerodynamics等7語)でOpenAlexを追加検索し、Ibaraki, Matsuo, Kuma, Sumida & Suita(2003)のトランソニック遠心圧縮機インペラ研究を発見・採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.1540117",
+          "title": "Aerodynamics of a Transonic Centrifugal Compressor Impeller（Ibaraki, Matsuo, Kuma, Sumida & Suita, 2003）",
+          "why": "ターボチャージャー・ターボシャフトエンジン向け高圧比遠心圧縮機のインデューサ内衝撃波について、LDVで詳細計測した基礎文献。『衝撃波と境界層の干渉が損失を増やす』という一般的な見方を検証したところ、実際に観測されたのは衝撃波と翼端漏れ渦の干渉であり、境界層との干渉は観測されなかったという、通説を裏切る結果を示しました。忠実性チェック(2ラウンド)で、遷音速(トランソニック)を超音速と誤記していた箇所の修正、抄録に無い一般論の削除、被引用数の単一値表記の削除などを行いました。"
+        },
+        {
+          "id": "doi:10.1017/jfm.2026.12018",
+          "title": "Wind turbine noise generation and propagation through large-eddy simulation and acoustic analogy: the case of the complete wind turbine（Rismondo, Petris & Armenio, 2026）",
+          "why": "著者らが以前発表した単独ロータ（羽根だけ）の騒音研究を、タワー・ナセル・反射地面を含む『まるごとの風車』に拡張した壁面解像LES+音響アナロジー研究。羽根とタワーの干渉(BTI)がタワー表面に翼通過周波数の純音成分を生み、タワー自身の渦放出も低周波音源になること、後流がより早く非対称に崩れること、地面反射で音圧が全方向約6dB増えることなどを定量化しました。忠実性チェック(2ラウンド)で、ストローハル数の範囲の取り違え(渦放出でない高さのデータを含めていた)、St と f/f_T の単位混同、x方向とy方向の取り違え、推力係数と出力係数の改善を一括りにしていた点(出力係数はわずかに悪化)などを修正しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠は今日も総取り替え、最新枠は初回のローテーションでOA全文が拾えた",
+          "note": "本日の定番枠ローテーション(turbine aerodynamics等8語)で得た14件は、既配信と重複しない新規候補がDBDプラズマ空力制御のレビュー(Corke et al. 2008)1件だけで、流れ現象そのものよりプラズマアクチュエータという制御デバイスが主役の内容だったため見送りました。topics.json内の別のキーワード(centrifugal compressor aerodynamics / axial compressor aerodynamics / boundary layer transition turbine blade等7語)でOpenAlexを追加検索し、Ibarakiらのトランソニック遠心圧縮機インペラ研究(2003年、被引用OpenAlex57・Crossref41・Semantic Scholar65とデータベース間で差があるため数値は示さず定性表記)を発見・採用しました。最新枠は通常のローチェーション内で、風車のタワー・ナセル・地面反射を含む最新のJFM論文(CC BY 4.0)を全文取得でき、原図2枚(後流の渦構造・音の指向性パターン)も掲載できました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA18/抄録6）。arXiv側は生物流体・数値手法系が中心で今回は不採用。OpenAlex新着から風車まるごと構成の騒音生成論文(Rismondo, Petris & Armenio 2026, J. Fluid Mech., CC BY 4.0)を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1/抄録13）のうち13件が既配信と重複。唯一の新規候補（Corke et al. 2008, DBDプラズマ空力制御）は流れ現象より制御デバイスが主役のため見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・被引用順）",
+            "scope": "topics.json内の未使用キーワードでOpenAlex被引用上位を追加検索",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 25,
+            "note": "7キーワードで既配信と重複しない定番候補を複数確認。Ibaraki, Matsuo, Kuma, Sumida & Suita(2003)のトランソニック遠心圧縮機インペラ研究を発見・採用。"
+          }
+        ],
+        "note": "定番枠が通常ローテーションでほぼ枯渇していたため、topics.json内の未使用キーワードでOpenAlexを追加検索した。§0忠実性チェック(Opus、各論文2ラウンド)で、Ibaraki論文は「transonic(遷音速)をsupersonic(超音速)相当の訳語で強めていた点」「抄録に無い一般論(衝撃波・渦干渉が一般に損失要因とされるという文)の付加」「被引用数の単一値列挙」「numbers欄の（相対）マッハ数という裏取り不可の限定語」などを修正。Rismondo論文は「タワー渦放出のストローハル数範囲に、実際はBPF支配だった高さのデータ(St=0.28)を混ぜていた点」「St≈1.5f_Tという単位混同(正しくはf≈1.5f_T)」「r^-4→r^-1遷移距離をx方向と誤記(正しくはy方向)」「推力係数・出力係数の改善を一括りにしていた点(出力係数の誤差はわずかに悪化)」「地面反射+6dBが線形成分限定という原文の留保の欠落」などを修正。今号の新語(羽根・タワー干渉(BTI)・翼通過周波数(BPF)・音響アナロジー)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ3本を追加。"
+      },
+      "afterword": "— 編集担当より：今回いちばん『なるほど』と思ったのは、Ibarakiさんたちの遠心圧縮機の論文でした。『衝撃波と境界層がぶつかって損失が増える』というのは、てっきり実験でも確かめられている当たり前の話だと思っていたのですが、実際にレーザーで細かく流れを測ってみたら、その干渉自体はどこにも見つからず、代わりに衝撃波は翼端から漏れる渦とぶつかっていた、という結果でした。『よく言われている』ことを実際に測って確かめる、という当たり前の作業がちゃんと新しい発見につながるんだな、と思わされました。"
     }
   ]
 }
