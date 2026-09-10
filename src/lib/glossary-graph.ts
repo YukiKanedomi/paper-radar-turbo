@@ -451,6 +451,9 @@ export const CATEGORIES: GraphCategory[] = [
       "羽根・タワー干渉 (BTI)",
       "翼通過周波数 (BPF)",
       "音響アナロジー (acoustic analogy)",
+      "ダウンウィンド構成",
+      "タワーシャドウ (tower shadow)",
+      "換算周波数 (reduced frequency)",
     ],
   },
   {
@@ -1015,6 +1018,9 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- 風車まるごと構成の騒音生成・伝播（Rismondo, Petris & Armenio 2026） ---
   { from: "羽根・タワー干渉 (BTI)", to: "翼通過周波数 (BPF)", label: "タワー圧力にBPFの純音成分を生む" },
   { from: "羽根・タワー干渉 (BTI)", to: "渦放出 (vortex shedding)", label: "タワー自身の渦放出も低周波音源として加わる" },
+  { from: "ダウンウィンド構成", to: "羽根・タワー干渉 (BTI)", label: "間隔が近く干渉が強まる" },
+  { from: "タワーシャドウ (tower shadow)", to: "羽根・タワー干渉 (BTI)", label: "後流が羽根への外乱となる" },
+  { from: "換算周波数 (reduced frequency)", to: "羽根・タワー干渉 (BTI)", label: "この指標で非定常性の強さを評価" },
   { from: "音響アナロジー (acoustic analogy)", to: "LES", label: "LESの流れ場から音源を評価する枠組み" },
 ];
 

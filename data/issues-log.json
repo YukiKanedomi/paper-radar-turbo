@@ -5184,6 +5184,77 @@
         "note": "定番枠が通常ローテーションでほぼ枯渇していたため、topics.json内の未使用キーワードでOpenAlexを追加検索した。§0忠実性チェック(Opus、各論文2ラウンド)で、Ibaraki論文は「transonic(遷音速)をsupersonic(超音速)相当の訳語で強めていた点」「抄録に無い一般論(衝撃波・渦干渉が一般に損失要因とされるという文)の付加」「被引用数の単一値列挙」「numbers欄の（相対）マッハ数という裏取り不可の限定語」などを修正。Rismondo論文は「タワー渦放出のストローハル数範囲に、実際はBPF支配だった高さのデータ(St=0.28)を混ぜていた点」「St≈1.5f_Tという単位混同(正しくはf≈1.5f_T)」「r^-4→r^-1遷移距離をx方向と誤記(正しくはy方向)」「推力係数・出力係数の改善を一括りにしていた点(出力係数の誤差はわずかに悪化)」「地面反射+6dBが線形成分限定という原文の留保の欠落」などを修正。今号の新語(羽根・タワー干渉(BTI)・翼通過周波数(BPF)・音響アナロジー)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ3本を追加。"
       },
       "afterword": "— 編集担当より：今回いちばん『なるほど』と思ったのは、Ibarakiさんたちの遠心圧縮機の論文でした。『衝撃波と境界層がぶつかって損失が増える』というのは、てっきり実験でも確かめられている当たり前の話だと思っていたのですが、実際にレーザーで細かく流れを測ってみたら、その干渉自体はどこにも見つからず、代わりに衝撃波は翼端から漏れる渦とぶつかっていた、という結果でした。『よく言われている』ことを実際に測って確かめる、という当たり前の作業がちゃんと新しい発見につながるんだな、と思わされました。"
+    },
+    {
+      "date": "2026-09-11",
+      "status": "published",
+      "headline": "実機の1.5MWダウンウィンド風車で、羽根とタワーの間隔をタワー直径1個分まで詰めて圧力ベルトで直接計測し、羽根/タワー通過の瞬間にタワー100〜150N/m・羽根200〜500N/mのインパルス荷重が生じることを示した最新研究(Madsen, Bortolotti, Barlas, Nikoueeyan, Kelley et al. 2026、Wind Energy Science・CC BY 4.0・原図2枚あり)と、軸流タービン翼列の端壁二次流れ損失を、流れ可視化データと境界層理論の再解釈から半経験式にまとめた定番研究(Sharma & Butler 1987、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics / surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery』、定番枠が『wake mixing unsteady turbomachinery / boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery / wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics』でした。最新枠19件(OA15/抄録4)から、風車のダウンウィンド構成における羽根/タワー干渉を実機で計測したWind Energy Science誌の最新論文(CC BY 4.0)を全文取得して採用しました(最初に選んだ別の候補が既配信と判明したため差し替えています)。定番枠14件(OA5/抄録9)は13件が既配信と重複し、唯一の新規候補(DBDプラズマ空力制御のレビュー)も流れ現象より制御デバイスが主役だったため、OpenAlexを『tip clearance flow axial compressor』『secondary flow endwall turbine cascade』等で追加検索し、端壁の二次流れ損失を半経験モデル化した1987年の定番論文を発見・採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.5194/wes-11-3337-2026",
+          "title": "Detailed experimental investigation of the aerodynamics and blade/tower interaction of a 1.5 MW wind turbine in a downwind configuration（Madsen, Bortolotti, Barlas, Nikoueeyan, Kelley et al., 2026）",
+          "why": "羽根がタワーの風下側を通る『ダウンウィンド』構成の実機風車(1.5MW)に、羽根2断面とタワーに圧力ベルトを新規に取り付け、羽根とタワーの間隔をタワー直径1個分という近さで、羽根がタワー背後を通過する瞬間の圧力変化を直接計測した研究。タワーに100〜150N/m、羽根に200〜500N/mのインパルス的な荷重変化が約0.3秒の間に生じることを実測し、数値シミュレーション(OpenFAST)がこの荷重低下を過大に予測する傾向があることも示しました。忠実性チェック(2ラウンド)で、『初めて計測した』という誇張の削除、実測側で欠けているサクションピークの主体の訂正、OpenFASTの過大予測に対する著者自身の留保(方位角ビン処理・初日データのみ)の追記、騒音計測の有無に関する訂正などを行いました。"
+        },
+        {
+          "id": "doi:10.1115/1.3262089",
+          "title": "Predictions of Endwall Losses and Secondary Flows in Axial Flow Turbine Cascades（Sharma & Butler, 1987）",
+          "why": "軸流タービン翼列の端壁付近で生じる二次流れによる損失を、流れ可視化データや圧力損失データの見直しから古典的な二次流れ理論を再解釈し、境界層積分法と組み合わせて予測する半経験モデルを提案した定番論文(抄録ベース)。忠実性チェック(2ラウンド)で、被引用数がOpenAlexとCrossrefで乖離していたため確定値を出さない方針への修正、抄録にない補足(『全体の損失に大きく寄与する』等)の削除、端壁損失の用語定義をアプリ内の既存分類(境界層散逸損失+二次流れ誘起損失)と整合させる修正を行いました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "最新枠は候補の差し替え、定番枠は総入れ替え",
+          "note": "最新枠は当初、風車翼の能動的流れ制御(シンセティックジェット)に関する2024年のarXivプレプリントを選び、作り込み・忠実性チェックまで進めていましたが、papers.jsonへの追記直前の重複チェックで、この論文が2026-06-27配信で既に採用済みだったことが判明しました。選定時の重複チェックが不十分だったための手戻りで、候補を洗い直し、Wind Energy Science誌の実機ダウンウィンド風車の羽根/タワー干渉実験に差し替えています。定番枠は、通常の検索語14件中13件が既配信と重複していたため、OpenAlexを『tip clearance flow axial compressor』『secondary flow endwall turbine cascade』『shock wave boundary layer interaction transonic compressor』で追加検索し、Sharma & Butler(1987)を発見・採用しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 19,
+            "note": "最新枠19件(OA15/抄録4)。当初候補(arXiv 2024年のAFC論文)が既配信と判明したため、OpenAlex新着からダウンウィンド風車の羽根/タワー干渉実験(Wind Energy Science, CC BY 4.0)に差し替えて採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA5/抄録9)のうち13件が既配信と重複。唯一の新規候補(Corke et al. 2008, DBDプラズマ空力制御)は流れ現象より制御デバイスが主役のため見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・被引用順）",
+            "scope": "定番プール枯渇のため、topics.json外の関連キーワードでOpenAlex被引用上位を追加検索",
+            "terms": [
+              "tip clearance flow axial compressor",
+              "secondary flow endwall turbine cascade",
+              "shock wave boundary layer interaction transonic compressor"
+            ],
+            "hits": 30,
+            "note": "3キーワードで既配信と重複しない定番候補を複数確認。Sharma & Butler(1987)の端壁損失予測モデルを発見・採用。"
+          }
+        ],
+        "note": "最新枠は候補選定後の重複チェックで既配信と判明し差し替える手戻りが発生。定番枠は通常ローテーションでほぼ枯渇していたため、追加のOpenAlex検索語で新規候補を確保した。§0忠実性チェック(Opus、各論文2ラウンド)で、WES論文は『初めて』という誇張、サクションピーク欠落の主体の逆転、OpenFAST過大予測の著者留保の欠落、音響計測の有無に関する誤りなどを修正。Sharma&Butler論文は被引用数の出典間乖離(OpenAlex320/Crossref240)を踏まえた定性化、抄録にない補足の削除、端壁損失の用語定義をアプリ内の既存分類と整合させる修正を行った。今号の新語(ダウンウィンド構成・タワーシャドウ(tower shadow)・換算周波数(reduced frequency))はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ3本を追加。"
+      },
+      "afterword": "— 編集担当より：今回は、Madsenさんたちのダウンウィンド風車の論文が印象に残りました。羽根がタワーの風下側を通る向きの風車は、1970〜80年代に一度試されて低周波騒音と急な荷重変化のせいで見捨てられた設計なのですが、今回の実験ではその『見捨てられた理由』そのものを、圧力ベルトという新しい計測手段でタワー直径1個分という近さまで詰めて、じかに測り直していました。半世紀近く前の判断を、当時なかった道具で検証し直すというのは、地味だけれど誠実な仕事だなと思いました。ちなみに今回は選んだつもりの論文が実はもう配信済みだったという手戻りもあり、確認の大切さを再認識した回でもありました。"
     }
   ]
 }
