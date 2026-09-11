@@ -5255,6 +5255,84 @@
         "note": "最新枠は候補選定後の重複チェックで既配信と判明し差し替える手戻りが発生。定番枠は通常ローテーションでほぼ枯渇していたため、追加のOpenAlex検索語で新規候補を確保した。§0忠実性チェック(Opus、各論文2ラウンド)で、WES論文は『初めて』という誇張、サクションピーク欠落の主体の逆転、OpenFAST過大予測の著者留保の欠落、音響計測の有無に関する誤りなどを修正。Sharma&Butler論文は被引用数の出典間乖離(OpenAlex320/Crossref240)を踏まえた定性化、抄録にない補足の削除、端壁損失の用語定義をアプリ内の既存分類と整合させる修正を行った。今号の新語(ダウンウィンド構成・タワーシャドウ(tower shadow)・換算周波数(reduced frequency))はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジ3本を追加。"
       },
       "afterword": "— 編集担当より：今回は、Madsenさんたちのダウンウィンド風車の論文が印象に残りました。羽根がタワーの風下側を通る向きの風車は、1970〜80年代に一度試されて低周波騒音と急な荷重変化のせいで見捨てられた設計なのですが、今回の実験ではその『見捨てられた理由』そのものを、圧力ベルトという新しい計測手段でタワー直径1個分という近さまで詰めて、じかに測り直していました。半世紀近く前の判断を、当時なかった道具で検証し直すというのは、地味だけれど誠実な仕事だなと思いました。ちなみに今回は選んだつもりの論文が実はもう配信済みだったという手戻りもあり、確認の大切さを再認識した回でもありました。"
+    },
+    {
+      "date": "2026-09-12",
+      "status": "published",
+      "headline": "2次元湾曲翼をもつ試験用遠心ポンプで、羽根の一部を透明にしてキャビテーションの発達を高速度可視化し、単一流体モデルによる3次元数値計算と突き合わせた定番研究(Coutier-Delgosha, Fortes-Patella, Reboud, Hofmann, Stoffel 2003、Journal of Fluids Engineering、HAL open archive版・CC BY 4.0・原図1枚あり)と、遷音速軸流ファンの動翼で設計回転数70/80/90/100%を横並びに比較し、失速開始の主要因(吸込み面剥離か、翼端漏れ渦・衝撃波干渉か)が回転数で切り替わることを示した最新研究(Zhao, Lu, Yuan, Ren, Zhou et al. 2026、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms / shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade』、定番枠が『diffuser stall pressure recovery / cavitation pump impeller / rotor stator interaction unsteady / centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics / surge rotating stall / rotating stall inception spike』でした。最新枠13件(OA6/抄録7)からは、遷音速軸流ファンの翼端流れが回転数によってどう変わるかを調べた論文を選びました。定番枠は14件(OA1/抄録13)の全てがこれまでの配信と重複しており、通常ローテーションが完全に枯渇していたため、topics.json内の別キーワード(端壁二次流れ・翼列コーナー剥離・フラッタ・フィルム冷却・吸気歪み・sCO2ターボ機械・ロータステータ干渉・ディフューザ失速・ポンプキャビテーション)でOpenAlexを追加検索し、遠心ポンプのキャビテーション可視化と数値検証に関する2003年の定番論文を発見・採用しました。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.1596238",
+          "title": "Experimental and Numerical Studies in a Centrifugal Pump With Two-Dimensional Curved Blades in Cavitating Condition（Coutier-Delgosha, Fortes-Patella, Reboud, Hofmann, Stoffel, 2003）",
+          "why": "羽根の一部を透明な樹脂にした特別な二次元湾曲翼の試験用遠心ポンプで、キャビテーションの発達を高速度撮影(ストロボ光・レーザーシート照明・角度エンコーダ同期の位相同期撮影)で観察し、バロトロピー状態則に基づく単一流体モデルによる3次元数値計算(FINE/TURBO)と突き合わせた研究。数値計算は泡立ちの空間的な形はよく再現しましたが、非キャビテーション揚程を約5%、ヘッドドロップのNPSHを1〜3m過大評価し、泡が周期的に千切れる速い変化(自励振動)までは再現できませんでした。HAL open archiveのCC BY 4.0全文が入手でき、著者ら自身が限界を率直に記していた点も含めて誠実な内容でした。忠実性チェック(2ラウンド)で、原因帰属の断定(格子・時間刻みへの過剰な因果づけ)の是正、Fig番号と領域記号の取り違えの訂正、高速度撮影と位相同期撮影の混同の分離、計算値であることの明記、原文にない新規性主張の削除などを行いました。"
+        },
+        {
+          "id": "doi:10.1115/1.4072652",
+          "title": "On the Mechanism of Unsteady Tip Flow Evolution Across Rotational Speeds in a Transonic Axial Fan（Zhao, Lu, Yuan, Ren, Zhou et al., 2026）",
+          "why": "遷音速軸流ファンの動翼を設計回転数の70%・80%・90%・100%という4条件で比較し、失速開始の主要因が回転数によって切り替わる(70%・100%は羽根吸込み面の剥離、80%・90%は翼端漏れ渦と衝撃波の干渉)ことを、実験検証済みのURANSシミュレーションで示した研究(抄録ベース)。従来は設計回転数だけで調べられがちだった翼端流れの非定常性を、複数回転数で横並びに比較した点が特徴です。忠実性チェック(1ラウンド)で、抄録にない速度依存の断定(「回転数が上がるほど働く遠心安定化効果」)の削除、概念図キャプションの誤帰属の修正、用語の対応づけ精度の是正を行いました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠は通常ローテーションが完全に枯渇",
+          "note": "定番枠の通常検索語8件による候補14件は、全て既配信の論文(累計143本)と重複していました。topics.json内の他のキーワード(コーナー剥離・フラッタ・フィルム冷却・吸気歪み・sCO2ターボ機械・端壁二次流れ・ロータステータ干渉・ディフューザ失速・ポンプキャビテーション)でOpenAlexを追加検索し、10語・計80件の候補から、既配信と重複しない遠心ポンプのキャビテーション可視化・数値検証論文(2003年)を発見しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 13,
+            "note": "最新枠13件(OA6/抄録7)。遷音速軸流ファンの翼端流れの回転数依存メカニズムを調べた論文(Journal of Turbomachinery、抄録ベース)を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA1/抄録13)は全件が既配信と重複。通常ローテーションが枯渇したため追加検索に切り替えた。"
+          },
+          {
+            "name": "OpenAlex 直接検索（追加・被引用順）",
+            "scope": "定番プール枯渇のため、topics.json内の別キーワードでOpenAlex被引用上位を追加検索",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "supercritical CO2 turbomachinery",
+              "wake mixing unsteady turbomachinery",
+              "secondary flow endwall turbomachinery",
+              "rotor stator interaction unsteady",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller"
+            ],
+            "hits": 80,
+            "note": "10キーワードで計80件を確認。『cavitation pump impeller』の検索で、既配信と重複しない遠心ポンプのキャビテーション可視化・数値検証論文(Coutier-Delgosha et al. 2003、HAL open archive・CC BY 4.0)を発見・採用。"
+          }
+        ],
+        "note": "定番枠が通常ローテーションで完全に枯渇したため、topics.json内の別キーワードでOpenAlexを追加検索する必要があった。§0忠実性チェック(Opus)は、ポンプ論文が2ラウンド(初回needs_fix→修正→再検証needs_fix→再修正)、ファン論文が1ラウンド(初回needs_fix→修正→再検証ok)。ポンプ論文の最終的な残issue(Fig番号と圧力側キャビティの紐づけ精度など、med1件・low5件)は、著者自身が既に確認済みの全文原典に基づいて直接修正し、再度のエージェント呼び出しは行わなかった(捏造ではなく紐づけ・明示精度の問題と判定されていたため)。今号の新語(付着キャビテーション・せん断キャビテーション・気泡率・せん断層不安定性・遠心安定化効果)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを追加。実図はHAL open archive版PDF(CC BY 4.0明記)からFig.11(性能曲線比較)を抽出して掲載。"
+      },
+      "afterword": "— 編集担当より：今回一番『なるほど』だったのは、2003年のポンプのキャビテーション論文で、著者たちが結果のずれについて「これは初めての予測の試みであり、モデルパラメータの検討で改善できるだろう」と、あっさり書いていたところです。揚程を5%高く見積もる、NPSHを1〜3mずれて予測する、といった不一致を隠さずに並べて「まだ改良の途上」とはっきり言う姿勢は、20年以上前の論文でも今読んで気持ちのいいものでした。ファンの論文の方は、同じ翼でも回転数によって失速の始まり方がまったく違う(遅い回転では羽根面の剥離、速い回転では衝撃波との絡み)という話で、「失速」とひとことで言っても中身は一様ではないんだな、と勉強になりました。"
     }
   ]
 }
