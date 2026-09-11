@@ -100,6 +100,11 @@ export const CATEGORIES: GraphCategory[] = [
       "翼間位相角 (inter-blade phase angle, IBPA)",
       "空力減衰 (aerodynamic damping)",
       "揚力変動",
+      "付着キャビテーション (attached cavitation)",
+      "せん断キャビテーション (shear cavitation)",
+      "気泡率 (void fraction, α)",
+      "せん断層不安定性 (shear-layer instability)",
+      "遠心安定化効果 (centrifugal stabilization effect)",
     ],
   },
   {
@@ -1022,6 +1027,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "タワーシャドウ (tower shadow)", to: "羽根・タワー干渉 (BTI)", label: "後流が羽根への外乱となる" },
   { from: "換算周波数 (reduced frequency)", to: "羽根・タワー干渉 (BTI)", label: "この指標で非定常性の強さを評価" },
   { from: "音響アナロジー (acoustic analogy)", to: "LES", label: "LESの流れ場から音源を評価する枠組み" },
+  // --- 遠心ポンプのキャビテーション可視化・数値検証（Coutier-Delgosha et al. 2003） ---
+  { from: "キャビテーション", to: "付着キャビテーション (attached cavitation)", label: "代表的な形態の一つ" },
+  { from: "キャビテーション", to: "せん断キャビテーション (shear cavitation)", label: "剥離したせん断層内で発生する形態" },
+  { from: "付着キャビテーション (attached cavitation)", to: "気泡率 (void fraction, α)", label: "内部の気液比率を定量化する指標" },
+  // --- 遷音速軸流ファンの回転数依存の翼端流れメカニズム（Zhao, Lu, Yuan, Ren, Zhou et al. 2026） ---
+  { from: "翼端漏れ渦", to: "せん断層不安定性 (shear-layer instability)", label: "低速回転側で非定常性を支配する要因" },
+  { from: "翼端漏れ渦", to: "遠心安定化効果 (centrifugal stabilization effect)", label: "回転数上昇で挙動が安定化する方向に働く" },
+  { from: "せん断層不安定性 (shear-layer instability)", to: "遠心安定化効果 (centrifugal stabilization effect)", label: "圧縮性影響とともに競合する2つの効果" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
