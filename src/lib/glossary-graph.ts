@@ -194,6 +194,8 @@ export const CATEGORIES: GraphCategory[] = [
       "揚力係数 (lift coefficient, C_L)",
       "乱流強度",
       "ロータ・ステータ干渉",
+      "ロータ-ロータ干渉",
+      "圧力脈動係数 (pressure pulsation coefficient, Cp)",
       "軸方向間隙",
       "循環 (circulation)",
       "回転デトネーション燃焼器 (RDC)",
@@ -294,6 +296,8 @@ export const CATEGORIES: GraphCategory[] = [
       "パネル法",
       "Zwart-Gerber-Belamriキャビテーションモデル",
       "Schnerr-Sauerキャビテーションモデル (Schnerr-Sauer cavitation model)",
+      "非線形調和法 (nonlinear harmonic method)",
+      "コヒーレンス関数 (coherence function)",
     ],
   },
   {
@@ -1035,6 +1039,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "翼端漏れ渦", to: "せん断層不安定性 (shear-layer instability)", label: "低速回転側で非定常性を支配する要因" },
   { from: "翼端漏れ渦", to: "遠心安定化効果 (centrifugal stabilization effect)", label: "回転数上昇で挙動が安定化する方向に働く" },
   { from: "せん断層不安定性 (shear-layer instability)", to: "遠心安定化効果 (centrifugal stabilization effect)", label: "圧縮性影響とともに競合する2つの効果" },
+  // --- 多段遷音速圧縮機のロータ-ロータ／ステータ-ステータ干渉解析（He, Chen, Wells, Li & Ning 2002） ---
+  { from: "ロータ-ロータ干渉", to: "ロータ・ステータ干渉", label: "干渉の軸が異なる（動翼どうし）" },
+  { from: "クロッキング (blade row clocking, indexing)", to: "ロータ-ロータ干渉", label: "周方向位置で干渉の強さが変化" },
+  { from: "非線形調和法 (nonlinear harmonic method)", to: "ロータ-ロータ干渉", label: "単一翼列通路の計算で解析" },
+  // --- 遠心ポンプのキャビテーション起因振動・騒音の実験（Guo, Yu, Qi & Fei 2026） ---
+  { from: "コヒーレンス関数 (coherence function)", to: "ロータ・ステータ干渉", label: "励振源の寄与を周波数ごとに切り分け" },
+  { from: "圧力脈動係数 (pressure pulsation coefficient, Cp)", to: "翼通過周波数 (BPF)", label: "この周波数とその高調波にエネルギーが集中" },
+  { from: "気泡率 (void fraction, α)", to: "雲状キャビテーション (cloud cavitation)", label: "キャビテーション発達で上昇" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
