@@ -5419,6 +5419,82 @@
         "note": "§0忠実性チェック(Opus)は両論文とも2ラウンド。ロータ-ロータ干渉論文は初回needs_fix(high1件：抄録に無い翼列構成「動翼-静翼-動翼」の創作かつステータ-ステータ干渉が原理的に成立しない矛盾＋med数件)→修正→再検証needs_fix(med/lowのみ残存：unsteady/aperiodicの解釈のゆらぎ、図中の無ラベル破線の誤読可能性等)→捏造ではなく解釈・整合の精度の問題と判定し、再度のエージェント呼び出しは行わず直接修正した。キャビテーションポンプ論文は初回needs_fix(high2件：圧力脈動限定の『3帯域』を騒音・振動にまで誤って拡張、騒音と振動でコヒーレンスの挙動が逆であるのに同一視／med数件：結論が4項目中3項目しか反映されていない、著者名の姓名順、式の原文印字と本文説明の不一致の注記漏れ等)→修正→再検証needs_fix(high1件：修正が要旨セクションの1フィールドだけ反映漏れだった)→当該フィールドを直接修正し、残るmed/low数件(流量条件間比較とNPSHa依存の取り違え等)も合わせて直接修正した。今号の新語(ロータ-ロータ干渉・非線形調和法・コヒーレンス関数・圧力脈動係数)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを追加。実図は掲載しなかった(He et al. はASME・Durham大学リポジトリともに全文取得できず抄録ベース、G. Rong et al. はJAFM diamond OAだがCC BY-NC-NDのため原図は転載せず、両論文とも概念図(模式図)で代替)。"
       },
       "afterword": "— 編集担当より：今回一番『なるほど』だったのは、遠心ポンプのキャビテーション論文で、キャビテーションが進むほど振動を揺らす『主犯』の正体が入れ替わっていく様子でした。羽根車と渦巻室のわずかな隙間で起きる周期的な圧力の脈動(ロータ・ステータ干渉)が、気泡がたくさん発生して崩れることで弱まっていくのに、肝心の振動そのものは最後まで律儀にその圧力脈動に付き従っていた、という結果です。「原因が弱まれば結果も弱まる」だろうと単純に想像していたので、コヒーレンス解析という『どの信号がどの信号を揺らしているか』を周波数ごとに数値で切り分ける手法があるおかげで、そのねじれた関係まで見えるのだと知り、面白く思いました。もう一本の圧縮機の論文では、動翼どうしの干渉が静翼どうしの干渉よりずっと強いという結果そのものより、今回の作業で「翼列の並び」を勝手に補って書いてしまい、後の確認で削ることになった一幕が印象に残っています。抄録だけからは分からないことを分かったふりで埋めない、という当たり前だけど守るのが難しいルールを、身をもって再確認した回でした。"
+    },
+    {
+      "date": "2026-09-15",
+      "status": "published",
+      "headline": "軸流圧縮機のケーシングトリートメント形状を約30構成にわたり系統比較し、失速マージン改善率と効率の関係が形状によらず一本の滑らかな曲線に収束する(=特別に優れた形状は無い)ことを示した定番研究(Fujita & Takata 1984、Bulletin of JSME、J-STAGE全文)と、小型高速遠心ポンプで羽根車がポンプ全体のエネルギー損失の約35%を占める最大の寄与源であり、その羽根車内損失の主因が翼端漏れ流れであることを、エントロピー生成理論と渦度輸送方程式による数値解析で示した最新研究(Yang, Jiang, Yang, Liu, Song, Wang & Chen 2026、International Journal of Heat and Fluid Flow、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery / tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms』、定番枠が『centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics / surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery / tip leakage vortex loss / tip clearance flow loss』でした。定番枠は14件中13件が既配信(累計145本)と重複し、通常の取得件数(被引用上位14件)ではほぼ枯渇していました。そこで同じ8キーワードのまま取得件数を広げて被引用15位以降まで確認したところ、軸流圧縮機のケーシングトリートメント形状を系統比較した1984年の論文(Fujita & Takata、被引用139)を発見。J-STAGEでスキャンPDFの全文(7ページ、図表含む)を確認できたため、定番×OA全文の号として作り込みました。最新枠は当初の候補一覧に、小型高速遠心ポンプのチップクリアランス損失を扱う2026年9月公開の論文がすでに含まれており、そちらを採用しています。なお同じ深掘り検索で見つかった2026年最新のOA論文(ASME Journal of Turbomachinery『Comprehensive Loss Assessment of Compressor Design Space』、AIP系『Effect of tip winglet angle on internal complex flow』)は、掲載誌の情報ではOAですが、出版社サイト(asmedigitalcollection.asme.org / pubs.aip.org)がCloudflareの自動アクセス制限で本文取得をブロックしており、全文を確認できなかったため見送りました。採用した遠心ポンプ論文(Elsevier/ScienceDirect)も同様に全文アクセスができず、抄録ベースで誠実に作り込んでいます。",
+      "picked": [
+        {
+          "id": "doi:10.1299/jsme1958.27.1675",
+          "title": "A Study on Configurations of Casing Treatment for Axial Flow Compressors（Fujita & Takata, 1984）",
+          "why": "軸流圧縮機のケーシング(外周の壁)にスロットや溝を刻む「ケーシングトリートメント」を、軸方向スキュースロット型・軸方向-半径方向スロット型・周方向溝型あわせて約30構成にわたり系統的に比較した定番研究(J-STAGEでスキャンPDF全文を確認)。失速マージン改善率とロータ最大効率の関係が、形状によらず一本の滑らかな曲線に収束することを示し、「効率を保ったまま失速マージンだけを改善する」特別に優れた形状は存在しないという、効率とのトレードオフを定量的に描き出しました。忠実性チェック(2ラウンド)で、処理構成数の過少表記(約20→約30)、軸方向-半径方向スロット型の試験構成数の誤り(9→Table2記載は7)、スロット位置記号C/F/Rの意味を断定していた誤り、バッフル板の枚数に関する誤り(スロット型は各1枚が正しい)、単体ロータの結果(3.1節)にTable3(単段圧縮機)の数値を誤って混在させていた箇所、下流側の圧力計測方法の誤記、翼型パラメータの用語誤り(反り角→食違い角)、著者への過剰な主張の帰属、謝辞の「一部支援」の欠落、出典に無い一般化コメントなど、多数の細部を2ラウンドかけて修正しました。"
+        },
+        {
+          "id": "doi:10.1016/j.ijheatfluidflow.2026.110702",
+          "title": "Investigation on tip Clearance-Induced energy loss and vortex dynamics of miniature High-Speed centrifugal pump（Yang, Jiang, Yang, Liu, Song, Wang & Chen, 2026）",
+          "why": "小型で高速回転する遠心ポンプを対象に、エントロピー生成理論に基づく数値解析で、羽根車(インペラ)がポンプ全体のエネルギー損失の約35%を占める最大の寄与源であること、その羽根車内損失の主因が翼端漏れ流れであることを示した最新研究。渦度輸送方程式による解析では、コリオリ力が漏れ渦の発生位置を、渦伸張項との組み合わせが渦の生成・伝播を支配することも示されました。掲載誌の情報では名目上OAですが出版社サイトへのアクセスが制限され全文を確認できなかったため、抄録ベースで作成。忠実性チェック(2ラウンド)で、抄録の2つの独立した記述(羽根車の損失シェア35%／羽根車内損失の主因が漏れ流れ)を合成して「漏れ流れが全体損失の3割以上を生む」と過剰に主張していた箇所(hookとeasy.tldr)、損失の空間分布の対象範囲の取り違え(羽根車内→ポンプ内)、抄録に無い新規性ギャップの主張、抄録に無い大型・低速ポンプとの比較、ライセンス(CC BY-NC-ND)を転載不可の理由として誤用していた記述などを修正しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠が事実上枯渇 — 深掘り検索と1984年のスキャン論文でしのいだ日",
+          "note": "定番枠の通常取得(被引用上位14件)は、8つの検索語をそのまま使っても14件中13件が既配信と重複するほど枯渇していました。唯一の未配信候補(プラズマアクチュエータによる流れ制御のレビュー、Corke et al. 2008)は、ターボ機械固有の失速・損失メカニズムというより流れ制御デバイスの一般レビューで、CLAUDE.mdの「流体・流れ現象が主役」という方針からはやや外れると判断し見送りました。そこで同じ8キーワードのまま取得件数を拡大し被引用順位を深掘りしたところ、1984年のケーシングトリートメント比較研究(Fujita & Takata)を発見。掲載元のBulletin of JSMEはJ-STAGEで無料公開されており、スキャンPDFではあるものの全文(7ページ)を確認できました。一方、同じ深掘りで見つかった2026年の最新OA論文(ASME・AIP系)は、掲載誌の情報ではオープンアクセスにもかかわらず、出版社サイトがCloudflareの自動アクセス制限(bot対策)で本文取得をブロックしており、結局読めませんでした。1984年の紙媒体論文のスキャンPDFの方が、2026年の「オープンアクセス」論文より実際には読みやすい、という逆転が起きた日でした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件(OA18/抄録6)。arXiv側は一般流体力学(乱流統計・MHDダクト流・降伏応力流体等)のプレプリントが大半でターボ機械から外れる一方、OpenAlex側のタービン機械の損失・翼端漏れ関連候補から採用1件を選定。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss"
+            ],
+            "hits": 14,
+            "note": "定番枠14件(OA1/抄録13)のうち13件が既配信と重複。唯一の未配信(Corke et al. 2008・プラズマアクチュエータレビュー)はターボ機械固有の主題から外れると判断し見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（定番枠・同一8キーワードを深掘り）",
+            "scope": "定番プールの通常取得(上位14件)が枯渇していたため、同じ8キーワードのまま取得件数を拡大し被引用順位15位以降まで確認",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss"
+            ],
+            "hits": 139,
+            "note": "重複除去・分野フィルタ後139件の未配信オンテーマ候補を確認。その中からケーシングトリートメント形状比較の定番論文(Fujita & Takata 1984、被引用139)を発見・採用。同じ深掘りで見つかった2026年のASME・AIP系OA論文は出版社サイトのアクセス制限で全文確認できず見送り。"
+          }
+        ],
+        "note": "§0忠実性チェック(Opus)は両論文とも2ラウンド。ケーシングトリートメント論文は初回needs_fix(med多数：処理構成数の過少表記、AV型試験構成数の誤り、スロット位置記号の断定、バッフル板枚数の誤り、単体ロータ節へのTable3数値の混入、下流圧力計測法の誤記、翼型パラメータの用語誤り等)→修正→再検証needs_fix(med1件・low数件：バッフル板『複数』の残存、単段圧縮機の試験範囲の誤解を招く書き方、構成記号の接頭辞省略によるSV/AVの曖昧さ等)→いずれも捏造ではなく精度の問題と判断し、3回目のエージェント呼び出しは行わず直接修正した。遠心ポンプ論文は初回needs_fix(high2件：抄録の独立した2つの数値・主張を合成した過剰主張、ライセンス表記の誤用)→修正→再検証verdict:ok(low数件の言い回しの緩さのみ)→okの範囲内で追加のエージェント呼び出しなしに直接微修正した。今号の新語(周方向溝型ケーシングトリートメント・バッフル板・コリオリ力)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを追加。実図は掲載しなかった(Fujita & Takata はJ-STAGE公開だがCCライセンス表記が無く転載不可のため概念図で代替、Yang et al. は全文未取得のため概念図のみ)。"
+      },
+      "afterword": "— 編集担当より：今回一番『なるほど』だったのは、1984年の論文(ケーシングトリートメントの形状比較)の結論そのものです。溝やスロットの形をどれだけ工夫しても、失速マージンの改善と効率の低下は結局一本の同じ曲線に載ってしまい、「両方お得」な形状は無かった、という結果でした。40年以上前の実験で、しかも当時としてはかなり手間のかかる系統比較をしてまで「特別なコツは無い」と正直に結論づけている点に、静かな誠実さを感じました。もうひとつ印象的だったのは検索の裏側の話で、この1984年の論文はJ-STAGEのスキャンPDFなのに普通に全文が読めたのに対し、2026年に公開されたばかりの「オープンアクセス」論文は出版社サイトの自動アクセス制限に阻まれて結局読めない、という逆転現象が起きたことです。オープンアクセスという言葉の意味を、ラベルの上だけでなく実際に確かめてから使わないといけないな、と考えさせられました。"
     }
   ]
 }

@@ -152,6 +152,7 @@ export const CATEGORIES: GraphCategory[] = [
       "損失遅れ (loss lag)",
       "渦度輸送方程式 (vorticity transport equation)",
       "渦伸張項 (vortex stretching term)",
+      "コリオリ力",
       "エンストロフィー (enstrophy, Ω)",
       "圧縮性エンストロフィー輸送方程式 (CETE, compressible enstrophy transport equation)",
       "傾圧性 (baroclinicity)",
@@ -338,6 +339,8 @@ export const CATEGORIES: GraphCategory[] = [
       "翼負荷分布 (blade loading distribution, BLD)",
       "ケーシングトリートメント",
       "軸方向スロット型ケーシングトリートメント (axial slot casing treatment)",
+      "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)",
+      "バッフル板",
       "自己再循環",
       "前縁剥離 (leading-edge separation)",
       "3次元境界層剥離",
@@ -862,6 +865,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   // --- PATのチップ漏れ流れによる損失（Kan et al. 2022） ---
   { from: "翼端漏れ渦", to: "渦度輸送方程式 (vorticity transport equation)", label: "空間的な発達を記述" },
   { from: "渦度輸送方程式 (vorticity transport equation)", to: "渦伸張項 (vortex stretching term)", label: "発達の支配項として同定" },
+  // --- 小型高速遠心ポンプのチップクリアランス損失（Yang et al. 2026） ---
+  { from: "渦度輸送方程式 (vorticity transport equation)", to: "コリオリ力", label: "渦の発生位置を支配する項として同定" },
+  { from: "翼端漏れ流れ (tip leakage flow)", to: "コリオリ力", label: "漏れ渦の発生・伝播に関与" },
+  // --- ケーシングトリートメント形状の系統比較（Fujita & Takata 1984） ---
+  { from: "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)", to: "ケーシングトリートメント", label: "一種" },
+  { from: "軸方向スロット型ケーシングトリートメント (axial slot casing treatment)", to: "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)", label: "同一トレードオフ曲線上" },
+  { from: "バッフル板", to: "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)", label: "溝内流れを調整する構成要素" },
   { from: "水平軸風車 (HAWT, horizontal axis wind turbine)", to: "後流（ウェイク）", label: "後流を生む対象" },
   // --- ブレードグルーブによるコーナー剥離・後縁剥離の同時制御（Yao et al. 2026） ---
   { from: "ブレードグルーブ (blade groove)", to: "コーナー剥離", label: "溝ジェットで抑制" },
