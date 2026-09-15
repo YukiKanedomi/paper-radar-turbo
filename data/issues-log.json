@@ -5495,6 +5495,83 @@
         "note": "§0忠実性チェック(Opus)は両論文とも2ラウンド。ケーシングトリートメント論文は初回needs_fix(med多数：処理構成数の過少表記、AV型試験構成数の誤り、スロット位置記号の断定、バッフル板枚数の誤り、単体ロータ節へのTable3数値の混入、下流圧力計測法の誤記、翼型パラメータの用語誤り等)→修正→再検証needs_fix(med1件・low数件：バッフル板『複数』の残存、単段圧縮機の試験範囲の誤解を招く書き方、構成記号の接頭辞省略によるSV/AVの曖昧さ等)→いずれも捏造ではなく精度の問題と判断し、3回目のエージェント呼び出しは行わず直接修正した。遠心ポンプ論文は初回needs_fix(high2件：抄録の独立した2つの数値・主張を合成した過剰主張、ライセンス表記の誤用)→修正→再検証verdict:ok(low数件の言い回しの緩さのみ)→okの範囲内で追加のエージェント呼び出しなしに直接微修正した。今号の新語(周方向溝型ケーシングトリートメント・バッフル板・コリオリ力)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを追加。実図は掲載しなかった(Fujita & Takata はJ-STAGE公開だがCCライセンス表記が無く転載不可のため概念図で代替、Yang et al. は全文未取得のため概念図のみ)。"
       },
       "afterword": "— 編集担当より：今回一番『なるほど』だったのは、1984年の論文(ケーシングトリートメントの形状比較)の結論そのものです。溝やスロットの形をどれだけ工夫しても、失速マージンの改善と効率の低下は結局一本の同じ曲線に載ってしまい、「両方お得」な形状は無かった、という結果でした。40年以上前の実験で、しかも当時としてはかなり手間のかかる系統比較をしてまで「特別なコツは無い」と正直に結論づけている点に、静かな誠実さを感じました。もうひとつ印象的だったのは検索の裏側の話で、この1984年の論文はJ-STAGEのスキャンPDFなのに普通に全文が読めたのに対し、2026年に公開されたばかりの「オープンアクセス」論文は出版社サイトの自動アクセス制限に阻まれて結局読めない、という逆転現象が起きたことです。オープンアクセスという言葉の意味を、ラベルの上だけでなく実際に確かめてから使わないといけないな、と考えさせられました。"
+    },
+    {
+      "date": "2026-09-16",
+      "status": "published",
+      "headline": "風車・ウィンドファームの流れ研究をひとつに見渡す定番レビュー(Porté-Agel, Bastankhah & Shamsoddin 2019、Boundary-Layer Meteorology、CC BY全文)と、翼の後縁を波形にするだけで高速回転翼機の逆流剥離を抑えた最新研究(Gokul & Guha 2026、arXivプレプリント、全文)。",
+      "intro": "本日の検索語は最新枠が『shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery』、定番枠が最新枠の6語に『turbomachinery loss mechanisms / wind turbine wake aerodynamics』を加えた8語でした。定番枠は通常取得(被引用上位14件)のうち13件がすでに既配信と重複しており、唯一の未配信候補(Corke et al. 2008のプラズマアクチュエータレビュー、被引用372)は抄録がOpenAlex・Semantic Scholar・出版社サイトのいずれからも取得できず(抄録が非公開)、§0の『抄録の範囲だけで忠実に』が実行できないため見送りました。そこで別のキーワード(rotating stall inception spike / tip leakage vortex loss / secondary flow endwall turbomachinery / axial compressor stall margin / unsteady rotor stator interaction turbine 等)でOpenAlexを深掘りしたところ、被引用1,130の風車・ウィンドファーム総説(Porté-Agel et al. 2019、CC BY)を発見。Springer PDFを全文取得でき、定番×OA全文として作り込みました。最新枠は通常取得(13件、OA7/抄録6)の中から、逆流に伴う前縁剥離を波形の後縁で抑えるという実験研究(arXiv 2609.14361)を選定。arXiv全文PDFを取得して作り込みました。なお同じ最新枠にあった圧縮機の翼端流れ自励振動論文(Elsevier)は、出版社サイトの抄録ページがJavaScriptレンダリングでブロックされ抄録すら取得できなかったため見送りました。",
+      "picked": [
+        {
+          "id": "doi:10.1007/s10546-019-00473-0",
+          "title": "Wind-Turbine and Wind-Farm Flows: A Review（Porté-Agel, Bastankhah & Shamsoddin, 2019）",
+          "why": "風車1基が作る後流(近傍後流・遠方後流)の構造から、何十基も並ぶウィンドファーム全体の流れ(誘導域・発達域・完全発達域・後流域)まで、実験・数値計算・理論の知見をひとつに見渡した被引用1,130超の定番レビュー。CC BYでSpringerから全文取得でき、Jensen(1983)のトップハット後流モデル(式5)や、ウィンドファーム内の流れ区分を示す概念図とあわせて作り込みました。忠実性チェックで、誘導域の減速率『最大3%』という上限表現の誤り(原文はむしろ下限的な言い回し)、ウェイクメアンダリングの原因(ロータ直径2倍超の乱流渦)と横方向卓越の仮説(VLSM)の混同、VAWTの出力係数0.47をVAWT一般の上限であるかのように書いていた点、引用の出典箇所の取り違えなど、9件の指摘を1ラウンドで修正しました。"
+        },
+        {
+          "id": "arxiv:2609.14361",
+          "title": "Control of Reverse Flow on High-Speed Rotorcraft Using a Blade with a Sinusoidal Trailing Edge（Gokul & Guha, 2026）",
+          "why": "高速回転翼機が前進速度を上げると後退翼の一部に生じる『逆流』とそれに伴う前縁剥離(実際には幾何学的な後縁)を、翼の後縁をただ波形(正弦波状)にするだけの受動的な工夫で大きく抑えられることを、風洞実験(PIV+荷重計測)で示した最新研究。arXiv全文を取得し、負揚力最大20%・ピッチングモーメント最大30%・抗力最大約28%の低減という具体的な数値まで作り込みました。忠実性チェックで、順流時の揚力『低下』を逆流時の『負揚力低減』と取り違えていた箇所、揚力ピークとモーメントピークの迎角を混同していた箇所、参考文献の『受動的』カンバーモーフィングを『能動的』と誤記していた箇所など、7件の指摘を1ラウンドで修正しました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠のプラズマアクチュエータ論文は『抄録が読めない』ため見送り",
+          "note": "定番枠の通常取得(被引用上位14件)で唯一の未配信候補だったCorke, Post & Orlov (2008)『Single dielectric barrier discharge plasma enhanced aerodynamics』(被引用372)は、OpenAlex・Semantic Scholarのどちらでも抄録フィールドが非公開(elided)で、出版社(Springer)のページもログイン要求にリダイレクトされ、抄録の中身を一切確認できませんでした。§0は『抄録の範囲だけで忠実に』を求めており、その抄録自体が読めない以上は掲載を見送るしかない、という珍しいパターンでした。"
+        },
+        {
+          "title": "最新枠のもう1本、翼端流れの自励振動論文はJavaScriptの壁で断念",
+          "note": "最新枠の候補にあった『Self-excited unsteady pulsations in transonic compressor tip flows』(Elsevier International Journal of Heat and Fluid Flow, 2026)は、圧縮機の翼端漏れ流れの自励的な圧力変動を渦同定とモード分解(DMD)で調べた良さそうなテーマでしたが、ScienceDirectの記事ページがJavaScriptレンダリング前提で、抄録のテキストすら取得できませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 13,
+            "note": "最新枠13件(OA7/抄録6)。高速回転翼の逆流制御に関するarXivプレプリントを採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件のうち13件が既配信と重複。唯一の未配信候補(Corke et al. 2008)は抄録が非公開で作り込み不能のため見送り。"
+          },
+          {
+            "name": "OpenAlex 直接検索（定番枠・代替キーワードで深掘り）",
+            "scope": "定番プールが枯渇していたため、topics.jsonの別キーワード(rotating stall inception spike / tip leakage vortex loss compressor / secondary flow endwall turbomachinery / axial compressor stall margin / unsteady rotor stator interaction turbine 等)で被引用上位を個別に確認",
+            "terms": [
+              "rotating stall inception spike",
+              "tip leakage vortex loss compressor",
+              "secondary flow endwall turbomachinery",
+              "axial compressor stall margin",
+              "unsteady rotor stator interaction turbine"
+            ],
+            "hits": 30,
+            "note": "各キーワードで上位5〜6件を確認(計約30件)。ほとんどが既配信と重複する中、『unsteady rotor stator interaction turbine』で風車・ウィンドファーム総説(Porté-Agel et al. 2019、CC BY、被引用1,130)を発見・採用。"
+          }
+        ],
+        "note": "§0忠実性チェック(Opus)は両論文とも1ラウンドで完了(2回目の再検証は不要と判断できるほど修正箇所が明確だったため、指摘を直接反映)。総説論文は誘導域の減速率の上限表現・VLSMの因果関係・VAWT出力係数の一般化・引用出典の取り違えなど9件、rotorcraft論文は順流/逆流の取り違え・迎角混同・受動/能動の誤記など7件をそれぞれ修正。今号の新語(ハブ渦・ウィンドファーム誘導域・リーディングエッジタバクル・後縁セレーション・後退翼の逆流・ピッチングモーメント衝撃)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを5本追加。実図は両論文とも概念図(模式図)で代替(総説論文はウィンドファームの流れの4区分、rotorcraft論文は基準翼と正弦波後縁翼の剥離比較)。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、rotorcraft論文の後縁形状です。ザトウクジラのヒレのでこぼこ(失速を遅らせるための工夫)と、フクロウの羽の後ろのギザギザ(もともと羽音を消すための工夫)という、まったく別の目的で知られてきた2つの生物模倣アイデアを1つの波形に重ね合わせて、今度は『後ろ向きに流れ込む空気』という第三の問題を解決していました。良いアイデアは分野をまたいで組み合わさるものなんだな、と素直に感心しました。もうひとつは検索の裏側の話で、被引用372という定番のプラズマアクチュエータ論文が、掲載誌のページを含めどこを探しても抄録の中身が読めず、結局『被引用数が高い=中身が確認できる』とは限らないのだと痛感した日でもありました。"
     }
   ]
 }
