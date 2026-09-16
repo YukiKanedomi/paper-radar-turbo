@@ -422,6 +422,8 @@ export const CATEGORIES: GraphCategory[] = [
       "静穏域 (calmed region)",
       "乱流スポット (turbulent spot)",
       "剥離流遷移 (separated-flow transition)",
+      "ヘアピン渦 (hairpin vortex)",
+      "ジェットインクロスフロー (jet in crossflow)",
     ],
   },
   {
@@ -438,6 +440,7 @@ export const CATEGORIES: GraphCategory[] = [
       "先端速度比（tip speed ratio, λ）",
       "出力係数（power coefficient, Cp）",
       "推力係数（thrust coefficient, Ct）",
+      "トルク係数 (torque coefficient, Ct)",
       "固体度（ソリディティ, solidity）",
       "誘導速度場 (induced velocity field)",
       "渦輪 (vortex ring)",
@@ -1068,6 +1071,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "コヒーレンス関数 (coherence function)", to: "ロータ・ステータ干渉", label: "励振源の寄与を周波数ごとに切り分け" },
   { from: "圧力脈動係数 (pressure pulsation coefficient, Cp)", to: "翼通過周波数 (BPF)", label: "この周波数とその高調波にエネルギーが集中" },
   { from: "気泡率 (void fraction, α)", to: "雲状キャビテーション (cloud cavitation)", label: "キャビテーション発達で上昇" },
+  // --- サボニウス風車の楕円柱デフレクタ（Joodaki, Sayyah, Charmiyan & Abbasi 2026） ---
+  { from: "デフレクタ (deflector)", to: "後流（ウェイク）", label: "上流に設置し後流でリターンブレードを遮蔽" },
+  { from: "先端速度比（tip speed ratio, λ）", to: "トルク係数 (torque coefficient, Ct)", label: "増加とともに単調に低下（ドラグ式風車の特徴）" },
+  // --- 傾斜円柱ジェットのフィルム冷却LES（Tyagi & Acharya 2003） ---
+  { from: "ジェットインクロスフロー (jet in crossflow)", to: "ヘアピン渦 (hairpin vortex)", label: "ジェット後流に周期的に発生" },
+  { from: "ヘアピン渦 (hairpin vortex)", to: "フィルム冷却", label: "エントレインメントでホットスポットを生み壁面熱伝達を非定常化" },
+  { from: "吹き出し比 (blowing ratio)", to: "ジェットインクロスフロー (jet in crossflow)", label: "主流への貫入の強さを左右" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

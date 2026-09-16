@@ -5572,6 +5572,66 @@
         "note": "§0忠実性チェック(Opus)は両論文とも1ラウンドで完了(2回目の再検証は不要と判断できるほど修正箇所が明確だったため、指摘を直接反映)。総説論文は誘導域の減速率の上限表現・VLSMの因果関係・VAWT出力係数の一般化・引用出典の取り違えなど9件、rotorcraft論文は順流/逆流の取り違え・迎角混同・受動/能動の誤記など7件をそれぞれ修正。今号の新語(ハブ渦・ウィンドファーム誘導域・リーディングエッジタバクル・後縁セレーション・後退翼の逆流・ピッチングモーメント衝撃)はsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを5本追加。実図は両論文とも概念図(模式図)で代替(総説論文はウィンドファームの流れの4区分、rotorcraft論文は基準翼と正弦波後縁翼の剥離比較)。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、rotorcraft論文の後縁形状です。ザトウクジラのヒレのでこぼこ(失速を遅らせるための工夫)と、フクロウの羽の後ろのギザギザ(もともと羽音を消すための工夫)という、まったく別の目的で知られてきた2つの生物模倣アイデアを1つの波形に重ね合わせて、今度は『後ろ向きに流れ込む空気』という第三の問題を解決していました。良いアイデアは分野をまたいで組み合わさるものなんだな、と素直に感心しました。もうひとつは検索の裏側の話で、被引用372という定番のプラズマアクチュエータ論文が、掲載誌のページを含めどこを探しても抄録の中身が読めず、結局『被引用数が高い=中身が確認できる』とは限らないのだと痛感した日でもありました。"
+    },
+    {
+      "date": "2026-09-17",
+      "status": "published",
+      "headline": "楕円柱1本でサボニウス風車の出力を8%上げるCFD研究(Joodaki, Sayyah, Charmiyan & Abbasi 2026、Journal of Applied Fluid Mechanics、全文)と、タービン翼のフィルム冷却の後ろにできるヘアピン渦を大規模渦シミュレーションで見た定番研究(Tyagi & Acharya 2003、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics / diffuser stall pressure recovery / cavitation pump impeller / rotor stator interaction unsteady』、定番枠がそのうち5語に『centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics』を加えた8語でした。最新枠(13件、OA8/抄録5)は、機械学習が主役の翼形状予測論文(ONERA CRMチャレンジ優勝手法)を方針(流体主役・ML脇役)により見送り、風車・タービン翼の流体物理を扱う候補を中心に検討。CC BY表記だったAerospace Science and Technology誌の風車ブレード境界層剥離論文はScienceDirectがボット遮断で全文を取得できなかったため、代わりに全文PDFへ直接アクセスできたJournal of Applied Fluid Mechanics誌のサボニウス風車デフレクタ論文(Joodaki et al. 2026)を採用しました。定番枠(14件、OA1/抄録13)はほぼ全て既配信と重複しており、唯一の未配信候補で分野に合う論文としてTyagi & Acharya (2003)のフィルム冷却LES研究(被引用194・抄録ベース)を選びました。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.11.4279",
+          "title": "Performance Enhancement of a Savonius Wind Turbine Using an Elliptical Cylinder Deflector（Joodaki, Sayyah, Charmiyan & Abbasi, 2026）",
+          "why": "サボニウス風車の弱点である「戻ってくる羽根のブレーキ」を、手前に置く楕円柱デフレクタの形（縦横比）と傾け角を系統的に変えるCFDで調べた最新研究。流れ方向に長い楕円（縦横比0.5）・傾け角0°の組み合わせで出力係数が最大8%改善する一方、円形の方が幅広い条件で安定して効くというトレードオフを、渦度・圧力の可視化とあわせて示しています（Journal of Applied Fluid Mechanics、CC BY-NC-ND・全文取得）。忠実性チェックでは、角度依存性の説明でAR（縦横比）とb（デフレクタの縦径）の対応関係を取り違えていた箇所、bを「設置距離」と誤認していた箇所、概念図の楕円の向きが実際のジオメトリと逆だった点など、2ラウンドかけて修正しました。"
+        },
+        {
+          "id": "doi:10.1115/1.1625397",
+          "title": "Large Eddy Simulation of Film Cooling Flow From an Inclined Cylindrical Jet（Tyagi & Acharya, 2003）",
+          "why": "タービン翼を冷やすフィルム冷却の穴から出る冷却ジェットの流れを、当時としては詳細なLES（大規模渦シミュレーション）で調べた被引用194件の定番研究。冷却ジェットの後ろに「ヘアピン渦」という塊状の渦構造ができ、それが周囲の流体を巻き込むことと、壁面の「ホットスポット」の発生・移動とが結びついていることを示しています。全文は取得できなかったため抄録の範囲だけで忠実に作り込み、抄録が引用符付きで示すだけの「ホットスポット」の定義には踏み込みませんでした。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補たち",
+          "note": "最新枠では、ONERA CRM壁面分布予測チャレンジで優勝したニューラルネットワーク手法の論文が候補にありましたが、流体物理そのものより機械学習の手法が主役のため方針により見送りました。またAerospace Science and Technology誌の低レイノルズ数風車ブレードの境界層剥離・後流論文はOpenAlex上ではCC BYのOA表示でしたが、ScienceDirectの記事ページがボット遮断（403）で全文を取得できず、抄録だけでは今日の2本の並びとして見送りました。定番枠は被引用上位のほぼ全てが既配信と重複しており、鉱物選鉱の気泡論文（分野不一致）を除くと、Tyagi & Acharya (2003)が唯一の実質的な候補でした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA8/抄録5）。サボニウス風車の楕円柱デフレクタ論文（Journal of Applied Fluid Mechanics）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1/抄録13）のうち12件が既配信と重複、1件（選鉱のナノバブル論文）は分野不一致。残るTyagi & Acharya (2003)のフィルム冷却LES研究を採用。"
+          }
+        ],
+        "note": "§0忠実性チェック(Opus)は両論文とも2ラウンド実施。サボニウス論文は1ラウンド目でAR/b（デフレクタの縦横比と縦径）の取り違え・bの意味の誤認（設置距離ではなくデフレクタ自体の寸法）など高深刻度の指摘が複数あり修正、2ラウンド目に残った軽微な指摘（機構説明の踏み込み・概念図のデフレクタ位置）も反映。フィルム冷却論文は「馬蹄形」という抄録にない分野用語の混入、周期性の過剰な主張、巻き込む流体を「高温の主流」と特定しすぎた記述などを2ラウンドで修正。今号の新語（トルク係数、ヘアピン渦、ジェットインクロスフロー）をsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを5本追加。実図はサボニウス論文がCC BY-NC-NDのため概念図（後流遮蔽の模式）、フィルム冷却論文も抄録ベースのため概念図（ヘアピン渦の模式）で代替。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、サボニウス風車のデフレクタで「円形」と「楕円形」のどちらが優れているかが、単純な優劣ではなくトレードオフだった点です。楕円形は特定の条件でピーク性能を出せる一方、円形は多少不利でも幅広い条件で安定して効く——これは風車に限らず、いろいろな設計判断に通じる話だなと感じました。もう一つ、2003年のフィルム冷却論文を読んで、「ヘアピン渦」という20年以上前から使われている言葉が、今でも冷却設計の議論で現役だと知ったのも新鮮でした。"
     }
   ]
 }
