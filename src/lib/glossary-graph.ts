@@ -179,6 +179,7 @@ export const CATEGORIES: GraphCategory[] = [
       "多段軸流圧縮機",
       "放射ディフューザ",
       "入射角",
+      "転向角",
       "せん断層",
       "ターボチャージャー",
       "平面翼列・環状翼列",
@@ -276,6 +277,7 @@ export const CATEGORIES: GraphCategory[] = [
       "分離渦シミュレーション (DES)",
       "薄層近似ナビエ・ストークス方程式",
       "乱流モデル",
+      "Spalart–Allmaras モデル",
       "格子収束性",
       "k-ε RNGモデル",
       "ゾーナルLES (ZLES)",
@@ -323,6 +325,9 @@ export const CATEGORIES: GraphCategory[] = [
       "損失相関式 (loss correlation)",
       "静圧効率 (static pressure efficiency)",
       "ツヴァイフェル係数 (Zweifel coefficient, Zw)",
+      "超臨界CO2",
+      "実ガス効果",
+      "蒸気圧曲線",
     ],
   },
   {
@@ -1078,6 +1083,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ジェットインクロスフロー (jet in crossflow)", to: "ヘアピン渦 (hairpin vortex)", label: "ジェット後流に周期的に発生" },
   { from: "ヘアピン渦 (hairpin vortex)", to: "フィルム冷却", label: "エントレインメントでホットスポットを生み壁面熱伝達を非定常化" },
   { from: "吹き出し比 (blowing ratio)", to: "ジェットインクロスフロー (jet in crossflow)", label: "主流への貫入の強さを左右" },
+  // --- NACA 65-(12)10圧縮機翼列の入射角全域における非圧縮性RANS検証（Bayram 2026） ---
+  { from: "入射角", to: "転向角", label: "変えると転向角が変わる" },
+  { from: "転向角", to: "全圧損失係数", label: "翼列の性能を表す2つの指標" },
+  { from: "Spalart–Allmaras モデル", to: "乱流モデル", label: "系統の一つ" },
+  { from: "境界層剥離", to: "転向角", label: "進むと転向が頭打ちになる" },
+  // --- 超臨界CO2遠心圧縮機の実ガス効果（Baltadjiev, Lettieri & Spakovszky 2015） ---
+  { from: "超臨界CO2", to: "実ガス効果", label: "臨界点付近で顕著" },
+  { from: "実ガス効果", to: "チョーク (choking)", label: "チョーク余裕に影響" },
+  { from: "蒸気圧曲線", to: "凝縮", label: "横切ると液滴が生じうる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

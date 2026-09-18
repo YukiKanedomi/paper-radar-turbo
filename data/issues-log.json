@@ -5632,6 +5632,102 @@
         "note": "§0忠実性チェック(Opus)は両論文とも2ラウンド実施。サボニウス論文は1ラウンド目でAR/b（デフレクタの縦横比と縦径）の取り違え・bの意味の誤認（設置距離ではなくデフレクタ自体の寸法）など高深刻度の指摘が複数あり修正、2ラウンド目に残った軽微な指摘（機構説明の踏み込み・概念図のデフレクタ位置）も反映。フィルム冷却論文は「馬蹄形」という抄録にない分野用語の混入、周期性の過剰な主張、巻き込む流体を「高温の主流」と特定しすぎた記述などを2ラウンドで修正。今号の新語（トルク係数、ヘアピン渦、ジェットインクロスフロー）をsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを5本追加。実図はサボニウス論文がCC BY-NC-NDのため概念図（後流遮蔽の模式）、フィルム冷却論文も抄録ベースのため概念図（ヘアピン渦の模式）で代替。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、サボニウス風車のデフレクタで「円形」と「楕円形」のどちらが優れているかが、単純な優劣ではなくトレードオフだった点です。楕円形は特定の条件でピーク性能を出せる一方、円形は多少不利でも幅広い条件で安定して効く——これは風車に限らず、いろいろな設計判断に通じる話だなと感じました。もう一つ、2003年のフィルム冷却論文を読んで、「ヘアピン渦」という20年以上前から使われている言葉が、今でも冷却設計の議論で現役だと知ったのも新鮮でした。"
+    },
+    {
+      "date": "2026-09-19",
+      "status": "published",
+      "headline": "圧縮機翼列のCFDが、設計の範囲では実験と1〜2度で合うのに失速側で外れる理由を検証した最新論文(Bayram 2026、INCAS Bulletin、全文)と、超臨界CO2遠心圧縮機の実ガス効果を扱った定番研究(Baltadjiev, Lettieri & Spakovszky 2015、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms / shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade』、定番枠が『boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery / wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics / diffuser stall pressure recovery』でした。ところが定番枠の候補14件のうち13件はすでに配信済みで、残る1件は流体の主役から外れる話題（プラズマアクチュエータ）でした。そこで定番枠は、今日の語を使ってOpenAlexを被引用の多い順に直接検索し直し、まだ載せていない定番を探しました。最新枠は、OA（全文が読める）の新着論文を追加で検索して探しました。ケンブリッジ大の電動ダクテッドファンの端壁流れの論文（Apollo）はライセンス表示がCC BYでしたが本文PDFが公開猶予（エンバーゴ）中で読めず、AIP・ASMEの出版社サイトのCC BY論文（翼端ウィングレット付き軸流ファン、低速軸流圧縮機の翼端漏れ流れの時空間発達など）はボット判定で本文を取得できませんでした。本文を確実に取得でき、内容も流れの物理に関わる、INCAS Bulletinの圧縮機翼列の検証論文を最新枠に選びました。定番枠は、超臨界CO2遠心圧縮機の実ガス効果を扱ったBaltadjievらの研究（抄録ベース）です。",
+      "picked": [
+        {
+          "id": "doi:10.13111/2066-8201.2026.18.3.3",
+          "title": "Validation of an Incompressible RANS Methodology for the NACA 65-(12)10 Compressor Cascade Across the Incidence Range（Bayram, 2026）",
+          "why": "圧縮機の翼を並べた『翼列』での流れの曲がり（転向角）を、標準的な定常RANS計算がNACA報告書1368の実験にどこまで再現できるかを、入射角−0.9°〜25.1°で検証した最新論文（INCAS Bulletin、CC BY-NC-ND、全文）。設計で使う5〜16°では1〜2°の差で合う一方、失速に近い高入射角では実験は頭打ちなのに計算は増え続けます。著者はその理由を『完全乱流モデルが剥離のはじまりを表せないため』と解釈しています。数値解析が主題の論文ですが、中身は翼列の転向・損失・失速の入り口という流れの物理なので採用しました。"
+        },
+        {
+          "id": "doi:10.1115/1.4029616",
+          "title": "An Investigation of Real Gas Effects in Supercritical CO2 Centrifugal Compressors（Baltadjiev, Lettieri & Spakovszky, 2015）",
+          "why": "超臨界CO2を圧縮する遠心圧縮機で、理想気体の考え方から外れる『実ガス効果』が性能や運転にどう出るかを、理論モデルとCFDで調べた定番研究（Journal of Turbomachinery）。抄録によると、チョーク余裕は理想気体条件に比べて9%減り、高流量係数では羽根車前縁付近の局所加速で状態が蒸気圧曲線に届く一方、調べた条件では凝縮は問題にならないとされています。全文は取得しておらず、抄録の範囲だけで忠実に作り込みました。被引用数はOpenAlexとCrossrefで値がずれるため数値は出していません。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補と、取れなかった全文",
+          "note": "最新枠の候補にあった、ケンブリッジ大の電動ダクテッドファンの端壁流れ（Anastasiou, Grimshaw & Taylor 2026）は、リポジトリ上のPDFが公開猶予中で本文が読めず、抄録だけでは全文号の柱にできないため見送りました。AIPの『翼端ウィングレット角が軸流ファンの内部流れと空力性能に与える影響』（Wei et al. 2026）や、ASMEのCC BY論文（He, Zhao & Vahdati 2026『低速軸流圧縮機における翼端漏れ流れの時空間発達』など）も、出版社サイトのボット判定で本文を取れませんでした。テーマ的には魅力があるので、本文が取れる形で公開されたらあらためて候補にしたいと思っています。ほかの最新枠候補（衝撃波を含む流れの縮約モデルや、データ同化の手法論文）は機械学習・数値手法が主役のため見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 15,
+            "note": "最新枠15件（arXiv 5件・OpenAlex 10件／OA8・抄録7）。うち1件は既配信（小型高速遠心ポンプのチップクリアランス損失）。この枠の候補からは採用に至らず、下の追加検索で見つけた論文を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA5／抄録9）のうち13件が既配信と重複、残る1件（プラズマアクチュエータ）は流体の主役から外れるため不採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（定番枠・被引用の多い順に各語の上位8件）",
+            "scope": "OpenAlex 直接検索・被引用順（type:article）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity turbomachinery",
+              "supercritical CO2 compressor turbomachinery",
+              "inlet distortion fan compressor",
+              "diffuser stall pressure recovery",
+              "boundary layer transition turbine blade",
+              "shock boundary layer interaction compressor",
+              "compressor blade stall separation"
+            ],
+            "hits": 64,
+            "note": "各語の上位8件（重複を含む延べ64件）から、未配信で流体の主役になる定番として超臨界CO2遠心圧縮機の実ガス効果（Baltadjievら 2015）を採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（最新枠・OAのみ）",
+            "scope": "OpenAlex 直接検索・2026-06-01以降の発行・OAのみ・発行日順",
+            "terms": [
+              "compressor stall",
+              "turbine blade flow",
+              "tip leakage",
+              "secondary flow",
+              "axial fan",
+              "centrifugal compressor",
+              "shock wave compressor",
+              "turbomachinery loss",
+              "cascade separation",
+              "diffuser",
+              "pump impeller flow",
+              "rotating stall"
+            ],
+            "hits": 86,
+            "note": "各語の上位8件（延べ90件・重複除去後86件、分野外のヒットを含む）。本文が実際に取得できたINCAS Bulletinの圧縮機翼列検証論文を採用。"
+          }
+        ],
+        "note": "§0忠実性チェック(Opus)は2論文とも2ラウンド実施。1ラウンド目の指摘（INCAS論文：レイノルズ数の基準長の取り違え、原文に無い『層流剥離泡・遷移剥離』の追記、『先行例が限られる』という著者の問題意識の帰属など／Baltadjiev論文：影響係数の役割・論文の目的の踏み込み過ぎ、高流量係数という条件の欠落など）を修正。2ラウンド目に残った中程度2件（INCAS論文の『全入射角で付着』が本文で示された12°と25.1°の2点だけの記述だった点、Baltadjiev論文の関連文献に付けた『本論文の引用文献ではない』が全文未取得のため断定できない点）は、いずれも出典で言える範囲へ狭める削除的な修正のみを行い、3ラウンド目の検証は実施していません（ラウンド上限のため）。実図はINCAS論文がCC BY-NC-NDのため転載せず、翼列の転向角の模式と入射角-転向角の傾向の模式の2枚の概念図で代替。Baltadjiev論文も抄録ベースのため概念図（T–s線図の模式）1枚。今号の新語（転向角、Spalart–Allmaras モデル、超臨界CO2、実ガス効果、蒸気圧曲線）をsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを7本追加。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』だったのは、INCAS Bulletinの翼列の論文が、計算が実験と合わなかった場所も含めて丁寧に線引きしている点でした。設計で使う入射角では転向角が1〜2度の差で合うのに、失速に近づくと実験は頭打ちで計算だけ増え続ける。しかも著者は、一番小さい入射角の食い違いは『実験側が信頼できないため評価から外す』、高い入射角の食い違いは『モデルが剥離のはじまりを表せないため』と、理由を分けて書いています。どこまで信じてよい計算なのかを教えてくれるのは、実用上とても大事な情報なのだと感じました。もう一つ、超臨界CO2の研究では、流れの加速で状態が蒸気圧曲線に『届く』ことと、実際に液滴ができて問題になることが別の話で、液滴ができるまでの時間と流れが滞留する時間の比べ合いで決まるという点が新鮮でした。"
     }
   ]
 }
