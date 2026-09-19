@@ -99,6 +99,8 @@ export const CATEGORIES: GraphCategory[] = [
       "進行波フラッタ (traveling-wave flutter)",
       "翼間位相角 (inter-blade phase angle, IBPA)",
       "空力減衰 (aerodynamic damping)",
+      "節直径 (nodal diameter)",
+      "ブレードチップタイミング (blade tip timing, BTT)",
       "揚力変動",
       "付着キャビテーション (attached cavitation)",
       "せん断キャビテーション (shear cavitation)",
@@ -357,6 +359,10 @@ export const CATEGORIES: GraphCategory[] = [
       "コーナー剥離",
       "逆圧力勾配 (adverse pressure gradient)",
       "限界流線 (limiting streamline)",
+      "横方向圧力勾配 (transverse pressure gradient, TPG)",
+      "コンパウンドリーン (compound lean)",
+      "サドル点とフォーカス (saddle point and focus)",
+      "コーナー形状係数 (corner shape factor)",
       "分離ヒステリシス (separation hysteresis)",
       "渦発生器ジェット (vortex generator jet, VGJ)",
       "非定常吹き出し (pulsed blowing)",
@@ -1092,6 +1098,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "超臨界CO2", to: "実ガス効果", label: "臨界点付近で顕著" },
   { from: "実ガス効果", to: "チョーク (choking)", label: "チョーク余裕に影響" },
   { from: "蒸気圧曲線", to: "凝縮", label: "横切ると液滴が生じうる" },
+  // --- 横方向圧力勾配と静翼の2つの破綻機構（Taylor & Miller 2016） ---
+  { from: "コンパウンドリーン (compound lean)", to: "横方向圧力勾配 (transverse pressure gradient, TPG)", label: "強める" },
+  { from: "横方向圧力勾配 (transverse pressure gradient, TPG)", to: "コーナー剥離", label: "強いと開口を抑える" },
+  { from: "サドル点とフォーカス (saddle point and focus)", to: "限界流線 (limiting streamline)", label: "限界流線上の特異点" },
+  { from: "コーナー形状係数 (corner shape factor)", to: "コーナー剥離", label: "開口への近さを測る" },
+  // --- 遷音速ファンのフラッタ試験（Mütschard et al. 2026） ---
+  { from: "進行波フラッタ (traveling-wave flutter)", to: "節直径 (nodal diameter)", label: "位相パターンを表す" },
+  { from: "翼間位相角 (inter-blade phase angle, IBPA)", to: "節直径 (nodal diameter)", label: "節直径数と対応" },
+  { from: "ブレードチップタイミング (blade tip timing, BTT)", to: "フラッタ", label: "翼先端の振動を計測" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

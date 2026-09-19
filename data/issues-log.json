@@ -5728,6 +5728,88 @@
         "note": "§0忠実性チェック(Opus)は2論文とも2ラウンド実施。1ラウンド目の指摘（INCAS論文：レイノルズ数の基準長の取り違え、原文に無い『層流剥離泡・遷移剥離』の追記、『先行例が限られる』という著者の問題意識の帰属など／Baltadjiev論文：影響係数の役割・論文の目的の踏み込み過ぎ、高流量係数という条件の欠落など）を修正。2ラウンド目に残った中程度2件（INCAS論文の『全入射角で付着』が本文で示された12°と25.1°の2点だけの記述だった点、Baltadjiev論文の関連文献に付けた『本論文の引用文献ではない』が全文未取得のため断定できない点）は、いずれも出典で言える範囲へ狭める削除的な修正のみを行い、3ラウンド目の検証は実施していません（ラウンド上限のため）。実図はINCAS論文がCC BY-NC-NDのため転載せず、翼列の転向角の模式と入射角-転向角の傾向の模式の2枚の概念図で代替。Baltadjiev論文も抄録ベースのため概念図（T–s線図の模式）1枚。今号の新語（転向角、Spalart–Allmaras モデル、超臨界CO2、実ガス効果、蒸気圧曲線）をsrc/lib/glossary-graph.tsのCATEGORIESに分類し、意味エッジを7本追加。"
       },
       "afterword": "— 編集担当より：今回『なるほど』だったのは、INCAS Bulletinの翼列の論文が、計算が実験と合わなかった場所も含めて丁寧に線引きしている点でした。設計で使う入射角では転向角が1〜2度の差で合うのに、失速に近づくと実験は頭打ちで計算だけ増え続ける。しかも著者は、一番小さい入射角の食い違いは『実験側が信頼できないため評価から外す』、高い入射角の食い違いは『モデルが剥離のはじまりを表せないため』と、理由を分けて書いています。どこまで信じてよい計算なのかを教えてくれるのは、実用上とても大事な情報なのだと感じました。もう一つ、超臨界CO2の研究では、流れの加速で状態が蒸気圧曲線に『届く』ことと、実際に液滴ができて問題になることが別の話で、液滴ができるまでの時間と流れが滞留する時間の比べ合いで決まるという点が新鮮でした。"
+    },
+    {
+      "date": "2026-09-20",
+      "status": "published",
+      "headline": "圧縮機の静翼を『傾ける』と壊れ方が入れ替わる理由を3D流れから解いた定番論文（Taylor & Miller 2016、Journal of Turbomachinery、著者原稿の全文）と、遷音速ファンのフラッタを実験で調べる新しい試験設備の最新論文（Mütschard ら 2026、Journal of Turbomachinery、抄録ベース）。",
+      "intro": "本日の検索語は最新枠が『corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery / wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics』、定番枠が『cavitation pump impeller / rotor stator interaction unsteady / centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics / surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery』でした。ところが定番枠の上位14件は、すべて過去の配信で取り上げ済みでした。そこで、まだ使っていない検索語（コーナー剥離・衝撃波と境界層の干渉・フラッタ・ディフューザ失速・後流の混合・入口歪み・損失機構・翼端漏れ渦・遷移・フィルム冷却）で被引用の多い順に探し直し、未配信の候補から、圧縮機のコーナー剥離と3D設計を扱うTaylor & Miller（2016）を選びました。こちらはCambridge大学のリポジトリで公開されている著者原稿の全文が読めたので、全文ベースで作り込んでいます。最新枠は、2026年9月16日に公開されたばかりの遷音速ファンのフラッタ試験の論文を選びました。出版社サイトは自動アクセスを遮断していて全文を取得できなかったため、抄録の範囲だけで控えめにまとめた『抄録ベース』です。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.4034685",
+          "title": "圧縮機流れにおいて競合する三次元機構（Taylor & Miller, 2016）",
+          "why": "羽根を傾けると翼面に横向きの圧力の差ができ、それが『根元の角で突然はがれる』か『後ろの縁からじわじわはがれる』かを決める、という見方を、CFDと実験の両方で示した論文です。傾けが小さい領域では計算と実験が食い違いやすい、という設計の不確かさにも踏み込んでいて、失速・剥離の物理を読みたい本アプリの方針に合います（全文・OA）。"
+        },
+        {
+          "id": "doi:10.1115/1.4072717",
+          "title": "ファン・リグ・ダルムシュタット：遷音速ファン・フラッタの位相分解空力弾性調査（Mütschard ら, 2026）",
+          "why": "遷音速ファンで、調べたどの回転速度でも作動範囲の上側の境界を決めていたのはフラッタだった、という試験結果と、ケーシング側の計測だけで流体と構造の位相を求める新しい解析の提案です。新着でこの主題に最も近く、流れと羽根の振動の結びつきを扱っていました（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠の全件が既配信だったため検索を広げました",
+          "note": "通常の定番枠14件（OA1／抄録13）は、Greitzer 1976、Day 2015、Wind turbine wake aerodynamics 2003 など、すべて過去に配信済みでした。未使用の検索語に切り替えて再検索し、未配信の候補約84件の中から選んでいます。同時に候補にあった『圧縮機の粗さと入口歪み（遷音速圧縮機の失速近傍）』『コーナー剥離の吸込み制御』『混合ディンプル』などの新着も、今回は有料でアクセスできる情報が限られるため見送りました。"
+        },
+        {
+          "title": "最新枠の見送り",
+          "note": "最新枠のうち、ブレード溝ジェットでコーナー剥離を制御するJAFM論文と蒸気タービン最終段の空力安定性の論文は既配信でした。arXivの新着は、成層境界層、クアッドコプターの渦、ML（ニューラル場のアンサンブル）など、ターボ機械が主役ではない流体論文が中心で、方針により見送りました。ファン・リグ・ダルムシュタットの論文は公開論文ですが、出版社ページの自動取得が遮断されたため、全文は読めていません。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近3年（OA/抄録 混在）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 16,
+            "note": "最新枠は16件（OA10／抄録6）。ファン・リグ・ダルムシュタット（Journal of Turbomachinery 2026）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・通常検索）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 14,
+            "note": "上位14件（OA1／抄録13）はすべて既配信で、新規候補なし。"
+          },
+          {
+            "name": "OpenAlex（定番枠・別語での再検索）",
+            "scope": "未使用の検索語で被引用上位を12件ずつ取得し、既配信を除去",
+            "terms": [
+              "corner separation compressor",
+              "shock boundary layer interaction compressor",
+              "blade flutter aeroelasticity",
+              "diffuser stall pressure recovery",
+              "wake mixing unsteady turbomachinery",
+              "inlet distortion fan aerodynamics",
+              "turbomachinery loss mechanisms",
+              "tip leakage vortex loss",
+              "boundary layer transition turbine blade",
+              "film cooling turbine heat transfer"
+            ],
+            "hits": 84,
+            "note": "未配信の候補約84件から、Taylor & Miller 2016（Competing Three-Dimensional Mechanisms in Compressor Flows）を採用。OpenAlexの被引用は112、Semantic Scholarは90と差があるため、数値は掲載していません。"
+          }
+        ],
+        "note": "今号は定番枠＝OA全文（著者原稿）、最新枠＝抄録ベース。全文取得は、出版社サイトがCloudflareで遮断していたため、最新枠では叶いませんでした。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』と思ったのは、羽根を『傾ける』という設計の一手が、羽根の壊れ方そのものを入れ替えてしまう、という話でした。傾けが小さいと根元の角で突然大きなはがれが開き、大きいと後ろの縁からじわじわはがれる。しかも、突然壊れる側のほうが、計算と実験の食い違いも大きくなりやすいというのが、素人ながら意外でした。壊れ方の『かたち』を知ることが、設計の安心にもつながるのだなと感じます。もう一本のフラッタの論文は、羽根の揺れと空気の圧力のタイミングのずれ（位相）を、外壁のセンサーだけで取り出す工夫が印象的でした。全文が読めなかったので、詳しい数字までは追えておらず、そこは正直に『抄録ベース』とさせてください。"
     }
   ]
 }
