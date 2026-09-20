@@ -5810,6 +5810,98 @@
         "note": "今号は定番枠＝OA全文（著者原稿）、最新枠＝抄録ベース。全文取得は、出版社サイトがCloudflareで遮断していたため、最新枠では叶いませんでした。"
       },
       "afterword": "— 編集担当より：今回『なるほど』と思ったのは、羽根を『傾ける』という設計の一手が、羽根の壊れ方そのものを入れ替えてしまう、という話でした。傾けが小さいと根元の角で突然大きなはがれが開き、大きいと後ろの縁からじわじわはがれる。しかも、突然壊れる側のほうが、計算と実験の食い違いも大きくなりやすいというのが、素人ながら意外でした。壊れ方の『かたち』を知ることが、設計の安心にもつながるのだなと感じます。もう一本のフラッタの論文は、羽根の揺れと空気の圧力のタイミングのずれ（位相）を、外壁のセンサーだけで取り出す工夫が印象的でした。全文が読めなかったので、詳しい数字までは追えておらず、そこは正直に『抄録ベース』とさせてください。"
+    },
+    {
+      "date": "2026-09-21",
+      "status": "published",
+      "headline": "エンジンが止まってファンが風で回る『ウィンドミル』で、羽根が壊れると回転数は『どこが』壊れたかで大きく変わることを実験と計算で示した最新論文(Medina Cassillas & Hall 2026、JGPPS、CC BY全文)と、圧縮機の安定限界の近くで翼先端の渦のゆらぎが羽根を揺らす回転模様を生む仕組みを測った定番研究(Mailach, Lehmann & Vogeler 2001、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『diffuser stall pressure recovery / cavitation pump impeller / rotor stator interaction unsteady / centrifugal compressor aerodynamics / axial compressor aerodynamics / turbine aerodynamics』、定番枠が『tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms / shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity』でした。ところが定番枠の上位14件は、ほとんどが過去に配信済みで、残る1件（プラズマアクチュエータのレビュー）は抄録が公開されておらず、これまでも見送ってきたものでした。そこで、翼端の渦・チップクリアランス・コーナー剥離・衝撃波と境界層の干渉・遷移・ディフューザ失速・動静翼干渉の語で、被引用60件超の論文を被引用の多い順に探し直し、抄録が公開されていて未配信の定番として、動翼先端の渦がつくる『回転不安定現象』を扱ったMailachらを選びました。最新枠は、OAで本文が読める候補を追加検索して、ケンブリッジ大学のグループが2026年8月18日に公開したウィンドミル空力の論文を採用しました。CC BY 4.0で全文と図が使えるため、全文ベースで作り込んでいます。",
+      "picked": [
+        {
+          "id": "doi:10.33737/jgpps/224526",
+          "title": "Windmill aerodynamics following a fan blade off event（Medina Cassillas & Hall, 2026）",
+          "why": "飛行中にエンジンが止まっても、ファンは風の力で回り続けます（ウィンドミル）。羽根が壊れたあと、その回転数と流れがどう変わるかを、低速ファン装置の実験と全周非定常計算で調べた最新論文（Journal of the Global Power and Propulsion Society、CC BY 4.0、全文）。傷みが羽根の先にあるほど回転数が大きく落ち、傷んだファンではブロッケージ（流れの詰まり）が減って損失も減る、という流れの物理が主役です。実図3点（損傷パターン・ロータ出口の速度分布・損失と詰まりの関係）を出典明記で掲載しました。"
+        },
+        {
+          "id": "doi:10.1115/1.1370160",
+          "title": "Rotating Instabilities in an Axial Compressor Originating From the Fluctuating Blade Tip Vortex（Mailach, Lehmann & Vogeler, 2001）",
+          "why": "軸流圧縮機が安定限界に近づくと、羽根の先で、円周方向に多くの波をもつ回転する流れの模様（回転不安定現象）が現れ、羽根を大きく揺らして騒音も出します。この論文は、その原因が翼先端の渦のゆらぎと隣の翼の流れとの周期的な干渉であることを、ドレスデンの低速圧縮機で測って示した定番研究（Journal of Turbomachinery）。全文は取得できなかったため、抄録の範囲だけで控えめにまとめた『抄録ベース』です。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補と、取れなかった全文",
+          "note": "最新枠でOAとして最初に候補に挙げたポンプのキャビテーション論文（Journal of Engineering Research、CC BY）は、出版社サイトが自動アクセスを遮断して全文を取得できませんでした。ケンブリッジ大の電動ダクテッドファンの端壁流れ（Anastasiou, Grimshaw & Taylor 2026）はリポジトリ上のPDFが閲覧制限のままで、Journal of Turbomachinery掲載の非同期振動の論文（Tharreau ら 2026、CC BY）も出版社サイトから取得できず、本文が読めない以上は全文号の柱にできないため見送りました（非同期振動の論文は関連論文として紹介しています）。arXivの新着は、深層学習で圧縮機の空力をモデル化する論文、衝撃波を含む流れの次元削減、クアッドコプターの後流など、ターボ機械が主役ではない・手法が主役のものが中心で、方針により見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近3年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 20,
+            "note": "最新枠20件（arXiv 10件・OpenAlex 10件／OA13・抄録7）。arXivの新着はML・数値手法・非ターボ機械が中心で採用に至らず、OpenAlex側の候補と下の追加検索から採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA4／抄録10）のうち13件が既配信、残る1件（プラズマアクチュエータのレビュー）は抄録が公開されておらず要約の材料が無いため不採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（定番枠・被引用60件超の上位25件×7語）",
+            "scope": "OpenAlex 直接検索・被引用順（type:article）",
+            "terms": [
+              "tip leakage vortex",
+              "tip clearance",
+              "corner separation compressor",
+              "shock boundary layer interaction",
+              "boundary layer transition turbine",
+              "diffuser stall",
+              "rotor stator interaction"
+            ],
+            "hits": 172,
+            "note": "各語の上位25件（延べ172件・分野外のヒットを含む）から、未配信で抄録が取得でき、流体の主役になる定番として回転不安定現象のMailachらを採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（最新枠・OAのみ）",
+            "scope": "OpenAlex 直接検索・2026-06-01以降の発行・OAのみ・発行日順",
+            "terms": [
+              "compressor",
+              "turbine blade",
+              "pump impeller",
+              "diffuser",
+              "turbomachinery",
+              "fan rotor",
+              "stall",
+              "tip leakage",
+              "wind turbine wake"
+            ],
+            "hits": 135,
+            "note": "各語の上位15件（延べ135件・分野外や重複を含む）。本文が実際に取得できた、ウィンドミル空力の論文（JGPPS）を採用。"
+          }
+        ],
+        "note": "今号は最新枠＝OA全文（CC BY・実図3点）、定番枠＝抄録ベース。§0忠実性チェック(Opus)は2論文とも2ラウンド実施しました。1ラウンド目の指摘（数値の基準の書き方、角度の符号、抄録に無い語の混入など）は修正し、2ラウンド目に残った指摘（軽微〜中程度）は該当記述の削除・限定で反映しています（3回目の検証は行っていません）。全文の取得は、出版社サイトの遮断で複数の候補で叶わず、JGPPSのPDFが直接取得できたことで成立しました。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』と思ったのは、エンジンが止まったあとのファンが、根元では空気に仕事をして、先のほうでは空気から仕事を取る、いわば圧縮機とタービンを一つの羽根で兼ねているという話でした。しかも、羽根が壊れたときに回転が大きく落ちるかどうかは、壊れた量よりも『壊れた場所』が羽根の先か根元かで決まる、と論文は述べています。もう一本の回転不安定現象の論文は、羽根の先の小さな渦が隣の羽根と周期的に干渉することで、大きな模様になるという発想が印象的でした。こちらは全文が読めなかったので、詳しい数字までは追えておらず、そこは正直に『抄録ベース』とさせてください。"
     }
   ]
 }

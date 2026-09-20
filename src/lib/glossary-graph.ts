@@ -28,6 +28,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ヘルムホルツ共鳴周波数",
       "スパイク型回転失速",
       "回転失速の前駆現象",
+      "安定限界 (stability limit)",
       "モード波型前駆現象 (modal-wave precursor)",
       "深いサージ (deep surge)",
       "マイルドサージ (mild surge)",
@@ -130,6 +131,7 @@ export const CATEGORIES: GraphCategory[] = [
       "翼端漏れ流れ (tip leakage flow)",
       "先端すき間流れ（tip clearance flow）",
       "チップクリアランス (tip clearance, TC)",
+      "圧力面ケーシング渦 (casing pressure side vortex)",
       "軸方向渦度 (streamwise vorticity)",
       "表面粗さ (surface roughness)",
       "衝撃波境界層干渉 (SBLI)",
@@ -182,6 +184,7 @@ export const CATEGORIES: GraphCategory[] = [
       "放射ディフューザ",
       "入射角",
       "転向角",
+      "偏差角 (deviation angle)",
       "せん断層",
       "ターボチャージャー",
       "平面翼列・環状翼列",
@@ -330,6 +333,7 @@ export const CATEGORIES: GraphCategory[] = [
       "超臨界CO2",
       "実ガス効果",
       "蒸気圧曲線",
+      "ウィンドミル状態 (windmill condition)",
     ],
   },
   {
@@ -1107,6 +1111,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "進行波フラッタ (traveling-wave flutter)", to: "節直径 (nodal diameter)", label: "位相パターンを表す" },
   { from: "翼間位相角 (inter-blade phase angle, IBPA)", to: "節直径 (nodal diameter)", label: "節直径数と対応" },
   { from: "ブレードチップタイミング (blade tip timing, BTT)", to: "フラッタ", label: "翼先端の振動を計測" },
+  // --- ウィンドミル状態のファン損傷（Medina Cassillas & Hall 2026）と翼端渦の回転不安定現象（Mailach ら 2001） ---
+  { from: "ウィンドミル状態 (windmill condition)", to: "入射角", label: "大きな負の入射角を伴う" },
+  { from: "偏差角 (deviation angle)", to: "転向角", label: "実際の転向を左右" },
+  { from: "圧力面ケーシング渦 (casing pressure side vortex)", to: "混合損失", label: "強い混合損失を生む" },
+  { from: "翼端漏れ渦", to: "回転不安定現象 (rotating instabilities)", label: "ゆらぎが原因" },
+  { from: "回転不安定現象 (rotating instabilities)", to: "安定限界 (stability limit)", label: "近くで出現" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
