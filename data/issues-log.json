@@ -5902,6 +5902,119 @@
         "note": "今号は最新枠＝OA全文（CC BY・実図3点）、定番枠＝抄録ベース。§0忠実性チェック(Opus)は2論文とも2ラウンド実施しました。1ラウンド目の指摘（数値の基準の書き方、角度の符号、抄録に無い語の混入など）は修正し、2ラウンド目に残った指摘（軽微〜中程度）は該当記述の削除・限定で反映しています（3回目の検証は行っていません）。全文の取得は、出版社サイトの遮断で複数の候補で叶わず、JGPPSのPDFが直接取得できたことで成立しました。"
       },
       "afterword": "— 編集担当より：今回『なるほど』と思ったのは、エンジンが止まったあとのファンが、根元では空気に仕事をして、先のほうでは空気から仕事を取る、いわば圧縮機とタービンを一つの羽根で兼ねているという話でした。しかも、羽根が壊れたときに回転が大きく落ちるかどうかは、壊れた量よりも『壊れた場所』が羽根の先か根元かで決まる、と論文は述べています。もう一本の回転不安定現象の論文は、羽根の先の小さな渦が隣の羽根と周期的に干渉することで、大きな模様になるという発想が印象的でした。こちらは全文が読めなかったので、詳しい数字までは追えておらず、そこは正直に『抄録ベース』とさせてください。"
+    },
+    {
+      "date": "2026-09-22",
+      "status": "published",
+      "headline": "大きなファンが残す後流がブースタの翼にぶつかって生む剥離と、それが『助け』にもなる不思議を計算で描いた最新論文(Zheng ら 2026、Research Square プレプリント、CC BY全文)と、タービン翼列の床の近くの渦を煙とレーザーで可視化した定番研究(Wang, Olson, Goldstein & Eckert 1997、Journal of Turbomachinery、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery / tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms』、定番枠が『supercritical CO2 turbomachinery / wind turbine wake aerodynamics / film cooling turbine heat transfer / inlet distortion fan aerodynamics / diffuser stall pressure recovery / cavitation pump impeller / rotor stator interaction unsteady / centrifugal compressor aerodynamics』でした。ところが定番枠の14件は、12件が過去に配信済みで、残る2件（プラズマアクチュエータのレビューと、ナノバブルの浮選の論文）はターボ機械が主役ではないため、そのままでは選べませんでした。そこで、今日の検索語に近い10語で OpenAlex を被引用の多い順に直接探し直し、未配信で抄録が公開されている定番として、タービン翼列の端壁付近の渦（馬蹄形渦・通路渦）を煙で可視化した Wang らを選びました。失速の前兆や翼端漏れの定番は、すでに多く配信済みなので、今日は別の切り口を優先しました。最新枠は、OAで本文が実際に読めるものを探し、2026年9月4日に Research Square へ載った、高バイパス比ファンのブースタにおける動静翼干渉の論文を採用しました。査読前のプレプリントですが、CC BY 4.0 で全文と図が使えるため、全文ベースで作り込み、実図2点を出典明記で載せています。",
+      "picked": [
+        {
+          "id": "doi:10.21203/rs.3.rs-10823705/v1",
+          "title": "Study on Flow Mechanisms of Rotor-Stator Interaction in a High Bypass Ratio Fan Booster（Zheng ら, 2026）",
+          "why": "エンジンの大きなファンが残す後流（ウェイク）が、すぐ後ろの小さなブースタの翼にぶつかると何が起きるか、を定常計算と非定常計算で比べた最新論文（Research Square の査読前プレプリント、CC BY 4.0、全文）。失速の手前の運転点では、非定常計算のほうが流量・圧力比・効率が下がり、その理由が『後流が翼にぶつかって起きる周期的なはがれ』と『後流の混ざり合い』で説明されます。後流が、はがれた流れに勢いを足して助けることもありますが、並んだ動翼3枚のうちの1枚だけ、という点が印象的です。実図2点（装置の模式図・エントロピー増加の分布）を出典明記で掲載しました。"
+        },
+        {
+          "id": "doi:10.1115/1.2841006",
+          "title": "Flow Visualization in a Linear Turbine Cascade of High Performance Turbine Blades（Wang, Olson, Goldstein & Eckert, 1997）",
+          "why": "タービンの翼を並べた翼列の、床（端壁）の近くにできる渦を、細い煙の筋にレーザー光を当てて写真と動画で捉えた古典的な実験（Journal of Turbomachinery）。前縁の近くでは、渦の数を変えながら揺らぐ『馬蹄形渦』の群れが見えた、と抄録は述べます。全文は取得できなかったため、抄録の範囲だけで控えめにまとめた『抄録ベース』で、原論文の図は使わず、古典的な二次流れのイメージを断面の模式図（概念図）で添えました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補と、取れなかった全文",
+          "note": "最新枠でOAとして最初に候補に挙げた、ケンブリッジ大の電動ダクテッドファンの端壁流れ（Anastasiou, Grimshaw & Taylor 2026）は、リポジトリ上の本文が公開前の閲覧制限（エンバーゴ）でした。翼端ウィングレットの軸流ファン（Journal of Fluid Engineering）、圧縮機設計空間の損失評価と非同期振動（Journal of Turbomachinery）、失速前兆と能動流れ制御（HAL）、MDPI の数件は、出版社やリポジトリのアクセス制限で全文が取得できませんでした。定番枠では、翼端漏れと失速前兆の定番（Garnier ら 1991、Inoue と Kuroumaru 1989）は良い候補でしたが、これらの話題はすでに多数配信しているため見送りました。arXiv の新着は、深層学習で翼の圧力を予測する論文、数値手法や、ターボ機械が主役ではない流れの論文が中心で、方針により選びませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近3年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（arXiv 14件・OpenAlex 10件／OA18・抄録6）。OpenAlex側の10件のうち5件は既配信、arXivの14件はほとんどが流体の一般論・数値手法・非ターボ機械で採用に至らず、下の追加検索から採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA3／抄録11）のうち12件が既配信、残る2件（プラズマアクチュエータのレビュー、ナノバブルの浮選）はターボ機械が主役ではないため不採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（定番枠・被引用順・語ごとに上位10件）",
+            "scope": "OpenAlex 直接検索・被引用順（type:article）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "centrifugal compressor aerodynamics",
+              "rotor stator interaction unsteady",
+              "supercritical CO2 turbomachinery",
+              "rotating stall inception",
+              "tip leakage vortex",
+              "secondary flow endwall turbine",
+              "compressor surge"
+            ],
+            "hits": 100,
+            "note": "各語の上位10件（延べ100件・分野外や既配信を含む）から、未配信で抄録が取得でき、流体の主役になる定番として、端壁の二次流れを可視化した Wang らを採用。"
+          },
+          {
+            "name": "OpenAlex 追加検索（最新枠・OAのみ）",
+            "scope": "OpenAlex 直接検索・2026-06-15または2026-07-01以降の発行・OAのみ・発行日順",
+            "terms": [
+              "rotating stall",
+              "compressor surge",
+              "tip leakage vortex",
+              "secondary flow turbine",
+              "compressor loss",
+              "fan stall",
+              "axial compressor flow",
+              "turbine cascade flow",
+              "centrifugal pump flow instability",
+              "diffuser separation",
+              "shock wave compressor",
+              "wind turbine wake",
+              "axial compressor",
+              "turbine cascade",
+              "stall",
+              "tip clearance",
+              "turbomachinery",
+              "centrifugal compressor",
+              "fan rotor",
+              "secondary flow",
+              "shock boundary layer",
+              "blade row",
+              "turbine blade flow",
+              "separation bubble",
+              "wake mixing",
+              "pump impeller flow",
+              "gas turbine flow"
+            ],
+            "hits": 276,
+            "note": "2回に分けて実施（1回目は12語×各8件・2026-06-15以降、2回目は15語×各12件・2026-07-01以降）。延べ276件（分野外や重複を含む）。本文が実際に取得できた、ファンブースタの動静翼干渉の論文（Research Square）を採用。"
+          }
+        ],
+        "note": "今号は最新枠＝OA全文（CC BY・実図2点・査読前プレプリント）、定番枠＝抄録ベース。§0忠実性チェック(Opus)は2論文とも2ラウンド実施しました。1ラウンド目の指摘（プレプリント側は、出典に無い因果づけの削除・運転点の定義の言い換え・数値の帰属の明記など。定番側は、抄録に無い『昇華』などの語、概念図の描き方など）は修正して再検証に回しています。全文の取得は、出版社サイトやリポジトリの遮断・閲覧制限で複数の候補で叶わず、Research Square の PDF が直接取得できたことで成立しました。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』と思ったのは、ファンの後流が、後ろの翼にとって悪者にも助っ人にもなる、という話でした。翼の先端に近いところでは、後流が翼にぶつかってはがれを起こしますが、ちぎれた後流がはがれかけた流れに勢いを足して助けることもあって、しかもそれは3枚のうちの1枚だけ、と論文は述べています。定常計算だと、こうした違いが平均されて見えなくなる、というのも印象的でした（ただし、これは査読前のプレプリントで、実験ではなく計算の結果である点は覚えておきたいところです）。もう一本の、煙とレーザーで翼列の床の近くの渦を見た研究は、渦の数が変わりながら揺らぐ、という抄録の一文が心に残りました。こちらは全文が読めなかったので、細かい数字までは追えておらず、そこは正直に『抄録ベース』とさせてください。"
     }
   ]
 }

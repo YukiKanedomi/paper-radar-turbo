@@ -108,6 +108,7 @@ export const CATEGORIES: GraphCategory[] = [
       "気泡率 (void fraction, α)",
       "せん断層不安定性 (shear-layer instability)",
       "遠心安定化効果 (centrifugal stabilization effect)",
+      "ニアストール点 (near stall point, NS)",
     ],
   },
   {
@@ -219,6 +220,9 @@ export const CATEGORIES: GraphCategory[] = [
       "低圧タービン (low-pressure turbine, LPT)",
       "ストローハル数 (Strouhal number)",
       "シュリーレン法 (schlieren)",
+      "流れ可視化 (flow visualization)",
+      "煙ワイヤー法 (smoke-wire method)",
+      "ファンブースタ (fan booster)",
       "λ型衝撃波足 (lambda shock foot)",
       "羽根車（インペラ）",
       "軸受（すべり軸受）",
@@ -255,6 +259,7 @@ export const CATEGORIES: GraphCategory[] = [
     terms: [
       "CFD",
       "LES",
+      "混合平面法 (mixing plane)",
       "WALEモデル",
       "サロゲートモデル",
       "CNN",
@@ -387,6 +392,7 @@ export const CATEGORIES: GraphCategory[] = [
       "後縁セレーション (trailing edge serration)",
       "後退翼の逆流 (reverse flow on retreating blade)",
       "ピッチングモーメント衝撃 (pitching moment impulse)",
+      "運動量注入 (momentum injection)",
     ],
   },
   {
@@ -1117,6 +1123,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "圧力面ケーシング渦 (casing pressure side vortex)", to: "混合損失", label: "強い混合損失を生む" },
   { from: "翼端漏れ渦", to: "回転不安定現象 (rotating instabilities)", label: "ゆらぎが原因" },
   { from: "回転不安定現象 (rotating instabilities)", to: "安定限界 (stability limit)", label: "近くで出現" },
+  // --- ファンブースタの動静翼干渉（Zheng ら 2026）とタービン翼列の二次流れ可視化（Wang ら 1997） ---
+  { from: "後流（ウェイク）", to: "ロータ・ステータ干渉", label: "干渉の要因の一つ" },
+  { from: "運動量注入 (momentum injection)", to: "境界層剥離", label: "抑制" },
+  { from: "混合平面法 (mixing plane)", to: "ロータ・ステータ干渉", label: "定常計算で周方向に平均して扱う" },
+  { from: "ニアストール点 (near stall point, NS)", to: "失速余裕", label: "余裕が小さい運転点" },
+  { from: "煙ワイヤー法 (smoke-wire method)", to: "流れ可視化 (flow visualization)", label: "手法の一つ" },
+  { from: "二次流れ", to: "通路渦 (passage vortex, PV)", label: "主要な渦構造" },
+  { from: "馬蹄形渦（horseshoe vortex）", to: "通路渦 (passage vortex, PV)", label: "古典モデルでは圧力面側の枝が発達" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
