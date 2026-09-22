@@ -58,6 +58,10 @@ export const CATEGORIES: GraphCategory[] = [
       "フラッタ",
       "空力弾性",
       "自励振動",
+      "渦励起振動 (VIV, vortex induced vibrations)",
+      "局所共振メタマテリアル (LRM, locally resonant metamaterial)",
+      "ロックイン (lock-in)",
+      "質量比 (mass ratio, γm)",
       "キャビテーション",
       "キャビテーション数 (cavitation number)",
       "均質キャビテーションモデル (homogeneous cavitation model)",
@@ -1131,6 +1135,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "煙ワイヤー法 (smoke-wire method)", to: "流れ可視化 (flow visualization)", label: "手法の一つ" },
   { from: "二次流れ", to: "通路渦 (passage vortex, PV)", label: "主要な渦構造" },
   { from: "馬蹄形渦（horseshoe vortex）", to: "通路渦 (passage vortex, PV)", label: "古典モデルでは圧力面側の枝が発達" },
+  // --- 風車翼のVIVと共振器（Horcas ら 2026）と前縁汚染による剥離制御（Chauhan ら 2026） ---
+  { from: "渦励起振動 (VIV, vortex induced vibrations)", to: "渦放出 (vortex shedding)", label: "渦放出との連成で発生" },
+  { from: "渦励起振動 (VIV, vortex induced vibrations)", to: "ロックイン (lock-in)", label: "同期で振幅が急増" },
+  { from: "質量比 (mass ratio, γm)", to: "局所共振メタマテリアル (LRM, locally resonant metamaterial)", label: "減衰性能を左右する主要パラメータ" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -6015,6 +6015,66 @@
         "note": "今号は最新枠＝OA全文（CC BY・実図2点・査読前プレプリント）、定番枠＝抄録ベース。§0忠実性チェック(Opus)は2論文とも2ラウンド実施しました。1ラウンド目の指摘（プレプリント側は、出典に無い因果づけの削除・運転点の定義の言い換え・数値の帰属の明記など。定番側は、抄録に無い『昇華』などの語、概念図の描き方など）は修正して再検証に回しています。全文の取得は、出版社サイトやリポジトリの遮断・閲覧制限で複数の候補で叶わず、Research Square の PDF が直接取得できたことで成立しました。"
       },
       "afterword": "— 編集担当より：今回『なるほど』と思ったのは、ファンの後流が、後ろの翼にとって悪者にも助っ人にもなる、という話でした。翼の先端に近いところでは、後流が翼にぶつかってはがれを起こしますが、ちぎれた後流がはがれかけた流れに勢いを足して助けることもあって、しかもそれは3枚のうちの1枚だけ、と論文は述べています。定常計算だと、こうした違いが平均されて見えなくなる、というのも印象的でした（ただし、これは査読前のプレプリントで、実験ではなく計算の結果である点は覚えておきたいところです）。もう一本の、煙とレーザーで翼列の床の近くの渦を見た研究は、渦の数が変わりながら揺らぐ、という抄録の一文が心に残りました。こちらは全文が読めなかったので、細かい数字までは追えておらず、そこは正直に『抄録ベース』とさせてください。"
+    },
+    {
+      "date": "2026-09-23",
+      "status": "published",
+      "headline": "風車翼の渦励起振動を『共振するおもり』で抑えようとした計算機実験(Horcas ら 2026、arXiv プレプリント、CC BY全文)と、翼の前縁の汚れが条件によっては流れの剥がれを遅らせて助けることもあると分かった最新研究(Chauhan ら 2026、Aerospace Science and Technology、抄録ベース)。",
+      "intro": "本日の検索語は最新枠が『shock boundary layer interaction compressor / wake mixing unsteady turbomachinery / boundary layer transition turbine blade / corner separation compressor / blade flutter aeroelasticity / supercritical CO2 turbomachinery』、定番枠が『axial compressor aerodynamics / turbine aerodynamics / surge rotating stall / rotating stall inception spike / secondary flow endwall turbomachinery / tip leakage vortex loss / tip clearance flow loss / turbomachinery loss mechanisms』でした。定番枠は14件中13件がすでに配信済みで、残る1件（プラズマアクチュエータによる空力制御のレビュー）は抄録そのものがOpenAlex・Semantic Scholar・Crossrefのどこからも取得できず、内容を裏取りできないため見送りました。最新枠は、機械学習が主役の論文（圧縮機翼列流れのニューラル演算子、乱流モデルの較正）や、ターボ機械から離れた理論寄りの論文を外し、圧縮機の失速近傍流れ物理・自励振動の論文数本にも当たりましたが、いずれも抄録が取得できず断念。最終的に、arXivで全文を確実に読める風車翼の渦励起振動の論文と、OpenAlexで抄録が読め、CC BYの公開論文だが本文サイトの閲覧制限（bot対策）で全文までは辿り着けなかった前縁汚染の論文を選びました。結果として、定番枠に代わる新規候補が乏しく、2件とも『最新』枠由来（stream上はどちらもlatest）という構成になっています。",
+      "picked": [
+        {
+          "id": "arxiv:2609.24331",
+          "title": "Impact of a resonator on vortex induced vibrations of a wind turbine airfoil（Horcas, Roca, Ortega & Cante, 2026）",
+          "why": "風車の羽根が静止中に大きく揺れる『渦励起振動』を、バネとおもりでできた共振器（メタマテリアル）で抑えられないか調べた計算機実験（arXiv プレプリント、CC BY 4.0、全文）。共振器の重さが翼の4分の1を超えると振動を半分以上減らせる一方、軽い共振器では効果が乏しいという、正直な限界まで含めて示されている点を評価しました。実図2点（模式図・渦度分布）を出典明記で掲載しています。"
+        },
+        {
+          "id": "doi:10.1016/j.ast.2026.113570",
+          "title": "Leading-edge surface contamination effects on boundary-layer separation and wake dynamics of a low-Reynolds-number wind turbine blade（Chauhan, Salehi, Shojae, Ja'fari & Jaworski, 2026）",
+          "why": "小型風車の翼の前縁についた汚れやザラつきが、迎角によっては流れの剥がれをむしろ遅らせて助けることもある、という抄録の内容が興味深く選びました。CC BYの公開論文ですが、出版社サイト（ScienceDirect）が自動アクセスをブロックしており、著者所属大学のリポジトリにも本文ファイルが見当たらなかったため、全文は取得できず抄録ベースでまとめています。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "全文が取れなかった候補たち",
+          "note": "定番枠で唯一の新規候補だったプラズマアクチュエータ（DBD）による空力制御のレビュー(Corke, Post & Orlov 2008、被引用300件超)は、OpenAlex・Semantic Scholar・Crossrefのいずれからも抄録本文を取得できず、内容を裏取りする手段が無いため保留としました。最新枠でも、遷音速圧縮機の失速近傍流れ物理（表面粗さ×流入歪み）、圧縮機チップ流れの自励振動（DMD解析）、コーナー剥離の吸込み制御、混合ディンプルの効果、といった圧縮機まわりの新着論文数本に当たりましたが、いずれも同様に抄録が取得できませんでした。Leading-edge contamination論文もCC BYで本文は本来公開されているはずですが、ScienceDirectのアクセス制限（CAPTCHA）に阻まれ、Unpaywall経由のHuddersfield大学リポジトリにもPDF本体は見つかりませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "最新枠14件（OA8・抄録6）。機械学習主役（PINN翼列流れ予測、GEKO乱流モデル較正）とトピック外（流体の情報エントロピー理論）を除外し、抄録が取得できたarXivのVIV論文と、抄録は取れたが全文取得に至らなかったOpenAlex論文（前縁汚染）の中から選定。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1・抄録13）のうち13件が既配信。残る1件（DBDプラズマ空力制御レビュー）は抄録が取得できず不採用。今号は定番枠からの新規採用なし。"
+          }
+        ],
+        "note": "今号は最新枠2件（VIV論文=OA全文、前縁汚染論文=抄録ベース）という構成。§0忠実性チェック(Opus)は2論文とも実施し、いずれも1ラウンド目でverdict:okでした（over-reachを避けるため、抄録ベース側は抄録に書かれた数値・条件のみに絞って記述）。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』と思ったのは、風車の羽根についた汚れが必ずしも悪者ではない、という話でした。てっきり汚れや傷は空気抵抗を増やすだけの厄介者だと思っていたのですが、迎角が大きくて流れが剥がれかけているときは、うまい位置のザラつきがむしろ流れを引き止めて剥離を遅らせる、という抄録の説明には驚かされました。もう一本の、翼の振動を共振する『おもり』で抑える研究も、結果自体は『翼の4分の1の重さが要る』という地味な数字でしたが、その裏に『振動数をずらして同期を外す』というはっきりした仕組みがあるのが面白かったです。ちなみに今回は、CC BYで公開されているはずの論文の本文に、サイトのブロックで結局たどり着けない、ということが何度かありました。オープンアクセスの『建前』と『実際に読めるか』はまた別問題なのだと実感した回でした。"
     }
   ]
 }
