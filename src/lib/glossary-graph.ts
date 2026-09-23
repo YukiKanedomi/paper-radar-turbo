@@ -156,6 +156,7 @@ export const CATEGORIES: GraphCategory[] = [
       "内部ギャップせん断流れ (internal gap shear flow)",
       "吐出し係数 (discharge coefficient)",
       "スキーラチップ (squealer tip)",
+      "スクレイピング渦 (scraping vortex)",
       "空力損失係数 (aerodynamic loss coefficient)",
       "衝撃波・渦干渉 (shock-vortex interaction)",
       "損失遅れ (loss lag)",
@@ -449,6 +450,11 @@ export const CATEGORIES: GraphCategory[] = [
       "剥離流遷移 (separated-flow transition)",
       "ヘアピン渦 (hairpin vortex)",
       "ジェットインクロスフロー (jet in crossflow)",
+      "毛細管多孔構造 (CPS, capillary-porous structure)",
+      "ヒートパイプ",
+      "臨界熱流束 (CHF, critical heat flux)",
+      "ドライスポット (dry spot)",
+      "マイクロレイヤ (microlayer)",
     ],
   },
   {
@@ -1139,6 +1145,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "渦励起振動 (VIV, vortex induced vibrations)", to: "渦放出 (vortex shedding)", label: "渦放出との連成で発生" },
   { from: "渦励起振動 (VIV, vortex induced vibrations)", to: "ロックイン (lock-in)", label: "同期で振幅が急増" },
   { from: "質量比 (mass ratio, γm)", to: "局所共振メタマテリアル (LRM, locally resonant metamaterial)", label: "減衰性能を左右する主要パラメータ" },
+  // --- 蒸気タービン翼のCPS沸騰冷却（Genbach ら 2026）とスキーラチップのスクレイピング渦（Zou ら 2017） ---
+  { from: "ヒートパイプ", to: "毛細管多孔構造 (CPS, capillary-porous structure)", label: "内部で液を保持・供給する" },
+  { from: "毛細管多孔構造 (CPS, capillary-porous structure)", to: "臨界熱流束 (CHF, critical heat flux)", label: "構造の違いで上限が変わる" },
+  { from: "臨界熱流束 (CHF, critical heat flux)", to: "熱伝達", label: "沸騰熱伝達の上限を与える" },
+  { from: "ドライスポット (dry spot)", to: "マイクロレイヤ (microlayer)", label: "周囲に薄い液層が残る" },
+  { from: "スキーラチップ (squealer tip)", to: "スクレイピング渦 (scraping vortex)", label: "キャビティ内に生じる" },
+  { from: "スクレイピング渦 (scraping vortex)", to: "吐出し係数 (discharge coefficient)", label: "低下させ漏れ損失を減らす" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

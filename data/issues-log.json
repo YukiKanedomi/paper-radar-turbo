@@ -6075,6 +6075,91 @@
         "note": "今号は最新枠2件（VIV論文=OA全文、前縁汚染論文=抄録ベース）という構成。§0忠実性チェック(Opus)は2論文とも実施し、いずれも1ラウンド目でverdict:okでした（over-reachを避けるため、抄録ベース側は抄録に書かれた数値・条件のみに絞って記述）。"
       },
       "afterword": "— 編集担当より：今回『なるほど』と思ったのは、風車の羽根についた汚れが必ずしも悪者ではない、という話でした。てっきり汚れや傷は空気抵抗を増やすだけの厄介者だと思っていたのですが、迎角が大きくて流れが剥がれかけているときは、うまい位置のザラつきがむしろ流れを引き止めて剥離を遅らせる、という抄録の説明には驚かされました。もう一本の、翼の振動を共振する『おもり』で抑える研究も、結果自体は『翼の4分の1の重さが要る』という地味な数字でしたが、その裏に『振動数をずらして同期を外す』というはっきりした仕組みがあるのが面白かったです。ちなみに今回は、CC BYで公開されているはずの論文の本文に、サイトのブロックで結局たどり着けない、ということが何度かありました。オープンアクセスの『建前』と『実際に読めるか』はまた別問題なのだと実感した回でした。"
+    },
+    {
+      "date": "2026-09-24",
+      "status": "published",
+      "headline": "蒸気タービン翼を『泡』で冷やす提案と、翼先端のすき間から漏れる流れを渦で止める仕組み",
+      "intro": "今日は『wind turbine wake』『film cooling』『inlet distortion fan』『diffuser stall』『cavitation pump impeller』『rotor stator interaction』などの語で最新枠を、『shock boundary layer interaction』『corner separation』『blade flutter』『supercritical CO2』などの語で定番枠を探しました。ただ、候補の多くは風車まわりや既に配信済みのもので、昨日の号が風車の翼の話だったこともあり、風車以外で選び直しました。定番枠の新規候補は、DBDプラズマの空力制御レビュー1件だけで、抄録が取得できず、別途OpenAlexを追加検索して、翼端漏れの定番研究（Zou ら 2017）を見つけました。最新枠では、CC BYで全文が読める蒸気タービン翼の冷却の論文（Genbach ら 2026）を選びました。今号は2本ともOA全文です。流れ現象としては『沸騰する泡のふるまい』が主役の少し珍しい話題です。",
+      "picked": [
+        {
+          "id": "doi:10.1007/s44245-026-00350-4",
+          "title": "Cooling of advanced steam turbine blades with boiling liquids（Genbach, Bondartsev & Yerbolatov, 2026）",
+          "why": "非常に高い温度・圧力の蒸気で回る蒸気タービンの初段ノズル翼を、毛細管でできた網の上で水を沸騰させて冷やすという提案です。泡が生まれて育ち、つぶれるまでの9段階を、高速度カメラとレーザー干渉計で観察した結果が丁寧に示されています（CC BY 4.0・全文）。ただし実験は、ランプで温めた管に網を巻いた装置で行われていて、実機の翼で試した結果は書かれていません。その点も本文の限界として正直に記しました。原論文の図2点を出典明記で掲載しています。"
+        },
+        {
+          "id": "doi:10.1016/j.energy.2017.07.047",
+          "title": "Dominant flow structure in the squealer tip gap and its impact on turbine aerodynamic performance（Zou, Shao, Li, Zhang & Berglund, 2017）",
+          "why": "動翼の先端にくぼみ（スキーラ）を付けると、その中の『スクレイピング渦』が漏れ流れを誘い込んでふさぎ、損失を減らす、という説明が分かりやすく、流れの物理が主役の定番的な研究として選びました。出版社サイトは自動アクセスを403で遮断していましたが、ウプサラ大学のリポジトリ(DiVA)に公開版PDFがあり、全文を読んで要約しました（CC BY-NC-NDのため、原論文の図は転載せず概念図のみ）。最初は全文が取れないと判断して抄録ベースで書いてしまい、検証の段階で指摘されて作り直した経緯があります。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "今回見送った候補",
+          "note": "最新枠のうち、風車関連（浮体式垂直軸風車のレビュー、サボニウス風車、風車騒音のLES）は、昨日の号が風車の翼の話だったため見送りました。MHD乱流（磁気流体）と高次精度の埋め込み境界法は、ターボ機械の流れではなく手法・他分野の話題のため主役にしませんでした。抄録のみの最新枠（ファンとハブ付け根のすき間の漏れ流れ、ジェットエンジン用ディフューザ、タービン翼後縁の冷却）は、次点として残しています。定番枠の新規候補だったDBDプラズマ空力制御のレビュー（Experiments in Fluids 2008年）は、抄録本文を確認できる手段が無く、裏取りできないため見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA9・抄録4）。風車関連を除き、OA全文が確認できた蒸気タービン翼冷却の論文を選定。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA5・抄録9）のうち13件が既配信で、新規は1件のみ（抄録が取れず不採用）。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番枠の補い）",
+            "scope": "OA限定・被引用順で個別に5回検索（自動収集の外）",
+            "terms": [
+              "tip leakage vortex compressor",
+              "compressor surge stall inception",
+              "secondary flow turbine cascade endwall",
+              "centrifugal compressor diffuser rotating stall",
+              "transonic fan shock tip clearance"
+            ],
+            "hits": 60,
+            "note": "5回の検索で各上位12件（計60件）を確認。ここから翼端漏れ（squealer tip）の研究を見つけた。全文はDiVAのPDFで取得。"
+          },
+          {
+            "name": "arXiv（最新枠の補い）",
+            "scope": "圧縮機・タービン・ターボ機械の新着を追加確認",
+            "terms": [
+              "compressor stall",
+              "turbine blade flow",
+              "turbomachinery",
+              "tip clearance"
+            ],
+            "hits": 32,
+            "note": "4回の検索で各上位8件（計32件）を確認。新着の大半は機械学習の代理モデルや風車で、流れ現象が主役の新着は見当たらなかった。"
+          }
+        ],
+        "note": "今号は最新枠（OA全文＝Genbach ら）と定番枠（OA全文＝Zou ら）という構成です。§0忠実性チェック(Opus)は2論文とも実施し、指摘を受けて修正のうえ再検証しました。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』と思ったのは、泡は熱を奪う邪魔者ではなく、うまく使うと冷やす味方にもなる、という視点でした。沸騰する泡の下には薄い液の層が残って、そこから熱が泡へ移るので、泡が育っている間は壁の温度がむしろ下がりうる、と論文は説明しています。もう一つのタービン翼先端の話も、渦が『迷路のような仕切り』の代わりをして漏れを止める、という発想が面白かったです。どちらも、流れを止めたり避けたりするのではなく、流れの中にできる渦や泡を設計に取り込んでいる点が共通しているように感じました（これは私の素人目線の感想です）。"
     }
   ]
 }
