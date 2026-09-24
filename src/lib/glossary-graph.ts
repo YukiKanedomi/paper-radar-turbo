@@ -113,6 +113,10 @@ export const CATEGORIES: GraphCategory[] = [
       "せん断層不安定性 (shear-layer instability)",
       "遠心安定化効果 (centrifugal stabilization effect)",
       "ニアストール点 (near stall point, NS)",
+      "遷音速バフェット (transonic buffet)",
+      "音響フィードバック (aeroacoustic feedback)",
+      "大域不安定性 (global instability)",
+      "リミットサイクル (limit cycle)",
     ],
   },
   {
@@ -316,6 +320,7 @@ export const CATEGORIES: GraphCategory[] = [
       "Schnerr-Sauerキャビテーションモデル (Schnerr-Sauer cavitation model)",
       "非線形調和法 (nonlinear harmonic method)",
       "コヒーレンス関数 (coherence function)",
+      "幾何音響学 (geometrical acoustics)",
     ],
   },
   {
@@ -1152,6 +1157,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ドライスポット (dry spot)", to: "マイクロレイヤ (microlayer)", label: "周囲に薄い液層が残る" },
   { from: "スキーラチップ (squealer tip)", to: "スクレイピング渦 (scraping vortex)", label: "キャビティ内に生じる" },
   { from: "スクレイピング渦 (scraping vortex)", to: "吐出し係数 (discharge coefficient)", label: "低下させ漏れ損失を減らす" },
+  // --- 遷音速バフェットのDNS（Soldati et al. 2026） ---
+  { from: "遷音速バフェット (transonic buffet)", to: "衝撃波境界層干渉 (SBLI)", label: "衝撃波と剥離の自励振動として現れる" },
+  { from: "遷音速バフェット (transonic buffet)", to: "大域不安定性 (global instability)", label: "発生の見方の一つ" },
+  { from: "大域不安定性 (global instability)", to: "リミットサイクル (limit cycle)", label: "非線形効果で飽和して到達" },
+  { from: "遷音速バフェット (transonic buffet)", to: "音響フィードバック (aeroacoustic feedback)", label: "持続機構の一つの説" },
+  { from: "幾何音響学 (geometrical acoustics)", to: "音響フィードバック (aeroacoustic feedback)", label: "上流へ戻る音の所要時間を見積もる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

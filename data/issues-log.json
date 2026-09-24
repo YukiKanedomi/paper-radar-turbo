@@ -6160,6 +6160,82 @@
         "note": "今号は最新枠（OA全文＝Genbach ら）と定番枠（OA全文＝Zou ら）という構成です。§0忠実性チェック(Opus)は2論文とも実施し、指摘を受けて修正のうえ再検証しました。"
       },
       "afterword": "— 編集担当より：今回『なるほど』と思ったのは、泡は熱を奪う邪魔者ではなく、うまく使うと冷やす味方にもなる、という視点でした。沸騰する泡の下には薄い液の層が残って、そこから熱が泡へ移るので、泡が育っている間は壁の温度がむしろ下がりうる、と論文は説明しています。もう一つのタービン翼先端の話も、渦が『迷路のような仕切り』の代わりをして漏れを止める、という発想が面白かったです。どちらも、流れを止めたり避けたりするのではなく、流れの中にできる渦や泡を設計に取り込んでいる点が共通しているように感じました（これは私の素人目線の感想です）。"
+    },
+    {
+      "date": "2026-09-25",
+      "status": "published",
+      "headline": "翼の上の衝撃波が『揺れ続ける』理由を計算で追った最新研究と、圧縮機の動翼で流れが『ふさがれる』量を測った定番研究",
+      "intro": "今日の定番枠は、自動収集の候補14件のうち新規がほぼ無く（ほとんどが既に配信済み）、追加で未使用の検索語（翼端漏れ・衝撃波と境界層の干渉・コーナー剥離など）をOpenAlexで引き直して選びました。最新枠は、arXivに9月23日に出たばかりの、翼型の遷音速バフェットをDNSで調べた論文（CC BY・全文）を採りました。翼型の話ですが、衝撃波と境界層の剥離が絡む点で、ターボ機械の翼まわりの流れにも通じるテーマです。定番枠は、遷音速圧縮機の動翼でブロッケージを測ったSuder（1998）で、全文は取れないため抄録の範囲だけで書いています。",
+      "picked": [
+        {
+          "id": "arxiv:2609.27568",
+          "title": "Mechanisms of transonic buffet over supercritical airfoils revealed by direct numerical simulations（Soldati, Song, Pirozzoli & Lele, 2026）",
+          "why": "衝撃波が自分で揺れ続ける仕組みという流れの物理が主役で、全文がCC BY 4.0で読めたため、実図2点も出典つきで掲載できました。著者ら自身の留保（一致だけでは支配経路は決められない）も、そのまま載せています。"
+        },
+        {
+          "id": "doi:10.1115/1.2841741",
+          "title": "Blockage Development in a Transonic, Axial Compressor Rotor（Suder, 1998）",
+          "why": "圧縮機の動翼で、衝撃波と境界層・翼端すき間流れの干渉が流れの通り道をふさぐ様子を測った定番の実験です。出版社の全文は取得できなかったため抄録ベースとし、抄録に無いことは足していません。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "今回見送った候補",
+          "note": "最新枠のうち、風車翼の逆設計や深層学習による圧縮機の代理モデルは、流れ現象が主役ではないため見送りました。回転翼の騒音（ブレード二次渦干渉）は良い候補でしたが、今日は衝撃波の話を優先し、次点として残しています。定番枠は既配信が大半で、追加検索で見つけたローター37の関連（1995年の粗さ・厚さの影響、1961年の衝撃波損失）は、今回は見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠・日替わりローテーション）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 17,
+            "note": "最新枠17件（OA11・抄録6）。うち既配信は6件で、新規から流れ現象が主役のOA全文を選定。"
+          },
+          {
+            "name": "OpenAlex（定番枠・日替わりローテーション）",
+            "scope": "OpenAlex 被引用上位（OA/抄録 混在）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA1・抄録13）のうち13件が既配信で、新規1件は分野外（浮選の微細気泡）のため不採用。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番枠の補い）",
+            "scope": "被引用順で個別に8回検索（自動収集の外）",
+            "terms": [
+              "tip leakage vortex loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "tip clearance flow loss"
+            ],
+            "hits": 96,
+            "note": "8回の検索で各上位12件を確認し、未配信の候補から圧縮機動翼の衝撃波とブロッケージの定番（Suder 1998）を選定。抄録はCrossref/OpenAlexで確認。"
+          }
+        ],
+        "note": "§0忠実性チェック(Opus)は2論文とも実施し、指摘を受けて修正のうえ再検証しました。再検証でも表現の強さに関する軽微な指摘が残りましたが、いずれも言い回しを弱める修正で、公開前に反映しています（3回目の再検証はしていません）。"
+      },
+      "afterword": "— 編集担当より：今回『なるほど』と思ったのは、衝撃波の揺れが、流れを行き来する『音の往復』の所要時間で説明できそうだ、という見方でした。翼の後ろで生まれた圧力の波が、前から回り込んで衝撃波に当たり、また下流へ運ばれる、という循環です。論文は、この見積もりが計算で測った周期に近いとしつつ、これだけでは決め手にならないと自分たちで断っていて、そこも誠実だと感じました。もう一つのSuderの研究は、壁に近いところほど流れが『ふさがれる』量が大きいという話で、衝撃波・境界層・翼先端のすき間、と流れをふさぐ要素が壁際に集まっているのだな、と素人目線で思いました（これは私の感想です）。"
     }
   ]
 }
