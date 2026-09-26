@@ -403,6 +403,8 @@ export const CATEGORIES: GraphCategory[] = [
       "後退翼の逆流 (reverse flow on retreating blade)",
       "ピッチングモーメント衝撃 (pitching moment impulse)",
       "運動量注入 (momentum injection)",
+      "プラズマアクチュエータ (plasma actuator)",
+      "体積力 (body force)",
     ],
   },
   {
@@ -511,6 +513,9 @@ export const CATEGORIES: GraphCategory[] = [
       "換算周波数 (reduced frequency)",
       "ハブ渦 (hub vortex)",
       "ウィンドファーム誘導域 (wind-farm induction zone)",
+      "ブレード二次渦干渉 (BSVI)",
+      "二次渦 (secondary vortex)",
+      "後流せん断層 (wake shear layer)",
     ],
   },
   {
@@ -1163,6 +1168,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "大域不安定性 (global instability)", to: "リミットサイクル (limit cycle)", label: "非線形効果で飽和して到達" },
   { from: "遷音速バフェット (transonic buffet)", to: "音響フィードバック (aeroacoustic feedback)", label: "持続機構の一つの説" },
   { from: "幾何音響学 (geometrical acoustics)", to: "音響フィードバック (aeroacoustic feedback)", label: "上流へ戻る音の所要時間を見積もる" },
+  // --- ホバリングロータの二次渦騒音（Won & Lee 2026）／プラズマアクチュエータ総説（Corke et al. 2009） ---
+  { from: "後流せん断層 (wake shear layer)", to: "二次渦 (secondary vortex)", label: "翼端渦への巻き込みで生む" },
+  { from: "二次渦 (secondary vortex)", to: "翼端渦 (tip vortex)", label: "のまわりに生じる" },
+  { from: "ブレード二次渦干渉 (BSVI)", to: "二次渦 (secondary vortex)", label: "次の羽根への衝突が音源" },
+  { from: "プラズマアクチュエータ (plasma actuator)", to: "体積力 (body force)", label: "流れに与える作用" },
+  { from: "プラズマアクチュエータ (plasma actuator)", to: "境界層剥離", label: "の制御に使われる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
