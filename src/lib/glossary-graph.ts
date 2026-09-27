@@ -117,6 +117,8 @@ export const CATEGORIES: GraphCategory[] = [
       "音響フィードバック (aeroacoustic feedback)",
       "大域不安定性 (global instability)",
       "リミットサイクル (limit cycle)",
+      "後方進行回転失速 (backward traveling rotating stall)",
+      "ハンプ特性 (hump characteristic)",
     ],
   },
   {
@@ -1174,6 +1176,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ブレード二次渦干渉 (BSVI)", to: "二次渦 (secondary vortex)", label: "次の羽根への衝突が音源" },
   { from: "プラズマアクチュエータ (plasma actuator)", to: "体積力 (body force)", label: "流れに与える作用" },
   { from: "プラズマアクチュエータ (plasma actuator)", to: "境界層剥離", label: "の制御に使われる" },
+  // --- 遠心圧縮機の後方進行回転失速と空気注入（Spakovszky 2004）／ポンプ水車のハンプ特性とキャビテーション進展（Li et al. 2026） ---
+  { from: "後方進行回転失速 (backward traveling rotating stall)", to: "回転失速", label: "羽根車回転と逆向きに進む特殊な型" },
+  { from: "後方進行回転失速 (backward traveling rotating stall)", to: "ベーン付きディフューザ (vaned diffuser)", label: "この構成で初めて観測された" },
+  { from: "空気噴射 (air injection)", to: "サージ余裕 (surge margin)", label: "羽根車-ディフューザ間への注入で拡大" },
+  { from: "ハンプ特性 (hump characteristic)", to: "サドルゾーン (saddle zone)", label: "同種の正勾配不安定領域" },
+  { from: "ハンプ特性 (hump characteristic)", to: "ポンプ水車 (pump-turbine)", label: "ポンプ運転時に現れる特性曲線の乱れ" },
+  { from: "ハンプ特性 (hump characteristic)", to: "雲状キャビテーション (cloud cavitation)", label: "悪化に伴いキャビテーションが進展する" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
