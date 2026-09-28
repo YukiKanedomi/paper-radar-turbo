@@ -6417,6 +6417,70 @@
         "note": "被引用数は出典で差があり(Spakovszky論文はOpenAlex 74・Crossref 70・Semantic Scholar 100)、概数としても本文には出していません。"
       },
       "afterword": "— 編集担当より\n今日は候補選びで足止めを食いました。最初に良さそうだと思った風力タービンの翼制御の論文が、実はもう別のジャーナル版として8月に配信済みだったと分かったときは、ひやりとしました。同じ研究がプレプリントと査読版で別々のIDを持つことがあるんだと勉強になりました。もう一つ面白かったのは、ポンプ水車の「こぶ」のような不安定領域(ハンプ特性)の話です。圧力の余裕を少しずつ削っていくと、羽根のまわりの泡が点→帯→雲→翼全体、ときれいに育っていく様子が、観察日記のようで印象に残りました。"
+    },
+    {
+      "date": "2026-09-29",
+      "status": "published",
+      "headline": "遠心ポンプの回転失速が生まれる瞬間と、タービン翼の汚れが作る二次流れ",
+      "intro": "今日はcollect.mjsで『回転失速の前駆現象』『サージ・回転失速』『翼端漏れ渦』『二次流れ・エンドウォール損失』『衝撃波・境界層干渉』『後流混合』『境界層遷移』『コーナー剥離』『ブレードフラッタ』『超臨界CO2』の言葉で最新枠・定番枠を探しました。ただ上位候補の多くが既配信の重複で、有力なOA候補(Elsevierの超臨界CO2遠心圧縮機論文、ASME Journal of TurbomachineryのCC-BY論文)は見つかったものの、どちらも出版社サイトがボット対策で本文を読み込めず断念。OpenAlexをCC-BYライセンス限定・最新順で追加検索し、Research Squareに投稿されたばかりの遠心ポンプのオフデザイン回転失速の論文(CC BY 4.0・全文取得可)を最新枠に採用しました。定番枠は、タービン翼に実際についた異物堆積の凹凸を再現して二次流れを観測したJFMの基礎研究を選び、抄録の範囲で誠実に紹介しています。",
+      "picked": [
+        {
+          "id": "doi:10.21203/rs.3.rs-10950731/v1",
+          "title": "オフデザイン条件下の遠心ポンプにおける非定常流れ挙動の数値的研究（Elsherbiny, Selim, Engeda, Hegazy & Abdalla, 2026、Research Squareプレプリント、CC BY全文）",
+          "why": "単段遠心ポンプの部分負荷運転(30/41/50%Qd)を対象に、URANS(SST k-ω)+スライディングメッシュのCFDと、一部条件でのPIV実験データとの比較検証を通じて、羽根負圧面の境界層剥離から失速セルが育ち出口再循環へ至る過程と、設計流量約41%に不安定性が顕著になる運転域があることを示した。2026年9月21日投稿のCC BY 4.0プレプリントで全文取得できたため最新枠のOA全文に選定。"
+        },
+        {
+          "id": "doi:10.1017/jfm.2014.218",
+          "title": "粗面境界層に生じる乱流二次流れの観測（Barros & Christensen, 2014、Journal of Fluid Mechanics、抄録ベース）",
+          "why": "実際に異物の堆積で傷んだタービン翼の表面形状を再現した粗面の上で、ステレオPIVにより低運動量・高運動量の流れの通り道がスパン方向に交互に現れ、その間に旋回する流れ(二次流れ)が生じることを観測した基礎研究(被引用160前後)。全文は取得できず抄録の範囲で紹介。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "本文が読めず見送ったOA候補",
+          "note": "超臨界CO2遠心圧縮機のtip clearance論文(International Communications in Heat and Mass Transfer、CC BY-NC-ND・OA表示あり)と、翼端漏れ流れの時空間発展を調べたASME Journal of Turbomachineryの論文(CC BY)は、どちらもオープンアクセス表示ながら出版社サイト(ScienceDirect・ASME Digital Collection)がボット検知(CAPTCHA/Cloudflare)で本文を読み込めず、深い要約を作れないため見送りました。"
+        },
+        {
+          "title": "定番枠の状況",
+          "note": "定番枠の被引用上位候補(Aeroelastic instability for wind turbines、Turbine Separation Control、Historical Development of Aircraft Flutter、Boundary Layer Development in Axial Compressors and Turbines等)はいずれも既配信の重複でした。新規に見つかったOA候補(Halstead ら1997の境界層論文、NASAのtip clearance報告)も既配信だったため、抄録ベースで誠実に書けるJFMの二次流れ論文を選んでいます。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 13,
+            "note": "最新枠13件(OA6/抄録7)。上位はほぼ既配信の重複で、有力なOA候補2件(Elsevier・ASME)も本文がボット対策で読めず断念。OpenAlexをbest_oa_location.license:cc-by・発行日順で追加検索し、Research Squareのプレプリント(Elsherbiny ら 2026)を発見・採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "14件(OA3/抄録11)の上位はほぼ既配信の重複。新規のOA候補(Halstead 1997等)も既配信のため、抄録ベースで書けるBarros & Christensen(2014, JFM)を採用。"
+          }
+        ],
+        "note": "一部のOpenAlex検索はレート制限(HTTP 429)で数件失敗したが、他の検索語で十分な候補数を確保できた。被引用数はOpenAlex集計の概数として扱い、出典間で大きく乖離する場合は本文に出していない。"
+      },
+      "afterword": "— 編集担当より\n今日いちばん勉強になったのは、「オープンアクセス」と表示されていても中身が読めるとは限らないという当たり前の事実でした。CC BY表示のはずの論文を2本、出版社のサイトで開こうとしたら、どちらも「ロボットではありませんか」の画面に阻まれてしまって。結局、投稿されたばかりのプレプリントサイトの論文に乗り換えたのですが、そこには遠心ポンプの羽根の裏側で流れが剥がれて渦になり、隣の通路をふさいでいく様子が、実験(PIV)の写真と計算のシミュレーションを見比べながら丁寧に書かれていました。「オープン」の中にも読みやすさの差があるんだな、というのが今日の気づきです。"
     }
   ]
 }
