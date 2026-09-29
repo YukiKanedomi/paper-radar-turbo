@@ -6481,6 +6481,88 @@
         "note": "一部のOpenAlex検索はレート制限(HTTP 429)で数件失敗したが、他の検索語で十分な候補数を確保できた。被引用数はOpenAlex集計の概数として扱い、出典間で大きく乖離する場合は本文に出していない。"
       },
       "afterword": "— 編集担当より\n今日いちばん勉強になったのは、「オープンアクセス」と表示されていても中身が読めるとは限らないという当たり前の事実でした。CC BY表示のはずの論文を2本、出版社のサイトで開こうとしたら、どちらも「ロボットではありませんか」の画面に阻まれてしまって。結局、投稿されたばかりのプレプリントサイトの論文に乗り換えたのですが、そこには遠心ポンプの羽根の裏側で流れが剥がれて渦になり、隣の通路をふさいでいく様子が、実験(PIV)の写真と計算のシミュレーションを見比べながら丁寧に書かれていました。「オープン」の中にも読みやすさの差があるんだな、というのが今日の気づきです。"
+    },
+    {
+      "date": "2026-09-30",
+      "status": "published",
+      "headline": "多孔質の翼の突風荷重に圧縮性はどう効くか、そして圧縮機の失速の前に現れる小さな回転波",
+      "intro": "今日は、最新枠を『衝撃波と境界層の干渉』『コーナー剥離』『フラッタ』などの検索語で、定番枠を『風車後流』『フィルム冷却』『拡散器の失速』『圧縮機の空力』などで探しました。最新枠では、タービン翼の前縁形状のばらつきが損失を増やすことを扱った2026年のオープンアクセス論文（Wang & Zhang、Aerospace）がとても良さそうでしたが、出版社サイトが本文の取得を拒否し、全文を確認できなかったため見送りました。代わりに、arXivで全文が読める多孔質翼の理論論文（Lee 2026）を最新枠に選びました。定番枠は、通常の上位候補が既配信の論文や抄録の取れないものばかりだったため、検索を広げて次点から、1991年の『軸流圧縮機における失速開始の指標としての回転波』（抄録ベース）を選んでいます。",
+      "picked": [
+        {
+          "id": "arxiv:2609.33783",
+          "title": "有限翼弦の多孔質翼における圧縮性非定常空気力学（Lee, 2026, arXiv プレプリント）",
+          "why": "穴の開いた翼の突風荷重に圧縮性がどう効くかを理論で調べた論文です。穴が多いほど圧縮性の影響が弱まる一方、穴あきと穴なしの荷重の比は、非圧縮理論では1.4〜4.3倍も見誤ることを示しています（arXiv・CC BY 4.0・全文。査読前のプレプリント）。"
+        },
+        {
+          "id": "doi:10.1115/1.2929105",
+          "title": "軸流圧縮機における失速開始の指標としての回転波（Garnier, Epstein & Greitzer, 1991, Journal of Turbomachinery）",
+          "why": "回転失速の前に、本番の失速セルよりわずかに遅く回る小さな波が現れ、そのまま滑らかに本格的な失速へ育つことを、3台の圧縮機で示した定番論文です（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った論文（本文が取れなかったもの）",
+          "note": "低圧タービン翼の前縁形状の実測ばらつきが損失に与える影響を調べた Wang & Zhang（2026, Aerospace, CC BY）は主題がとても合っていましたが、出版社サイトが本文の取得を拒否（403）したため、全文を確認できず見送りました。定番枠の上位に並んだ風車系の定番（Vermeer ら 2003、Leishman 2002、Martínez-Tossas ら 2014 など）は、いずれもすでにアーカイブに収録済みでした。"
+        },
+        {
+          "title": "今号の位置づけ",
+          "note": "多孔質翼の論文は、翼のふちの騒音対策という応用に近い話題で、ターボ機械そのものではなく翼の荷重理論が中心です。最新枠のうちターボ機械の実機に近いものは、全文を取れる候補が今日は見つかりませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 24,
+            "note": "最新枠は24件（OA18/抄録6）。arXivの多孔質翼論文（Lee 2026）を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・通常深度）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠は14件（OA3/抄録11）。上位は既配信か抄録が取れないものが多く採用に至らず。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "2016年より前の論文を被引用数順に各語8件まで",
+            "terms": [
+              "compressor tip clearance flow",
+              "rotating stall inception compressor",
+              "turbine cascade secondary flow endwall",
+              "shock wave boundary layer interaction transonic",
+              "centrifugal compressor diffuser flow",
+              "surge compressor instability",
+              "turbine blade heat transfer separation",
+              "cavitation pump inducer instability",
+              "stator wake rotor interaction unsteady",
+              "axial fan blade stall"
+            ],
+            "hits": 80,
+            "note": "各語の上位8件（重複を含む延べ80件）のうち既配信を除いた中から、Garnier ら 1991（被引用は出典間で確認できず表示せず）を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（多孔質翼の理論）、定番枠=抄録ベース（圧縮機の失速前兆の波）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、穴の開いた翼では、音を減らせる仕組みと揚力が減る仕組みが同じ一つの数（翼の前縁で荷重がどれだけ急に立ち上がるか）で決まる、という見立てでした。穴が多いほど荷重の立ち上がりがなだらかになって音は減るけれど、その分、揚力も下がる（一様に穴のある板では、穴なしの板の2β倍）。得と損が表裏一体というのは、意外でもあり、納得でもありました。もう一つの圧縮機の論文では、失速の前触れの波と本番の失速が「同じ現象の二段階」だと聞いて、急に何かが起きるのではなく、小さな波がだんだん育っていくのだと分かり、少し安心する気持ちになりました。"
     }
   ]
 }

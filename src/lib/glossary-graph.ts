@@ -47,6 +47,7 @@ export const CATEGORIES: GraphCategory[] = [
       "逆流（backflow）",
       "ブロッケージ (blockage)",
       "失速開始 (stall inception)",
+      "擾乱の成長率 (growth rate)",
       "先端すき間渦の前縁越え",
       "渦運動学（vortex kinematics）",
       "失速境界",
@@ -356,6 +357,11 @@ export const CATEGORIES: GraphCategory[] = [
       "実ガス効果",
       "蒸気圧曲線",
       "ウィンドミル状態 (windmill condition)",
+      "透過性パラメータ (permeability parameter)",
+      "クッタ条件 (Kutta condition)",
+      "プラントル・グラウアート変換 (Prandtl–Glauert transformation)",
+      "シアーズ関数 (Sears function)",
+      "音響的コンパクト (acoustic compactness)",
     ],
   },
   {
@@ -412,6 +418,7 @@ export const CATEGORIES: GraphCategory[] = [
       "運動量注入 (momentum injection)",
       "プラズマアクチュエータ (plasma actuator)",
       "体積力 (body force)",
+      "多孔質翼 (porous aerofoil)",
     ],
   },
   {
@@ -1195,6 +1202,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ハンプ特性 (hump characteristic)", to: "サドルゾーン (saddle zone)", label: "同種の正勾配不安定領域" },
   { from: "ハンプ特性 (hump characteristic)", to: "ポンプ水車 (pump-turbine)", label: "ポンプ運転時に現れる特性曲線の乱れ" },
   { from: "ハンプ特性 (hump characteristic)", to: "雲状キャビテーション (cloud cavitation)", label: "悪化に伴いキャビテーションが進展する" },
+  // --- 多孔質翼の圧縮性非定常空気力学（Lee 2026）／軸流圧縮機の失速前兆回転波（Garnier, Epstein & Greitzer 1991） ---
+  { from: "透過性パラメータ (permeability parameter)", to: "多孔質翼 (porous aerofoil)", label: "材料の通りやすさを表す" },
+  { from: "プラントル・グラウアート変換 (Prandtl–Glauert transformation)", to: "圧縮性影響 (compressibility effects)", label: "亜音速の圧縮性を扱う線形の枠組み" },
+  { from: "シアーズ関数 (Sears function)", to: "非定常空気力学 (unsteady aerodynamics)", label: "突風荷重の古典的な応答関数" },
+  { from: "クッタ条件 (Kutta condition)", to: "薄翼理論 (thin airfoil theory)", label: "後縁で荷重を有界にする条件" },
+  { from: "換算周波数 (reduced frequency)", to: "音響的コンパクト (acoustic compactness)", label: "マッハ数との積で決まる" },
+  { from: "擾乱の成長率 (growth rate)", to: "回転失速の前駆現象", label: "解析モデルの予測と一致" },
+  { from: "回転失速の前駆現象", to: "失速開始 (stall inception)", label: "開始を知らせる兆候" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
