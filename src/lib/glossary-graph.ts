@@ -531,6 +531,10 @@ export const CATEGORIES: GraphCategory[] = [
       "ブレード二次渦干渉 (BSVI)",
       "二次渦 (secondary vortex)",
       "後流せん断層 (wake shear layer)",
+      "自己起動 (self-starting)",
+      "デッドバンド (dead-band)",
+      "有効迎角 (effective angle of attack)",
+      "羽根・渦干渉 (BVI)",
     ],
   },
   {
@@ -1210,6 +1214,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "換算周波数 (reduced frequency)", to: "音響的コンパクト (acoustic compactness)", label: "マッハ数との積で決まる" },
   { from: "擾乱の成長率 (growth rate)", to: "回転失速の前駆現象", label: "解析モデルの予測と一致" },
   { from: "回転失速の前駆現象", to: "失速開始 (stall inception)", label: "開始を知らせる兆候" },
+  // --- 垂直軸風車の自己起動と三次元渦力学（Muhammad, Ismail & Khalid 2026）／スパイク型とモーダル型の失速開始（Camp & Day 1998） ---
+  { from: "自己起動 (self-starting)", to: "デッドバンド (dead-band)", label: "途中に現れる加速の停滞期" },
+  { from: "先端速度比（tip speed ratio, λ）", to: "有効迎角 (effective angle of attack)", label: "方位角とともに値を決める" },
+  { from: "有効迎角 (effective angle of attack)", to: "動的失速", label: "静的失速角を超えると引き金になる" },
+  { from: "動的失速渦 (dynamic stall vortex)", to: "羽根・渦干渉 (BVI)", label: "放出された渦が羽根に再衝突しうる" },
+  { from: "羽根・渦干渉 (BVI)", to: "デッドバンド (dead-band)", label: "停滞期に強まる" },
+  { from: "スパイク型回転失速", to: "失速開始 (stall inception)", label: "型の一つ" },
+  { from: "モード波型前駆現象 (modal-wave precursor)", to: "失速開始 (stall inception)", label: "型の一つ" },
+  { from: "入射角", to: "スパイク型回転失速", label: "高いロータ入射角と結びつく" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -6563,6 +6563,125 @@
         "note": "今号は最新枠=OA全文（多孔質翼の理論）、定番枠=抄録ベース（圧縮機の失速前兆の波）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、穴の開いた翼では、音を減らせる仕組みと揚力が減る仕組みが同じ一つの数（翼の前縁で荷重がどれだけ急に立ち上がるか）で決まる、という見立てでした。穴が多いほど荷重の立ち上がりがなだらかになって音は減るけれど、その分、揚力も下がる（一様に穴のある板では、穴なしの板の2β倍）。得と損が表裏一体というのは、意外でもあり、納得でもありました。もう一つの圧縮機の論文では、失速の前触れの波と本番の失速が「同じ現象の二段階」だと聞いて、急に何かが起きるのではなく、小さな波がだんだん育っていくのだと分かり、少し安心する気持ちになりました。"
+    },
+    {
+      "date": "2026-10-01",
+      "status": "published",
+      "headline": "垂直軸風車が止まった状態から回り出すときの渦の動きと、圧縮機の失速の始まり方に2通りあること",
+      "intro": "今日は、最新枠を『風車の後流』『タービン翼のフィルム冷却』『ファンの流入歪み』『ディフューザの失速』『ポンプのキャビテーション』『動静翼の干渉』などの検索語で、定番枠を『サージ・回転失速』『二次流れ』『翼端漏れ渦』『タービンの空力』『圧縮機の衝撃波と境界層の干渉』などで探しました。ただ、定番枠の上位14件は、今日の検索ではすべて既配信の論文で埋まっていました。そこで追加で2016年より前の論文を探し、1998年の『低速軸流圧縮機におけるスパイク型とモーダル型の失速現象』(抄録ベース)を選びました。最新枠は、OAで全文が読める候補のうち、すでに配信済みのもの(風車まるごとの騒音LES、ファンの流入歪みなど)を除き、さらに出版社サイトが本文を取らせてくれない論文(MDPI・ASME・AIP)を見送った結果、arXivの垂直軸風車の論文(Muhammad ら 2026)を選びました。",
+      "picked": [
+        {
+          "id": "arxiv:2609.29627",
+          "title": "デッドバンドから定常回転へ：自己起動する垂直軸風車の三次元渦力学（Muhammad, Ismail & Khalid, 2026, arXiv プレプリント）",
+          "why": "垂直軸風車が止まった状態から回り出す過程を、ゆっくり加速・停滞・急加速・安定回転の4段階に分け、羽根のまわりで渦がどう生まれ、流れ去り、羽根にぶつかり直すかを3次元の大規模渦シミュレーションで追った論文です(arXiv・CC BY 4.0・全文。査読前。回転の速さをあらかじめ与えた計算で、トルクや出力は調べていません)。"
+        },
+        {
+          "id": "doi:10.1115/1.2841730",
+          "title": "低速軸流圧縮機におけるスパイク型とモーダル型の失速現象の研究（Camp & Day, 1998, Journal of Turbomachinery）",
+          "why": "圧縮機の失速の始まり方には、短い尺度の『スパイク』と長い尺度の『モーダル』の2通りがあり、安定性の条件が違うことを計測で示し、どちらが現れるかを簡単なモデルで説明した定番論文です(抄録ベース)。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った論文（本文が取れなかったもの）",
+          "note": "今日の最新枠には、風車の騒音や船舶の風車、ファンのすき間流れ、タービン翼の冷却など、主題に合う候補がありましたが、MDPI(浮体式垂直軸風車の総説)は出版社サイトが本文の取得を拒否(403)し、Elsevierの抄録のみの候補も全文が確認できませんでした。ASME・AIPのオープンアクセス論文も同様に403で、全文を確認できないまま要約することはしませんでした。"
+        },
+        {
+          "title": "見送った論文（すでに配信済み）",
+          "note": "今日の最新枠・定番枠の候補には、風車まるごとの騒音LES(Rismondo ら 2026)、流入歪み下のファン(Physics of Fluids)、翼前縁の汚れの影響、蒸気タービン翼の沸騰冷却、定番の損失機構・後流・失速の総説など、すでにアーカイブにあるものが多く含まれていました。昨日のarXivの多孔質翼の続編(2609.36669)も、同じ話題が続くため見送りました。"
+        },
+        {
+          "title": "今号の位置づけ",
+          "note": "垂直軸風車の論文は、ターボ機械そのものではなく風車の流れの話題です。ただし、動的失速や剥離した渦が羽根にぶつかり直すといった現象は、ターボ機械の翼列の非定常流れと共通する見方が多いため、流れの現象に注目して選びました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 24,
+            "note": "最新枠は24件（OA20/抄録4）。上位のarXiv候補は、ほとんどが流体の別分野(惑星大気・液滴・データ同化など)か、昨日の多孔質翼の続編でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・通常深度）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor"
+            ],
+            "hits": 14,
+            "note": "定番枠は14件（OA1/抄録13）。すべて既配信でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "2016年より前の論文を被引用数順に各語8件まで",
+            "terms": [
+              "tip leakage flow compressor",
+              "compressor stall inception",
+              "turbine blade endwall secondary flow",
+              "centrifugal compressor diffuser instability",
+              "cavitation pump",
+              "transonic fan shock loss",
+              "axial compressor tip clearance",
+              "turbine cascade heat transfer"
+            ],
+            "hits": 64,
+            "note": "各語の上位8件（延べ64件）のうち、主題に合う未配信の候補として Camp & Day 1998（被引用は出典間で確認できず表示せず）を採用。ほかの上位は主題外の論文が多く含まれていました。"
+          },
+          {
+            "name": "OpenAlex（最新枠・追加検索：CC-BYの新着）",
+            "scope": "2025年10月以降・CC-BY/CC0・発行日の新しい順、各語8件まで",
+            "terms": [
+              "compressor rotating stall",
+              "tip leakage flow turbomachinery",
+              "axial fan aerodynamics flow separation",
+              "centrifugal pump unsteady flow",
+              "turbine cascade secondary flow",
+              "transonic compressor shock",
+              "turbine blade film cooling flow",
+              "cavitation pump turbine",
+              "surge compressor instability",
+              "wind turbine wake"
+            ],
+            "hits": 80,
+            "note": "延べ80件のうち、ASME・AIPの候補は本文が取れず見送り。"
+          },
+          {
+            "name": "arXiv（追加検索）",
+            "scope": "発行日の新しい順、各語6件まで",
+            "terms": [
+              "compressor stall",
+              "turbomachinery",
+              "turbine blade flow",
+              "tip leakage",
+              "centrifugal pump",
+              "axial fan",
+              "cascade secondary flow",
+              "cavitation pump",
+              "wind turbine wake"
+            ],
+            "hits": 54,
+            "note": "延べ54件から、流れの物理が主役でCC BY全文が読める垂直軸風車の論文(2609.29627)を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（垂直軸風車の起動時の渦力学）、定番枠=抄録ベース（圧縮機の失速開始の2つの型）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車が回り出すときに加速が止まる時期(デッドバンド)があり、そこでは羽根が『自分で前に出した渦』にまたぶつかっている、という見方でした。速く回っていれば渦は後ろへ流れ去るのに、ゆっくりだと戻ってくるということかな、と想像しました(論文は、ぶつかり直しが加速の弱さと結びつくと解釈しています)。もう一つの圧縮機の論文では、失速の始まり方にも『短い尺度の乱れ』と『長い尺度の擾乱』の2通りがあり、安定性の条件そのものが違う、と聞いて、同じ『失速』でも中身は別の現象なのだと分かり、風車の渦の話と同じく、ひとくくりにしないで見ることの大事さを感じました。"
     }
   ]
 }
