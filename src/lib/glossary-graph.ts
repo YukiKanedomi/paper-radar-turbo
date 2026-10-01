@@ -130,6 +130,7 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#1a5e54",
     terms: [
       "エントロピー生成",
+      "運動量厚さ (momentum thickness)",
       "エントロピー損失係数",
       "全圧損失係数",
       "翼型損失",
@@ -427,6 +428,7 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#5f7a8a",
     terms: [
       "二次流れ",
+      "端壁クロスフロー (endwall crossflow)",
       "スパンワイズ不均質性 (spanwise heterogeneity)",
       "馬蹄形渦（horseshoe vortex）",
       "エンドウォール",
@@ -464,6 +466,8 @@ export const CATEGORIES: GraphCategory[] = [
       "コンパウンド角度噴射 (compound angle injection)",
       "ウェイク誘起遷移 (wake-induced transition)",
       "バイパス遷移 (bypass transition)",
+      "クレバノフストリーク (Klebanoff streak)",
+      "再層流化 (relaminarization)",
       "疑似層流境界層 (pseudolaminar boundary layer)",
       "負圧面境界層 (suction-side boundary layer)",
       "形状因子 (shape factor, H)",
@@ -1223,6 +1227,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "スパイク型回転失速", to: "失速開始 (stall inception)", label: "型の一つ" },
   { from: "モード波型前駆現象 (modal-wave precursor)", to: "失速開始 (stall inception)", label: "型の一つ" },
   { from: "入射角", to: "スパイク型回転失速", label: "高いロータ入射角と結びつく" },
+  // --- 圧縮性を変えた低圧タービンの剥離誘起遷移（Pal ら 2026）／翼列通路のクロスフロー（Langston 1980） ---
+  { from: "運動量厚さ (momentum thickness)", to: "境界層", label: "損失を表す厚さの指標" },
+  { from: "運動量厚さ (momentum thickness)", to: "翼型損失", label: "後縁の値が損失の大部分に比例" },
+  { from: "バイパス遷移 (bypass transition)", to: "クレバノフストリーク (Klebanoff streak)", label: "筋状構造を伴う" },
+  { from: "再層流化 (relaminarization)", to: "層流-乱流遷移", label: "逆向きの過程" },
+  { from: "端壁クロスフロー (endwall crossflow)", to: "二次流れ", label: "一要素" },
+  { from: "端壁クロスフロー (endwall crossflow)", to: "通路渦 (passage vortex, PV)", label: "形成に関わる" },
+  { from: "横方向圧力勾配 (transverse pressure gradient, TPG)", to: "端壁クロスフロー (endwall crossflow)", label: "駆動する" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

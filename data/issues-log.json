@@ -6682,6 +6682,103 @@
         "note": "今号は最新枠=OA全文（垂直軸風車の起動時の渦力学）、定番枠=抄録ベース（圧縮機の失速開始の2つの型）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車が回り出すときに加速が止まる時期(デッドバンド)があり、そこでは羽根が『自分で前に出した渦』にまたぶつかっている、という見方でした。速く回っていれば渦は後ろへ流れ去るのに、ゆっくりだと戻ってくるということかな、と想像しました(論文は、ぶつかり直しが加速の弱さと結びつくと解釈しています)。もう一つの圧縮機の論文では、失速の始まり方にも『短い尺度の乱れ』と『長い尺度の擾乱』の2通りがあり、安定性の条件そのものが違う、と聞いて、同じ『失速』でも中身は別の現象なのだと分かり、風車の渦の話と同じく、ひとくくりにしないで見ることの大事さを感じました。"
+    },
+    {
+      "date": "2026-10-02",
+      "status": "published",
+      "headline": "低圧タービン翼のまわりで、流れの速さを上げると剥離は短くなるのに損失の指標は悪化するという計算結果と、翼列通路の端壁に沿う横断流れの古典",
+      "intro": "今日の最新枠は『遠心圧縮機・軸流圧縮機の空力』『サージと回転失速』『回転失速のスパイク』『端壁の二次流れ』などの検索語で、定番枠は『後流の混合』『境界層の遷移』『コーナー剥離』『フラッタ』『超臨界CO2』『風車の後流』『フィルム冷却』『ファンの流入歪み』などで探しました。最新枠の候補では、MDPI(Fluids)の遠心圧縮機ディフューザの回転失速の論文(OA)が主題に合いましたが、出版社サイトが本文の取得を拒否(403)したため、全文を確認できないまま要約することは避け、見送りました。代わりにarXivで流れの現象が主役の論文を探し直し、低圧タービン翼の剥離誘起遷移を扱うPal ら 2026(CC BY・全文)を選びました。定番枠は、上位14件がすべて既配信だったため、OpenAlexで被引用の多い古典を追加で探し、1980年のLangstonの翼列通路のクロスフローの論文(抄録ベース)を選びました。",
+      "picked": [
+        {
+          "id": "arxiv:2603.03754",
+          "title": "圧縮性を変えたときの低圧タービンにおける剥離誘起遷移（Pal, Guha & Sengupta, 2026, arXiv プレプリント）",
+          "why": "T106A低圧タービン翼列を入口マッハ数0.15〜0.35で高精度に計算し、マッハ数が上がると剥離泡は短くなって遷移も早まるのに、後縁の運動量厚さは0.02から0.09へ増え、損失の増加を示唆する、という一見矛盾した結果を、渦の回転の強さ(エンストロフィー)の収支で説明しようとした論文です(arXiv・CC BY 4.0・全文。査読前。1種類の翼形・1つのレイノルズ数での計算で、検証は主にマッハ数0.15の圧力分布)。"
+        },
+        {
+          "id": "doi:10.1115/1.3230352",
+          "title": "タービン翼列通路内の横断流れ(クロスフロー)（Langston, 1980, Journal of Engineering for Power）",
+          "why": "大型の平面タービン翼列の測定を、端壁に沿う境界層の立場から詳しく見直し、端壁クロスフローの質的な振る舞いが、流れ角の偏差にもとづく比較的単純な式で整理できると報告した古典です(抄録ベース。式の形や数値は抄録にないため扱っていません)。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った論文（本文が取れなかったもの）",
+          "note": "最新枠のMDPI『多段遠心圧縮機のディフューザにおける空力不安定機構の数値解析』(Zhong ら 2026, Fluids, CC BY)は、回転失速の発生機構を扱っていて主題に合いましたが、出版社サイトがPDF・HTMLとも取得を拒否(403)し、Unpaywall・Semantic Scholarにも別の本文の置き場所がありませんでした。ASME・Elsevierの2026年の候補(サージサイクル、SPOD、DMDなど)も抄録のみで、最新枠で抄録ベースにする場合のより新しい本命として残しています。"
+        },
+        {
+          "title": "見送った論文（すでに配信済み）",
+          "note": "定番枠の上位14件(風車の後流、シェイプドフィルム冷却、空力弾性、スパイク型回転失速の起源など)は、今日の検索ではすべて既配信の論文で埋まっていました。"
+        },
+        {
+          "title": "今号の位置づけ",
+          "note": "最新枠は低圧タービン翼の境界層の遷移(OA全文)、定番枠は翼列通路の端壁流れ(抄録ベース)で、どちらもタービン翼列まわりの流れの現象という共通点があります。ただし最新枠の論文は圧縮性の影響の解析、定番枠は端壁の二次流れの測定整理と、見ている現象は別です。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 18,
+            "note": "最新枠18件（OA 12 / 抄録 6）。風車や機械学習の論文が多く、流れの現象が主役でCC BY全文が取れる候補は限られていました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 5 / 抄録 9）。すべて既配信でした。"
+          },
+          {
+            "name": "OpenAlex（追加検索）",
+            "scope": "被引用の多い順、各語上位8件",
+            "terms": [
+              "crossflows in a turbine cascade passage",
+              "transonic compressor shock boundary layer interaction rotor",
+              "rotating stall centrifugal compressor vaneless diffuser",
+              "turbomachinery tip leakage vortex breakdown cavitation",
+              "inlet distortion fan rotating stall"
+            ],
+            "hits": 40,
+            "note": "未配信の古典として、Langston(1980)のクロスフローの論文を選びました。"
+          },
+          {
+            "name": "arXiv（追加検索）",
+            "scope": "発行日の新しい順、各語6件まで",
+            "terms": [
+              "rotating stall",
+              "tip leakage",
+              "compressor AND stall",
+              "turbomachinery",
+              "axial compressor",
+              "centrifugal pump",
+              "turbine cascade",
+              "transonic fan"
+            ],
+            "hits": 41,
+            "note": "延べ41件から、流れの物理が主役でCC BY全文が読める低圧タービン翼列の論文(2603.03754)を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（低圧タービン翼の剥離誘起遷移）、定番枠=抄録ベース（翼列通路の端壁クロスフロー）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、流れの速さを上げると、はがれた範囲は短くなって良さそうに見えるのに、翼の後ろの端で見た流れの“ムラ”(運動量厚さ)はむしろ大きくなる、という計算結果でした(論文はこれを損失増加の目安として論じていて、損失そのものを計算したわけではないそうです)。『はがれが短い＝性能が良い』とは限らない、というのは、見る指標を一つに決めてしまう怖さを教えてくれるようで、素人ながら面白いと思いました。もう一本の1980年の論文は、翼の間の壁に沿う薄い流れが通路を横切って動く、という話で、抄録しか読めていませんが、同じタービンの翼まわりでも、壁際の流れまで含めて見る必要があるのだと感じました。"
     }
   ]
 }
