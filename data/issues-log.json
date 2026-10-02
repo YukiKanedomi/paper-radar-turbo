@@ -6779,6 +6779,92 @@
         "note": "今号は最新枠=OA全文（低圧タービン翼の剥離誘起遷移）、定番枠=抄録ベース（翼列通路の端壁クロスフロー）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、流れの速さを上げると、はがれた範囲は短くなって良さそうに見えるのに、翼の後ろの端で見た流れの“ムラ”(運動量厚さ)はむしろ大きくなる、という計算結果でした(論文はこれを損失増加の目安として論じていて、損失そのものを計算したわけではないそうです)。『はがれが短い＝性能が良い』とは限らない、というのは、見る指標を一つに決めてしまう怖さを教えてくれるようで、素人ながら面白いと思いました。もう一本の1980年の論文は、翼の間の壁に沿う薄い流れが通路を横切って動く、という話で、抄録しか読めていませんが、同じタービンの翼まわりでも、壁際の流れまで含めて見る必要があるのだと感じました。"
+    },
+    {
+      "date": "2026-10-03",
+      "status": "published",
+      "headline": "表面の突起まわりで、後ろ面を寝かせると逆流域は短いのに面のそばの乱れは強いという水槽実験と、遠心ポンプの羽根通路が1つおきに失速する古典の計測",
+      "intro": "今日の最新枠は『tip leakage vortex loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』などの検索語で、定番枠は『diffuser stall pressure recovery』『cavitation pump impeller』『surge rotating stall』などで探しました。最新枠でいちばん主題に合ったのは、ASME Journal of Turbomachinery の遷音速圧縮機段の非定常損失の論文(Borcherding ら 2026、CC BY)でしたが、出版社サイトが本文の取得を拒否(403)したため、全文を確認できないまま要約することは避けました。ケンブリッジ大学の電動ダクテッドファンの端壁流れの論文も、リポジトリ上は本文が2029年まで公開待ち(エンバーゴ)で、読めませんでした。そこでarXivの中から、流れの剥離と乱れの生成が主役で、CC BY全文が読める論文を選びました。ターボ機械そのものの実験ではなく、水槽中の台形の突起という基本形状の論文ですが、導入部がターボ機械の製造誤差や摩耗による性能低下にも触れています。定番枠は、上位14件が(風車の2件を含め)ほぼ既配信だったため、OpenAlexで古典を追加で探し、2003年の遠心ポンプ羽根車のPIV/LDV計測(抄録ベース)を選びました。",
+      "picked": [
+        {
+          "id": "arxiv:2610.01570",
+          "title": "台形の突起まわりの流れの剥離と乱れの生成（Zuckerman ら, 2026, arXiv プレプリント）",
+          "why": "上面の長さと後ろ面の傾きを変えた12種の2次元台形突起を、水槽のステレオPIVで測った論文です。長さは逆流域の全体の形を決め、後ろ面の傾きは面のすぐそばの乱れを大きく変える、という整理が得られています(arXiv・CC BY 4.0・全文。査読前。単一のレイノルズ数・単一の入射境界層での実験で、ターボ機械そのものの実験ではありません)。"
+        },
+        {
+          "id": "doi:10.1115/1.1524585",
+          "title": "設計点およびオフデザイン条件における遠心ポンプ羽根車内の流れ 第I部（Pedersen ら, 2003, Journal of Fluids Engineering）",
+          "why": "6枚羽根の遠心ポンプ羽根車の回転する通路内の流れをPIVとLDVで測り、流量を設計の4分の1まで絞ると6通路が1つおきに失速する現象が見つかったと報告した実験です(抄録ベース。ポンプの寸法や数値、発生機構の考察は抄録にないため扱っていません)。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った論文（本文が取れなかったもの）",
+          "note": "最新枠の Borcherding ら 2026「遷音速圧縮機段の中間スパン断面の非定常損失評価」(衝撃波と境界層の干渉・壁解像LES・エントロピー生成による損失解析、CC BY)は主題に最も合いましたが、ASMEのサイトがPDF・HTMLとも取得を拒否(403)し、Unpaywall・Semantic Scholarにも別の本文の置き場所がありませんでした。ケンブリッジの「電動ダクテッドファンの端壁流れ」は、CC BYの記録でしたが本文が2029年9月まで非公開でした。どちらも、本文が取れた号で改めて載せたい候補です。"
+        },
+        {
+          "title": "見送った論文（すでに配信済み）",
+          "note": "定番枠の上位14件のうち、風車の後流・遷移の講義・サージと回転失速の古典などは既配信でした。"
+        },
+        {
+          "title": "今号の位置づけ",
+          "note": "最新枠は表面の突起まわりの剥離と乱れ(一般的な流れの基礎実験)、定番枠は遠心ポンプ羽根車の失速(機械内部の流れの実測)で、どちらも「剥離・失速したところで何が起きているかを、光学計測で直接見る」という共通点があります。ただし最新枠の論文はターボ機械の部品そのものではない点に注意してください。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 20 / 抄録 4）。arXivの新着は粒状流・表面張力など別分野の流体論文が多く、ターボ機械に近いのはOpenAlexの新着(ASME・Elsevierなど)でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。ほぼすべて既配信でした。"
+          },
+          {
+            "name": "OpenAlex（追加検索）",
+            "scope": "被引用の多い順、各語上位8件、1950〜2015年",
+            "terms": [
+              "vaneless diffuser rotating stall",
+              "shock wave boundary layer interaction transonic compressor rotor",
+              "wake blade interaction turbine loss reduction",
+              "centrifugal pump impeller rotating stall",
+              "trailing edge vortex shedding turbine blade",
+              "hub corner separation compressor",
+              "compressor surge centrifugal deep surge",
+              "transonic fan shock loss tip",
+              "rotating cavitation inducer instability",
+              "diffuser stall unsteady flow"
+            ],
+            "hits": 80,
+            "note": "10語×上位8件の延べ80件(分野外の論文も混ざる)から、未配信で抄録が詳しく、流れの現象が主役の古典として Pedersen ら(2003)を選びました。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（表面突起まわりの剥離と乱れの生成）、定番枠=抄録ベース（遠心ポンプ羽根車の2チャネル失速）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、突起の後ろ面を寝かせると、逆流する範囲は短くなるのに、面のすぐそばの乱れはむしろ強い(長い突起では垂直面の約5〜7倍)という結果でした。「はがれが小さい＝おとなしい」とは限らず、見る場所(範囲か、面のそばか)で話が変わるのだと感じました。ただし論文は水槽の基本形状での実験で、ターボ機械の翼そのものの話ではないので、そこは割り引いて読んでいます。もう一本の2003年の論文は、ポンプの6つの羽根通路のうち1つおきだけが失速する、という不思議な並びの話で、抄録しか読めていませんが、「回転しないで止まったまま」現れる失速というのが印象に残りました。"
     }
   ]
 }

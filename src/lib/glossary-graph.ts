@@ -36,6 +36,7 @@ export const CATEGORIES: GraphCategory[] = [
       "Moore–Greitzer モデル",
       "サージ余裕 (surge margin)",
       "入口リサーキュレーション (inlet recirculation)",
+      "2チャネル現象 (two-channel phenomenon)",
       "出口再循環",
       "ベンド効果",
       "プリスワール (preswirl)",
@@ -561,6 +562,8 @@ export const CATEGORIES: GraphCategory[] = [
       "散逸率 (dissipation rate, ε)",
       "テイラー・レイノルズ数 (Taylor Reynolds number, Re_λ)",
       "間欠性 (intermittency)",
+      "乱流エネルギー生成 (turbulent kinetic energy production)",
+      "応力・ひずみ主軸のずれ (principal-axis misalignment)",
     ],
   },
 ];
@@ -1235,6 +1238,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "端壁クロスフロー (endwall crossflow)", to: "二次流れ", label: "一要素" },
   { from: "端壁クロスフロー (endwall crossflow)", to: "通路渦 (passage vortex, PV)", label: "形成に関わる" },
   { from: "横方向圧力勾配 (transverse pressure gradient, TPG)", to: "端壁クロスフロー (endwall crossflow)", label: "駆動する" },
+  // --- 台形突起まわりの剥離と乱れの生成（Zuckerman ら 2026）／遠心ポンプ羽根車の2チャネル失速（Pedersen ら 2003） ---
+  { from: "乱流エネルギー生成 (turbulent kinetic energy production)", to: "乱流運動エネルギー (turbulent kinetic energy)", label: "平均流から乱れへエネルギーを供給する" },
+  { from: "乱流エネルギー生成 (turbulent kinetic energy production)", to: "レイノルズせん断応力", label: "応力と平均速度勾配の積で表される" },
+  { from: "応力・ひずみ主軸のずれ (principal-axis misalignment)", to: "渦粘性", label: "正の線形渦粘性では90°になる" },
+  { from: "2チャネル現象 (two-channel phenomenon)", to: "回転失速", label: "回転せず止まったまま現れる点で区別される" },
+  { from: "2チャネル現象 (two-channel phenomenon)", to: "再循環（リサーキュレーション）", label: "失速通路の入口を再循環セルがふさぐ" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
