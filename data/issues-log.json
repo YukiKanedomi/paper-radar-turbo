@@ -6865,6 +6865,94 @@
         "note": "今号は最新枠=OA全文（表面突起まわりの剥離と乱れの生成）、定番枠=抄録ベース（遠心ポンプ羽根車の2チャネル失速）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、突起の後ろ面を寝かせると、逆流する範囲は短くなるのに、面のすぐそばの乱れはむしろ強い(長い突起では垂直面の約5〜7倍)という結果でした。「はがれが小さい＝おとなしい」とは限らず、見る場所(範囲か、面のそばか)で話が変わるのだと感じました。ただし論文は水槽の基本形状での実験で、ターボ機械の翼そのものの話ではないので、そこは割り引いて読んでいます。もう一本の2003年の論文は、ポンプの6つの羽根通路のうち1つおきだけが失速する、という不思議な並びの話で、抄録しか読めていませんが、「回転しないで止まったまま」現れる失速というのが印象に残りました。"
+    },
+    {
+      "date": "2026-10-04",
+      "status": "published",
+      "headline": "風車群の手前で増える乱れは大きな渦の分だけ、と風洞の円盤模型で示した最新論文と、圧縮機の翼先端の隙間から漏れる渦の育ち方を実測した定番研究",
+      "intro": "今日は『corner separation compressor』『wind turbine wake aerodynamics』『inlet distortion fan aerodynamics』などで最新枠を、『secondary flow endwall』『tip leakage vortex loss』などで定番枠を探しました。最新枠はOA全文が取れるものを優先し、arXivの新着から、風力発電所の手前の流れを調べた McGlade & Buxton（2026、CC BY全文）を選びました。ターボ機械の内部ではありませんが、逆圧力勾配の中の境界層という、翼まわりの流れとも共通する話です。定番枠は、被引用の多い順で出てきた候補の多くが配信済みで、最初に選びかけた Bindon（1989）も実は2026年8月に配信済みだったため、検証の途中で差し替えました。代わりに、翼先端の隙間（チップクリアランス）の大きさを変えて漏れ渦の様子を測った Inoue & Kuroumaru（1989、抄録ベース）を載せています。",
+      "picked": [
+        {
+          "id": "arxiv:2609.26415",
+          "title": "風力発電所のグローバルブロッケージを逆圧力勾配の問題として捉える（McGlade & Buxton, 2026）",
+          "why": "風車群の手前で風が弱まるだけでなく、乱れも増える。その増加分が、境界層の厚さより長い大きな渦に集中し、細かい乱れはほとんど変わらないことを、穴あき円盤の模型で測った。CC BYの全文が読め、著者自身の図も載せられる。"
+        },
+        {
+          "id": "doi:10.1115/1.3262263",
+          "title": "単独の軸流圧縮機動翼におけるチップクリアランス流れの構造（Inoue & Kuroumaru, 1989）",
+          "why": "隙間が小さいと漏れジェットが前縁付近で主流と激しくぶつかり、大きくなるとより下流に強い漏れ渦と逆流ができる、という流れの構造の変化が、抄録の範囲でも読み取れる定番の実測。流れ現象が主役で、抄録ベースで誠実に載せられる。"
+        }
+      ],
+      "aside": {
+        "title": "見送った候補と、差し替えの経緯",
+        "note": "(1) Bindon（1989、チップクリアランス損失の内訳）は、選定の途中で、すでに2026-08-01に配信済みだと検証側の指摘で分かり、新規としては載せませんでした。(2) 圧縮機の翼端漏れ流れの時空間変化を調べた He, Zhao & Vahdati（2026、Journal of Turbomachinery、CC BY）は、出版社サイトの全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。(3) 遠心圧縮機の羽根車前縁の摩耗と失速前兆を調べた論文（Aerospace、CC BY）も同じ理由で全文が取れず見送りました。(4) arXivの Ahmed 体まわりの後流の分岐を調べた論文は、全文は取れましたが、ターボ機械から遠いため選びませんでした。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA 6 / 抄録 7）。arXivとOpenAlexの合算です。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 3 / 抄録 11）。上位のほとんどが既配信でした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・CC BYのOA全文）",
+            "scope": "2026年5月以降・ライセンスがCC BYの論文、各語上位8件",
+            "terms": [
+              "compressor stall",
+              "turbine blade secondary flow",
+              "tip leakage",
+              "turbomachinery flow separation"
+            ],
+            "hits": 32,
+            "note": "4語×上位8件の延べ32件。ターボ機械に近い論文は見つかりましたが、出版社サイトの全文が自動取得できないものが多く（403）、全文を読めたのはarXivの論文でした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番）",
+            "scope": "被引用の多い順、各語上位8件、2015年以前",
+            "terms": [
+              "tip leakage vortex compressor rotor",
+              "shock wave boundary layer interaction transonic compressor",
+              "secondary flow turbine cascade endwall",
+              "compressor cascade corner separation",
+              "turbine blade wake unsteady transition",
+              "rotating stall centrifugal pump diffuser",
+              "vortex shedding turbine trailing edge loss",
+              "centrifugal compressor impeller flow jet wake",
+              "flutter compressor blade stall",
+              "casing treatment compressor stall margin"
+            ],
+            "hits": 80,
+            "note": "10語×上位8件の延べ80件（分野外の論文も混ざります）。未配信で抄録が読め、流れの現象が主役の定番として Inoue & Kuroumaru（1989）を選びました。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（風車群の手前の流れ）、定番枠=抄録ベース（圧縮機動翼の翼端すきま流れ）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車群の手前で乱れが増えるとき、増えるのは境界層の厚さより長い「大きな渦」の分で、細かい乱れはほとんど変わらない、という点でした。論文は結論で「農場が強制の振幅を決め、境界層が現れるスケールを決める」と書いていて、押す側と応える側の役割分担という見方が面白いと感じました。ただし、実験は回らない円盤で、風車にかかる力は測っていないので、疲れ荷重の話はあくまで先行研究に基づく見立てだと割り引いて読んでいます。もう一本の1989年の論文は抄録しか読めていませんが、翼先端の隙間が大きくなると漏れ渦がより下流にでき、逆流も育つ、という「隙間の大きさで流れの形が変わる」様子が印象に残りました。"
     }
   ]
 }

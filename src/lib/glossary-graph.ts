@@ -277,6 +277,7 @@ export const CATEGORIES: GraphCategory[] = [
       "LES",
       "混合平面法 (mixing plane)",
       "WALEモデル",
+      "アンサンブル平均・位相固定計測 (ensemble-averaged, phase-locked measurement)",
       "サロゲートモデル",
       "CNN",
       "次元削減",
@@ -521,6 +522,8 @@ export const CATEGORIES: GraphCategory[] = [
       "根元渦 (root vortex)",
       "自由流乱流強度 (free-stream turbulence, FST)",
       "疲労荷重 (fatigue loading)",
+      "グローバルブロッケージ (global blockage)",
+      "ポーラスディスク (porous disc)",
       "レインフロー計数法 (rainflow counting)",
       "薄翼理論 (thin airfoil theory)",
       "シェッドウェイクメモリ (shed wake memory)",
@@ -559,6 +562,7 @@ export const CATEGORIES: GraphCategory[] = [
       "Kolmogorov則",
       "対流速度",
       "パワースペクトル密度",
+      "大規模構造 (large-scale motions, LSM)",
       "散逸率 (dissipation rate, ε)",
       "テイラー・レイノルズ数 (Taylor Reynolds number, Re_λ)",
       "間欠性 (intermittency)",
@@ -1244,6 +1248,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "応力・ひずみ主軸のずれ (principal-axis misalignment)", to: "渦粘性", label: "正の線形渦粘性では90°になる" },
   { from: "2チャネル現象 (two-channel phenomenon)", to: "回転失速", label: "回転せず止まったまま現れる点で区別される" },
   { from: "2チャネル現象 (two-channel phenomenon)", to: "再循環（リサーキュレーション）", label: "失速通路の入口を再循環セルがふさぐ" },
+  // --- 風力発電所のグローバルブロッケージと逆圧力勾配（McGlade & Buxton 2026）／軸流圧縮機動翼の翼端すきま流れの構造（Inoue & Kuroumaru 1989） ---
+  { from: "推力係数（thrust coefficient, Ct）", to: "グローバルブロッケージ (global blockage)", label: "大きいほど強まる" },
+  { from: "逆圧力勾配 (adverse pressure gradient)", to: "大規模構造 (large-scale motions, LSM)", label: "外層で増幅する" },
+  { from: "ポーラスディスク (porous disc)", to: "推力係数（thrust coefficient, Ct）", label: "抗力係数が推力係数の役を担う" },
+  { from: "翼端漏れジェット (tip leakage jet, TLJ)", to: "翼端漏れ渦", label: "巻き上がって形成する" },
+  { from: "翼端漏れ渦", to: "逆流（backflow）", label: "隙間が大きいと逆流を育てる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
