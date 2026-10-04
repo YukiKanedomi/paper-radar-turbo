@@ -266,6 +266,7 @@ export const CATEGORIES: GraphCategory[] = [
       "半径方向すき間 (radial gap)",
       "抽気流れ (bleed air)",
       "ハブ-ケーシング比 (hub-to-casing ratio)",
+      "インデューサ失速 (inducer stall)",
     ],
   },
   {
@@ -422,6 +423,7 @@ export const CATEGORIES: GraphCategory[] = [
       "プラズマアクチュエータ (plasma actuator)",
       "体積力 (body force)",
       "多孔質翼 (porous aerofoil)",
+      "自由スプール (free-spool)",
     ],
   },
   {
@@ -483,6 +485,11 @@ export const CATEGORIES: GraphCategory[] = [
       "臨界熱流束 (CHF, critical heat flux)",
       "ドライスポット (dry spot)",
       "マイクロレイヤ (microlayer)",
+      "第一マックモード (first Mack mode)",
+      "ゲルトラー渦 (Görtler vortex)",
+      "ストリーク (streak)",
+      "リフトアップ効果 (lift-up effect)",
+      "二次不安定性 (secondary instability)",
     ],
   },
   {
@@ -1254,6 +1261,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ポーラスディスク (porous disc)", to: "推力係数（thrust coefficient, Ct）", label: "抗力係数が推力係数の役を担う" },
   { from: "翼端漏れジェット (tip leakage jet, TLJ)", to: "翼端漏れ渦", label: "巻き上がって形成する" },
   { from: "翼端漏れ渦", to: "逆流（backflow）", label: "隙間が大きいと逆流を育てる" },
+  // --- 衝撃波で剥離したせん断層の遷移（Savarino ら 2026）／自由スプール遠心圧縮機のサージ（Fink ら 1992） ---
+  { from: "リフトアップ効果 (lift-up effect)", to: "ストリーク (streak)", label: "縞を作る仕組み" },
+  { from: "ゲルトラー渦 (Görtler vortex)", to: "再付着", label: "この論文では再付着域の流線の曲がりで育つ" },
+  { from: "二次不安定性 (secondary instability)", to: "ストリーク (streak)", label: "蛇行して崩壊させる" },
+  { from: "第一マックモード (first Mack mode)", to: "層流-乱流遷移", label: "圧縮性境界層の遷移に関わる不安定波" },
+  { from: "インデューサ失速 (inducer stall)", to: "サージ", label: "この論文では開始の鍵" },
+  { from: "インデューサ失速 (inducer stall)", to: "インデューサ (inducer)", label: "先端で起きる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

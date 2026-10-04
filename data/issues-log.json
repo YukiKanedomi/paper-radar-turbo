@@ -6953,6 +6953,92 @@
         "note": "今号は最新枠=OA全文（風車群の手前の流れ）、定番枠=抄録ベース（圧縮機動翼の翼端すきま流れ）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車群の手前で乱れが増えるとき、増えるのは境界層の厚さより長い「大きな渦」の分で、細かい乱れはほとんど変わらない、という点でした。論文は結論で「農場が強制の振幅を決め、境界層が現れるスケールを決める」と書いていて、押す側と応える側の役割分担という見方が面白いと感じました。ただし、実験は回らない円盤で、風車にかかる力は測っていないので、疲れ荷重の話はあくまで先行研究に基づく見立てだと割り引いて読んでいます。もう一本の1989年の論文は抄録しか読めていませんが、翼先端の隙間が大きくなると漏れ渦がより下流にでき、逆流も育つ、という「隙間の大きさで流れの形が変わる」様子が印象に残りました。"
+    },
+    {
+      "date": "2026-10-05",
+      "status": "published",
+      "headline": "衝撃波で剥離したせん断層が乱流になる最も効率のよい道筋を非線形計算で示した最新論文と、ターボチャージャーのサージが羽根車入口の失速から始まることを実験で調べた定番研究",
+      "intro": "今日は『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』などで最新枠を、『blade flutter aeroelasticity』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』などで定番枠を探しました。最新枠・定番枠とも、被引用や新しい順で上位に出た候補の大半がすでに配信済みでした。最新枠で唯一まだ載せていない有力候補だった Borcherding ら（2026、Journal of Turbomachinery、遷音速圧縮機段の非定常損失）は、出版社サイトの全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。そこで arXiv を追加で探し、全文が読める CC BY の論文として Savarino ら（2026）を選びました。ターボ機械の内部流れではなく、マッハ2.15の平板上で衝撃波に当たった流れの遷移という基本問題ですが、衝撃波と剥離は遷音速圧縮機などの流れにも通じる現象です。定番枠は、OpenAlex を被引用順に追加で検索し、まだ配信していない Fink・Cumpsty・Greitzer（1992、抄録ベース）を選びました。",
+      "picked": [
+        {
+          "id": "arxiv:2605.09559",
+          "title": "衝撃波が引き起こした剥離せん断層が層流から乱流へ遷移する、最適な非線形メカニズム（Savarino, Sipp & Rigas, 2026）",
+          "why": "斜めに進む波を1種類入れるだけで、渦・縞・蛇行・崩壊という段階を経て乱流に至る、という経路を示した。CC BYの全文が読め、著者自身の図も載せられる。ただし、ターボ機械の内部流れそのものではない。"
+        },
+        {
+          "id": "doi:10.1115/1.2929146",
+          "title": "自由スプール遠心圧縮機系におけるサージの動特性（Fink, Cumpsty & Greitzer, 1992）",
+          "why": "ターボチャージャーのサージが羽根車入口先端の失速から始まること、下流の容積の違いで圧縮機特性が変わることを扱う、流れ現象が主役の定番。抄録ベースで、抄録の範囲だけで誠実に載せた。"
+        }
+      ],
+      "aside": {
+        "title": "見送った候補と、差し替えの経緯",
+        "note": "(1) Borcherding ら（2026、遷音速圧縮機段の非定常損失、Journal of Turbomachinery、CC BY）は、出版社サイトの全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。(2) 最新枠のその他の有力候補（MDPI Energies のポンプ羽根車キャビテーション振動の論文など）は、すでに配信済みでした。(3) 同じく arXiv の混合平面法の論文（CC BY-NC-ND）は数値手法が主役のため選びませんでした。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 18,
+            "note": "最新枠18件（OA 13 / 抄録 5）。arXivとOpenAlexの合算です。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 4 / 抄録 10）。14件すべてがすでに配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番）",
+            "scope": "被引用の多い順、各語上位12件",
+            "terms": [
+              "centrifugal compressor diffuser stall",
+              "tip leakage vortex breakdown compressor",
+              "shock boundary layer interaction transonic fan",
+              "inlet distortion fan compressor",
+              "cavitation pump inducer instability"
+            ],
+            "hits": 60,
+            "note": "5語×上位12件の延べ60件（分野外の論文も多く混ざります）。未配信で抄録が読め、流れの現象が主役の定番として Fink ら（1992）を選びました。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "投稿日の新しい順、各語上位6件",
+            "terms": [
+              "rotating stall compressor",
+              "tip leakage turbomachinery",
+              "secondary flow cascade",
+              "centrifugal pump impeller",
+              "transonic fan compressor",
+              "turbine blade flow separation",
+              "cavitation pump"
+            ],
+            "hits": 42,
+            "note": "7語×上位6件の延べ最大42件。ターボ機械に近い新着は少なく、流れの現象が主役で全文が読める CC BY の論文として Savarino ら（2026）を選びました。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（衝撃波で剥離したせん断層の遷移）、定番枠=抄録ベース（遠心圧縮機系のサージ）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、衝撃波で剥離した流れが乱流になるまでの道筋が、斜めに進む波を1種類入れるだけで始まる、という見方でした。論文は、振幅を変えても最適な入れ方の形はほとんど変わらず、先へ進めるのは流れ自身の非線形な相互作用だと述べています。ただ、調べたのは衝撃波の角度が1つの場合の計算で、圧縮機の中の流れにそのまま当てはまるかは、論文からは分かりません。もう一本の1992年の論文は抄録しか読めていませんが、ターボチャージャーのサージの引き金が羽根車入口の先端の失速で、下流の容積が違う2つの系で圧縮機の特性が違って測れた、という点が印象に残りました。"
     }
   ]
 }
