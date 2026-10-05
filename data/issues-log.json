@@ -7039,6 +7039,105 @@
         "note": "今号は最新枠=OA全文（衝撃波で剥離したせん断層の遷移）、定番枠=抄録ベース（遠心圧縮機系のサージ）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、衝撃波で剥離した流れが乱流になるまでの道筋が、斜めに進む波を1種類入れるだけで始まる、という見方でした。論文は、振幅を変えても最適な入れ方の形はほとんど変わらず、先へ進めるのは流れ自身の非線形な相互作用だと述べています。ただ、調べたのは衝撃波の角度が1つの場合の計算で、圧縮機の中の流れにそのまま当てはまるかは、論文からは分かりません。もう一本の1992年の論文は抄録しか読めていませんが、ターボチャージャーのサージの引き金が羽根車入口の先端の失速で、下流の容積が違う2つの系で圧縮機の特性が違って測れた、という点が印象に残りました。"
+    },
+    {
+      "date": "2026-10-06",
+      "status": "published",
+      "headline": "垂直軸風車で羽根を増やすと、前の羽根の渦が次の羽根の渦を壊し後流が早く落ち着くことをDNSで示した最新論文と、高速ファンの失速で翼端の漏れ渦が通路衝撃波を通るときの断面積の増加が閉塞の源になると計算で示唆した定番研究",
+      "intro": "今日は『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』などで最新枠を、『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』などで定番枠を探しました。定番枠の14件は、すべてすでに配信済みでした。そこで OpenAlex を別の語で被引用順に追加検索し、まず Suder・Celestina（1996、遷音速ロータの先端すき間流れ）を選んで要約を作りましたが、公開前の忠実性チェックを2回通しても、抄録にない因果を言い切る表現が残ったため保留にしました。次点の Adamczyk・Celestina・Greitzer（1993、Journal of Turbomachinery、抄録ベース）に切り替えています。最新枠で唯一まだ載せていない有力候補だった Stoewer・Mimic（2026、Journal of Turbomachinery、圧縮機の損失の内訳、CC BY）は、出版社サイトの全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。代わりに arXiv を追加で探し、全文が読める CC BY の論文として Dunn・Lahooti（2026）を選びました。ターボ機械そのものではなく垂直軸風車の流れですが、翼の動的失速や渦どうしの干渉という、ターボ機械にも通じる流れの現象を扱っています。",
+      "picked": [
+        {
+          "id": "arxiv:2605.27626",
+          "title": "垂直軸風車の近傍後流の挙動を、直接数値シミュレーション（DNS）で調べる（Dunn & Lahooti, 2026）",
+          "why": "羽根の枚数を増やすと、前の羽根の渦が次の羽根の動的失速渦にぶつかって壊し、後流が早くおとなしい形に近づく、という流れの現象が主役。CC BY の全文が読め、著者自身の図も載せられる。ただし、ターボ機械の内部流れそのものではない。"
+        },
+        {
+          "id": "doi:10.1115/1.2929212",
+          "title": "高速ファンの失速における先端すき間の役割（Adamczyk, Celestina & Greitzer, 1993）",
+          "why": "翼端の漏れ渦が通路衝撃波を通るときの断面積の増加が、失速に伴う閉塞の源になると計算が示唆する、流れ現象が主役の定番。抄録の範囲だけで、「示唆する」という控えめな表現のまま載せた。"
+        }
+      ],
+      "aside": {
+        "title": "見送った候補と、差し替えの経緯",
+        "note": "(1) Stoewer ら（2026、圧縮機の設計空間にわたる損失の評価、Journal of Turbomachinery、CC BY）は、出版社サイトの全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。(2) 定番枠の候補14件は、すべてすでに配信済みでした。(3) 最新枠の arXiv 新着の多くは、ターボ機械とは関係の薄い流体の論文（生物・天体・粒状体など）でした。(4) 抄録だけが読める2026年の圧縮機の失速まわりの論文（SPOD解析、タンデムファンなど）は、全文が読める本命が見つかったため今回は載せていません。 (5) 保留：Suder・Celestina（1996）は、忠実性チェックの2ラウンドを経ても、抄録が「論じている」と書く内容を「閉塞を生む」と言い切る表現が残ったため、公開を見送りました。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 16 / 抄録 8）。arXivとOpenAlexの合算です。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。14件すべてがすでに配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番）",
+            "scope": "被引用150回超の論文を被引用順、各語上位15件",
+            "terms": [
+              "compressor stall inception",
+              "tip leakage flow turbine",
+              "centrifugal compressor diffuser flow",
+              "turbomachinery unsteady flow blade row interaction",
+              "transonic compressor shock tip",
+              "turbine blade boundary layer transition separation bubble",
+              "tip clearance",
+              "stall",
+              "shock",
+              "separation",
+              "vortex",
+              "secondary flow",
+              "wake",
+              "unsteady"
+            ],
+            "hits": 186,
+            "note": "6語×上位15件の延べ最大90件（分野外の論文も多く混ざります）。ここから Suder ら（1996）を選びましたが保留。続けて Journal of Turbomachinery 内を語ごとに被引用順で検索し、Adamczyk ら（1993）に切り替えました。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "投稿日の新しい順、各語上位8件",
+            "terms": [
+              "compressor stall",
+              "turbomachinery",
+              "tip leakage",
+              "wind turbine wake",
+              "cascade separation",
+              "axial compressor",
+              "turbine blade flow",
+              "secondary flow",
+              "centrifugal flow",
+              "rotating stall",
+              "shock boundary layer interaction"
+            ],
+            "hits": 88,
+            "note": "11語×上位8件の延べ最大88件。ターボ機械に近い新着は機械学習・最適化の論文が多く、流れの現象が主役で全文が読める CC BY の論文として Dunn ら（2026）を選びました。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（垂直軸風車の近傍後流のDNS）、定番枠=抄録ベース（高速ファンの失速と先端すき間）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車の羽根を増やすと、前の羽根が残した渦が次の羽根の渦にぶつかって壊し、後ろの流れが早く落ち着く、という見方でした。論文は、この落ち着き方の速さには、回転の速さよりも羽根の枚数のほうが効いていると述べています。ただ、調べたのは小さな規模（レイノルズ数が約1万）の計算で、実機の風車にそのまま当てはまるかは、論文からは分かりません。もう一本の1993年の論文は抄録しか読めていませんが、失速に伴う閉塞の源が、漏れ渦が衝撃波を通るときの断面積の増加だと、計算が「示唆する」という控えめな書き方だった点が印象に残りました。"
     }
   ]
 }

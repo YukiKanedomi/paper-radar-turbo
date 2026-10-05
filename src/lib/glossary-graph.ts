@@ -267,6 +267,7 @@ export const CATEGORIES: GraphCategory[] = [
       "抽気流れ (bleed air)",
       "ハブ-ケーシング比 (hub-to-casing ratio)",
       "インデューサ失速 (inducer stall)",
+      "通路衝撃波 (passage shock)",
     ],
   },
   {
@@ -333,6 +334,7 @@ export const CATEGORIES: GraphCategory[] = [
       "スライディングメッシュ法",
       "PIV（粒子画像流速測定法）",
       "ステレオPIV (stereo particle-image velocimetry)",
+      "直接数値シミュレーション (DNS)",
     ],
   },
   {
@@ -550,6 +552,8 @@ export const CATEGORIES: GraphCategory[] = [
       "デッドバンド (dead-band)",
       "有効迎角 (effective angle of attack)",
       "羽根・渦干渉 (BVI)",
+      "動的ソリディティ (dynamic solidity)",
+      "バフボディ (bluff body)",
     ],
   },
   {
@@ -1268,6 +1272,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "第一マックモード (first Mack mode)", to: "層流-乱流遷移", label: "圧縮性境界層の遷移に関わる不安定波" },
   { from: "インデューサ失速 (inducer stall)", to: "サージ", label: "この論文では開始の鍵" },
   { from: "インデューサ失速 (inducer stall)", to: "インデューサ (inducer)", label: "先端で起きる" },
+
+  // --- 垂直軸風車の近傍後流DNS（Dunn & Lahooti 2026）/ 高速ファンの失速と先端すき間（Adamczyk ら 1993） ---
+  { from: "動的ソリディティ (dynamic solidity)", to: "固体度（ソリディティ, solidity）", label: "固体度と先端速度比から定義" },
+  { from: "動的ソリディティ (dynamic solidity)", to: "先端速度比（tip speed ratio, λ）", label: "固体度と先端速度比から定義" },
+  { from: "バフボディ (bluff body)", to: "後流せん断層 (wake shear layer)", label: "後流の縁のせん断層が回復を担う" },
+  { from: "羽根・渦干渉 (BVI)", to: "剥離泡", label: "孤立翼で不安定化する先行知見" },
+  { from: "直接数値シミュレーション (DNS)", to: "動的失速渦 (dynamic stall vortex)", label: "形成から放出まで解像できる" },
+  { from: "通路衝撃波 (passage shock)", to: "衝撃波・渦干渉 (shock-vortex interaction)", label: "漏れ渦と干渉" },
+  { from: "衝撃波・渦干渉 (shock-vortex interaction)", to: "ブロッケージ (blockage)", label: "端壁の閉塞を生む" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
