@@ -65,6 +65,8 @@ export const CATEGORIES: GraphCategory[] = [
       "渦励起振動 (VIV, vortex induced vibrations)",
       "局所共振メタマテリアル (LRM, locally resonant metamaterial)",
       "ロックイン (lock-in)",
+      "せん断層のはためき (shear-layer flapping)",
+      "脱出渦放出モード (escaping vortex-shedding mode)",
       "質量比 (mass ratio, γm)",
       "キャビテーション",
       "キャビテーション数 (cavitation number)",
@@ -236,6 +238,8 @@ export const CATEGORIES: GraphCategory[] = [
       "低圧タービン (low-pressure turbine, LPT)",
       "ストローハル数 (Strouhal number)",
       "シュリーレン法 (schlieren)",
+      "チップ上衝撃波 (over-tip shock wave)",
+      "ベーン前縁剥離 (vane leading-edge separation)",
       "流れ可視化 (flow visualization)",
       "煙ワイヤー法 (smoke-wire method)",
       "ファンブースタ (fan booster)",
@@ -1281,6 +1285,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "直接数値シミュレーション (DNS)", to: "動的失速渦 (dynamic stall vortex)", label: "形成から放出まで解像できる" },
   { from: "通路衝撃波 (passage shock)", to: "衝撃波・渦干渉 (shock-vortex interaction)", label: "漏れ渦と干渉" },
   { from: "衝撃波・渦干渉 (shock-vortex interaction)", to: "ブロッケージ (blockage)", label: "端壁の閉塞を生む" },
+  // --- 翼端漏れ流れの衝撃波ロックイン（Tang et al. 2022）／ベーン付きディフューザの失速開始（Everitt & Spakovszky 2012） ---
+  { from: "チップ上衝撃波 (over-tip shock wave)", to: "翼端漏れ流れ (tip leakage flow)", label: "遷音速で出現" },
+  { from: "せん断層のはためき (shear-layer flapping)", to: "せん断層", label: "せん断層の運動" },
+  { from: "せん断層のはためき (shear-layer flapping)", to: "ロックイン (lock-in)", label: "衝撃波と周波数・位置が同期" },
+  { from: "脱出渦放出モード (escaping vortex-shedding mode)", to: "渦放出 (vortex shedding)", label: "一形態" },
+  { from: "ベーン前縁剥離 (vane leading-edge separation)", to: "ベーン付きディフューザ (vaned diffuser)", label: "発生箇所" },
+  { from: "ベーン前縁剥離 (vane leading-edge separation)", to: "ブロッケージ (blockage)", label: "入口の閉塞の増加につながる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

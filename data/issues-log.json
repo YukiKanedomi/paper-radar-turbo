@@ -7138,6 +7138,106 @@
         "note": "今号は最新枠=OA全文（垂直軸風車の近傍後流のDNS）、定番枠=抄録ベース（高速ファンの失速と先端すき間）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車の羽根を増やすと、前の羽根が残した渦が次の羽根の渦にぶつかって壊し、後ろの流れが早く落ち着く、という見方でした。論文は、この落ち着き方の速さには、回転の速さよりも羽根の枚数のほうが効いていると述べています。ただ、調べたのは小さな規模（レイノルズ数が約1万）の計算で、実機の風車にそのまま当てはまるかは、論文からは分かりません。もう一本の1993年の論文は抄録しか読めていませんが、失速に伴う閉塞の源が、漏れ渦が衝撃波を通るときの断面積の増加だと、計算が「示唆する」という控えめな書き方だった点が印象に残りました。"
+    },
+    {
+      "date": "2026-10-07",
+      "status": "published",
+      "headline": "翼端のすき間を抜ける流れが音速に近づくと、外壁ぎわの衝撃波が渦の列のはためきと周波数も位置もそろって動くことを高速度シュリーレンで示した最新枠の論文（Tang ら 2022、arXiv プレプリント、全文）と、漏れ流れの無いベーン付きディフューザでも失速の前触れが育つ条件を非定常計算から3つにしぼった定番研究（Everitt & Spakovszky 2012、Journal of Turbomachinery、抄録ベース）",
+      "intro": "今日は『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』などで最新枠を、『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』『wind turbine wake aerodynamics』などで定番枠を探しました。定番枠の14件は、今日もすべてすでに配信済みでした。そこでまだ使っていない語（ディフューザの失速、キャビテーション、回転失速の前触れなど8語）で OpenAlex を被引用順に追加検索し、遠心圧縮機のベーン付きディフューザの失速の始まりを調べた Everitt & Spakovszky（2012、抄録ベース）を選びました。最新枠で本命だった Borcherding ら（2026、Journal of Turbomachinery、遷音速圧縮機の非定常な損失、CC BY）は、出版社サイトの全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。arXiv の新着にはターボ機械の流れ現象の論文が乏しかったため、arXiv を追加で探し、全文が読めてターボ機械の中心的な現象（翼端漏れ流れ）を扱う論文として、2022年の Tang ら を選びました。『最新』と呼ぶには少し古い論文である点は、正直にお断りしておきます。",
+      "picked": [
+        {
+          "id": "arxiv:2207.09850",
+          "title": "圧力で駆動される翼端漏れ流れにおける、チップ上衝撃波のロックイン効果と「脱出渦放出モード」の同定（Tang ら, 2022）",
+          "why": "翼端のすき間という、ターボ機械の損失・失速・騒音に関わる場所の流れを、風洞の高速度撮影で直接調べた実験研究。流れ現象が主役で、全文が読める。ただし2022年のプレプリントで、2次元の単純化模型・静止外壁の条件。CC BY-NC-ND のため図は転載せず、概念図で補った。"
+        },
+        {
+          "id": "doi:10.1115/1.4006533",
+          "title": "遠心圧縮機のベーン付きディフューザにおける失速の開始の調査（Everitt & Spakovszky, 2012）",
+          "why": "翼端漏れの無いベーン付きディフューザでも失速の前触れ（スパイク）が育つことを、非定常計算で調べた定番。抄録が挙げる3つの条件を、抄録の範囲だけで、「必要条件として仮定された」という控えめな表現のまま載せた。"
+        }
+      ],
+      "aside": {
+        "title": "見送った候補と、全文が取れなかった事情",
+        "note": "(1) Borcherding ら（2026、遷音速圧縮機の中央断面の非定常な損失、Journal of Turbomachinery、CC BY）は、出版社サイト（ASME）の全文が自動取得できず（403）、抄録だけでは作り込めないため見送りました。(2) 定番枠の候補14件は、すべてすでに配信済みでした。(3) 最新枠のうち arXiv の新着は、翼まわりの遷音速流れ・極超音速の境界層などで、ターボ機械そのものではありませんでした。arXiv で探し直して見つかったターボ機械寄りの論文のうち、Surface roughness の遷音速圧縮機（2024）と翼端漏れの自励的な非定常性（2024）は、すでに配信済みでした。(4) 保留はありません。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA 8 / 抄録 5）。arXivとOpenAlexの合算です。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件。すべてがすでに配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番）",
+            "scope": "被引用の多い順、各語上位10件（論文種別=article）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "inlet distortion fan aerodynamics",
+              "film cooling turbine heat transfer",
+              "secondary flow endwall turbomachinery",
+              "rotating stall inception spike",
+              "centrifugal compressor aerodynamics"
+            ],
+            "hits": 80,
+            "note": "8語×上位10件の延べ最大80件（既出を除いて確認。分野外の論文も混ざります）。ここから Everitt & Spakovszky（2012）を選びました。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "physics.flu-dyn 分野、投稿日の新しい順、各語上位6件",
+            "terms": [
+              "compressor stall",
+              "turbine blade flow",
+              "tip leakage",
+              "rotating stall",
+              "centrifugal pump",
+              "axial fan",
+              "turbomachinery",
+              "cascade separation",
+              "shock boundary layer interaction",
+              "wind turbine blade",
+              "diffuser stall",
+              "cavitation",
+              "film cooling",
+              "blade row interaction",
+              "compressor surge",
+              "wake turbine blade",
+              "corner separation",
+              "flutter"
+            ],
+            "hits": 108,
+            "note": "18語×上位6件の延べ最大108件。ターボ機械に近い新着は機械学習・最適化の論文が多く、全文が読める流れ現象の論文として Tang ら（2022）を選びました。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（翼端漏れ流れの実験、2022年）、定番枠=抄録ベース（ベーン付きディフューザの失速の開始）。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、翼端のすき間の中の流れが、思った以上に忙しいことでした。論文によると、流れが音速に近づくと、外壁ぎわの衝撃波が上流へ動いて消え、その揺れは、せん断層のはためきや渦の放出と同じ周波数と位置でそろって動いていたそうです。また、もう一本の抄録からは、羽根の先端に漏れ流れが無いディフューザでも失速の前触れが出ることが分かり、「漏れ流れだけが原因ではない」という見方が印象に残りました。ただ、前者は2次元の単純な模型での実験で、実機にそのまま当てはまるかは論文からは分かりません。後者は抄録しか読めていないので、3つの条件も、計算で捉えられた範囲の仮説という控えめな書き方だと受け取っています。"
     }
   ]
 }
