@@ -60,6 +60,7 @@ export const CATEGORIES: GraphCategory[] = [
       "準定常近似 (quasi-steady approximation)",
       "無次元周波数 k (reduced frequency)",
       "フラッタ",
+      "換算速度 (reduced velocity)",
       "空力弾性",
       "自励振動",
       "渦励起振動 (VIV, vortex induced vibrations)",
@@ -198,6 +199,8 @@ export const CATEGORIES: GraphCategory[] = [
     terms: [
       "遠心圧縮機",
       "遠心ポンプ",
+      "遷音速圧縮機ロータ (transonic compressor rotor)",
+      "部分回転数 (part speed)",
       "ボリュートケーシング",
       "多段軸流圧縮機",
       "放射ディフューザ",
@@ -339,6 +342,7 @@ export const CATEGORIES: GraphCategory[] = [
       "PIV（粒子画像流速測定法）",
       "ステレオPIV (stereo particle-image velocimetry)",
       "直接数値シミュレーション (DNS)",
+      "レーザー流速計 (laser anemometer)",
     ],
   },
   {
@@ -1292,6 +1296,11 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "脱出渦放出モード (escaping vortex-shedding mode)", to: "渦放出 (vortex shedding)", label: "一形態" },
   { from: "ベーン前縁剥離 (vane leading-edge separation)", to: "ベーン付きディフューザ (vaned diffuser)", label: "発生箇所" },
   { from: "ベーン前縁剥離 (vane leading-edge separation)", to: "ブロッケージ (blockage)", label: "入口の閉塞の増加につながる" },
+  // --- 遷音速ピッチング翼のDNS（Bhardwaj & Bhaumik 2026）／遷音速動翼の翼端すき間流れ（Suder & Celestina 1996） ---
+  { from: "換算速度 (reduced velocity)", to: "フラッタ", label: "フラッタの整理に使う無次元数" },
+  { from: "フラッタ", to: "リミットサイクル (limit cycle)", label: "非線形性で飽和すると移る" },
+  { from: "通路衝撃波 (passage shock)", to: "衝撃波・渦干渉 (shock-vortex interaction)", label: "漏れ渦とぶつかる" },
+  { from: "衝撃波・渦干渉 (shock-vortex interaction)", to: "ブロッケージ (blockage)", label: "端壁の詰まりを生む" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

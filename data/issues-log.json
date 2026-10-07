@@ -7238,6 +7238,82 @@
         "note": "今号は最新枠=OA全文（翼端漏れ流れの実験、2022年）、定番枠=抄録ベース（ベーン付きディフューザの失速の開始）。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、翼端のすき間の中の流れが、思った以上に忙しいことでした。論文によると、流れが音速に近づくと、外壁ぎわの衝撃波が上流へ動いて消え、その揺れは、せん断層のはためきや渦の放出と同じ周波数と位置でそろって動いていたそうです。また、もう一本の抄録からは、羽根の先端に漏れ流れが無いディフューザでも失速の前触れが出ることが分かり、「漏れ流れだけが原因ではない」という見方が印象に残りました。ただ、前者は2次元の単純な模型での実験で、実機にそのまま当てはまるかは論文からは分かりません。後者は抄録しか読めていないので、3つの条件も、計算で捉えられた範囲の仮説という控えめな書き方だと受け取っています。"
+    },
+    {
+      "date": "2026-10-08",
+      "status": "published",
+      "headline": "ばねで支えた翼を遷音速の流れの中で自由に首振りさせたとき、揺れの主導権が流れから構造へ移ることを2次元DNSで示した最新枠の論文（Bhardwaj & Bhaumik 2026、arXiv プレプリント、全文）と、遷音速圧縮機の動翼で翼端すき間流れの影響が衝撃波の有無ですき間高さの約20倍と約5倍に分かれることを実測した定番研究（Suder & Celestina 1996、Journal of Turbomachinery、抄録ベース）",
+      "intro": "今日は最新枠を『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』で、定番枠を『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』で探しました。定番枠の14件は、風力発電や冷却の話を含め、ターボ機械の流れ現象として使えるものがすべて配信済み、または分野外でした。そこでまだ使っていない語（回転失速の前触れ、二次流れ、角部剥離、サージ、翼端すき間など10語）で OpenAlex を被引用順に追加検索し、遷音速圧縮機の翼端すき間流れを測った Suder & Celestina（1996、抄録ベース）を選びました。最新枠は、arXiv の新着のうち、全文が読めて衝撃波と剥離という流れ現象が主役の論文として、ピッチング翼の遷音速DNS（2026）を選びました。ただしこれは圧縮機の羽根ではなく単独の翼まわりの流れである点と、会議原稿で本文と要旨・結論の表記にゆれがある点は、正直にお断りしておきます。",
+      "picked": [
+        {
+          "id": "arxiv:2610.06474",
+          "title": "NACA翼のピッチングを伴う遷音速流れの直接数値シミュレーション（Bhardwaj & Bhaumik, 2026）",
+          "why": "衝撃波と剥離の揺れが翼の揺れとどう結びつくかを高精度計算で調べた、流れ現象が主役の全文OA論文。ただし2次元・単一条件の会議原稿で、圧縮機の羽根そのものではない。arXiv標準ライセンスのため図は転載せず、概念図で補った。"
+        },
+        {
+          "id": "doi:10.1115/1.2836629",
+          "title": "遷音速軸流圧縮機動翼における翼端すき間流れの実験的・計算的調査（Suder & Celestina, 1996）",
+          "why": "通路衝撃波と翼端漏れ渦の干渉が端壁の詰まりを生む様子を、レーザー流速計の実測で示した定番。抄録が挙げる『約20倍と約5倍』『漏れ流れ由来でない第2の渦』を、抄録の範囲だけで載せた。"
+        }
+      ],
+      "aside": {
+        "title": "見送った候補と、保留・スキップの有無",
+        "note": "(1) 定番枠の候補14件は、すでに配信済みの論文が大半で、残りも分野外（鉱物の泡の話など）でした。(2) 最新枠のOpenAlex新着には、配信済みのファン入口ひずみの論文や風車の騒音の論文などが並びました。(3) 最新枠の arXiv 候補は、機械学習・数値手法・乱流の理論が多く、流れ現象が主役という方針に合う全文OAは今回の翼の遷音速DNSでした。(4) 忠実性チェックの結果による保留・スキップはありません。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 15,
+            "note": "最新枠15件（OA 11 / 抄録 4）。arXivとOpenAlexの合算です。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。使えるものはすべて配信済み、または分野外でした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番）",
+            "scope": "1980〜2015年の論文、被引用の多い順、各語上位約10〜12件（論文種別=article）",
+            "terms": [
+              "rotating stall inception compressor",
+              "secondary flow endwall turbine cascade",
+              "corner separation compressor cascade",
+              "shock boundary layer interaction compressor",
+              "tip clearance flow loss turbine",
+              "compressor surge dynamics",
+              "blade row interaction wake unsteady turbine",
+              "transonic compressor rotor shock tip leakage",
+              "pump cavitation instability",
+              "radial turbine centrifugal compressor impeller flow jet-wake"
+            ],
+            "hits": 110,
+            "note": "10語×上位約10〜12件の延べ最大約120件（既出を除いて確認。分野外の論文も混ざります）。ここから Suder & Celestina（1996）を選びました。"
+          }
+        ],
+        "note": "検索語は日替わりで選ばれます。定番枠が使い切れたときは、まだ使っていない語で OpenAlex を追加検索しています。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、同じ『翼端のすき間の流れ』でも、衝撃波があるかどうかで影響の届く高さが大きく違うことでした。抄録によると、設計回転数ではすき間の高さの約20倍、衝撃波のない部分回転数では約5倍だそうです。もう一本の翼の計算では、ばねを柔らかくすると、翼の揺れの周波数が流れの揺れに引きずられる状態から、翼自身の固有の揺れに従う状態へ移ると報告されていて、「揺れの主導権が移る」という見方が面白いと思いました。ただ、後者は2次元・1条件の計算で、論文の中でも数値の書き方に揺れがあるので、結論は控えめに受け取っています。前者は抄録しか読めていないので、細かい条件は分かりません。"
     }
   ]
 }
