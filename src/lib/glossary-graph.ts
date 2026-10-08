@@ -500,6 +500,10 @@ export const CATEGORIES: GraphCategory[] = [
       "ストリーク (streak)",
       "リフトアップ効果 (lift-up effect)",
       "二次不安定性 (secondary instability)",
+      "順圧力勾配 (favorable pressure gradient)",
+      "有効傾斜 (effective slope)",
+      "穏やか領域 (becalmed region)",
+      "ウェイク通過周波数 (wake-passing frequency)",
     ],
   },
   {
@@ -1301,6 +1305,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "フラッタ", to: "リミットサイクル (limit cycle)", label: "非線形性で飽和すると移る" },
   { from: "通路衝撃波 (passage shock)", to: "衝撃波・渦干渉 (shock-vortex interaction)", label: "漏れ渦とぶつかる" },
   { from: "衝撃波・渦干渉 (shock-vortex interaction)", to: "ブロッケージ (blockage)", label: "端壁の詰まりを生む" },
+  // --- 低圧タービン翼の粗さ誘起遷移（Zhu ら 2025）／ウェイク誘起遷移（Schulte & Hodson 1998） ---
+  { from: "順圧力勾配 (favorable pressure gradient)", to: "再層流化 (relaminarization)", label: "乱れを抑え再層流化を促す" },
+  { from: "表面粗さ (surface roughness)", to: "有効傾斜 (effective slope)", label: "形の違いを表す指標" },
+  { from: "穏やか領域 (becalmed region)", to: "剥離泡", label: "遷移と剥離を抑える" },
+  { from: "ウェイク誘起遷移 (wake-induced transition)", to: "穏やか領域 (becalmed region)", label: "遷移した部分の後ろに続く" },
+  { from: "ウェイク通過周波数 (wake-passing frequency)", to: "ウェイク誘起遷移 (wake-induced transition)", label: "遷移の起こる頻度を決める" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -7314,6 +7314,97 @@
         "note": "検索語は日替わりで選ばれます。定番枠が使い切れたときは、まだ使っていない語で OpenAlex を追加検索しています。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、同じ『翼端のすき間の流れ』でも、衝撃波があるかどうかで影響の届く高さが大きく違うことでした。抄録によると、設計回転数ではすき間の高さの約20倍、衝撃波のない部分回転数では約5倍だそうです。もう一本の翼の計算では、ばねを柔らかくすると、翼の揺れの周波数が流れの揺れに引きずられる状態から、翼自身の固有の揺れに従う状態へ移ると報告されていて、「揺れの主導権が移る」という見方が面白いと思いました。ただ、後者は2次元・1条件の計算で、論文の中でも数値の書き方に揺れがあるので、結論は控えめに受け取っています。前者は抄録しか読めていないので、細かい条件は分かりません。"
+    },
+    {
+      "date": "2026-10-09",
+      "status": "published",
+      "headline": "使い込んだ低圧タービン翼のざらつきは、高さだけでなく「波の細かさ」でも流れの乱れ方を変えると15通りの直接数値シミュレーションで示した最新枠の論文（Zhu ら、arXiv プレプリント、全文）と、上流の動翼の後流が通ると翼の背中側の大きな剥離泡がほぼ消えることを翼列実験で示した定番研究（Schulte & Hodson 1998、Journal of Turbomachinery、抄録ベース）",
+      "intro": "今日は最新枠を『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』で、定番枠を『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』で探しました。最新枠は18件（OA 13 / 抄録 5）でしたが、風力発電や機械学習の話が多く、ターボ機械の流れ現象が主役のものは限られました。定番枠の14件は、すべて配信済みか蓄積済みでした。そこで、まだ使っていない語（角部剥離、翼への境界層遷移、ディフューザの失速、入口ひずみ、動静翼干渉、フラッタなど）で OpenAlex を被引用順に追加検索し、低圧タービン翼のウェイク誘起遷移を調べた Schulte & Hodson（1998、抄録ベース）を選びました。最新枠は、新着のうち MDPI の遠心圧縮機ディフューザの論文（OA）は全文を取得できず見送り、arXiv の新着検索で見つけた、低圧タービン翼の粗さによる境界層遷移のDNS（全文）を選びました。どちらも低圧タービン翼の境界層遷移という共通の話題です。ただし最新枠の論文は、arXiv 標準ライセンスのため図は転載せず、概念図で補っています。",
+      "picked": [
+        {
+          "id": "arxiv:2510.22310",
+          "title": "低圧タービン翼の全面に分布させた表面粗さが引き起こす境界層遷移（Zhu ら, 2025）",
+          "why": "粗さの高さと波の細かさを変えた15ケースのDNSで、負圧面の遷移の道筋を調べた流れ現象が主役の全文OA論文。単一の翼形状・条件で、規則的な粗さである点には注意。"
+        },
+        {
+          "id": "doi:10.1115/1.2841384",
+          "title": "高揚力低圧タービンにおける非定常なウェイク誘起境界層遷移（Schulte & Hodson, 1998）",
+          "why": "上流動翼のウェイクが、負圧面の剥離泡と損失をどう変えるかを翼列実験で示した定番。抄録が述べる範囲だけで、控えめに載せた。"
+        }
+      ],
+      "aside": {
+        "title": "見送った候補と、保留・スキップの有無",
+        "note": "(1) MDPI Fluids の遠心圧縮機ディフューザの不安定性の論文（OA）は、出版社サイトから全文を取得できず見送りました。(2) 最新枠のほかの候補は、風車、機械学習、乱流の統計理論などが多く、流れ現象が主役という方針に合う全文OAは今回のLPT粗さ論文でした。(3) 定番枠の14件はすべて配信済みでした。(4) 忠実性チェックの結果による保留・スキップはありません。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 18,
+            "note": "最新枠18件（OA 13 / 抄録 5）。arXivとOpenAlexの合算です。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用の多い順（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 0 / 抄録 14）。すべて蓄積済みでした。"
+          },
+          {
+            "name": "OpenAlex（追加検索・定番）",
+            "scope": "被引用の多い順、各語上位25件（論文種別=article、蓄積済みを除外）",
+            "terms": [
+              "corner separation compressor",
+              "boundary layer transition turbine blade",
+              "diffuser stall pressure recovery",
+              "inlet distortion fan aerodynamics",
+              "rotor stator interaction unsteady",
+              "blade flutter aeroelasticity",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "tip leakage vortex loss",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 250,
+            "note": "10語×上位25件の延べ最大250件（蓄積済みを除いて確認。分野外の論文も混ざります）。ここから Schulte & Hodson（1998）を選びました。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "投稿日の新しい順、7通りの検索式×上位12件",
+            "terms": [
+              "compressor stall surge tip leakage",
+              "turbomachinery flow",
+              "low-pressure turbine",
+              "transonic shock boundary layer",
+              "cascade separation wake",
+              "centrifugal impeller",
+              "axial fan / pump"
+            ],
+            "hits": 84,
+            "note": "延べ最大84件。ここから Zhu ら（2025）を選びました。"
+          }
+        ],
+        "note": "検索語は日替わりで選ばれます。定番枠が使い切れたときは、まだ使っていない語で OpenAlex を追加検索しています。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、翼の表面のざらつきは「高さ」だけで決まるわけではない、という点でした。論文の中くらいの高さのケースでは、凹凸の波が細かいほど（斜面が急なほど）前縁で流れがはがれ、減速する区間で早めに乱流に変わり、後縁近くの剥離がなくなりました。同じ高さでも形で結果が変わるのは意外でした。もう一本の定番研究では、前の動翼の後流が当たると、かえって翼の背中側の大きな剥離がほぼなくなるそうで、「乱れが悪者とは限らない」という見方も面白いと思いました。ただ、前者は1つの翼形状・1つの条件・規則的な凹凸の計算で、後者は抄録しか読めていないので、細かい数値は分かりません。結論は控えめに受け取っています。"
     }
   ]
 }
