@@ -7405,6 +7405,82 @@
         "note": "検索語は日替わりで選ばれます。定番枠が使い切れたときは、まだ使っていない語で OpenAlex を追加検索しています。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、翼の表面のざらつきは「高さ」だけで決まるわけではない、という点でした。論文の中くらいの高さのケースでは、凹凸の波が細かいほど（斜面が急なほど）前縁で流れがはがれ、減速する区間で早めに乱流に変わり、後縁近くの剥離がなくなりました。同じ高さでも形で結果が変わるのは意外でした。もう一本の定番研究では、前の動翼の後流が当たると、かえって翼の背中側の大きな剥離がほぼなくなるそうで、「乱れが悪者とは限らない」という見方も面白いと思いました。ただ、前者は1つの翼形状・1つの条件・規則的な凹凸の計算で、後者は抄録しか読めていないので、細かい数値は分かりません。結論は控えめに受け取っています。"
+    },
+    {
+      "date": "2026-10-10",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文が確保できませんでした",
+      "intro": "今日は最新枠を『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』で、定番枠を『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』など8語で探しました。定番枠の14件は、重複の確認をしたところすべて配信済みでした。最新枠には、ターボ機械の流れが主役のオープンアクセス候補として、電動ダクテッドファンの端壁流れ（ケンブリッジ大学リポジトリ・CC BY）と、遷音速圧縮機段の非定常な損失（ASME・CC BY）がありましたが、前者は本文がログイン画面の向こうで、後者は出版社サイトが自動アクセスを403で拒否し、どちらも本文を取得できませんでした。arXivの新着にはターボ機械の流れが主役の全文論文が見当たらず、全文で裏取りできないものを『全文ベース』で載せることはできないため、今日は無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補",
+          "note": "Endwall Flow Mechanisms in Electric Ducted Fans（Anastasiou, Grimshaw, Taylor 2026）と、Unsteady Loss Assessment of a Transonic Compressor Stage Midspan Section（Borcherding, Sandberg, Bode 2026）は、抄録は魅力的でしたが本文を取得できませんでした。超臨界CO₂遠心圧縮機や小型ポンプの論文もCC BY-NC-NDで、出版社サイトから本文を読めませんでした。"
+        },
+        {
+          "title": "見つけた重複",
+          "note": "候補を絞る途中で、風車群のグローバルブロッケージの論文（McGlade & Buxton 2026）と、軸流圧縮機の3次元剥離を扱ったGbadebo ら（2005）が、すでに配信済みだと分かり、除外しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 19 / 抄録 5）。arXivの大半は乱流理論や機械学習で、ターボ機械の流れが主役の全文OAは取得できませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 5 / 抄録 9）。重複確認の結果、14件すべてが配信済みでした。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "投稿日の新しい順、15通りの検索式×上位8件",
+            "terms": [
+              "compressor stall",
+              "tip leakage",
+              "turbine blade cascade",
+              "low-pressure turbine",
+              "transonic fan",
+              "centrifugal pump",
+              "axial fan",
+              "turbomachinery",
+              "blade row",
+              "shock boundary layer",
+              "diffuser",
+              "wind turbine blade",
+              "cavitation pump",
+              "vane",
+              "cascade flutter"
+            ],
+            "hits": 120,
+            "note": "延べ最大120件。配信済みを除くと、ターボ機械の流れが主役のものは機械学習・設計最適化の手法論文ばかりで、採用に至りませんでした。"
+          }
+        ],
+        "note": "全文OAを確保できない日は、歪な号を出さず前号のままにする方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。候補の抄録を読んでいて、遷音速圧縮機では損失の大半が衝撃波と境界層の干渉まわりで生まれ、静翼側では動翼のウェイクが周期的に損失を変える、という話が面白そうだと感じました。ただ本文を確かめられないまま紹介するのは、このアプリの約束（嘘をつかない）に反するので見送りました。"
     }
   ]
 }
