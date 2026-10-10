@@ -275,6 +275,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ハブ-ケーシング比 (hub-to-casing ratio)",
       "インデューサ失速 (inducer stall)",
       "通路衝撃波 (passage shock)",
+      "低運動量領域 (low-momentum region)",
     ],
   },
   {
@@ -343,6 +344,10 @@ export const CATEGORIES: GraphCategory[] = [
       "ステレオPIV (stereo particle-image velocimetry)",
       "直接数値シミュレーション (DNS)",
       "レーザー流速計 (laser anemometer)",
+      "ロータ単独構成 (rotor-only configuration)",
+      "アンサンブル平均 (ensemble average)",
+      "相対マッハ数 (relative Mach number)",
+      "凍結ロータ法 (frozen rotor)",
     ],
   },
   {
@@ -393,6 +398,7 @@ export const CATEGORIES: GraphCategory[] = [
       "ケーシングトリートメント",
       "軸方向スロット型ケーシングトリートメント (axial slot casing treatment)",
       "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)",
+      "吹き込み位置 (injection location)",
       "バッフル板",
       "自己再循環",
       "前縁剥離 (leading-edge separation)",
@@ -1311,6 +1317,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "穏やか領域 (becalmed region)", to: "剥離泡", label: "遷移と剥離を抑える" },
   { from: "ウェイク誘起遷移 (wake-induced transition)", to: "穏やか領域 (becalmed region)", label: "遷移した部分の後ろに続く" },
   { from: "ウェイク通過周波数 (wake-passing frequency)", to: "ウェイク誘起遷移 (wake-induced transition)", label: "遷移の起こる頻度を決める" },
+  // --- NASA Rotor 67 のLA計測（Strazisar ら 1989）と周方向溝＋自己再循環（Ahadifard & Khaleghi 2026） ---
+  { from: "レーザー流速計 (laser anemometer)", to: "アンサンブル平均 (ensemble average)", label: "窓ごとに平均して使う" },
+  { from: "相対マッハ数 (relative Mach number)", to: "通路衝撃波 (passage shock)", label: "上流の値が強さを決める" },
+  { from: "渦崩壊 (vortex breakdown)", to: "低運動量領域 (low-momentum region)", label: "生成" },
+  { from: "低運動量領域 (low-momentum region)", to: "ブロッケージ (blockage)", label: "源" },
+  { from: "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)", to: "低運動量領域 (low-momentum region)", label: "吸い込んで縮小" },
+  { from: "吹き込み位置 (injection location)", to: "自己再循環", label: "設計パラメータ" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

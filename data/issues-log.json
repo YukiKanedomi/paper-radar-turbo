@@ -7481,6 +7481,93 @@
         "note": "全文OAを確保できない日は、歪な号を出さず前号のままにする方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。候補の抄録を読んでいて、遷音速圧縮機では損失の大半が衝撃波と境界層の干渉まわりで生まれ、静翼側では動翼のウェイクが周期的に損失を変える、という話が面白そうだと感じました。ただ本文を確かめられないまま紹介するのは、このアプリの約束（嘘をつかない）に反するので見送りました。"
+    },
+    {
+      "date": "2026-10-11",
+      "status": "published",
+      "headline": "回転するファン動翼の翼間をレーザーで測った1989年のNASA報告と、ケーシングの溝に吸った流れを上流へ戻して失速を遅らせる2026年の計算研究",
+      "intro": "今日は『cavitation pump impeller』『rotor stator interaction unsteady』『surge rotating stall』『secondary flow endwall turbomachinery』など、日替わりの検索語で探しました。定番枠は、被引用の上位14件がすべて配信済みでした。そこで、検索語を『遷音速圧縮機の動翼と翼端すき間』『ケーシングトリートメントと失速余裕』などに広げて被引用順に見直し、NASA が1989年に公開した遷音速ファン動翼のレーザー計測の技術報告にたどり着きました（全文・米国政府の報告）。最新枠は、arXiv の新着が機械学習や乱流理論ばかりだったため、OpenAlex の新着オープンアクセスを広げて見て、遷音速圧縮機の動翼で溝と再循環流路を組み合わせたケーシングトリートメントを計算で調べた Scientific Reports の論文を選びました（採択後の未編集版の全文を確認しています）。",
+      "picked": [
+        {
+          "id": "ntrs:19900001929",
+          "title": "遷音速軸流ファン動翼におけるレーザー流速計測（Strazisar, Wood, Hathaway, Suder, 1989）",
+          "why": "圧縮機の流れの計算コードを確かめるために、実際に回っているファン動翼の翼間を9つの高さ×約30の前後位置で測り、翼の形の表とあわせて公開した NASA の技術報告です。効率最高付近と失速近くの2つの運転点が載っていて、流れを『測る』側の仕事がどう組み立てられているかが分かります（全文）。"
+        },
+        {
+          "id": "doi:10.1038/s41598-026-66525-x",
+          "title": "遷音速圧縮機動翼における、自己再循環を備えたスロット付き周方向溝による安定性の向上（Ahadifard & Khaleghi, 2026）",
+          "why": "翼端の漏れ渦が衝撃波に当たって崩れ、流れの悪い領域が通路をふさぐ──という失速の入口を、ケーシング側の溝で吸い、上流へ戻して吹き込む仕掛けで抑える計算研究です。吹き込む位置で効果が約15％〜59％と大きく変わること、同じ流量では効率が下がる代償も、論文自身が示しています（全文・採択後の未編集版）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補と、確認できなかったこと",
+          "note": "最新枠では、Journal of Turbomachinery に載った『低速軸流圧縮機の翼端漏れ流れの時空間発達』（CC BY）も、流れが主役で有力でした。ただ、出版社のサイトが自動取得を受け付けず全文を確認できなかったため、抄録の範囲でしか書けないと判断して見送りました。arXiv の新着は、物理情報ニューラルネットワーク（PINN）や乱流の一般論が中心で、ターボ機械の流れが主役のものは見つかりませんでした。定番枠の通常検索は14件すべてが配信済み（重複）でした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 16 / 抄録 8）。arXiv の14件はPINN・乱流理論・多孔質流れなどで主題外、OpenAlex の10件のうち2件は既配信、残りは有料（抄録のみ）で、全文OAの2本が先に揃ったため今号では選びませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。14件すべてが配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "被引用の多い順・各語の上位12件を重複除去して確認",
+            "terms": [
+              "transonic compressor rotor shock tip clearance",
+              "turbine cascade secondary flow heat transfer",
+              "centrifugal compressor impeller diffuser flow",
+              "axial compressor casing treatment stall margin",
+              "turbomachinery blade boundary layer separation bubble"
+            ],
+            "hits": 60,
+            "note": "延べ最大60件（各語上位12件）。分野外（環境・エネルギー系）の混入が多く、主題に合う未配信の中から NASA TP-2879 を採用しました。"
+          },
+          {
+            "name": "OpenAlex（最新枠・追加検索）",
+            "scope": "2026年6月以降のオープンアクセスの新着順（各語の上位12件）",
+            "terms": [
+              "compressor stall tip leakage",
+              "turbine blade secondary flow endwall",
+              "centrifugal compressor flow instability",
+              "transonic fan shock",
+              "turbomachinery unsteady wake blade row",
+              "pump turbine flow instability"
+            ],
+            "hits": 72,
+            "note": "延べ最大72件（各語上位12件）。圧縮機の翼端漏れ・ケーシングトリートメント・タービンのすき間流れなどが見つかり、Scientific Reports の論文（CC BY-NC-ND、全文取得可）を採用しました。"
+          }
+        ],
+        "note": "今号は定番枠＝OA全文（米国政府の技術報告）、最新枠＝OA全文（採択後の未編集版）。定番の通常検索が尽きていたため、検索語を広げて確認しました。"
+      },
+      "afterword": "— 編集担当より\n今回『なるほど』と思ったのは、1989年の報告の測り方でした。回っている翼の中の流れを測るのに、レーザーは動かさず、粒子が通るたびに『そのとき翼がどこまで回っていたか』を記録して、あとから翼の位置ごとに仕分けて平均する、という方法です。数千回転ぶんを集めると、翼のあいだの速度の分布が描ける、というのが面白いと思いました。もう一方の論文は、失速余裕が約59％広がる一方で、同じ流量では効率が下がると論文自身がはっきり書いています。得をする話にも必ず代償がある、という点が素直で好感が持てました。"
     }
   ]
 }
