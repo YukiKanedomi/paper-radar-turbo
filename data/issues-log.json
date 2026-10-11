@@ -7568,6 +7568,101 @@
         "note": "今号は定番枠＝OA全文（米国政府の技術報告）、最新枠＝OA全文（採択後の未編集版）。定番の通常検索が尽きていたため、検索語を広げて確認しました。"
       },
       "afterword": "— 編集担当より\n今回『なるほど』と思ったのは、1989年の報告の測り方でした。回っている翼の中の流れを測るのに、レーザーは動かさず、粒子が通るたびに『そのとき翼がどこまで回っていたか』を記録して、あとから翼の位置ごとに仕分けて平均する、という方法です。数千回転ぶんを集めると、翼のあいだの速度の分布が描ける、というのが面白いと思いました。もう一方の論文は、失速余裕が約59％広がる一方で、同じ流量では効率が下がると論文自身がはっきり書いています。得をする話にも必ず代償がある、という点が素直で好感が持てました。"
+    },
+    {
+      "date": "2026-10-12",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読める論文の要約が、忠実性の確認を通りきりませんでした",
+      "intro": "今日は最新枠を『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』で、定番枠を『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』など8語で探しました。定番枠の14件は、すべて配信済みでした。そこで検索語を広げて見直し、最新枠は arXiv から翼端漏れ流れの音のピークを測った実験、低圧タービン翼列のLES、超音速タービン静翼の衝撃波・境界層干渉のLESの3本、定番枠は圧縮機ケーシングトリートメントの1984年の論文を候補に、要約をつくりました。定番枠の論文（抄録ベース）は忠実性の確認を通りましたが、全文を読んで書いた最新枠の3本は、確認を2巡しても数値の対応や『著者が述べる』の範囲に細かな直しが残り、公開の基準を満たしませんでした。全文OAの1本を欠くと号が成り立たないため、無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由",
+          "note": "最新枠では、(1) Jaiswal & Moreau（2024、翼端漏れ流れの音のピークと粗さによる抑制）、(2) Morsbach ら（2023、低圧タービン翼列の端壁境界層つきLESとRANSの比較）、(3) Lui & Wolf（2025、超音速タービン静翼の剥離泡の極端な事象）を、全文を読んで要約しました。いずれも忠実性の確認で、数値とモデルの対応、確度の言い方（示唆／断定）などの指摘が2巡目にも残ったため保留としました。確認の上限（1論文2巡、次点は最大2本）に達したので、そこで打ち切っています。"
+        },
+        {
+          "title": "確認は通ったが使えなかった候補",
+          "note": "定番枠の Smith & Cumpsty（1984、圧縮機ケーシングトリートメントの流れ現象。抄録ベース）は確認を通りましたが、同時に載せる最新枠の全文OAが揃わないため、今号では公開しませんでした。"
+        },
+        {
+          "title": "確認できなかったこと",
+          "note": "Journal of Turbomachinery の遷音速圧縮機段の非定常損失の論文（CC BY）と、高圧タービン段のホットストリークの論文（Aerospace Science and Technology、CC BY）は、出版社サイトが自動取得を受け付けず、全文を確認できませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 17,
+            "note": "最新枠17件（OA 12 / 抄録 5）。うち5件が配信済み、風車や機械学習が中心のものも多く、ターボ機械の流れが主役の未配信は少数でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 3 / 抄録 11）。14件すべてが配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "被引用の多い順・2018年より前の論文、各語の上位8件を重複除去して確認",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "rotating stall inception",
+              "inlet distortion fan",
+              "film cooling turbine",
+              "blade flutter compressor",
+              "casing treatment stall margin",
+              "centrifugal compressor diffuser rotating stall"
+            ],
+            "hits": 80,
+            "note": "延べ最大80件。分野外の論文の混入が多く、ターボ機械が主役の未配信は、ケーシングトリートメントやベーンレスディフューザの古典に限られました。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "投稿日の新しい順、12通りの検索式×上位12件",
+            "terms": [
+              "compressor stall",
+              "turbomachinery loss",
+              "tip leakage",
+              "axial compressor",
+              "centrifugal compressor",
+              "turbine blade secondary flow",
+              "shock boundary layer interaction",
+              "rotating stall",
+              "cavitation pump",
+              "turbine cascade",
+              "fan blade aerodynamics",
+              "compressor cascade separation"
+            ],
+            "hits": 144,
+            "note": "延べ最大144件。配信済みを除いて、翼端漏れ流れの音、低圧タービン翼列のLES、超音速タービン静翼のSBLIの3本を要約候補にしました。"
+          }
+        ],
+        "note": "今号は、定番枠は確認を通った論文があったものの、最新枠の全文OAが確認の上限内で通らず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。読んでいて面白かったのは、翼端のすき間を抜ける流れの音のピークが、翼の圧力面に粗さを貼るだけで消えた、という実験でした。渦の動きと音が同じ周波数で揺れていても、それだけでは原因とは言えず、流れを少し変えてみて確かめる、という考え方がなるほどと思いました。ただ、要約の数値や言い方の細部を確かめる検証が通りきらなかったので、載せるのは見送りました。確かめられないことを載せないのが、このアプリの約束です。"
     }
   ]
 }
