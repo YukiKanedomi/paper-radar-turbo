@@ -159,6 +159,7 @@ export const CATEGORIES: GraphCategory[] = [
       "エロージョン",
       "キャビテーション壊食 (cavitation erosion)",
       "デポジション（堆積）",
+      "反発係数",
       "渦度 (vorticity)",
       "乱流運動エネルギー (turbulent kinetic energy)",
       "斜め衝撃波 (oblique shock wave)",
@@ -197,6 +198,7 @@ export const CATEGORIES: GraphCategory[] = [
     label: "流れ要素・装置",
     color: "#4a6fa5",
     terms: [
+      "ジェット・ウェイク構造 (jet-wake structure)",
       "遠心圧縮機",
       "遠心ポンプ",
       "遷音速圧縮機ロータ (transonic compressor rotor)",
@@ -283,6 +285,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "数値解析・手法",
     color: "#7a6a9b",
     terms: [
+      "点粒子DNS (PP-DNS)",
+      "一方向連成 (one-way coupling)",
       "CFD",
       "LES",
       "混合平面法 (mixing plane)",
@@ -355,6 +359,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "設計理論・流れ面",
     color: "#8a6d3b",
     terms: [
+      "ポテンシャル理論 (potential theory)",
+      "システム回転 (system rotation)",
       "S1流れ面（第一種）",
       "S2流れ面（第二種）",
       "相対流れ面",
@@ -1324,6 +1330,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "低運動量領域 (low-momentum region)", to: "ブロッケージ (blockage)", label: "源" },
   { from: "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)", to: "低運動量領域 (low-momentum region)", label: "吸い込んで縮小" },
   { from: "吹き込み位置 (injection location)", to: "自己再循環", label: "設計パラメータ" },
+  // --- 圧縮機翼列の粒子入りDNS（Wang & Zhao 2026）／遠心羽根車内部のレーザー計測（Eckardt 1976） ---
+  { from: "点粒子DNS (PP-DNS)", to: "直接数値シミュレーション (DNS)", label: "流れ側を全スケール解像" },
+  { from: "点粒子DNS (PP-DNS)", to: "一方向連成 (one-way coupling)", label: "ここで採用した連成の扱い" },
+  { from: "反発係数", to: "デポジション（堆積）", label: "0なら付着と判定（Bons のモデル）" },
+  { from: "ジェット・ウェイク構造 (jet-wake structure)", to: "羽根車（インペラ）", label: "遠心羽根車内に現れる流れの形" },
+  { from: "ポテンシャル理論 (potential theory)", to: "インデューサ (inducer)", label: "入口部の流れの近似" },
+  { from: "システム回転 (system rotation)", to: "コリオリ力", label: "回転系で現れる力" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

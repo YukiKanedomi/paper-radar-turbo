@@ -7663,6 +7663,109 @@
         "note": "今号は、定番枠は確認を通った論文があったものの、最新枠の全文OAが確認の上限内で通らず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。読んでいて面白かったのは、翼端のすき間を抜ける流れの音のピークが、翼の圧力面に粗さを貼るだけで消えた、という実験でした。渦の動きと音が同じ周波数で揺れていても、それだけでは原因とは言えず、流れを少し変えてみて確かめる、という考え方がなるほどと思いました。ただ、要約の数値や言い方の細部を確かめる検証が通りきらなかったので、載せるのは見送りました。確かめられないことを載せないのが、このアプリの約束です。"
+    },
+    {
+      "date": "2026-10-13",
+      "status": "published",
+      "headline": "粒を含む流れが圧縮機の翼のどこにぶつかるか、そして回る羽根車の中を初めてレーザーで測った古典",
+      "intro": "今日は最新枠を『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』など6語で、定番枠を『supercritical CO2 turbomachinery』『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『centrifugal compressor aerodynamics』など8語で探しました。定番枠の通常検索は14件のうち、ターボ機械の流れが主役で未配信のものが少なく（風車や冷却の既出が中心）、翼列・羽根車まわりの古典を追加で探して、遠心圧縮機の羽根車内部をレーザーで測った1976年の研究を選びました。最新枠は、全文を読めるものとして arXiv の圧縮機翼列の粒子入りDNSを選びました。最新枠は全文のあるプレプリント、定番枠は抄録ベースという組み合わせです。",
+      "picked": [
+        {
+          "id": "arxiv:2605.27010",
+          "title": "線形圧縮機翼列における粒子を含む流れの直接数値シミュレーション（Wang & Zhao, 2026）",
+          "why": "砂のような細かい粒が、翼の前縁・腹側・背中側のどこにどう当たるかを、境界層の乱れまで全部計算して調べた研究です。当たる位置が境界層の遷移の位置と重なって見える一方、著者は『因果関係までは言えない』と慎重に述べていて、そこも含めて読み応えがあります（全文・arXiv プレプリント）。"
+        },
+        {
+          "id": "doi:10.1115/1.3448334",
+          "title": "高速遠心圧縮機の羽根車内部の詳細な流れ計測（Eckardt, 1976）",
+          "why": "回転する羽根車の内部を、新しく開発したレーザー速度計で入口から出口まで測り、入口では理論とおおむね合っていた流れが、翼の背中側からはがれて後流が急に大きくなる様子を示した計測研究です。流れを『測って見せた』古典として選びました（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補と理由",
+          "note": "最新枠では、Journal of Turbomachinery の『圧縮機設計空間の損失評価（軸流・斜流・遠心）』（Stoewer & Mimic、2026、CC BY）が流れの損失が主役で有力でしたが、出版社サイトが自動取得を受け付けず全文を確認できなかったため、抄録の範囲でしか書けないと判断して今回は見送りました。ほかに、この日の arXiv 新着の多くは機械学習や一般の流体力学で、ターボ機械が主役のものはほとんどありませんでした。"
+        },
+        {
+          "title": "配信済みだった候補",
+          "note": "定番枠の通常検索（14件）のうち、風車のウェイクやタービン翼の冷却の論文など、多くが既に配信済みでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 16 / 抄録 8）。arXiv の新着は一般の流体力学（マイクロ流体、乱流の理論など）が多く、ターボ機械が主役のものは限られました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 4 / 抄録 10）。風車のウェイクや冷却の既出が中心でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "被引用の多い順・2018年より前の論文、各語の上位10件",
+            "terms": [
+              "rotating stall axial compressor",
+              "casing treatment stall margin",
+              "vaneless diffuser rotating stall",
+              "compressor surge",
+              "shock loss transonic compressor rotor",
+              "secondary flow turbine cascade",
+              "tip leakage vortex",
+              "centrifugal compressor impeller flow jet wake"
+            ],
+            "hits": 80,
+            "note": "延べ最大80件。分野外の論文の混入が多く、遠心圧縮機の羽根車内部の計測（Eckardt 1976）などが未配信の古典として見つかりました。"
+          },
+          {
+            "name": "arXiv（追加検索・最新）",
+            "scope": "投稿日の新しい順、15通りの検索式×上位6件",
+            "terms": [
+              "rotating stall",
+              "compressor stall",
+              "tip leakage",
+              "tip clearance",
+              "turbine cascade",
+              "compressor cascade",
+              "axial fan",
+              "low-pressure turbine",
+              "centrifugal compressor",
+              "centrifugal pump",
+              "cavitation pump",
+              "secondary flow blade",
+              "shock compressor rotor",
+              "wake turbine blade",
+              "inducer impeller"
+            ],
+            "hits": 90,
+            "note": "延べ最大90件。未配信でターボ機械の流れが主役、かつ全文を読めるものとして、圧縮機翼列の粒子入りDNSを選びました。"
+          }
+        ],
+        "note": "最新枠は全文OA（arXiv）、定番枠は抄録ベースの号です。追加検索はターボ機械が主役のものに絞るために行いました。"
+      },
+      "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、砂の粒の大きさによって、翼のどこにぶつかるかがはっきり変わる、という点でした。小さい粒は流れにほぼ従って背中側の薄い層にも入り込み、大きい粒はまっすぐ飛んで腹側のあちこちにぶつかります。そして、ぶつかり始める位置が流れの乱れ始める区間と重なって見えるけれど、著者は『関連はあるが因果までは言えない』と書いていました。重なって見えるからといって、すぐ原因だとは言わない姿勢が印象に残りました。定番枠の1976年の計測研究は、抄録しか読めていないので、読めた範囲だけを載せています。"
     }
   ]
 }
