@@ -7766,6 +7766,94 @@
         "note": "最新枠は全文OA（arXiv）、定番枠は抄録ベースの号です。追加検索はターボ機械が主役のものに絞るために行いました。"
       },
       "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、砂の粒の大きさによって、翼のどこにぶつかるかがはっきり変わる、という点でした。小さい粒は流れにほぼ従って背中側の薄い層にも入り込み、大きい粒はまっすぐ飛んで腹側のあちこちにぶつかります。そして、ぶつかり始める位置が流れの乱れ始める区間と重なって見えるけれど、著者は『関連はあるが因果までは言えない』と書いていました。重なって見えるからといって、すぐ原因だとは言わない姿勢が印象に残りました。定番枠の1976年の計測研究は、抄録しか読めていないので、読めた範囲だけを載せています。"
+    },
+    {
+      "date": "2026-10-14",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めた最新枠の要約に、言い方の細かな直しが残りました",
+      "intro": "今日は最新枠を『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』で、定番枠を『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』など8語で探しました。定番枠の14件はすべて配信済みだったため、追加で古典を探し、圧縮機の失速後の過渡現象を扱った Moore & Greitzer（1986、パートI）を見つけて、抄録ベースで要約しました。最新枠は、Journal of Fluid Mechanics の CC BY の論文（衝撃波と層流境界層の干渉で、縞模様ができたあとの二次的な不安定を調べた研究）の全文を読んで要約しました。定番枠の要約は忠実性の確認を通りましたが、最新枠の要約は確認を2巡しても、『角度を変えると揺れが現れる』と読めてしまう言い方などの直しが残り、公開の基準を満たしませんでした。全文OAの1本を欠くと号が成り立たないため、無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由",
+          "note": "最新枠の Song, Hao, Ben Hassan Saïdi & Robinet（2026、Journal of Fluid Mechanics、衝撃波と境界層の干渉における二次的な大域不安定性）は、全文（CC BY）を読んで図3点も用意しましたが、2巡目にも『揺れや縞の間隔の倍化は、衝撃波の角度を変えると現れる』と読める箇所（角度は固定のまま、飽和後に現れるのが論文の筋立て）などが残り、確認の上限（1論文2巡）に達したので保留としました。"
+        },
+        {
+          "title": "確認は通ったが使えなかった候補",
+          "note": "定番枠の Moore & Greitzer（1986、失速後の過渡現象の理論・パートI。抄録ベース）は確認を通りましたが、同時に載せる最新枠の全文OAが揃わないため、今号では公開しませんでした。"
+        },
+        {
+          "title": "次点として検討したが見送ったもの",
+          "note": "最新枠の次点として、風車などの回転翼が風洞や水路に囲まれたときの流れの補正モデル（Upfal ら、2026、Journal of Fluid Mechanics）の全文は取得できましたが、流れの現象が主役というより工学モデルの論文で、風車の既出も多いため、ターボ機械の流れを主役にするという方針から外れると判断して要約には進みませんでした。ASME の遷音速圧縮機段の非定常損失の論文（CC BY）は、出版社サイトが自動取得を受け付けず全文を確認できませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 19 / 抄録 5）。arXiv の新着は一般の流体力学（マイクロ流体、乱流の理論、機械学習）が中心で、ターボ機械が主役のものは限られました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。14件すべてが配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "被引用の多い順・2020年まで・各語の上位15件、未配信のみ確認",
+            "terms": [
+              "tip leakage vortex compressor",
+              "rotating stall axial compressor",
+              "centrifugal compressor impeller flow",
+              "turbine cascade secondary flow",
+              "transonic compressor shock",
+              "compressor blade boundary layer separation",
+              "turbine blade film cooling heat transfer endwall"
+            ],
+            "hits": 105,
+            "note": "延べ最大105件。分野外の論文の混入が多く、圧縮機の失速後の過渡現象の理論（Moore & Greitzer 1986 パートI）などが未配信の古典として見つかりました。"
+          },
+          {
+            "name": "OpenAlex（最新・OA・追加検索）",
+            "scope": "2026年6月以降・オープンアクセス・発行日の新しい順、各語の上位12件",
+            "terms": [
+              "compressor stall flow",
+              "turbine blade secondary flow loss",
+              "centrifugal compressor impeller",
+              "tip leakage",
+              "turbomachinery shock wave boundary layer",
+              "axial fan rotor flow",
+              "radial turbine unsteady",
+              "pump turbine flow instability"
+            ],
+            "hits": 96,
+            "note": "延べ最大96件。分野外の論文が多く、全文を読めるターボ機械の流れの論文は、衝撃波と境界層の干渉の基本形を調べた Journal of Fluid Mechanics の1本が主な候補でした。"
+          }
+        ],
+        "note": "今号は、定番枠は確認を通った論文があったものの、最新枠の全文OAが確認の上限内で通らず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。読んでいて『なるほど』と思ったのは、流れが「揺れるのか、揺れないのか」を、条件を少しずつ戻しながら調べる方法でした。衝撃波の角度を下げていったとき、揺れが滑らかに弱まって消えるのか、最初の臨界の角度より手前まで残るのかを見ると、分岐の種類が分かる、というのです。ただ、要約のなかに、角度を変えると揺れが現れるように読める言い方が残り、確認が通りきらなかったので、載せるのは見送りました。確かめられないことを載せないのが、このアプリの約束です。"
     }
   ]
 }
