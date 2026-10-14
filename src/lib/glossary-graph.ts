@@ -22,6 +22,9 @@ export const CATEGORIES: GraphCategory[] = [
     label: "不安定現象",
     color: "#b4451f",
     terms: [
+      "失速渦 (stall vortex)",
+      "失速後過渡現象 (post-stall transient)",
+      "失速セル",
       "サージ",
       "回転失速",
       "B パラメータ",
@@ -133,6 +136,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "損失機構",
     color: "#1a5e54",
     terms: [
+      "直接エントロピー生成率 (DEPR)",
+      "粘性エントロピー生成率 (VEPR)",
       "エントロピー生成",
       "運動量厚さ (momentum thickness)",
       "エントロピー損失係数",
@@ -285,6 +290,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "数値解析・手法",
     color: "#7a6a9b",
     terms: [
+      "標準k-εモデル (standard k-ε model)",
+      "ガラーキン法 (Galerkin method)",
       "点粒子DNS (PP-DNS)",
       "一方向連成 (one-way coupling)",
       "CFD",
@@ -394,6 +401,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "流れ制御・剥離",
     color: "#b9763a",
     terms: [
+      "アクティブ制御ケーシングトリートメント (ACCT)",
+      "噴射圧力 (injection pressure)",
       "境界層剥離",
       "再付着",
       "シンセティックジェット（合成噴流）",
@@ -1337,6 +1346,18 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ジェット・ウェイク構造 (jet-wake structure)", to: "羽根車（インペラ）", label: "遠心羽根車内に現れる流れの形" },
   { from: "ポテンシャル理論 (potential theory)", to: "インデューサ (inducer)", label: "入口部の流れの近似" },
   { from: "システム回転 (system rotation)", to: "コリオリ力", label: "回転系で現れる力" },
+  // --- 遠心圧縮機の ACCT によるサージ制御（Jiang ら 2026）／失速後過渡現象の理論（Moore & Greitzer 1986） ---
+  { from: "アクティブ制御ケーシングトリートメント (ACCT)", to: "ケーシングトリートメント", label: "能動制御版の一種" },
+  { from: "アクティブ制御ケーシングトリートメント (ACCT)", to: "サージ", label: "抑制をねらう" },
+  { from: "噴射圧力 (injection pressure)", to: "アクティブ制御ケーシングトリートメント (ACCT)", label: "この論文での操作量" },
+  { from: "失速渦 (stall vortex)", to: "サージ", label: "この論文ではサージの前兆とみる" },
+  { from: "直接エントロピー生成率 (DEPR)", to: "エントロピー生成", label: "平均流れ由来の項" },
+  { from: "粘性エントロピー生成率 (VEPR)", to: "エントロピー生成", label: "乱流（脈動）由来の項" },
+  { from: "標準k-εモデル (standard k-ε model)", to: "乱流モデル", label: "一種" },
+  { from: "失速後過渡現象 (post-stall transient)", to: "回転失速", label: "方程式で記述する対象" },
+  { from: "失速後過渡現象 (post-stall transient)", to: "サージ", label: "回転失速と結びつけて記述" },
+  { from: "失速セル", to: "回転失速", label: "回転失速を担う領域" },
+  { from: "ガラーキン法 (Galerkin method)", to: "Moore–Greitzer モデル", label: "角度依存を平均して縮約する" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

@@ -7854,6 +7854,94 @@
         "note": "今号は、定番枠は確認を通った論文があったものの、最新枠の全文OAが確認の上限内で通らず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。読んでいて『なるほど』と思ったのは、流れが「揺れるのか、揺れないのか」を、条件を少しずつ戻しながら調べる方法でした。衝撃波の角度を下げていったとき、揺れが滑らかに弱まって消えるのか、最初の臨界の角度より手前まで残るのかを見ると、分岐の種類が分かる、というのです。ただ、要約のなかに、角度を変えると揺れが現れるように読める言い方が残り、確認が通りきらなかったので、載せるのは見送りました。確かめられないことを載せないのが、このアプリの約束です。"
+    },
+    {
+      "date": "2026-10-15",
+      "status": "published",
+      "headline": "遠心圧縮機のサージを、ケーシングからの空気の吹き込みで抑える計算と、失速後の過渡現象を方程式にまとめた古典",
+      "intro": "今日は最新枠を『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』の6語で、定番枠を『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』など8語で探しました。いつもの検索は、風車の後流や翼の冷却、最近の配信済みの論文が大半でした。そこで、2026年6月以降のオープンアクセスの論文を、圧縮機の失速・翼端の漏れ流れ・ポンプ・ディフューザなど12の語で追加検索し、遠心圧縮機のサージを噴射で抑える数値計算の論文（Journal of Applied Fluid Mechanics、全文）を見つけて要約しました。定番枠は、前日に確認を通っていながら、組になる全文の論文が揃わず見送っていた Moore & Greitzer（1986、パートI）を、抄録の範囲だけで載せています。",
+      "picked": [
+        {
+          "id": "doi:10.47176/jafm.19.12.4607",
+          "title": "遠心圧縮機のサージ制御に向けた、能動制御ケーシングトリートメントの数値的検討（Jiang ら, 2026）",
+          "why": "流量を絞ると起きるサージを、ケーシングから空気を吹き込んで抑える方法を、噴射圧力を120〜450 kPaで変えて調べた計算です。圧力上昇の改善は350 kPaで最大の約8.84%、450 kPaでは減り、しかも吹き込みに使った動力のうち有効になるのは約6%という、効果と代償の両方を著者自身が書いている点が読み応えでした（全文・OA）。"
+        },
+        {
+          "id": "doi:10.1115/1.3239887",
+          "title": "軸流圧縮系における失速後過渡現象の理論 パートI：方程式の導出（Moore & Greitzer, 1986）",
+          "why": "圧縮機が失速したあとの過渡的な変化を、3本の方程式にまとめ、回転失速のような動きとサージのような動きが同じ方程式でつながることを示した理論の導出編です。今日の最新枠がサージの抑制なので、『サージとは何か』を支える古典として組み合わせました（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "全文を取得できず見送った候補",
+          "note": "Journal of Turbomachinery の『遷音速圧縮機段の中央断面の非定常損失』（Borcherding, Sandberg & Bode, 2026、CC BY）は、流れの損失が主役で有力でしたが、ASME のサイトが自動取得を受け付けず、全文を確認できませんでした。ほかに、開放型ファンの根元すき間の漏れ流れ（Aerospace Science and Technology）、タービン翼の冷却（Case Studies in Thermal Engineering）、定番枠の Han（2004、タービン翼冷却のレビュー）も、出版社サイトが取得を拒否したため、全文を読めませんでした。"
+        },
+        {
+          "title": "配信済みで除外した候補",
+          "note": "最新枠では、風車の騒音の LES（Rismondo ら、2026）や Savonius 風車のデフレクタ、定番枠では風車の後流・翼の冷却の定番など、14件のうち多くが既に配信済みでした。"
+        },
+        {
+          "title": "今回使わなかった次点",
+          "note": "回転翼が風洞や水路に囲まれたときの補正モデル（Upfal ら、2026、Journal of Fluid Mechanics、CC BY）は全文を取得できましたが、流れの現象よりも工学モデルが主役のため、前日と同じく今回も見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 22 / 抄録 2）。arXiv の新着は一般の流体力学（マイクロ流体、燃焼、数値手法など）が中心で、ターボ機械が主役のものは見当たりませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 6 / 抄録 8）。風車の後流・翼の冷却の定番が中心で、未配信は Han（2004）の1件だけでした。"
+          },
+          {
+            "name": "OpenAlex（最新・OA・追加検索）",
+            "scope": "2026年6月以降・オープンアクセス・発行日の新しい順、各語の上位10件",
+            "terms": [
+              "compressor stall",
+              "tip leakage flow",
+              "turbine cascade flow",
+              "centrifugal pump impeller flow",
+              "axial fan aerodynamics",
+              "turbine blade secondary flow",
+              "rotating stall",
+              "shock wave boundary layer interaction compressor",
+              "diffuser separation",
+              "cavitation pump",
+              "turbine film cooling flow",
+              "compressor blade boundary layer"
+            ],
+            "hits": 120,
+            "note": "延べ最大120件。分野外の論文の混入が多く、全文を読めるターボ機械の流れの論文として、遠心圧縮機のサージ制御の計算（JAFM）を選びました。"
+          }
+        ],
+        "note": "最新枠は全文OA（JAFM）、定番枠は抄録ベースの号です。追加検索は、ターボ機械の流れが主役で全文を読めるものに絞るために行いました。"
+      },
+      "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、空気を吹き込む圧力は高ければ高いほど良いわけではない、という点でした。圧力上昇の改善は350 kPaで最大になり、450 kPaでは減っています。著者は、吹き込み用の穴のまわりで流れの損失が増えることが、その理由を説明しうると書いています（断定ではなく、そうかもしれないという書き方です）。もう一つ印象に残ったのは、吹き込みに使った動力のうち、役に立つ圧力上昇になるのは約6%と、著者自身が見積もっていたことです。それでも、サージが迫ったときの安全策としての価値を理由に勧めていて、効果と代償を並べて書く姿勢が読んでいて信頼できました。定番枠の Moore & Greitzer は抄録しか読めていないので、読めた範囲だけを載せています。"
     }
   ]
 }
