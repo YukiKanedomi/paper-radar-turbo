@@ -7942,6 +7942,103 @@
         "note": "最新枠は全文OA（JAFM）、定番枠は抄録ベースの号です。追加検索は、ターボ機械の流れが主役で全文を読めるものに絞るために行いました。"
       },
       "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、空気を吹き込む圧力は高ければ高いほど良いわけではない、という点でした。圧力上昇の改善は350 kPaで最大になり、450 kPaでは減っています。著者は、吹き込み用の穴のまわりで流れの損失が増えることが、その理由を説明しうると書いています（断定ではなく、そうかもしれないという書き方です）。もう一つ印象に残ったのは、吹き込みに使った動力のうち、役に立つ圧力上昇になるのは約6%と、著者自身が見積もっていたことです。それでも、サージが迫ったときの安全策としての価値を理由に勧めていて、効果と代償を並べて書く姿勢が読んでいて信頼できました。定番枠の Moore & Greitzer は抄録しか読めていないので、読めた範囲だけを載せています。"
+    },
+    {
+      "date": "2026-10-16",
+      "status": "skipped",
+      "headline": "今日はお休み：最新枠・定番枠とも、確認の上限（2巡）でも直しが残りました",
+      "intro": "今日は最新枠を『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』の6語で、定番枠を『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』など8語で探しました。定番枠の候補14件のうち、未配信で分野に合うものはほとんどなかったため、追加で古い論文を探し、軸流圧縮機のケーシングトリートメント（翼の先端の外側の壁に溝を付けて失速しにくくする方法）の流れの仕組みを測定で調べた Smith & Cumpsty（1984）を、抄録ベースで要約しました。最新枠は、全文を読めるオープンアクセスの論文として、エタンの酸化脱水素用の遠心圧縮機で、混合ガスの組成を変えて流れと効率を計算した Wu ら（2026、Journal of Applied Fluid Mechanics）の全文を読んで要約しました。しかし確認を2巡しても、最新枠の論文には、論文の中の表と説明が食い違う箇所の扱いに誤りが残り、定番枠の要約にも抄録から言い切れない一文が残りました。確認は1論文2巡までと決めているため、無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "Wu ら（2026、エタン酸化脱水素用の遠心圧縮機のガス組成の影響、全文OA）は、全文を読んで要約し、図は版権（CC BY-NC-ND）のため載せずに模式図だけを用意しました。1巡目の確認で、論文の中の物性の表（密度や分子量）が、著者の説明（窒素が多いほど重く密度が高い）と数値の上では合わないことなどの指摘を受けて直しましたが、2巡目に、直した箇所の中で「不活性ガス部の平均分子量」と「混合ガス全体の平均分子量」を取り違え、論文にない食い違いを書いてしまっていると指摘されました。確認の上限（2巡）に達したため保留としました。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "Smith & Cumpsty（1984、ケーシングトリートメントの流れの現象、抄録ベース）は、2巡目に、測定の目的についての推測の一文と、略号の書き方などが残り、確認を通りきりませんでした。重大な誤りではありませんが、確認の上限（2巡）に達したため保留としました。"
+        },
+        {
+          "title": "次点として検討したが見送ったもの",
+          "note": "最新枠では、遷音速の遠心圧縮機の RANS の不確かさ評価の論文（Wang ら、2026、Aerospace Science and Technology）は、出版社版は有料で、プレプリントの置き場所も自動取得を受け付けず、全文を確認できませんでした。近傍失速時の翼端の非定常性を調べた論文（Zhang ら、2026）は有料で、抄録も取得できませんでした。機械学習の論文（2023年のプレプリント）は、題名の近い機械学習の論文（C(NN)FD）を既に配信済みで、機械学習が主役になるため見送りました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 16,
+            "note": "最新枠16件（OA 12 / 抄録 4）。うち未配信で分野に合うものは少なく、風車や数値手法、機械学習の論文が多く混じりました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。分野内の13件はすべて配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠・追加検索）",
+            "scope": "被引用の多い順・2020年まで・各語の上位10件、未配信のみ確認",
+            "terms": [
+              "inlet distortion fan compressor",
+              "diffuser stall pressure recovery",
+              "vaneless diffuser rotating stall",
+              "impeller exit jet wake centrifugal",
+              "cavitation pump inducer instability",
+              "compressor casing treatment stall margin",
+              "blade row interaction unsteady compressor",
+              "shock loss transonic compressor rotor",
+              "turbine blade tip leakage heat transfer",
+              "radial turbine flow",
+              "axial fan noise rotor",
+              "centrifugal pump impeller volute flow"
+            ],
+            "hits": 120,
+            "note": "延べ最大120件。分野外の論文（医学・エネルギー全般など）の混入が多く、未配信の古典として、ケーシングトリートメントやベーンレスディフューザの回転失速などの論文が見つかりました。"
+          },
+          {
+            "name": "OpenAlex（最新・OA・追加検索）",
+            "scope": "2026年5月以降・オープンアクセス・発行日の新しい順、各語の上位12件",
+            "terms": [
+              "compressor stall flow",
+              "centrifugal compressor impeller",
+              "tip leakage vortex",
+              "turbine secondary flow loss",
+              "rotating stall",
+              "compressor surge",
+              "diffuser flow separation",
+              "pump cavitation impeller",
+              "turbomachinery shock boundary layer",
+              "axial fan rotor flow",
+              "casing treatment compressor",
+              "compressor tip clearance"
+            ],
+            "hits": 144,
+            "note": "延べ最大144件。分野外が多く、全文を読めるターボ機械の流れの論文は、Journal of Applied Fluid Mechanics（CC BY-NC-ND）の遠心圧縮機の1本が主な候補でした。"
+          }
+        ],
+        "note": "今号は、最新枠・定番枠の両方で、確認の上限（1論文2巡）の時点で直しが残ったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。読んでいて「なるほど」と思ったのは、一本の論文の中でも、結論の文章と、論文の中の表の数字が、いつも同じことを言っているとは限らない、ということでした。「窒素を増やすと重くなって流れが落ち着く」という説明は筋が通って聞こえますが、同じ論文の物性の表を見ると、数字の上ではその通りになっていませんでした。確認の担当にその点を指摘されて、説明をそのまま載せずに、表と突き合わせる大切さを実感しました。ただ、直したあとの文章にも取り違えが残ったので、載せるのは見送りました。確かめられないことを載せないのが、このアプリの約束です。"
     }
   ]
 }
