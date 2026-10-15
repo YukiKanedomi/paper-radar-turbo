@@ -23,7 +23,7 @@ LOG="scripts/logs/daily-$STAMP.log"
   # §0 の忠実性チェックだけ Opus（faithfulness-check エージェント側で model: opus 固定）。
   claude -p "$PROMPT" \
     --model sonnet \
-    --dangerously-skip-permissions
+    --dangerously-skip-permissions \n    --disallowedTools Monitor  # 2026-10-15: 期限切れ通知が最終報告を上書きしたため（10/07, 10/09）
 
   echo "=== done: $(date +%Y-%m-%d\ %H:%M:%S) ==="
 } >>"$LOG" 2>&1

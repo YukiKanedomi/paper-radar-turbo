@@ -16,8 +16,9 @@
 
 ## 2. アーキテクチャ
 ```
-収集(/collect・私が実行) → data/papers.json(蓄積) → React+shadcn 静的サイト → GitHub Pages → スマホ/PC
+収集(collect スキル・毎朝5:00に無人実行) → data/papers.json(蓄積) → React+shadcn 静的サイト → GitHub Pages → スマホ/PC
 ```
+- **自動運転（2026-09-06 確認・稼働中）**: タスクスケジューラ `PaperRadarTurboDaily`（毎日 5:00）が Git bash 経由で `scripts/daily-collect.sh` を起動し、`claude -p --model sonnet` で収集から push まで無人で行う。ログは `scripts/logs/`。止めるときは `Disable-ScheduledTask -TaskName 'PaperRadarTurboDaily'`、状態は `Get-ScheduledTaskInfo -TaskName 'PaperRadarTurboDaily'`。この2PJ（turbo・rotordynamics）だけ bash ランチャーで、他PJの定時ジョブは PowerShell ランチャー（正典は `headless-job` スキル）。
 - データ(`papers.json`)と表示を分離。アプリは静的ビルドで `papers.json` を読み描画。
 - 収集は Claude Code がローカルで実行（arXiv＋OpenAlex/Semantic Scholar）。**ソースはハイブリッド**：OA/arXiv＝全文で深い要約・図/式を拾う／有料＝抄録ベース要約＋原文リンク。
 
@@ -72,7 +73,7 @@
 
 ## 5. デザイン方針
 - **洗練。絵文字は使わない。** 単色アクセント＝深いティール `#1a5e54` ＋ ニュートラル ＋ 暖色ペーパー `#faf9f5`、本文は明朝（Hiragino Mincho/Yu Mincho）、UI/ラベルはサンセリフ。
-- frontend-design で方向維持、theme-factory でトークン化可。**render-check でモバイル/PC両幅を必ず目視**。仕上げに `/code-review`。数式は KaTeX。
+- frontend-design で方向維持。**render-check でモバイル/PC両幅を必ず目視**。仕上げに `/code-review`。数式は KaTeX。
 
 ## 6. 技術スタック / デプロイ
 - Vite + React + TypeScript + Tailwind + shadcn/ui（shadcn MCP活用）。lucide-react は使うが**装飾的絵文字は不可**。
@@ -98,7 +99,7 @@
 6. **v5**：`/collect` を整備（topics.json で検索→papers.json 追記）。定期運用へ。
 
 ## 9. 始め方
-1. 新フォルダ作成（軸受系＝`paper-radar-bearing` / ターボ系＝`paper-radar-turbo`）。git init。
+1. 新フォルダ作成（軸受系＝`paper-radar-rotordynamics` / ターボ系＝`paper-radar-turbo`）。git init。
 2. この `SPEC.md` を `CLAUDE.md` として置き、対応する `topics.json` と `data/papers.json`（種）を入れる。
 3. そのフォルダで Claude Code を起動（新セッション＝shadcn MCP 有効）。
 4. プロンプト（`PROMPTS.md` 参照）を投げて v0→v1 から着手。

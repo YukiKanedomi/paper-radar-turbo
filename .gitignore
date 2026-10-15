@@ -11,3 +11,5 @@ scripts/logs/
 .collect-candidates.json
 
 scratch/
+scripts/.tmp/
+scripts/.tmp*
