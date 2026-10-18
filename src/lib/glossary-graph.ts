@@ -455,6 +455,8 @@ export const CATEGORIES: GraphCategory[] = [
       "体積力 (body force)",
       "多孔質翼 (porous aerofoil)",
       "自由スプール (free-spool)",
+      "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)",
+      "絶対旋回 (absolute swirl)",
     ],
   },
   {
@@ -612,6 +614,9 @@ export const CATEGORIES: GraphCategory[] = [
       "間欠性 (intermittency)",
       "乱流エネルギー生成 (turbulent kinetic energy production)",
       "応力・ひずみ主軸のずれ (principal-axis misalignment)",
+      "速度欠損 (velocity defect)",
+      "ウェイク則 (wake law)",
+      "外層相似性 (outer-layer similarity)",
     ],
   },
 ];
@@ -1358,6 +1363,13 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "失速後過渡現象 (post-stall transient)", to: "サージ", label: "回転失速と結びつけて記述" },
   { from: "失速セル", to: "回転失速", label: "回転失速を担う領域" },
   { from: "ガラーキン法 (Galerkin method)", to: "Moore–Greitzer モデル", label: "角度依存を平均して縮約する" },
+  // --- 強い逆圧力勾配の乱流境界層の成分ごとの外層相似性（Shi ら 2026）／ケーシングトリートメントの流れ現象（Smith & Cumpsty 1984） ---
+  { from: "速度欠損 (velocity defect)", to: "ウェイク則 (wake law)", label: "外層の形をこの式で表す" },
+  { from: "外層相似性 (outer-layer similarity)", to: "速度欠損 (velocity defect)", label: "この論文では欠損の形で検証" },
+  { from: "逆圧力勾配 (adverse pressure gradient)", to: "外層相似性 (outer-layer similarity)", label: "強い場合の成否をこの論文で検討" },
+  { from: "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)", to: "ケーシングトリートメント", label: "一形式" },
+  { from: "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)", to: "失速余裕", label: "この論文では22%改善" },
+  { from: "絶対旋回 (absolute swirl)", to: "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)", label: "高い旋回の流体を除去し反転して戻す" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

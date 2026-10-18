@@ -8096,6 +8096,88 @@
         "note": "今回は、最新枠・定番枠の両方で、確認の上限（1論文2巡）の時点で直しが残ったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。要約を作りながら「なるほど」と思ったのは、論文の言葉の細かい違いが、図の矢印一本でも意味を変えてしまうことでした。たとえば高い空の圧縮機の論文では、失速のきっかけは「コーナー剥離」ではなく「コーナーストール」だと抄録が書いていて、その手前の流れも、抄録は2つの文に分けて書いているだけで、「だからこうなった」とは言っていません。図に矢印を引くと、言っていない因果まで言ったことになってしまいます。確認の担当に指摘されて、矢印の重みを実感しました。直しは2巡で終わらなかったので、載せるのは見送りました。確かめられないことを載せないのが、このアプリの約束です。"
+    },
+    {
+      "date": "2026-10-19",
+      "status": "published",
+      "headline": "強い逆圧力勾配の境界層で、外側の分布が重なる整理を示した最新の計算と、ケーシングトリートメントが何で効くのかを測った定番",
+      "intro": "今日は最新枠を『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』の6語で、定番枠を『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』の8語で探しました。定番枠の候補14件は、すべて配信済みでした。そこで、被引用数の多い順の追加検索を6つの語（遠心圧縮機のディフューザ失速、軸流圧縮機のケーシングトリートメント、ベーン付きディフューザの回転失速など）で行い、未配信の中から、ケーシングトリートメントの働き方を測定で調べた Smith & Cumpsty（1984）を、抄録の範囲だけで載せています。最新枠は、全文を読めて流れの物理が主役のものとして、強い逆圧力勾配の乱流境界層を調べた Shi ら（2026、arXivのプレプリント）を選びました。平らな板の上の境界層の計算で、ターボ機械そのものの計算ではありませんが、翼やディフューザの中の流れにも関わる基礎の話です。",
+      "picked": [
+        {
+          "id": "arxiv:2610.20372",
+          "title": "強い逆圧力勾配下の乱流境界層における、成分ごとの外層相似性（Shi ら, 2026）",
+          "why": "圧力が上がる向きの流れで、境界層が剥離するほど厚くなると、従来の尺度では速度や乱れの分布がそろいません。この論文は、各量を境界層の厚さの半分の高さでの自分自身の値で割ると、圧力勾配の強さが大きく違うデータでも外側の形が重なると示しました。ただし、予測用の新しい尺度ではなく、全部の量を同時にそろえる尺度も見つかっていないと、著者自身が書いています（全文・OA、プレプリント）。"
+        },
+        {
+          "id": "doi:10.1115/1.3239604",
+          "title": "圧縮機ケーシングトリートメントにおける流れの現象（Smith & Cumpsty, 1984）",
+          "why": "ケーシングの溝で失速余裕が22%改善したとき、翼のまわりで何が起きているのかを測定で調べた古典です。結論は『暫定的』と抄録に明記されていて、溝の中の非定常は二の次、主役は端壁近くの損失の大きい流体を取り除き、旋回を反転して前縁付近へ戻すこと、というものです（抄録ベース）。先日のサージ抑制の計算にもつながるケーシングトリートメントの定番として組み合わせました。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "全文を取得できず見送った候補",
+          "note": "Journal of Turbomachinery の『遷音速圧縮機段の中央断面の非定常損失』（Borcherding, Sandberg & Bode, 2026、CC BY）と、高圧タービン段の高温の筋（ホットストリーク）の配置を調べた Aerospace Science and Technology の論文（2026、CC BY）は、流れの損失や二次流れが主役で有力でしたが、出版社サイトが自動取得を拒否し、全文を確認できませんでした。抄録だけでは最新枠のOA全文の条件を満たせないため、見送っています。"
+        },
+        {
+          "title": "配信済みで除外した候補",
+          "note": "定番枠の14件（風車の後流、層流-乱流遷移、サージと回転失速の理論、スパイク型回転失速の判定基準など）は、すべて配信済みでした。"
+        },
+        {
+          "title": "今回使わなかった次点",
+          "note": "最新枠では、翼の前縁形状が平板の空力性能に与える影響（arXiv）や、遠心ポンプの診断のレビューなどもありましたが、流れの現象が主役でなかったり、ターボ機械から遠かったりしたため選びませんでした。定番枠の追加検索では、Takata & Tsukuda（1977）も有力でしたが、同じケーシングトリートメントの話題で重なるため、今回は Smith & Cumpsty を選びました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 20,
+            "note": "最新枠20件（OA 14 / 抄録 6）。arXivは風車や衝撃波、機械学習のものが多く、ターボ機械が主役のものは少なめでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。14件すべてが配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番・追加検索）",
+            "scope": "1970〜2015年の論文・被引用数の多い順、各語の上位15件から未配信のものを確認",
+            "terms": [
+              "centrifugal compressor diffuser stall",
+              "axial compressor casing treatment stall margin",
+              "turbine blade tip leakage heat transfer",
+              "vaned diffuser rotating stall",
+              "pump impeller cavitation flow",
+              "turbomachinery unsteady blade row interaction"
+            ],
+            "hits": 90,
+            "note": "延べ最大90件。分野外の論文の混入が多く、ケーシングトリートメントと遠心圧縮機の失速に関する未配信の定番から、Smith & Cumpsty（1984）を選びました。"
+          }
+        ],
+        "note": "最新枠は全文OA（arXivのプレプリント）、定番枠は抄録ベースの号です。"
+      },
+      "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、『形はそろうが、大きさは条件ごとに違う』と考えるだけで、バラバラに見えたデータがそろう、という発想でした。境界層の論文は、共通の物差しで全部を割ろうとしてもうまくいかなかったのに、各量を自分自身の値で割ると、外側の形が重なると報告しています。ただ、著者はこれを『予測のための新しい物差し』ではなく、データから読み取る診断だと、はっきり断っていました。もう一つ印象に残ったのは、定番のケーシングトリートメントの論文が、結論に『暫定的』と添えていたことです。1984年の論文でも、測って分かったことと、そう考えられることを、きちんと分けて書いていました。定番枠は抄録しか読めていないので、読めた範囲だけを載せています。"
     }
   ]
 }
