@@ -8178,6 +8178,84 @@
         "note": "最新枠は全文OA（arXivのプレプリント）、定番枠は抄録ベースの号です。"
       },
       "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、『形はそろうが、大きさは条件ごとに違う』と考えるだけで、バラバラに見えたデータがそろう、という発想でした。境界層の論文は、共通の物差しで全部を割ろうとしてもうまくいかなかったのに、各量を自分自身の値で割ると、外側の形が重なると報告しています。ただ、著者はこれを『予測のための新しい物差し』ではなく、データから読み取る診断だと、はっきり断っていました。もう一つ印象に残ったのは、定番のケーシングトリートメントの論文が、結論に『暫定的』と添えていたことです。1984年の論文でも、測って分かったことと、そう考えられることを、きちんと分けて書いていました。定番枠は抄録しか読めていないので、読めた範囲だけを載せています。"
+    },
+    {
+      "date": "2026-10-20",
+      "status": "published",
+      "headline": "翼端すき間の流れを実測と突き合わせ、壁際の薄い層がカギだと示した定番と、圧縮機の形式ごとに損失の内訳を比べた最新の論文",
+      "intro": "今日は最新枠を『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』の6語で、定番枠を『tip clearance flow loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』の8語で探しました。定番枠の候補14件は、すべて配信済みでした。そこで、被引用数の多い順の追加検索を6つの語で行い、未配信の中から、翼端すき間流れの計算を実測と突き合わせた Van Zante ら（2000）を、米国航空宇宙局（NASA）の技術報告書の全文を読んで載せています。最新枠は、軸流・混流・遠心の3形式で損失の内訳を比べた Stoewer & Mimic（2026、Journal of Turbomachinery）です。CC-BY で公開されていますが、出版社のサイトが自動での取得を受け付けず全文を読めなかったため、公開された抄録の範囲だけで載せています（抄録ベース）。",
+      "picked": [
+        {
+          "id": "doi:10.1115/1.1314609",
+          "title": "遷音速圧縮機動翼における翼端すき間流れを精度よく数値計算するための推奨事項（Van Zante ら, 2000）",
+          "why": "翼先端のすき間を漏れる流れを、レーザー計測と3次元の流れの計算で突き合わせた論文です。計算が実測に合うかどうかを分けたのは、漏れ流れとケーシング壁のあいだの薄いせん断層を解像できるかで、壁近くの格子を細かくすると、すき間流れの軌跡が実測に近づきました。翼の内側の速度から温度を求めて比べる、という検証のしかたも印象的でした（全文・OA。読んだのは NASA 技術報告書版）。"
+        },
+        {
+          "id": "doi:10.1115/1.4072547",
+          "title": "軸流・混流・遠心の圧縮機形式にわたる、設計空間の損失の総合評価（Stoewer & Mimic, 2026）",
+          "why": "損失を流れの現象ごとに分けて見積もる考え方を、軸流・混流・遠心の3形式に広げて比べた研究です。二次流れ損失の割合が増える向きが、軸流・混流では低い流量係数側、遠心では低い負荷係数側と、形式で異なると抄録は述べます。損失という、ターボ機械の設計の根っこを扱う最新の論文として選びました（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "抄録が取れず見送った候補",
+          "note": "最新枠の『SPOD による遷音速圧縮機の失速近傍の翼端非定常性の解析』（Aerospace Science and Technology, 2026）と『部分スパンのタンデムファン動翼で失速前に現れる空力不安定』は、OpenAlex・Crossref・Semantic Scholar のいずれでも抄録が得られなかったため、載せていません。"
+        },
+        {
+          "title": "最新枠の既配信",
+          "note": "ディフューザの失速、二段ファンのサージなど、流体が主役の最新枠の候補の多くは、すでに配信済みでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 15,
+            "note": "最新枠15件（OA 7 / 抄録 8）。arXivは高超音速境界層・風車・機械学習のものが多く、このうち配信済みを除くと、流体が主役の候補は少なめでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 4 / 抄録 10）。14件すべてが配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番・追加検索）",
+            "scope": "2015年より前の論文・被引用数の多い順、各語の上位12件から未配信のものを確認",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "compressor rotating stall inception",
+              "tip leakage vortex breakdown"
+            ],
+            "hits": 72,
+            "note": "延べ最大72件。分野外の論文の混入が非常に多く、圧縮機の流れに関する未配信の定番は少数でした。その中から、翼端すき間流れを実測と突き合わせた Van Zante ら（2000）を選びました。"
+          }
+        ],
+        "note": "定番枠は全文OA（NASA 技術報告書版）、最新枠は抄録ベースの号です。"
+      },
+      "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、計算がずれていたとき、原因はモデルの賢さではなく、壁のすぐそばの格子の細かさだった、という点です。翼先端のすき間を漏れる流れは、ケーシングの壁とのあいだに薄い層を作ります。そこが粗い格子では表せず、渦の道筋がずれていた、と論文は説明していました。もう一つ印象に残ったのは、下流で測った温度ではなく、翼の内側で測った速度から温度を出して比べ直したところ、「計算は温度を大きく見積もる」という従来の見方が変わった、というところです。ただし、読んだのは NASA の技術報告書版で、ジャーナル版との細かな違いは確かめていません。最新枠の論文は抄録しか読めていないので、読めた範囲だけを載せています。"
     }
   ]
 }

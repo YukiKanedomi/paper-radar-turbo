@@ -155,6 +155,11 @@ export const CATEGORIES: GraphCategory[] = [
       "翼端漏れ流れ (tip leakage flow)",
       "先端すき間流れ（tip clearance flow）",
       "チップクリアランス (tip clearance, TC)",
+      "壁面せん断層 (wall-bounded shear layer)",
+      "誘起渦 (induced vortex)",
+      "二次クリアランス流れ (secondary clearance flow)",
+      "速度差パラメータ (velocity difference parameter)",
+      "端壁損失 (endwall loss)",
       "圧力面ケーシング渦 (casing pressure side vortex)",
       "軸方向渦度 (streamwise vorticity)",
       "表面粗さ (surface roughness)",
@@ -1370,6 +1375,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)", to: "ケーシングトリートメント", label: "一形式" },
   { from: "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)", to: "失速余裕", label: "この論文では22%改善" },
   { from: "絶対旋回 (absolute swirl)", to: "傾斜スロット型ケーシングトリートメント (axial skewed slot casing treatment)", label: "高い旋回の流体を除去し反転して戻す" },
+  // --- Van Zante ら 2000（翼端すき間流れの壁面せん断層）と Stoewer & Mimic 2026（圧縮機形式ごとの損失） ---
+  { from: "壁面せん断層 (wall-bounded shear layer)", to: "せん断層", label: "せん断層の一種" },
+  { from: "壁面せん断層 (wall-bounded shear layer)", to: "誘起渦 (induced vortex)", label: "巻き上がって形成" },
+  { from: "誘起渦 (induced vortex)", to: "先端すき間流れ（tip clearance flow）", label: "主渦の軌跡に影響" },
+  { from: "速度差パラメータ (velocity difference parameter)", to: "壁面せん断層 (wall-bounded shear layer)", label: "強さの目安" },
+  { from: "二次クリアランス流れ (secondary clearance flow)", to: "先端すき間流れ（tip clearance flow）", label: "後縁側で現れる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
