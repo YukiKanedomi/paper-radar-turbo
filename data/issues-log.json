@@ -8256,6 +8256,88 @@
         "note": "定番枠は全文OA（NASA 技術報告書版）、最新枠は抄録ベースの号です。"
       },
       "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、計算がずれていたとき、原因はモデルの賢さではなく、壁のすぐそばの格子の細かさだった、という点です。翼先端のすき間を漏れる流れは、ケーシングの壁とのあいだに薄い層を作ります。そこが粗い格子では表せず、渦の道筋がずれていた、と論文は説明していました。もう一つ印象に残ったのは、下流で測った温度ではなく、翼の内側で測った速度から温度を出して比べ直したところ、「計算は温度を大きく見積もる」という従来の見方が変わった、というところです。ただし、読んだのは NASA の技術報告書版で、ジャーナル版との細かな違いは確かめていません。最新枠の論文は抄録しか読めていないので、読めた範囲だけを載せています。"
+    },
+    {
+      "date": "2026-10-21",
+      "status": "published",
+      "headline": "翼のまわりの衝撃波がフラッタの「折れ曲がり」を決める仕組みを調べた最新の論文と、キャビテーションが広がる流れをインデューサで検証した定番の論文",
+      "intro": "今日は最新枠を『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』の6語で、定番枠を『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』の8語で探しました。定番枠の候補14件のうち、未配信は『タービン翼冷却の研究動向』（Han 2004）1件だけでした。この論文は10月18日に忠実性チェックで保留になっていたため、今日は選びませんでした。そこで、被引用数の多い順の追加検索を10の語で行い、未配信の中から、キャビテーションが広がる3次元流れの計算モデルをインデューサで検証した Bakir ら（2004）を選びました。出版社サイトからは全文を取れなかったため、公開された抄録の範囲だけで載せています（抄録ベース）。最新枠は、arXiv の全文が読めた Saxena & Shrivastava（2026）です。",
+      "picked": [
+        {
+          "id": "arxiv:2610.23298",
+          "title": "弾性軸が遷音速フラッタの境界をどう「折りたたむ」か（Saxena & Shrivastava, 2026）",
+          "why": "翼の断面が音速に近い風でひとりでに揺れを強めるフラッタについて、同じマッハ数にフラッタ速度が複数ある「折れ曲がり」が、翼を支える点（弾性軸）が前縁よりおよそ0.4コード以上前にあるときだけ現れることを、計算の地図で示した論文です。衝撃波が翼面にする仕事を数えて、下側と上側で境目を決める仕組みが違う理由まで説明しています。全文（arXiv）を読んで作りました。ただし、対象は非粘性・2次元の翼型で、ターボ機械の翼列そのものではありません。"
+        },
+        {
+          "id": "doi:10.1080/10236210490258034",
+          "title": "インデューサのキャビテーション挙動の数値計算と実験による検討（Bakir ら, 2004）",
+          "why": "液体と蒸気の密度の差が大きい、広い範囲のキャビテーションを扱える3次元の計算モデルを、実験したインデューサと比べて検証した定番の論文です。気泡の動きを簡略化した式で表し、ある範囲の流量で実験と予測がよく合ったと抄録は述べます（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "全文が取れず見送った最新枠の候補",
+          "note": "最新枠の『遷音速圧縮機段の中央断面の非定常損失の評価』（Borcherding ら、Journal of Turbomachinery, 2026）は、衝撃波と境界層の干渉が損失の大半を生むことを大規模渦シミュレーションで調べた論文で、公開ライセンスも CC-BY でしたが、出版社サイトから全文を取得できませんでした。全文が読めるフラッタの論文を優先し、今回は見送りました。"
+        },
+        {
+          "title": "未配信の定番が少なかった",
+          "note": "定番枠14件は、Han 2004 を除いてすべて配信済みでした。追加検索の結果にも、分野外の論文がたくさん混じっていました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 15,
+            "note": "最新枠15件（OA 9 / 抄録 6）。arXiv は高超音速境界層・風車・機械学習のものが多く、流体が主役でターボ機械に近い候補は限られていました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 4 / 抄録 10）。未配信は1件だけで、10月18日に保留になった論文でした。"
+          },
+          {
+            "name": "OpenAlex（定番・追加検索）",
+            "scope": "2015年より前の論文・被引用数の多い順、各語の上位12件から未配信のものを確認",
+            "terms": [
+              "rotating stall compressor",
+              "secondary flow turbine cascade",
+              "compressor surge stall inception",
+              "tip clearance flow axial compressor",
+              "diffuser stall",
+              "shock wave boundary layer interaction transonic",
+              "cavitation pump impeller",
+              "inlet distortion fan",
+              "boundary layer transition turbine blade",
+              "unsteady wake blade row interaction"
+            ],
+            "hits": 120,
+            "note": "延べ最大120件。分野外の論文の混入がとても多く、使える候補は少数でした。その中から、キャビテーションを扱う Bakir ら（2004）を選びました。"
+          }
+        ],
+        "note": "最新枠は全文OA（arXiv）、定番枠は抄録ベースの号です。"
+      },
+      "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、フラッタの数値実験では、計算を始めるときに翼を1度ずらすという、ごく普通の作法が結果を動かしてしまう、という点です。論文によると、その後に残る半度ほどの平均の傾きで、揺れが強まり始める速さが2.8%変わり、メッシュや時間刻みの違いより大きかったそうです。しかも、エラーも警告も出ないまま判定がひっくり返る落とし穴が3つあるとのことでした。もう一つ印象に残ったのは、境目が折れ曲がる理由を、衝撃波が翼面にする仕事の収支で説明しているところです。ただし、この論文の対象は非粘性・2次元の翼型で、ターボ機械の翼列の話ではありません。定番枠の論文は抄録しか読めていないので、読めた範囲だけを載せています。"
     }
   ]
 }

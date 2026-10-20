@@ -63,6 +63,9 @@ export const CATEGORIES: GraphCategory[] = [
       "準定常近似 (quasi-steady approximation)",
       "無次元周波数 k (reduced frequency)",
       "フラッタ",
+      "遷音速ディップ",
+      "弾性軸",
+      "ヘッド低下",
       "換算速度 (reduced velocity)",
       "空力弾性",
       "自励振動",
@@ -311,6 +314,11 @@ export const CATEGORIES: GraphCategory[] = [
       "不確かさ",
       "リーディングエッジ幾何偏差 (leading-edge geometric deviation)",
       "ガウス過程 (Gaussian process, GP)",
+      "能動学習 (active learning)",
+      "コンフォーマル予測 (conformal prediction)",
+      "レイリー・プレッセット方程式",
+      "多相流",
+      "有限体積法",
       "URANS（k-ω SST）",
       "遺伝的アルゴリズム",
       "動的モード分解 (DMD)",
@@ -1381,6 +1389,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "誘起渦 (induced vortex)", to: "先端すき間流れ（tip clearance flow）", label: "主渦の軌跡に影響" },
   { from: "速度差パラメータ (velocity difference parameter)", to: "壁面せん断層 (wall-bounded shear layer)", label: "強さの目安" },
   { from: "二次クリアランス流れ (secondary clearance flow)", to: "先端すき間流れ（tip clearance flow）", label: "後縁側で現れる" },
+  // --- Saxena & Shrivastava 2026（遷音速フラッタ境界）と Bakir ら 2004（インデューサのキャビテーション） ---
+  { from: "遷音速ディップ", to: "フラッタ", label: "起きる速さが狭いマッハ数帯で下がる現象" },
+  { from: "移動衝撃波 (moving shock)", to: "遷音速ディップ", label: "構造に遅れて動くことが原因と先行研究が説明" },
+  { from: "弾性軸", to: "フラッタ", label: "位置が境界の形を左右" },
+  { from: "能動学習 (active learning)", to: "ガウス過程 (Gaussian process, GP)", label: "代理モデルで次の計算点を選ぶ" },
+  { from: "コンフォーマル予測 (conformal prediction)", to: "ガウス過程 (Gaussian process, GP)", label: "予測の誤り率に上限を付ける" },
+  { from: "レイリー・プレッセット方程式", to: "キャビテーション", label: "気泡の成長・崩壊を記述" },
+  { from: "ヘッド低下", to: "キャビテーション", label: "進行すると起こる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
