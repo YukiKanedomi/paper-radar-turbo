@@ -8338,6 +8338,59 @@
         "note": "最新枠は全文OA（arXiv）、定番枠は抄録ベースの号です。"
       },
       "afterword": "— 編集担当より\n今日読んで『なるほど』と思ったのは、フラッタの数値実験では、計算を始めるときに翼を1度ずらすという、ごく普通の作法が結果を動かしてしまう、という点です。論文によると、その後に残る半度ほどの平均の傾きで、揺れが強まり始める速さが2.8%変わり、メッシュや時間刻みの違いより大きかったそうです。しかも、エラーも警告も出ないまま判定がひっくり返る落とし穴が3つあるとのことでした。もう一つ印象に残ったのは、境目が折れ曲がる理由を、衝撃波が翼面にする仕事の収支で説明しているところです。ただし、この論文の対象は非粘性・2次元の翼型で、ターボ機械の翼列の話ではありません。定番枠の論文は抄録しか読めていないので、読めた範囲だけを載せています。"
+    },
+    {
+      "date": "2026-10-22",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文を、実際に読める形で入手できませんでした",
+      "intro": "今日は最新枠を『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』の6語で、定番枠を『turbine aerodynamics』から『shock boundary layer interaction compressor』までの8語で探しました。定番枠の候補14件は、すべて配信済みでした。そこで、検索語を変えて被引用の多い定番を探し直し、圧縮機のコーナー剥離をラージエディシミュレーションで調べた Gao ら（2015、抄録ベース）を候補にしました。ただ、この号は『必ず1件は全文を読めるオープンアクセスの論文』が条件です。最新枠で全文を読めそうな論文を探したところ、出版社や論文サーバのページが、こちらからの取得をどれも断ってきました（アクセス拒否）。全文を読めないまま、読んだことにして要約は書けないので、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "開放型ファンの根元すき間と漏れ流れを調べた He ら（2026）、遷音速圧縮機段の非定常な損失をエントロピー生成で調べた Borcherding ら（2026）、圧縮機の非同期振動を調べた Tharreau ら（2026）、高圧タービン段の高温ガス偏りを調べた Dahal ら（2026）を検討しました。いずれもオープンアクセスとされていますが、全文の取得を断られ、読めたのは抄録までです。全文の裏取りができないため、見送りました。"
+        },
+        {
+          "title": "定番枠について",
+          "note": "今日の検索語の範囲では、未配信の定番がありませんでした。検索語を変えて探した候補（Gao ら 2015 など）は、抄録ベースで載せられる見込みでしたが、全文OAの1件が揃わないため作り込みはしていません。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 10,
+            "note": "最新枠10件（OA 8 / 抄録 2）。多くは風車や冷却など、流れの物理が主役ではないものでした。全文を取れる論文が見つからず、検索語を変えた追加検索（CC-BYの新着）も行いましたが、同様でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。14件すべてが配信済みでした。追加で別の検索語（圧縮機のコーナー剥離、翼のフラッタ等）も試しました。"
+          }
+        ],
+        "note": "今回は、全文を読めるオープンアクセスの論文を1件確保できなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。「オープンアクセス」と書かれていても、全文をいつでも読めるとは限らない、というのが今日の学びでした。公開されている論文でも、読み込みを断られてしまうことがあります。そうなると抄録の数行しか確かめられず、そこから先を書けば推測になってしまいます。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
     }
   ]
 }
