@@ -8391,6 +8391,59 @@
         "note": "今回は、全文を読めるオープンアクセスの論文を1件確保できなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。「オープンアクセス」と書かれていても、全文をいつでも読めるとは限らない、というのが今日の学びでした。公開されている論文でも、読み込みを断られてしまうことがあります。そうなると抄録の数行しか確かめられず、そこから先を書けば推測になってしまいます。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
+    },
+    {
+      "date": "2026-10-23",
+      "status": "skipped",
+      "headline": "今日はお休み：読める形で入手できた論文が、最新・定番の2件に届きませんでした",
+      "intro": "今日は最新枠を『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』の6語で、定番枠を『wake mixing unsteady turbomachinery』から『inlet distortion fan aerodynamics』までの8語で探しました。定番枠の上位は風車のウェイクなどが多く、圧縮機・タービンの流れを扱うものの大半は配信済みでした。未配信で良さそうだったのは、タービン翼冷却を概説した Han（2004、オープンアクセス）と、乱れた流入のもとで遷音速圧縮機の失速直前の翼端の揺らぎを調べた Zhang ら（2026）です。ただ、Han 2004 は出版社サイトが取得を断り、全文を読めませんでした（この論文は10月18日にも要約の裏取りが通らず見送っています）。Zhang らは抄録そのものを取得できず、要約の根拠がありませんでした。全文が読める候補として、前翼縁にこぶ状の凹凸（チューバクル）を付けた圧縮機翼列の実験（arXiv）も見つけましたが、もう1件が揃わないため作り込みはしていません。読んでいないものを読んだことにはできないので、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "遷音速圧縮機の失速直前の翼端の揺らぎを調べた Zhang ら（2026）は、抄録を入手できず見送りました。遠心圧縮機のRANS不確かさ評価（2026）は、読めるのが投稿前の版（SSRN）で、手法寄りでもあるため選びませんでした。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "Han（2004）『タービン翼冷却の最近の研究』は、出版社サイト（Hindawi/Wiley）が取得を断り、全文を確認できませんでした。風車関連の上位候補は、流れの主役という本アプリの方針から外れるため選んでいません。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 19,
+            "note": "最新枠19件（OA 15 / 抄録 4）。風車・渦法ソルバ・機械学習が目立ち、圧縮機の流れが主役で未配信のものは少数でした。追加でarXivを圧縮機の失速で直接検索し、チューバクル翼列の実験を見つけました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 6 / 抄録 8）。大半が風車か配信済みで、未配信の関連候補は Han（2004）のみでした。"
+          }
+        ],
+        "note": "全文または抄録を実際に読める形で確保できた論文が2件に届かず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。検索結果には風車の論文がたくさん並んでいて、同じ『翼まわりの流れ』でも、圧縮機やタービンの中を扱う論文は意外と絞られるのだな、というのが今日の気づきでした。良さそうな論文があっても、出版社のページが読ませてくれなければ、要約の根拠が確かめられません。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
     }
   ]
 }
