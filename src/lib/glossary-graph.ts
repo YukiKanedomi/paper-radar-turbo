@@ -132,6 +132,7 @@ export const CATEGORIES: GraphCategory[] = [
       "リミットサイクル (limit cycle)",
       "後方進行回転失速 (backward traveling rotating stall)",
       "ハンプ特性 (hump characteristic)",
+      "衝撃波振動",
     ],
   },
   {
@@ -291,6 +292,7 @@ export const CATEGORIES: GraphCategory[] = [
       "インデューサ失速 (inducer stall)",
       "通路衝撃波 (passage shock)",
       "低運動量領域 (low-momentum region)",
+      "二重反転軸流圧縮機",
     ],
   },
   {
@@ -372,6 +374,10 @@ export const CATEGORIES: GraphCategory[] = [
       "アンサンブル平均 (ensemble average)",
       "相対マッハ数 (relative Mach number)",
       "凍結ロータ法 (frozen rotor)",
+      "ウェーブレット変換",
+      "相対座標系",
+      "五孔プローブ",
+      "熱線風速計 (hot-wire anemometer)",
     ],
   },
   {
@@ -490,6 +496,8 @@ export const CATEGORIES: GraphCategory[] = [
       "非軸対称エンドウォールプロファイリング (non-axisymmetric endwall profiling)",
       "トレーリングエッジ渦 (trailing edge vortex, TEV)",
       "リング渦 (ring vortex, RV)",
+      "端壁境界層 (endwall boundary layer)",
+      "コラテラル入口境界層",
     ],
   },
   {

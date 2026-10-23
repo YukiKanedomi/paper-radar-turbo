@@ -8444,6 +8444,102 @@
         "note": "全文または抄録を実際に読める形で確保できた論文が2件に届かず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。検索結果には風車の論文がたくさん並んでいて、同じ『翼まわりの流れ』でも、圧縮機やタービンの中を扱う論文は意外と絞られるのだな、というのが今日の気づきでした。良さそうな論文があっても、出版社のページが読ませてくれなければ、要約の根拠が確かめられません。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
+    },
+    {
+      "date": "2026-10-24",
+      "status": "published",
+      "headline": "二重反転圧縮機で失速の前に現れる約700 Hzの揺れを全周の計算で追った最新の論文と、タービン翼列の通路内の3次元流れを測った1977年の定番の論文",
+      "intro": "今日は最新枠を『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』の6語で、定番枠を『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』の8語で探しました。定番枠の候補14件は、いずれも配信済みでした。そこで、掲載誌（Journal of Turbomachinery など4誌）を指定した追加検索を、被引用数の多い順に行い、未配信の中から、タービン翼列の通路を詳しく測った Langston ら（1977）を選びました。出版社サイトからは全文を取れないため、公開された抄録の範囲だけで載せています（抄録ベース）。最新枠の候補にあった OpenAlex の「OA」表示の論文は、出版社サイトに入れず全文が取れませんでした。そこで、CC-BY で公開された MDPI の論文を別に探し、全文（PDF）が読めた Zheng ら（2026）を選びました。",
+      "picked": [
+        {
+          "id": "doi:10.3390/aerospace13100942",
+          "title": "高速の二重反転軸流圧縮機における失速の始まりと伝わり方（Zheng ら, 2026）",
+          "why": "前後2段のロータが逆向きに回る圧縮機で、失速の前に約700 Hzの低周波の揺れが後ろ側ロータの出口から現れて育つことを、全周の非定常計算で追った論文です。揺れは約370 Hz（後ろ側ロータと一緒に回る見方）で、衝撃波の前後の動きと結びつけられ、衝撃波の振れが増えたあとに通路のふさがりが増えていきました。ただし、1つの形状・条件の計算で、失速の引き金を1つに特定したものではありません。全文（CC-BY）を読んで作りました。"
+        },
+        {
+          "id": "doi:10.1115/1.3446247",
+          "title": "タービン翼列の通路内の3次元流れ（Langston ら, 1977）",
+          "why": "大型の亜音速の平面翼列で、通路の前後と通路内6つの断面を五孔プローブで測り、端壁の境界層も熱線で測った古典的な実験です。抄録は、3次元のはく離が端壁の流れの重要な特徴であり、端壁境界層の大部分が入口よりとても薄いと述べます（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "全文が取れず見送った最新枠の候補",
+          "note": "OpenAlex で「OA（ハイブリッド）」と出ていた水ジェットポンプの論文（Ocean Engineering, 2026）は、出版社サイトがアクセスを断ったため、全文を読めませんでした。流体が主役でしたが、全文を読めない以上、深く載せられないので見送りました。"
+        },
+        {
+          "title": "未配信の定番が少なかった",
+          "note": "定番枠14件はすべて配信済みでした。追加検索には、分野外の論文もたくさん混じり、使える候補は少数でした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 14,
+            "note": "最新枠14件（OA 7 / 抄録 7）。arXiv の候補は機械学習や渦粒子法が中心で、ターボ機械の流れが主役のものはありませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。すべて配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番・追加検索）",
+            "scope": "掲載誌を指定（Journal of Turbomachinery / Journal of Fluids Engineering / Journal of Engineering for Gas Turbines and Power / Journal of Engineering for Power）、被引用数の多い順",
+            "terms": [
+              "compressor",
+              "pump cavitation",
+              "diffuser",
+              "turbine cascade",
+              "stall",
+              "vortex",
+              "wake",
+              "shock"
+            ],
+            "note": "各誌×各語の上位8件までを見て、未配信のものを確認（正確な件数は数えていません）。その中から Langston ら（1977）を選びました。"
+          },
+          {
+            "name": "OpenAlex（最新・CC-BY の全文探し）",
+            "scope": "2026年4月以降・CC-BY/CC0・語をタイトルに含む論文",
+            "terms": [
+              "tip leakage",
+              "rotating stall",
+              "axial compressor",
+              "centrifugal compressor",
+              "turbine blade",
+              "cavitation",
+              "centrifugal pump",
+              "shock wave boundary layer",
+              "secondary flow",
+              "diffuser"
+            ],
+            "note": "各語の上位8件までを見ました（正確な件数は数えていません）。その中から、全文を読めた MDPI の Zheng ら（2026）を選びました。"
+          }
+        ],
+        "note": "最新枠は全文OA（CC-BY・PDF）、定番枠は抄録ベースの号です。"
+      },
+      "afterword": "— 編集担当より\n今日読んで「なるほど」と思ったのは、同じ揺れでも、止まって見るか、回る翼と一緒に見るかで周波数が違って見える、という点です。この論文では、止まって見ると約700 Hzの揺れが、後ろ側のロータの目では約370 Hz、逆向きに回る前側のロータの目では約980 Hzに見えていて、それが同じ揺れの別の見え方として説明されていました。もう一つ、失速の前に何かが急に起きるというより、数回転かけて揺れが育っていく、という描き方も新鮮でした。ただし、衝撃波の揺れが失速の本当の引き金だと言い切っているわけではなく、論文も、この1つの形状・条件の結果だと断っています。定番枠の論文は抄録しか読めていないので、抄録に書かれた範囲だけを載せています。"
     }
   ]
 }
