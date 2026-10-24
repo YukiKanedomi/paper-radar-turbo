@@ -8540,6 +8540,59 @@
         "note": "最新枠は全文OA（CC-BY・PDF）、定番枠は抄録ベースの号です。"
       },
       "afterword": "— 編集担当より\n今日読んで「なるほど」と思ったのは、同じ揺れでも、止まって見るか、回る翼と一緒に見るかで周波数が違って見える、という点です。この論文では、止まって見ると約700 Hzの揺れが、後ろ側のロータの目では約370 Hz、逆向きに回る前側のロータの目では約980 Hzに見えていて、それが同じ揺れの別の見え方として説明されていました。もう一つ、失速の前に何かが急に起きるというより、数回転かけて揺れが育っていく、という描き方も新鮮でした。ただし、衝撃波の揺れが失速の本当の引き金だと言い切っているわけではなく、論文も、この1つの形状・条件の結果だと断っています。定番枠の論文は抄録しか読めていないので、抄録に書かれた範囲だけを載せています。"
+    },
+    {
+      "date": "2026-10-25",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文を、流れの主役という方針に合う形で確保できませんでした",
+      "intro": "今日は最新枠を『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』の6語で、定番枠を『secondary flow endwall turbomachinery』から『corner separation compressor』までの8語で探しました。定番枠の上位は、ほとんどが配信済みの圧縮機・タービンの古典でした。未配信で候補にしたのは、翼端すき間の流れを概説した Energies 2018 のレビュー（CC-BY のオープンアクセス）と、高負荷圧縮機翼列のコーナー剥離を吸込みで抑える 2026 年の論文です。ただ、レビューは出版社サイト(MDPI)が取得を断り全文を読めず、コーナー剥離の論文は抄録そのものを入手できませんでした。arXiv の新着も調べましたが、圧縮機・タービンの流れを主役にした未配信のものは機械学習の手法論文ばかりでした。読んでいないものを読んだことにはできないので、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "高負荷圧縮機翼列のコーナー剥離と吸込み制御（Wang ら 2026）と、高空低レイノルズ数での軸流圧縮機の失速付近の損失（Qiao ら 2026）は、抄録を入手できず見送りました。arXiv の新着は機械学習による予測・最適化が中心で、流れの現象が主役のものがありませんでした。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "翼端すき間の流れを扱うレビュー（Energies 2018）は CC-BY ですが、出版社サイトが取得を断り全文を確認できませんでした。高被引用の古典の多くは配信済みでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 14,
+            "note": "最新枠14件（OA 6 / 抄録 8）。arXiv は機械学習・風車・浮体式風車が中心でした。追加で arXiv を圧縮機・タービン関連語で直接検索しましたが、流れが主役の未配信論文は見つかりませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 3 / 抄録 11）。大半が配信済みで、未配信は周辺分野（プラズマアクチュエータ等）や抄録のみのものでした。"
+          }
+        ],
+        "note": "全文または抄録を実際に読める形で確保できた論文が2件に届かず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日もお休みです。検索結果を眺めていて、流れの現象そのものを調べた論文と、機械学習で予測する論文とでは、同じ『圧縮機』という言葉でも読みたいものがずいぶん違うな、というのが今日の気づきでした。良さそうな論文があっても、出版社のページが読ませてくれなければ、要約の根拠が確かめられません。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
     }
   ]
 }
