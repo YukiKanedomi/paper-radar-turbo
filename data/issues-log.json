@@ -8593,6 +8593,59 @@
         "note": "全文または抄録を実際に読める形で確保できた論文が2件に届かず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日もお休みです。検索結果を眺めていて、流れの現象そのものを調べた論文と、機械学習で予測する論文とでは、同じ『圧縮機』という言葉でも読みたいものがずいぶん違うな、というのが今日の気づきでした。良さそうな論文があっても、出版社のページが読ませてくれなければ、要約の根拠が確かめられません。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
+    },
+    {
+      "date": "2026-10-26",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文を確保できませんでした",
+      "intro": "今日は最新枠を『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』の6語で、定番枠を『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』の8語で探しました。上位の多くは配信済みの論文でした。未配信で候補にしたのは、軸流ファンの動静翼干渉を解析的に扱った論文（Bellelli ら 2026、J. Sound Vib.、CC-BY）と、高圧タービン段のホットストリークを調べた論文（Dahal ら 2026、Aerosp. Sci. Technol.、CC-BY）です。どちらも CC-BY のオープンアクセスですが、出版社のサイトが取得を断り、全文も抄録も読めませんでした。定番枠では翼端漏れ渦をステレオPIVで調べた論文（Dreyer ら 2014）も見ましたが、機関リポジトリ側も取得できませんでした。読んでいないものを読んだことにはできないので、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "動静翼干渉の解析モデル（Bellelli ら 2026）とホットストリークの熱流体検証（Dahal ら 2026）は、出版社サイトが取得を断り内容を確認できず見送りました。arXiv の新着は風車の空力や機械学習が中心で、圧縮機・タービンの流れが主役の未配信論文はありませんでした。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "翼端漏れ渦のステレオPIV（Dreyer ら 2014）は機関リポジトリから取得できず見送りました。高被引用の古典の多くは配信済みでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 19,
+            "note": "最新枠19件（OA 13 / 抄録 6）。arXiv は風車・機械学習が中心で、既に配信済みのものも含まれていました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 5 / 抄録 9）。ほぼ全てが配信済みでした。追加で OpenAlex を別の語で調べ、翼端漏れ渦の論文を見つけましたが取得できませんでした。"
+          }
+        ],
+        "note": "全文または抄録を実際に読める形で確保できた論文が2件に届かず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日もお休みです。候補を見比べていて、CC-BY（自由に読んでよい）と表示されている論文でも、出版社のページが自動の取得を断ることがある、というのが今日の気づきでした。『読んでよい』と『この仕組みで読める』は別なんですね。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
     }
   ]
 }
