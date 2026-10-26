@@ -8646,6 +8646,59 @@
         "note": "全文または抄録を実際に読める形で確保できた論文が2件に届かず、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日もお休みです。候補を見比べていて、CC-BY（自由に読んでよい）と表示されている論文でも、出版社のページが自動の取得を断ることがある、というのが今日の気づきでした。『読んでよい』と『この仕組みで読める』は別なんですね。確かめられないことは載せない、というのがこのアプリの約束なので、今日は無理をしませんでした。"
+    },
+    {
+      "date": "2026-10-27",
+      "status": "skipped",
+      "headline": "今日はお休み：定番枠が配信済みの論文だけで、新しく出せる組み合わせがありませんでした",
+      "intro": "今日は最新枠を『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』の6語で、定番枠を『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』『tip leakage vortex loss』『tip clearance flow loss』の8語で探しました。定番枠の上位14件は、風車の後流など主題が外れるものも含め、すべて配信済みか分野外でした。最新枠は15件のうち、arXivの新着5件は乱流データの圧縮や機械学習による流れ場予測が主役で、流れの物理が主役という方針に合いません。OpenAlexの新着では、遠心圧縮機ディフューザの不安定性、二段ファンのサージモード、サイクル計算などは配信済みでした。未配信の圧縮機失速・翼端流れ関連の数件は有料で、抄録も取得できず中身を確認できませんでした。読めていないものを要約することはできないため、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "arXiv新着5件（乱流データ圧縮、非構造格子の流れ場予測、微小キャビテーションの流体物性フィッティング、オートエンコーダ圧縮、河川内タービン後流のML予測）は機械学習・手法が主役のため見送り。圧縮機失速の警報（深層学習）、タンデムファンの失速前の不安定性、翼端漏れ流れの熱的制御、近失速のSPOD解析などは有料で抄録も取れず、内容を確認できないため見送りました。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "上位14件は、グライツァー1976のPart I/II、Day 2015、Vo/Tan/Greitzer 2008など、ほぼ全てが配信済みです。残りは風車の空力でテーマが外れます。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 15,
+            "note": "最新枠15件（OA 7 / 抄録 8）。arXivはML・乱流データ圧縮が中心、OpenAlexの有力な未配信候補は有料で中身を確認できませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。全件が配信済みまたはテーマ外でした。"
+          }
+        ],
+        "note": "流れ主役で、中身を実際に確認できる未配信の論文が揃わなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日もお休みです。検索語を毎日入れ替えても、サージや失速のような中心的な話題では、被引用の多い定番はもうほとんど配信済みになっている、というのが今日の気づきでした。それだけ積み上げてきたということだと思うと、少し嬉しくもあります。確かめられないものは載せないので、今日は無理をしませんでした。"
     }
   ]
 }
