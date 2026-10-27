@@ -8699,6 +8699,59 @@
         "note": "流れ主役で、中身を実際に確認できる未配信の論文が揃わなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日もお休みです。検索語を毎日入れ替えても、サージや失速のような中心的な話題では、被引用の多い定番はもうほとんど配信済みになっている、というのが今日の気づきでした。それだけ積み上げてきたということだと思うと、少し嬉しくもあります。確かめられないものは載せないので、今日は無理をしませんでした。"
+    },
+    {
+      "date": "2026-10-28",
+      "status": "skipped",
+      "headline": "今日はお休み：定番枠がすべて配信済みで、最新枠の流体系候補は中身を確認できませんでした",
+      "intro": "今日は最新枠を『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』の6語で、定番枠をそれに『turbomachinery loss mechanisms』『wind turbine wake aerodynamics』を加えた8語で探しました。定番枠の上位14件は、デントンの損失メカニズム（1993）をはじめ、すべて配信済みでした。追加で別の検索語も試しましたが、流体機械の未配信の定番は見つかりませんでした。最新枠は14件のうち、arXivの新着は境界層の記号回帰や風車荷重のスペクトルなどでターボ機械の流れが主役ではなく、OpenAlexの遷音速圧縮機の非定常損失評価（OA）や翼端漏れ流れの熱的制御などは抄録を取得できず、中身を確認できませんでした。読めていないものを要約することはできないため、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "arXiv新着の多段フィン推進・境界層の記号回帰・湿潤対流のエネルギーカスケード・風車ロード荷重のスペクトルは、ターボ機械の流れが主役でないため見送り。遷音速圧縮機段の非定常損失評価（Borcherding ら 2026）、翼端漏れ流れの熱的制御、粗さ付き遷音速圧縮機の近失速流れなどは、抄録・本文が取得できず内容を確認できないため見送りました。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "上位14件は、デントン1993、風車後流の各種レビュー、『Origins and Structure of Spike-Type Rotating Stall』（2014）など、ほぼ全てが配信済みです。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "最新枠14件（OA 6 / 抄録 8）。arXivはターボ機械が主役でなく、OpenAlexの有力な未配信候補は中身を確認できませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 5 / 抄録 9）。全件が配信済みでした。"
+          }
+        ],
+        "note": "流れ主役で、中身を実際に確認できる未配信の論文が揃わなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日もお休みです。検索語を入れ替えて遷音速圧縮機や翼列の遷移といった別の角度から探しても、定番はこれまでの配信でほぼ拾い切っている、というのが今日の気づきでした。新しい話題を探す側にも、そろそろ次の切り口が要るのかもしれません。確かめられないものは載せないので、今日は無理をしませんでした。"
     }
   ]
 }
