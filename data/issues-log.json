@@ -8816,6 +8816,59 @@
         "note": "公開は2件（全文を読めたOA 1件＋抄録ベース 1件）。出版社が全文を渡さない論文が続いており、確かめられないものは載せない方針を保っています。"
       },
       "afterword": "— 編集担当より\n今日の気づきは、シミュレーションの『ノイズ』の使い方です。ふつうは邪魔者に思えるゆらぎを、この論文は『乱れの大きさを決める量』として扱い、粒子の数を変えると予想どおりの比でゆらぎが変わることを確かめていました。もう一つは、フィルム冷却の効き目を、熱を直接測るのではなく『物質の移動』に置き換えて測るという発想です。どちらも、測りにくいものを、測りやすい別のものに言い換えて捉える工夫だなと感じました。ただ、定番のレビューは全文を読めておらず、抄録の範囲の紹介にとどまっています。"
+    },
+    {
+      "date": "2026-10-30",
+      "status": "skipped",
+      "headline": "今日はお休み：未配信で全文を読めるOA論文を確保できませんでした",
+      "intro": "今日は最新枠を『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』『surge rotating stall』『rotating stall inception spike』『secondary flow endwall turbomachinery』の6語で、定番枠を『tip leakage vortex loss』『turbomachinery loss mechanisms』などを加えた8語で探しました。定番枠の上位14件のうち13件は配信済みで、残る1件（混流ポンプの翼端すき間とエントロピー生成、2020）は抄録も取得できませんでした。最新枠18件のうち未配信でOAなのは、遷音速遠心圧縮機のRANS不確かさ評価（出版前原稿の置き場から全文を取れず）、プロペラのスピナー閉塞補正（出版社が全文の取得を拒否、ターボ機械の流れとしても主役から外れる）、機械学習や風車の話題などでした。抄録も読めないものは要約できないため、今日は出さずに前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補と理由（最新枠）",
+          "note": "遷音速遠心圧縮機のRANS構造不確かさ評価（Wang ら 2026）とプロペラのスピナー/ナセル閉塞補正（Bontempo & Manna 2026）は、全文を取得できず見送り。遷音速圧縮機の近失速翼端非定常のSPOD解析（Zhang ら 2026）と調整可能な静翼のフィルム冷却（Jin ら 2026）は、抄録も取得できず見送り。他は機械学習や風車・凧の話題で、ターボ機械の流れが主役でないため見送りました。"
+        },
+        {
+          "title": "見送った候補と理由（定番枠）",
+          "note": "上位14件のうち13件は配信済み（デントン1993、失速・サージ75年の総説、スパイク型失速の条件など）。未配信の混流ポンプの翼端すき間の論文は抄録を取得できませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 18,
+            "note": "最新枠18件（OA 13 / 抄録 5）。未配信で中身を確認できるものがありませんでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 0 / 抄録 14）。13件が配信済みで、残る1件は抄録を取得できませんでした。"
+          }
+        ],
+        "note": "全文を読める流れ主役のOA論文が揃わなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
+      },
+      "afterword": "— 編集担当より\n今日もお休みです。定番枠の上位がほぼ配信済みになってきたこと、そして出版社のページが全文を渡してくれない日が続いていることが、今日の気づきでした。確かめられないものは載せない、という約束を優先して、無理に埋めませんでした。"
     }
   ]
 }
