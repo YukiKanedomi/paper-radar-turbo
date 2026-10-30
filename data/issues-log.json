@@ -8869,6 +8869,84 @@
         "note": "全文を読める流れ主役のOA論文が揃わなかったため、公開を見送りました。歪な号より『出さない』を選ぶ方針です。"
       },
       "afterword": "— 編集担当より\n今日もお休みです。定番枠の上位がほぼ配信済みになってきたこと、そして出版社のページが全文を渡してくれない日が続いていることが、今日の気づきでした。確かめられないものは載せない、という約束を優先して、無理に埋めませんでした。"
+    },
+    {
+      "date": "2026-10-31",
+      "status": "published",
+      "headline": "翼端のすき間は「狭ければ良い」わけではない／遷音速圧縮機の損失はどこで生まれるか",
+      "intro": "今日は最新枠を『tip leakage vortex loss』『tip clearance flow loss』『turbomachinery loss mechanisms』『shock boundary layer interaction compressor』『wake mixing unsteady turbomachinery』『boundary layer transition turbine blade』の6語で、定番枠を8語で探しました。ところが定番枠の上位14件はすべて配信済みでした。そこで定番枠だけ、近い分野の語（compressor stall inception など）で被引用数の多い論文をOpenAlexで追加で探し、翼端漏れ渦をすき間幅を変えながら測った2014年の実験論文（Dreyer ら）を見つけました。全文を公開版（EPFLのリポジトリ）から読めたので、こちらを全文ベースで作り込んでいます。最新枠は、遷音速圧縮機段の損失をLESで調べた2026年の論文（Borcherding ら）を選びました。出版社のページが全文の取得を拒否したため、こちらは抄録の範囲だけで要約しています。",
+      "picked": [
+        {
+          "id": "doi:10.1007/s00348-014-1849-7",
+          "title": "Mind the gap: a new insight into the tip leakage vortex using stereo-PIV（Dreyer ら 2014）",
+          "why": "翼端のすき間の幅で渦の強さが変わり、ある幅で最大になる、という流れの物理が主役の実験研究。全文を読めて、図は転載できないので概念図で補いました。"
+        },
+        {
+          "id": "doi:10.1115/1.4072736",
+          "title": "Unsteady Loss Assessment of a Transonic Compressor Stage Midspan Section（Borcherding ら 2026）",
+          "why": "衝撃波と境界層の干渉、ロータ後流という流れ現象から損失の起源を調べた最新の研究。抄録ベースです。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補（最新枠）",
+          "note": "圧縮機の翼端すき間流れの熱的制御（Hachelfi ら 2026）と、粗さ付き遷音速圧縮機の近失速流れ（Akolekar ら 2026）は、抄録を取得できず見送りました。超音速乱流境界層の曲率効果を調べたarXivの論文（Feitosa de Souza ら 2026）などは、ターボ機械の流れが主役ではないため今回は見送りました。ほかのarXiv候補も流体力学の基礎研究や数値手法が中心でした。"
+        },
+        {
+          "title": "定番枠について",
+          "note": "定番枠の上位14件はすべて配信済みでした。今日は追加の検索で新しい定番を探しています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade"
+            ],
+            "hits": 24,
+            "note": "最新枠24件（OA 17 / 抄録 7）。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 6 / 抄録 8）。14件すべて配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠の追加検索）",
+            "scope": "被引用数80以上、被引用数の多い順に各語の上位15件を確認",
+            "terms": [
+              "compressor stall inception",
+              "turbine blade tip leakage heat transfer",
+              "centrifugal compressor diffuser instability",
+              "shock wave boundary layer interaction",
+              "transonic fan shock loss",
+              "unsteady wake blade row interaction"
+            ],
+            "hits": 90,
+            "note": "各語15件ずつ確認（合計90件。重複や分野外を含む）。Dreyer らの論文は「compressor stall inception」の検索で見つかりました。"
+          }
+        ],
+        "note": "定番枠が尽きたため、通常の検索語に加えて追加検索を行いました。"
+      },
+      "afterword": "— 編集担当より\n今日の気づきは、「すき間は小さいほど良い」とは限らない、ということでした。論文の実験では、翼先のすき間を狭めていくと渦はいったん強くなり、ある幅で最大になってから急に弱まっていました。しかもその最大の幅は、翼の角度によって変わります。素人の目には、すき間を詰めれば漏れが減ってよさそうに見えるのですが、「ちょうどよくない幅がある」というのが面白かったです。ただ、論文自身も、渦の中心がなぜそこで急に動くのかはまだ説明できていないと書いていて、分からないことを分からないと書く姿勢にも、なるほどと思いました。"
     }
   ]
 }
