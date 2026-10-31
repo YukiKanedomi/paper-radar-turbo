@@ -144,6 +144,7 @@ export const CATEGORIES: GraphCategory[] = [
       "粘性エントロピー生成率 (VEPR)",
       "エントロピー生成",
       "運動量厚さ (momentum thickness)",
+      "性能劣化 (performance deterioration)",
       "エントロピー損失係数",
       "全圧損失係数",
       "翼型損失",
@@ -547,6 +548,7 @@ export const CATEGORIES: GraphCategory[] = [
       "疑似層流境界層 (pseudolaminar boundary layer)",
       "負圧面境界層 (suction-side boundary layer)",
       "形状因子 (shape factor, H)",
+      "排除厚さ",
       "静穏域 (calmed region)",
       "乱流スポット (turbulent spot)",
       "剥離流遷移 (separated-flow transition)",
@@ -637,6 +639,9 @@ export const CATEGORIES: GraphCategory[] = [
     terms: [
       "エネルギーカスケード",
       "逆カスケード",
+      "三者相互作用 (triadic interaction)",
+      "バイスペクトル (bispectrum)",
+      "圧力ひずみ再分配 (pressure-strain redistribution)",
       "異方性",
       "超拡散",
       "コヒーレント構造",
@@ -1442,6 +1447,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "乱流生成", to: "エントロピー生成", label: "損失の主因の一つとして抄録が挙げる" },
   { from: "平均流の粘性散逸", to: "エントロピー生成", label: "損失の主因の一つとして抄録が挙げる" },
   { from: "衝撃波境界層干渉 (SBLI)", to: "遷音速圧縮機段 (transonic compressor stage)", label: "この論文では損失生成を支配" },
+  // --- Souza ら 2026（曲面上の超音速境界層）と Suder ら 1995（粗さ・厚みと遷音速ロータ性能） ---
+  { from: "三者相互作用 (triadic interaction)", to: "エネルギーカスケード", label: "スケール間のエネルギー移送を担う" },
+  { from: "バイスペクトル (bispectrum)", to: "三者相互作用 (triadic interaction)", label: "移送の向きと量を読み取る" },
+  { from: "圧力ひずみ再分配 (pressure-strain redistribution)", to: "異方性", label: "成分間の偏りを左右する" },
+  { from: "排除厚さ", to: "形状因子 (shape factor, H)", label: "H=δ*/θ の分子" },
+  { from: "運動量厚さ (momentum thickness)", to: "形状因子 (shape factor, H)", label: "H=δ*/θ の分母" },
+  { from: "表面粗さ (surface roughness)", to: "境界層", label: "前縁の粗さが境界層を厚くする（この論文）" },
+  { from: "表面粗さ (surface roughness)", to: "性能劣化 (performance deterioration)", label: "引き起こす" },
+  { from: "衝撃波境界層干渉 (SBLI)", to: "ブロッケージ (blockage)", label: "厚い境界層との干渉で増やす（この論文）" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

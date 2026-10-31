@@ -8947,6 +8947,84 @@
         "note": "定番枠が尽きたため、通常の検索語に加えて追加検索を行いました。"
       },
       "afterword": "— 編集担当より\n今日の気づきは、「すき間は小さいほど良い」とは限らない、ということでした。論文の実験では、翼先のすき間を狭めていくと渦はいったん強くなり、ある幅で最大になってから急に弱まっていました。しかもその最大の幅は、翼の角度によって変わります。素人の目には、すき間を詰めれば漏れが減ってよさそうに見えるのですが、「ちょうどよくない幅がある」というのが面白かったです。ただ、論文自身も、渦の中心がなぜそこで急に動くのかはまだ説明できていないと書いていて、分からないことを分からないと書く姿勢にも、なるほどと思いました。"
+    },
+    {
+      "date": "2026-11-01",
+      "status": "published",
+      "headline": "曲がった壁の超音速境界層で乱れはどう変わるか／翼前縁のわずかな粗さが圧縮機の性能を落とす",
+      "intro": "今日は最新枠を『corner separation compressor』『blade flutter aeroelasticity』『supercritical CO2 turbomachinery』『wind turbine wake aerodynamics』『film cooling turbine heat transfer』『inlet distortion fan aerodynamics』の6語で、定番枠を8語で探しました。ところが定番枠の上位14件はすべて配信済みでした。そこで定番枠だけ、近い分野の語で被引用数80以上の論文をOpenAlexで追加で探し、遷音速圧縮機ロータの表面粗さの影響を調べた1995年の実験論文（Suder ら）を見つけました。出版社の全文は取れなかったので、こちらは抄録の範囲だけで要約しています。最新枠は、曲がった壁に沿うマッハ2の乱流境界層を大規模な直接計算で調べたarXivの論文（Souza ら 2026）を、全文を読んで作り込みました。ターボ機械そのものの論文ではありませんが、序論が高速ターボ機械の翼面や超音速タービン翼列を動機に挙げており、衝撃波・圧力勾配・境界層という流れの物理が主役なので選びました。図はライセンス（CC BY-NC-SA）の都合で転載せず、概念図で補っています。",
+      "picked": [
+        {
+          "id": "arxiv:2610.39123",
+          "title": "Triadic energy cascades and linear amplification mechanisms in supersonic turbulent boundary layers over curved walls（Souza ら 2026）",
+          "why": "凹んだ壁と出っ張った壁で、境界層の乱れとエネルギーの受け渡しがどう変わるかを調べた流れの物理が主役の研究。全文を読めました。"
+        },
+        {
+          "id": "doi:10.1115/1.2836561",
+          "title": "The Effect of Adding Roughness and Thickness to a Transonic Axial Compressor Rotor（Suder ら 1995）",
+          "why": "前縁の粗さが境界層と衝撃波の干渉を通じて性能を落とす、という流れの機構を実験と計算で示した定番。抄録ベースです。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "見送った候補（最新枠）",
+          "note": "コーナー剥離を抑える翼端のリブレットや吸込み制御、近失速の性能低下などの出版社掲載論文は、収集結果に抄録が含まれておらず、中身を確認できなかったため見送りました。ほかのarXiv候補は、羽ばたき翼の形状最適化や凧型風力発電など、ターボ機械の流れとは距離がありました。"
+        },
+        {
+          "title": "定番枠について",
+          "note": "定番枠の上位14件はすべて配信済みでした。今日は追加の検索で新しい定番を探しています。追加検索の結果には分野外の論文（医療・材料など）も多く混じっていたため、タイトルと掲載誌で流れの物理の論文を選び出しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 13,
+            "note": "最新枠13件（OA 5 / 抄録 8）。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 1 / 抄録 13）。14件すべて配信済みでした。"
+          },
+          {
+            "name": "OpenAlex（定番枠の追加検索）",
+            "scope": "被引用数80以上の論文を、被引用数の多い順に各語の上位15件まで確認",
+            "terms": [
+              "axial compressor tip clearance flow",
+              "compressor rotor stall inception",
+              "turbine cascade secondary flow endwall",
+              "transonic compressor shock loss",
+              "low pressure turbine separation transition",
+              "centrifugal compressor diffuser"
+            ],
+            "hits": 90,
+            "note": "各語15件ずつ確認（合計90件。重複・配信済み・分野外を含む）。Suder らの論文は「transonic compressor shock loss」の検索で見つかりました。"
+          }
+        ],
+        "note": "定番枠が尽きたため、通常の検索語に加えて追加検索を行いました。"
+      },
+      "afterword": "— 編集担当より\n今日の気づきは、「加速しているのに、境界層の厚みの目安は増えることがある」ということでした。曲がった壁の論文では、出っ張った壁で流れが加速しても、壁ぎわの空気が膨らんで密度が下がるため、排除厚さという厚みの指標はむしろ増えていました。論文自身も、これが非圧縮の流れで期待される傾向と逆になると書いています。もう一つの論文では、翼の前縁のほんの2%に粗さや厚みが付くだけで、劣化の大半（なめらかな膜ではほぼすべて、粗い膜では約7割）が説明できる、とありました。どちらも、ほんの少しの違いが、流れ全体の振る舞いを変えてしまう話で、素人の目には「小さなところほど侮れない」と映りました。"
     }
   ]
 }
