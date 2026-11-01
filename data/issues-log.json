@@ -9025,6 +9025,63 @@
         "note": "定番枠が尽きたため、通常の検索語に加えて追加検索を行いました。"
       },
       "afterword": "— 編集担当より\n今日の気づきは、「加速しているのに、境界層の厚みの目安は増えることがある」ということでした。曲がった壁の論文では、出っ張った壁で流れが加速しても、壁ぎわの空気が膨らんで密度が下がるため、排除厚さという厚みの指標はむしろ増えていました。論文自身も、これが非圧縮の流れで期待される傾向と逆になると書いています。もう一つの論文では、翼の前縁のほんの2%に粗さや厚みが付くだけで、劣化の大半（なめらかな膜ではほぼすべて、粗い膜では約7割）が説明できる、とありました。どちらも、ほんの少しの違いが、流れ全体の振る舞いを変えてしまう話で、素人の目には「小さなところほど侮れない」と映りました。"
+    },
+    {
+      "date": "2026-11-02",
+      "status": "skipped",
+      "headline": "お休み — 2件そろえられず、前号のままとしました",
+      "intro": "今日は最新枠を『diffuser stall pressure recovery』『cavitation pump impeller』『rotor stator interaction unsteady』『centrifugal compressor aerodynamics』『axial compressor aerodynamics』『turbine aerodynamics』の6語で、定番枠を8語で探しました。定番枠の上位14件のうち、まだ配信していなかったのは、斜流ポンプの翼端すき間をエントロピー生成で調べた2020年の論文（Ji ら）の1本だけでした。最新枠では、全文を読める論文として、空中風力発電用カイトの渦の跡（後流）を自由渦法で計算したarXivの論文（Tian & Wang 2026）を選び、要約を作りました。ただ、ポンプの論文の要約は、抄録が「〜かもしれない（may）」と書いている因果を、私の下書きが言い切りの形にしてしまっており、忠実性のチェックを2回通しても直りきりませんでした。運用の決まりで、2回で通らない論文は保留にします。定番枠にほかの候補が残っていなかったため、今日は2件がそろわず、公開を見送りました。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "保留した候補（定番枠）",
+          "note": "Ji ら 2020「Energy characteristics of mixed-flow pump under different tip clearances based on entropy production analysis」（抄録ベース）。数値は抄録どおりでしたが、翼端漏れ流れと損失の因果を断定的に書いた箇所が2か所（豆知識と用語の定義）残り、2回目の確認でも指摘が解消しませんでした。"
+        },
+        {
+          "title": "要約まで作ったが公開しなかった論文（最新枠）",
+          "note": "Tian & Wang 2026「Free-vortex-wake dynamics of airborne wind energy kites in crosswind flight」（arXiv、全文）。忠実性チェックでは重い指摘は残りませんでしたが、定番枠とセットで2件にならないため、今日は載せていません。"
+        },
+        {
+          "title": "見送った最新枠の候補",
+          "note": "収録済みの論文や、羽ばたき翼の形状最適化、ボルツマン方程式による安定性理論など、ターボ機械の流れから距離のある論文は選びませんでした。出版社掲載の全文（MDPI、Elsevier）は取得を断られ、全文を読めませんでした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv＋OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 19,
+            "note": "最新枠19件（OA 13 / 抄録 6）。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順（OA/抄録 混在）",
+            "terms": [
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity"
+            ],
+            "hits": 14,
+            "note": "定番枠14件（OA 3 / 抄録 11）。うち13件は配信済みで、未配信はポンプの1件のみでした。"
+          }
+        ],
+        "note": "最新枠にも収録済みの論文が含まれていました（2026年9月に収録した、風車向けの非定常翼理論の論文など）。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。それでも一つ「なるほど」があって、論文の抄録は「〜かもしれない」と控えめに書いているのに、要約するとつい「〜になる」と言い切りやすい、ということでした。今回は、翼端のすき間から漏れる流れが損失を増やす、という話がちょうどそうで、抄録では推測の言い方でした。確かめる側の指摘で、言葉の強さまで原文に合わせる大切さを実感しました。"
     }
   ]
 }
