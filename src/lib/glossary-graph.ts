@@ -128,6 +128,9 @@ export const CATEGORIES: GraphCategory[] = [
       "ニアストール点 (near stall point, NS)",
       "遷音速バフェット (transonic buffet)",
       "音響フィードバック (aeroacoustic feedback)",
+      "エッジトーン (edge-tone)",
+      "フィードバックループ (feedback loop)",
+      "ステージ (stage)",
       "大域不安定性 (global instability)",
       "リミットサイクル (limit cycle)",
       "後方進行回転失速 (backward traveling rotating stall)",
@@ -1456,6 +1459,11 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "表面粗さ (surface roughness)", to: "境界層", label: "前縁の粗さが境界層を厚くする（この論文）" },
   { from: "表面粗さ (surface roughness)", to: "性能劣化 (performance deterioration)", label: "引き起こす" },
   { from: "衝撃波境界層干渉 (SBLI)", to: "ブロッケージ (blockage)", label: "厚い境界層との干渉で増やす（この論文）" },
+  // --- Tassawar ら 2026（エッジトーン）と Han 2004（タービン翼冷却） ---
+  { from: "せん断層", to: "エッジトーン (edge-tone)", label: "噴流のせん断層の揺れが元になる" },
+  { from: "フィードバックループ (feedback loop)", to: "エッジトーン (edge-tone)", label: "揺れを保つ循環" },
+  { from: "エッジトーン (edge-tone)", to: "ステージ (stage)", label: "複数の段を持つ" },
+  { from: "ストローハル数 (Strouhal number)", to: "エッジトーン (edge-tone)", label: "揺れの速さを無次元で表す" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
