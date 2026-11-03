@@ -9146,6 +9146,87 @@
         "note": "今号は最新枠=OA全文（arXiv）、定番枠=抄録ベース。最新枠の有力な圧縮機論文は抄録を確認できず見送りました。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、笛の音の高さを決めるのが、息の強さよりも『息の出口から縁までの距離』のほうだという話でした。論文では、距離を2倍にすると揺れの速さがほぼ半分になる、という整理が出てきます。息を強く吹いても揺れの速さは大きく変わらない、というのは意外でした（ただしこれは筒のない計算の結果で、実際の笛の音までそのまま言えるかは、これからの課題と論文自身も書いています）。ターボ機械の話とは少し離れましたが、流れが自分で揺れを保つ仕組みは、翼や管の中の不安定な流れにも通じるのかなと感じました。"
+    },
+    {
+      "date": "2026-11-04",
+      "status": "published",
+      "headline": "失速した厚い翼の揚力が2つの値を行き来することを乱れた風の中で示した最新研究と、遠心圧縮機の羽根車出口の流れを測った定番の抄録",
+      "intro": "今日は『衝撃波・境界層干渉』『コーナー剥離』『境界層の遷移』『サージ・回転失速』『翼端漏れ渦』『損失機構』などの言葉で探しました。最新枠は24件で、そのうち、全文を読めたオープンアクセスのarXiv論文から、翼の失速を扱った研究を選びました。風車の翼の根元に使われるような厚い翼ですが、失速後に流れがどう振る舞うかという流れの基本が主題です。定番枠は、被引用の多い14件がすべて配信済みでした。そこで別の語（遠心圧縮機・ケーシングトリートメント・翼列の二次流れなど）でOpenAlexを追加で検索し、遠心圧縮機の羽根車出口で速い流れと遅い流れが並ぶ様子を測った1975年の論文を選びました（出版社の全文は取得できず、抄録ベース）。",
+      "picked": [
+        {
+          "id": "arxiv:2611.02342",
+          "title": "乱れた流入下における厚い有キャンバー翼型の失速挙動の双安定性（McGhee・Farnsworth, 2026）",
+          "why": "厚さ30%の翼型を3種類の乱流格子の風の中で失速させ、失速後の揚力が高い値と低い値を不規則に行き来することを、時間分解した表面圧で示した研究です。平均の揚力だけを見ると、この切り替わりが隠れてしまうという指摘が分かりやすい論文でした（arXiv全文）。"
+        },
+        {
+          "id": "doi:10.1115/1.3445999",
+          "title": "遠心圧縮機羽根車の吐出ジェット・ウェイク流れの瞬時計測（Eckardt, 1975）",
+          "why": "遠心圧縮機の羽根車の出口で、速い流れ（ジェット）と遅い流れ（ウェイク）が並ぶ様子を、周速300 m/sの運転で高周波の計測系を使って測った古典です。回るウェイクによる乱れが、理論の予測より大きな半径比まで届いたと抄録は述べています。抄録の範囲だけで控えめにまとめました（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠がすべて配信済みだったこと",
+          "note": "collect.mjs が出した定番枠14件は、ターボ機械の古典から風車まで、すべて過去の号で配信済みでした。選定の途中でGreitzer 1976（サージと回転失速 第II部）をいったん候補にしましたが、すでに配信済みと気づいて取り下げ、追加検索に切り替えています。"
+        },
+        {
+          "title": "見送った最新枠の候補",
+          "note": "最新枠のうち、ターボ機械そのものに近い『高圧タービン段の高温ガス偏流の配置』（Dahalら, 2026, 出版社のOA論文）は、候補データに抄録が無く、今回は全文の取得を試みず見送りました。ほかの上位は、PIVの手法や遊泳微生物、数値解法など、流体でもターボ機械から遠い主題が多くを占めていました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近2〜3年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 24,
+            "note": "最新枠は24件（OA16/抄録8）。arXivの新着には流体の基礎研究が多く、その中から失速を扱ったMcGhee・Farnsworth 2026を採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 14,
+            "note": "定番枠は14件（OA1/抄録13）。全件が既配信でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠の追加検索）",
+            "scope": "1960〜2018年・被引用数の多い順（collect.mjs とは別に手動で実施）",
+            "terms": [
+              "centrifugal compressor impeller diffuser flow",
+              "axial compressor casing treatment stall margin",
+              "turbine cascade secondary flow endwall",
+              "shock wave transonic compressor rotor",
+              "rotor stator interaction unsteady flow turbine",
+              "wake mixing compressor blade row",
+              "transonic fan rotor flow",
+              "turbine tip leakage heat transfer",
+              "boundary layer separation bubble low pressure turbine"
+            ],
+            "hits": 0,
+            "note": "各語の上位12件前後を確認（件数は集計していないため0と記録）。未配信で主題に合うEckardt 1975（遠心圧縮機の羽根車出口流れ）を採用。同じ検索で見つかったTakata & Tsukuda 1977（ケーシングトリートメント）なども、今後の候補になりえます。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（arXiv）、定番枠=抄録ベース。定番枠は既配信が多く、追加検索で補いました。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、失速した翼の揚力が一定にならず、高い値と低い値のあいだを行き来していて、平均を取るとそのどちらでもない値になる、という話でした。平均だけ見ていると、実際には起きていない「中間の状態」を想像してしまうんですね。論文でも、平均と標準偏差は「典型的な荷重とそのまわりの揺れ」としては読めない、と書かれています（ただしこれは1つの断面で測った結果で、翼の幅方向にどうなっているかは今後の課題とのことです）。遠心圧縮機の羽根車出口で速い流れと遅い流れが並ぶ、という1975年の論文とあわせて、「流れは平均では語れない」という共通点を感じました。"
     }
   ]
 }

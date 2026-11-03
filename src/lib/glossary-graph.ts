@@ -223,6 +223,8 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#4a6fa5",
     terms: [
       "ジェット・ウェイク構造 (jet-wake structure)",
+      "無羽根ディフューザ",
+      "羽根車出口の混合",
       "遠心圧縮機",
       "遠心ポンプ",
       "遷音速圧縮機ロータ (transonic compressor rotor)",
@@ -609,6 +611,8 @@ export const CATEGORIES: GraphCategory[] = [
       "翼端渦 (tip vortex)",
       "根元渦 (root vortex)",
       "自由流乱流強度 (free-stream turbulence, FST)",
+      "積分長さスケール",
+      "乱流格子",
       "疲労荷重 (fatigue loading)",
       "グローバルブロッケージ (global blockage)",
       "ポーラスディスク (porous disc)",
@@ -1464,6 +1468,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "フィードバックループ (feedback loop)", to: "エッジトーン (edge-tone)", label: "揺れを保つ循環" },
   { from: "エッジトーン (edge-tone)", to: "ステージ (stage)", label: "複数の段を持つ" },
   { from: "ストローハル数 (Strouhal number)", to: "エッジトーン (edge-tone)", label: "揺れの速さを無次元で表す" },
+  // --- 2026-11-04 配信（Eckardt 1975 / McGhee & Farnsworth 2026） ---
+  { from: "無羽根ディフューザ", to: "放射ディフューザ", label: "放射状の通路の一形態（羽根なし）" },
+  { from: "羽根車出口の混合", to: "ジェット・ウェイク構造 (jet-wake structure)", label: "ジェットとウェイクが均されていく過程" },
+  { from: "積分長さスケール", to: "自由流乱流強度 (free-stream turbulence, FST)", label: "乱れの強さとは別に乱れを特徴づける量" },
+  { from: "乱流格子", to: "自由流乱流強度 (free-stream turbulence, FST)", label: "風洞で乱れを作り強さを調整する手段" },
+  { from: "双安定性 (bistability)", to: "揚力係数 (lift coefficient, C_L)", label: "失速後の揚力が2つの値を行き来する" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
