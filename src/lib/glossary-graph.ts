@@ -448,6 +448,7 @@ export const CATEGORIES: GraphCategory[] = [
       "迎え角（AoA）",
       "翼負荷分布 (blade loading distribution, BLD)",
       "ケーシングトリートメント",
+      "処理スロット (treatment slots)",
       "軸方向スロット型ケーシングトリートメント (axial slot casing treatment)",
       "周方向溝型ケーシングトリートメント (circumferential groove casing treatment)",
       "吹き込み位置 (injection location)",
@@ -557,6 +558,7 @@ export const CATEGORIES: GraphCategory[] = [
       "静穏域 (calmed region)",
       "乱流スポット (turbulent spot)",
       "剥離流遷移 (separated-flow transition)",
+      "スパン方向ロール (spanwise roller)",
       "ヘアピン渦 (hairpin vortex)",
       "ジェットインクロスフロー (jet in crossflow)",
       "毛細管多孔構造 (CPS, capillary-porous structure)",
@@ -647,6 +649,9 @@ export const CATEGORIES: GraphCategory[] = [
       "エネルギーカスケード",
       "逆カスケード",
       "三者相互作用 (triadic interaction)",
+      "触媒モード (catalyst mode)",
+      "斜めモード (oblique mode)",
+      "スパン方向波数 (spanwise wavenumber)",
       "バイスペクトル (bispectrum)",
       "圧力ひずみ再分配 (pressure-strain redistribution)",
       "異方性",
@@ -1474,6 +1479,12 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "積分長さスケール", to: "自由流乱流強度 (free-stream turbulence, FST)", label: "乱れの強さとは別に乱れを特徴づける量" },
   { from: "乱流格子", to: "自由流乱流強度 (free-stream turbulence, FST)", label: "風洞で乱れを作り強さを調整する手段" },
   { from: "双安定性 (bistability)", to: "揚力係数 (lift coefficient, C_L)", label: "失速後の揚力が2つの値を行き来する" },
+  // --- 2026-11-05 配信（Takata & Tsukuda 1977 / Lopes ら 2026） ---
+  { from: "処理スロット (treatment slots)", to: "ケーシングトリートメント", label: "処理の具体的な形の一つ" },
+  { from: "ケルビン・ヘルムホルツ不安定性 (Kelvin–Helmholtz instability)", to: "スパン方向ロール (spanwise roller)", label: "巻き上がって作る" },
+  { from: "剥離泡", to: "スパン方向ロール (spanwise roller)", label: "泡の中のせん断層に現れる" },
+  { from: "三者相互作用 (triadic interaction)", to: "触媒モード (catalyst mode)", label: "3つ組の役割の一つ" },
+  { from: "スパン方向波数 (spanwise wavenumber)", to: "斜めモード (oblique mode)", label: "0でないと斜めになる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
