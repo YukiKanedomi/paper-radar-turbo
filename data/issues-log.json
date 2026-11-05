@@ -9324,6 +9324,118 @@
         "note": "今号は最新枠=OA全文（arXiv）、定番枠=抄録ベース。定番枠は既配信が多く、追加検索で補いました。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、渦が崩れて3次元になるとき、ロール渦は「エネルギーをあげている」のではなく、「ほかの成分を運んでいる」役にまわっている、という整理でした。エネルギーの出どころと、受け渡しを可能にする役目は別のものなんですね（これは論文が1つの計算の結果として示した整理で、すべての流れに当てはまると言っているわけではないようです）。もう一つの1977年の抄録は、機構の中身まで書かれておらず、薄い紹介になりましたが、そのぶん「抄録に書いてあることだけ」を載せるように気をつけました。"
+    },
+    {
+      "date": "2026-11-06",
+      "status": "published",
+      "headline": "曲がった超音速タービン翼の上で、壁を冷やすと境界層がどう変わるかをLESで調べた最新（Hamadaら 2025、arXiv全文）と、羽根のない環状ディフューザの回転失速を理論と実験で調べた定番（Jansen 1964、抄録ベース）",
+      "intro": "今日は『遠心圧縮機』『軸流圧縮機』『タービン』『サージ・回転失速』『失速の前駆（スパイク）』『端壁の二次流れ』『入口歪み』『ディフューザ失速』『ポンプのキャビテーション』『動静翼干渉』などの言葉で探しました。最新枠は17件でしたが、多くが配信済みか風車・機械学習寄りで、全文を取れる流体寄りの候補が少なく、MDPIの論文（タービン翼列の端壁流れ）は出版社サイトにアクセスできず全文を取得できませんでした。そこでarXivを別の語で追加検索し、超音速タービン翼列の境界層を扱ったHamadaらの論文を選びました（arXiv全文。ライセンスがCC BY-NC-NDのため原図は載せず、模式図のみ）。定番枠は被引用の多い14件がほぼすべて配信済みだったため、OpenAlexを別の語で追加検索し、1964年のJansenによるベーンレスディフューザの回転失速の研究を選びました（出版社の全文は取得できず、抄録ベース）。",
+      "picked": [
+        {
+          "id": "arxiv:2509.14756",
+          "title": "衝撃波との干渉を伴う、断熱壁と等温壁の曲面上の超音速境界層の特徴づけ（Hamadaら, 2025）",
+          "why": "超音速タービン翼列のLESで、壁を冷やすと境界層の速度分布が充満して剥がれにくくなること、衝撃波の後で運動量が増えるのは圧力勾配ではなく壁向きの移流と乱流輸送のおかげであることを、運動量の収支で示した論文です。arXiv全文を読んで作りました。論文は後にInt. J. Heat and Fluid Flowに掲載されていますが、要約はarXivの初版にもとづきます。"
+        },
+        {
+          "id": "doi:10.1115/1.3655945",
+          "title": "半径方向ベーンレスディフューザにおける回転失速（Jansen, 1964）",
+          "why": "遠心ポンプや圧縮機の出口にある羽根のない環状通路で起きる大振幅の自励振動を、理論と実験で調べた古典です。脈動流は半径内向きの流れの領域がある場合に限り起きうる、という安定判別基準が抄録の要点です。抄録に書かれた範囲だけで控えめにまとめました（抄録ベース）。"
+        }
+      ],
+      "aside": [
+        {
+          "title": "定番枠がほぼ配信済みだったこと",
+          "note": "collect.mjs が出した定番枠14件は、ほとんどが過去の号で配信済みで、残りもターボ機械から遠い内容（浮選用のナノバブル）でした。そこでOpenAlexを別の語で追加検索し、未配信の候補から選んでいます。"
+        },
+        {
+          "title": "全文を取れなかった最新枠の候補",
+          "note": "タービン翼列の端壁流れを扱うMDPIのOA論文（CC BY）は、出版社サイトも大学リポジトリも403で全文を取得できず見送りました。抄録だけでは最新枠のOA全文の条件を満たせないためです。"
+        },
+        {
+          "title": "要約チェックで直した点",
+          "note": "Hamadaらの論文は、最初の要約で「査読前のプレプリント」と書きましたが、確認すると既に雑誌に掲載済みでした。出版情報に直し、要約がarXiv初版にもとづくことを明記しました。圧力面の剥離位置については論文内で記述が少し揺れていたため、両方を併記しています。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近2〜3年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 17,
+            "note": "最新枠は17件（OA 12/抄録 5）。配信済みか、風車・機械学習寄りの候補が多くを占めました。"
+          },
+          {
+            "name": "OpenAlex（定番枠）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall"
+            ],
+            "hits": 14,
+            "note": "定番枠は14件（OA 1/抄録 13）。ほぼ全件が既配信でした。"
+          },
+          {
+            "name": "OpenAlex（定番枠の追加検索）",
+            "scope": "タイトル・抄録の語検索＋被引用60超・被引用の多い順（collect.mjs とは別に手動）",
+            "terms": [
+              "compressor shock boundary layer",
+              "transonic compressor shock",
+              "compressor casing treatment",
+              "inlet distortion compressor",
+              "vaneless diffuser stall",
+              "vaned diffuser",
+              "impeller cavitation",
+              "compressor wake mixing",
+              "turbine cascade secondary",
+              "centrifugal compressor impeller",
+              "compressor corner separation",
+              "axial compressor tip",
+              "turbine blade transition",
+              "compressor blade vibration flutter",
+              "centrifugal pump rotating stall",
+              "pump turbine hump"
+            ],
+            "hits": 0,
+            "note": "各語の上位10件を確認（件数は集計していないため0と記録）。未配信で主題に合うJansen 1964を採用。"
+          },
+          {
+            "name": "arXiv（最新枠の追加検索）",
+            "scope": "フレーズ検索（新着順・各語8件）を手動で実施",
+            "terms": [
+              "compressor stall",
+              "compressor tip leakage",
+              "turbomachinery secondary flow",
+              "centrifugal compressor",
+              "turbine cascade",
+              "axial fan",
+              "shock boundary layer interaction",
+              "pump cavitation",
+              "compressor surge",
+              "turbine blade film cooling",
+              "rotor stator interaction",
+              "diffuser separation"
+            ],
+            "hits": 0,
+            "note": "各語の新着を最大8件ずつ確認（件数は集計していないため0と記録）。配信済みを除くと流体寄りの候補は少なく、超音速タービン翼列の境界層を扱うHamadaら 2025を採用。"
+          }
+        ],
+        "note": "今号は最新枠=OA全文（arXiv）、定番枠=抄録ベース。最新・定番ともに既配信が多く、追加検索で補いました。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、超音速の流れでは、順圧力勾配（流れの向きに圧力が下がる状況）でも運動量が減ることがある、という点でした。速度が増える以上に密度が下がるからだそうです（論文が先行研究を引いて説明していました）。「加速している＝勢いが増している」とは限らないんですね。もう一つの1964年の抄録は、機構の細部まで書かれておらず、薄い紹介になりましたが、抄録に書いてあることだけを載せるようにしました。"
     }
   ]
 }

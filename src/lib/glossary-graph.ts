@@ -531,6 +531,8 @@ export const CATEGORIES: GraphCategory[] = [
       "受容性 (receptivity)",
       "N因子 (N-factor)",
       "熱伝達",
+      "断熱壁 (adiabatic wall)",
+      "等温壁 (isothermal wall)",
       "対流熱伝達係数",
       "フィルム冷却",
       "内部冷却",
@@ -647,6 +649,7 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#2f7f8f",
     terms: [
       "エネルギーカスケード",
+      "運動量収支 (momentum balance)",
       "逆カスケード",
       "三者相互作用 (triadic interaction)",
       "触媒モード (catalyst mode)",
@@ -1485,6 +1488,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "剥離泡", to: "スパン方向ロール (spanwise roller)", label: "泡の中のせん断層に現れる" },
   { from: "三者相互作用 (triadic interaction)", to: "触媒モード (catalyst mode)", label: "3つ組の役割の一つ" },
   { from: "スパン方向波数 (spanwise wavenumber)", to: "斜めモード (oblique mode)", label: "0でないと斜めになる" },
+  // --- 2026-11-06 配信（Jansen 1964 / Hamada ら 2025） ---
+  { from: "等温壁 (isothermal wall)", to: "熱伝達", label: "壁温を保つため壁との熱のやり取りが生じる" },
+  { from: "断熱壁 (adiabatic wall)", to: "等温壁 (isothermal wall)", label: "壁の熱条件の対になる扱い" },
+  { from: "等温壁 (isothermal wall)", to: "衝撃波境界層干渉 (SBLI)", label: "冷却で剥離泡が小さくなる（この論文）" },
+  { from: "運動量収支 (momentum balance)", to: "境界層", label: "運動量の増減の原因を項に分けて調べる" },
+  { from: "側壁境界層 (side-wall boundary layer)", to: "境界層", label: "一種" },
+  { from: "側壁境界層 (side-wall boundary layer)", to: "回転失速", label: "主流との相互作用が原因という仮説（この論文）" },
+  { from: "回転失速", to: "自励振動", label: "この論文では大振幅の自励振動として現れる" },
+  { from: "ベーンレスディフューザ (vaneless diffuser)", to: "回転失速", label: "この論文で扱う失速の場" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
