@@ -227,6 +227,7 @@ export const CATEGORIES: GraphCategory[] = [
       "羽根車出口の混合",
       "遠心圧縮機",
       "遠心ポンプ",
+      "セミオープン羽根車 (semi-open impeller)",
       "遷音速圧縮機ロータ (transonic compressor rotor)",
       "遷音速圧縮機段 (transonic compressor stage)",
       "部分回転数 (part speed)",
@@ -1497,6 +1498,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "側壁境界層 (side-wall boundary layer)", to: "回転失速", label: "主流との相互作用が原因という仮説（この論文）" },
   { from: "回転失速", to: "自励振動", label: "この論文では大振幅の自励振動として現れる" },
   { from: "ベーンレスディフューザ (vaneless diffuser)", to: "回転失速", label: "この論文で扱う失速の場" },
+  // --- 2026-11-07 配信（Ji ら 2020 / Jing ら 2026） ---
+  { from: "セミオープン羽根車 (semi-open impeller)", to: "遠心ポンプ", label: "遠心ポンプの羽根車の形式の一つ" },
+  { from: "セミオープン羽根車 (semi-open impeller)", to: "チップクリアランス (tip clearance, TC)", label: "前側にカバーが無く、羽根先端にすき間が必要" },
+  { from: "チップクリアランス (tip clearance, TC)", to: "翼端漏れ", label: "すき間を流体が抜ける" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
