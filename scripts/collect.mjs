@@ -25,6 +25,15 @@ const outPath = resolve(root, getArg("--out", "scripts/.collect-candidates.json"
 
 const topicsCfg = JSON.parse(readFileSync(resolve(root, "topics.json"), "utf8"));
 
+// 既配信（data/papers.json）の id/DOI。候補はこれを除外してから件数を切り詰める（2026-11-07）。
+// 切り詰め後に除外すると、被引用上位の同じ論文ばかりが枠を占め、未配信が候補に残らないため。
+const delivered = new Set();
+for (const p of JSON.parse(readFileSync(resolve(root, "data/papers.json"), "utf8")).papers ?? []) {
+  if (p.id) delivered.add(String(p.id).toLowerCase());
+  if (p.doi) delivered.add(`doi:${p.doi}`.toLowerCase());
+}
+const fresh = (p) => !delivered.has(p.id.toLowerCase()) && !(p.doi && delivered.has(`doi:${p.doi}`.toLowerCase()));
+
 const UA = "paper-radar-turbo/0.1 (mailto:kanedomi918@gmail.com)";
 const ARXIV_MIN = 6; // これ未満なら緩和して取り直す
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -66,9 +75,9 @@ function salientWords(keywords) {
 // 日替わりローテーション：毎日別の部分集合を検索し、数日でキーワード全体を一巡させる。
 // （先頭固定 slice だと後半の語が一度も検索されず、配信が代わり映えしなくなるため）
 // 日付起点の決定的な選び方＝同じ日に再実行しても同じ語（配信ノートの記録と一致する）。
+const DAY = Math.floor(Date.now() / 86400000);
 function rotateDaily(keywords, n, offset = 0) {
-  const day = Math.floor(Date.now() / 86400000);
-  const start = (day * n + offset) % keywords.length;
+  const start = (DAY * n + offset) % keywords.length;
   return Array.from({ length: Math.min(n, keywords.length) }, (_, i) => keywords[(start + i) % keywords.length]);
 }
 
@@ -147,31 +156,33 @@ function mapOpenAlex(w, stream) {
   };
 }
 
-async function openAlexSearch(phrase, { sort, fromDate, stream, perPage = 6 }) {
+async function openAlexSearch(phrase, { sort, fromDate, stream, perPage = 6, page = 1 }) {
   // title/abstract に語が含まれるものに限定（分野ノイズを排除）＋論文種別＝article。
   // 狭いクエリにすることで 504（broad query）も避けられる。
   let filter = `title_and_abstract.search:${encodeURIComponent(phrase)},type:article`;
   if (fromDate) filter += `,from_publication_date:${fromDate}`;
-  const url = `https://api.openalex.org/works?filter=${filter}&sort=${sort}&per-page=${perPage}&mailto=kanedomi918@gmail.com`;
+  const url = `https://api.openalex.org/works?filter=${filter}&sort=${sort}&per-page=${perPage}&page=${page}&mailto=kanedomi918@gmail.com`;
   const res = await fetchRetry(url);
   if (!res.ok) throw new Error(`OpenAlex HTTP ${res.status}`);
   const json = await res.json();
   return (json.results ?? []).map((w) => mapOpenAlex(w, stream));
 }
 
-// 定番候補：被引用の多い順（OA/非OA 混在）
+// 定番候補：被引用の多い順（OA/非OA 混在）。毎日同じ上位だけを見ないよう、
+// 被引用順のページを日替わりで送る（1〜3ページ目＝各語の上位1〜18位を3日で一巡）。
+const CLASSIC_PAGE = 1 + (DAY % 3);
 async function fetchOpenAlexClassic(keywords, take = 14) {
   const picks = keywords;
   const lists = [];
   for (const k of picks) {
     try {
-      lists.push(await openAlexSearch(k, { sort: "cited_by_count:desc", stream: "classic" }));
+      lists.push(await openAlexSearch(k, { sort: "cited_by_count:desc", stream: "classic", page: CLASSIC_PAGE }));
     } catch (e) {
       console.error(`OpenAlex(定番)失敗(${k}):`, e.message);
     }
     await sleep(200);
   }
-  const merged = dedupeById(lists.flat()).filter(onTopic);
+  const merged = dedupeById(lists.flat()).filter(onTopic).filter(fresh);
   merged.sort((a, b) => (b.citationCount ?? 0) - (a.citationCount ?? 0));
   return merged.slice(0, take);
 }
@@ -192,7 +203,7 @@ async function fetchOpenAlexRecent(keywords, take = 10) {
     }
     await sleep(200);
   }
-  const merged = dedupeById(lists.flat()).filter(onTopic);
+  const merged = dedupeById(lists.flat()).filter(onTopic).filter(fresh);
   merged.sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   return merged.slice(0, take);
 }
@@ -219,9 +230,10 @@ for (const t of topicsCfg.topics) {
   console.log(`\n=== topic: ${t.key} (${t.label}) ===`);
   // 検索語は日替わりローテーション（最新枠6語・定番枠8語。定番はオフセットをずらし同日でも別領域を探す）
   const kwLatest = rotateDaily(t.keywords, 6);
-  const kwClassic = rotateDaily(t.keywords, 8, Math.floor(t.keywords.length / 2));
+  // 定番枠は min(8, 語数-2)：語数が少ないトピック（例: 7語）でも全語固定にならず日替わりが効く
+  const kwClassic = rotateDaily(t.keywords, Math.max(1, Math.min(8, t.keywords.length - 2)), Math.floor(t.keywords.length / 2));
   console.log(`本日の検索語（最新枠）: ${kwLatest.join(" / ")}`);
-  console.log(`本日の検索語（定番枠）: ${kwClassic.join(" / ")}`);
+  console.log(`本日の検索語（定番枠）: ${kwClassic.join(" / ")}（被引用順 ${CLASSIC_PAGE} ページ目）`);
   // 3系統を取得：arXiv(最新OA)・OpenAlex新着(最新・OA/抄録)・OpenAlex被引用(定番・OA/抄録)
   const [arxiv, oaRecent, oaClassic] = await Promise.all([
     fetchArxiv(kwLatest).catch((e) => (console.error("arXiv失敗:", e.message), [])),
@@ -229,8 +241,10 @@ for (const t of topicsCfg.topics) {
     fetchOpenAlexClassic(kwClassic).catch((e) => (console.error("OpenAlex被引用失敗:", e.message), [])),
   ]);
 
+  // 既配信（papers.json の id/DOI）は各系統で切り詰め前に除外済み。
+  console.log(`既配信 ${delivered.size} 件の id/DOI を候補から除外`);
   // 枠は「役割」で束ねる：最新 = arXiv + OpenAlex新着（OA/抄録 混在）、定番 = OpenAlex被引用（OA/抄録 混在）
-  const latest = dedupeById([...arxiv, ...oaRecent]);
+  const latest = dedupeById([...arxiv.filter(fresh), ...oaRecent]);
   const classic = oaClassic;
 
   console.log(`最新枠 latest: ${latest.length} 件（${balance(latest)}）  [arXiv + OpenAlex新着]`);
@@ -252,7 +266,7 @@ for (const t of topicsCfg.topics) {
   );
 
   // searchTerms＝実際に使った検索語（配信ノート searchLog にはこれを記録する＝§0）
-  out.topics.push({ key: t.key, label: t.label, searchTerms: { latest: kwLatest, classic: kwClassic }, latest, classic });
+  out.topics.push({ key: t.key, label: t.label, searchTerms: { latest: kwLatest, classic: kwClassic, classicPage: CLASSIC_PAGE }, latest, classic });
 }
 
 writeFileSync(outPath, JSON.stringify(out, null, 2), "utf8");
