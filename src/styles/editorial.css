@@ -179,6 +179,13 @@
   padding: 8px 12px;
   margin: 10px 0 4px;
 }
+.home-page .stale-note .nw {
+  white-space: nowrap;
+}
+.home-page .stale-note a {
+  color: var(--accent);
+  font-weight: 700;
+}
 /* 足あと（蓄積の統計） */
 .home-page .stats {
   background: #fff;
@@ -826,7 +833,8 @@
   line-height: 1.86;
 }
 .detail-page .wrap {
-  padding: 30px 24px 90px;
+  /* 追従「← 論文レーダー」ボタン（高さ約40px＋下18px）が最後の行に重ならない余白 */
+  padding: 30px 24px calc(110px + env(safe-area-inset-bottom));
 }
 .detail-page .top {
   display: flex;
@@ -913,7 +921,7 @@
 .detail-page .float-back {
   position: fixed;
   left: 14px;
-  bottom: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom));
   z-index: 40;
   font-family: "Yu Gothic UI", sans-serif;
   font-size: 12.5px;
@@ -934,9 +942,10 @@
 .detail-page .lvl {
   position: sticky;
   top: 0;
-  z-index: 30;
-  background: rgba(250, 249, 245, 0.95);
-  backdrop-filter: blur(6px);
+  z-index: 45;
+  /* 不透明にして本文が透けないように。上の影は角丸の隙間とバー上端の余白を地色で塞ぐ */
+  background: var(--bg);
+  box-shadow: 0 -8px 0 var(--bg), 0 4px 10px rgba(29, 33, 39, 0.06);
   border: 1px solid var(--line);
   border-radius: 13px;
   padding: 12px 18px;
@@ -1194,10 +1203,14 @@
   .detail-page .nums {
     gap: 8px;
     margin: 16px 0;
+    flex-wrap: wrap;
   }
   .detail-page .num {
     padding: 11px 7px;
     border-radius: 10px;
+    /* 3枚以上を1行に詰めると数文字ごとに折り返すので、2列で折り返す */
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
   }
   .detail-page .num .v {
     font-size: 15px;

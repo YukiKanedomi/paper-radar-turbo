@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 import "@/styles/editorial.css";
-import { usePapers } from "@/lib/data";
-import type { Leveled, Paper, PapersData } from "@/types";
+import { usePapers, useIssuesLog } from "@/lib/data";
+import type { IssueLog, Leveled, Paper, PapersData } from "@/types";
 import {
   paperHref,
   streamOrSpecialLabel,
@@ -76,6 +76,25 @@ function HomeView({ data }: { data: PapersData }) {
     if (Number.isNaN(d.getTime())) return 0;
     return Math.floor((Date.now() - d.getTime()) / 864e5);
   }, [latestIssue]);
+
+  // 休刊（配信ノートに "skipped" の記録がある日）は正常運転。止まった疑いは「記録そのもの」が途絶えた時だけ
+  const logState = useIssuesLog();
+  const lastLog = useMemo(() => {
+    if (logState.status !== "ready") return undefined;
+    return logState.data.entries.reduce<IssueLog | undefined>(
+      (m, e) => (!m || e.date > m.date ? e : m),
+      undefined,
+    );
+  }, [logState]);
+  const lastRecord = lastLog && lastLog.date > latestIssue ? lastLog.date : latestIssue;
+  const recordDays = useMemo(() => {
+    const d = new Date(`${lastRecord}T00:00:00`);
+    if (Number.isNaN(d.getTime())) return 0;
+    return Math.floor((Date.now() - d.getTime()) / 864e5);
+  }, [lastRecord]);
+  // 記録が新しく、それが休刊なら落ち着いた「休刊」表示にする
+  const closedNote =
+    staleDays >= 2 && recordDays < 2 && lastLog?.status === "skipped" ? lastLog : undefined;
 
   const { isRead } = useRead();
   const { isFav } = useFavorites();
@@ -174,10 +193,19 @@ function HomeView({ data }: { data: PapersData }) {
             {latestIssue} 号 — 各トピック{" "}
             {Math.round(todays.length / Math.max(1, new Set(todays.map((p) => p.topic)).size))} 件
           </div>
-          {staleDays >= 2 && (
+          {closedNote ? (
             <div className="stale-note">
-              最終配信から {staleDays} 日あいています。自動配信が止まっていないか、PC側のタスク（スケジューラ）の確認をおすすめします。
+              <span className="nw">{closedNote.date}</span> は休刊でした（最新号は <span className="nw">{latestIssue}</span>）。理由：{closedNote.headline.replace(/^お休み\s*[：:—-]?\s*/, "")}{" "}
+              <Link to="/log" className="nw">配信ノート →</Link>
             </div>
+          ) : (
+            staleDays >= 2 &&
+            logState.status !== "loading" &&
+            recordDays >= 2 && (
+              <div className="stale-note">
+                最終配信から {staleDays} 日あいています。自動配信が止まっていないか、PC側のタスク（スケジューラ）の確認をおすすめします。
+              </div>
+            )
           )}
           <h2>本日のピックアップ</h2>
           {todays.length === 0 ? (
