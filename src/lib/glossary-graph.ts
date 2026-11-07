@@ -222,6 +222,7 @@ export const CATEGORIES: GraphCategory[] = [
     label: "流れ要素・装置",
     color: "#4a6fa5",
     terms: [
+      "線形翼列 (linear cascade)",
       "ジェット・ウェイク構造 (jet-wake structure)",
       "無羽根ディフューザ",
       "羽根車出口の混合",
@@ -314,6 +315,7 @@ export const CATEGORIES: GraphCategory[] = [
     label: "数値解析・手法",
     color: "#7a6a9b",
     terms: [
+      "混合距離モデル (mixing length model)",
       "標準k-εモデル (standard k-ε model)",
       "ガラーキン法 (Galerkin method)",
       "点粒子DNS (PP-DNS)",
@@ -439,6 +441,7 @@ export const CATEGORIES: GraphCategory[] = [
     label: "流れ制御・剥離",
     color: "#b9763a",
     terms: [
+      "リブレット (riblet)",
       "アクティブ制御ケーシングトリートメント (ACCT)",
       "噴射圧力 (injection pressure)",
       "境界層剥離",
@@ -585,6 +588,10 @@ export const CATEGORIES: GraphCategory[] = [
     label: "風車・ウェイク",
     color: "#6b8457",
     terms: [
+      "カールした後流 (curled wake)",
+      "ウェイクステアリング (wake steering)",
+      "ラム・オーセン渦 (Lamb–Oseen vortex)",
+      "ガウス型後流モデル (Gaussian wake model)",
       "後流（ウェイク）",
       "ニアウェイク／ファーウェイク",
       "ウェイクメアンダリング",
@@ -1502,6 +1509,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "セミオープン羽根車 (semi-open impeller)", to: "遠心ポンプ", label: "遠心ポンプの羽根車の形式の一つ" },
   { from: "セミオープン羽根車 (semi-open impeller)", to: "チップクリアランス (tip clearance, TC)", label: "前側にカバーが無く、羽根先端にすき間が必要" },
   { from: "チップクリアランス (tip clearance, TC)", to: "翼端漏れ", label: "すき間を流体が抜ける" },
+  // --- 2026-11-08 配信（Martínez-Tossas ら 2019 / Liu ら 2026） ---
+  { from: "カールした後流 (curled wake)", to: "ヨー運転 (yawed operation)", label: "ヨーで生じる" },
+  { from: "ウェイクステアリング (wake steering)", to: "ヨー運転 (yawed operation)", label: "手段として用いる" },
+  { from: "カールした後流 (curled wake)", to: "後流（ウェイク）", label: "形が変形した後流" },
+  { from: "ラム・オーセン渦 (Lamb–Oseen vortex)", to: "循環 (circulation)", label: "強さは循環で表す" },
+  { from: "ガウス型後流モデル (Gaussian wake model)", to: "後流（ウェイク）", label: "簡易表現" },
+  { from: "リブレット (riblet)", to: "コーナー剥離", label: "抑制を狙う（本号の論文）" },
+  { from: "線形翼列 (linear cascade)", to: "翼列", label: "一種" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
