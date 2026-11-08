@@ -9572,6 +9572,64 @@
         "note": "検索語は日替わりで自動選択された組み合わせをそのまま記録しています。追加の手動検索は行っていません。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、風車を斜めに向けると、後流が横に曲がるだけでなく断面の形まで巻くように変わる、という点です。しかも論文によれば、上下の2本の渦だけで表そうとするとシミュレーションの形に合わず、ローターの形に合わせて渦を楕円状に並べる必要があったそうです。もう一つ、定番の論文は3台並びで発電量の増加を実際より大きく見積もっていて、その理由として、渦が弱まらないモデルの単純化を著者自身が挙げていました。うまくいった点とずれた点の両方が正直に書かれていると、読んでいて安心します。リブレットのほうは抄録だけなので、なぜ効くのかの細部までは追えていません。"
+    },
+    {
+      "date": "2026-11-09",
+      "status": "published",
+      "headline": "翼先端のすき間を広げると、泡が大量に出る条件ではかえって泡が減る面もあることを調べた斜流ポンプの最新（Wang ら 2026、プレプリント全文）と、8段の高速圧縮機で回転失速のセル数の違いを測った定番（Dodds & Vahdati 2015、抄録ベース）",
+      "intro": "今日は『rotating stall inception spike』『tip leakage vortex loss』『surge rotating stall』『secondary flow endwall』『axial/centrifugal compressor aerodynamics』『turbine aerodynamics』『rotor stator interaction』などの語で探しました（最新枠はさらに『diffuser stall pressure recovery』『cavitation pump impeller』。定番枠は被引用順の3ページ目）。最新枠は15件（OA 11／抄録 4）で、arXivの新着は機械学習や基礎的な気体の理論が多く、ターボ機械そのものに近かったのは出版社掲載のポンプの論文でした。全文が取れる（CC BYのプレプリント）斜流ポンプのキャビテーションの論文を選びました。定番枠は14件（OA 5／抄録 9）で、風車の制御の論文が上位に多いなか、圧縮機の回転失速という主役級の現象を扱う論文を、抄録ベースで選びました。校正の段階で、図の描き方（部分スパンの表現など）や用語の言い回しの指摘が入り、修正して公開しています。",
+      "picked": [
+        {
+          "id": "doi:10.1007/s42241-026-0082-1",
+          "title": "Investigation on cavitating flow and energy performance of mixed-flow pump with varied tip clearances",
+          "why": "翼端漏れ流れとキャビテーションという流体現象が主役で、全文（CC BYのプレプリント）が取れるため。11-07配信の翼端すき間の論文と近い話題ですが、泡との関係を見る点が新しい観点です。"
+        },
+        {
+          "id": "doi:10.1115/1.4028557",
+          "title": "Rotating Stall Observations in a High Speed Compressor—Part I: Experimental Study",
+          "why": "回転失速そのものを高速圧縮機の実験で扱う、この分野の主役級の話題だから。有料のため抄録の範囲だけで忠実に書いています。"
+        }
+      ],
+      "aside": {
+        "title": "見送り・修正の内訳",
+        "note": "候補のうち、軸流ポンプの水力モデル比較や、ジェットエンジン用軸流ディフューザの論文も候補でしたが、今回は見送りました。校正では2論文とも1回目で指摘が入り、修正して再検証しました。再検証で残った軽微な指摘（概念図の矢印の削除と、抄録にない「前3列」という限定の削除、言い回し）は削除や言い換えのみだったため、追加の検証は行わずに反映しています。low指摘の言い回し修正も含め、すべて記録しています。"
+      },
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex 新着（最新枠）",
+            "scope": "最新枠",
+            "terms": [
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics"
+            ],
+            "hits": 15,
+            "note": "最新枠は15件（OA 11／抄録 4）。既配信は候補から除外済みです。"
+          },
+          {
+            "name": "OpenAlex 被引用上位（定番枠）",
+            "scope": "定番枠（被引用順 3 ページ目）",
+            "terms": [
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss"
+            ],
+            "hits": 14,
+            "note": "定番枠は14件（OA 5／抄録 9）。既配信は候補から除外済みです。"
+          }
+        ],
+        "note": "検索語は日替わりで自動選択された組み合わせをそのまま記録しています。追加の手動検索は行っていません。"
+      },
+      "afterword": "— 編集担当より：今回「なるほど」と思ったのは、ポンプの羽根先端のすき間は性能を下げるものなのに、泡が大量に出る条件では、そのすき間から漏れる流れが泡のかたまりを崩して、性能の落ち込みをやわらげる面がある、と著者が考えている点です。ただし同じ論文は、渦による無駄も増えると書いていて、得をする話だけではありませんでした。それから、プレプリントの中でも同じ量が1.46倍と1.47倍の2通りで書かれていて、論文の数字も一枚岩ではないと知りました。回転失速のほうは、静止したセンサーと回るセンサーで同じ揺れが違う周波数に見えることを使って、失速のかたまりの数を見分けるという発想が面白かったです。こちらは抄録だけなので、細かい数値までは追えていません。"
     }
   ]
 }

@@ -22,6 +22,10 @@ export const CATEGORIES: GraphCategory[] = [
     label: "不安定現象",
     color: "#b4451f",
     terms: [
+      "部分スパン回転失速 (part-span rotating stall)",
+      "セル数 (cell count)",
+      "臨界キャビテーション点 (critical cavitation point)",
+      "蒸気体積率 (vapor volume fraction, VVF)",
       "失速渦 (stall vortex)",
       "失速後過渡現象 (post-stall transient)",
       "失速セル",
@@ -222,6 +226,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "流れ要素・装置",
     color: "#4a6fa5",
     terms: [
+      "可変静翼 (VSV)",
+      "圧力上昇係数 (pressure rise coefficient)",
       "線形翼列 (linear cascade)",
       "ジェット・ウェイク構造 (jet-wake structure)",
       "無羽根ディフューザ",
@@ -406,6 +412,7 @@ export const CATEGORIES: GraphCategory[] = [
     label: "設計理論・流れ面",
     color: "#8a6d3b",
     terms: [
+      "ミーンライン解析 (meanline analysis)",
       "ポテンシャル理論 (potential theory)",
       "システム回転 (system rotation)",
       "S1流れ面（第一種）",
@@ -1517,6 +1524,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ガウス型後流モデル (Gaussian wake model)", to: "後流（ウェイク）", label: "簡易表現" },
   { from: "リブレット (riblet)", to: "コーナー剥離", label: "抑制を狙う（本号の論文）" },
   { from: "線形翼列 (linear cascade)", to: "翼列", label: "一種" },
+  // --- 2026-11-09 配信（Dodds & Vahdati 2015 / Wang ら 2026） ---
+  { from: "部分スパン回転失速 (part-span rotating stall)", to: "回転失速", label: "羽根の高さの一部で起きる回転失速" },
+  { from: "セル数 (cell count)", to: "失速セル", label: "同時に存在するセルの個数" },
+  { from: "可変静翼 (VSV)", to: "多段軸流圧縮機", label: "角度調整で段の釣り合いを変える（この論文では前段を意図的にミスマッチ）" },
+  { from: "ミーンライン解析 (meanline analysis)", to: "回転失速", label: "負荷パラメータが失速強度と相関（この論文）" },
+  { from: "臨界キャビテーション点 (critical cavitation point)", to: "キャビテーション", label: "揚程が急落し始める境目" },
+  { from: "臨界キャビテーション点 (critical cavitation point)", to: "NPSH（有効吸込みヘッド）", label: "NPSHaを下げて到達する点" },
+  { from: "蒸気体積率 (vapor volume fraction, VVF)", to: "キャビテーション", label: "泡の量の指標" },
+  { from: "圧力上昇係数 (pressure rise coefficient)", to: "ヘッド低下", label: "キャビテーションで低下を示す指標になる" },
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();
