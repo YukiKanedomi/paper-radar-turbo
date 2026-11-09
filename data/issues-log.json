@@ -9630,6 +9630,59 @@
         "note": "検索語は日替わりで自動選択された組み合わせをそのまま記録しています。追加の手動検索は行っていません。"
       },
       "afterword": "— 編集担当より：今回「なるほど」と思ったのは、ポンプの羽根先端のすき間は性能を下げるものなのに、泡が大量に出る条件では、そのすき間から漏れる流れが泡のかたまりを崩して、性能の落ち込みをやわらげる面がある、と著者が考えている点です。ただし同じ論文は、渦による無駄も増えると書いていて、得をする話だけではありませんでした。それから、プレプリントの中でも同じ量が1.46倍と1.47倍の2通りで書かれていて、論文の数字も一枚岩ではないと知りました。回転失速のほうは、静止したセンサーと回るセンサーで同じ揺れが違う周波数に見えることを使って、失速のかたまりの数を見分けるという発想が面白かったです。こちらは抄録だけなので、細かい数値までは追えていません。"
+    },
+    {
+      "date": "2026-11-10",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文が確保できませんでした",
+      "intro": "今日は『回転失速の予兆』『翼端漏れ渦の損失』『圧縮機の衝撃波と境界層の干渉』『コーナー剥離』などの言葉で探しました。最新枠のオープンアクセス候補のうち、ターボ機械に合う1件（MDPI Machines 掲載の低速軸流圧縮機ロータの設計論文・CC BY）は、出版社サイトがbot判定で403を返し、本文を取得できませんでした。残りのOA候補（キャビテーションの光学フロー、極超音速クエット流のサブフィルタ応力、クインケ回転子）は、機械学習や数値モデルが主役か、ターボ機械の流れから離れていたため見送りました。全文で裏取りできないものを『全文ベース』で載せることはできないため、今日は無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補",
+          "note": "Mustaffa & Kanjirakkad（2026, Machines, CC BY）は、NASA Rotor 37 を60%設計回転数で模した低速ロータを逆設計で作り、翼端領域の損失などを比べた論文で、抄録は魅力的でしたが本文が読めませんでした。遷音速圧縮機の失速直前の翼端変動をSPODで調べた論文や、タンデム翼ファンの回転失速前の不安定性の論文は有料で、抄録ベースになるため、全文OAの1件を最新枠で確保できない今日は号として成立しませんでした。"
+        },
+        {
+          "title": "定番枠の状況",
+          "note": "定番枠の上位候補は Denton『Lessons from Rotor 37』(1997) や Hodson & Howell（2005, 低圧タービンの遷移）など有料の抄録ベースでした。OAの定番はASME掲載の随伴法の論文のみで、こちらも本文取得が403でした。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery",
+              "tip leakage vortex loss",
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms"
+            ],
+            "hits": 13,
+            "note": "最新枠は13件（OA4/抄録9）。ターボ機械に合うOAのMDPI論文は本文403で不採用、他のOAは主題外または手法主役のため不採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・被引用順 1ページ目）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "tip clearance flow loss",
+              "turbomachinery loss mechanisms",
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 14,
+            "note": "14件（OA1/抄録13）。OAの1件は本文を取得できず、残りは抄録ベース。"
+          }
+        ],
+        "note": "OA全文を確保できない日は、歪な号を出さず前号のままにする方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。抄録を読んでいて、実験しやすい低速の圧縮機で高速圧縮機の翼端の流れを再現する、という発想が面白いと感じました。ただ本文を確かめられないまま紹介するのは、このアプリの約束（嘘をつかない）に反するので見送りました。"
     }
   ]
 }
