@@ -9683,6 +9683,59 @@
         "note": "OA全文を確保できない日は、歪な号を出さず前号のままにする方針です。"
       },
       "afterword": "— 編集担当より\n今日はお休みです。抄録を読んでいて、実験しやすい低速の圧縮機で高速圧縮機の翼端の流れを再現する、という発想が面白いと感じました。ただ本文を確かめられないまま紹介するのは、このアプリの約束（嘘をつかない）に反するので見送りました。"
+    },
+    {
+      "date": "2026-11-11",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文を取得できませんでした",
+      "intro": "今日は『衝撃波と境界層の干渉』『コーナー剥離』『翼のフラッタ』『風車後流』『フィルム冷却』『キャビテーション』などの言葉で探しました。最新枠でターボ機械に合うOA候補は、低圧タービン翼列の端壁流れ（MDPI・CC BY）と高圧タービン段のホットストリーク（Elsevier・CC BY）の2本でしたが、出版社サイトとリポジトリ（Cranfield）がbot判定で403を返し、本文を取得できませんでした。定番枠のOA候補は MIT のリポジトリが一時的なアクセス制限（429、900秒後に再試行との表示）で読めませんでした。全文で裏取りできない論文を全文ベースとして載せることはできないため、今日は無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補",
+          "note": "最新枠では、低圧タービン翼列の端壁空力と入口乱れ分布の影響を調べた論文（Rosafio ら 2026, IJTPP, CC BY）と、高圧タービン段のホットストリークの周方向位置合わせを扱った論文（Elsevier, CC BY）が有力でしたが、本文を取得できませんでした。遷音速圧縮機の翼端漏れ流れの熱制御や、粗さと入口歪みの論文は有料で抄録ベースになるため、OA全文1件が確保できない今日は号として成立しませんでした。"
+        },
+        {
+          "title": "定番枠の状況",
+          "note": "定番枠の有力候補は、超短ナセル（Ultrashort Nacelles, 2014, MIT リポジトリにOA版あり）と、NASA グレンのアンチボルテックス型フィルム冷却孔（Heidmann & Ekkad, 2008, 抄録ベース）でした。前者の本文取得がアクセス制限で失敗しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "shock boundary layer interaction compressor",
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery"
+            ],
+            "hits": 24,
+            "note": "最新枠は24件（OA17/抄録7）。arXivのOAの多くはターボ機械から離れた流体の数理・地球流体などで不採用。ターボ機械に合うOA2件は本文403で不採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・被引用順 2ページ目）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics",
+              "diffuser stall pressure recovery",
+              "cavitation pump impeller",
+              "rotor stator interaction unsteady",
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics"
+            ],
+            "hits": 14,
+            "note": "14件（OA4/抄録10）。OAの風力の総説・実験は主題が広い／風車中心で見送り、ナセルの論文は本文が429で取得不可。"
+          }
+        ],
+        "note": "OA全文を確保できない日は、歪な号を出さず前号のままにする方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。候補を眺めていて、フィルム冷却孔の渦を打ち消す穴の形を考えるという発想が、抄録だけでも面白いと感じました。ただ、本文を確かめられないまま全文ベースで紹介するのは、このアプリの約束（嘘をつかない）に反するので見送りました。"
     }
   ]
 }
