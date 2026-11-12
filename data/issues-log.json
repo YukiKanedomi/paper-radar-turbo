@@ -1,6 +1,59 @@
 {
   "entries": [
     {
+      "date": "2026-11-13",
+      "status": "skipped",
+      "headline": "今日はお休み：全文を読めるオープンアクセスの論文を取得できませんでした",
+      "intro": "今日は『遠心圧縮機の空力』『軸流圧縮機の空力』『旋回失速の前兆（スパイク）』『サージ』『端壁二次流れ』『境界層遷移』『コーナー剥離』『フィルム冷却』などの言葉で探しました。最新枠で有力だったのは、高速低圧タービン翼列の端壁流れと入口乱れ分布の影響を調べた論文（Rosafio ら 2026, IJTPP, CC BY）でしたが、出版社サイトも大学リポジトリも403（アクセス拒否）で本文を取得できませんでした。定番枠のOA候補（Han 2004 の翼冷却の総説）も配信元から403が返りました。全文で裏取りできない論文を全文ベースとして載せることはできないため、今日は無理に出さず前号のままにしています。",
+      "picked": [],
+      "aside": [
+        {
+          "title": "見送った候補",
+          "note": "最新枠では、高速低圧タービン翼列の端壁空力（Rosafio ら 2026）が本命でしたが本文が取れませんでした。衝撃波と翼列の干渉を調べた論文（Li ら 2026, IJHFF）も出版社・プレプリントサーバとも本文に到達できませんでした。遷音速遠心圧縮機のRANS不確かさ評価は手法寄りで主役にしないため見送りです。"
+        },
+        {
+          "title": "定番枠の状況",
+          "note": "高揚力低圧タービンの遷移を扱った総説（Hodson & Howell 2005）は有力でしたが、抄録がOpenAlex・Semantic Scholar・Crossref のいずれからも取れず、抄録ベースでも忠実に書ける材料がありませんでした。翼冷却の総説（Han 2004）はOAですが本文取得に失敗しました。"
+        }
+      ],
+      "searchLog": {
+        "sources": [
+          {
+            "name": "arXiv + OpenAlex（最新枠）",
+            "scope": "プレプリント＋発行日の新しい順・直近数年（OA/抄録 混在）",
+            "terms": [
+              "centrifugal compressor aerodynamics",
+              "axial compressor aerodynamics",
+              "turbine aerodynamics",
+              "surge rotating stall",
+              "rotating stall inception spike",
+              "secondary flow endwall turbomachinery"
+            ],
+            "hits": 13,
+            "note": "最新枠は13件（OA6/抄録7）。arXivのOAは製造ばらつきの機械学習・風車の逆設計・大気重力波などで、流体主役のターボ機械とは合わず不採用。ターボ機械に合うOAは本文403で不採用。"
+          },
+          {
+            "name": "OpenAlex（定番枠・被引用順 1ページ目）",
+            "scope": "被引用数の多い順・分野ガードあり（OA/抄録 混在）",
+            "terms": [
+              "wake mixing unsteady turbomachinery",
+              "boundary layer transition turbine blade",
+              "corner separation compressor",
+              "blade flutter aeroelasticity",
+              "supercritical CO2 turbomachinery",
+              "wind turbine wake aerodynamics",
+              "film cooling turbine heat transfer",
+              "inlet distortion fan aerodynamics"
+            ],
+            "hits": 14,
+            "note": "14件（OA4/抄録10）。有力候補は抄録が取得できない、またはOA本文が403でした。"
+          }
+        ],
+        "note": "OA全文を確保できない日は、歪な号を出さず前号のままにする方針です。"
+      },
+      "afterword": "— 編集担当より\n今日はお休みです。候補の中に、低圧タービン翼列の端壁流れが入口乱れの分布にどう左右されるか、という題材があり、乱れの「強さ」だけでなく「分布」まで見るのかと素直に興味を引かれました。ただ、本文を確かめられないまま全文ベースで紹介するのは、このアプリの約束（嘘をつかない）に反するので見送りました。"
+    },
+    {
       "date": "2026-07-27",
       "status": "published",
       "headline": "眼科の精密機器を守るポンプの脈動解析と、高速圧縮機9台に共通する失速前の忍び寄る波",
