@@ -80,6 +80,7 @@ export const CATEGORIES: GraphCategory[] = [
       "脱出渦放出モード (escaping vortex-shedding mode)",
       "質量比 (mass ratio, γm)",
       "キャビテーション",
+      "極低温キャビテーション (cryogenic cavitation)",
       "キャビテーション数 (cavitation number)",
       "均質キャビテーションモデル (homogeneous cavitation model)",
       "雲状キャビテーション (cloud cavitation)",
@@ -150,6 +151,9 @@ export const CATEGORIES: GraphCategory[] = [
       "直接エントロピー生成率 (DEPR)",
       "粘性エントロピー生成率 (VEPR)",
       "エントロピー生成",
+      "粘性エントロピー生成 (viscous entropy production, VEP)",
+      "乱流エントロピー生成 (turbulent entropy production, TEP)",
+      "壁面エントロピー生成 (wall entropy production, WEP)",
       "運動量厚さ (momentum thickness)",
       "性能劣化 (performance deterioration)",
       "エントロピー損失係数",
@@ -302,6 +306,8 @@ export const CATEGORIES: GraphCategory[] = [
       "ノズル圧力比 (NPR, nozzle pressure ratio)",
       "共流 (coflow)",
       "多段遠心ポンプ (multi-stage centrifugal pump)",
+      "補助羽根 (auxiliary blade)",
+      "摩耗リング漏れ (wear-ring leakage)",
       "フランシス水車 (Francis turbine)",
       "ポンプ水車 (pump-turbine)",
       "クリアランス流れ (interstitial/clearance flow)",
@@ -1545,6 +1551,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "揚力要素 (lift element)", to: "揚力係数 (lift coefficient, C_L)", label: "体積項として揚力に寄与" },
   { from: "凹み型翼端 (recessed tip)", to: "キャビティ渦 (cavity vortex)", label: "凹みの中に生じる" },
   { from: "キャビティ渦 (cavity vortex)", to: "ヌセルト数 (Nusselt number)", label: "制御して熱伝達を下げる設計" },
+  // --- 多段ポンプの補助羽根（Yi 2026）と極低温ポンプのエントロピー生成診断（Wang 2018） ---
+  { from: "補助羽根 (auxiliary blade)", to: "摩耗リング漏れ (wear-ring leakage)", label: "漏れを減らす（この論文の計算で）" },
+  { from: "補助羽根 (auxiliary blade)", to: "キャビテーション", label: "広がりを抑える（この論文の計算で）" },
+  { from: "粘性エントロピー生成 (viscous entropy production, VEP)", to: "エントロピー生成", label: "内訳の一つ" },
+  { from: "乱流エントロピー生成 (turbulent entropy production, TEP)", to: "エントロピー生成", label: "内訳の一つ" },
+  { from: "壁面エントロピー生成 (wall entropy production, WEP)", to: "エントロピー生成", label: "内訳の一つ" },
+  { from: "極低温キャビテーション (cryogenic cavitation)", to: "キャビテーション", label: "液体が極低温のときの一種" },
+
 ];
 
 const CAT_OF = new Map<string, GraphCategory>();

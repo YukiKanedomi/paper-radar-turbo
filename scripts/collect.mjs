@@ -34,7 +34,9 @@ for (const p of JSON.parse(readFileSync(resolve(root, "data/papers.json"), "utf8
 }
 const fresh = (p) => !delivered.has(p.id.toLowerCase()) && !(p.doi && delivered.has(`doi:${p.doi}`.toLowerCase()));
 
-const UA = "paper-radar-turbo/0.1 (mailto:kanedomi918@gmail.com)";
+// 連絡先は環境変数 PAPER_RADAR_CONTACT で任意指定（未設定なら送らない＝個人情報を外部に出さない）
+const CONTACT = process.env.PAPER_RADAR_CONTACT || "";
+const UA = "paper-radar-turbo/0.1";
 const ARXIV_MIN = 6; // これ未満なら緩和して取り直す
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -161,7 +163,7 @@ async function openAlexSearch(phrase, { sort, fromDate, stream, perPage = 6, pag
   // 狭いクエリにすることで 504（broad query）も避けられる。
   let filter = `title_and_abstract.search:${encodeURIComponent(phrase)},type:article`;
   if (fromDate) filter += `,from_publication_date:${fromDate}`;
-  const url = `https://api.openalex.org/works?filter=${filter}&sort=${sort}&per-page=${perPage}&page=${page}&mailto=kanedomi918@gmail.com`;
+  const url = `https://api.openalex.org/works?filter=${filter}&sort=${sort}&per-page=${perPage}&page=${page}${CONTACT ? `&mailto=${encodeURIComponent(CONTACT)}` : ""}`;
   const res = await fetchRetry(url);
   if (!res.ok) throw new Error(`OpenAlex HTTP ${res.status}`);
   const json = await res.json();
