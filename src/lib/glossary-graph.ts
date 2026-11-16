@@ -234,6 +234,7 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#4a6fa5",
     terms: [
       "可変静翼 (VSV)",
+      "湿り圧縮 (wet compression)",
       "圧力上昇係数 (pressure rise coefficient)",
       "線形翼列 (linear cascade)",
       "ジェット・ウェイク構造 (jet-wake structure)",
@@ -609,6 +610,10 @@ export const CATEGORIES: GraphCategory[] = [
     color: "#6b8457",
     terms: [
       "カールした後流 (curled wake)",
+      "垂直軸風車 (VAWT)",
+      "ピッチ角 (pitch angle)",
+      "周速比 (tip speed ratio)",
+      "動力係数 (power coefficient, CP)",
       "ウェイクステアリング (wake steering)",
       "ラム・オーセン渦 (Lamb–Oseen vortex)",
       "ガウス型後流モデル (Gaussian wake model)",
@@ -1558,6 +1563,11 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "乱流エントロピー生成 (turbulent entropy production, TEP)", to: "エントロピー生成", label: "内訳の一つ" },
   { from: "壁面エントロピー生成 (wall entropy production, WEP)", to: "エントロピー生成", label: "内訳の一つ" },
   { from: "極低温キャビテーション (cryogenic cavitation)", to: "キャビテーション", label: "液体が極低温のときの一種" },
+  // --- 垂直軸風車のピッチ角（Rezaeiha 2017）と二重反転圧縮機の翼端すき間（An 2026） ---
+  { from: "ピッチ角 (pitch angle)", to: "迎え角（AoA）", label: "固定で全周の迎え角をずらす" },
+  { from: "動力係数 (power coefficient, CP)", to: "垂直軸風車 (VAWT)", label: "出力性能の指標" },
+  { from: "換算周波数 (reduced frequency)", to: "動的失速", label: "非定常の度合いの目安" },
+  { from: "周速比 (tip speed ratio)", to: "垂直軸風車 (VAWT)", label: "運転条件" },
 
 ];
 
