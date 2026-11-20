@@ -525,6 +525,7 @@ export const CATEGORIES: GraphCategory[] = [
     label: "二次流れ・エンドウォール",
     color: "#5f7a8a",
     terms: [
+      "ケーシング通路渦 (casing passage vortex, CPV)",
       "二次流れ",
       "端壁クロスフロー (endwall crossflow)",
       "スパンワイズ不均質性 (spanwise heterogeneity)",
@@ -609,6 +610,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "風車・ウェイク",
     color: "#6b8457",
     terms: [
+      "損傷等価荷重 (damage equivalent load, DEL)",
+      "風速シア (wind shear)",
       "カールした後流 (curled wake)",
       "垂直軸風車 (VAWT)",
       "ピッチ角 (pitch angle)",
@@ -1568,6 +1571,14 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "動力係数 (power coefficient, CP)", to: "垂直軸風車 (VAWT)", label: "出力性能の指標" },
   { from: "換算周波数 (reduced frequency)", to: "動的失速", label: "非定常の度合いの目安" },
   { from: "周速比 (tip speed ratio)", to: "垂直軸風車 (VAWT)", label: "運転条件" },
+  // --- 2026-11-21 配信（Sun ら 2026 / Damiani ら 2018） ---
+  { from: "レイノルズ数", to: "翼端漏れ渦", label: "低下で漏れ流れが増え損失が増える（Sun ら 2026・数値計算）" },
+  { from: "前縁剥離 (leading-edge separation)", to: "ケーシング通路渦 (casing passage vortex, CPV)", label: "低エネルギー流体の径方向移動を通じて発達を促す" },
+  { from: "ケーシング通路渦 (casing passage vortex, CPV)", to: "エントロピー生成", label: "高高度では主要な損失源（Sun ら 2026）" },
+  { from: "損傷等価荷重 (damage equivalent load, DEL)", to: "疲労荷重 (fatigue loading)", label: "疲労の評価指標" },
+  { from: "損傷等価荷重 (damage equivalent load, DEL)", to: "レインフロー計数法 (rainflow counting)", label: "サイクル計数から算出" },
+  { from: "ヨー運転 (yawed operation)", to: "疲労荷重 (fatigue loading)", label: "各部の荷重への影響が論点" },
+  { from: "風速シア (wind shear)", to: "迎え角（AoA）", label: "方位角ごとの変動に非対称を生む" },
 
 ];
 
