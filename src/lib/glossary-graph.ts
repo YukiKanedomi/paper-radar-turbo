@@ -80,6 +80,10 @@ export const CATEGORIES: GraphCategory[] = [
       "脱出渦放出モード (escaping vortex-shedding mode)",
       "質量比 (mass ratio, γm)",
       "キャビテーション",
+      "キャビテーション初生 (cavitation inception)",
+      "キャビテーション核 (cavitation nuclei)",
+      "ミスチューニング (mistuning)",
+      "強制応答 (forced response)",
       "極低温キャビテーション (cryogenic cavitation)",
       "キャビテーション数 (cavitation number)",
       "均質キャビテーションモデル (homogeneous cavitation model)",
@@ -233,6 +237,8 @@ export const CATEGORIES: GraphCategory[] = [
     label: "流れ要素・装置",
     color: "#4a6fa5",
     terms: [
+      "逆流層 (reverse-flow layer)",
+      "ベンチュリ管 (Venturi tube)",
       "可変静翼 (VSV)",
       "湿り圧縮 (wet compression)",
       "圧力上昇係数 (pressure rise coefficient)",
@@ -1598,6 +1604,10 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "エジェクションとスイープ (ejection and sweep)", to: "象限解析 (quadrant analysis)", label: "象限で分類される事象" },
   { from: "レイノルズ数独立性 (Reynolds number independence)", to: "レイノルズ数", label: "数を変えても量が変わらなくなる性質" },
   { from: "ニアウェイク／ファーウェイク", to: "レイノルズ数独立性 (Reynolds number independence)", label: "近傍で依存が強く遠方で弱い（Chamorro ら 2011 の抄録）" },
+  { from: "キャビテーション核 (cavitation nuclei)", to: "キャビテーション初生 (cavitation inception)", label: "発生に必要な要素の一つ" },
+  { from: "キャビテーション初生 (cavitation inception)", to: "キャビテーション数 (cavitation number)", label: "発生時の値で条件を表す" },
+  { from: "ミスチューニング (mistuning)", to: "フラッタ", label: "安定性を変える（この論文の抄録では有益）" },
+  { from: "強制応答 (forced response)", to: "空力弾性", label: "空力弾性的な応答の一つ" },
   { from: "運動学的せん断応力 (kinematic shear stress)", to: "レイノルズせん断応力", label: "密度で割った形" },
 
 ];
