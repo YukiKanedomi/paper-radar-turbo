@@ -626,6 +626,14 @@ export const CATEGORIES: GraphCategory[] = [
     label: "風車・ウェイク",
     color: "#6b8457",
     terms: [
+      "着氷",
+      "半径方向のすきま (radial gap)",
+      "霧氷 (rime ice)",
+      "グレーズ氷 (glaze ice)",
+      "氷角 (ice horn)",
+      "過冷却水滴 (supercooled water droplet)",
+      "ランバック (runback)",
+      "揚抗比 (lift-to-drag ratio)",
       "損傷等価荷重 (damage equivalent load, DEL)",
       "風速シア (wind shear)",
       "カールした後流 (curled wake)",
@@ -1609,6 +1617,15 @@ export const CURATED_EDGES: CuratedEdge[] = [
   { from: "ミスチューニング (mistuning)", to: "フラッタ", label: "安定性を変える（この論文の抄録では有益）" },
   { from: "強制応答 (forced response)", to: "空力弾性", label: "空力弾性的な応答の一つ" },
   { from: "運動学的せん断応力 (kinematic shear stress)", to: "レイノルズせん断応力", label: "密度で割った形" },
+  // --- 2026-11-27 配信（Wang ら 2026 / Fu ら 2014） ---
+  { from: "霧氷 (rime ice)", to: "着氷", label: "着氷の一形態" },
+  { from: "グレーズ氷 (glaze ice)", to: "着氷", label: "着氷の一形態" },
+  { from: "グレーズ氷 (glaze ice)", to: "ランバック (runback)", label: "水膜が流れ戻ってから凍る" },
+  { from: "ランバック (runback)", to: "氷角 (ice horn)", label: "不規則な突起の形成につながる（Wang ら 2026）" },
+  { from: "氷角 (ice horn)", to: "境界層剥離", label: "早める（Wang ら 2026・数値計算）" },
+  { from: "揚抗比 (lift-to-drag ratio)", to: "揚力係数 (lift coefficient, C_L)", label: "抗力で割った形" },
+  { from: "着氷", to: "揚抗比 (lift-to-drag ratio)", label: "低下させる（Wang ら 2026・数値計算）" },
+  { from: "半径方向のすきま (radial gap)", to: "圧力脈動 (pressure pulsation)", label: "広げるとボリュート内の高周波脈動が減る（Yang ら 2014・数値計算）" },
 
 ];
 
